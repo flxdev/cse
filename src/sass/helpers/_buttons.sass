@@ -1,0 +1,278 @@
+.btn
+	display: inline-block
+	vertical-align: top
+	+nosel
+	cursor: pointer
+	overflow: hidden
+	margin: 6px 7px
+	border: 1px solid
+	transition: color .3s, background-color .3s, border-color .3s
+	border-radius: 2.5px
+	font-family: $f
+	text-align: center
+	color: $white
+	background-color: $brand 
+	border-color: $brand
+	min-width: 246px
+	height: 62px
+	font-size: 0
+
+	&:hover
+		+notouch
+			border-color: $brandh
+			.btn-inner
+				&:after
+					transform: scaleX(1) scaleY(1)
+	&-icon
+		padding-right: 5px
+		svg 
+			height: 17px
+			width: 20px
+	&.has-loading
+		position: relative
+		&:after
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			top: 0
+			content: ''
+			display: inline-block
+			background-position: center 
+			background-repeat: no-repeat
+			z-index: 1
+			background-color: rgba(249, 139, 79, .9);
+			background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmVyc2lvbj0iMSIgdmlld0JveD0iMCAwIDEyOCAxMjgiPiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0ibm9uZSIvPiAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMCAwIDEgMTI4IDApIj4gICAgPGNpcmNsZSBjeD0iMTYiIGN5PSI2NCIgcj0iMTYiIGZpbGw9IiNmZmYiLz4gICAgPGNpcmNsZSBjeD0iMTYiIGN5PSI2NCIgcj0iMTQuMzQ0IiBmaWxsPSIjZmZmIiB0cmFuc2Zvcm09InJvdGF0ZSg0NSA2NCA2NCkiLz4gICAgPGNpcmNsZSBjeD0iMTYiIGN5PSI2NCIgcj0iMTIuNTMxIiBmaWxsPSIjZmZmIiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NCA2NCkiLz4gICAgPGNpcmNsZSBjeD0iMTYiIGN5PSI2NCIgcj0iMTAuNzUiIGZpbGw9IiNmZmYiIHRyYW5zZm9ybT0icm90YXRlKDEzNSA2NCA2NCkiLz4gICAgPGNpcmNsZSBjeD0iMTYiIGN5PSI2NCIgcj0iMTAuMDYzIiBmaWxsPSIjZmZmIiB0cmFuc2Zvcm09InJvdGF0ZSgxODAgNjQgNjQpIi8+ICAgIDxjaXJjbGUgY3g9IjE2IiBjeT0iNjQiIHI9IjguMDYzIiBmaWxsPSIjZmZmIiB0cmFuc2Zvcm09InJvdGF0ZSgyMjUgNjQgNjQpIi8+ICAgIDxjaXJjbGUgY3g9IjE2IiBjeT0iNjQiIHI9IjYuNDM4IiBmaWxsPSIjZmZmIiB0cmFuc2Zvcm09InJvdGF0ZSgyNzAgNjQgNjQpIi8+ICAgIDxjaXJjbGUgY3g9IjE2IiBjeT0iNjQiIHI9IjUuMzc1IiBmaWxsPSIjZmZmIiB0cmFuc2Zvcm09InJvdGF0ZSgzMTUgNjQgNjQpIi8+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiB2YWx1ZXM9IjAgNjQgNjQ7MzE1IDY0IDY0OzI3MCA2NCA2NDsyMjUgNjQgNjQ7MTgwIDY0IDY0OzEzNSA2NCA2NDs5MCA2NCA2NDs0NSA2NCA2NCIgY2FsY01vZGU9ImRpc2NyZXRlIiBkdXI9IjcyMG1zIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPiAgPC9nPjwvc3ZnPg==);
+			+tr(opacity .2s)
+			opacity: 0
+		&.load
+			pointer-events: none
+			&:after
+				opacity: 1
+	&-inner
+		padding: 10px 20px
+		// overflow: hidden
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		z-index: 0
+		position: relative
+		height: 100%
+		+vertical
+		overflow: hidden
+		&:after
+			content: ''
+			display: inline-block
+			position: absolute
+			z-index: -1
+			left: -2px
+			right: -2px
+			top: -2px
+			bottom: -2px
+			background-color: $brandh
+			+tr(transform .2s ease-in-out)
+			transform: scaleX(0) scaleY(1)
+
+		span
+			display: inline-block
+			vertical-align: middle
+			font-size: 16px
+			line-height: 1.25
+			text-rendering: optimizeLegibility
+			&:not(:only-child):first-child
+				padding-right: 10px			
+			svg 
+				display: inline-block
+				vertical-align: middle
+				width: 14px
+				height: 16px
+	&.color-black
+		background-color: transparent
+		background-color: $black 
+		border-color: $black
+		&.not-trans
+			background-color: transparent
+			color: $black
+			.btn-inner
+				&:after
+					background-color: $black
+			&:hover
+				+notouch
+					background-color: transparent
+					color: $white
+					border-color: $black
+	&.color-gray
+		background-color: transparent
+		color: $gray
+		border-color: $gray
+		&:hover
+			+notouch
+				color: $white
+				border-color: $brandh
+	&.color-white
+		background-color: transparent
+		color: $white
+		border-color: $white
+		&.not-trans
+			background-color: $white
+			color: $black
+			&:hover
+				+notouch
+					background-color: transparent
+					color: $white
+		.btn-inner
+			&:after
+				background-color: $brand
+		&:hover
+			+notouch
+				border-color: $brand
+				&.color-reverse
+					border-color: $black
+		&.color-reverse
+			.btn-inner
+				&:after
+					background-color: $black
+
+	&.color-orange
+		background-color: transparent
+		color: $brand
+		&:hover
+			+notouch
+				color: $white
+	&.type-round
+		height: auto
+		min-width: 165px
+		border-radius: 50px
+		font-weight: 500
+		.btn-inner
+			padding: 12px 22.5px
+			// &:after
+			// 	border-radius: 50px	
+.btn-wrapper
+	margin-left: -7px
+	margin-right: -7px
+.link-icon
+	display: inline-block
+	vertical-align: top
+	font-size: 0
+	padding-top: 3px
+	padding-bottom: 3px
+	color: $graylink;
+	+tr(color .3s)
+	white-space: nowrap
+	cursor: pointer
+	+nosel
+	&:hover
+		color: $brand
+	&>div
+		display: inline-block
+		vertical-align: middle
+	&-text
+		font-size: 16px
+	&-icon 
+		height: 27px
+		width: 27px
+		margin-right: 2px
+		&:only-child
+			margin-right: 0
+		&:last-child:not(:only-child)
+			margin-left: 2px
+			margin-right: 0
+	// .icon-doc,.icon-danger,.icon-print
+	// 	padding: 5px
+	&.edit
+		.link-icon-icon
+			padding: 4px
+	&.primary
+		color: $brand
+		&:hover
+			color: $brandh
+	&.sm
+		color: $darktext
+		.link-icon-text
+			font-size: 14px
+		.link-icon-icon
+			&>svg
+				padding: 5px
+			color: $brand
+		&:hover
+			color: $brand
+			.link-icon-text
+				color: inherit
+	&.extra
+		font-size: 24px
+		font-weight: 500
+		color: $dark
+		&:hover
+			+notouch
+				color: $brandh
+		.link-icon-icon
+			margin-top: 3px
+	&.reload
+		.link-icon-icon
+			transform-origin: 50%
+		&:hover
+			+notouch
+				.link-icon-icon
+					+tr(transform .3s)
+					transform: rotate(180deg)
+		&.load
+			.link-icon-icon
+				animation: spin 1s linear infinite
+@keyframes spin
+	0%
+		transform: rotate(0deg)
+	50%
+		transform: rotate(180deg)
+	100%
+		transform: rotate(360deg)
+.link-dotted
+	display: inline-block
+	vertical-align: top
+	white-space: nowrap
+	cursor: pointer
+	+nosel
+	font-size: 0
+	color: $brand
+	padding-top: 3px
+	&.color-black
+		color: $dark
+	&.active
+		.link-dotted-icon
+			transform: scale(1,-1)
+	&:hover
+		+notouch
+			color: $brandh
+			.link-dotted-text
+				&:after
+					opacity: 0	
+	&>div
+		display: inline-block
+		vertical-align: top
+	&-text 
+		font-weight: 500
+		color: inherit
+		font-size: 14px
+		position: relative
+
+		padding-bottom: 3px
+		&:after
+			content: ""
+			position: absolute
+			display: inline-block
+			left: 0
+			right: 0
+			height: 2px
+			bottom: 0
+			+dotted-line($brand, bottom)
+			+tr(opacity .3s)
+	&-icon 
+		width: 14px
+		height: 20px
+		margin-left: 3px
+
+
+
+		
+
+	

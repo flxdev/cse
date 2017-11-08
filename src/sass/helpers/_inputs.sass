@@ -1,0 +1,443 @@
+* :-ms-input-placeholder
+	color: $placeholder !important
+	font-family: $f
+.help-block
+	margin-top: 8px
+	width: 100%
+	font-size: 12px
+	margin-top: 8px
+	position: static
+	&.help
+		color: $caption
+		display: block !important
+		// background-color: green
+.form-error
+	color: $danger;
+	z-index: 1
+	+tr(opacity .3s)
+
+.input
+	&-row
+		font-size: 0
+		margin: 0 -10px
+		.btn
+			margin: 0
+			vertical-align: top
+			width: 100%
+		&.gap-small
+			margin: 0 -7px
+			.input-item
+				padding-left: 7px
+				padding-right: 7px
+		&.gap-search
+			margin: 0 -3.5px
+			.input-item
+				padding-left: 3.5px
+				padding-right: 3.5px
+				&:first-child
+					.input-wrapper,.input-main,.btn
+						border-top-right-radius: 0
+						border-bottom-right-radius: 0
+				&:nth-child(2)
+					.input-wrapper,.input-main,.btn
+						border-radius: 0
+				&:nth-child(3)
+					.input-wrapper,.input-main,.btn
+						border-top-left-radius: 0
+						border-bottom-left-radius: 0
+	&-item
+		display: inline-block
+		vertical-align: top
+		width: 100%
+		padding-left: 10px
+		padding-right: 10px
+		padding-bottom: 20px
+		&.w33
+			width: 33.33%
+		&.w50
+			width: 50%
+	&-wrapper
+		width: 100%
+		display: inline-block
+		position: relative
+		+tr(border .3s)
+		border-radius: 3px;
+		border: 1px solid $inputborder
+		text-align: left
+		z-index: 0
+		// overflow: hidden
+		&:hover
+			border-color: $brandh
+		&.is-open
+			border-color: $dark
+			z-index: 1
+		&.has-error
+			.help
+				opacity: 0
+			border-color: $danger
+			.input-main.error,.CaptionCont
+				border-color: $danger
+			&:hover
+				border-color: $danger
+		&.has-success
+			// .CaptionCont
+			// 	border-color: $brandh
+		// &.has-success:not(:hover)
+		// 	border-bottom-color: transparent
+		textarea
+			line-height: 1.35
+			+rem(padding-bottom,12px)
+			+rem(min-height,151px)
+			border-top:  none
+			border-left:  none
+			outline: none
+			border-right:  none
+
+		select
+			padding-top: 27px
+			border-top: none !important
+			border-left: none !important
+			border-right: none  !important
+		.SumoSelect,.CaptionCont 
+			border-radius: 3px
+	&-main
+		font-family: $f
+		font-weight: 400
+		font-style: normal
+		width: 100%
+		+tr(all .3s)
+		background-color: $white
+		display: block
+		font-size: 16px
+		color: $dark
+		border-color: $inputborder
+		padding-left: 15px
+		padding-right: 37px
+		padding-bottom: 10px
+		padding-top: 28px
+		border-radius: 3px
+		border-bottom: 2px solid transparent
+		&.js-select
+			cursor: pointer
+			&~ .optWrapper
+				top: 100%
+				margin-top: 10px
+				box-shadow: 0px 1px 20px 0px rgba(44, 30, 28, 0.12);
+				border-radius: 3px
+				border: none
+				padding: 15px 15px
+				font-size: 14px
+				ul 
+					max-height: 180px
+					width: 100%
+					overflow-y: auto
+					+scrollbar
+						width: 5px
+					+scrollbar-thumb	
+						background-color: #e0dedd
+					label
+						padding: 10px 8px
+				li.opt
+					border: none
+					+tr(color .3s)
+					position: relative
+					padding: 0 !important
+					+nosel
+					border-radius: 0 !important
+					&.sel 
+						background-color: #e0dedd
+					&:before
+						content: ''
+						display: inline-block
+						+contain
+						+tr(transform .2s)
+						background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAsCAMAAADLhrFKAAAAJ1BMVEVHcEwtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUi0oQZAAAADHRSTlMA7Rs1CWmK21Wmzr/HNujwAAAAyUlEQVR42o2U0Q6EIBADBZZFoP//vRePh42J4vBGMmnaUj3wyQWjpWK0Oka9U9ImRvOYRtHWMi0gJY6qcLRy1Dk6DKM0V05Sob2KmrUhTZirC5t1SSfcq6QO2xJ2kBN2YIM76OGA5FKluegrWJNedpAfzL7t4HS73y80vYzWR7k1uw025RaXC2222eklHXXp3JfkFg7aMxZ5WlkOPofg+ksvB+Oj/xUpfcqG0SXLRkBkoy2pwdHiLdq4LQHkwz/QkCX5/MCnbz/IH2umCWXGP6xgAAAAAElFTkSuQmCC);
+						right: 1px
+						height: 100%
+						top: -1px
+						position: absolute
+						pointer-events: none
+						width: 19px
+						transform: scale(0)
+					&.selected
+						font-weight: bold
+						color: $dark
+						&:before
+							transform: none
+					&:hover
+						color: $brand
+
+		&.valid
+			border-color: $brand
+			& +.CaptionCont 
+				border-color: $brand
+		&:focus 
+			& ~ label,& ~ .label
+				opacity: .4
+		+placeholder
+			color: $placeholder
+			font-family: $f
+		&.date
+			cursor: pointer
+		&.js-filter
+			&~.optWrapper 
+				position: static !important
+			padding-top: 20px
+			padding-bottom: 18px
+			pointer-events: none
+			&~.CaptionCont
+				padding-top: 22px
+				padding-bottom: 18px
+				padding-left: 23px
+				position: static !important
+				cursor: pointer
+				height: auto
+				min-height: 60px
+				padding-right: 15px
+				.placeholder
+					color: $dark
+					font-style: normal
+					font-size: 16px
+					font-weight: 500
+				label
+					bottom: auto
+					height: 60px
+					width: 40px
+					i 
+						margin: auto
+						top: 0
+						right: 0
+						bottom: 0
+						left: 0
+				.search-txt
+					position: static !important
+					border: 1px solid $inputborder
+					line-height: 1
+					font-size: 14px
+					padding-top: 14px
+					padding-bottom: 14px
+					margin-top: 27px
+					background-color: $white
+					border-radius: 30px
+					padding-left: 20px
+					padding-right: 20px
+			&~.optWrapper 
+				border: none !important
+				margin-top: -2px
+				padding-left: 15px
+				ul
+					display: block
+					width: 100%
+					+scrollbar
+						width: 5px
+					+scrollbar-thumb	
+						background-color: #e0dedd
+					max-height: 240px
+					.opt 
+						border: none
+						color: $dark
+						border-radius: 0 !important
+						padding-top: 9px
+						padding-bottom: 9px
+						font-size: 16px
+						&:after
+							content: attr(data-text)
+							display: inline-block
+							position: absolute
+							right: 20px
+							font-family: $f
+							color: $inputborder
+							top: 11px
+							white-space: nowrap
+							font-size: 14px
+						&.sel 
+							background-color: #e0dedd
+						&.selected
+							span i
+								border-color: $brand !important
+								&:before
+									transform: none
+						span
+							width: auto
+							i
+								background: $white
+								border-color: $inputborder
+								box-shadow: none !important
+								margin-left: 0 !important
+								background-image: none !important
+								&:before
+									content: ''
+									position: absolute
+									width: 17px
+									height: 18px
+									top: -5px
+									right: -3px
+									left: auto
+									bottom: auto
+									+contain
+									+tr(transform .3s)
+									transform: scale(0)
+									opacity: 1 !important
+									transform-origin: left bottom
+
+
+
+
+				
+
+	&-icon
+		position: absolute
+		bottom: 0
+		right: 0
+		width: 28px
+		height: 31px
+		svg 
+			height: 18px
+			width: 16px
+		&.swap
+			cursor: pointer
+			svg 
+				overflow: visible
+			.stswap
+				transition: transform .2s ease-in-out
+			&:hover
+				.stswap
+					transition: transform .2s ease-in-out
+					&:nth-of-type(1)
+						transform: translateX(-2px)
+					&:nth-of-type(2)
+						transform: translateX(2px)
+
+	&-label
+		+rem(font-size,12px)
+		font-weight: 400;
+		position: absolute;
+		pointer-events: none;
+		color: $dark
+		top: 7px
+		left: 15px
+		z-index: 1
+		+tr(opacity .3s)
+	&-countdown
+		position: absolute
+		+rem(font-size,12px)
+		font-weight: 400;
+		position: absolute;
+		pointer-events: none;
+		color: $dark
+		top: 7px
+		right: 15px
+		z-index: 1
+		opacity: .4
+	&-dropdown
+		&.active
+			&~.input-dropdown-target
+				opacity: 1
+				visibility: visible 
+		&-target
+			position: absolute
+			left: 0
+			right: 0
+			top: 100%
+			margin-top: 10px;
+			padding: 10px
+			border-radius: 3px
+			transition: opacity .3s, visibility .3s
+			opacity: 0
+			visibility: hidden
+			background-color: $white
+			box-shadow: 0px 1px 20px 0px rgba(44, 30, 28, 0.12);
+		&-content 
+			max-height: 11.25rem;
+			width: 100%;
+			overflow-y: auto
+			+scrollbar
+				width: 5px
+			+scrollbar-thumb	
+				background-color: #e0dedd
+			.option 
+				padding: 10px 0
+				font-size: 16px
+				+nosel
+				+tr(color .3s)
+				cursor: pointer
+				&:hover
+					color: $brand
+				&.active
+					font-weight: 500
+
+				span 
+					padding: 0 10px
+					display: block
+					pointer-events: none
+					
+.SumoSelect
+	background-color: $white
+	&.open 
+		&~.input-label
+			opacity: .4
+		.CaptionCont
+			i 
+				transform: scale(1,-1)
+		&>.search>label, &>.search>span
+			visibility: visible !important
+	.MultiControls
+		.btnCancel
+			display: none !important
+		.btnOk
+			width: auto !important
+			font-size: 14px
+			border-radius: 3px
+			line-height: 1
+			background-color: $brand
+			+tr(background-color .3s)
+			color: $white
+			padding: 15px 50px !important
+			font-family: $f
+			&:hover
+				background-color: $brandh !important
+
+
+.searchinp
+	display: block
+	width: 100%
+	position: relative
+	&-input 
+		display: block
+		width: 100%
+		border-radius: 30px
+		background: 0 0
+		border: 1px solid #564b49
+		color: $white 
+		line-height: 1
+		padding-top: 12px
+		padding-bottom: 12px
+		padding-left: 20px
+		padding-right: 55px
+		+tr(border-color .3s)
+		+placeholder 
+			color: #564b49
+		&:focus
+			border-color: $brand
+	&-btn 
+		position: absolute
+		right: 0
+		top: 0
+		bottom: 0
+		width: 50px
+		color: #c0bcbb
+		+vertical
+		padding-right: 10px
+		+tr(color .3s)
+		border-top-right-radius: 30px
+		border-bottom-right-radius: 30px
+		// padding-bottom: 5px
+		&:hover
+			+notouch
+				color: $white
+		svg 
+			width: 20px
+			height: 20px
+			display: inline-block
+			vertical-align: middle
+			

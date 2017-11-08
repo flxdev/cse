@@ -1,0 +1,7 @@
+ProjectTitle: kse
+
+PageList:
+- file: page.html
+  ready: 10
+- file: page2.html
+  ready: 25
