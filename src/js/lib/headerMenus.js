@@ -14,15 +14,21 @@ export default function header() {
       var _ = $(this),
         id = parseInt(_.data('block'));
 
-      _.on('mouseenter touchstart',debounce(activeBlock));
+      _.on('mouseenter touchmove',debounce(activeBlock));
 
       function activeBlock() {
       	// window.DOM.html.addClass('menu-open')
-        if(targetWrap.find('[data-block='+ id +']').length) {
+      	var filteredBlock = targetWrap.find('[data-block='+ id +']');
+        if(filteredBlock.length) {
           bg.addClass('visible');
           _.addClass('hovered').siblings().removeClass('hovered');
           targetWrap.addClass(shown);
-          targetWrap.find('[data-block='+ id +']').addClass(current).siblings().removeClass(current);
+          filteredBlock.addClass(current).siblings().removeClass(current);
+          if(filteredBlock.find('.header-subnav-content').children().length < 2) {
+          	targetWrap.addClass('block-small');
+          }else{
+          	targetWrap.removeClass('block-small');
+          }
         }else{
           targetWrap.removeClass(shown);
           items.removeClass('hovered');
@@ -31,7 +37,7 @@ export default function header() {
       }
 
     });
-    mainCont.add(targetWrap).on('mouseleave',function() {
+    mainCont.add(targetWrap).on('mouseleave touchstart',function() {
       setTimeout(function() {
         if ($('.js-mainnav-cont:hover').length !== 1 && !$('.header-inner-menu-mainnav:hover').length !== 0 ) {
           targetWrap.removeClass(shown);

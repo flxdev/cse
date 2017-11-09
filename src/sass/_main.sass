@@ -42,6 +42,11 @@ ul
 	li>a 
 		display: inline-block
 		width: 100%
+a[href^="mailto:"],a[href^="skype:"]
+	font-size: 16px
+	color: $brand 
+	&:hover
+		color: $brandh	
 html
 	font-size: 16px
 	line-height: 1
@@ -94,7 +99,7 @@ body,.out
 	font-weight: bold;
 	text-transform: uppercase
 	line-height: 1.261;
-	+tr(color .3s)
+	transition: color .3s, opacity .3s
 	&.h2
 		font-size: 36px
 	&.h3 
@@ -110,6 +115,12 @@ body,.out
 	&.sm 
 		font-size: 16px;
 		line-height: 1.5;
+.caption 
+  font-size: 12px;
+  color: rgba(62, 62, 62, 0.502);
+  line-height: 2;
+
+
 blockquote
 	font-size: 24px;
 	color: $brand
@@ -124,3 +135,19 @@ blockquote
 		font-size: 48px
 		font-style: italic
 		font-family: $f
+
+.block-descr
+	display: inline-block
+	vertical-align: top
+	width: 100%
+	&:not(:last-child)
+		margin-bottom: 10px
+	.caption 
+		display: block
+		width: 100%
+		margin-bottom: 8px
+	.text 
+		margin: 0
+		display: block
+		&:not(:last-child)
+			margin-bottom: 5px

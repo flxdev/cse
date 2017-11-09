@@ -334,6 +334,7 @@
 			&~.input-dropdown-target
 				opacity: 1
 				visibility: visible 
+				transform: none
 		&-target
 			position: absolute
 			left: 0
@@ -342,11 +343,13 @@
 			margin-top: 10px;
 			padding: 10px
 			border-radius: 3px
-			transition: opacity .3s, visibility .3s
+			transition: opacity .3s, visibility .3s, transform .3s
 			opacity: 0
 			visibility: hidden
 			background-color: $white
 			box-shadow: 0px 1px 20px 0px rgba(44, 30, 28, 0.12);
+			transform: scale(0) 
+			transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
 		&-content 
 			max-height: 11.25rem;
 			width: 100%;
@@ -370,6 +373,11 @@
 					padding: 0 10px
 					display: block
 					pointer-events: none
+			.text 
+				font-size: 14px
+				&:not(:first-child)
+					margin-top: 10px
+
 					
 .SumoSelect
 	background-color: $white
@@ -441,3 +449,56 @@
 			display: inline-block
 			vertical-align: middle
 			
+.offersearch
+	font-size: 0
+	width: 100%
+	display: inline-block
+	display: flex
+	flex-flow: row nowrap
+	&-input,&-button
+		// display: inline-block
+		// vertical-align: top
+		height: 45px
+	&-button
+		border-top-left-radius: 0
+		border-bottom-left-radius: 0
+		margin: 0
+		min-width: 195px
+		+r(1400)
+			min-width: 175px
+			span 
+				font-size: 14px
+		.btn-inner
+			padding-left: 0
+			padding-right: 0
+	&-input 
+		border: 1px solid $inputborder
+		border-right: none
+		+tr(border-color .3s)
+		padding-left: 15px
+		padding-right: 15px
+		flex-grow: 1
+		+placeholder 
+			color: #bfbfbf
+		&:hover
+			border-color: $brandh
+		&:focus 
+			border-color: $dark
+			
+		&:not(:valid)
+			&~ .offersearch-button
+				pointer-events: none
+	&-wrap 
+		position: relative
+		.input-dropdown-target
+			width: 100%
+			max-width: 330px
+			padding: 20px
+
+		
+.js-tooltip
+	&.active
+		.input-dropdown-target
+			opacity: 1
+			visibility: visible 
+			transform: none

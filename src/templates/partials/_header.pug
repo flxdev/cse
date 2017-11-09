@@ -8,8 +8,8 @@
 				.header-inner-menu-mainnav
 					a(href="#", data-block='1').header-inner-menu-navitem.js-mainnav Услуги
 					a(href="#", data-block='2').header-inner-menu-navitem.js-mainnav О компании
-					a(href="#", data-block='3').header-inner-menu-navitem.js-mainnav Вопросы и ответы
-					a(href="#", data-block='4').header-inner-menu-navitem.js-mainnav.active Контакты
+					a(href="#").header-inner-menu-navitem.js-mainnav Вопросы и ответы
+					a(href="#").header-inner-menu-navitem.js-mainnav.active Контакты
 				.header-inner-menu-subnav
 					a(href="#").header-inner-menu-subnavitem Акции
 					a(href="#").header-inner-menu-subnavitem Обратная связь
@@ -47,82 +47,63 @@
 									a(href="#") Организация почтовых комнат
 								li
 									a(href="#") Дополнительные услуги
-
 				.header-subnav-item(data-block='2').js-mainnav-item
 					.header-subnav-content
 						.header-subnav-content-mainlinks
-							a(href="#").title.h3.white Доставка в ближнее зарубежье
-							a(href="#").title.h3.white Температурные перевозки
-							a(href="#").title.h3.white Международная доставка
-							a(href="#").title.h3.white Доставка по России
-
-						.header-subnav-content-sublinks
-							ul
-								li 
-									a(href="#") Складские услуги
-								li
-									a(href="#") Организация почтовых комнат
-								li
-									a(href="#") Дополнительные услуги
-							ul
-								li 
-									a(href="#") Доставка по области
-								li
-									a(href="#") Доставка по городу
-								li
-									a(href="#") Интернет-магазинам
-								li
-									a(href="#") Таможенные услуги
-				.header-subnav-item(data-block='3').js-mainnav-item
-					.header-subnav-content
-						.header-subnav-content-mainlinks
-							a(href="#").title.h3.white Доставка по России
-							a(href="#").title.h3.white Доставка в ближнее зарубежье
-							a(href="#").title.h3.white Температурные перевозки
-							a(href="#").title.h3.white Международная доставка
-						.header-subnav-content-sublinks
-							ul
-								li 
-									a(href="#") Доставка по области
-								li
-									a(href="#") Доставка по городу
-								li
-									a(href="#") Интернет-магазинам
-								li
-									a(href="#") Таможенные услуги
-							ul
-								li 
-									a(href="#") Складские услуги
-								li
-									a(href="#") Организация почтовых комнат
-								li
-									a(href="#") Дополнительные услуги
-
-				.header-subnav-item(data-block='4').js-mainnav-item
-					.header-subnav-content
-						.header-subnav-content-mainlinks
-							a(href="#").title.h3.white Доставка по России
-							a(href="#").title.h3.white Доставка в ближнее зарубежье
-							a(href="#").title.h3.white Температурные перевозки
-							a(href="#").title.h3.white Международная доставка
-						.header-subnav-content-sublinks
-							ul
-								li 
-									a(href="#") Доставка по области
-								li
-									a(href="#") Доставка по городу
-								li
-									a(href="#") Интернет-магазинам
-								li
-									a(href="#") Таможенные услуги
-							ul
-								li 
-									a(href="#") Складские услуги
-								li
-									a(href="#") Организация почтовых комнат
-								li
-									a(href="#") Дополнительные услуги
-
+							a(href="#").title.h3.white Новости
+							a(href="#").title.h3.white Франчайзинг
+							a(href="#").title.h3.white Вакансии
+							a(href="#").title.h3.white Закупки
+							a(href="#").title.h3.white Сотрудничество
 
 	.header-inner-top
+		.header-inner-top-wrapper
+			.header-inner-top-search
+				.offersearch-wrap.js-tooltip
+					form(action="/").offersearch
+						input(type="text", placeholder='123-123456789, 457-123456789, ...',required="required").offersearch-input.js-tooltip-trigger.js-growSearch
+						button(type='submit').btn.offersearch-button.color-orange
+							.btn-inner 
+								span Отследить посылку
+					.input-dropdown-target
+						.input-dropdown-content
+							.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX.
+							.text Номер накладной указан под шрихкодом.
+				.header-inner-top-tels
+					.link-icon.primary.country
+						.link-icon-icon
+							+icon('pin')
+						.link-icon-text Санкт-Петербург
+					.country-tels-wrap
+						.country-tels-wrap-inner.js-mousehover
+							a(href="tel:+74957487748") +7 495 748-77-48
+							.input-dropdown-target
+								.input-dropdown-content
+									.block-descr
+										.caption Телефон
+										a(href="tel:+78123321000").text +7 (812) 332-1-000
+									.block-descr
+										.caption Телефон
+										.text Пн-Пт: с 09.00 до 20.00
+										.text Сб-Вс: с 10.00 до 15.00
+									.block-descr
+										.caption E-mail
+										a(href="mailto:cse-spb@cse-spb.ru") cse-spb@cse-spb.ru
+			.header-inner-top-right
+				.header-calc(onclick='').js-mousehover
+					.header-calc-inner
+						.header-calc-content
+							.header-calc-icon
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><style>.stcalc0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;} .stcalc1{fill-rule:evenodd;clip-rule:evenodd;fill:#F47921;} .stcalc2{fill-rule:evenodd;clip-rule:evenodd;fill:#F47920;}</style><path d="M0 15h14v14H2.5C1.1 29 0 27.9 0 26.5V15z" class="stcalc0"/><path d="M15 0h11.5C27.9 0 29 1.1 29 2.5v24c0 1.4-1.1 2.5-2.5 2.5H15V0z" class="stcalc0"/><path d="M2.5 0H14v14H0V2.5C0 1.1 1.1 0 2.5 0z" class="stcalc0"/><path d="M18.5 13h7v1h-7v-1z" class="stcalc1"/><path d="M18.5 15.5h7v1h-7v-1z" class="stcalc1"/><path d="M4 21.5h7v1H4v-1z" class="stcalc1"/><path d="M10.5 6.5h-3v-3h-1v3h-3v1h3v3h1v-3h3z" class="stcalc2"/></svg>
+							.header-calc-text Рассчитать доставку
+								//если внутри будет пусто, спрачется само. Главное, чтобы пустых пробелов не было
+								span 3
+					.input-dropdown-target
+						.input-dropdown-content
+							a(href="#").header-calc-link 
+								span Новый расчёт
+							a(href="#").header-calc-link 
+								span Мои расчёты
+								i 3
+
 //END header
