@@ -116,14 +116,18 @@
 		&-top
 			visibility: visible
 			height: 95px
-			display: inline-block
-			vertical-align: top
-			width: calc(100% - 290px)
 			background-color: $white
 			box-shadow: 0px 1px 21px 0px rgba(0, 0, 0, 0.08);
 			+tr(transform .3s)
-			+r(1300)
-				width: calc(100% - 240px)
+			width: 100%
+
+			&-container
+				display: inline-block
+				vertical-align: top
+				width: calc(100% - 290px)
+				height: 100%
+				+r(1300)
+					width: calc(100% - 240px)
 			&-wrapper
 				width: 100%
 				height: 100%
@@ -440,7 +444,139 @@
 					
 
 
+.city
+	&-modal
+		height: calc(100% - 95px)
+		visibility: visible
+		background-color: $white
+		position: relative
+		z-index: -1
+		padding-top: 40px
+		overflow: hidden
+		+tr(transform .35s ease-in-out)
+		transform: translateY(-150%)
+		&.open
+			transform: none
+		&-close
+			text-align: right
+
+			&-icon 
+				display: inline-block
+				width: 32px
+				height: 32px
+				cursor: pointer
+				color: $dark
+				+tr(color .3s)
+				&:hover
+					color: $brand
+		&-container
+			display: flex 
+			width: 100%
+			flex-flow: column nowrap
+			height: 100%
+		&-head 
+			padding-left: 30px
+			padding-right: 30px
+			flex-shrink: 0
+			flex-grow: 0
+			font-size: 0
+			padding-bottom: 35px
+			&>div
+				display: inline-block
+				vertical-align: middle
+				width: 50%
+			+r(1150)
+				padding-left: 20px
+				padding-right: 20px
+		&-content
+			padding-left: 30px
+			flex-grow: 1
+			// height: 100%
+			display: flex
+			position: relative
+			flex-direction: column nowrap
+			z-index: 0
+			+r(1150)
+				padding-left: 20px
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				left: 0
+				bottom: 0px
+				right: 20px
+				height: 80px
+				z-index: 2
+				pointer-events: none
+				background-image: linear-gradient(180deg,rgba(255,255,255,.4) 0,#fff 100%);
+			&-scroll
+				position: relative
+				z-index: 1
+				width: 100%
+				max-height: 100%
+				flex-grow: 1
+				flex-direction: column nowrap
+				overflow-y: scroll !important
+				overflow-x: hidden;
+			&-inner
+				right: 0
+				position: absolute
+				display: block
+				top: 0
+				width: 100%
+				left: 0
+				column-count: 5;
+				column-gap: 10px;
+				padding-bottom: 80px
+				font-size: 0	
+
+	&-elem 
+		margin: 0 0 20px;
+		padding: 0 0 0 30px;
+		position: relative;
+		top: auto;
+		right: auto;
+		bottom: auto;
+		left: auto;
+		display: flex
+		&.hide 
+			display: none
+		&-letter
+			font-size: 24px
+			font-weight: 500
+			line-height: 1
+			position: absolute
+			left: 0
+			top: 3px
+			color: $brand
+			text-transform: uppercase
+		&-list
+			// padding-left: 20px
+			a 
+				display: block
+				font-size: 14px
+				line-height: 1.429
+				color: $dark
+				padding-top: 7px
+				padding-bottom: 7px
+				&.hide 
+					display: none
+					
+				&:hover
+					+notouch
+						color: $brand 
+				&:active
+					color: $brandh
+
+
 			
+
+
+
+
+
+		
+
 
 
 

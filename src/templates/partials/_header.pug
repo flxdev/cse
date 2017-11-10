@@ -56,54 +56,312 @@
 							a(href="#").title.h3.white Закупки
 							a(href="#").title.h3.white Сотрудничество
 
-	.header-inner-top
-		.header-inner-top-wrapper
-			.header-inner-top-search
-				.offersearch-wrap.js-tooltip
-					form(action="/").offersearch
-						input(type="text", placeholder='123-123456789, 457-123456789, ...',required="required").offersearch-input.js-tooltip-trigger.js-growSearch
-						button(type='submit').btn.offersearch-button.color-orange
-							.btn-inner 
-								span Отследить посылку
-					.input-dropdown-target
-						.input-dropdown-content
-							.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX.
-							.text Номер накладной указан под шрихкодом.
-				.header-inner-top-tels
-					.link-icon.primary.country
-						.link-icon-icon
-							+icon('pin')
-						.link-icon-text Санкт-Петербург
-					.country-tels-wrap
-						.country-tels-wrap-inner.js-mousehover
-							a(href="tel:+74957487748") +7 495 748-77-48
-							.input-dropdown-target
-								.input-dropdown-content
-									.block-descr
-										.caption Телефон
-										a(href="tel:+78123321000").text +7 (812) 332-1-000
-									.block-descr
-										.caption Телефон
-										.text Пн-Пт: с 09.00 до 20.00
-										.text Сб-Вс: с 10.00 до 15.00
-									.block-descr
-										.caption E-mail
-										a(href="mailto:cse-spb@cse-spb.ru") cse-spb@cse-spb.ru
-			.header-inner-top-right
-				.header-calc(onclick='').js-mousehover
-					.header-calc-inner
-						.header-calc-content
-							.header-calc-icon
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><style>.stcalc0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;} .stcalc1{fill-rule:evenodd;clip-rule:evenodd;fill:#F47921;} .stcalc2{fill-rule:evenodd;clip-rule:evenodd;fill:#F47920;}</style><path d="M0 15h14v14H2.5C1.1 29 0 27.9 0 26.5V15z" class="stcalc0"/><path d="M15 0h11.5C27.9 0 29 1.1 29 2.5v24c0 1.4-1.1 2.5-2.5 2.5H15V0z" class="stcalc0"/><path d="M2.5 0H14v14H0V2.5C0 1.1 1.1 0 2.5 0z" class="stcalc0"/><path d="M18.5 13h7v1h-7v-1z" class="stcalc1"/><path d="M18.5 15.5h7v1h-7v-1z" class="stcalc1"/><path d="M4 21.5h7v1H4v-1z" class="stcalc1"/><path d="M10.5 6.5h-3v-3h-1v3h-3v1h3v3h1v-3h3z" class="stcalc2"/></svg>
-							.header-calc-text Рассчитать доставку
-								//если внутри будет пусто, спрачется само. Главное, чтобы пустых пробелов не было
-								span 3
-					.input-dropdown-target
-						.input-dropdown-content
-							a(href="#").header-calc-link 
-								span Новый расчёт
-							a(href="#").header-calc-link 
-								span Мои расчёты
-								i 3
-
+	.header-inner-top-container
+		.header-inner-top
+			.header-inner-top-wrapper
+				.header-inner-top-search
+					.offersearch-wrap.js-tooltip
+						form(action="/").offersearch
+							input(type="text", placeholder='123-123456789, 457-123456789, ...',required="required").offersearch-input.js-tooltip-trigger.js-growSearch
+							button(type='submit').btn.offersearch-button.color-orange
+								.btn-inner 
+									span Отследить посылку
+						.input-dropdown-target
+							.input-dropdown-content
+								.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX.
+								.text Номер накладной указан под шрихкодом.
+					.header-inner-top-tels
+						.link-icon.primary.country.js-city-select
+							.link-icon-icon
+								+icon('pin')
+							.link-icon-text Санкт-Петербург
+						.country-tels-wrap
+							.country-tels-wrap-inner.js-mousehover
+								a(href="tel:+74957487748") +7 495 748-77-48
+								.input-dropdown-target
+									.input-dropdown-content
+										.block-descr
+											.caption Телефон
+											a(href="tel:+78123321000").text +7 (812) 332-1-000
+										.block-descr
+											.caption Телефон
+											.text Пн-Пт: с 09.00 до 20.00
+											.text Сб-Вс: с 10.00 до 15.00
+										.block-descr
+											.caption E-mail
+											a(href="mailto:cse-spb@cse-spb.ru") cse-spb@cse-spb.ru
+				.header-inner-top-right
+					.header-calc(onclick='').js-mousehover
+						.header-calc-inner
+							.header-calc-content
+								.header-calc-icon
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><style>.stcalc0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;} .stcalc1{fill-rule:evenodd;clip-rule:evenodd;fill:#F47921;} .stcalc2{fill-rule:evenodd;clip-rule:evenodd;fill:#F47920;}</style><path d="M0 15h14v14H2.5C1.1 29 0 27.9 0 26.5V15z" class="stcalc0"/><path d="M15 0h11.5C27.9 0 29 1.1 29 2.5v24c0 1.4-1.1 2.5-2.5 2.5H15V0z" class="stcalc0"/><path d="M2.5 0H14v14H0V2.5C0 1.1 1.1 0 2.5 0z" class="stcalc0"/><path d="M18.5 13h7v1h-7v-1z" class="stcalc1"/><path d="M18.5 15.5h7v1h-7v-1z" class="stcalc1"/><path d="M4 21.5h7v1H4v-1z" class="stcalc1"/><path d="M10.5 6.5h-3v-3h-1v3h-3v1h3v3h1v-3h3z" class="stcalc2"/></svg>
+								.header-calc-text Рассчитать доставку
+									//если внутри будет пусто, спрачется само. Главное, чтобы пустых пробелов не было
+									span 3
+						.input-dropdown-target
+							.input-dropdown-content
+								a(href="#").header-calc-link 
+									span Новый расчёт
+								a(href="#").header-calc-link 
+									span Мои расчёты
+									i 3
+		.city-modal.js-city-select-target
+			.city-modal-container
+				.city-modal-head
+					.city-modal-head-search
+						form(action="/").searchinp.darken
+							input(type="text" placeholder='Найдите свой город').searchinp-input.js-city-select-input
+							button(type='button').searchinp-btn
+								+icon('search')
+					.city-modal-close
+						.city-modal-close-icon.js-city-select-close
+							+icon('closemodal')
+				.city-modal-content
+					.city-modal-content-scroll
+						.city-modal-content-inner.js-city-select-containter
+							.city-elem
+								.city-elem-letter
+									|a
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Абакан
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Альметьевск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Ангарск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Арзамас
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Армавир
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Артем
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Архангельск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Астрахань
+							.city-elem
+								.city-elem-letter
+									|б
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Балаково
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Барнаул
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Белгород
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Бердск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Бийск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Биробиджан
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Благовещенск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Братск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Брянск
+							.city-elem
+								.city-elem-letter
+									|в
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') В. Новгород
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Воронеж
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Выборг
+							.city-elem
+								.city-elem-letter
+									|д
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Дзержинск
+							.city-elem
+								.city-elem-letter
+									|е
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Екатеринбург
+							.city-elem
+								.city-elem-letter
+									|з
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Златоуст
+							.city-elem
+								.city-elem-letter
+									|и
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Иваново
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Ижевск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Иркутск
+							.city-elem
+								.city-elem-letter
+									|к
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Казань
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Калининград
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Калуга
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Кемерово
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Киров
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Ковров
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Комсомольск-на-Амуре
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Кострома
+							.city-elem
+								.city-elem-letter
+									|л
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Ленинск-Кузнецкий
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Липецк
+							.city-elem
+								.city-elem-letter
+									|м
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Магнитогорск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Майкоп
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Махачкала
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Москва
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Московская область
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Мурманск
+							.city-elem
+								.city-elem-letter
+									|н
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Набережные Челны
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Находка
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Нижнекамск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Нижний Новгород
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Нижний Тагил
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Новокузнецк
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Новомосковск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Новороссийск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Новосибирск
+							.city-elem
+								.city-elem-letter
+									|п
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Пенза
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Пермь
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Петрозаводск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Петропавловск-Камчатский
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Псков
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Пятигорск
+							.city-elem
+								.city-elem-letter
+									|р
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Ростов-на-Дону
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Рыбинск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Рязань
+							.city-elem
+								.city-elem-letter
+									|с
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Самара
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Санкт-Петербург
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Саранск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Саратов
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Смоленск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Сочи
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Ставрополь
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Старый Оскол
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Стерлитамак
+							.city-elem
+								.city-elem-letter
+									|т
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Тамбов
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Тверь
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Тольятти
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Томск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Тула
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Тюмень
+							.city-elem
+								.city-elem-letter
+									|у
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Улан-Удэ
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Ульяновск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Уссурийск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Уфа
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Ухта
+							.city-elem
+								.city-elem-letter
+									|х
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Хабаровск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Ханты-Мансийск
+							.city-elem
+								.city-elem-letter
+									|ч
+								ul.city-elem-list
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Чебоксары
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Челябинск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Черкесск
+									li 
+										a(href="#",rel="noopener noreferrer",data-region-id='') Чита
 //END header
