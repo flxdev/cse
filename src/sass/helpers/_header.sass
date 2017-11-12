@@ -457,6 +457,18 @@
 		transform: translateY(-150%)
 		&.open
 			transform: none
+		&-notfound
+			display: block
+			margin-top: 10px
+			text-align: left
+			width: 100%
+			.text
+				text-align: left
+				display: block
+				
+			&.hide
+				display: none
+				
 		&-close
 			text-align: right
 
@@ -485,6 +497,8 @@
 				display: inline-block
 				vertical-align: middle
 				width: 50%
+			.searchinp-btn
+				pointer-events: none
 			+r(1150)
 				padding-left: 20px
 				padding-right: 20px
@@ -516,7 +530,7 @@
 				max-height: 100%
 				flex-grow: 1
 				flex-direction: column nowrap
-				overflow-y: scroll !important
+				overflow-y: auto !important
 				overflow-x: hidden;
 			&-inner
 				right: 0
@@ -528,7 +542,10 @@
 				column-count: 5;
 				column-gap: 10px;
 				padding-bottom: 80px
-				font-size: 0	
+				font-size: 0
+			
+				+r(1300)
+					column-count: 4;
 
 	&-elem 
 		margin: 0 0 20px;
@@ -539,6 +556,8 @@
 		bottom: auto;
 		left: auto;
 		display: flex
+		break-inside: avoid-column;
+		
 		&.hide 
 			display: none
 		&-letter

@@ -466,6 +466,9 @@
                     </div>
                     <div class="city-modal-content">
                       <div class="city-modal-content-scroll">
+                        <div class="city-modal-notfound js-city-select-notfound hide">
+                          <div class="text">Не найдено</div>
+                        </div>
                         <div class="city-modal-content-inner js-city-select-containter">
                           <div class="city-elem">
                             <div class="city-elem-letter">a</div>
@@ -1224,7 +1227,78 @@
       </div>
     </div>
     <!--END out-->
-    <div class="modals"></div>
+    <div class="modals">
+      <div class="modal-layout" data-modal="search">
+        <div class="modal-container">
+          <div class="modal-container-header">
+            <div class="modal-container-header-search">
+              <form class="searchinp darken" action="/">
+                <input class="searchinp-input" type="text" placeholder="Найдите свой город">
+                <button class="searchinp-btn" type="button">
+                  <svg class="icon-search">
+                    <use xlink:href="#search"></use>
+                  </svg>
+                </button>
+              </form>
+            </div>
+            <div class="modal-container-header-close closePopup">
+              <div class="small-link">
+                <svg class="icon-closemodal">
+                  <use xlink:href="#closemodal"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="modal-container-content">
+            <div class="city-modal-content-scroll">
+              <div class="search-result-wrap">
+                <a class="search-result-item" href="#">
+                  <div class="search-result-item-num">
+                    <div class="text sm">1.</div>
+                  </div>
+                  <div class="search-result-item-content">
+                    <div class="text bold sm">
+                      <b>Международная </b>доставка</div>
+                    <div class="text sm">Выход на
+                      <b>международный </b>уровень — важный шаг в развитии бизнеса. Его успешность зависит от качества реализации грузо- и документооборота с зарубежными партнерами.</div>
+                    <div class="caption">Услуги</div>
+                  </div>
+                </a>
+                <a class="search-result-item" href="#">
+                  <div class="search-result-item-num">
+                    <div class="text sm">2.</div>
+                  </div>
+                  <div class="search-result-item-content">
+                    <div class="text bold sm">Экспорт</div>
+                    <div class="text sm">Наше решение – это комбинация
+                      <b>международного </b>опыта наших зарубежных партнеров по доставке, наш многолетний опыт таможенного оформления и широкая география доставки в России. </div>
+                    <div class="caption">Международная доставка</div>
+                  </div>
+                </a>
+                <a class="search-result-item" href="#">
+                  <div class="search-result-item-num">
+                    <div class="text sm">2.</div>
+                  </div>
+                  <div class="search-result-item-content">
+                    <div class="text bold sm">Импорт</div>
+                    <div class="text sm">Выгодный тариф на
+                      <b>международную </b>доставку с отличным транзитным временем. Отправляйте документы и грузы. Хоть на край света! </div>
+                    <div class="caption">Международная доставка</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-container-footer align-right">
+            <div class="btn type-round">
+              <div class="btn-inner">
+                <span>Все результаты</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--LOAD SCRIPTS-->
     <script type="text/javascript" src="js/app.js"></script>
   </body>

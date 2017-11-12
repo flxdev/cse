@@ -4,6 +4,7 @@ export default function CitySelect() {
   this.input = document.querySelector('.js-city-select-input');
   this.container = document.querySelector('.js-city-select-containter');
   this.close = document.querySelector('.js-city-select-close');
+  this.notfound = document.querySelector('.js-city-select-notfound');
   this.init();
 
 }
@@ -33,7 +34,7 @@ CitySelect.prototype = {
   	let self = this;
   	let items =  Array.from(this.container.querySelectorAll('.city-elem'));
   	let links =  Array.from(this.container.querySelectorAll('a'));
-
+    let itemsCount = items.length;
   	window.DOM.addListenerMulti(self.input,'change keyup',() => {
 
   		let filter = self.input.value.toLowerCase();
@@ -42,11 +43,12 @@ CitySelect.prototype = {
   		 	let text = item.textContent;
   		 	text.toLowerCase().indexOf(filter) || text === '' ? item.classList.add('hide') : item.classList.remove('hide');
   		 });
+      let nomatches = 0;
   		items.forEach((item) => {
-  			let itemsleng = item.querySelectorAll('a:not(.hidden)');
-  			console.log(itemsleng);
-       		itemsleng.length>0 ? item.classList.remove('hide') :item.classList.add('hide');
+  			let itemsleng = item.querySelectorAll('a:not(.hide)');
+       		itemsleng.length > 0 ? (item.classList.remove('hide'),nomatches = 1) : item.classList.add('hide');
   		});
+      nomatches === 1 ? this.notfound.classList.add('hide') : this.notfound.classList.remove('hide');
   	});
   }
 };

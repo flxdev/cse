@@ -7,7 +7,7 @@ import validateForms from './lib/jqValidator';
 import validateLength from './lib/lengthValidation';
 import select from './lib/selects';
 import header from './lib/headerMenus';
-import CitySelect from './lib/citySearch';
+import CitySelect from './lib/CitySelect';
 import './lib/addlistener';
 
 // replacement for domcontentloaded event

@@ -1,0 +1,53 @@
+.modal-layout(data-modal='search')
+	.modal-container
+		.modal-container-header
+			.modal-container-header-search
+				form(action="/").searchinp.darken
+					input(type="text" placeholder='Найдите свой город').searchinp-input
+					button(type='button').searchinp-btn
+						+icon('search')
+			.modal-container-header-close.closePopup
+				.small-link
+					+icon('closemodal')
+		.modal-container-content
+			.city-modal-content-scroll
+				.search-result-wrap
+					a(href="#").search-result-item
+						.search-result-item-num
+							.text.sm
+								|1.
+						.search-result-item-content
+								.text.bold.sm
+									b Международная 
+									|доставка
+								.text.sm
+									|Выход на 
+									b международный 
+									|уровень — важный шаг в развитии бизнеса. Его успешность зависит от качества реализации грузо- и документооборота с зарубежными партнерами.
+								.caption Услуги
+					a(href="#").search-result-item
+						.search-result-item-num
+							.text.sm
+								|2.
+						.search-result-item-content
+								.text.bold.sm Экспорт
+								.text.sm
+									|Наше решение – это комбинация 
+									b международного 
+									|опыта наших зарубежных партнеров по доставке, наш многолетний опыт таможенного оформления  и широкая география доставки в России. 
+								.caption Международная доставка
+					a(href="#").search-result-item
+						.search-result-item-num
+							.text.sm
+								|2.
+						.search-result-item-content
+								.text.bold.sm Импорт
+								.text.sm
+									|Выгодный тариф на 
+									b международную 
+									|доставку с отличным транзитным временем. Отправляйте документы и грузы. Хоть на край света! 
+								.caption Международная доставка
+		.modal-container-footer.align-right
+			.btn.type-round
+				.btn-inner 
+					span Все результаты
