@@ -11,7 +11,8 @@
 	height: 100%
 	&.is-hidden
 		.header-inner-top
-			transform: translateY(-100%)
+			+rm(997)
+				transform: translateY(-100%)
 .header
 	&-bg 
 		position: fixed
@@ -27,10 +28,14 @@
 		&.visible 
 			opacity: 1
 			visibility: visible
+		+r(996)
+			top: 65px
 	&-inner
 		width: 100%
 		height: 100%
 		font-size: 0
+		+r(996)
+			position: relative
 		&-menu
 			height: 100%
 			width: 290px
@@ -41,6 +46,16 @@
 			z-index: 2
 			+r(1300)
 				width: 240px
+			+r(996)
+				+tr(transform .3s)
+				width: 100%
+				max-width: 350px
+				position: absolute
+				left: 0
+				top: 65px
+
+				&:not(.active)
+					transform: translateX(-100%)
 			&-inner
 				width: 100%
 				height: 100%
@@ -50,12 +65,16 @@
 				white-space: normal
 				background-color: $dark
 				overflow-y: auto
-				
+				+r(996)
+					padding-top: 30px
 			&-logo
 				height: 95px
 				display: inherit
 				padding: 28px 30px 20px
 				flex-shrink: 0
+				+r(996)
+					display: none
+					
 				svg
 					height: 35.5px
 					width: 132px
@@ -113,6 +132,9 @@
 					// transition-delay: .2s
 			&-search
 				padding: 0 30px 40px 30px
+				+r(996)
+					display: none
+					
 		&-top
 			visibility: visible
 			height: 95px
@@ -120,7 +142,9 @@
 			box-shadow: 0px 1px 21px 0px rgba(0, 0, 0, 0.08);
 			+tr(transform .3s)
 			width: 100%
-
+			+r(996)
+				height: 65px
+				position: relative
 			&-container
 				display: inline-block
 				vertical-align: top
@@ -128,6 +152,8 @@
 				height: 100%
 				+r(1300)
 					width: calc(100% - 240px)
+				+r(996)
+					width: 100%
 			&-wrapper
 				width: 100%
 				height: 100%
@@ -153,17 +179,48 @@
 				flex-flow: row nowrap
 				justify-content: space-between
 				align-items: center
+				+r(996)
+					position: relative
 				.offersearch-wrap
 					width: 55%
 					+tr(flex-grow .3s)
 					padding-right: 30px
 					+r(1150)
 						padding-right: 20px
+					+r(996)
+						position: absolute
+						top: 100%
+						left: 0
+						background-color: $white
+						left: -20px
+						right: -65px
+						padding: 20px
+						width: auto
+						z-index: -2
+						transition: transform .3s, visibility .3s, opacity .3s
+						transform: translateY(-100%)
+						visibility: hidden
+						opacity: 0
+						&.active
+							transform: none
+							visibility: visible
+							opacity: 1
+						.input-dropdown-target
+							position: static
+							opacity: 1
+							transform: none
+							visibility: visible
+							width: 100%
+							max-width: 100%
+							box-shadow: none
+							padding-left: 0
+							padding-right: 0
 				&.search-focus
 					.offersearch-wrap
 						flex-grow: 1
 					.header-inner-top-tels
-						display: none
+						+rm(997)
+							display: none
 						
 
 	&-subnav 
@@ -274,6 +331,8 @@
 		cursor: pointer
 		+r(1150)
 			width: 100px
+		+r(996)
+			width: 65px
 		.input-dropdown-target
 			margin-top: 0
 			right: 0
@@ -455,6 +514,10 @@
 		overflow: hidden
 		+tr(transform .35s ease-in-out)
 		transform: translateY(-150%)
+		+r(996)
+			height: calc(100% - 65px)
+		+r(800)
+			padding-top: 25px
 		&.open
 			transform: none
 		&-notfound
@@ -471,7 +534,7 @@
 				
 		&-close
 			text-align: right
-
+			
 			&-icon 
 				display: inline-block
 				width: 32px
@@ -479,6 +542,8 @@
 				cursor: pointer
 				color: $dark
 				+tr(color .3s)
+				+r(800)
+					padding: 5px
 				&:hover
 					color: $brand
 		&-container
@@ -493,6 +558,18 @@
 			flex-grow: 0
 			font-size: 0
 			padding-bottom: 35px
+			+r(800)
+
+				display: flex
+				flex-flow: row nowrap
+				align-items: center
+				&>div
+					display: inherit
+					width: auto
+			&-search 
+				+r(800)
+					flex-grow: 1
+					padding-right: 15px
 			&>div
 				display: inline-block
 				vertical-align: middle
@@ -532,6 +609,11 @@
 				flex-direction: column nowrap
 				overflow-y: auto !important
 				overflow-x: hidden;
+				.city-modal-content-inner
+					+r(800)
+						column-count: 3
+					+r(600)
+						column-count: 1 !important
 			&-inner
 				right: 0
 				position: absolute
@@ -543,9 +625,8 @@
 				column-gap: 10px;
 				padding-bottom: 80px
 				font-size: 0
-			
 				+r(1300)
-					column-count: 4;
+					column-count: 4
 
 	&-elem 
 		margin: 0 0 20px;
@@ -586,7 +667,100 @@
 						color: $brand 
 				&:active
 					color: $brandh
+.header-mobnav
+	font-size: 0
+	&-btn 
+		cursor: pointer;
+		+rm(997)
+			display: none
+		&.active
+			.navTrigger i 
+				&:first-child
+					animation: inT .8s forwards
+				&:nth-child(2)
+					animation: inM .8s forwards
+				&:nth-child(3)
+					animation: inBtm .8s forwards
+	&-btn 
+		.header-mobnav-inner
+			+vertical
+			text-align: right
+		&.active
+			z-index: 10
+		.navTrigger
+			+rem(width,27px)
+			+rem(height,23px)
+			margin: auto;
+			display: inline-block
+			vertical-align: middle
+			will-change: transform;
+			i 
+				background-color: $dark;
+				content: "";
+				display: block;
+				width: 100%;
+				height: 3px;
+				&:first-child
+					animation: outT .8s backwards;
+					animation-direction: reverse;
+				&:nth-child(2)
+					margin: 7px 0;
+					animation: outM .8s backwards;
+					animation-direction: reverse;
+				&:nth-child(3)
+					animation: outBtm .8s backwards;
+					animation-direction: reverse;
+		svg 
+			width: 32px
+			height: 32px
 
+
+@keyframes inM
+	50%
+		transform: rotate(0deg)
+		opacity: 1
+	100%
+		transform: rotate(45deg)
+
+@keyframes outM
+	50%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(45deg)
+
+@keyframes inT
+	0%
+		transform: translateY(0px) rotate(0deg)
+		opacity: 1
+	50%
+		transform: translateY(10px) rotate(0deg)
+	100%
+		transform: translateY(10px) rotate(135deg)
+
+@keyframes outT
+	0%
+		transform: translateY(0px) rotate(0deg)
+	50%
+		transform: translateY(10px) rotate(0deg)
+	100%
+		transform: translateY(10px) rotate(135deg)
+
+@keyframes inBtm
+	0%
+		transform: translateY(0px) rotate(0deg)
+		opacity: 1
+	50%
+		transform: translateY(-10px) rotate(0deg)
+	100%
+		transform: translateY(-10px) rotate(135deg)
+
+@keyframes outBtm
+	0%
+		transform: translateY(0px) rotate(0deg)
+	50%
+		transform: translateY(-10px) rotate(0deg)
+	100%
+		transform: translateY(-10px) rotate(135deg)    
 
 			
 

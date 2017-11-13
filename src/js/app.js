@@ -8,7 +8,10 @@ import validateLength from './lib/lengthValidation';
 import select from './lib/selects';
 import header from './lib/headerMenus';
 import CitySelect from './lib/CitySelect';
-import './lib/addlistener';
+import SearchModal from './lib/SearchModal';
+import Modals from './lib/Modals';
+import Menu from './lib/MobileMenus';
+
 
 // replacement for domcontentloaded event
 function ready(fn) {
@@ -24,12 +27,11 @@ function Tooltipshow() {
  		let _ = $(this),
  			trigger = _.find('.js-tooltip-trigger');
  		trigger.focus( () => {
- 			_.addClass('active');
+ 			_.addClass('toltip-shown');
  		}).on('input blur',() => {
- 			_.removeClass('active');
+ 			_.removeClass('toltip-shown');
  		});
  	});
-
 }
 function growSerch() {
  	let inputWrap = $('.js-growSearch');
@@ -146,6 +148,9 @@ ready(() => {
   mouseHover();
   growSerch();
   var City = new CitySelect();
+  SearchModal();
+  Modals();
+  Menu();
 });
 
 

@@ -1,6 +1,6 @@
 //BEGIN header
 .header-inner
-	.header-inner-menu
+	.header-inner-menu(data-menutarget='mainmenu')
 		.header-inner-menu-inner
 			a(href="#").header-inner-menu-logo
 				+icon('logo')
@@ -17,7 +17,7 @@
 					a(href="#").header-inner-menu-subnavitem.active In English
 			.header-inner-menu-search
 				form(action="/").searchinp
-					input(type="text" placeholder='Поиск по сайту').searchinp-input
+					input(type="text" placeholder='Поиск по сайту').searchinp-input.js-searchmodal-input
 					button(type='button').searchinp-btn
 						+icon('search')
 		.header-bg
@@ -60,7 +60,16 @@
 		.header-inner-top
 			.header-inner-top-wrapper
 				.header-inner-top-search
-					.offersearch-wrap.js-tooltip
+					.header-mobnav-btn.js-menu(data-menu='mainmenu')
+						.header-mobnav-inner
+							.navTrigger
+								i
+								i
+								i
+					.header-mobnav-btn.track.js-menu(data-menu='track')
+						.header-mobnav-inner
+							+icon('track')
+					.offersearch-wrap.js-tooltip(data-menutarget='track')
 						form(action="/").offersearch
 							input(type="text", placeholder='123-123456789, 457-123456789, ...',required="required").offersearch-input.js-tooltip-trigger.js-growSearch
 							button(type='submit').btn.offersearch-button.color-orange

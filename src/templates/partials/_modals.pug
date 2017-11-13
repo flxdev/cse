@@ -1,9 +1,9 @@
-.modal-layout(data-modal='search')
+.modal-layout(data-modal='search').js-popup-container
 	.modal-container
 		.modal-container-header
 			.modal-container-header-search
 				form(action="/").searchinp.darken
-					input(type="text" placeholder='Найдите свой город').searchinp-input
+					input(type="text" placeholder='Найдите свой город').searchinp-input.js-searchmodal-targetinput
 					button(type='button').searchinp-btn
 						+icon('search')
 			.modal-container-header-close.closePopup

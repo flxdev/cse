@@ -239,6 +239,10 @@
           <path d="M12.7 12.4l6 5.5" class="st0" />
           <path d="M7.6 1.5c3.3 0 6.1 2.7 6.1 6s-2.7 6-6.1 6-6.1-2.7-6.1-6 2.7-6 6.1-6m0-1.5C3.4 0 0 3.4 0 7.5 0 11.7 3.4 15 7.6 15s7.6-3.4 7.6-7.5C15.1 3.4 11.7 0 7.6 0z" class="st1" />
         </symbol>
+        <symbol id="track" viewBox="0 0 20.81 20.81">
+          <path fill="none" stroke="currentcolor" d="M9.34 20.31L.5 15.85V4.31l8.84 3.78v12.22zm8.83-9.19V4.31L9.34 8.09v12.22l5.81-3.17" stroke-linecap="round" stroke-linejoin="round" />
+          <path fill="none" stroke="currentcolor" d="M9.34 8.08l8.83-3.77L9.34.5.5 4.31l8.84 3.77zM5.42 2.2l8.4 3.97m5.46 7.57a3.4 3.4 0 1 1-1.23-2.62 3.4 3.4 0 0 1 1.23 2.62zm1.03 4.29l-1.96-1.96" stroke-linecap="round" stroke-linejoin="round" />
+        </symbol>
       </svg>
     </div>
     <!--BEGIN out-->
@@ -248,7 +252,7 @@
           <header class="page__header--wrap">
             <!--BEGIN header-->
             <div class="header-inner">
-              <div class="header-inner-menu">
+              <div class="header-inner-menu" data-menutarget="mainmenu">
                 <div class="header-inner-menu-inner">
                   <a class="header-inner-menu-logo" href="#">
                     <svg class="icon-logo">
@@ -271,7 +275,7 @@
                   </div>
                   <div class="header-inner-menu-search">
                     <form class="searchinp" action="/">
-                      <input class="searchinp-input" type="text" placeholder="Поиск по сайту">
+                      <input class="searchinp-input js-searchmodal-input" type="text" placeholder="Поиск по сайту">
                       <button class="searchinp-btn" type="button">
                         <svg class="icon-search">
                           <use xlink:href="#search"></use>
@@ -338,7 +342,23 @@
                 <div class="header-inner-top">
                   <div class="header-inner-top-wrapper">
                     <div class="header-inner-top-search">
-                      <div class="offersearch-wrap js-tooltip">
+                      <div class="header-mobnav-btn js-menu" data-menu="mainmenu">
+                        <div class="header-mobnav-inner">
+                          <div class="navTrigger">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="header-mobnav-btn track js-menu" data-menu="track">
+                        <div class="header-mobnav-inner">
+                          <svg class="icon-track">
+                            <use xlink:href="#track"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="offersearch-wrap js-tooltip" data-menutarget="track">
                         <form class="offersearch" action="/">
                           <input class="offersearch-input js-tooltip-trigger js-growSearch" type="text" placeholder="123-123456789, 457-123456789, ..." required="required">
                           <button class="btn offersearch-button color-orange" type="submit">
@@ -838,12 +858,12 @@
     </div>
     <!--END out-->
     <div class="modals">
-      <div class="modal-layout" data-modal="search">
+      <div class="modal-layout js-popup-container" data-modal="search">
         <div class="modal-container">
           <div class="modal-container-header">
             <div class="modal-container-header-search">
               <form class="searchinp darken" action="/">
-                <input class="searchinp-input" type="text" placeholder="Найдите свой город">
+                <input class="searchinp-input js-searchmodal-targetinput" type="text" placeholder="Найдите свой город">
                 <button class="searchinp-btn" type="button">
                   <svg class="icon-search">
                     <use xlink:href="#search"></use>
