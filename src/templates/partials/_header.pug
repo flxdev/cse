@@ -1,6 +1,19 @@
 //BEGIN header
 .header-inner
 	.header-inner-menu(data-menutarget='mainmenu')
+		.header-inner-menu-mobnav
+			.header-inner-top-search
+				a(href="#").header-inner-top-logo.show-mobile
+					+icon('logo')
+
+				.header-mobnav-btn.track.js-popup-button(data-modal='search')
+					.header-mobnav-inner
+						+icon('search')
+				.header-mobnav-btn.mobilenav.js-menucloseback.active
+					.header-mobnav-inner
+						.navTriggersm
+							i
+							i
 		.header-inner-menu-inner
 			a(href="#").header-inner-menu-logo
 				+icon('logo')
@@ -60,26 +73,35 @@
 		.header-inner-top
 			.header-inner-top-wrapper
 				.header-inner-top-search
+					//мобильные кнопки
 					.header-mobnav-btn.js-menu(data-menu='mainmenu')
 						.header-mobnav-inner
 							.navTrigger
 								i
 								i
 								i
+
+					a(href="#").header-inner-top-logo.show-mobile
+						+icon('logo')
 					.header-mobnav-btn.track.js-menu(data-menu='track')
 						.header-mobnav-inner
 							+icon('track')
+					.header-mobnav-btn.tels.js-menu(data-menu='tels')
+						.header-mobnav-inner
+							+icon('pin')
+					// конец мобильных кнопок
+
 					.offersearch-wrap.js-tooltip(data-menutarget='track')
 						form(action="/").offersearch
 							input(type="text", placeholder='123-123456789, 457-123456789, ...',required="required").offersearch-input.js-tooltip-trigger.js-growSearch
 							button(type='submit').btn.offersearch-button.color-orange
 								.btn-inner 
-									span Отследить посылку
+									span(data-text='Отследить') Отследить посылку
 						.input-dropdown-target
 							.input-dropdown-content
 								.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX.
 								.text Номер накладной указан под шрихкодом.
-					.header-inner-top-tels
+					.header-inner-top-tels(data-menutarget='tels')
 						.link-icon.primary.country.js-city-select
 							.link-icon-icon
 								+icon('pin')

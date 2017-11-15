@@ -1,0 +1,70 @@
+.video-bg
+	position: fixed
+	z-index: -1
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	backface-visibility: hidden
+	pointer-events: none
+.homepage-hero-module
+	border-right: none
+	border-left: none
+	position: relative
+	width: 100%
+	height: 100%
+.no-video .video-container video, .touch .video-container video
+	display: none
+
+.no-video .video-container .poster, .touch .video-container .poster
+	display: block !important
+
+.video-container
+	position: relative
+	bottom: 0%
+	left: 0%
+	height: 100%
+	width: 100%
+	overflow: hidden
+	&:before
+		content: ''
+		+coverdiv
+		background-color: rgb(38, 14, 4);
+		opacity: 0.502;
+		z-index: 1
+	.poster 
+		+tr(opacity .3s)
+		img
+			width: 100%
+			bottom: 0
+			position: absolute
+	.filter
+		z-index: 100
+		position: absolute
+		background: rgba(0, 0, 0, 0.4)
+		width: 100%
+	video
+		position: absolute
+		z-index: 0
+		bottom: 0
+		+tr(opacity .3s)
+		opacity: 0
+		min-height: 100%
+		// @supports (object-fit: cover)
+		// 	object-fit: cover
+		&.fillWidth
+			width: 100%
+			+r(1024)
+			@supports (object-fit: cover)
+				object-fit: cover
+		&.fadeIn
+			opacity: 1
+			&~.poster
+				transition-delay: 1s
+				opacity: 0
+	.video-cover
+		width: 100%
+		height: 100%
+		position: relative
+		z-index: 1
+

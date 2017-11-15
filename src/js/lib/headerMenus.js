@@ -1,43 +1,80 @@
 import $ from 'jquery/dist/jquery';
 import debounce from './debounce';
+import isMobile from './ismobile';
 
 export default function header() {
   function headerMenu() {
-    var mainCont = $('.header-inner-menu-mainnav'),
+    let mainCont = $('.header-inner-menu-mainnav'),
       items = mainCont.find('.js-mainnav'),
       targetWrap = $('.js-mainnav-cont'),
-      bg = $('.header-bg'),
+      menuWrapper = $('.header-inner-menu'),
+      manuTrigger = $('.js-menu[data-menu="mainmenu"]'),
+      bg = window.DOM.header,
+      momileCloser = $('.js-menucloseback'),
       shown = 'is-shown',
       current = 'is-current';
 
     items.each(function() {
-      var _ = $(this),
+      let _ = $(this),
         id = parseInt(_.data('block'));
 
-      _.on('mouseenter touchmove',debounce(activeBlock));
+      !isMobile() ? _.on('mouseenter touchmove',debounce(activeBlock)) : _.on('click',activeBlock);
 
       function activeBlock() {
-      	// window.DOM.html.addClass('menu-open')
-      	var filteredBlock = targetWrap.find('[data-block='+ id +']');
+
+      	let filteredBlock = targetWrap.find('[data-block='+ id +']');
+
         if(filteredBlock.length) {
           bg.addClass('visible');
           _.addClass('hovered').siblings().removeClass('hovered');
           targetWrap.addClass(shown);
           filteredBlock.addClass(current).siblings().removeClass(current);
+
           if(filteredBlock.find('.header-subnav-content').children().length < 2) {
+
           	targetWrap.addClass('block-small');
+
           }else{
+
           	targetWrap.removeClass('block-small');
+
           }
+
         }else{
+
           targetWrap.removeClass(shown);
           items.removeClass('hovered');
           bg.removeClass('visible');
-        }
-      }
 
+        }
+        targetWrap.trigger('menu_updated');
+      }
     });
-    mainCont.add(targetWrap).on('mouseleave touchstart',function() {
+    function MobileButtonTrigger() {
+    	targetWrap.on('menu_updated',() => {
+    		if(targetWrap.hasClass('is-shown')) {
+    			momileCloser.addClass('back');
+    		}else{
+          		momileCloser.removeClass('back');
+    		}
+    	});
+    }
+    	momileCloser.on('click',() => {
+    		if(momileCloser.hasClass('back')) {
+          
+    			targetWrap.removeClass(shown);
+    			momileCloser.removeClass('back');
+    			items.removeClass('hovered');
+    			
+    		}else{
+    			menuWrapper.add(manuTrigger).removeClass('active');
+    			bg.removeClass('visible');
+    			window.DOM.showScroll();
+    		}
+    	});
+    !isMobile() ? mainCont.add(targetWrap).on('mouseleave touchstart',CheckMenuHover) : MobileButtonTrigger(); 
+
+    function CheckMenuHover() {
       setTimeout(function() {
         if ($('.js-mainnav-cont:hover').length !== 1 && !$('.header-inner-menu-mainnav:hover').length !== 0 ) {
           targetWrap.removeClass(shown);
@@ -45,15 +82,14 @@ export default function header() {
           bg.removeClass('visible');
         }
       },1);
-
-    });
+    };
   }
   headerMenu();
   function scrollHeader() {
 
-    var mainHeader = window.DOM.header;
+    let mainHeader = window.DOM.header;
 		
-    var scrolling = false,
+    let scrolling = false,
       previousTop = 0,
       currentTop = 0,
       scrollDelta = 10,

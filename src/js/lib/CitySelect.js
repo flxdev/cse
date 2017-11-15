@@ -34,7 +34,6 @@ CitySelect.prototype = {
   	let self = this;
   	let items =  Array.from(this.container.querySelectorAll('.city-elem'));
   	let links =  Array.from(this.container.querySelectorAll('a'));
-    let itemsCount = items.length;
   	window.DOM.addListenerMulti(self.input,'change keyup',() => {
 
   		let filter = self.input.value.toLowerCase();

@@ -5,8 +5,6 @@ export default function Modals() {
   };
   _this.c = {
     popup: $('.js-popup-container'),
-    body: $('body'),
-    header: $('.page__header'),
   };
   _this.f = {};
   _this.conf = {
@@ -39,7 +37,6 @@ export default function Modals() {
     }, 500);
   };
   _this.f.openPopup = function(_popup) {
-    _h = _this.c.body.scrollTop();
     _popup.addClass(_this.conf.active_class);
     window.DOM.hideScroll();
   };
@@ -55,6 +52,7 @@ export default function Modals() {
     _popup.addClass(_this.conf.initial_class);
   });
   _this.b.open.off('click.popup').on('click.popup', function(e) {
+    var _popup = _this.c.popup.filter('[data-modal=\''+$(this).data('modal')+'\']');
     e.preventDefault();
     _this.f.openPopup(_popup);
     return false;

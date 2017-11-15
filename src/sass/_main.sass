@@ -61,6 +61,8 @@ body,.out
 	width: 100%
 	height: 100%
 	font-variant-numeric: lining-nums
+	// overflow-x: hidden
+
 	&.modal_open
 		position: fixed
 
@@ -71,6 +73,10 @@ body,.out
 		flex-wrap: nowrap
 		flex-direction: column
 		min-height: 100%
+		width: 100%
+		background-color: rgba(86, 74, 72,1)
+		&.has-fullvideo
+			background-color: transparent
 	&__outer
 		width: 100%
 		display: block
@@ -93,7 +99,6 @@ body,.out
 		font-size: 0
 		padding-left: 290px
 		padding-top: 95px
-		background-color: $caption
 		+r(1300)
 			padding-left: 240px	
 		+r(996)
@@ -103,15 +108,19 @@ body,.out
 	font-size: 46px;
 	color: rgb(0, 0, 0)
 	font-weight: bold;
-	text-transform: uppercase
+	
 	line-height: 1.261;
 	transition: color .3s, opacity .3s
+	+r(500)
+		font-size: 30px
 	&.h2
 		font-size: 36px
 	&.h3 
 		text-transform: none
 		font-size: 24px
 		font-weight: 500
+		+r(600)
+			font-size: 22px
 	&.white
 		color: $white
 .text, p 
@@ -182,3 +191,206 @@ blockquote
 						font-weight: inherit
 					margin-top: 15px
 					margin-bottom: 10px
+
+.wrapper
+	display: block
+	width: 100%
+	&.brown
+		background-color: $brown
+	&.bg-mobile
+		+rm(640)
+			background-color: transparent !important
+	.box 
+		width: 100%
+		padding-left: 30px
+		padding-right: 30px
+		max-width: 1175px
+		margin: 0 auto
+		&.small 
+			max-width: 985px
+		+r(600)
+			padding-left: 20px
+			padding-right: 20px	
+	&.full-height
+		height: calc(100vh - 95px)
+		display: flex 
+		align-items: stretch
+		position: relative
+		+r(996)
+			height: calc(90vh - 95px)
+			.full-height-scroller
+				display: none
+			
+		+r(640)
+			height: auto
+		.box 
+			display: flex 
+			align-items: center
+			&>div 
+				display: block
+				width: 100%
+		.full-height-scroller
+			position: absolute
+			bottom: 40px
+			left: 50%
+			margin-left: -13.5px
+			z-index: 1
+			cursor: pointer
+			+tr(opacity .3s)
+			&:hover
+				+notouch
+					opacity: .5
+.full-height-scroller
+	display: inline-block
+	width: 27px
+	height: 40px
+	svg
+		width: 100%	
+		height: 100%
+		.stscroll1
+			animation: scrolldown 1.8s infinite
+@keyframes scrolldown
+	0% 
+		transform: translate(0,-1px);
+		
+	30%
+		transform: translate(0,5px)
+	100% 
+		transform: translate(0,-1px);
+.block-info
+	display: inline-block
+	vertical-align: top
+	width: 33.33%
+	padding-right: 20px
+	margin-bottom: 25px
+	&.primary
+		width: 100%
+		.block-info-title
+			font-size: 16px
+			margin-top: -4px
+			font-weight: 600
+		.block-info-content
+			max-width: 270px
+		&.white 
+			.block-info-title
+				color: $white
+	&.white
+		.block-info-title
+			color: $footergray
+		.text 
+			color: #cdcccc
+	&:not(.primary)
+		+r(1200)
+			width: 50%
+		+r(440)
+			width: 100%
+	&-title
+		margin-bottom: 21px
+	&-content
+		max-width: 200px
+		.text,a 
+			line-height: 1.5
+			&:not(:last-child)
+				margin-bottom: 15px
+			span 
+				font-size: 14px
+		a 
+			font-size: 16px
+			color: $brand
+			display: block
+			&:hover
+				+notouch
+					color: $brandh
+			&[href^="tel:"]
+				color: #cdcccc
+				&:hover
+					+notouch
+						color: $brand
+			&[href^="mailto:"]
+				color: $brand
+				&:hover
+					+notouch
+						color: $brandh
+			&:active
+				color: $brandh
+
+.row.align-stretch
+	.columns
+		display: flex
+		.col 
+			display: flex 
+			width: 100%
+			align-self: stretch
+			flex-direction: column
+			justify-content: space-between
+.soc-item,.footer-totop-btn
+	display: inline-block
+	vertical-align: middle
+	border-radius: 50%
+	width: 35px
+	height: 35px
+	border: 1px solid #9d9998
+	+tr(border-color .3s)
+	position: relative
+	overflow: hidden
+	cursor: pointer
+	z-index: 0
+	&:not(:last-child)
+		margin-right: 25px
+	&:hover
+		+notouch
+			border-color: $brandh
+			.soc-item-inner,.svg
+				color: $white
+			&:before
+				transform: none
+
+	&:before
+		content: ''
+		display: inline-block
+		+coverdiv
+		z-index: -1
+		border-radius: 50%
+		+tr(transform .3s ease-in-out)
+		background-color: $brandh
+		transform: scale(0)
+	&-inner 
+		width: 100%
+		height: 100%
+		+vertical 
+		color: #9d9998
+		font-size: 0
+		+tr(color .3s)
+		svg,.svg
+			display: inline-block
+			vertical-align: middle
+			height: 17px
+			width: 20px
+		.svg 
+			border-top: 2px solid currentcolor
+			border-left: 2px solid currentcolor
+			width: 10px
+			height: 10px
+			margin-left: 1px
+			transform: translateY(2px) rotate(45deg)
+			+tr(border-color .3s)
+.price-form
+	+r(800)
+		display: block
+		width: 100%
+		max-width: 500px
+		margin: 0 auto
+		.input-item
+			width: 100%
+			.input-main,.btn,.input-wrapper
+				border-radius: 3px !important
+	&-wrapper 
+		padding-bottom: 155px
+		padding-top: 30px
+		+r(640)
+			padding-bottom: 50px
+		.title 
+			max-width: 700px
+			margin-bottom: 63px
+			+r(640)
+				margin-bottom: 20px	

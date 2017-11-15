@@ -1,7 +1,7 @@
 export default function Menu() {
   var trigger = $('.js-menu'),
     OpenClass = 'active',
-    bg = $('.header-inner-top-container'),
+    bg = window.DOM.header,
     OpenClass2 = 'visible';
 
   trigger.each(function() {
@@ -18,11 +18,15 @@ export default function Menu() {
 	     //    if (!div.is(e.target) 
           // && div.has(e.target).length === 0) {
 	          _.add(target).removeClass(OpenClass);
+	          bg.removeClass(OpenClass2);
 	          window.DOM.showScroll();
+	          
 	        // }
 	      }else{
 	        _.add(target).addClass(OpenClass);
+          	bg.addClass(OpenClass2);
 	        window.DOM.hideScroll();
+	        
 	      }
 	      setTimeout(function() {
 	        _.removeClass('anim');
@@ -34,6 +38,7 @@ export default function Menu() {
         if (!target.is(e.target) 
 				&& target.has(e.target).length === 0) {
         	_.add(target).removeClass(OpenClass);
+          bg.removeClass(OpenClass2);
         }
    		}
 

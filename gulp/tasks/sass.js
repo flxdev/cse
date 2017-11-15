@@ -7,7 +7,7 @@ import mqpacker from 'css-mqpacker';
 import cssvariables from 'postcss-css-variables';
 import pxtorem from 'postcss-pxtorem';
 import config from '../config';
-import csso from 'postcss-csso';
+import cssnano from 'cssnano';
 
 const processors = [
   autoprefixer({
@@ -21,14 +21,18 @@ const processors = [
     // rootValue - default pixel size for rem
     rootValue: 16,
     propList: ['*'],
-    mediaQuery: true,
+    mediaQuery: false,
     minPixelValue: 12
   }),
   require('lost'),
   mqpacker({
-    sort: sortMediaQueries
+      sort: function (a, b) {
+          a = a.replace(/\D/g,'');
+          b = b.replace(/\D/g,'');
+          return b-a;
+      }
   }),
-  csso
+  cssnano()
 ];
 
 gulp.task('sass', () => {

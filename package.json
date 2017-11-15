@@ -25,6 +25,7 @@
     "browser-sync": "^2.18.13",
     "critical": "^0.9.1",
     "css-mqpacker": "^6.0.1",
+    "cssnano": "^3.10.0",
     "del": "^3.0.0",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",

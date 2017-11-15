@@ -11,6 +11,8 @@ import CitySelect from './lib/CitySelect';
 import SearchModal from './lib/SearchModal';
 import Modals from './lib/Modals';
 import Menu from './lib/MobileMenus';
+import Video from './lib/Video';
+
 
 
 // replacement for domcontentloaded event
@@ -60,7 +62,9 @@ function mouseHover() {
     triggers.removeClass('hovered');
   });
 }
+
 ready(() => {
+
   if (!Array.from) {
     Array.from = (function() {
       var toStr = Object.prototype.toString;
@@ -151,6 +155,7 @@ ready(() => {
   SearchModal();
   Modals();
   Menu();
+  Video();
 });
 
 

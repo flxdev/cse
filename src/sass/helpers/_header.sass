@@ -1,14 +1,18 @@
 .page__header--wrap
 	position: fixed
-	left: 0
-	width: 100%
 	right: 0
+	width: 100%
 	top: 0
 	z-index: 20
 	visibility: hidden
 	transform: translateX(0)
-	width: 100%
 	height: 100%
+	overflow: hidden
+	+tr(background-color .3s)
+	backface-visibility: hidden
+	&.visible
+		visibility: visible
+		background-color: $modalbg
 	&.is-hidden
 		.header-inner-top
 			+rm(997)
@@ -25,6 +29,7 @@
 		transition: opacity .3s, visibility .3s
 		opacity: 0
 		visibility: hidden
+		pointer-events: none
 		&.visible 
 			opacity: 1
 			visibility: visible
@@ -49,13 +54,25 @@
 			+r(996)
 				+tr(transform .3s)
 				width: 100%
-				max-width: 350px
+				max-width: 600px
 				position: absolute
 				left: 0
-				top: 65px
 
 				&:not(.active)
 					transform: translateX(-100%)
+			&-mobnav
+				height: 65px
+				background-color: $white
+				padding-left: 20px
+				padding-right: 20px
+				.header-inner-top-search
+					height: 100%
+					.icon-logo
+						height: 100%
+						width: 103px
+				+rm(997)
+					display: none
+					
 			&-inner
 				width: 100%
 				height: 100%
@@ -145,6 +162,13 @@
 			+r(996)
 				height: 65px
 				position: relative
+			&-logo
+				height: 100%
+				margin-right: auto
+				max-width: 150px
+				svg 
+					height: 25px
+					width: 100%
 			&-container
 				display: inline-block
 				vertical-align: top
@@ -173,6 +197,37 @@
 				// padding-top: 15px
 				+r(1150)
 					padding-right: 20px
+				+r(996)
+					position: absolute
+					left: -20px
+					right: -65px
+					top: 100%
+					z-index: -1
+					background-color: $white
+					padding-top: 40px
+					padding-left: 20px
+					padding-right: 20px
+					padding-bottom: 30px
+					opacity: 0
+					visibility: hidden
+					transform: translateY(-100%)
+					transition: opacity .3s, visibility .3s, transform .3s
+					&.active
+						opacity: 1
+						visibility: visible
+						transform: none
+					.input-dropdown-target
+						position: static
+						opacity: 1
+						transform: none 
+						visibility: visible
+						box-shadow: none
+						padding: 0
+					.country-tels-wrap-inner > a 
+						display: none
+					.link-icon.primary
+						margin-left: -7px
+						
 			&-search
 				flex-grow: 1
 				display: flex 
@@ -194,7 +249,7 @@
 						background-color: $white
 						left: -20px
 						right: -65px
-						padding: 20px
+						padding: 50px 20px 20px
 						width: auto
 						z-index: -2
 						transition: transform .3s, visibility .3s, opacity .3s
@@ -237,6 +292,13 @@
 			max-width: 750px
 			transform: translateX(-140%)
 			transition: transform .35s ease-in-out, max-width .35s ease-in-out
+			+r(996)
+				z-index: 1
+				left: 0
+				top: 65px
+				width: 100%
+				max-width: 100%!important
+				min-width: 100% !important
 			&.is-shown
 				transform: none
 				transition-delay: .1s
@@ -268,6 +330,16 @@
 			left: 0
 			top: 0
 			transition-delay: 0s
+			overflow-y: auto
+			
+			+r(996)
+				padding-top: 20px
+				padding-left: 20px
+				padding-right: 20px
+				padding-bottom: 50px
+				// &:before
+				// 	display: none
+					
 			&.is-current
 				opacity: 1
 				visibility: visible
@@ -280,6 +352,7 @@
 			max-width: 500px
 			width: 100%
 			padding-bottom: 100px
+			width: 100%
 			&-mainlinks
 				display: block
 				&:hover 
@@ -290,8 +363,9 @@
 				&:only-child
 					margin-bottom: 100px
 					a
-						padding-left: 100px
-						padding-right: 50px
+						+rm(997)
+							padding-left: 100px
+							padding-right: 50px
 				a 
 					display: block
 					padding-top: 15px
@@ -301,6 +375,8 @@
 				+justify
 				margin-top: 50px
 				width: 100%
+				+r(996)
+					margin-top: 10px
 				&:hover 
 					a:not(:hover)
 						opacity: .7
@@ -311,6 +387,8 @@
 					text-align: left
 					text-align-last: left
 					white-space: normal
+					+r(800)
+						width: 100%
 					li 
 						display: block
 						
@@ -463,6 +541,14 @@
 .country-tels
 	&-wrap 
 		position: relative
+		&.white 
+			.country-tels-wrap-inner
+				&> a 
+					color: $white 
+					font-size: 24px
+					font-weight: 500
+					+r(768)
+						font-size: 20px
 		&-inner 
 			margin-top: 5px
 			text-align: right
@@ -638,7 +724,6 @@
 		left: auto;
 		display: flex
 		break-inside: avoid-column;
-		
 		&.hide 
 			display: none
 		&-letter
@@ -674,7 +759,9 @@
 		+rm(997)
 			display: none
 		&.active
-			.navTrigger i 
+			svg 
+				color: $brand
+			.navTrigger i
 				&:first-child
 					animation: inT .8s forwards
 				&:nth-child(2)
@@ -682,11 +769,39 @@
 				&:nth-child(3)
 					animation: inBtm .8s forwards
 	&-btn 
+
 		.header-mobnav-inner
 			+vertical
 			text-align: right
-		&.active
-			z-index: 10
+		// &.active
+		// 	z-index: 10
+		&.tels, &.track
+			width: 60px
+			svg 
+				display: block
+				margin: 0 auto
+		&.track
+			margin-left: auto
+		&.mobilenav 
+			height: 30px
+			margin-left: 20px
+			+vertical
+			&>div 
+				display: inline-block
+				vertical-align: middle
+				
+			// .navTrigger
+			// 	// width: 35px
+			// 	// height: 32px
+			// 	i 
+			// 		// height: 2px
+			&.back 
+				i
+					&:first-child
+						transform: rotate(-45deg) scaleX(.52)
+					&:nth-child(2)
+						transform: rotate(45deg) scaleX(.52)
+
 		.navTrigger
 			+rem(width,27px)
 			+rem(height,23px)
@@ -699,7 +814,7 @@
 				content: "";
 				display: block;
 				width: 100%;
-				height: 3px;
+				height: 2px;
 				&:first-child
 					animation: outT .8s backwards;
 					animation-direction: reverse;
@@ -710,9 +825,31 @@
 				&:nth-child(3)
 					animation: outBtm .8s backwards;
 					animation-direction: reverse;
+		.navTriggersm
+			width: 35px
+			margin: auto;
+			display: inline-block
+			vertical-align: middle
+			will-change: transform;
+
+			i 
+				background-color: $dark;
+				content: "";
+				display: inline-block;
+				width: 100%;
+				height: 3px;
+				transform-origin: right center
+				+tr(transform .3s)
+				&:first-child
+					margin-bottom: 10px
+					transform: rotate(-45deg)
+				&:nth-child(2)
+					margin-top: 10px
+					transform: rotate(45deg)
+
 		svg 
-			width: 32px
-			height: 32px
+			width: 30px
+			height: 30px
 
 
 @keyframes inM
@@ -762,7 +899,10 @@
 	100%
 		transform: translateY(-10px) rotate(135deg)    
 
-			
+.show-mobile
+	+rm(997)
+		display: none
+		
 
 
 

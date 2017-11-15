@@ -1,0 +1,311 @@
+---
+title: Index_Page
+bodyClass: Index_Page
+outClass: Index_Page
+---
+extends layouts/_layout
+block conf
+	-var video = true
+block content
+	.video-bg
+		include ./partials/_bgvideo
+	.wrapper.full-height
+		.box.small
+			.row.align-middle
+				.columns.price-form-wrapper
+					h1.title.h1.white Быстрая доставка посылок в любую точку мира
+					form(action="/").form.price-form.js-validate
+						.input-row.gap-search
+							.input-item.w33
+								.input-wrapper
+									input.input-main.input-dropdown.js-input-dropdown.js-swap-item(name='wqedqwe', placeholder='Например, Москва',data-validation="length",data-validation-length='min1',data-validation-error-msg="Укажите город")
+									.js-input-dropdown-target.input-dropdown-target
+										.input-dropdown-content
+											.option
+												span Мосальск, Россия
+											.option
+												span Москва, Россия
+											.option
+												span Мосс, Норвегия
+											.option
+												span Мостар, Босния и Герцеговина
+										//- each country in countries
+										//- 	option(value='1')= country
+
+									label(for='#name2Inp').input-label Откуда
+									.input-icon.swap.js-swap
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5"> <style>.stswap{fill-rule:evenodd;clip-rule:evenodd;fill:#F47921;}</style> <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap"/> <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap"/></svg>
+							.input-item.w33
+								.input-wrapper
+									input.input-main.input-dropdown.js-input-dropdown.js-swap-item(name='wqedqwe', placeholder='Например, Москва',data-validation="length",data-validation-length='min1',data-validation-error-msg="Укажите город")
+									.js-input-dropdown-target.input-dropdown-target
+										.input-dropdown-content
+											.option
+												span Мосальск, Россия
+											.option
+												span Москва, Россия
+											.option
+												span Мосс, Норвегия
+											.option
+												span Мостар, Босния и Герцеговина
+											.option
+												span Мостар, Босния и Герцеговина
+									label(for='#name2Inp').input-label Куда
+							.input-item.w33
+								button(type='submit').btn.has-loading
+									.btn-inner
+										span.js-price от 900 000
+										span.js-price-text Подробнее
+											+icon('arrr')
+		.full-height-scroller
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 31"><style>.stscroll0{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;} .stscroll1{fill:#FFFFFF;}</style><path d="M10 .5c5.2 0 9.5 4.3 9.5 9.5v11c0 5.2-4.3 9.5-9.5 9.5S.5 26.2.5 21V10C.5 4.8 4.8.5 10 .5z" class="stscroll0"/><path d="M10 7.6c.3 0 .5.2.5.5v3.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V8.1c0-.3.2-.5.5-.5z" class="stscroll1"/></svg>
+	.wrapper.bg-mobile.brown
+		.box
+
+	.wrapper
+		.box
+			.title.h1 Мои расчёты
+			.title.h2 Мои расчёты
+			.title.h3 Мои расчёты
+			.text В настоящее время КурьерСервисЭкспресс — это надежный партнер для тысяч компаний, сделавших свой выбор в пользу надежных и современных услуг по доставке грузов и корреспонденции по России, ближнему и дальнему зарубежью. 
+			p В настоящее время КурьерСервисЭкспресс — это надежный партнер для тысяч компаний, сделавших свой выбор в пользу надежных и современных услуг по доставке грузов и корреспонденции по России, ближнему и дальнему зарубежью. 
+			.text.sm В настоящее время КурьерСервисЭкспресс — это надежный партнер для тысяч компаний, сделавших свой выбор в пользу надежных и современных услуг по доставке грузов и корреспонденции по России, ближнему и дальнему зарубежью. 
+			blockquote Мы оказываем людям и компаниям спектр услуг своевременной и гарантированной доставки, постоянно повышая уровень сервиса, внедряя новые технологии, эффективно используя все ресурсы.
+			.btn.has-loading.load
+				.btn-inner 
+					span Далее
+			a(href="#").btn.color-black.has-loading
+				.btn-inner 
+					span Далее
+			button(type='submit').btn.color-white
+				.btn-inner 
+					span Далее
+			button(type='submit').btn.color-gray
+				.btn-inner 
+					span Сохранить,
+						br
+						|сделать новый расчёт
+			button(type='submit').btn.color-orange
+				.btn-inner 
+					span Сохранить,
+						br
+						|сделать новый расчёт
+			button(type='submit').btn.color-white.color-reverse
+				.btn-inner 
+					span Далее
+			.btn.type-round
+				.btn-inner 
+					span Далее
+			a(href="#").btn.color-black.type-round.not-trans
+				.btn-inner 
+					span Далее
+			a(href="#").btn.color-black.type-round.has-loading
+				.btn-inner 
+					span Далее
+			button(type='submit').btn.color-white.type-round
+				.btn-inner 
+					span Далее
+			button(type='submit').btn.color-white.type-round.has-loading
+				.btn-inner
+					span.btn-icon
+						+icon('down')
+					span Скачать презентацию
+			button(type='submit').btn.color-white.type-round.color-reverse
+				.btn-inner 
+					span Далее
+			button(type='submit').btn.color-white.type-round.color-reverse.not-trans
+				.btn-inner 
+					span Далее
+			button(type='submit').btn.color-gray.type-round.has-loading
+				.btn-inner 
+					span Сохранить,
+						br
+						|сделать новый расчёт
+			button(type='submit').btn.color-orange.type-round
+				.btn-inner 
+					span Проблемы с заказом
+			a(href="#").link-icon
+				.link-icon-icon
+					+icon('close')
+				.link-icon-text Удалить
+			.link-icon.edit
+				.link-icon-icon
+					+icon('edit')
+			.link-icon.edit
+				.link-icon-icon
+					+icon('remove')
+			a(href="#").link-icon
+				.link-icon-icon
+					+icon('arrl')
+				.link-icon-text Назад
+
+			a(href="#").link-icon
+				.link-icon-text Следующая акция
+				.link-icon-icon
+					+icon('arrr')
+			a(href="#").link-icon.primary
+				.link-icon-text Следующая акция
+				.link-icon-icon
+					+icon('arrr')
+			a(href="#").link-icon.sm
+				.link-icon-icon
+					+icon('doc')
+				.link-icon-text Заключить договор
+			a(href="#").link-icon.sm
+				.link-icon-icon
+					+icon('down')
+				.link-icon-text Скачать схему проезда
+			a(href="#").link-icon.sm
+				.link-icon-icon
+					+icon('print')
+				.link-icon-text Печать накладной
+			a(href="#").link-icon.sm
+				.link-icon-icon
+					+icon('danger')
+				.link-icon-text Проблемы с заказом
+			a(href="#").link-icon.sm
+				.link-icon-icon
+					+icon('resume')
+				.link-icon-text Прикрепить резюме
+			a(href="#").link-icon.sm
+				.link-icon-icon
+					+icon('attach')
+				.link-icon-text Прикрепить резюме
+			.link-dotted
+				.link-dotted-text Отслеживание
+				.link-dotted-icon
+					+icon('arrd')
+			.link-dotted
+				.link-dotted-text Отслеживание
+			a(href="#").link-icon.extra
+				.link-icon-icon
+					+icon('plus')
+				.link-icon-text Добавить отправление
+			a(href="#").link-icon.sm.reload.load
+				.link-icon-icon
+					+icon('reload')
+				.link-icon-text Обновить стоимость
+			form.js-validate(action="/").form-wrapper
+				.form-row
+					.input-item.w50
+						.input-wrapper
+							input.input-main(type="text",name='name',data-validation="length",data-validation-length='min1',data-validation-error-msg="Поле обязателно для заполнения",id='nameInp',placeholder='Иванов Сергей Иванович')
+							label(for='#nameInp').input-label Контактное лицо
+					.input-item.w50
+						.input-wrapper
+							input.input-main(type="text",name='name',data-validation="length",data-validation-length='min1',data-validation-error-msg="Поле обязателно для заполнения",id='nameInp',placeholder='Иванов Сергей Иванович')
+							label(for='#nameInp').input-label Контактное лицо
+					.input-item
+						.input-wrapper
+							textarea.input-main.maxlength(type="text",name='name',data-validation="length",data-validation-length='min4',data-validation-error-msg="Поле обязателно для заполнения",id='nameInp',placeholder='Иванов Сергей Иванович', data-countdown='50')
+							label(for='#nameInp').input-label Описание отправления
+					.input-item
+						.input-wrapper
+							textarea.input-main.maxlength(type="text",name='name',data-validation="length",data-validation-length='min4',data-validation-error-msg="Обязательное поле",id='nameInp',placeholder='Иванов Сергей Иванович', data-countdown='20')
+							label(for='#nameInp').input-label Описание отправления
+					.input-item.w33
+						.input-wrapper
+							input.input-main(type="number",name='name',data-validation="number",data-validation-error-msg="Поле обязателно для заполнения",data-validation-allowing="positive,float",id='numInp')
+							label(for='#numInp').input-label Вес, кг.
+						.help-block.help Вы можете отправить в конверте не более 60 листов формата А4.
+					.input-item.w33
+						.input-wrapper
+							input.input-main(type="number",name='name',data-validation="number",data-validation-error-msg="Неверное количество",data-validation-allowing="range[1;3],float",id='numInp',value='1')
+							label(for='#numInp').input-label Коилчество мест
+					.input-item.w33
+						.input-wrapper
+							input.input-main.date(type="text",name='date',data-validation="length",data-validation-length='min1',data-validation-error-msg="Поле обязателно для заполнения",id='dateInp',placeholder='Иванов Сергей Иванович',readonly='true')
+							label(for='#dateInp').input-label Дата
+							.input-icon
+								+icon('calendar')
+					.input-item.w33
+						.input-wrapper
+							select.input-main.js-select(name='category', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='selInp')
+								option(value="1") C 6.00 до 9.00
+								option(value="2") С 9.00 до 12.00
+								option(value="3") С 12.00 до 15.00
+								option(value="4") С 15.00 до 18.00
+								option(value="5") С 18.00 до 21.00
+							label(for='#selInp').input-label Время приезда курьера
+					.input-item.w33
+						.input-wrapper
+							select.input-main.js-select(name='category', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='selInp2')
+								option(value="1") ОСН
+								option(value="2") УСНО
+								option(value="3") ЕНВД
+								option(value="4") ПСН
+							label(for='#selInp2').input-label Система налогообложения
+					.input-item.w33
+						.input-wrapper
+							select.input-main.js-filter.has-search(name='category',multiple="multiple", placeholder='Город')
+								option(value="1",data-text='20') Санкт-Петербург
+								option(value="2",data-text='11') Абакан
+								option(value="3",data-text='11') Альметьевск
+								option(value="4",data-text='1') Ангарск
+								option(value="5",data-text='11') Арзамас
+								option(value="6",data-text='') Армавир
+								option(value="7",data-text='11') Артем
+								option(value="8",data-text='14') Артем
+								option(value="9",data-text='11') Артем
+								option(value="10",data-text='11') Артем
+					.input-item.w33
+						.input-wrapper
+							select.input-main.js-filter(name='wqeqwe',multiple="multiple", placeholder='Категория')
+								option(value="1",data-text='150') Административный персонал
+								option(value="2",data-text='11') Бухгалтерия
+								option(value="3",data-text='11') Водители, курьеры
+								option(value="4",data-text='1') Закупки
+								option(value="5",data-text='11') Информационные технологии
+								option(value="6",data-text='') Менеджмент
+								option(value="7",data-text='11') Продажи
+								option(value="5",data-text='11') Информационные технологии
+								option(value="6",data-text='') Менеджмент
+								option(value="7",data-text='11') Продажи
+				.input-row.gap-search
+					.input-item.w33
+						.input-wrapper
+							input.input-main.input-dropdown.js-input-dropdown.js-swap-item(name='wqedqwe', placeholder='Например, Москва',data-validation="length",data-validation-length='min1')
+							.js-input-dropdown-target.input-dropdown-target
+								.input-dropdown-content
+									.option
+										span Мосальск, Россия
+									.option
+										span Москва, Россия
+									.option
+										span Мосс, Норвегия
+									.option
+										span Мостар, Босния и Герцеговина
+								//- each country in countries
+								//- 	option(value='1')= country
+
+							label(for='#name2Inp').input-label Откуда
+							.input-icon.swap.js-swap
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5"> <style>.stswap{fill-rule:evenodd;clip-rule:evenodd;fill:#F47921;}</style> <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap"/> <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap"/></svg>
+					.input-item.w33
+						.input-wrapper
+							input.input-main.input-dropdown.js-input-dropdown.js-swap-item(name='wqedqwe', placeholder='Например, Москва',data-validation="length",data-validation-length='min1')
+							.js-input-dropdown-target.input-dropdown-target
+								.input-dropdown-content
+									.option
+										span Мосальск, Россия
+									.option
+										span Москва, Россия
+									.option
+										span Мосс, Норвегия
+									.option
+										span Мостар, Босния и Герцеговина
+									.option
+										span Мостар, Босния и Герцеговина
+							label(for='#name2Inp').input-label Куда
+					.input-item.w33
+						button(type='submit').btn.has-loading
+							.btn-inner
+								span.js-price от 900 000
+								span.js-price-text Подробнее
+									+icon('arrr')
+					//- .input-item.w33
+					//- 	.input-wrapper
+					//- 		select.input-main.js-ajaxselect(data-url='/js/countries.json', name='wqedqwe', placeholder='Например, Санкт-Петербург',data-validation="length",data-validation-length='min1')
+					//- 			//- each country in countries
+					//- 			//- 	option(value='1')= country
+					//- 		label(for='#name2Inp').input-label Куда
