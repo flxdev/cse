@@ -12,6 +12,8 @@ import SearchModal from './lib/SearchModal';
 import Modals from './lib/Modals';
 import Menu from './lib/MobileMenus';
 import Video from './lib/Video';
+import lazyImage from './lib/lazyImage';
+import Promise from './lib/Promise';
 
 
 
@@ -23,6 +25,7 @@ function ready(fn) {
     document.addEventListener('DOMContentLoaded', fn);
   }
 }
+
 function Tooltipshow() {
  	let inputWrap = $('.js-tooltip');
  	inputWrap.each(function() {
@@ -35,6 +38,7 @@ function Tooltipshow() {
  		});
  	});
 }
+
 function growSerch() {
  	let inputWrap = $('.js-growSearch');
  	inputWrap.each(function() {
@@ -46,8 +50,8 @@ function growSerch() {
  			parent.removeClass('search-focus');
  		});
  	});
-
 }
+
 function mouseHover() {
   let triggers = $('.js-mousehover');
   triggers.each(function() {
@@ -62,9 +66,10 @@ function mouseHover() {
     triggers.removeClass('hovered');
   });
 }
-
 ready(() => {
-
+  if (!window.Promise) {
+    window.Promise = Promise;
+  }
   if (!Array.from) {
     Array.from = (function() {
       var toStr = Object.prototype.toString;
@@ -156,6 +161,7 @@ ready(() => {
   Modals();
   Menu();
   Video();
+  lazyImage();
 });
 
 

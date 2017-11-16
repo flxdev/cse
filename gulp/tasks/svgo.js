@@ -70,6 +70,6 @@ gulp.task('svgmin', () => {
   );
 });
 
-
-gulp.task('svgmin:watch', () => gulp.watch(`${config.src.svgSource}/**/*.svg`, ['svgmin']));
 gulp.task('svgo:watch', () => gulp.watch(`${config.src.svgMin}/**/*.svg`, ['svgo']));
+gulp.task('svgmin:watch', () => gulp.watch(`${config.src.svgSource}/**/*.svg`, ['svgmin']));
+

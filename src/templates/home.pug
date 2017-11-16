@@ -61,7 +61,129 @@ block content
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 31"><style>.stscroll0{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;} .stscroll1{fill:#FFFFFF;}</style><path d="M10 .5c5.2 0 9.5 4.3 9.5 9.5v11c0 5.2-4.3 9.5-9.5 9.5S.5 26.2.5 21V10C.5 4.8 4.8.5 10 .5z" class="stscroll0"/><path d="M10 7.6c.3 0 .5.2.5.5v3.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V8.1c0-.3.2-.5.5-.5z" class="stscroll1"/></svg>
 	.wrapper.bg-mobile.brown
 		.box
-
+			.promoblock-wrapper
+				.promoblock-inner
+					// сьтруктура все таки бует разной
+					// модификатор .type-news
+					// здесь если нет картинки, то .promoblock-item-bg убирается полностью
+					.promoblock-item.w33.type-news
+						a(href="#").promoblock-item-link
+							.promoblock-item-bg
+								img.js-image(data-src="img/promoblock/1.jpg", alt="")
+							.promoblock-item-content
+								.promoblock-item-content-inner
+									.title.h4 В Татарстане 30 августа нерабочий день
+									.caption 30 августа, 2017
+							object.item-type-wrapper
+								a(href="#").item-type Новости
+					.promoblock-item.w33.type-news
+						a(href="#").promoblock-item-link
+							.promoblock-item-bg
+								img.js-image(data-src="img/promoblock/2.jpg", alt="")
+							.promoblock-item-content
+								.promoblock-item-content-inner
+									.title.h4 В Кыргызстане 31 августа и 1 сентября нерабочие дни. Эти дни
+									.caption 29 августа, 2017
+							object.item-type-wrapper
+								a(href="#").item-type Новости
+					.promoblock-item.w33.type-news
+						a(href="#").promoblock-item-link
+							.promoblock-item-content
+								.promoblock-item-content-inner
+									.title.h4 Нерабочие дни в ряде городов и стран в связи с празднованием Курбан Байрам
+									.caption 29 августа, 2017
+							object.item-type-wrapper
+								a(href="#").item-type Новости
+					// модификатор .type-promotion
+					// у него 2 цвета по дефолту оранжевый. для черного модификатор .bg-black
+					.promoblock-item.w33.type-promotion
+						a(href="#").promoblock-item-link
+							.promoblock-item-bg
+								img.js-image(data-src="img/promoblock/3.jpg", alt="")
+							.promoblock-item-content
+								.promoblock-item-content-inner
+									.title.h4 Осенняя акция: отправь посылку через наш сервис и получи бонус 100 ₽ на доставку следующей посылки 
+									.caption 30 сентября, 2017
+							object.item-type-wrapper
+								a(href="#").item-type Акция
+								a(href="#").item-type 10 сентября — 25 октября
+					// модификатор .type-feature, возможные бэкграунды желтый(по дефолту): .bg-pink,.bg-brown 
+					// картинка слева  по дефолту, справа  - .image-right
+					// при  w33 не важно
+					// на этих карточках у .title модификтаор .h3
+					// и для высоких кратинок типа мобилки модификатор .image-big 
+					// у блока с белым текстом другие клссы на кнопке, если проблема их перевесить - пиши. перестилизую
+					.promoblock-item.w66.type-feature.image-big
+						a(href="#").promoblock-item-link
+							.promoblock-item-bg
+								img.js-image(data-src="img/promoblock/4.png", alt="",src='')
+							.promoblock-item-content
+								.promoblock-item-content-inner
+									.title.h3 Доставка становится проще и быстрее
+									.text.sm Установите мобильное приложение КСЭ и получите скидку 15%. Накапливайте баллы и оплачивайте им заказы.
+									.btn.color-black.type-round.not-trans
+										.btn-inner 
+											span Установить
+					.promoblock-item.w50.type-feature.image-right.bg-brown
+						a(href="#").promoblock-item-link
+							.promoblock-item-bg
+								img.js-image(data-src="img/promoblock/6.png", alt="",src='')
+							.promoblock-item-content
+								.promoblock-item-content-inner
+									.title.h3 Отправка и комплектация подарков
+									.btn.color-white.type-round.color-reverse
+										.btn-inner 
+											span Подробнее
+					.promoblock-item.w50.type-feature.bg-brown
+						a(href="#").promoblock-item-link
+							.promoblock-item-bg
+								img.js-image(data-src="img/promoblock/6.png", alt="",src='')
+							.promoblock-item-content
+								.promoblock-item-content-inner
+									.title.h3 Отправка и комплектация подарков
+									.btn.color-white.type-round.color-reverse
+										.btn-inner 
+											span Подробнее
+					.promoblock-item.w33.type-feature.bg-pink
+						a(href="#").promoblock-item-link
+							.promoblock-item-bg
+								img.js-image(data-src="img/promoblock/7.png", alt="",src='')
+							.promoblock-item-content
+								.promoblock-item-content-inner
+									.title.h3 Бесплатное страхование грузов
+					.promoblock-item.w66.type-feature.image-right
+						a(href="#").promoblock-item-link
+							.promoblock-item-bg
+								img.js-image(data-src="img/promoblock/10.png", alt="",src='')
+							.promoblock-item-content
+								.promoblock-item-content-inner
+									.title.h3 Таможенный перевозчик
+									.text.sm КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира. 
+									.btn.color-black.type-round.not-trans
+										.btn-inner 
+											span Подробнее
+					.promoblock-item.w66.type-feature
+						a(href="#").promoblock-item-link
+							.promoblock-item-bg
+								img.js-image(data-src="img/promoblock/6.png", alt="",src='')
+							.promoblock-item-content
+								.promoblock-item-content-inner
+									.title.h3 Таможенный перевозчик
+									.text.sm КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира. 
+									.btn.color-black.type-round.not-trans
+										.btn-inner 
+											span Подробнее
+					.promoblock-item.w33.type-feature.image-right
+						a(href="#").promoblock-item-link
+							.promoblock-item-bg
+								img.js-image(data-src="img/promoblock/10.png", alt="",src='')
+							.promoblock-item-content
+								.promoblock-item-content-inner
+									.title.h3 Таможенный перевозчик
+									.text.sm КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира. 
+									.btn.color-black.type-round.not-trans
+										.btn-inner 
+											span Подробнее
 	.wrapper
 		.box
 			.title.h1 Мои расчёты

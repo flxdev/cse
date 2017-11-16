@@ -24,15 +24,13 @@ const processors = [
     mediaQuery: false,
     minPixelValue: 12
   }),
-  require('lost'),
   mqpacker({
-      sort: function (a, b) {
-          a = a.replace(/\D/g,'');
-          b = b.replace(/\D/g,'');
-          return b-a;
-      }
+      sort: sortMediaQueries
   }),
-  cssnano()
+  cssnano({
+    minifyFontValues: false,
+    discardUnused: false
+  }),
 ];
 
 gulp.task('sass', () => {

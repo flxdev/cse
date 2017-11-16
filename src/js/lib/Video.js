@@ -54,7 +54,7 @@ export default function Video() {
     }initsize();
    
     if(!isMobile()) {
-      parent.addClass('has-fullvideo');
+      
       video[0].src = src;
       video[0].load = function() {
         video.addClass('fadeIn animated');
@@ -62,8 +62,10 @@ export default function Video() {
       };
       video[0].load();
       $(window).on('resize', debounce(initsize));
+    }else{
+      animatedEl.hide();
     }
-
+    parent.addClass('has-fullvideo');
     animateBg();
 
     function animateBg() {
@@ -79,7 +81,7 @@ export default function Video() {
       }));
       $(window).on('scroll',() => {
         scrollTop = window.pageYOffset || window.scrollTop;
-        calc = (scrollTop * 100) / area * 0.01;
+        calc = (scrollTop * 100) / (area / 2) * 0.01;
         calcReverse = 1 - ((scrollTop * 100) / (area / 3) * 0.01);
         animatedEl.css('background-color',`rgba(86, 74, 72, ${calc})`);
         scrollbtn.css('opacity',calcReverse);

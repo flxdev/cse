@@ -1,0 +1,355 @@
+.promoblock
+	&-wrapper
+		padding-top: 87px
+		padding-bottom: 123px
+		+r(800)
+			max-width: 500px
+			width: 100%
+			margin: 0 auto
+			padding-top: 45px
+			padding-bottom: 45px
+
+	&-inner
+		margin-left: -2.5px
+		margin-right: -2.5px
+		display: flex
+		flex-flow: row wrap 
+		align-items: stretch
+
+	&-item
+		padding: 2.5px
+		display: flex
+		border-radius: 3px
+		overflow: hidden
+		min-height: 373px
+		align-items: stretch
+		+nosel
+		+r(1400)
+			min-height: 330px	
+		img 
+			transition: transform .3s, opacity .3s
+		+r(800)
+			width: 100%!important
+		.item-type
+			&-wrapper
+				position: absolute
+				left: 35px
+				right: 35px
+				top: 40px 
+				z-index: 2
+				+r(1400)
+					left: 25px
+					right: 25px
+		&.w33
+			width: 33.33%
+		&.w50
+			width: 50%
+		&.w66
+			width: 66.66%
+			// +r(800)
+			// 	width: 100% !important
+		&.type-promotion
+			.promoblock-item-bg
+				img 
+					width: 100%
+					height: 100%
+					object-fit: cover
+			.promoblock-item-content
+				+tr(background-color .3s)
+				background-color: rgba(240, 115, 25,.8)
+				@supports (mix-blend-mode: color-light)
+					mix-blend-mode: color-light
+				&-inner 
+					.title
+						+cut(4)
+			.title, .caption
+				color: $white
+			.item-type
+				color: $white
+				border-color: $white
+				&:hover 
+					color: $dark 
+					background-color: $white
+			.promoblock-item-link
+				&:hover
+					+notouch
+						.promoblock-item-content
+							background-color: rgba(240, 115, 25,.9)
+		&.type-news
+			.promoblock-item-link
+				&:hover
+					+notouch
+						img 
+							opacity: .2
+							transform: scale(1.2)
+					.title
+						color: $brandh
+			.promoblock-item-link,.promoblock-item-content-inner
+				background-color: $cardbg
+			.promoblock-item-content
+				.promoblock-item-content-inner
+					.title
+						max-width: 270px
+						+cut(4)
+			.promoblock-item-bg
+				background-color: $black
+				height: calc(100% - 163px)
+				img 
+					width: 100%
+					margin: 0 auto
+					height: 100%
+					max-width: initial
+					display: block
+					object-fit: cover 
+					object-position: top center
+					+ie11
+						height: auto
+					// +r(800)
+					// 	height: auto
+					// 	width: 100%
+					// +r(1500)
+					// 	width: 130%
+					// 	max-width: 130%
+				&~ .promoblock-item-content
+					.promoblock-item-content-inner
+						height: 163px
+						padding-top: 29px
+						.title
+							max-width: 100%
+							+cut(2)
+				&~.item-type-wrapper
+					.item-type
+						border-color: $brand 
+						color: $white
+						background-color: $brand
+			.item-type
+				border-color: $dark 
+				color: $dark
+				&:hover
+					+notouch
+						border-color: $brandh
+						background-color: $brandh
+						color: $white
+		&.type-feature
+			.promoblock-item-link
+				background-color: #ffe7d5
+				display: flex
+				flex-flow: row nowrap
+				align-items: stretch
+				+tr(background-color .3s)
+				img
+					+tr(opacity .3s)
+				&:hover
+					+notouch
+						img 
+							// opacity: .9
+					.btn-inner
+						&:after
+							transform: scaleX(1) scaleY(1)
+					.btn 
+						&.not-trans
+							background-color: transparent
+							color: $white
+							border-color: $black
+						&.color-white
+							&.color-reverse
+								border-color: $black
+
+				.promoblock-item-bg,.promoblock-item-content
+					position: static
+				.promoblock-item-content-inner
+					margin-top: 0
+					padding-top: 50px
+					+r(1400)
+						padding-top: 25px
+					.title
+						
+					.text 
+						margin-top: 13px
+						+r(1400)
+							margin-top: 8px	
+					.btn 
+						margin-left: 0
+						margin-right: 0
+						margin-top: 44px
+						+r(1400)
+							margin-top: 30px	
+						span 
+							font-size: 14px
+
+				.promoblock-item-bg
+					position: relative
+					flex-grow: 1
+					img 
+						position: absolute
+						bottom: -10%
+						left: -10%
+						width: auto
+						height: 90%
+						max-width: initial
+						+r(1200)
+							height: 70%	
+			.item-type
+				display: none
+			+r(800)
+				.promoblock-item-link
+					flex-direction: column
+					.promoblock-item-content
+						width: 100%
+						height: auto
+						order: 1
+						.text, .btn
+							display: none
+							
+					.promoblock-item-bg
+						width: 100%
+						height: auto
+						order: 2
+						flex-grow: 1
+						padding-bottom: 30px
+						padding-left: 20px
+						padding-right: 20px
+						img 
+
+							position: static
+							width: 85%
+							display: block
+							margin: 0 auto
+							height: auto
+							min-width: initial !important
+				&.image-big
+					.promoblock-item-bg
+						max-height: 200px
+			&.image-right
+				.promoblock-item-content
+					order: 1
+				.promoblock-item-bg
+					order: 2
+					img 
+						right: -10%	
+						left: auto
+			&.image-big
+				.promoblock-item-bg
+					img 
+						width: 84%
+						right: 0
+						left: auto
+						bottom: auto
+						top: 30px
+						height: auto	
+						min-width: initial !important
+						+r(1200)
+							height: auto
+							
+			&.bg-pink
+				.promoblock-item-link
+					background-color: #e9c6b9
+					&:hover
+						+notouch
+							background-color: #edd1c7
+			&.bg-brown
+				.promoblock-item-link
+					background-color: #a69088
+					&:hover
+						+notouch
+							background-color: #b8a6a0
+				.title, .text
+					color: $white
+				
+			&.w66
+				.promoblock-item-bg
+					img
+						min-width: 100%
+			&.w50
+				.promoblock-item-bg
+					img
+						min-width: 100%
+						left: -50%
+				&.image-right
+					.promoblock-item-bg
+						img
+							min-width: 100%
+							right: -50%
+							left: auto
+			&.w33 
+				.promoblock-item-link
+					flex-direction: column
+					justify-content: flex-start
+				.promoblock-item-content
+					order: 1
+					height: auto
+					display: inherit
+					&-inner 
+						padding-top: 40px
+						.title
+							margin-bottom: 10px
+
+				.promoblock-item-bg
+					order: 2
+					padding: 0px 35px 30px
+					height: auto
+					img 
+						display: block
+						width: 77%
+						margin: 0 auto
+						left: 0
+						right: 0
+						top: 10px
+						height: auto
+						+r(1200)
+							height: auto
+					&~.promoblock-item-content
+						.text,.btn 
+							display: none
+							
+						
+				.promoblock-item-content-inner
+				
+		&-link
+			position: relative
+			display: flex 
+			width: 100%
+			flex-direction: column
+			border-radius: 4px
+			overflow: hidden
+		&-bg 
+			+coverdiv
+			z-index: 0
+		&-content
+			width: 100%
+			height: 100%
+			position: relative
+			z-index: 1
+			display: flex 
+			flex-direction: column
+			&-inner
+				padding: 35px
+				margin-top: auto
+				+r(1400)
+					padding: 25px
+				.title
+					+tr(color .3s)
+				.caption
+					+rem(margin-top,15px)
+					padding-bottom: 5px
+
+
+
+.item-type
+	display: inline-block
+	vertical-align: top
+
+	margin-bottom: 5px
+	font-size: 14px
+	transition: color .3s, border-color .3s, background-color .3s
+	border: 1px solid
+	border-radius: 3px
+	padding-left: 11px
+	padding-right: 11px
+	padding-top: 4px
+	padding-bottom: 5px
+	line-height: 1.1
+	&:not(:last-child)
+		margin-right: 5px	
+	&-wrapper
+		font-size: 0
