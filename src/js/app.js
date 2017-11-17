@@ -1,5 +1,5 @@
 // import hello from './lib/sayHello';
-// import $ from 'jquery';
+import $ from 'jquery/dist/jquery';
 // import $ from 'jquery/dist/jquery.min';
 import './lib/domConf';
 import datepick from './lib/datepicker';
@@ -14,6 +14,7 @@ import Menu from './lib/MobileMenus';
 import Video from './lib/Video';
 import lazyImage from './lib/lazyImage';
 import Promise from './lib/Promise';
+import Sliders from './lib/Sliders';
 
 
 
@@ -162,6 +163,7 @@ ready(() => {
   Menu();
   Video();
   lazyImage();
+  Sliders();
 });
 
 

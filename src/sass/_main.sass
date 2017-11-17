@@ -53,9 +53,11 @@ a[href^="mailto:"],a[href^="skype:"]
 html
 	font-size: 16px
 	line-height: 1
-	overflow-x: hidden
+	// overflow-x: hidden
 	width: 100%
 	height: 100%
+	-webkit-text-size-adjust: none
+	-webkit-overflow-scrolling: touch;
 	+r(1024)
 		font-size: 15px
 body,.out
@@ -64,6 +66,8 @@ body,.out
 	width: 100%
 	height: 100%
 	font-variant-numeric: lining-nums
+	min-width: 320px
+	// background-color: red
 	// overflow-x: hidden
 
 	&.modal_open
@@ -114,6 +118,7 @@ body,.out
 	
 	line-height: 1.261;
 	transition: color .3s, opacity .3s
+	text-transform: uppercase
 	+r(500)
 		font-size: 30px
 	&.h2
@@ -128,19 +133,30 @@ body,.out
 	&.h4 
 		font-size: 18px
 		line-height: 1.556;
+		text-transform: none
 	&.h5 
 		font-size: 16px
+		text-transform: none
 	&.white
 		color: $white
+
 .text, p 
 	font-size: 18px;
 	color: $text
 	line-height: 1.556;
+	a 
+		color: inherit
+		box-shadow: 0 -2px 0 0 transparent, 0 1px 0 0 currentcolor;
+		+tr(box-shadow .2s)
+		&:hover,&:active
+			box-shadow: none
 	&.sm 
 		font-size: 16px;
 		line-height: 1.5;
 	&.bold
 		font-weight: 600
+	&.white 
+		color: $white
 .caption 
   font-size: 12px;
   color: rgba(62, 62, 62, 0.502);
@@ -204,11 +220,38 @@ blockquote
 .wrapper
 	display: block
 	width: 100%
+	position: relative
+	+tr(background-color .3s)
+	&.bg-orange
+		background-color: $brandbg
+
+	&-bg 
+		+coverdiv 
+		z-index: -1
+		&-img 
+			width: 100%
+			height: 100%
+			+cover 
+			position: relative
+			&:before
+				content: ''
+				display: inline-block
+				+coverdiv
+				background-color: rgba(44, 30, 28,.8);
+		// &+.box 
+		// 	.block-about
+		// 		.text.white
+		// 			color: #cdcccc
+
 	&.brown
 		background-color: $brown
+	&.brown-gradient
+		background-image: linear-gradient( -90deg, rgb(86,74,72) 0%, rgb(67,55,55) 42%, rgb(47,36,37) 100%);
+
 	&.bg-mobile
 		+rm(640)
 			background-color: transparent !important
+			background-image: none !important
 	.box 
 		width: 100%
 		padding-left: 30px
@@ -399,7 +442,7 @@ blockquote
 		+r(640)
 			padding-bottom: 50px
 		.title 
-			max-width: 700px
+			max-width: 800px
 			margin-bottom: 63px
 			+r(640)
 				margin-bottom: 20px	
@@ -409,3 +452,107 @@ blockquote
 	opacity: 0
 	&.fade-in 
 		opacity: 1
+.row 
+	&.padding-big
+		padding-bottom: 120px
+		padding-top: 85px
+		+r(640)
+			padding-bottom: 50px
+			padding-top: 35px
+		.columns
+			&.small-12
+				+r(800)
+					flex: 0 0 100%;
+					max-width: 100%;
+					width: 100%
+
+.block-about
+	.title 
+		margin-bottom: 40px
+		max-width: 500px
+		padding-right: 30px
+		+r(1200)
+			font-size: 30px
+		+r(800)
+			max-width: 100%
+			padding-right: 0
+	.text 
+		margin-bottom: 55px
+		opacity: .7
+		max-width: 530px
+		padding-right: 30px
+		+r(800)
+			// max-width: 530px
+			padding-right: 0
+	.btn 
+		margin-left: 0
+	&-slider
+		margin-right: -37px
+		margin-bottom: -35px
+		+r(1500)
+			margin-right: -30px
+		+r(800)
+			margin-right: -20px
+			margin-top: 30px
+		+r(640)
+			margin-bottom: 0
+			margin-right: 0
+		&-item
+			padding-right: 37px
+			vertical-align: top
+			margin-bottom: 35px
+			+r(800)
+				padding-right: 20px
+				padding-left: 0
+			// +r(1200)
+			// 	min-width: 100%
+			+r(1500)
+				padding-right: 30px
+			+r(1300)
+				padding-left: 10px
+			+r(640)
+				padding-right: 0
+			.text 
+				margin-bottom: 0 !important
+				padding-right: 0 !important
+		&-title
+			font-size: 60px
+			color: $brand 
+			padding-bottom: 23px
+			border-bottom: 2px solid rgba(255,255,255,.7)
+			margin-bottom: 25px
+			// +r(1200)
+			// 	font-size: 4vw
+			// +r(800)
+			// 	font-size: 6vw
+			// +r(640)
+
+.slider-dots
+	display: inline-block
+	vertical-align: top
+	width: 100%
+	text-align: center
+	.slick-dots
+		display: inline-block
+
+		vertical-align: middle
+		li 
+			display: inline-block
+			vertical-align: middle
+			&.slick-active
+				button
+					opacity: 1
+		button 
+			font-size: 0
+			display: inline-block
+			background:  $white
+			width: 17px
+			height: 17px
+			padding: 4.5px
+			border-radius: 50%
+			background-clip: content-box
+			+tr(opacity .3s)
+			opacity: .4
+
+
+	

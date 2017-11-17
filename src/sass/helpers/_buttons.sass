@@ -16,13 +16,17 @@
 	min-width: 246px
 	height: 62px
 	font-size: 0
-
 	&:hover
 		+notouch
 			border-color: $brandh
 			.btn-inner
 				&:after
 					transform: scaleX(1) scaleY(1)
+	&:active
+		.btn-inner
+			&:after
+				transform: scaleX(1) scaleY(1)
+				transition-duration: 0s
 	&-icon
 		padding-right: 5px
 		svg 
@@ -145,7 +149,9 @@
 		border-radius: 50px
 		font-weight: 500
 		.btn-inner
-			padding: 12px 22.5px
+			padding: 12px 30px
+			span
+				font-size: 14px
 			// &:after
 			// 	border-radius: 50px	
 .btn-wrapper

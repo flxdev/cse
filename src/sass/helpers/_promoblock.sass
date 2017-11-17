@@ -48,7 +48,57 @@
 			width: 66.66%
 			// +r(800)
 			// 	width: 100% !important
+		&.type-sale
+			contain: paint
+			&.w50,&.w66
+				.title
+					font-size: 24px
+
+			&.w33 
+				.text 
+					display: none
+					
+			.promoblock-item-bg
+				background-color: #a69088
+				+gpu
+				img 
+					width: 100%
+					height: 100%
+					object-fit: cover 
+
+					+ie11
+						height: auto
+						
+					+tr(transform .3s)
+			.title,.text
+				color: $white
+			.title
+				+cut(4)
+				max-height: 109px
+			.text
+				+cut(3)
+				margin-top: 5px
+				padding-bottom: 3px
+				padding-right: 10px
+			.promoblock-item-content
+				+tr(background-color .3s)
+				background-color: rgba(44, 30, 28,.5);
+			.item-type
+				color: $white
+				border-color: $white
+				&:hover 
+					color: $dark 
+					background-color: $white
+			.promoblock-item-link
+				&:hover
+					+notouch
+						.promoblock-item-content
+							background-color: rgba(44, 30, 28,.8);
+						.promoblock-item-bg
+							img
+								transform: scale(1.2)
 		&.type-promotion
+			contain: paint
 			.promoblock-item-bg
 				img 
 					width: 100%
@@ -57,8 +107,6 @@
 			.promoblock-item-content
 				+tr(background-color .3s)
 				background-color: rgba(240, 115, 25,.8)
-				@supports (mix-blend-mode: color-light)
-					mix-blend-mode: color-light
 				&-inner 
 					.title
 						+cut(4)
@@ -75,6 +123,16 @@
 					+notouch
 						.promoblock-item-content
 							background-color: rgba(240, 115, 25,.9)
+			&.bg-black
+				.promoblock-item-content
+					background-color: rgba(44, 30, 28,.8);
+				.promoblock-item-link
+					&:hover
+						+notouch
+							.promoblock-item-content
+								background-color: rgba(44, 30, 28,.9)
+
+
 		&.type-news
 			.promoblock-item-link
 				&:hover
@@ -90,6 +148,7 @@
 				.promoblock-item-content-inner
 					.title
 						max-width: 270px
+
 						+cut(4)
 			.promoblock-item-bg
 				background-color: $black
@@ -116,6 +175,7 @@
 						padding-top: 29px
 						.title
 							max-width: 100%
+							max-height: 56px
 							+cut(2)
 				&~.item-type-wrapper
 					.item-type
@@ -312,6 +372,7 @@
 			flex-direction: column
 			border-radius: 4px
 			overflow: hidden
+			align-items: stretch
 		&-bg 
 			+coverdiv
 			z-index: 0
@@ -322,6 +383,7 @@
 			z-index: 1
 			display: flex 
 			flex-direction: column
+			justify-content: flex-end
 			&-inner
 				padding: 35px
 				margin-top: auto

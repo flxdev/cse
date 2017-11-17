@@ -14,44 +14,44 @@ export default function Video() {
       scrollbtn = $('.full-height-scroller'),
       src = video.data('src');
 
-    function scaleVideoContainer() {
+    // function scaleVideoContainer() {
 
-      let height = $(window).height() + 5;
-      let unitHeight = parseInt(height) + 'px';
-      homepage.css('height',unitHeight);
-    }
+    //   let height = $(window).height() + 5;
+    //   let unitHeight = parseInt(height) + 'px';
+    //   homepage.css('height',unitHeight);
+    // }
 
-    function initBannerVideoSize(element) {
-      element.data('height', element.height());
-      element.data('width', element.width());
+    // function initBannerVideoSize(element) {
+    //   element.data('height', element.height());
+    //   element.data('width', element.width());
 
-      scaleBannerVideoSize(element);
+    //   scaleBannerVideoSize(element);
 
-    }
+    // }
 
-    function scaleBannerVideoSize(element) {
+    // function scaleBannerVideoSize(element) {
 
-      let windowWidth = $(window).width(),
-        windowHeight = $(window).height() + 5,
-        videoWidth,
-        videoHeight;
+    //   let windowWidth = $(window).width(),
+    //     windowHeight = $(window).height() + 5,
+    //     videoWidth,
+    //     videoHeight;
         
-      let videoAspectRatio = element.data('height')/element.data('width');
+    //   let videoAspectRatio = element.data('height')/element.data('width');
 
-      element.width(windowWidth);
-      if(windowWidth < 1280) {
-        videoHeight = windowHeight;
-        videoWidth = videoHeight / videoAspectRatio;
-        element.css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
-        element.width(videoWidth).height(videoHeight);
-      }
-    }
+    //   element.width(windowWidth);
+    //   if(windowWidth < 1280) {
+    //     videoHeight = windowHeight;
+    //     videoWidth = videoHeight / videoAspectRatio;
+    //     element.css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+    //     element.width(videoWidth).height(videoHeight);
+    //   }
+    // }
 
-    function initsize() {
-      scaleVideoContainer();
-      initBannerVideoSize(img);
-      initBannerVideoSize(video);
-    }initsize();
+    // function initsize() {
+    //   scaleVideoContainer();
+    //   initBannerVideoSize(img);
+    //   initBannerVideoSize(video);
+    // }initsize();
    
     if(!isMobile()) {
       
@@ -61,10 +61,9 @@ export default function Video() {
         
       };
       video[0].load();
-      $(window).on('resize', debounce(initsize));
-    }else{
-      animatedEl.hide();
+      // $(window).on('resize', debounce(initsize));
     }
+    
     parent.addClass('has-fullvideo');
     animateBg();
 
@@ -83,7 +82,7 @@ export default function Video() {
         scrollTop = window.pageYOffset || window.scrollTop;
         calc = (scrollTop * 100) / (area / 2) * 0.01;
         calcReverse = 1 - ((scrollTop * 100) / (area / 3) * 0.01);
-        animatedEl.css('background-color',`rgba(86, 74, 72, ${calc})`);
+        animatedEl.css('background-color',`rgba(47, 36, 37, ${calc})`);
         scrollbtn.css('opacity',calcReverse);
       });
 

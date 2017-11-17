@@ -1,7 +1,7 @@
 ProjectTitle: kse
 
 PageList:
-- file: page.html
+- file: home.html
   ready: 10
 - file: page2.html
   ready: 25

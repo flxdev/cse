@@ -33,12 +33,13 @@ export default function Menu() {
 	      }, 500);
 	    }
 	  });
-   	$(window).on('click',(e) => {
+   	$(window).on('click touchstart',(e) => {
    		if(target.hasClass('active') && !_.hasClass('anim')) {
         if (!target.is(e.target) 
 				&& target.has(e.target).length === 0) {
         	_.add(target).removeClass(OpenClass);
           bg.removeClass(OpenClass2);
+          window.DOM.showScroll();
         }
    		}
 
