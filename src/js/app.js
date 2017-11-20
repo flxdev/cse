@@ -15,6 +15,7 @@ import Video from './lib/Video';
 import lazyImage from './lib/lazyImage';
 import Promise from './lib/Promise';
 import Sliders from './lib/Sliders';
+import YandMap from './lib/YandMap';
 
 
 
@@ -164,6 +165,7 @@ ready(() => {
   Video();
   lazyImage();
   Sliders();
+  var Maps = new YandMap();
 });
 
 

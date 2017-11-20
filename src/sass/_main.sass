@@ -119,10 +119,16 @@ body,.out
 	line-height: 1.261;
 	transition: color .3s, opacity .3s
 	text-transform: uppercase
-	+r(500)
+	+r(600)
 		font-size: 30px
+	+r(335)
+		font-size: 28px
 	&.h2
 		font-size: 36px
+		+r(600)
+			font-size: 26px
+		+r(335)
+			font-size: 25px
 	&.h3 
 		text-transform: none
 		font-size: 24px
@@ -243,11 +249,12 @@ blockquote
 		// 		.text.white
 		// 			color: #cdcccc
 
-	&.brown
+	&.bg-brown
 		background-color: $brown
-	&.brown-gradient
+	&.bg-brown-gradient
 		background-image: linear-gradient( -90deg, rgb(86,74,72) 0%, rgb(67,55,55) 42%, rgb(47,36,37) 100%);
-
+	&.bg-white
+		background-color: $white
 	&.bg-mobile
 		+rm(640)
 			background-color: transparent !important
@@ -452,19 +459,18 @@ blockquote
 	opacity: 0
 	&.fade-in 
 		opacity: 1
-.row 
-	&.padding-big
-		padding-bottom: 120px
-		padding-top: 85px
-		+r(640)
-			padding-bottom: 50px
-			padding-top: 35px
-		.columns
-			&.small-12
-				+r(800)
-					flex: 0 0 100%;
-					max-width: 100%;
-					width: 100%
+.padding-big
+	padding-bottom: 120px
+	padding-top: 85px
+	+r(640)
+		padding-bottom: 50px
+		padding-top: 35px
+	.columns
+		&.small-12
+			+r(800)
+				flex: 0 0 100%;
+				max-width: 100%;
+				width: 100%
 
 .block-about
 	.title 
@@ -476,6 +482,7 @@ blockquote
 		+r(800)
 			max-width: 100%
 			padding-right: 0
+			margin-bottom: 30px
 	.text 
 		margin-bottom: 55px
 		opacity: .7
@@ -484,6 +491,7 @@ blockquote
 		+r(800)
 			// max-width: 530px
 			padding-right: 0
+			margin-bottom: 30px
 	.btn 
 		margin-left: 0
 	&-slider
@@ -497,6 +505,16 @@ blockquote
 		+r(640)
 			margin-bottom: 0
 			margin-right: 0
+		.slider-dots
+			+rm(1201)
+				display: none
+			+r(996)
+				display: none
+			+r(640)
+				display: block
+				
+				
+				
 		&-item
 			padding-right: 37px
 			vertical-align: top
@@ -555,4 +573,86 @@ blockquote
 			opacity: .4
 
 
-	
+.feature
+	&-wrapper
+		display: flex
+		flex-flow: row wrap
+	&-item
+		width: 33.33%
+		// display: inherit
+		// margin: 1px
+		display: inline-flex
+		&:hover
+			+notouch
+				.feature-item-text
+					background-color: rgba(44, 30, 28,.8);
+				.feature-item-bg-inner
+					transform: scale(1.15)
+		&:active
+				.feature-item-text
+					background-color: rgba(44, 30, 28,.8);
+					transition-duration: 0s
+				.feature-item-bg-inner
+					transform: scale(1.15)	
+					transition-duration: 0s
+		+r(600)
+			width: 100%
+		&-inner
+			width: 100%
+			position: relative
+			padding-bottom: 68.5%
+			overflow: hidden
+			height: 0
+			z-index: 0
+			+r(600)
+				padding-bottom: 46.5%
+		&-content
+			+coverdiv
+		&-bg 
+			+coverdiv
+			z-index: -1
+			&-inner
+				+cover
+				width: 100%
+				height: 100%
+				+tr(transform .3s ease-in-out)
+		&-text
+			width: 100%
+			height: 100%
+			+tr(background-color .3s)
+			+vertical
+			background-color: rgba(44, 30, 28,.4);
+
+			.title
+				display: inline-block
+				vertical-align: middle
+				
+
+.offices-map
+	position: relative
+	&>.title
+		&:first-child
+			max-width: 450px
+.map
+	&-wrapper
+		height: 0
+		width: 100%
+		padding-bottom: 45%
+		position: relative
+		margin-top: 40px
+		+r(640)
+			padding-bottom: 100%
+	&-elem
+		+coverdiv
+	&-button
+		position: absolute
+		right: 0
+		top: 0
+		margin-bottom: 70px
+		.btn
+			margin: 0
+		+r(640)
+			position: static
+			margin-bottom: 0
+			margin-top: 30px
+

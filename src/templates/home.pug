@@ -6,6 +6,7 @@ outClass: Index_Page
 extends layouts/_layout
 block conf
 	-var video = true
+	-var map = true
 block content
 	.video-bg
 		include ./partials/_bgvideo
@@ -59,7 +60,7 @@ block content
 											+icon('arrr')
 		.full-height-scroller
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 31"><style>.stscroll0{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;} .stscroll1{fill:#FFFFFF;}</style><path d="M10 .5c5.2 0 9.5 4.3 9.5 9.5v11c0 5.2-4.3 9.5-9.5 9.5S.5 26.2.5 21V10C.5 4.8 4.8.5 10 .5z" class="stscroll0"/><path d="M10 7.6c.3 0 .5.2.5.5v3.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V8.1c0-.3.2-.5.5-.5z" class="stscroll1"/></svg>
-	.wrapper.bg-mobile.brown-gradient
+	.wrapper.bg-mobile.bg-brown-gradient
 		.box
 			.promoblock-wrapper
 				.promoblock-inner
@@ -236,6 +237,7 @@ block content
 									.text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ducimus impedit, rerum corporis quam ad est sint, temporibus voluptates, saepe iste explicabo perspiciatis molestias nostrum aliquid. Odit ipsa similique excepturi!
 							object.item-type-wrapper
 								a(href="#").item-type Услуги
+
 	.wrapper
 		.wrapper-bg
 			.wrapper-bg-img.js-image.bg(data-src='img/bgwrapper/1.jpg')
@@ -265,23 +267,44 @@ block content
 									.block-about-slider-title 2000+
 									.text.sm.white Клиентов среди малого, среднего и крупного бизнеса по всему миру
 							.slider-dots
-	.wrapper.bg-orange
+	.wrapper.bg-white
 		.box
-			.row.padding-big
-				.columns.large-6.medium-6.small-12
-					.block-about
-						h2.title.h2.white Есть вопросы или нужна помощь?
-				.columns.large-6.medium-6.small-12
-					.block-about
-						.text.white Мы всегда рады помочь и ответить на все интересующие вас вопросы. Вы можете попробовать найти информацию в разделе 
-							a(href="#") «Вопросы и ответы»
-							| или написать ваш вопрос нам на почту.
-						a(href="#").btn.color-white.type-round.color-reverse.not-trans
+			.content.padding-big
+				.offices-map
+					.title.h2 Более 250 офисов по всей России
+					.map-wrapper
+						// иничу карту по классу, но айди все арвно нужен и если карт несколько то он уникален
+						.map-elem.js-map#map-1(data-pinimg='img/pin-black.svg',data-maptype='offices')
+						//- .map-wrapper
+						//- 	.map-elem.js-map#map-2(data-pinimg='img/pin-black.svg',data-lat='55.751574',data-lon='37.573856')
+					.map-button
+						a(href="#").btn.color-orange.type-round
 							.btn-inner 
-								span Вопросы и ответы
-						a(href="#").btn.color-white.type-round.color-reverse
-							.btn-inner 
-								span Задать вопрос
+								span Все офисы
+	.wrapper.brown
+		.feature-wrapper
+			a(href="#").feature-item
+				.feature-item-inner
+					.feature-item-content
+						.feature-item-bg
+							.feature-item-bg-inner.js-image.bg(data-src='img/feature/1.jpg')
+						.feature-item-text
+								.title.h3.white Франчайзинг
+			a(href="#").feature-item
+				.feature-item-inner
+					.feature-item-content
+						.feature-item-bg
+							.feature-item-bg-inner.js-image.bg(data-src='img/feature/2.jpg')
+						.feature-item-text
+								.title.h3.white Закупки
+			a(href="#").feature-item
+				.feature-item-inner
+					.feature-item-content
+						.feature-item-bg
+							.feature-item-bg-inner.js-image.bg(data-src='img/feature/3.jpg')
+						.feature-item-text
+								.title.h3.white Сотрудничество
+	include ./partials/_ask
 	.wrapper
 		.box
 			.title.h1 Мои расчёты

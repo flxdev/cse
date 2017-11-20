@@ -14,7 +14,7 @@ CitySelect.prototype = {
     this.initFilter();
   },
   initOpenClose: function() {
-  	var self = this;
+  	let self = this;
     Array.from(this.triggers).forEach((item) => {
       item.addEventListener('click',() => {
         if(!self.target.classList.contains('open')) {
