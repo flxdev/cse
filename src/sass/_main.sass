@@ -110,15 +110,14 @@ body,.out
 			padding-left: 240px	
 		+r(996)
 			padding-left: 0
+			padding-top: 65px
 
 .title
 	font-size: 46px;
 	color: rgb(0, 0, 0)
 	font-weight: bold;
-	
 	line-height: 1.261;
 	transition: color .3s, opacity .3s
-	text-transform: uppercase
 	+r(600)
 		font-size: 30px
 	+r(335)
@@ -656,3 +655,22 @@ blockquote
 			margin-bottom: 0
 			margin-top: 30px
 
+.info-text
+	display: block
+	padding-bottom: 50px
+	font-size: 0
+	position: relative
+	padding-left: 35px
+	+r(640)
+		padding-bottom: 25px	
+	&-icon 
+		position: absolute
+		left: 0
+		top: 0
+		width: 25px
+		height: 25px
+	&-text 
+		max-width: 740px
+		.red 
+			color: #dd2e1b
+			font-weight: 500

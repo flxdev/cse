@@ -1,0 +1,453 @@
+---
+title: Index Page
+---
+extends layouts/_layout
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Отслеживание посылок
+	.wrapper.bg-white
+		.box
+			.info-text
+				.info-text-icon
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='24' height='24'><style>.iconinfo{fill:#4E4544;}</style><path d="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1m0-1C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0z" class="iconinfo"/><path d="M11.3 6.3V11l.3 3.7h.9l.3-3.7V6.3h-1.5zm1.5 11.4v-1.9h-1.7v1.9h1.7z" class="iconinfo"/></svg>
+				.info-text-text
+					.text.sm По запросам 
+						span.red 475424444
+						|, 
+						span.red 475744447 
+						|ничего не найдено. Проверьте правильность написания номера. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом. 
+			.offerlist-wrap
+				.offerlist-container
+					.offerlist-item
+						.offerlist-item-head
+							.title.h3 Заказ №495-0023037144
+							// мы всадили тебе аккордеоны в аккордеон. осталось прихуярить монитор)
+							// поэтому на них есть 2 класса, .js-accord-trigger, .js-accord-target  у них должны совадать дата-таргеты. я хз ес честно сможешь ты сгенерить их или нет
+							.link-dotted.js-accord-trigger.js-accord-trigger(data-target='main')
+								.link-dotted-text.js-toggletext(data-alt-text='Свернуть накладные') Развернуть накладные
+								.link-dotted-icon
+									+icon('arrd')
+						.offerlist-item-content
+							.offerlist-item-table
+								.table-head
+									.table-item
+										.caption Статус отправления
+									.table-item
+										.caption Дата отправления
+									.table-item
+										.caption Плановая дата доставки
+									.table-item
+										.caption Пункт отправления
+									.table-item
+										.caption Пункт назначения
+									.table-item
+										.caption Вид груза
+									.table-item
+										.caption Вес
+								.table-row
+									.table-item(data-headname='Статус отправления')
+										.text.sm Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
+											.caption 10.09.2017 16:52
+									.table-item(data-headname='Дата отправления')
+										.text.sm 30.08.2017
+									.table-item(data-headname='Плановая дата доставки')
+										.text.sm 10.09.2017
+									.table-item(data-headname='Пункт отправления')
+										.text.sm Москва, Россия
+									.table-item(data-headname='Пункт назначения')
+										.text.sm —
+									.table-item(data-headname='Вид груза')
+										.text.sm Груз
+									.table-item(data-headname='Вес')
+										.text.sm 10
+							.offerlist-item-content-slideup.js-accord-target(data-target='block1')
+								ul.offerlist-item-road
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Отправление доставлено получателю
+											.caption 21.08.2017 18:16
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Груз передан на доставку
+											.caption 21.08.2017 11:19
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Груз передан на доставку
+											.caption 21.08.2017 11:19
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Груз передан на доставку
+											.caption 21.08.2017 11:19
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Груз передан на доставку
+											.caption 21.08.2017 11:19
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569
+											.caption 21.08.2017 11:19
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Груз передан на доставку
+											.caption 21.08.2017 11:19
+						.offerlist-item-footer
+							.offerlist-item-footer-block
+								.link-dotted.js-accord-trigger(data-target='block1')
+									.link-dotted-text.js-toggletext(data-alt-text='Скрыть') Отслеживание
+									.link-dotted-icon
+										+icon('arrd')
+							.offerlist-item-footer-block
+								a(href="#").link-icon.sm
+									.link-icon-icon
+										+icon('danger')
+									.link-icon-text Проблемы с заказом
+					.offerlist-item-subitems.js-accord-target(data-target='main')
+						.offerlist-item
+							.offerlist-item-head
+								.title.h4 Накладная №66141588
+							.offerlist-item-content
+								.offerlist-item-table
+									.table-head
+										.table-item
+											.caption Статус отправления
+										.table-item
+											.caption Дата отправления
+										.table-item
+											.caption Плановая дата доставки
+										.table-item
+											.caption Пункт отправления
+										.table-item
+											.caption Пункт назначения
+										.table-item
+											.caption Вид груза
+										.table-item
+											.caption Вес
+									.table-row
+										.table-item(data-headname='Статус отправления')
+											.text.sm Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
+												.caption 10.09.2017 16:52
+										.table-item(data-headname='Дата отправления')
+											.text.sm 30.08.2017
+										.table-item(data-headname='Плановая дата доставки')
+											.text.sm 10.09.2017
+										.table-item(data-headname='Пункт отправления')
+											.text.sm Москва, Россия
+										.table-item(data-headname='Пункт назначения')
+											.text.sm —
+										.table-item(data-headname='Вид груза')
+											.text.sm Груз
+										.table-item(data-headname='Вес')
+											.text.sm 10
+								.offerlist-item-content-slideup.js-accord-target(data-target='block2')
+									ul.offerlist-item-road
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Отправление доставлено получателю
+												.caption 21.08.2017 18:16
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+							.offerlist-item-footer
+								.offerlist-item-footer-block
+									.link-dotted.js-accord-trigger(data-target='block2')
+										.link-dotted-text.js-toggletext(data-alt-text='Скрыть') Отслеживание
+										.link-dotted-icon
+											+icon('arrd')
+								.offerlist-item-footer-block
+									a(href="#").link-icon.sm
+										.link-icon-icon
+											+icon('danger')
+										.link-icon-text Проблемы с накладной
+						.offerlist-item
+							.offerlist-item-head
+								.title.h4 Накладная №66141588
+							.offerlist-item-content
+								.offerlist-item-table
+									.table-head
+										.table-item
+											.caption Статус отправления
+										.table-item
+											.caption Дата отправления
+										.table-item
+											.caption Плановая дата доставки
+										.table-item
+											.caption Пункт отправления
+										.table-item
+											.caption Пункт назначения
+										.table-item
+											.caption Вид груза
+										.table-item
+											.caption Вес
+									.table-row
+										.table-item(data-headname='Статус отправления')
+											.text.sm Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
+												.caption 10.09.2017 16:52
+										.table-item(data-headname='Дата отправления')
+											.text.sm 30.08.2017
+										.table-item(data-headname='Плановая дата доставки')
+											.text.sm 10.09.2017
+										.table-item(data-headname='Пункт отправления')
+											.text.sm Москва, Россия
+										.table-item(data-headname='Пункт назначения')
+											.text.sm —
+										.table-item(data-headname='Вид груза')
+											.text.sm Груз
+										.table-item(data-headname='Вес')
+											.text.sm 10
+								.offerlist-item-content-slideup.js-accord-target(data-target='block3')
+									ul.offerlist-item-road
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Отправление доставлено получателю
+												.caption 21.08.2017 18:16
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+							.offerlist-item-footer
+								.offerlist-item-footer-block
+									.link-dotted.js-accord-trigger(data-target='block3')
+										.link-dotted-text.js-toggletext(data-alt-text='Скрыть') Отслеживание
+										.link-dotted-icon
+											+icon('arrd')
+								.offerlist-item-footer-block
+									a(href="#").link-icon.sm
+										.link-icon-icon
+											+icon('danger')
+										.link-icon-text Проблемы с накладной
+						.offerlist-item
+							.offerlist-item-head
+								.title.h4 Накладная №66141588
+							.offerlist-item-content
+								.offerlist-item-table
+									.table-head
+										.table-item
+											.caption Статус отправления
+										.table-item
+											.caption Дата отправления
+										.table-item
+											.caption Плановая дата доставки
+										.table-item
+											.caption Пункт отправления
+										.table-item
+											.caption Пункт назначения
+										.table-item
+											.caption Вид груза
+										.table-item
+											.caption Вес
+									.table-row
+										.table-item(data-headname='Статус отправления')
+											.text.sm Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
+												.caption 10.09.2017 16:52
+										.table-item(data-headname='Дата отправления')
+											.text.sm 30.08.2017
+										.table-item(data-headname='Плановая дата доставки')
+											.text.sm 10.09.2017
+										.table-item(data-headname='Пункт отправления')
+											.text.sm Москва, Россия
+										.table-item(data-headname='Пункт назначения')
+											.text.sm —
+										.table-item(data-headname='Вид груза')
+											.text.sm Груз
+										.table-item(data-headname='Вес')
+											.text.sm 10
+								.offerlist-item-content-slideup.js-accord-target(data-target='block4')
+									ul.offerlist-item-road
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Отправление доставлено получателю
+												.caption 21.08.2017 18:16
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569
+												.caption 21.08.2017 11:19
+										li.road-item
+											span
+											.road-item-content
+												.text.sm Груз передан на доставку
+												.caption 21.08.2017 11:19
+							.offerlist-item-footer
+								.offerlist-item-footer-block
+									.link-dotted.js-accord-trigger(data-target='block4')
+										.link-dotted-text.js-toggletext(data-alt-text='Скрыть') Отслеживание
+										.link-dotted-icon
+											+icon('arrd')
+								.offerlist-item-footer-block
+									a(href="#").link-icon.sm
+										.link-icon-icon
+											+icon('danger')
+										.link-icon-text Проблемы с накладной
+				.offerlist-container
+					.offerlist-item
+						.offerlist-item-head
+							.title.h3 Накладная №66141569
+						.offerlist-item-content
+							.offerlist-item-table
+								.table-head
+									.table-item
+										.caption Статус отправления
+									.table-item
+										.caption Дата отправления
+									.table-item
+										.caption Плановая дата доставки
+									.table-item
+										.caption Пункт отправления
+									.table-item
+										.caption Пункт назначения
+									.table-item
+										.caption Вид груза
+									.table-item
+										.caption Вес
+								.table-row
+									.table-item(data-headname='Статус отправления')
+										.text.sm Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
+											.caption 10.09.2017 16:52
+									.table-item(data-headname='Дата отправления')
+										.text.sm 30.08.2017
+									.table-item(data-headname='Плановая дата доставки')
+										.text.sm 10.09.2017
+									.table-item(data-headname='Пункт отправления')
+										.text.sm Москва, Россия
+									.table-item(data-headname='Пункт назначения')
+										.text.sm —
+									.table-item(data-headname='Вид груза')
+										.text.sm Груз
+									.table-item(data-headname='Вес')
+										.text.sm 10
+							.offerlist-item-content-slideup.js-accord-target(data-target='main2')
+								ul.offerlist-item-road
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Отправление доставлено получателю
+											.caption 21.08.2017 18:16
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Груз передан на доставку
+											.caption 21.08.2017 11:19
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Груз передан на доставку
+											.caption 21.08.2017 11:19
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Груз передан на доставку
+											.caption 21.08.2017 11:19
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Груз передан на доставку
+											.caption 21.08.2017 11:19
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569
+											.caption 21.08.2017 11:19
+									li.road-item
+										span
+										.road-item-content
+											.text.sm Груз передан на доставку
+											.caption 21.08.2017 11:19
+						.offerlist-item-footer
+							.offerlist-item-footer-block
+								.link-dotted.js-accord-trigger(data-target='main2')
+									.link-dotted-text.js-toggletext(data-alt-text='Скрыть') Отслеживание
+									.link-dotted-icon
+										+icon('arrd')
+							.offerlist-item-footer-block
+								a(href="#").link-icon.sm
+									.link-icon-icon
+										+icon('danger')
+									.link-icon-text Проблемы с накладной
+	include ./partials/_ask

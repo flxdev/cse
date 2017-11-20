@@ -1,0 +1,134 @@
+.offerlist
+	&-wrap
+		padding-bottom: 120px
+		padding-top: 20px
+		+r(800)
+			padding-bottom: 80px
+		+r(640)
+			padding-top: 10px
+			padding-bottom: 50px
+	&-container
+		border: 1px solid $inputborder
+		padding: 35px 35px 0 35px
+		margin-bottom: 15px
+		+r(640)
+			padding: 20px 18px 0 18px	
+	&-item 
+		&-head
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			align-items: center
+			margin-bottom: 28px
+			.title
+				max-width: 550px
+			+r(640)
+				.link-dotted
+					margin-top: 20px
+		&-footer
+			font-size: 0
+			padding-top: 15px
+			padding-bottom: 35px
+			+r(640)
+				padding-bottom: 18px
+				padding-top: 5px
+			&-block
+				display: inline-block
+				vertical-align: middle
+				min-width: 160px
+
+		&-table
+			display: table
+			width: 100%
+			+r(640)
+				display: block
+				font-size: 0
+				.table-head
+					display: none
+				.table-row
+					display: block
+					.table-item
+						width: 100%
+						display: block
+						padding-bottom: 20px
+						font-size: 0
+						padding-right: 0
+						&:before
+							content: attr(data-headname)
+							display: inline-block
+							vertical-align: top
+							width: 50%
+							font-size: 14px
+							color: $caption
+							padding-right: 5px
+							// float: left
+						.text.sm 
+							display: inline-block
+							vertical-align: top
+							width: 50%
+			.table-head
+				display: table-header-group
+				.table-item
+					padding-bottom: 15px
+			.table-item
+				display: table-cell
+				width: 17%
+				&:not(:last-child)
+					padding-right: 5px
+
+			.table-row
+				display: table-row-group
+		&-road 
+			// display: none
+			position: relative
+			margin-top: 25px
+			margin-bottom: 5px
+			
+			
+			&:before
+				content: ''
+				display: inline-block
+				position: absolute
+				left: 4px
+				top: 7px
+				bottom: 40px
+				width: 4px
+				background-repeat: repeat-y;
+				background-size: 4px 10px;
+				background-image: radial-gradient(circle, $brand 1px, transparent 1.5px);
+			.road-item
+				display: block
+				position: relative
+				padding-left: 30px
+				padding-bottom: 15px
+				span 
+					position: absolute
+					display: inline-block
+					left: -1px
+					top: 4px
+					background-color: $white
+					border-radius: 50%
+					border: 2px solid $brand
+					width: 14px
+					height: 14px
+				&-content
+					max-width: 500px
+		&-content 
+			.text.sm
+				font-size: 14px
+			&-slideup
+				display: none
+				
+				width: 100%
+
+		&-subitems
+			display: none
+			
+			.offerlist-item
+				border-top: 1px solid $inputborder
+				padding-top: 35px
+				.table-head
+					display: none
+					
+
+												

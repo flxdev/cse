@@ -1,0 +1,57 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Расчёт доставки
+	.wrapper.bg-white
+		.box
+			.row.align-middle
+				.columns.price-form-wrapper
+					form(action="/").form.price-form.js-validate
+						.input-row.gap-search
+							.input-item.w33
+								.input-wrapper
+									input.input-main.input-dropdown.js-input-dropdown.js-swap-item(name='wqedqwe', placeholder='Например, Москва',data-validation="length",data-validation-length='min1',data-validation-error-msg="Укажите город")
+									.js-input-dropdown-target.input-dropdown-target
+										.input-dropdown-content
+											.option
+												span Мосальск, Россия
+											.option
+												span Москва, Россия
+											.option
+												span Мосс, Норвегия
+											.option
+												span Мостар, Босния и Герцеговина
+										//- each country in countries
+										//- 	option(value='1')= country
+
+									label(for='#name2Inp').input-label Откуда
+									.input-icon.swap.js-swap
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5"> <style>.stswap{fill-rule:evenodd;clip-rule:evenodd;fill:#F47921;}</style> <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap"/> <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap"/></svg>
+							.input-item.w33
+								.input-wrapper
+									input.input-main.input-dropdown.js-input-dropdown.js-swap-item(name='wqedqwe', placeholder='Например, Москва',data-validation="length",data-validation-length='min1',data-validation-error-msg="Укажите город")
+									.js-input-dropdown-target.input-dropdown-target
+										.input-dropdown-content
+											.option
+												span Мосальск, Россия
+											.option
+												span Москва, Россия
+											.option
+												span Мосс, Норвегия
+											.option
+												span Мостар, Босния и Герцеговина
+											.option
+												span Мостар, Босния и Герцеговина
+									label(for='#name2Inp').input-label Куда
+							.input-item.w33
+								button(type='submit').btn.has-loading.load
+									.btn-inner
+										span.js-price-text Узнать стоимость доставки
+											+icon('arrr')

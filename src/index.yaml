@@ -2,6 +2,10 @@ ProjectTitle: kse
 
 PageList:
 - file: home.html
-  ready: 10
-- file: page2.html
-  ready: 25
+  ready: 85
+- file: 1-0track.html
+  ready: 100
+- file: 2-0previosly.html
+  ready: 75
+- file: ui-components.html
+  ready: 100

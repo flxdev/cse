@@ -1,0 +1,28 @@
+.bread
+	&-cont
+		+rem(margin-bottom,24px)
+	&-item
+		+rem(font-size,14px)
+		color: $caption
+		+tr(color .3s)
+		line-height: 1.444;
+		&:hover
+			+notouch
+				color: $brandh
+				&:after
+					color: $caption
+		&:active
+			color: $brandh	
+			&:after
+				color: $caption
+		&:after
+			content: '/'
+			display: inline-block
+			+padlr(5px)
+			+tr(color .3s)
+.page-head
+	&-container
+		padding-top: 55px
+		padding-bottom: 32px
+		.title
+			margin-left: -1px

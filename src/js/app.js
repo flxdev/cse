@@ -16,6 +16,7 @@ import lazyImage from './lib/lazyImage';
 import Promise from './lib/Promise';
 import Sliders from './lib/Sliders';
 import YandMap from './lib/YandMap';
+import Accord from './lib/Accord';
 
 
 
@@ -149,7 +150,13 @@ ready(() => {
       };
     }());
   }
-
+  jQuery.fn.toggleText = function() {
+    var altText = this.data('alt-text');
+    if (altText) {
+      this.data('alt-text', this.text());
+      this.text(altText);
+    }
+  };
   datepick();
   validateLength();
   select();
@@ -166,6 +173,7 @@ ready(() => {
   lazyImage();
   Sliders();
   var Maps = new YandMap();
+  Accord();
 });
 
 
