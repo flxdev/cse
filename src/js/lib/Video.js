@@ -13,48 +13,7 @@ export default function Video() {
       animatedEl = homepage.find('.video-cover'),
       scrollbtn = $('.full-height-scroller'),
       src = video.data('src');
-
-    // function scaleVideoContainer() {
-
-    //   let height = $(window).height() + 5;
-    //   let unitHeight = parseInt(height) + 'px';
-    //   homepage.css('height',unitHeight);
-    // }
-
-    // function initBannerVideoSize(element) {
-    //   element.data('height', element.height());
-    //   element.data('width', element.width());
-
-    //   scaleBannerVideoSize(element);
-
-    // }
-
-    // function scaleBannerVideoSize(element) {
-
-    //   let windowWidth = $(window).width(),
-    //     windowHeight = $(window).height() + 5,
-    //     videoWidth,
-    //     videoHeight;
-        
-    //   let videoAspectRatio = element.data('height')/element.data('width');
-
-    //   element.width(windowWidth);
-    //   if(windowWidth < 1280) {
-    //     videoHeight = windowHeight;
-    //     videoWidth = videoHeight / videoAspectRatio;
-    //     element.css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
-    //     element.width(videoWidth).height(videoHeight);
-    //   }
-    // }
-
-    // function initsize() {
-    //   scaleVideoContainer();
-    //   initBannerVideoSize(img);
-    //   initBannerVideoSize(video);
-    // }initsize();
-   
     if(!isMobile()) {
-      
       video[0].src = src;
       video[0].load = function() {
         video.addClass('fadeIn animated');
@@ -69,11 +28,14 @@ export default function Video() {
 
     function animateBg() {
       let wh = $(window).height();
-
       let area = wh;
       let scrollTop;
       let calc;
       let calcReverse;
+
+      scrollbtn.on('click',() => {
+        $('html:not(:animated), body:not(:animated), .out:not(:animated)').animate({scrollTop: wh}, 500);
+      });
       $(window).on('resize',debounce(function() {
         wh = $(window).height();
         area = wh;

@@ -51,3 +51,27 @@
 			.btn.type-round
 				.btn-inner 
 					span Все результаты
+.modal-layout(data-modal='city').js-popup-container.modal-small
+	.modal-container
+		.modal-container-header
+			.modal-container-header-close.closePopup
+				.small-link
+					+icon('closemodal')
+		.modal-container-content
+			.city-chose
+				.city-chose-content 
+					.caption Ближайший к вам офис в городе: 
+					a(href="#").city-chose-city.title.h3 Москва
+					.text.sm Офисы: 
+						span 15
+					.text.sm Пункт выдачи заказов: 
+						span 9
+					.text.sm Постаматы: 
+						span 4
+				.city-chose-footer
+					.btn.closePopup.light.js-city-select
+						.btn-inner 
+							span Нет, другой город
+					.btn.closePopup
+						.btn-inner 
+							span Да, всё верно
