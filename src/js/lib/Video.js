@@ -17,7 +17,6 @@ export default function Video() {
       video[0].src = src;
       video[0].load = function() {
         video.addClass('fadeIn animated');
-        
       };
       video[0].load();
       // $(window).on('resize', debounce(initsize));

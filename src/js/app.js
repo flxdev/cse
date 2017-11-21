@@ -17,6 +17,7 @@ import Promise from './lib/Promise';
 import Sliders from './lib/Sliders';
 import YandMap from './lib/YandMap';
 import Accord from './lib/Accord';
+import Stick from './lib/Stick';
 
 
 
@@ -174,6 +175,7 @@ ready(() => {
   Sliders();
   var Maps = new YandMap();
   Accord();
+  Stick();
 });
 
 

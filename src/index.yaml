@@ -6,6 +6,8 @@ PageList:
 - file: 1-0track.html
   ready: 100
 - file: 2-0previosly.html
-  ready: 75
+  ready: 100
+- file: 2-2calc.html
+  ready: 25
 - file: ui-components.html
   ready: 100

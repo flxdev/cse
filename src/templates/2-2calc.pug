@@ -1,0 +1,175 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Расчёт доставки
+	.wrapper.bg-white
+		.box
+			.content-columns
+				.content-columns-main
+					form(action="/").js-validate
+						.border-block
+							.border-block-content
+								.title.h3 География
+								.form-block
+									.form-block-head
+										.title.h5 Откуда
+									.input-row
+										.input-item.multi
+											.input-wrapper
+												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(name='FromCountry', placeholder='Например, Россия',data-validation="length",data-validation-length='min1',data-validation-error-msg="Неверно выбрана страна или населённый пункт",value='Россия')
+												.js-input-dropdown-target.input-dropdown-target
+													.input-dropdown-content
+														.option
+															span Россия
+														.option
+															span Россия
+														.option
+															span Беларусь
+														.option
+															span Украина
+														.option
+															span Казахстан
+												label(for='#wqedqwe').input-label Страна
+											.input-wrapper
+												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(name='FromCicy', placeholder='Например, Москва',data-validation="length",data-validation-error-msg="Неверно выбрана страна или населённый пункт",data-validation-length='min1',value='Москва')
+												.js-input-dropdown-target.input-dropdown-target
+													.input-dropdown-content
+														.option
+															span Мосальск
+														.option
+															span Москва
+														.option
+															span Мосс
+														.option
+															span Мостар
+														.option
+															span осния
+												label(for='#wqedqaswe').input-label Населённый пункт
+								.form-block
+									.form-block-head
+										.title.h5 Куда
+										//.swap-multi если вдруг надо
+										.input-icon.swap.js-swap.swap-multi
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5"> <style>.stswap{fill-rule:evenodd;clip-rule:evenodd;fill:#F47921;}</style> <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap"/> <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap"/></svg>
+									.input-row
+										.input-item.multi
+											.input-wrapper
+												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(name='ToCountry', placeholder='Например, Россия',data-validation="length",data-validation-length='min1',value='Казахстан',data-validation-error-msg="Неверно выбрана страна или населённый пункт")
+												.js-input-dropdown-target.input-dropdown-target
+													.input-dropdown-content
+														.option
+															span Россия
+														.option
+															span Россия
+														.option
+															span Беларусь
+														.option
+															span Украина
+														.option
+															span Казахстан
+												label(for='#wq2edqwe').input-label Страна
+											.input-wrapper
+												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(name='ToCicy', placeholder='Например, Москва',data-validation="length",data-validation-length='min1',data-validation-error-msg="Неверно выбрана страна или населённый пункт",value='Мосс')
+												.js-input-dropdown-target.input-dropdown-target
+													.input-dropdown-content
+														.option
+															span Мосальск
+														.option
+															span Москва
+														.option
+															span Мосс
+														.option
+															span Мостар
+														.option
+															span осния
+												label(for='#wqedqwe2').input-label Населённый пункт
+						.border-block
+							.border-block-content
+								.title.h3 Информация об отправлении
+								.form-block
+									.form-block-head
+										.title.h5 Выберите тип отправления
+									.input-row
+										.input-item
+											.select-radio
+												label.select-radio-label
+													input(type="radio",name='PackageType',value='1', checked='checked').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake.ok
+														span.select-radio-text Документы
+											.select-radio
+												label.select-radio-label
+													input(type="radio",name='PackageType',value='2').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake.ok
+														span.select-radio-text Груз
+											.help-block.help Вы можете отправить в конверте не более 60 листов формата А4.
+								.form-block
+									.form-block-head
+										.title.h5 Параметры
+									.input-row
+										.input-item.w50
+											.input-wrapper
+												input.input-main(type="number",name='name',data-validation="number",data-validation-error-msg="Максимальный вес — 3 кг",data-validation-allowing="positive,float,range[0.01;3]",id='numInp',placeholder='0,01',data-validation-decimal-separator=".")
+												label(for='#numInp').input-label Вес, кг.
+										.input-item
+											.input-wrapper
+												textarea.input-main.maxlength(type="text",name='name',id='textInp',placeholder='Иванов Сергей Иванович', data-countdown='200')
+												label(for='#textInp').input-label Описание отправления
+						.border-block
+							.border-block-content
+								.title.h3 Способ доставки
+								.form-block
+									.input-row
+										.input-item
+											.select-radio
+												label.select-radio-label
+													input(type="radio",name='type1',value='1', checked='checked').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake.ok
+														span.select-radio-text Курьер
+											.select-radio
+												label.select-radio-label
+													input(type="radio",name='type1',value='2').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake.ok
+														span.select-radio-text Самовывоз
+											.help-block.help Ваша посылка будет доставлена получателю курьером.
+						.block-buttons
+							button(type='submit').btn.full-width
+								.btn-inner 
+									span Далее
+				.content-columns-aside(data-sticky-parent).js-stick-parent
+					.content-aside-content.js-stick
+						.calc-steps
+							.calc-steps-item.active.current
+								span.num
+									span
+								.calc-steps-content
+									.title.h5 Параметры заказа
+							.calc-steps-item
+								span.num
+									span
+								.calc-steps-content
+									.title.h5 Выбор тарифа
+							.calc-steps-item
+								span.num
+									span
+								.calc-steps-content
+									.title.h5 Контактные данные
+							.calc-steps-item
+								span.num
+									span
+								.calc-steps-content
+									.title.h5 Способ оплаты

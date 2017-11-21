@@ -97,15 +97,36 @@ export default function select() {
     const swapTrigger = $('.js-swap');
     swapTrigger.each(function() {
       let _ = $(this);
-      let parent = _.closest('.input-row');
-      let targets = parent.find('.js-swap-item');
-      if(targets.length === 2) {
-        _.on('click',() => {
-          let val1 = targets[0].value;
-          let val2 = targets[1].value;
-          targets[0].value = val2;
-          targets[1].value = val1;
-        }); 
+
+      if(!_.hasClass('swap-multi')) {
+        let parent = _.closest('.input-row');
+        let targets = parent.find('.js-swap-item');
+        if(targets.length === 2) {
+          _.on('click',() => {
+            let val1 = targets[0].value;
+            let val2 = targets[1].value;
+            targets[0].value = val2;
+            targets[1].value = val1;
+            targets.validate();
+          }); 
+        }
+      }else{
+        let parent = _.closest('.border-block');
+        let targets = parent.find('.js-swap-item');
+        if(targets.length === 4) {
+          _.on('click',() => {
+            console.log(targets);
+            let val1 = targets[0].value;
+            let val2 = targets[1].value;
+            let val3 = targets[2].value;
+            let val4 = targets[3].value;
+            targets[0].value = val3;
+            targets[1].value = val4;
+            targets[2].value = val1;
+            targets[3].value = val2; 
+            targets.validate();  
+          });
+        }
       }
     });
   }

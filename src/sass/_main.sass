@@ -674,3 +674,158 @@ blockquote
 		.red 
 			color: #dd2e1b
 			font-weight: 500
+.content-columns
+	display: flex 
+	flex-flow: row nowrap 
+	width: 100%
+	align-items: stretch
+	justify-content: space-between
+	padding-bottom: 120px
+	+r(996)
+		padding-bottom: 80px
+	+r(800)
+		flex-direction: column
+	+r(640)
+		padding-bottom: 45px	
+	&-aside
+		width: 360px
+		text-align: right
+		+r(1300)
+			width: 280px
+		+r(800)
+			width: 100%
+			order: 1
+			position: static !important
+			&>div 
+				position: static !important
+				& + div
+					display: none !important
+					  
+	&-main 
+		width: calc(100% - 380px)
+		+r(1300)
+			width: calc(100% - 290px)
+		+r(800)
+			width: 100%
+			order: 2
+.calc-steps
+	position: relative
+	max-width: 290px
+	display: inline-block
+	counter-reset: calc
+	width: 100%
+	margin-top: 15px
+	+r(1300)
+		max-width: 250px
+	+r(800)
+		max-width: 100%
+		display: flex
+		flex-flow: row nowrap 
+		justify-content: flex-end
+		align-items: center
+	&-item
+		position: relative
+		display: block
+
+		font-size: 0
+		cursor: pointer
+		text-align: left
+		counter-increment: calc
+		z-index: 0
+		+nosel
+		+r(800)
+			display: flex 
+			flex-flow: row nowrap
+			align-items: center
+			&:not(:last-child)
+				padding-right: 15px
+		&:not(:last-child)
+			padding-bottom: 27px
+			+r(800)
+				padding-bottom: 0
+
+		&.active 
+			.num
+				span
+					border-color: $brand
+					&:after
+						color: $brand
+			&:before
+				background-color: $brand !important
+			&:hover
+				.title 
+					color: $brand
+		&:not(.current)
+			+r(800)
+				.title
+					font-size: 0
+				.calc-steps-content
+					padding-left: 0
+		&.current 
+			pointer-events: none
+			+r(800)
+				margin-right: auto
+				
+		&:not(.active)
+			pointer-events: none
+		&:not(:first-child)
+			&:before
+				content: ''
+				display: inline-block
+				width: 1px
+				position: absolute
+				z-index: -1
+				background-color: $graylight
+				+tr(background-color .3s)
+				height: 27px
+				left: 23px
+				bottom: 100%
+				+r(800)
+					display: none
+					
+				// top: 0
+		.num,.calc-steps-content
+			display: inline-block
+			vertical-align: middle
+			+r(800)
+				// display: inherit
+		.num
+			width: 46px
+			height: 46px
+			background-color: $white
+			position: relative
+			z-index: 2
+			+vertical 
+			span 
+				display: inline-block
+				border-radius: 50%
+				border: 2px solid $graylight
+				+tr(border-color .3s)
+				vertical-align: middle
+				width: 37px
+				height: 37px
+				+vertical
+				+r(640)
+					width: 36px
+					height: 36px
+				&:after
+					content: counter(calc)
+					font-weight: 500
+					+tr(color .3s)
+					display: inline-block
+					vertical-align: middle
+					font-size: 14px
+					padding-left: 1px
+					color: $graylight
+	&-content 
+		padding-left: 15px
+		+r(800)
+			white-space: normal
+
+		.title 
+			+tr(color .3s)
+
+
+
+
+						

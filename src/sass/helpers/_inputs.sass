@@ -58,8 +58,46 @@
 		padding-bottom: 20px
 		&.w33
 			width: 33.33%
+			+r(800)
+				width: 50%
 		&.w50
 			width: 50%
+			+r(640)
+				width: 100%
+		&.multi
+			+rm(641)
+				.input-wrapper
+					display: inline-block
+					vertical-align: top
+					width: 50%
+					&:first-child
+						border-top-right-radius: 0
+						border-bottom-right-radius: 0
+						.input-main
+							border-top-right-radius: 0
+							border-bottom-right-radius: 0
+					&:last-child
+						border-top-left-radius: 0
+						border-bottom-left-radius: 0
+						.input-main
+							border-top-left-radius: 0
+							border-bottom-left-radius: 0
+			+r(640)
+				.input-wrapper
+					&:first-child
+						border-bottom-right-radius: 0
+						border-bottom-left-radius: 0
+						border-bottom: none
+						.input-main
+							border-bottom-right-radius: 0
+							border-bottom-left-radius: 0
+					&:last-child
+						border-top-right-radius: 0
+						border-top-left-radius: 0
+						.input-main
+							border-top-right-radius: 0
+							border-top-left-radius: 0
+
 	&-wrapper
 		width: 100%
 		display: inline-block
@@ -68,7 +106,7 @@
 		border-radius: 3px;
 		border: 1px solid $inputborder
 		text-align: left
-		// overflow: hidden
+
 		&:hover
 			border-color: $brandh
 		&.is-open
@@ -527,3 +565,65 @@
 			opacity: 1
 			visibility: visible 
 			transform: none
+.select-radio
+	display: inline-block
+	vertical-align: middle
+	margin: 5px 5px 15px 0
+	&-label 
+		display: inline-block
+		position: relative
+		cursor: pointer
+
+	&-input
+		+tr(width .3s)
+		width: 0
+		overflow: hidden
+		height: 22px
+		&-real
+			opacity: 0
+			visibility: hidden
+			+coverdiv
+			&:checked
+				&~ .select-radio-inner
+					border-color: $brand
+					.ok
+						transform: none
+					.select-radio-input
+						width: 22px
+						
+		&-fake
+			width: 100%
+			height: 100%
+			display: inline-block
+			
+			
+	&-inner 
+		display: inline-block
+		border: 1px solid $inputborder
+		font-size: 0
+		text-align: center
+		border-radius: 3px
+		min-width: 105px
+		padding-left: 23px
+		padding-right: 23px
+		padding-top: 10px
+		padding-bottom: 10px
+		height: 45px
+		+vertical
+		&>span 
+			display: inline-block
+			vertical-align: middle
+			
+	&-text 
+		font-size: 16px
+		line-height: 1.1
+		
+
+
+.ok 
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAsCAMAAADLhrFKAAAAJ1BMVEVHcEwtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUi0oQZAAAADHRSTlMA7Rs1CWmK21Wmzr/HNujwAAAAyUlEQVR42o2U0Q6EIBADBZZFoP//vRePh42J4vBGMmnaUj3wyQWjpWK0Oka9U9ImRvOYRtHWMi0gJY6qcLRy1Dk6DKM0V05Sob2KmrUhTZirC5t1SSfcq6QO2xJ2kBN2YIM76OGA5FKluegrWJNedpAfzL7t4HS73y80vYzWR7k1uw025RaXC2222eklHXXp3JfkFg7aMxZ5WlkOPofg+ksvB+Oj/xUpfcqG0SXLRkBkoy2pwdHiLdq4LQHkwz/QkCX5/MCnbz/IH2umCWXGP6xgAAAAAElFTkSuQmCC);
+	+cover 
+	+tr(transform .3s)
+	transform: scale(0)
+	transform-origin: left bottom
+	
