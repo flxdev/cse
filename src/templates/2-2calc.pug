@@ -119,12 +119,39 @@ block content
 									.input-row
 										.input-item.w50
 											.input-wrapper
-												input.input-main(type="number",name='name',data-validation="number",data-validation-error-msg="Максимальный вес — 3 кг",data-validation-allowing="positive,float,range[0.01;3]",id='numInp',placeholder='0,01',data-validation-decimal-separator=".")
-												label(for='#numInp').input-label Вес, кг.
+												input.input-main(type="number",name='DocWeight',data-validation="number",data-validation-allowing="range[0,01;3],float,positive",data-validation-error-msg="Максимальный вес — 3 кг",id='DocWeight',placeholder='0.01',data-validation-decimal-separator=".")
+												label(for='#DocWeight').input-label Вес, кг
 										.input-item
 											.input-wrapper
-												textarea.input-main.maxlength(type="text",name='name',id='textInp',placeholder='Иванов Сергей Иванович', data-countdown='200')
-												label(for='#textInp').input-label Описание отправления
+												textarea.input-main.maxlength(type="text",name='DocDescr',id='DocDescr',placeholder='Иванов Сергей Иванович', data-countdown='200')
+												label(for='#DocDescr').input-label Например, ценные документы
+								.form-block
+									.form-block-head
+										.title.h5 Параметры
+									.input-row
+										.input-item.w50
+											.input-wrapper
+												input.input-main(type="number",name='GruzPlaces',data-validation="number",data-validation-error-msg="Максимальный вес — 3 кг",data-validation-allowing="positive",id='GruzPlaces',placeholder='1')
+												label(for='#GruzPlaces').input-label Количество мест
+										.input-item.w50
+											.input-wrapper
+												select.input-main.js-select(name='GruzType', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='GruzType')
+													option(value="1") Коробка
+													option(value="2") Треугольный тубус
+													option(value="3") Конверт
+												label(for='#GruzType').input-label Вид груза
+										.input-item.w50
+											.input-wrapper
+												input.input-main(type="number",name='GruzTotalWeight',data-validation="number",data-validation-allowing="float,positive",data-validation-error-msg="Максимальный вес — 3 кг",id='GruzTotalWeight',placeholder='0.5',data-validation-decimal-separator=".")
+												label(for='#GruzTotalWeight').input-label Общий вес, кг
+										.input-item.w50
+											.input-wrapper
+												input.input-main(type="number",name='GruzVolumetrikWeight',data-validation="number",data-validation-allowing="float,positive",data-validation-error-msg="Максимальный вес — 3 кг",id='GruzVolumetrikWeight',placeholder='0.5',data-validation-decimal-separator=".")
+												label(for='#GruzVolumetrikWeight').input-label Объёмный вес, кг
+										.input-item
+											.input-wrapper
+												textarea.input-main.maxlength(type="text",name='GruzDescr',id='GruzDescr',placeholder='Иванов Сергей Иванович', data-countdown='200')
+												label(for='#GruzDescr').input-label Например, ценный груз
 						.border-block
 							.border-block-content
 								.title.h3 Способ доставки
