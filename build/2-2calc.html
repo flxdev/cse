@@ -205,6 +205,11 @@
           <path fill="none" stroke="currentcolor" stroke-width="2" stroke-miterlimit="10" d="M40 15V1H10v14m30 14v20H10V29z" stroke-linecap="round" />
           <path fill="none" stroke="currentcolor" stroke-width="2" stroke-miterlimit="10" d="M10 40H3a2 2 0 0 1-2-2V17a2 2 0 0 1 2-2h44a2 2 0 0 1 2 2v21a2 2 0 0 1-2 2h-7m-5-5H15m16 4H15m20 4H15" stroke-linecap="round" />
         </symbol>
+        <symbol id="question" viewBox="0 0 13.5 13.5">
+          <path fill="currentcolor" d="M7.4 7.7c.1-.1.3-.3.6-.5.5-.5.9-.9 1.1-1.2.2-.3.3-.6.3-.9 0-.5-.2-1-.7-1.4-.5-.4-1.2-.6-2-.6-.7 0-1.3.2-1.8.6-.4.5-.7.9-.7 1.5l1.3.2c0-.4.2-.7.4-.9.2-.2.5-.3.9-.3s.6.1.9.3c.2.2.3.4.3.7 0 .2-.1.4-.2.5-.1.1-.3.3-.7.6-.4.3-.7.6-.8.9-.1.3-.2.6-.2 1v.3h1.2c0-.4.1-.6.1-.8zm.1 2.7V9H6.1v1.4h1.4z"
+          />
+          <path fill="currentcolor" d="M6.8 1c3.2 0 5.8 2.6 5.8 5.8 0 3.2-2.6 5.7-5.8 5.7S1 9.9 1 6.8C1 3.6 3.6 1 6.8 1m0-1C3 0 0 3 0 6.8c0 3.7 3 6.7 6.8 6.7s6.8-3 6.8-6.7C13.5 3 10.5 0 6.8 0z" />
+        </symbol>
         <symbol id="reload" viewBox="0 0 19 16.75">
           <path fill="none" stroke="currentcolor" d="M.5 13.12L1.63 9.9a.12.12 0 0 1 .17-.05L4.46 12m10.07-7l2.64 2.16a.12.12 0 0 0 .18 0l1.15-3.23m-1.37 2.82a7.87 7.87 0 0 0-15.41 0m0 3.25a7.87 7.87 0 0 0 15.41 0" stroke-linecap="round" stroke-linejoin="round"
           />
@@ -901,7 +906,7 @@
               <div class="box">
                 <div class="content-columns">
                   <div class="content-columns-main">
-                    <form class="js-validate" action="/">
+                    <form class="js-validate js-CalcForm" action="/">
                       <div class="border-block">
                         <div class="border-block-content">
                           <div class="title h3">География</div>
@@ -1046,7 +1051,7 @@
                               <div class="input-item">
                                 <div class="select-radio">
                                   <label class="select-radio-label">
-                                    <input class="select-radio-input-real" type="radio" name="PackageType" value="1" checked="checked">
+                                    <input class="select-radio-input-real js-if-trigger" type="radio" name="PackageType" value="1" checked="checked">
                                     <div class="select-radio-inner">
                                       <span class="select-radio-input">
                                         <span class="select-radio-input-fake ok"></span>
@@ -1057,7 +1062,7 @@
                                 </div>
                                 <div class="select-radio">
                                   <label class="select-radio-label">
-                                    <input class="select-radio-input-real" type="radio" name="PackageType" value="2">
+                                    <input class="select-radio-input-real js-if-trigger" type="radio" name="PackageType" value="2" data-display-if="">
                                     <div class="select-radio-inner">
                                       <span class="select-radio-input">
                                         <span class="select-radio-input-fake ok"></span>
@@ -1070,65 +1075,15 @@
                               </div>
                             </div>
                           </div>
+                          <div class="form-block-mainwrapper"></div>
+                          <!-- контейнер для всех блоков-->
+                          <div class="form-block-subwrapper"></div>
                           <div class="form-block">
-                            <div class="form-block-head">
-                              <div class="title h5">Параметры</div>
-                            </div>
                             <div class="input-row">
-                              <div class="input-item w50">
-                                <div class="input-wrapper">
-                                  <input class="input-main" type="number" name="DocWeight" data-validation="number" data-validation-allowing="range[0,01;3],float,positive" data-validation-error-msg="Максимальный вес — 3 кг" id="DocWeight" placeholder="0.01"
-                                    data-validation-decimal-separator=".">
-                                  <label class="input-label" for="#DocWeight">Вес, кг</label>
-                                </div>
-                              </div>
                               <div class="input-item">
                                 <div class="input-wrapper">
-                                  <textarea class="input-main maxlength" type="text" name="DocDescr" id="DocDescr" placeholder="Иванов Сергей Иванович" data-countdown="200"></textarea>
-                                  <label class="input-label" for="#DocDescr">Например, ценные документы</label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-block">
-                            <div class="form-block-head">
-                              <div class="title h5">Параметры</div>
-                            </div>
-                            <div class="input-row">
-                              <div class="input-item w50">
-                                <div class="input-wrapper">
-                                  <input class="input-main" type="number" name="GruzPlaces" data-validation="number" data-validation-error-msg="Максимальный вес — 3 кг" data-validation-allowing="positive" id="GruzPlaces" placeholder="1">
-                                  <label class="input-label" for="#GruzPlaces">Количество мест</label>
-                                </div>
-                              </div>
-                              <div class="input-item w50">
-                                <div class="input-wrapper">
-                                  <select class="input-main js-select" name="GruzType" data-validation="length" data-validation-length="min1" data-validation-event="change" id="GruzType">
-                                    <option value="1">Коробка</option>
-                                    <option value="2">Треугольный тубус</option>
-                                    <option value="3">Конверт</option>
-                                  </select>
-                                  <label class="input-label" for="#GruzType">Вид груза</label>
-                                </div>
-                              </div>
-                              <div class="input-item w50">
-                                <div class="input-wrapper">
-                                  <input class="input-main" type="number" name="GruzTotalWeight" data-validation="number" data-validation-allowing="float,positive" data-validation-error-msg="Максимальный вес — 3 кг" id="GruzTotalWeight" placeholder="0.5"
-                                    data-validation-decimal-separator=".">
-                                  <label class="input-label" for="#GruzTotalWeight">Общий вес, кг</label>
-                                </div>
-                              </div>
-                              <div class="input-item w50">
-                                <div class="input-wrapper">
-                                  <input class="input-main" type="number" name="GruzVolumetrikWeight" data-validation="number" data-validation-allowing="float,positive" data-validation-error-msg="Максимальный вес — 3 кг" id="GruzVolumetrikWeight" placeholder="0.5"
-                                    data-validation-decimal-separator=".">
-                                  <label class="input-label" for="#GruzVolumetrikWeight">Объёмный вес, кг</label>
-                                </div>
-                              </div>
-                              <div class="input-item">
-                                <div class="input-wrapper">
-                                  <textarea class="input-main maxlength" type="text" name="GruzDescr" id="GruzDescr" placeholder="Иванов Сергей Иванович" data-countdown="200"></textarea>
-                                  <label class="input-label" for="#GruzDescr">Например, ценный груз</label>
+                                  <textarea class="input-main maxlength" type="text" name="PackageDescr" id="PackageDescr" placeholder="Например, ценный груз" data-countdown="200"></textarea>
+                                  <label class="input-label" for="#PackageDescr">Описание отправления</label>
                                 </div>
                               </div>
                             </div>
@@ -1170,13 +1125,325 @@
                         </div>
                       </div>
                       <div class="block-buttons">
-                        <button class="btn full-width" type="submit">
+                        <button class="btn full-width js-CalcForm-submit" type="submit">
                           <div class="btn-inner">
                             <span>Далее</span>
                           </div>
                         </button>
                       </div>
                     </form>
+                    <!-- компоненты в форму-->
+                    <div class="calc-form-components js-CalcForm-components" style="display: none;">
+                      <!--основной блок для документов-->
+                      <div class="form-block" data-display-target="PackageType" data-display-if="1">
+                        <div class="form-block-head">
+                          <div class="title h5">Параметры</div>
+                        </div>
+                        <div class="input-row">
+                          <div class="input-item w50">
+                            <div class="input-wrapper">
+                              <input class="input-main" type="number" id="DocWeight" placeholder="0.01" name="DocWeight" data-validation="number" data-validation-allowing="range[0,01;3],float,positive" data-validation-error-msg="Максимальный вес — 3 кг"
+                                data-validation-decimal-separator="." data-validation-depends-on="PackageType" data-validation-depends-on-value="1">
+                              <label class="input-label" for="#DocWeight">Вес, кг</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- основной блок для груза-->
+                      <div class="form-block" data-display-target="PackageType" data-display-if="2">
+                        <div class="form-block-head">
+                          <div class="title h5">Параметры</div>
+                        </div>
+                        <div class="input-row">
+                          <div class="input-item w50">
+                            <div class="input-wrapper">
+                              <input class="input-main maxlength" id="GruzPlaces" placeholder="1" type="number" name="GruzPlaces" data-validation="number" data-validation-error-msg="Введите корректное количество мест" data-validation-allowing="positive,range[1;99]"
+                                data-countdown="2">
+                              <label class="input-label" for="#GruzPlaces">Количество мест</label>
+                            </div>
+                          </div>
+                          <div class="input-item w50">
+                            <div class="input-wrapper">
+                              <select class="input-main js-select" name="GruzType" id="GruzType" data-validation="length" data-validation-length="min1" data-validation-event="change" data-validation-depends-on="PackageType" data-validation-depends-on-value="2">
+                                <option value="1">Коробка</option>
+                                <option value="2">Тубус</option>
+                              </select>
+                              <label class="input-label" for="#GruzType">Вид груза</label>
+                            </div>
+                          </div>
+                          <div class="input-item w50">
+                            <div class="input-wrapper">
+                              <input class="input-main" type="number" id="GruzTotalWeight" placeholder="0.5" name="GruzTotalWeight" data-validation="number" data-validation-allowing="float,positive" data-validation-error-msg="Максимальный вес — 3 кг" data-validation-decimal-separator="."
+                                data-validation-depends-on="PackageType" data-validation-depends-on-value="2">
+                              <label class="input-label" for="#GruzTotalWeight">Общий вес, кг</label>
+                            </div>
+                          </div>
+                          <div class="input-item w50">
+                            <div class="input-wrapper">
+                              <input class="input-main" type="number" id="GruzVolumetrikWeight" placeholder="0.5" name="GruzVolumetrikWeight" data-validation="number" data-validation-allowing="float,positive" data-validation-error-msg="Максимальный вес — 3 кг"
+                                data-validation-decimal-separator="." data-validation-depends-on="PackageType" data-validation-depends-on-value="2">
+                              <label class="input-label" for="#GruzVolumetrikWeight">Объёмный вес, кг</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- блок с контейнером-->
+                      <div class="accordeon-wrapper">
+                        <div class="accordeon-head">
+                          <div class="link-dotted color-black js-accordeon-trigger">
+                            <div class="link-dotted-text js-toggle-text" data-alt-text="Свернуть">Расcчитать объёмный вес</div>
+                            <div class="link-dotted-icon">
+                              <svg class="icon-arrd">
+                                <use xlink:href="#arrd"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="quest-wrap">
+                            <div class="quest-trigger">
+                              <svg class="icon-question">
+                                <use xlink:href="#question"></use>
+                              </svg>
+                            </div>
+                            <div class="input-dropdown-target">
+                              <div class="input-dropdown-content">
+                                <div class="text">Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="help-block help primary">Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.</div>
+                        <div class="accordeon-body" style="display: none;">
+                          <div class="form-block js-calculation-reset-cont" data-display-target="GruzType" data-display-if="1">
+                            <div class="form-block-column">
+                              <div class="input-row">
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="BoxA" placeholder="1" type="number" name="BoxA" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                    <label class="input-label" for="#BoxA">Длина (A), см</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="BoxB" placeholder="1" type="number" name="BoxB" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                    <label class="input-label" for="#BoxB">Ширина (B), см</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="BoxH" placeholder="1" type="number" name="BoxH" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                    <label class="input-label" for="#BoxH">Высота (H), см</label>
+                                  </div>
+                                </div>
+                                <div class="form-block-result">
+                                  <div class="form-block-result-inner">
+                                    <div class="caption">Обьемный вес</div>
+                                    <div class="form-block-result-text js-CalcForm-result"></div>
+                                  </div>
+                                </div>
+                                <div class="form-block-calcreset">
+                                  <div class="link-icon sm js-calculation-reset">
+                                    <div class="link-icon-icon">
+                                      <svg class="icon-close">
+                                        <use xlink:href="#close"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="link-icon-text">Отменить расчёт</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-block-column">
+                              <img class="js-image" data-src="img/calc/1.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- блок с тубусом-->
+                      <div class="accordeon-wrapper">
+                        <div class="accordeon-head">
+                          <div class="link-dotted color-black js-accordeon-trigger">
+                            <div class="link-dotted-text js-toggle-text" data-alt-text="Свернуть">Расcчитать объёмный вес</div>
+                            <div class="link-dotted-icon">
+                              <svg class="icon-arrd">
+                                <use xlink:href="#arrd"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="quest-wrap">
+                            <div class="quest-trigger">
+                              <svg class="icon-question">
+                                <use xlink:href="#question"></use>
+                              </svg>
+                            </div>
+                            <div class="input-dropdown-target">
+                              <div class="input-dropdown-content">
+                                <div class="text">Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="help-block help primary">Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.</div>
+                        <div class="accordeon-body">
+                          <div class="form-block js-calculation-reset-cont" data-display-target="GruzType" data-display-if="2">
+                            <div class="form-block-column">
+                              <div class="input-row">
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="BoxA" placeholder="1" type="number" name="BoxA" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                    <label class="input-label" for="#BoxA">Сторона (A), см</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="BoxB" placeholder="1" type="number" name="BoxB" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                    <label class="input-label" for="#BoxB">Высота (H), см</label>
+                                  </div>
+                                </div>
+                                <div class="form-block-result">
+                                  <div class="form-block-result-inner">
+                                    <div class="caption">Обьемный вес</div>
+                                    <div class="form-block-result-text js-CalcForm-result"></div>
+                                  </div>
+                                </div>
+                                <div class="form-block-calcreset">
+                                  <div class="link-icon sm js-calculation-reset">
+                                    <div class="link-icon-icon">
+                                      <svg class="icon-close">
+                                        <use xlink:href="#close"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="link-icon-text">Отменить расчёт</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-block-column">
+                              <img class="js-image" data-src="img/calc/2.png" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- аккордеон с множественными блоками-->
+                      <div class="accordeon-wrapper block-yellow js-calculation-target" id="Accordeon-multiple">
+                        <div class="accordeon-body" style="display: none;">
+                          <div class="accordeon-body-head">
+                            <div class="title h4">Данные по каждому грузовому месту</div>
+                            <div class="quest-wrap">
+                              <div class="quest-trigger">
+                                <svg class="icon-question">
+                                  <use xlink:href="#question"></use>
+                                </svg>
+                              </div>
+                              <div class="input-dropdown-target">
+                                <div class="input-dropdown-content">
+                                  <div class="text">Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordeon-body-loop">
+                            <div class="form-block js-calculation-reset-cont">
+                              <div class="form-block-head">
+                                <div class="title h5">Место №
+                                  <span>1</span>
+                                </div>
+                              </div>
+                              <div class="input-row">
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <select class="input-main js-select" name="GruzType" id="GruzType" data-validation="length" data-validation-length="min1" data-validation-event="change" data-validation-depends-on="PackageType" data-validation-depends-on-value="2">
+                                      <option value="1">Коробка</option>
+                                      <option value="2">Тубус</option>
+                                    </select>
+                                    <label class="input-label" for="#GruzType">Вид груза</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" type="number" id="GruzTotalWeight" placeholder="0.5" name="GruzTotalWeight" data-validation="number" data-validation-allowing="float,positive" data-validation-error-msg="Максимальный вес — 3 кг"
+                                      data-validation-decimal-separator="." data-validation-depends-on="PackageType" data-validation-depends-on-value="2">
+                                    <label class="input-label" for="#GruzTotalWeight">Вес, кг</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-block-head">
+                                <div class="title h5">Объёмный вес</div>
+                              </div>
+                              <div class="help-block help primary">Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.</div>
+                              <div class="form-block">
+                                <div class="form-block-column">
+                                  <div class="input-row">
+                                    <div class="input-item w50">
+                                      <div class="input-wrapper">
+                                        <input class="input-main" id="BoxA[0]" placeholder="1" type="number" name="BoxA[0]" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                        <label class="input-label" for="#BoxA[0]">Длина (A), см</label>
+                                      </div>
+                                    </div>
+                                    <div class="input-item w50">
+                                      <div class="input-wrapper">
+                                        <input class="input-main" id="BoxB[0]" placeholder="1" type="number" name="BoxB[0]" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                        <label class="input-label" for="#BoxB[0]">Ширина (B), см</label>
+                                      </div>
+                                    </div>
+                                    <div class="input-item w50">
+                                      <div class="input-wrapper">
+                                        <input class="input-main" id="BoxH[0]" placeholder="1" type="number" name="BoxH[0]" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                        <label class="input-label" for="#BoxH[0]">Высота (H), см</label>
+                                      </div>
+                                    </div>
+                                    <div class="form-block-result">
+                                      <div class="form-block-result-inner">
+                                        <div class="caption">Обьемный вес</div>
+                                        <div class="form-block-result-text js-CalcForm-result"></div>
+                                      </div>
+                                    </div>
+                                    <div class="form-block-calcreset">
+                                      <div class="link-icon sm js-calculation-reset">
+                                        <div class="link-icon-icon">
+                                          <svg class="icon-close">
+                                            <use xlink:href="#close"></use>
+                                          </svg>
+                                        </div>
+                                        <div class="link-icon-text">Отменить расчёт</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-block-column">
+                                  <img class="js-image" data-src="img/calc/1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="input-row">
+                                <div class="input-item">
+                                  <div class="input-wrapper">
+                                    <textarea class="input-main maxlength" type="text" name="PackageDescr[0]" id="PackageDescr[0]" placeholder="Например, ценный груз" data-countdown="200"></textarea>
+                                    <label class="input-label" for="#PackageDescr[0]">Описание груза</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordeon-head">
+                          <div class="link-dotted big js-accordeon-trigger">
+                            <div class="link-dotted-text js-toggle-text" data-alt-text="Свернуть">Расcчитать объёмный вес</div>
+                            <div class="link-dotted-icon">
+                              <svg class="icon-arrd">
+                                <use xlink:href="#arrd"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="link-icon sm js-calculation-reset">
+                            <div class="link-icon-icon">
+                              <svg class="icon-close">
+                                <use xlink:href="#close"></use>
+                              </svg>
+                            </div>
+                            <div class="link-icon-text">Отменить расчёт</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="content-columns-aside js-stick-parent" data-sticky-parent>
                     <div class="content-aside-content js-stick">

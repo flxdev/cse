@@ -1,5 +1,6 @@
 import $ from 'jquery/dist/jquery';
-import 'jquery-form-validator';
+import 'jquery-form-validator/form-validator/jquery.form-validator.min';
+import 'jquery-form-validator/form-validator/logic.js';
 
 export default function validateForms() {
   let _form = $('.js-validate');

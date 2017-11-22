@@ -32,8 +32,88 @@
 			svg 
 				display: inline-block
 				vertical-align: middle
+	.accordeon
+		&-body
+			padding-bottom: 30px
+			padding-top: 15px
+.help-block.help.primary
+	font-size: 16px
+.form-block
+	&-column
+		display: inline-block
+		vertical-align: top
+		width: 50%
+		&:first-child
+			.input-row
+				margin-right: 0 !important
+		&>img 
+			max-width: 80%
+			display: block
+			margin: 0 auto
+			max-height: 180px
+	&-result
+		display: block
+		width: 100%
+
+		padding: 0px 10px
+		margin-bottom: 10px
+		&-inner
+			border-top: 1px solid $dark
+			border-bottom: 1px solid $dark
+			padding: 15px 0
+			&>div 
+				display: inline-block
+				vertical-align: middle
+				width: 50%
+		&-text 
+			font-weight: 500
+			font-size: 16px
+			color: $dark
+	&-calcreset
+		padding-left: 10px
+		.link-icon.sm
+			&:not(:hover)
+				.link-icon-icon
+					color: $graylink !important
 
 .block-buttons
 
-			
-		
+.accordeon
+	&-head
+	&-body 
+		&-head
+			padding-bottom: 15px
+			&>div
+				display: inline-block
+				vertical-align: middle
+	&-loop
+		.form-block
+			padding-left: 25px
+			padding-right: 25px
+			&-head 
+				
+	&-wrapper
+		&.block-yellow
+			.accordeon-head
+				&:not(.active)
+					.link-icon
+						opacity: 0
+						visibility: hidden
+			.accordeon-body-head
+				padding-left: 25px
+				padding-right: 25px		
+			.accordeon-body-loop
+				.form-block
+					padding-left: 25px
+					padding-right: 25px	
+			.form-block-column
+				padding-bottom: 20px
+			.form-block-head + .help-block
+				margin-bottom: 15px	
+			.form-block
+				.form-block
+					padding-left: 0 !important
+					padding-right: 0 !important
+
+.block-yellow
+	background-color: $brandlight

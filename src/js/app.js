@@ -18,6 +18,8 @@ import Sliders from './lib/Sliders';
 import YandMap from './lib/YandMap';
 import Accord from './lib/Accord';
 import Stick from './lib/Stick';
+import CalcForm from './lib/CalcForm';
+import Accordeon from './lib/Accordeon';
 
 
 
@@ -176,6 +178,8 @@ ready(() => {
   var Maps = new YandMap();
   Accord();
   Stick();
+  var PackageType = new CalcForm();
+  Accordeon();
 });
 
 

@@ -9,12 +9,16 @@ export default function validateLength() {
     let counterTarget = input.parent().find('.js-countdown');
 
     input.on('input paste',() => {
+      // setTimeout(() => {
       let charCount = $(this).val().length;
       counterTarget.text(charCount);
       if(charCount >= countLimit) {
-      	counterTarget.text(countLimit);
-      	input[0].value = input[0].value.substring(0, countLimit);
-      }
+        counterTarget.text(countLimit);
+        input[0].value = input[0].value.substring(0, countLimit);
+        // console.log(input[0].value);
+      } 
+      // },1);
+
     });
   });
 }
