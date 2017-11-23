@@ -14,6 +14,8 @@ block content
 			.content-columns
 				.content-columns-main
 					form(action="/").js-validate.js-CalcForm
+						script.
+							window.formArray = [BoxA*BoxB*BoxH,BoxA*BoxB,,]
 						.border-block
 							.border-block-content
 								.title.h3 География
@@ -128,7 +130,7 @@ block content
 														type="radio",
 														name='PackageType',
 														value='1',
-														checked='checked',).select-radio-input-real.js-if-trigger
+														checked='checked',data-display-if-trigger='1').select-radio-input-real
 													.select-radio-inner
 														span.select-radio-input
 															span.select-radio-input-fake.ok
@@ -138,15 +140,30 @@ block content
 													input(
 														type="radio",
 														name='PackageType',
-														value='2',data-display-if='').select-radio-input-real.js-if-trigger
+														value='2',data-display-if-trigger='2').select-radio-input-real
 													.select-radio-inner
 														span.select-radio-input
 															span.select-radio-input-fake.ok
 														span.select-radio-text Груз
 											.help-block.help Вы можете отправить в конверте не более 60 листов формата А4.
-								.form-block-mainwrapper
+								.form-block-mainwrapper(data-display-if-container='PackageType')
+									.form-block(data-display-target='PackageType',data-display-if='1')
+										.form-block-head
+											.title.h5 Параметры
+										.input-row
+											.input-item.w50
+												.input-wrapper
+													input.input-main(type="number",
+																		id='DocWeight',
+																		placeholder='0.01',
+																		name='DocWeight',
+																		data-validation="number",
+																		data-validation-allowing="range[0.01;3],float,positive",
+																		data-validation-error-msg="Максимальный вес — 3 кг",
+																		data-validation-decimal-separator=".")
+													label(for='#DocWeight').input-label Вес, кг
 								// контейнер для всех блоков
-								.form-block-subwrapper
+								.form-block-subwrapper(data-display-if-container='GruzType')
 
 								.form-block
 									.input-row
@@ -201,11 +218,9 @@ block content
 															placeholder='0.01',
 															name='DocWeight',
 															data-validation="number",
-															data-validation-allowing="range[0,01;3],float,positive",
+															data-validation-allowing="range[0.01;3],float,positive",
 															data-validation-error-msg="Максимальный вес — 3 кг",
-															data-validation-decimal-separator=".",
-															data-validation-depends-on="PackageType",
-															data-validation-depends-on-value="1")
+															data-validation-decimal-separator=".")
 										label(for='#DocWeight').input-label Вес, кг
 						// основной блок для груза
 						.form-block(data-display-target='PackageType',data-display-if='2')
@@ -214,7 +229,7 @@ block content
 							.input-row
 								.input-item.w50
 									.input-wrapper
-										input.input-main.maxlength(
+										input.input-main.placesChanger.maxlength(
 														id='GruzPlaces',
 														placeholder='1',
 														type="number",
@@ -222,7 +237,9 @@ block content
 														data-validation="number",
 														data-validation-error-msg="Введите корректное количество мест",
 														data-validation-allowing="positive,range[1;99]",
-														data-countdown='2')
+														data-countdown='2',
+														data-display-if-trigger,
+														data-display-if-depend-trigger='GruzType')
 										label(for='#GruzPlaces').input-label Количество мест
 								.input-item.w50
 									.input-wrapper
@@ -231,8 +248,7 @@ block content
 																	data-validation='length', 
 																	data-validation-length='min1',
 																	data-validation-event="change",
-																	data-validation-depends-on="PackageType",
-																	data-validation-depends-on-value="2")
+																	data-display-if-trigger)
 											option(value="1") Коробка
 											option(value="2") Тубус
 										label(for='#GruzType').input-label Вид груза
@@ -245,9 +261,7 @@ block content
 														data-validation="number",
 														data-validation-allowing="float,positive",
 														data-validation-error-msg="Максимальный вес — 3 кг",
-														data-validation-decimal-separator=".",
-														data-validation-depends-on="PackageType",
-														data-validation-depends-on-value="2")
+														data-validation-decimal-separator=".")
 										label(for='#GruzTotalWeight').input-label Общий вес, кг
 								.input-item.w50
 									.input-wrapper
@@ -258,13 +272,11 @@ block content
 														name='GruzVolumetrikWeight',
 														data-validation="number",
 														data-validation-allowing="float,positive",
-														data-validation-error-msg="Максимальный вес — 3 кг",
 														data-validation-decimal-separator=".",
-														data-validation-depends-on="PackageType",
-														data-validation-depends-on-value="2")
+														data-validation-optional="true")
 										label(for='#GruzVolumetrikWeight').input-label Объёмный вес, кг
 						// блок с контейнером
-						.accordeon-wrapper
+						.accordeon-wrapper(data-display-target='GruzType',data-display-if='1')
 							.accordeon-head
 								.link-dotted.color-black.js-accordeon-trigger
 									.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Расcчитать объёмный вес
@@ -278,7 +290,7 @@ block content
 											.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.
 							.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
 							.accordeon-body(style='display: none;')
-								.form-block.js-calculation-reset-cont(data-display-target='GruzType',data-display-if='1')
+								.form-block.js-calculation-reset-cont(data-formula='0')
 									.form-block-column
 										.input-row
 											.input-item.w50
@@ -325,9 +337,9 @@ block content
 														+icon('close')
 													.link-icon-text Отменить расчёт
 									.form-block-column
-										img.js-image(data-src="img/calc/1.png", alt="")
+										img(src="img/calc/1.png", alt="")
 						// блок с тубусом
-						.accordeon-wrapper
+						.accordeon-wrapper(data-display-target='GruzType',data-display-if='2')
 							.accordeon-head
 								.link-dotted.color-black.js-accordeon-trigger
 									.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Расcчитать объёмный вес
@@ -340,8 +352,8 @@ block content
 										.input-dropdown-content
 											.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.
 							.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
-							.accordeon-body
-								.form-block(data-display-target='GruzType',data-display-if='2').js-calculation-reset-cont
+							.accordeon-body(style='display: none;')
+								.form-block.js-calculation-reset-cont(data-formula='1')
 									.form-block-column
 										.input-row
 											.input-item.w50
@@ -376,7 +388,7 @@ block content
 														+icon('close')
 													.link-icon-text Отменить расчёт
 									.form-block-column
-										img.js-image(data-src="img/calc/2.png", alt="")
+										img(src="img/calc/2.png", alt="")
 						// аккордеон с множественными блоками
 						.accordeon-wrapper.block-yellow.js-calculation-target#Accordeon-multiple
 							.accordeon-body(style='display: none;')
@@ -396,8 +408,8 @@ block content
 										.input-row
 											.input-item.w50
 												.input-wrapper
-													select.input-main.js-select(name='GruzType', 
-																				id='GruzType',
+													select.input-main.js-select(name='GruzType[0]', 
+																				id='GruzType[0]',
 																				data-validation='length', 
 																				data-validation-length='min1',
 																				data-validation-event="change",
@@ -405,26 +417,24 @@ block content
 																				data-validation-depends-on-value="2")
 														option(value="1") Коробка
 														option(value="2") Тубус
-													label(for='#GruzType').input-label Вид груза
+													label(for='#GruzType[0]').input-label Вид груза
 											.input-item.w50
 												.input-wrapper
 													input.input-main(type="number",
-																	id='GruzTotalWeight',
+																	id='GruzTotalWeight[0]',
 																	placeholder='0.5',
-																	name='GruzTotalWeight',
+																	name='GruzTotalWeight[0]',
 																	data-validation="number",
 																	data-validation-allowing="float,positive",
 																	data-validation-error-msg="Максимальный вес — 3 кг",
-																	data-validation-decimal-separator=".",
-																	data-validation-depends-on="PackageType",
-																	data-validation-depends-on-value="2")
-													label(for='#GruzTotalWeight').input-label Вес, кг
+																	data-validation-decimal-separator=".")
+													label(for='#GruzTotalWeight[0]').input-label Вес, кг
 										.form-block-head
 											.title.h5 Объёмный вес
 										.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
 										.form-block
 											.form-block-column
-												.input-row
+												.input-row(data-formula='(BoxA[0]*BoxB[0]*BoxH[0])')
 													.input-item.w50
 														.input-wrapper
 															input.input-main(

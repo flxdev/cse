@@ -22,9 +22,6 @@ export default function Accordeon() {
 	      	_.removeClass('anim');
 	      },500);
       }
-
-     
-      
     });
   });
 }

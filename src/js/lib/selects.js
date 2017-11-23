@@ -2,25 +2,41 @@ import $ from 'jquery/dist/jquery';
 import 'sumoselect';
 
 export default function select() {
-  function simpleSelects() {
-    let simpleSelects = $('.js-select');
-    simpleSelects.each(function() {
+  window.DOM.SimpleSelects = () => {
+    let simpleSelect = $('.js-select');
+    simpleSelect.each(function() {
       let _ = $(this);
-      _.SumoSelect({
-        triggerChangeCombined : false,
-      });
-      _.on('change',() => {
-        _.validate();
-      });
-      _.on('sumo:opened',() => {
-        _.closest('.input-wrapper').addClass('is-open');
-      });
-      _.on('sumo:closed',() => {
-        _.closest('.input-wrapper').removeClass('is-open');
-      });
+      if(_.hasClass('SumoUnder') && _[0].sumo === undefined) {
+        _.nextAll('.CaptionCont').remove();
+        _.nextAll('.optWrapper').remove();
+        // _.unwrap();
+        initSelect(_);
+        // return;
+      }else{
+        initSelect(_);
+      }
+      function initSelect(item) {
+        item.SumoSelect({
+          triggerChangeCombined : false,
+        });
+        // item.off('change').on('change',() => {
+        //   setTimeout(() => {
+        //     item.validate();
+        //     return;   
+        //   },500);
+
+        // });
+        item.off('sumo:opened').on('sumo:opened',() => {
+          item.closest('.input-wrapper').addClass('is-open');
+        });
+        item.off('sumo:closed').on('sumo:closed',() => {
+          item.closest('.input-wrapper').removeClass('is-open');
+        }); 
+      }
     });
-  }
-  simpleSelects();
+  };
+  window.DOM.SimpleSelects();
+  // simpleSelects();
 
   function filterSelect() {
     let select = $('.js-filter');

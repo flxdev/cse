@@ -111,6 +111,11 @@
 		&.is-open
 			border-color: $dark
 			z-index: 1
+		&.disabled
+			pointer-events: none 
+			*
+				pointer-events: none
+			opacity: .4
 		&.has-error
 			.help
 				opacity: 0
