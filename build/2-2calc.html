@@ -906,9 +906,34 @@
               <div class="box">
                 <div class="content-columns">
                   <div class="content-columns-main">
-                    <form class="js-validate js-CalcForm" action="/">
+                    <form class="js-validate js-CalcForm form-step" action="/" data-step="1">
+                      <!-- обьект с формулами для расчета-->
+                      <!-- у блоков есть дата-формула-->
                       <script>
-                        window.formArray = [BoxA * BoxB * BoxH, BoxA * BoxB, , ]
+                        var formObj = [
+                        {
+                          inputs:
+                          {
+                            'BoxA': 0,
+                            'BoxB': 0,
+                            'BoxH': 0
+                          },
+                          get formula()
+                          {
+                            return this.inputs['BoxA'] * this.inputs['BoxB'] * this.inputs['BoxH']
+                          }
+                        },
+                        {
+                          inputs:
+                          {
+                            'BoxA': 0,
+                            'BoxB': 0
+                          },
+                          get formula()
+                          {
+                            return this.inputs['BoxA'] + this.inputs['BoxB']
+                          }
+                        }, ]
 
                       </script>
                       <div class="border-block">
@@ -1097,6 +1122,8 @@
                           </div>
                           <!-- контейнер для всех блоков-->
                           <div class="form-block-subwrapper" data-display-if-container="GruzType"></div>
+                          <!-- контейнер для множественных блоков-->
+                          <div class="form-block-subwrapper" data-display-if-container="GruzPlaces"></div>
                           <div class="form-block">
                             <div class="input-row">
                               <div class="input-item">
@@ -1177,7 +1204,7 @@
                           <div class="input-item w50">
                             <div class="input-wrapper">
                               <input class="input-main placesChanger maxlength" id="GruzPlaces" placeholder="1" type="number" name="GruzPlaces" data-validation="number" data-validation-error-msg="Введите корректное количество мест" data-validation-allowing="positive,range[1;99]"
-                                data-countdown="2" data-display-if-trigger data-display-if-depend-trigger="GruzType">
+                                data-countdown="2" data-display-if-trigger>
                               <label class="input-label" for="#GruzPlaces">Количество мест</label>
                             </div>
                           </div>
@@ -1192,7 +1219,8 @@
                           </div>
                           <div class="input-item w50">
                             <div class="input-wrapper">
-                              <input class="input-main" type="number" id="GruzTotalWeight" placeholder="0.5" name="GruzTotalWeight" data-validation="number" data-validation-allowing="float,positive" data-validation-error-msg="Максимальный вес — 3 кг" data-validation-decimal-separator=".">
+                              <input class="input-main" type="number" id="GruzTotalWeight" placeholder="0.5" name="GruzTotalWeight" data-validation="number" data-validation-allowing="float,positive" data-validation-error-msg="Максимальный вес — 100 кг"
+                                data-validation-decimal-separator=".">
                               <label class="input-label" for="#GruzTotalWeight">Общий вес, кг</label>
                             </div>
                           </div>
@@ -1235,19 +1263,19 @@
                               <div class="input-row">
                                 <div class="input-item w50">
                                   <div class="input-wrapper">
-                                    <input class="input-main" id="BoxA" placeholder="1" type="number" name="BoxA" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                    <input class="input-main" id="BoxA" placeholder="1" type="number" name="BoxA" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]" data-validation-optional="true">
                                     <label class="input-label" for="#BoxA">Длина (A), см</label>
                                   </div>
                                 </div>
                                 <div class="input-item w50">
                                   <div class="input-wrapper">
-                                    <input class="input-main" id="BoxB" placeholder="1" type="number" name="BoxB" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                    <input class="input-main" id="BoxB" placeholder="1" type="number" name="BoxB" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]" data-validation-optional="true">
                                     <label class="input-label" for="#BoxB">Ширина (B), см</label>
                                   </div>
                                 </div>
                                 <div class="input-item w50">
                                   <div class="input-wrapper">
-                                    <input class="input-main" id="BoxH" placeholder="1" type="number" name="BoxH" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                    <input class="input-main" id="BoxH" placeholder="1" type="number" name="BoxH" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]" data-validation-optional="true">
                                     <label class="input-label" for="#BoxH">Высота (H), см</label>
                                   </div>
                                 </div>
@@ -1306,13 +1334,13 @@
                               <div class="input-row">
                                 <div class="input-item w50">
                                   <div class="input-wrapper">
-                                    <input class="input-main" id="BoxA" placeholder="1" type="number" name="BoxA" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                    <input class="input-main" id="BoxA" placeholder="1" type="number" name="BoxA" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]" data-validation-optional="true">
                                     <label class="input-label" for="#BoxA">Сторона (A), см</label>
                                   </div>
                                 </div>
                                 <div class="input-item w50">
                                   <div class="input-wrapper">
-                                    <input class="input-main" id="BoxB" placeholder="1" type="number" name="BoxB" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                    <input class="input-main" id="BoxB" placeholder="1" type="number" name="BoxB" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]" data-validation-optional="true">
                                     <label class="input-label" for="#BoxB">Высота (H), см</label>
                                   </div>
                                 </div>
@@ -1341,7 +1369,7 @@
                         </div>
                       </div>
                       <!-- аккордеон с множественными блоками-->
-                      <div class="accordeon-wrapper block-yellow js-calculation-target" id="Accordeon-multiple">
+                      <div class="accordeon-wrapper block-yellow js-calculation-target" id="Accordeon-multiple" data-display-target="GruzPlaces">
                         <div class="accordeon-body" style="display: none;">
                           <div class="accordeon-body-head">
                             <div class="title h4">Данные по каждому грузовому месту</div>
@@ -1368,16 +1396,18 @@
                               <div class="input-row">
                                 <div class="input-item w50">
                                   <div class="input-wrapper">
-                                    <select class="input-main js-select" name="GruzType[0]" id="GruzType[0]" data-validation="length" data-validation-length="min1" data-validation-event="change" data-validation-depends-on="PackageType" data-validation-depends-on-value="2">
+                                    <select class="input-main js-select" name="GruzType[0]" id="GruzType[0]" data-validation="length" data-validation-length="min1" data-validation-event="change" data-validation-depends-on="PackageType" data-validation-depends-on-value="2"
+                                      data-display-if-trigger>
                                       <option value="1">Коробка</option>
                                       <option value="2">Тубус</option>
+                                      <option value="3">Конверт</option>
                                     </select>
                                     <label class="input-label" for="#GruzType[0]">Вид груза</label>
                                   </div>
                                 </div>
                                 <div class="input-item w50">
                                   <div class="input-wrapper">
-                                    <input class="input-main" type="number" id="GruzTotalWeight[0]" placeholder="0.5" name="GruzTotalWeight[0]" data-validation="number" data-validation-allowing="float,positive" data-validation-error-msg="Максимальный вес — 3 кг"
+                                    <input class="input-main" type="number" id="GruzTotalWeight[0]" placeholder="0.5" name="GruzTotalWeight[0]" data-validation="number" data-validation-allowing="float,positive" data-validation-error-msg="ВВедите корректный вес"
                                       data-validation-decimal-separator=".">
                                     <label class="input-label" for="#GruzTotalWeight[0]">Вес, кг</label>
                                   </div>
@@ -1388,11 +1418,12 @@
                               </div>
                               <div class="help-block help primary">Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.</div>
                               <div class="form-block">
-                                <div class="form-block-column">
-                                  <div class="input-row" data-formula="(BoxA[0]*BoxB[0]*BoxH[0])">
+                                <div class="form-block-subwrapper" data-display-if-container="GruzType"></div>
+                                <div class="form-block-column js-CalcForm-result-cont" data-formula="0">
+                                  <div class="input-row">
                                     <div class="input-item w50">
                                       <div class="input-wrapper">
-                                        <input class="input-main" id="BoxA[0]" placeholder="1" type="number" name="BoxA[0]" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
+                                        <input class="input-main" id="BoxA[0]" placeholder="1" type="number" name="BoxA" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
                                         <label class="input-label" for="#BoxA[0]">Длина (A), см</label>
                                       </div>
                                     </div>
@@ -1427,7 +1458,7 @@
                                   </div>
                                 </div>
                                 <div class="form-block-column">
-                                  <img class="js-image" data-src="img/calc/1.png" alt="">
+                                  <img src="img/calc/1.png" alt="">
                                 </div>
                               </div>
                               <div class="input-row">
@@ -1443,7 +1474,7 @@
                         </div>
                         <div class="accordeon-head">
                           <div class="link-dotted big js-accordeon-trigger">
-                            <div class="link-dotted-text js-toggle-text" data-alt-text="Свернуть">Расcчитать объёмный вес</div>
+                            <div class="link-dotted-text js-toggle-text" data-alt-text="Свернуть">Заполнить данные по каждому грузовому месту</div>
                             <div class="link-dotted-icon">
                               <svg class="icon-arrd">
                                 <use xlink:href="#arrd"></use>
@@ -1461,11 +1492,32 @@
                         </div>
                       </div>
                     </div>
+                    <form class="js-validate form-step" action="/" data-step="2">
+                      <div class="border-block">
+                        <div class="border-block-content">
+                          <div class="title h3">География2</div>
+                        </div>
+                      </div>
+                    </form>
+                    <form class="js-validate form-step" action="/" data-step="3">
+                      <div class="border-block">
+                        <div class="border-block-content">
+                          <div class="title h3">География3</div>
+                        </div>
+                      </div>
+                    </form>
+                    <form class="js-validate form-step" action="/" data-step="4">
+                      <div class="border-block">
+                        <div class="border-block-content">
+                          <div class="title h3">География4</div>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                   <div class="content-columns-aside js-stick-parent" data-sticky-parent>
                     <div class="content-aside-content js-stick">
-                      <div class="calc-steps">
-                        <div class="calc-steps-item active current">
+                      <div class="calc-steps js-calcNav">
+                        <div class="calc-steps-item active current" data-step="1">
                           <span class="num">
                             <span></span>
                           </span>
@@ -1473,7 +1525,7 @@
                             <div class="title h5">Параметры заказа</div>
                           </div>
                         </div>
-                        <div class="calc-steps-item">
+                        <div class="calc-steps-item" data-step="2">
                           <span class="num">
                             <span></span>
                           </span>
@@ -1481,7 +1533,7 @@
                             <div class="title h5">Выбор тарифа</div>
                           </div>
                         </div>
-                        <div class="calc-steps-item">
+                        <div class="calc-steps-item" data-step="3">
                           <span class="num">
                             <span></span>
                           </span>
@@ -1489,7 +1541,7 @@
                             <div class="title h5">Контактные данные</div>
                           </div>
                         </div>
-                        <div class="calc-steps-item">
+                        <div class="calc-steps-item" data-step="4">
                           <span class="num">
                             <span></span>
                           </span>

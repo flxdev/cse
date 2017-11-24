@@ -20,6 +20,7 @@ import Accord from './lib/Accord';
 import Stick from './lib/Stick';
 import CalcForm from './lib/CalcForm';
 import Accordeon from './lib/Accordeon';
+import CalcFormNavigation from './lib/CalcFormNavigation';
 
 
 
@@ -179,7 +180,9 @@ ready(() => {
   Accord();
   Stick();
   var PackageType = new CalcForm();
+  window.CalcNav = new CalcFormNavigation();
   Accordeon();
+
 });
 
 

@@ -131,7 +131,6 @@ export default function select() {
         let targets = parent.find('.js-swap-item');
         if(targets.length === 4) {
           _.on('click',() => {
-            console.log(targets);
             let val1 = targets[0].value;
             let val2 = targets[1].value;
             let val3 = targets[2].value;

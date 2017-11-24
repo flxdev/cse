@@ -4,17 +4,17 @@ export default function Accordeon() {
   triggers.each(function() {
     let _ = $(this);
     _.off('click').on('click',() => {
-   		 let head = _.closest('.accordeon-head');
+   		let head = _.closest('.accordeon-head');
       let parent = _.closest('.accordeon-wrapper');
       let target = parent.find('.accordeon-body');
       let text = _.find('.js-toggle-text');
       if(!_.hasClass('anim')) {
       	 _.addClass('anim');
 	      if(target.hasClass('active')) {
-	      	head.addClass('active');
+	      	head.add(_).removeClass('active');
 	        target.removeClass('active').slideUp('normal');
 	      }else{
-	      	head.removeClass('active');
+	      	head.add(_).addClass('active');
 	        target.addClass('active').slideDown();
 	      }
 	      text.toggleText();

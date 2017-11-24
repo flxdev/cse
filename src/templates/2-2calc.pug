@@ -13,9 +13,21 @@ block content
 		.box
 			.content-columns
 				.content-columns-main
-					form(action="/").js-validate.js-CalcForm
+					form(action="/",data-step='1').js-validate.js-CalcForm.form-step
+						// обьект с формулами для расчета
+						// у блоков есть дата-формула
 						script.
-							window.formArray = [BoxA*BoxB*BoxH,BoxA*BoxB,,]
+							var formObj = [
+								{
+									inputs: 
+										{'BoxA':0,'BoxB':0,'BoxH':0},
+										get formula(){ return this.inputs['BoxA']*this.inputs['BoxB']*this.inputs['BoxH'] }
+								},{
+									inputs: {'BoxA':0 , 'BoxB':0},
+										get formula(){ return this.inputs['BoxA'] + this.inputs['BoxB']}
+								},
+								]
+
 						.border-block
 							.border-block-content
 								.title.h3 География
@@ -164,6 +176,8 @@ block content
 													label(for='#DocWeight').input-label Вес, кг
 								// контейнер для всех блоков
 								.form-block-subwrapper(data-display-if-container='GruzType')
+								// контейнер для множественных блоков
+								.form-block-subwrapper(data-display-if-container='GruzPlaces')
 
 								.form-block
 									.input-row
@@ -238,8 +252,7 @@ block content
 														data-validation-error-msg="Введите корректное количество мест",
 														data-validation-allowing="positive,range[1;99]",
 														data-countdown='2',
-														data-display-if-trigger,
-														data-display-if-depend-trigger='GruzType')
+														data-display-if-trigger)
 										label(for='#GruzPlaces').input-label Количество мест
 								.input-item.w50
 									.input-wrapper
@@ -260,7 +273,7 @@ block content
 														name='GruzTotalWeight',
 														data-validation="number",
 														data-validation-allowing="float,positive",
-														data-validation-error-msg="Максимальный вес — 3 кг",
+														data-validation-error-msg="Максимальный вес — 100 кг",
 														data-validation-decimal-separator=".")
 										label(for='#GruzTotalWeight').input-label Общий вес, кг
 								.input-item.w50
@@ -302,7 +315,8 @@ block content
 																	name='BoxA',
 																	data-validation="number",
 																	data-validation-error-msg="Введите корректную величину",
-																	data-validation-allowing="positive,range[1;1000]")
+																	data-validation-allowing="positive,range[1;1000]",
+																	data-validation-optional="true")
 													label(for='#BoxA').input-label Длина (A), см
 											.input-item.w50
 												.input-wrapper
@@ -313,7 +327,8 @@ block content
 																	name='BoxB',
 																	data-validation="number",
 																	data-validation-error-msg="Введите корректную величину",
-																	data-validation-allowing="positive,range[1;1000]")
+																	data-validation-allowing="positive,range[1;1000]",
+																	data-validation-optional="true")
 													label(for='#BoxB').input-label Ширина (B), см
 											.input-item.w50
 												.input-wrapper
@@ -324,7 +339,8 @@ block content
 																	name='BoxH',
 																	data-validation="number",
 																	data-validation-error-msg="Введите корректную величину",
-																	data-validation-allowing="positive,range[1;1000]")
+																	data-validation-allowing="positive,range[1;1000]",
+																	data-validation-optional="true")
 													label(for='#BoxH').input-label Высота (H), см
 											.form-block-result
 												.form-block-result-inner
@@ -365,7 +381,8 @@ block content
 																	name='BoxA',
 																	data-validation="number",
 																	data-validation-error-msg="Введите корректную величину",
-																	data-validation-allowing="positive,range[1;1000]")
+																	data-validation-allowing="positive,range[1;1000]",
+																	data-validation-optional="true")
 													label(for='#BoxA').input-label Сторона (A), см
 											.input-item.w50
 												.input-wrapper
@@ -376,7 +393,8 @@ block content
 																	name='BoxB',
 																	data-validation="number",
 																	data-validation-error-msg="Введите корректную величину",
-																	data-validation-allowing="positive,range[1;1000]")
+																	data-validation-allowing="positive,range[1;1000]",
+																	data-validation-optional="true")
 													label(for='#BoxB').input-label Высота (H), см
 											.form-block-result
 												.form-block-result-inner
@@ -390,7 +408,7 @@ block content
 									.form-block-column
 										img(src="img/calc/2.png", alt="")
 						// аккордеон с множественными блоками
-						.accordeon-wrapper.block-yellow.js-calculation-target#Accordeon-multiple
+						.accordeon-wrapper.block-yellow.js-calculation-target#Accordeon-multiple(data-display-target='GruzPlaces')
 							.accordeon-body(style='display: none;')
 								.accordeon-body-head
 									.title.h4 Данные по каждому грузовому месту
@@ -414,9 +432,11 @@ block content
 																				data-validation-length='min1',
 																				data-validation-event="change",
 																				data-validation-depends-on="PackageType",
-																				data-validation-depends-on-value="2")
+																				data-validation-depends-on-value="2",
+																				data-display-if-trigger)
 														option(value="1") Коробка
 														option(value="2") Тубус
+														option(value="3") Конверт
 													label(for='#GruzType[0]').input-label Вид груза
 											.input-item.w50
 												.input-wrapper
@@ -426,22 +446,23 @@ block content
 																	name='GruzTotalWeight[0]',
 																	data-validation="number",
 																	data-validation-allowing="float,positive",
-																	data-validation-error-msg="Максимальный вес — 3 кг",
+																	data-validation-error-msg="ВВедите корректный вес",
 																	data-validation-decimal-separator=".")
 													label(for='#GruzTotalWeight[0]').input-label Вес, кг
 										.form-block-head
 											.title.h5 Объёмный вес
 										.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
 										.form-block
-											.form-block-column
-												.input-row(data-formula='(BoxA[0]*BoxB[0]*BoxH[0])')
+											.form-block-subwrapper(data-display-if-container='GruzType')
+											.form-block-column.js-CalcForm-result-cont(data-formula='0')
+												.input-row
 													.input-item.w50
 														.input-wrapper
 															input.input-main(
 																			id='BoxA[0]',
 																			placeholder='1',
 																			type="number",
-																			name='BoxA[0]',
+																			name='BoxA',
 																			data-validation="number",
 																			data-validation-error-msg="Введите корректную величину",
 																			data-validation-allowing="positive,range[1;1000]")
@@ -480,7 +501,7 @@ block content
 															.link-icon-text Отменить расчёт
 
 											.form-block-column
-												img.js-image(data-src="img/calc/1.png", alt="")
+												img(src="img/calc/1.png", alt="")
 										.input-row
 											.input-item
 												.input-wrapper
@@ -488,33 +509,44 @@ block content
 													label(for='#PackageDescr[0]').input-label Описание груза
 							.accordeon-head
 								.link-dotted.big.js-accordeon-trigger
-									.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Расcчитать объёмный вес
+									.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Заполнить данные по каждому грузовому месту
 									.link-dotted-icon
 										+icon('arrd')
 								.link-icon.sm.js-calculation-reset
 									.link-icon-icon
 										+icon('close')
 									.link-icon-text Отменить расчёт
-
+					form(action="/",data-step='2').js-validate.form-step
+						.border-block
+							.border-block-content
+								.title.h3 География2
+					form(action="/",data-step='3').js-validate.form-step
+						.border-block
+							.border-block-content
+								.title.h3 География3
+					form(action="/",data-step='4').js-validate.form-step
+						.border-block
+							.border-block-content
+								.title.h3 География4
 				.content-columns-aside(data-sticky-parent).js-stick-parent
 					.content-aside-content.js-stick
-						.calc-steps
-							.calc-steps-item.active.current
+						.calc-steps.js-calcNav
+							.calc-steps-item.active.current(data-step='1')
 								span.num
 									span
 								.calc-steps-content
 									.title.h5 Параметры заказа
-							.calc-steps-item
+							.calc-steps-item(data-step='2')
 								span.num
 									span
 								.calc-steps-content
 									.title.h5 Выбор тарифа
-							.calc-steps-item
+							.calc-steps-item(data-step='3')
 								span.num
 									span
 								.calc-steps-content
 									.title.h5 Контактные данные
-							.calc-steps-item
+							.calc-steps-item(data-step='4')
 								span.num
 									span
 								.calc-steps-content
