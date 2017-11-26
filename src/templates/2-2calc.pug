@@ -217,8 +217,9 @@ block content
 							button(type='submit').btn.full-width.js-CalcForm-submit
 								.btn-inner 
 									span Далее
-
+					//////////
 					// компоненты в форму
+					//////////
 					.calc-form-components.js-CalcForm-components(style='display: none;')
 						//основной блок для документов
 						.form-block(data-display-target='PackageType',data-display-if='1')
@@ -236,6 +237,7 @@ block content
 															data-validation-error-msg="Максимальный вес — 3 кг",
 															data-validation-decimal-separator=".")
 										label(for='#DocWeight').input-label Вес, кг
+
 						// основной блок для груза
 						.form-block(data-display-target='PackageType',data-display-if='2')
 							.form-block-head
@@ -288,7 +290,9 @@ block content
 														data-validation-decimal-separator=".",
 														data-validation-optional="true")
 										label(for='#GruzVolumetrikWeight').input-label Объёмный вес, кг
+
 						// блок с контейнером
+
 						.accordeon-wrapper(data-display-target='GruzType',data-display-if='1')
 							.accordeon-head
 								.link-dotted.color-black.js-accordeon-trigger
@@ -407,7 +411,108 @@ block content
 													.link-icon-text Отменить расчёт
 									.form-block-column
 										img(src="img/calc/2.png", alt="")
+						.form-block.js-calculation-reset-cont(data-formula='0',data-display-target='GruzType[0]',data-display-if="3")
+							.input-row
+								.input-item.w50
+									.help-block.help Вы можете отправить в конверте не более 60 листов формата А4. 
+						.form-block.js-calculation-reset-cont(data-formula='1',data-display-target='GruzType[0]',data-display-if="2")
+							.form-block-head
+								.title.h5 Объёмный вес
+							.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
+							.form-block-column
+								.input-row
+									.input-item.w50
+										.input-wrapper
+											input.input-main(
+															id='BoxA',
+															placeholder='1',
+															type="number",
+															name='BoxA',
+															data-validation="number",
+															data-validation-error-msg="Введите корректную величину",
+															data-validation-allowing="positive,range[1;1000]",
+															data-validation-optional="true")
+											label(for='#BoxA').input-label Сторона (A), см
+									.input-item.w50
+										.input-wrapper
+											input.input-main(
+															id='BoxB',
+															placeholder='1',
+															type="number",
+															name='BoxB',
+															data-validation="number",
+															data-validation-error-msg="Введите корректную величину",
+															data-validation-allowing="positive,range[1;1000]",
+															data-validation-optional="true")
+											label(for='#BoxB').input-label Высота (H), см
+									.form-block-result
+										.form-block-result-inner
+											.caption Обьемный вес
+											.form-block-result-text.js-CalcForm-result
+									.form-block-calcreset
+										.link-icon.sm.js-calculation-reset
+											.link-icon-icon
+												+icon('close')
+											.link-icon-text Отменить расчёт
+							.form-block-column
+								img(src="img/calc/2.png", alt="")
+						.form-block.js-calculation-reset-cont(data-formula='0',data-display-target='GruzType[0]',data-display-if="1")
+							.form-block-head
+								.title.h5 Объёмный вес
+							.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
+							.form-block-column
+								.input-row
+									.input-item.w50
+										.input-wrapper
+											input.input-main(
+															id='BoxA',
+															placeholder='1',
+															type="number",
+															name='BoxA',
+															data-validation="number",
+															data-validation-error-msg="Введите корректную величину",
+															data-validation-allowing="positive,range[1;1000]",
+															data-validation-optional="true")
+											label(for='#BoxA[0]').input-label Длина (A), см
+									.input-item.w50
+										.input-wrapper
+											input.input-main(
+															id='BoxB',
+															placeholder='1',
+															type="number",
+															name='BoxB',
+															data-validation="number",
+															data-validation-error-msg="Введите корректную величину",
+															data-validation-allowing="positive,range[1;1000]",
+															data-validation-optional="true")
+											label(for='#BoxB').input-label Ширина (B), см
+									.input-item.w50
+										.input-wrapper
+											input.input-main(
+															id='BoxH',
+															placeholder='1',
+															type="number",
+															name='BoxH',
+															data-validation="number",
+															data-validation-error-msg="Введите корректную величину",
+															data-validation-allowing="positive,range[1;1000]",
+															data-validation-optional="true")
+											label(for='#BoxH').input-label Высота (H), см
+									.form-block-result
+										.form-block-result-inner
+											.caption Обьемный вес
+											.form-block-result-text.js-CalcForm-result
+											|
+									.form-block-calcreset
+										.link-icon.sm.js-calculation-reset
+											.link-icon-icon
+												+icon('close')
+											.link-icon-text Отменить расчёт
+
+							.form-block-column
+								img(src="img/calc/1.png", alt="")
 						// аккордеон с множественными блоками
+
 						.accordeon-wrapper.block-yellow.js-calculation-target#Accordeon-multiple(data-display-target='GruzPlaces')
 							.accordeon-body(style='display: none;')
 								.accordeon-body-head
@@ -431,8 +536,6 @@ block content
 																				data-validation='length', 
 																				data-validation-length='min1',
 																				data-validation-event="change",
-																				data-validation-depends-on="PackageType",
-																				data-validation-depends-on-value="2",
 																				data-display-if-trigger)
 														option(value="1") Коробка
 														option(value="2") Тубус
@@ -449,59 +552,57 @@ block content
 																	data-validation-error-msg="ВВедите корректный вес",
 																	data-validation-decimal-separator=".")
 													label(for='#GruzTotalWeight[0]').input-label Вес, кг
-										.form-block-head
-											.title.h5 Объёмный вес
-										.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
-										.form-block
-											.form-block-subwrapper(data-display-if-container='GruzType')
-											.form-block-column.js-CalcForm-result-cont(data-formula='0')
-												.input-row
-													.input-item.w50
-														.input-wrapper
-															input.input-main(
-																			id='BoxA[0]',
-																			placeholder='1',
-																			type="number",
-																			name='BoxA',
-																			data-validation="number",
-																			data-validation-error-msg="Введите корректную величину",
-																			data-validation-allowing="positive,range[1;1000]")
-															label(for='#BoxA[0]').input-label Длина (A), см
-													.input-item.w50
-														.input-wrapper
-															input.input-main(
-																			id='BoxB[0]',
-																			placeholder='1',
-																			type="number",
-																			name='BoxB[0]',
-																			data-validation="number",
-																			data-validation-error-msg="Введите корректную величину",
-																			data-validation-allowing="positive,range[1;1000]")
-															label(for='#BoxB[0]').input-label Ширина (B), см
-													.input-item.w50
-														.input-wrapper
-															input.input-main(
-																			id='BoxH[0]',
-																			placeholder='1',
-																			type="number",
-																			name='BoxH[0]',
-																			data-validation="number",
-																			data-validation-error-msg="Введите корректную величину",
-																			data-validation-allowing="positive,range[1;1000]")
-															label(for='#BoxH[0]').input-label Высота (H), см
-													.form-block-result
-														.form-block-result-inner
-															.caption Обьемный вес
-															.form-block-result-text.js-CalcForm-result
-															|
-													.form-block-calcreset
-														.link-icon.sm.js-calculation-reset
-															.link-icon-icon
-																+icon('close')
-															.link-icon-text Отменить расчёт
-
-											.form-block-column
-												img(src="img/calc/1.png", alt="")
+										.form-block-subwrapper2(data-display-if-container='GruzType[0]')
+												//- .form-block-column.js-CalcForm-result-cont(data-formula='0')
+												//- 	.input-row
+												//- 		.input-item.w50
+												//- 			.input-wrapper
+												//- 				input.input-main(
+												//- 								id='BoxA[0]',
+												//- 								placeholder='1',
+												//- 								type="number",
+												//- 								name='BoxA',
+												//- 								data-validation="number",
+												//- 								data-validation-error-msg="Введите корректную величину",
+												//- 								data-validation-allowing="positive,range[1;1000]",
+												//- 								data-validation-optional="true")
+												//- 				label(for='#BoxA[0]').input-label Длина (A), см
+												//- 		.input-item.w50
+												//- 			.input-wrapper
+												//- 				input.input-main(
+												//- 								id='BoxB[0]',
+												//- 								placeholder='1',
+												//- 								type="number",
+												//- 								name='BoxB[0]',
+												//- 								data-validation="number",
+												//- 								data-validation-error-msg="Введите корректную величину",
+												//- 								data-validation-allowing="positive,range[1;1000]",
+												//- 								data-validation-optional="true")
+												//- 				label(for='#BoxB[0]').input-label Ширина (B), см
+												//- 		.input-item.w50
+												//- 			.input-wrapper
+												//- 				input.input-main(
+												//- 								id='BoxH[0]',
+												//- 								placeholder='1',
+												//- 								type="number",
+												//- 								name='BoxH[0]',
+												//- 								data-validation="number",
+												//- 								data-validation-error-msg="Введите корректную величину",
+												//- 								data-validation-allowing="positive,range[1;1000]",
+												//- 								data-validation-optional="true")
+												//- 				label(for='#BoxH[0]').input-label Высота (H), см
+												//- 		.form-block-result
+												//- 			.form-block-result-inner
+												//- 				.caption Обьемный вес
+												//- 				.form-block-result-text.js-CalcForm-result
+												//- 				|
+												//- 		.form-block-calcreset
+												//- 			.link-icon.sm.js-calculation-reset
+												//- 				.link-icon-icon
+												//- 					+icon('close')
+												//- 				.link-icon-text Отменить расчёт
+												//- .form-block-column
+												//- 	img(src="img/calc/1.png", alt="")
 										.input-row
 											.input-item
 												.input-wrapper
@@ -516,6 +617,9 @@ block content
 									.link-icon-icon
 										+icon('close')
 									.link-icon-text Отменить расчёт
+					//////////
+					// END компоненты в форму
+					///////////
 					form(action="/",data-step='2').js-validate.form-step
 						.border-block
 							.border-block-content

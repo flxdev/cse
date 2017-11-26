@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/fav/favicon-16x16.png">
+    <link rel="manifest" href="/img/fav/manifest.json">
+    <link rel="mask-icon" href="/img/fav/safari-pinned-tab.svg" color="#f47920">
+    <link rel="shortcut icon" href="/img/fav/favicon.ico">
+    <meta name="msapplication-config" content="/img/fav/browserconfig.xml">
     <meta name="theme-color" content="#f47920">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" media="all" href="css/app.css">
@@ -1178,7 +1185,9 @@
                         </button>
                       </div>
                     </form>
+                    <!--////////-->
                     <!-- компоненты в форму-->
+                    <!--////////-->
                     <div class="calc-form-components js-CalcForm-components" style="display: none;">
                       <!--основной блок для документов-->
                       <div class="form-block" data-display-target="PackageType" data-display-if="1">
@@ -1368,6 +1377,101 @@
                           </div>
                         </div>
                       </div>
+                      <div class="form-block js-calculation-reset-cont" data-formula="0" data-display-target="GruzType[0]" data-display-if="3">
+                        <div class="input-row">
+                          <div class="input-item w50">
+                            <div class="help-block help">Вы можете отправить в конверте не более 60 листов формата А4. </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-block js-calculation-reset-cont" data-formula="1" data-display-target="GruzType[0]" data-display-if="2">
+                        <div class="form-block-head">
+                          <div class="title h5">Объёмный вес</div>
+                        </div>
+                        <div class="help-block help primary">Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.</div>
+                        <div class="form-block-column">
+                          <div class="input-row">
+                            <div class="input-item w50">
+                              <div class="input-wrapper">
+                                <input class="input-main" id="BoxA" placeholder="1" type="number" name="BoxA" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]" data-validation-optional="true">
+                                <label class="input-label" for="#BoxA">Сторона (A), см</label>
+                              </div>
+                            </div>
+                            <div class="input-item w50">
+                              <div class="input-wrapper">
+                                <input class="input-main" id="BoxB" placeholder="1" type="number" name="BoxB" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]" data-validation-optional="true">
+                                <label class="input-label" for="#BoxB">Высота (H), см</label>
+                              </div>
+                            </div>
+                            <div class="form-block-result">
+                              <div class="form-block-result-inner">
+                                <div class="caption">Обьемный вес</div>
+                                <div class="form-block-result-text js-CalcForm-result"></div>
+                              </div>
+                            </div>
+                            <div class="form-block-calcreset">
+                              <div class="link-icon sm js-calculation-reset">
+                                <div class="link-icon-icon">
+                                  <svg class="icon-close">
+                                    <use xlink:href="#close"></use>
+                                  </svg>
+                                </div>
+                                <div class="link-icon-text">Отменить расчёт</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-block-column">
+                          <img src="img/calc/2.png" alt="">
+                        </div>
+                      </div>
+                      <div class="form-block js-calculation-reset-cont" data-formula="0" data-display-target="GruzType[0]" data-display-if="1">
+                        <div class="form-block-head">
+                          <div class="title h5">Объёмный вес</div>
+                        </div>
+                        <div class="help-block help primary">Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.</div>
+                        <div class="form-block-column">
+                          <div class="input-row">
+                            <div class="input-item w50">
+                              <div class="input-wrapper">
+                                <input class="input-main" id="BoxA" placeholder="1" type="number" name="BoxA" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]" data-validation-optional="true">
+                                <label class="input-label" for="#BoxA[0]">Длина (A), см</label>
+                              </div>
+                            </div>
+                            <div class="input-item w50">
+                              <div class="input-wrapper">
+                                <input class="input-main" id="BoxB" placeholder="1" type="number" name="BoxB" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]" data-validation-optional="true">
+                                <label class="input-label" for="#BoxB">Ширина (B), см</label>
+                              </div>
+                            </div>
+                            <div class="input-item w50">
+                              <div class="input-wrapper">
+                                <input class="input-main" id="BoxH" placeholder="1" type="number" name="BoxH" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]" data-validation-optional="true">
+                                <label class="input-label" for="#BoxH">Высота (H), см</label>
+                              </div>
+                            </div>
+                            <div class="form-block-result">
+                              <div class="form-block-result-inner">
+                                <div class="caption">Обьемный вес</div>
+                                <div class="form-block-result-text js-CalcForm-result"></div>
+                              </div>
+                            </div>
+                            <div class="form-block-calcreset">
+                              <div class="link-icon sm js-calculation-reset">
+                                <div class="link-icon-icon">
+                                  <svg class="icon-close">
+                                    <use xlink:href="#close"></use>
+                                  </svg>
+                                </div>
+                                <div class="link-icon-text">Отменить расчёт</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-block-column">
+                          <img src="img/calc/1.png" alt="">
+                        </div>
+                      </div>
                       <!-- аккордеон с множественными блоками-->
                       <div class="accordeon-wrapper block-yellow js-calculation-target" id="Accordeon-multiple" data-display-target="GruzPlaces">
                         <div class="accordeon-body" style="display: none;">
@@ -1396,8 +1500,7 @@
                               <div class="input-row">
                                 <div class="input-item w50">
                                   <div class="input-wrapper">
-                                    <select class="input-main js-select" name="GruzType[0]" id="GruzType[0]" data-validation="length" data-validation-length="min1" data-validation-event="change" data-validation-depends-on="PackageType" data-validation-depends-on-value="2"
-                                      data-display-if-trigger>
+                                    <select class="input-main js-select" name="GruzType[0]" id="GruzType[0]" data-validation="length" data-validation-length="min1" data-validation-event="change" data-display-if-trigger>
                                       <option value="1">Коробка</option>
                                       <option value="2">Тубус</option>
                                       <option value="3">Конверт</option>
@@ -1413,54 +1516,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="form-block-head">
-                                <div class="title h5">Объёмный вес</div>
-                              </div>
-                              <div class="help-block help primary">Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.</div>
-                              <div class="form-block">
-                                <div class="form-block-subwrapper" data-display-if-container="GruzType"></div>
-                                <div class="form-block-column js-CalcForm-result-cont" data-formula="0">
-                                  <div class="input-row">
-                                    <div class="input-item w50">
-                                      <div class="input-wrapper">
-                                        <input class="input-main" id="BoxA[0]" placeholder="1" type="number" name="BoxA" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
-                                        <label class="input-label" for="#BoxA[0]">Длина (A), см</label>
-                                      </div>
-                                    </div>
-                                    <div class="input-item w50">
-                                      <div class="input-wrapper">
-                                        <input class="input-main" id="BoxB[0]" placeholder="1" type="number" name="BoxB[0]" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
-                                        <label class="input-label" for="#BoxB[0]">Ширина (B), см</label>
-                                      </div>
-                                    </div>
-                                    <div class="input-item w50">
-                                      <div class="input-wrapper">
-                                        <input class="input-main" id="BoxH[0]" placeholder="1" type="number" name="BoxH[0]" data-validation="number" data-validation-error-msg="Введите корректную величину" data-validation-allowing="positive,range[1;1000]">
-                                        <label class="input-label" for="#BoxH[0]">Высота (H), см</label>
-                                      </div>
-                                    </div>
-                                    <div class="form-block-result">
-                                      <div class="form-block-result-inner">
-                                        <div class="caption">Обьемный вес</div>
-                                        <div class="form-block-result-text js-CalcForm-result"></div>
-                                      </div>
-                                    </div>
-                                    <div class="form-block-calcreset">
-                                      <div class="link-icon sm js-calculation-reset">
-                                        <div class="link-icon-icon">
-                                          <svg class="icon-close">
-                                            <use xlink:href="#close"></use>
-                                          </svg>
-                                        </div>
-                                        <div class="link-icon-text">Отменить расчёт</div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-block-column">
-                                  <img src="img/calc/1.png" alt="">
-                                </div>
-                              </div>
+                              <div class="form-block-subwrapper2" data-display-if-container="GruzType[0]"></div>
                               <div class="input-row">
                                 <div class="input-item">
                                   <div class="input-wrapper">
@@ -1492,6 +1548,9 @@
                         </div>
                       </div>
                     </div>
+                    <!--////////-->
+                    <!-- END компоненты в форму-->
+                    <!--/////////-->
                     <form class="js-validate form-step" action="/" data-step="2">
                       <div class="border-block">
                         <div class="border-block-content">
