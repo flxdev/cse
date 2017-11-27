@@ -122,6 +122,10 @@ body,.out
 		font-size: 30px
 	+r(335)
 		font-size: 28px
+	&.delivery
+		span
+			font-size: 40px
+			line-height: 0
 	&.h2
 		font-size: 36px
 		+r(600)
@@ -133,8 +137,14 @@ body,.out
 		font-size: 24px
 		font-weight: 500
 		line-height: 1.333
+		.delivery
+			width: 35px
+			height: 16px
+			margin-right: 8px
+			margin-left: 5px
 		+r(600)
 			font-size: 22px
+
 	&.h4 
 		font-size: 18px
 		line-height: 1.556;
@@ -144,6 +154,46 @@ body,.out
 		text-transform: none
 	&.white
 		color: $white
+span.delivery
+	display: inline-block
+	vertical-align: middle
+	+contain
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAARBAMAAABqazwPAAAAKlBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHrpZrAAAADXRSTlMAAxEIucyHw66ilRnVS25ovgAAAERJREFUKM9jYCAIEhiIA7eIVHd3IpHqbhgQp+6uM5HqrisQp+5uEJgkDO5sIE7dXQeizSPWfdT0rzN142MiddMLOP0BALlufFE3NKJrAAAAAElFTkSuQmCC);
+.delivery-result
+	padding-left: 17px
+	position: relative
+
+	span 
+		line-height: 1.85
+		&:not([class])
+			display: block
+	.deliveryarr	
+		position: absolute
+		left: 0
+		top: 10px
+		height: 40px
+.deliveryarr
+	display: inline-block
+	height: 100%
+	text-align: center
+	&:before,&:after
+		display: inline-block
+		content: ''
+		vertical-align: middle
+		// border-color: $dark
+	&:before
+		width: 1px
+		height: calc(100% - 5px)
+		background-color: $dark
+	&:after
+		+arr(8,4,$dark,b)
+	&.bottom 
+		&:before
+			display: block
+			margin-left: 3px
+		&:after
+			vertical-align: top
+			
 
 .text, p 
 	font-size: 18px;
@@ -723,6 +773,8 @@ blockquote
 		flex-flow: row nowrap 
 		justify-content: flex-end
 		align-items: center
+		margin-bottom: 20px
+		margin-top: 20px
 	&-item
 		position: relative
 		display: block
@@ -738,6 +790,9 @@ blockquote
 			align-items: center
 			&:not(:last-child)
 				padding-right: 15px
+		+r(355)
+			&:not(:last-child)
+				padding-right: 7px	
 		&:not(:last-child)
 			padding-bottom: 27px
 			+r(800)
@@ -818,11 +873,33 @@ blockquote
 		padding-left: 15px
 		+r(800)
 			white-space: normal
-
+		+r(355)
+			padding-left: 7px	
 		.title 
 			+tr(color .3s)
 
 
 
+dl
+	margin-bottom: 5px
+	margin-top: 4px
+	display: block
+	font-size: 0
+	dt,dd
+		display: inline-block
+		vertical-align: top
+		padding-top: 7px
+		padding-bottom: 7px
+		.text.sm
+			font-size: 14px
+			line-height: 1.8
+			span 
+				display: block
+				
+	dt
+		width: 32%
+		min-width: 100px
 
-						
+	dd 
+		width: 68%
+		max-width: calc( 100% - 100px)

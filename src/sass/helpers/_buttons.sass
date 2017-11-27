@@ -272,7 +272,7 @@
 		color: inherit
 		font-size: 14px
 		position: relative
-
+		white-space: normal
 		padding-bottom: 3px
 		&:after
 			content: ""
@@ -298,9 +298,13 @@
 		width: 25px
 		height: 25px
 		padding: 5px
+		+r(600)
+			position: static
+			
 		.input-dropdown-target
 			right: auto
 			min-width: 300px
+			z-index: 4
 		&:hover 
 			&-trigger 
 				color: $brand

@@ -21,10 +21,10 @@ block content
 								{
 									inputs: 
 										{'BoxA':0,'BoxB':0,'BoxH':0},
-										get formula(){ return this.inputs['BoxA']*this.inputs['BoxB']*this.inputs['BoxH'] }
+										formula: function(){ return this.inputs['BoxA']*this.inputs['BoxB']*this.inputs['BoxH'] }
 								},{
 									inputs: {'BoxA':0 , 'BoxB':0},
-										get formula(){ return this.inputs['BoxA'] + this.inputs['BoxB']}
+										formula: function(){ return this.inputs['BoxA'] + this.inputs['BoxB']}
 								},
 								]
 
@@ -214,7 +214,7 @@ block content
 														span.select-radio-text Самовывоз
 											.help-block.help Ваша посылка будет доставлена получателю курьером.
 						.block-buttons
-							button(type='submit').btn.full-width.js-CalcForm-submit
+							button(type='submit').btn.full-width.js-CalcForm-submit.btn-next
 								.btn-inner 
 									span Далее
 					//////////
@@ -553,56 +553,6 @@ block content
 																	data-validation-decimal-separator=".")
 													label(for='#GruzTotalWeight[0]').input-label Вес, кг
 										.form-block-subwrapper2(data-display-if-container='GruzType[0]')
-												//- .form-block-column.js-CalcForm-result-cont(data-formula='0')
-												//- 	.input-row
-												//- 		.input-item.w50
-												//- 			.input-wrapper
-												//- 				input.input-main(
-												//- 								id='BoxA[0]',
-												//- 								placeholder='1',
-												//- 								type="number",
-												//- 								name='BoxA',
-												//- 								data-validation="number",
-												//- 								data-validation-error-msg="Введите корректную величину",
-												//- 								data-validation-allowing="positive,range[1;1000]",
-												//- 								data-validation-optional="true")
-												//- 				label(for='#BoxA[0]').input-label Длина (A), см
-												//- 		.input-item.w50
-												//- 			.input-wrapper
-												//- 				input.input-main(
-												//- 								id='BoxB[0]',
-												//- 								placeholder='1',
-												//- 								type="number",
-												//- 								name='BoxB[0]',
-												//- 								data-validation="number",
-												//- 								data-validation-error-msg="Введите корректную величину",
-												//- 								data-validation-allowing="positive,range[1;1000]",
-												//- 								data-validation-optional="true")
-												//- 				label(for='#BoxB[0]').input-label Ширина (B), см
-												//- 		.input-item.w50
-												//- 			.input-wrapper
-												//- 				input.input-main(
-												//- 								id='BoxH[0]',
-												//- 								placeholder='1',
-												//- 								type="number",
-												//- 								name='BoxH[0]',
-												//- 								data-validation="number",
-												//- 								data-validation-error-msg="Введите корректную величину",
-												//- 								data-validation-allowing="positive,range[1;1000]",
-												//- 								data-validation-optional="true")
-												//- 				label(for='#BoxH[0]').input-label Высота (H), см
-												//- 		.form-block-result
-												//- 			.form-block-result-inner
-												//- 				.caption Обьемный вес
-												//- 				.form-block-result-text.js-CalcForm-result
-												//- 				|
-												//- 		.form-block-calcreset
-												//- 			.link-icon.sm.js-calculation-reset
-												//- 				.link-icon-icon
-												//- 					+icon('close')
-												//- 				.link-icon-text Отменить расчёт
-												//- .form-block-column
-												//- 	img(src="img/calc/1.png", alt="")
 										.input-row
 											.input-item
 												.input-wrapper
@@ -620,10 +570,211 @@ block content
 					//////////
 					// END компоненты в форму
 					///////////
+
 					form(action="/",data-step='2').js-validate.form-step
+						.border-block.hideborder
+							.border-block-content
+								.border-block-content-head
+									.title.h3 Москва, Россия
+										span.delivery 
+										|Санкт-Петербург, Россия
+									.link-icon.edit(onclick='window.DOM.moveTo(1)')
+										.link-icon-icon
+											+icon('edit')
 						.border-block
 							.border-block-content
-								.title.h3 География2
+								.title.h3 Тарифы
+								.form-block
+									.form-block-table
+										.form-block-table-head
+											.form-block-table-item
+												.caption Тариф
+											.form-block-table-item
+												.caption Срок доставки
+											.form-block-table-item
+												.caption Стоимость
+										.form-block-table-row
+											.form-block-table-item
+												label.select-radio-label.radio-simple
+													input(
+															type="radio",
+															name='DeliveryType',
+															value='1',
+															checked='checked').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Сверхсрочный
+															span.caption Срочная доставка документов и грузов «из рук в руки» в течение 1-2 дней
+											.form-block-table-item(data-alttext='Срок доставки')
+												.text.sm 1-2 раб. дня
+											.form-block-table-item(data-alttext='Стоимость')
+												.title.h4 1 450 ₽
+										.form-block-table-row
+											.form-block-table-item
+												label.select-radio-label.radio-simple
+													input(
+															type="radio",
+															name='DeliveryType',
+															value='2').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Срочный
+															span.caption Быстрая и оптимальная доставка документов и грузов по России в течение 3-4 дней
+											.form-block-table-item(data-alttext='Срок доставки')
+												.text.sm 3-4 раб. дня
+											.form-block-table-item(data-alttext='Стоимость')
+												.title.h4 1 200 ₽
+										.form-block-table-row
+											.form-block-table-item
+												label.select-radio-label.radio-simple
+													input(
+															type="radio",
+															name='DeliveryType',
+															value='3').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Эконом доставка
+															span.caption Классическая доставка по принципу «от двери до двери» со стандартными сроками доставки
+											.form-block-table-item(data-alttext='Срок доставки')
+												.text.sm 4-5 раб. дня
+											.form-block-table-item(data-alttext='Стоимость')
+												.title.h4 850 ₽
+						.border-block
+							.border-block-content
+								.title.h3 Опции
+								.form-block
+									.form-block-options
+										.form-block-options-item
+											.form-block-options-item-inner
+												label.select-radio-label.radio-simple
+													input(
+															type="checkbox",
+															name='optionSms').js-option-trigger.select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text SMS-оповещение о доставке груза
+												.quest-wrap
+													.quest-trigger
+														+icon('question')
+													.input-dropdown-target
+														.input-dropdown-content
+															.text SMS-оповещение о доставке груза позволяет всегда быть в курсе о состоянии вашего груза
+												.title.h4
+													span 100
+													| ₽
+											.form-block-options-item-inputs.js-option-target(style='display: none;')
+												.input-row
+													.input-item.w50
+														.input-wrapper
+															input.input-main(
+																			id='optionSmsTel',
+																			placeholder='+7 495 000-00-00',
+																			type="tel",
+																			name='optionSmsTel',
+																			data-validation="custom",
+																			data-validation-regexp="^[-0-9()+ ]+$",
+																			data-validation-error-msg="Введите корректный номер телефона",
+																			data-validation-depends-on="optionSms")
+															label(for='#optionSmsTel').input-label Номер телефона
+										.form-block-options-item
+											.form-block-options-item-inner
+												label.select-radio-label.radio-simple
+													input(
+															type="checkbox",
+															name='optionDocReturn').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Возврат документов
+												.quest-wrap
+													.quest-trigger
+														+icon('question')
+													.input-dropdown-target
+														.input-dropdown-content
+															.text Возврат документов позволяет всегда быть в курсе о состоянии вашего груза
+												.title.h4
+													span 300
+													| ₽
+											.form-block-options-item-inputs(style='display: none;')
+										.form-block-options-item
+											.form-block-options-item-inner
+												label.select-radio-label.radio-simple
+													input(
+															type="checkbox",
+															name='optionPrice').js-option-trigger.select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Объявленная стоимость
+												.quest-wrap
+													.quest-trigger
+														+icon('question')
+													.input-dropdown-target
+														.input-dropdown-content
+															.text SMS-оповещение о доставке груза позволяет всегда быть в курсе о состоянии вашего груза
+												.title.h4
+													span.js-partPrice-target 0
+													| ₽
+											.form-block-options-item-inputs.js-option-target(style='display: none;')
+												.input-row
+													.input-item.w50
+														.input-wrapper
+															//data-partPrice-persent для расчета стоимости
+															input.input-main(
+																			id='optionPriceInp',
+																			placeholder='500',
+																			type="number",
+																			name='optionPriceInp',
+																			data-validation="number",
+																			data-validation-allowing="positive,range[500;25000]"
+																			data-validation-error-msg="Введите корректную сумму, минимальная Оценочная стоимость  - 500р",
+																			data-validation-depends-on="optionPrice",data-partprice-persent='5').js-partPrice-trigger
+															label(for='#optionPriceInp').input-label Оценочная стоимость, ₽
+															input(type="hidden",
+																name='optionPriceInpCalculated').js-partPrice-target
+						.border-block.bg-yellow
+							.border-block-content
+								.border-block-content-left
+									.text.sm.delivery-result
+										span Москва, Россия
+										span Санкт-Петербург, Россия
+										span.deliveryarr.bottom
+									dl
+										dt
+											.caption Тариф
+										dd 
+											.text.sm Сверхсрочный 
+										dt
+											.caption Срок доставки
+										dd 
+											.text.sm 1-2 раб.дня
+										dt
+											.caption Опции
+										dd 
+											.text.sm 
+												span SMS-оповещение о доставке груза
+												span Объявленная стоимость
+								.border-block-content-right
+									.title.h3 1 750 ₽
+									.caption Стоимость с учётом НДС
+									a(href="#") Стать клиентом
+						.block-buttons
+							.link-icon(onclick='window.DOM.moveTo(1)')
+								.link-icon-icon
+									+icon('arrl')
+								.link-icon-text Назад
+							button(type='button').btn.color-gray
+								.btn-inner 
+									span Сохранить,
+										br
+										|сделать новый расчёт
+							button(type='submit').btn.btn-next
+								.btn-inner 
+									span Оформить
 					form(action="/",data-step='3').js-validate.form-step
 						.border-block
 							.border-block-content

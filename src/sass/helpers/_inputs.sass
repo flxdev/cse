@@ -145,6 +145,8 @@
 			border-right: none  !important
 		.SumoSelect,.CaptionCont 
 			border-radius: 3px
+			&+.CaptionCont 
+				display: none
 	&-main
 		font-family: $f
 		font-weight: 400
@@ -164,6 +166,16 @@
 		border-bottom: 2px solid transparent
 		&.js-select
 			cursor: pointer
+			+r(640)
+				opacity: 1
+				&+.CaptionCont
+					z-index: 1
+					background: 0 0
+					pointer-events: none
+					span 
+						opacity: 0
+					label
+						background-color: $white
 			&~ .optWrapper
 				top: 100%
 				margin-top: 10px
@@ -172,6 +184,7 @@
 				border: none
 				padding: 15px 15px
 				font-size: 14px
+				z-index: 2
 				ul 
 					max-height: 180px
 					width: 100%
@@ -227,9 +240,10 @@
 		&.js-filter
 			&~.optWrapper 
 				position: static !important
+				.placeholder
+					pointer-events: none
 			padding-top: 20px
 			padding-bottom: 18px
-			pointer-events: none
 			&~.CaptionCont
 				padding-top: 22px
 				padding-bottom: 18px
@@ -239,6 +253,8 @@
 				height: auto
 				min-height: 60px
 				padding-right: 15px
+				pointer-events: none
+
 				.placeholder
 					color: $dark
 					font-style: normal
@@ -270,6 +286,7 @@
 				border: none !important
 				margin-top: -2px
 				padding-left: 15px
+
 				ul
 					display: block
 					width: 100%
@@ -361,8 +378,10 @@
 		color: $dark
 		top: 7px
 		left: 15px
-		z-index: 0
+		z-index: 1
 		+tr(opacity .3s)
+		+notouch
+			z-index: 0
 	&-countdown
 		position: absolute
 		+rem(font-size,12px)
@@ -577,6 +596,73 @@
 		display: inline-block
 		position: relative
 		cursor: pointer
+		+nosel
+		&.radio-simple
+			.select-radio-input
+				width: 36px !important
+				height: 20px
+				vertical-align: top
+				margin-top: -3px
+				&-real
+					&[type='checkbox']
+						&+.select-radio-inner
+							.select-radio-input
+								overflow: visible
+								.select-radio-input-fake
+									border-radius: 3px
+									position: relative
+									&:after
+										width: 19px
+										height: 19px
+										background-color: transparent 
+										margin-bottom: 2px
+										border-radius: 0
+										+contain
+										position: absolute
+										right: -4px
+										top: -5px
+										transform-origin: left bottom
+										background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAsCAMAAADLhrFKAAAAJ1BMVEVHcEwtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUi0oQZAAAADHRSTlMA7Rs1CWmK21Wmzr/HNujwAAAAyUlEQVR42o2U0Q6EIBADBZZFoP//vRePh42J4vBGMmnaUj3wyQWjpWK0Oka9U9ImRvOYRtHWMi0gJY6qcLRy1Dk6DKM0V05Sob2KmrUhTZirC5t1SSfcq6QO2xJ2kBN2YIM76OGA5FKluegrWJNedpAfzL7t4HS73y80vYzWR7k1uw025RaXC2222eklHXXp3JfkFg7aMxZ5WlkOPofg+ksvB+Oj/xUpfcqG0SXLRkBkoy2pwdHiLdq4LQHkwz/QkCX5/MCnbz/IH2umCWXGP6xgAAAAAElFTkSuQmCC);
+				&-fake
+					display: inline-block
+					width: 20px
+					height: 20px
+					border-radius: 50%
+					border: 1px solid $inputborder
+					+vertical 
+					&:after
+						content: ''
+						display: inline-block
+						vertical-align: middle
+						width: 8px
+						height: 8px
+						border-radius: 50%
+						background-color: $dark
+						+tr(transform .3s cubic-bezier(.175,.885,.32,1.15))
+						transform: scale(0)
+			.select-radio-inner
+				border: none
+				text-align: left
+				padding-left: 0
+				height: auto
+			.select-radio-text
+				width: calc(100% - 36px)
+				max-width: 240px
+				.caption
+					display: block
+					line-height: 1.4
+					font-size: 14px
+					margin-top: 12px
+			.select-radio-input-real
+				&:checked
+					&~ .select-radio-inner
+						.select-radio-input
+							&-fake 
+								border-color: $brand
+								&:after
+									transform: none
+					// .select-radio-input
+					// 	width: 32px
 
 	&-input
 		+tr(width .3s)
@@ -594,6 +680,7 @@
 						transform: none
 					.select-radio-input
 						width: 22px
+
 						
 		&-fake
 			width: 100%

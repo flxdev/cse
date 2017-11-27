@@ -161,6 +161,32 @@ ready(() => {
       this.text(altText);
     }
   };
+  function getPartPrice() {
+    let items = $('.js-partPrice-trigger');
+    items.each(function() {
+      let _ = $(this);
+      let persent = parseInt(_.data('partprice-persent'));
+      let targets = _.closest('.form-block-options-item').find('.js-partPrice-target');
+      _.on('change input',() => {
+        let val = parseInt(_.val());
+        if(!isNaN(val) && !_.hasClass('error')) {
+          let NewVal = Math.ceil(val / 100 * persent);
+          targets.text(NewVal).val(NewVal);
+        }
+      });
+    });
+  }getPartPrice();
+  function optionTrigger() {
+    let triggers = $('.js-option-trigger');
+    triggers.each(function() {
+      let _ = $(this);
+      let target = _.closest('.form-block-options-item').find('.js-option-target');
+      _.on('change',() => {
+        let prop = _.prop('checked');
+        prop === true ? target.slideDown(): target.slideUp();
+      });
+    });
+  }optionTrigger();
   datepick();
   validateLength();
   select();

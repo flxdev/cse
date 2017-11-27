@@ -20,7 +20,6 @@ CalcFormNavigation.prototype = {
         let target = _.data('step');
         _.hasClass('active') && !_.hasClass('current') ? this.moveTo(target) : false;
       });
-		
     });
   },
   moveNext: function() {
@@ -34,7 +33,7 @@ CalcFormNavigation.prototype = {
   	}
   },
   moveTo: function(target) {
-
+  	this.formNavItems.filter(`[data-step="${target}"]`).removeClass('current').next().addClass('active').addClass('current');
   },
 
 };
