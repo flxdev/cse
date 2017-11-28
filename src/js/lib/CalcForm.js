@@ -1,8 +1,9 @@
 import $ from 'jquery/dist/jquery';
 import Accordeon from './Accordeon';
+import ChangeElementName from './ChangeElementName';
 
 export default function CalcForm() {
-  this.submitBtn =$('.js-CalcForm-submit');
+  this.submitBtn = $('.js-CalcForm-submit');
   this.form = $('.js-CalcForm');
   this.componentsContainer = $('.js-CalcForm-components');
   this.subwrapper = this.form.find('.form-block-subwrapper');
@@ -18,22 +19,19 @@ CalcForm.prototype ={
     this.triggers = this.form.find('[data-display-if-trigger]');
     this.initTypeChange();
     this.submitBtn.off('click').on('click',() => {
-	  this.checkForNextStep();
+	  // this.checkForNextStep();
     });
   },
   initTypeChange() {
     const self = this;
     setTimeout(() => {
-
 	  this.triggers.each(function() {
         let _ = $(this);
         let name = _.data('targetBlock') || _.attr('name');
         let type = _.attr('type') || _[0].nodeName.toLowerCase();
         let statement = _.data('display-if-trigger');
         self.InitTriggerChange(_,name,type,statement);
-
 	  });
-
     },100);
   },
   InitTriggerChange: function(item,name,type,statement) {
@@ -215,14 +213,7 @@ CalcForm.prototype ={
 
     this.appendMultiBlock(generatedContainer,name,fragment);
 
-    function ChangeElementName(elements,attribute,i) {
-	  Array.from(elements).forEach((elem) => {
-        let oldAttr = elem.getAttribute(attribute) || toString(elem.getAttribute(attribute) );
-        let oldstring = oldAttr.substring(0,oldAttr.indexOf('[')+1);
-        let newstring = oldstring + i + ']';
-        elem.setAttribute(attribute,newstring);
-	  });
-    }
+
   },
   appendMultiBlock(targetItem,name,fragment) {
     let targetBlock = this.form.find(`[data-display-if-container="${name}"]`);

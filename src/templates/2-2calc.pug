@@ -214,7 +214,7 @@ block content
 														span.select-radio-text Самовывоз
 											.help-block.help Ваша посылка будет доставлена получателю курьером.
 						.block-buttons
-							button(type='submit').btn.full-width.js-CalcForm-submit.btn-next
+							button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.full-width.js-CalcForm-submit.btn-next
 								.btn-inner 
 									span Далее
 					//////////
@@ -662,7 +662,7 @@ block content
 														+icon('question')
 													.input-dropdown-target
 														.input-dropdown-content
-															.text SMS-оповещение о доставке груза позволяет всегда быть в курсе о состоянии вашего груза
+															.text Услуга, позволяющая путём отправки короткого SMS-сообщения уведомить о том, что груз доставлен получателю.
 												.title.h4
 													span 100
 													| ₽
@@ -695,7 +695,7 @@ block content
 														+icon('question')
 													.input-dropdown-target
 														.input-dropdown-content
-															.text Возврат документов позволяет всегда быть в курсе о состоянии вашего груза
+															.text Возврат отправленных сопроводи- тельных документов с подписью получателя либо иных возвратных документов от получателя.
 												.title.h4
 													span 300
 													| ₽
@@ -715,7 +715,7 @@ block content
 														+icon('question')
 													.input-dropdown-target
 														.input-dropdown-content
-															.text SMS-оповещение о доставке груза позволяет всегда быть в курсе о состоянии вашего груза
+															.text Возмещение ущерба клиенту при утере/ порче отправления. Тариф рассчиты- вается в процентах от оценочной стоимости отправления и составляет: 10%.
 												.title.h4
 													span.js-partPrice-target 0
 													| ₽
@@ -763,7 +763,7 @@ block content
 									.caption Стоимость с учётом НДС
 									a(href="#") Стать клиентом
 						.block-buttons
-							.link-icon(onclick='window.DOM.moveTo(1)')
+							.link-icon(onclick='window.CalcNav.moveTo(1)')
 								.link-icon-icon
 									+icon('arrl')
 								.link-icon-text Назад
@@ -772,13 +772,234 @@ block content
 									span Сохранить,
 										br
 										|сделать новый расчёт
-							button(type='submit').btn.btn-next
+							button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.btn-next
 								.btn-inner 
 									span Оформить
 					form(action="/",data-step='3').js-validate.form-step
 						.border-block
 							.border-block-content
-								.title.h3 География3
+								.title.h3 Отправитель
+								.form-block
+									.form-block-head
+										.title.h5 Контактная информация
+									.input-row
+										.input-item.w100
+											.input-wrapper
+												input.input-main.maxlength(
+																id='SenderPerson',
+																placeholder='Иванов Сергей Иванович',
+																type="text",
+																name='SenderPerson',
+																data-validation="length",
+																data-validation-error-msg="Обязательное поле",
+																data-validation-length='min8',
+																data-countdown='50')
+												label(for='#SenderPerson').input-label Контактное лицо
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+																id='SenderEmail',
+																placeholder='user@mail.ru',
+																type="email",
+																name='SenderEmail',
+																data-validation="email",
+																data-validation-error-msg="Некорректный E-mail")
+												label(for='#SenderEmail').input-label E-mail
+									.input-row.js-repeatBlock(data-repeatlimit='4')
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+																id='SenderTel[0]',
+																placeholder='+7 495 000-00-00',
+																type="tel",
+																name='SenderTel[0]',
+																data-validation="custom",
+																data-validation-regexp="^[-0-9()+ ]+$",
+																data-validation-error-msg="Введите корректный номер телефона")
+												label(for='#SenderTel[0]').input-label Телефон
+										.input-item.w50
+											.input-wrapper
+												//data-partPrice-persent для расчета стоимости
+												input.input-main.maxlength(
+																id='SenderTelAdd[0]',
+																placeholder='111',
+																type="number",
+																name='SenderTelAdd[0]',
+																data-validation="number",
+																data-validation-allowing="positive"
+																data-validation-error-msg="Добавочный номер должен содержать только цифры",
+																data-validation-optional="true",
+																data-countdown='20')
+												label(for='#SenderTelAdd[0]').input-label Добавочный
+									button(type='button').link-icon.primary.js-repeatBlock-trigger
+										.link-icon-icon
+											+icon('plus')
+										.link-icon-text Добавить номер
+								.form-block
+									.form-block-head
+										.title.h5 Адрес
+									.input-row
+										.input-item.multi
+											.input-wrapper.disabled
+												input.input-main.valid(
+															name='FromCountry',
+															placeholder='Например, Россия',
+															data-validation="length",
+															data-validation-length='min1',
+															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+															value='Россия')
+												abel(for='#wqedqaswe').input-label Страна
+											.input-wrapper.disabled
+												input.input-main.valid(
+															name='FromCicy',
+															placeholder='Например, Москва',
+															data-validation="length",
+															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+															data-validation-length='min1',
+															value='Москва')
+												label(for='#wqedqaswe').input-label Населённый пункт
+										.input-item.w100
+											.input-wrapper
+										.input-item.w33
+											.input-wrapper
+												input.input-main(
+																id='SenderPodezd',
+																placeholder='1',
+																type="number",
+																name='SenderPodezd',
+																data-validation="number",
+																data-validation-allowing="positive"
+																data-validation-error-msg="Обязательное поле")
+												label(for='#SenderPodezd').input-label Подъезд
+										.input-item.w33
+											.input-wrapper
+												input.input-main(
+																id='SenderDomofoneCode',
+																placeholder='1',
+																type="number",
+																name='SenderDomofoneCode',
+																data-validation="number",
+																data-validation-allowing="positive"
+																data-validation-error-msg="Обязательное поле")
+												label(for='#SenderDomofoneCode').input-label Домофон или код
+										.input-item.w33
+											.input-wrapper
+												input.input-main(
+																id='SenderFloor',
+																placeholder='1',
+																type="number",
+																name='SenderFloor',
+																data-validation="number",
+																data-validation-allowing="positive"
+																data-validation-error-msg="Обязательное поле")
+												label(for='#SenderFloor').input-label Этаж
+										.input-item.w50
+											.input-wrapper
+												input.input-main.date(type="text",name='SenderDate',data-validation="length",data-validation-length='min1',data-validation-error-msg="Поле обязателно для заполнения",id='SenderDate',placeholder='Иванов Сергей Иванович',readonly='true')
+												label(for='#SenderDate').input-label Дата
+												.input-icon
+													+icon('calendar')
+										.input-item.w50
+											.input-wrapper
+												select.input-main.js-select(name='SenderTime', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='SenderTime')
+													option(value="1") C 6.00 до 9.00
+													option(value="2") С 9.00 до 12.00
+													option(value="3") С 12.00 до 15.00
+													option(value="4") С 15.00 до 18.00
+													option(value="5") С 18.00 до 21.00
+												label(for='#SenderTime').input-label Время приезда курьера
+										.input-item.w100
+											.input-wrapper
+												textarea.input-main.maxlength(type="text",name='SenderDescr',id='SenderDescr',placeholder='Например, курьер должен перезвонить', data-countdown='200')
+												label(for='#SenderDescr').input-label Дополнительная информация
+								.form-block
+									.form-block-head
+										.title.h5 Пункт самовывоза
+									.input-row
+										.form-block-options
+											//.form-block-radio
+											.form-block-options-item.form-block-radio
+												.form-block-options-item-inner
+													label.select-radio-label.radio-simple
+														input(
+																type="radio",
+																name='Punct',
+																value='1').select-radio-input-real
+														.select-radio-inner
+															span.select-radio-input
+																span.select-radio-input-fake
+															span.select-radio-text г. Санкт-Петербург, пр. Обуховской Обороны, д. 295, Логопарк «Троицкий», заезд/вход с Запорожской улицы, склад А1
+													.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+													.text.sm
+														a(href="tel:+78123321000") +7 (812) 332-1-000
+														a(href="mailto:cse-spb@cse-spb.ru") cse-spb@cse-spb.ru
+											.form-block-options-item.form-block-radio
+												.form-block-options-item-inner
+													label.select-radio-label.radio-simple
+														input(
+																type="radio",
+																name='Punct',
+																value='2').select-radio-input-real
+														.select-radio-inner
+															span.select-radio-input
+																span.select-radio-input-fake
+															span.select-radio-text г. Санкт-Петербург, пр. Невский, д. 54, оф. 431
+													.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+													.text.sm
+														a(href="tel:+78123321000") +7 (812) 334-5-144
+														a(href="mailto:cse-spb@.ru") cse-spb@.ru
+											.form-block-options-item.form-block-radio
+												.form-block-options-item-inner
+													label.select-radio-label.radio-simple
+														input(
+																type="radio",
+																name='Punct',
+																value='3').select-radio-input-real
+														.select-radio-inner
+															span.select-radio-input
+																span.select-radio-input-fake
+															span.select-radio-text г. Санкт-Петербург, ул. Бадаева, д. 10, корп. 1, оф. 431
+													.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+													.text.sm
+														a(href="tel:+78123321000") +7 (812) 334-5-144
+														a(href="mailto:cse-spb@.ru") cse-spb@.ru
+											.accordeon-wrapper
+												.accordeon-body(style='display: none;')
+													.form-block-options-item.form-block-radio
+														.form-block-options-item-inner
+															label.select-radio-label.radio-simple
+																input(
+																		type="radio",
+																		name='Punct',
+																		value='4').select-radio-input-real
+																.select-radio-inner
+																	span.select-radio-input
+																		span.select-radio-input-fake
+																	span.select-radio-text г. Санкт-Петербург, ул. Бадаева, д. 10, корп. 1, оф. 431
+															.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+															.text.sm
+																a(href="tel:+78123321000") +7 (812) 334-5-144
+																a(href="mailto:cse-spb@.ru") cse-spb@.ru
+													.form-block-options-item.form-block-radio
+														.form-block-options-item-inner
+															label.select-radio-label.radio-simple
+																input(
+																		type="radio",
+																		name='Punct',
+																		value='5').select-radio-input-real
+																.select-radio-inner
+																	span.select-radio-input
+																		span.select-radio-input-fake
+																	span.select-radio-text г. Санкт-Петербург, ул. Бадаева, д. 10, корп. 1, оф. 431
+															.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+															.text.sm
+																a(href="tel:+78123321000") +7 (812) 334-5-144
+																a(href="mailto:cse-spb@.ru") cse-spb@.ru
+												.accordeon-head
+													.link-dotted.js-accordeon-trigger
+														.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Показать ещё адреса
+														.link-dotted-icon
+															+icon('arrd')
 					form(action="/",data-step='4').js-validate.form-step
 						.border-block
 							.border-block-content

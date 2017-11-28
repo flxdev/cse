@@ -126,8 +126,62 @@
 				text-align: right
 
 	&-options
+		.accordeon-wrapper
+			.form-block-radio
+				&:first-child
+					padding-top: 25px
+		.accordeon-head
+			margin-top: 25px
+			padding-left: 35px
 		&-item
 			padding-left: 35px
+			&.form-block-radio
+				&:not(:first-child)
+					padding-top: 20px
+				.form-block-options-item-inner 
+					flex-flow: column wrap
+					align-items: flex-start
+					padding-bottom: 26px
+					.select-radio-inner
+						padding-bottom: 7px
+					.select-radio-text
+						max-width: 100%
+						line-height: 1.5
+					.select-radio-input
+						margin-top: 2px
+					.caption
+						font-size: 14px
+						padding-left: 7px
+						margin-bottom: 10px
+					.text.sm 
+						padding-left: 7px
+						a 
+							box-shadow: none
+							font-size: 14px
+							&:not(:last-child)
+								margin-right: 42px
+								display: inline-block
+								
+							&[href^='tel:']
+								font-weight: 600
+								&:hover
+									+notouch
+										color: $brand
+								&:active
+									color: $brandh 
+									transition-duration: 0s
+							&[href^='mailto:']	
+								color: $brand
+								&:hover
+									+notouch
+										color: $brandh
+								&:active
+									color: $brandh 
+									transition-duration: 0s
+				.select-radio-label
+					margin-left: -27px
+
+				
 			&-inner 
 				display: flex
 				flex-flow: row nowrap
@@ -154,6 +208,9 @@
 .help-block.help.primary
 	font-size: 16px
 .form-block
+	&>.link-icon
+		margin-top: -10px
+		margin-bottom: 20px
 	&-column
 		display: inline-block
 		vertical-align: top

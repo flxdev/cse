@@ -21,6 +21,7 @@ import Stick from './lib/Stick';
 import CalcForm from './lib/CalcForm';
 import Accordeon from './lib/Accordeon';
 import CalcFormNavigation from './lib/CalcFormNavigation';
+import RepeatTels from './lib/RepeatTels';
 
 
 
@@ -208,7 +209,7 @@ ready(() => {
   var PackageType = new CalcForm();
   window.CalcNav = new CalcFormNavigation();
   Accordeon();
-
+  RepeatTels();
 });
 
 
