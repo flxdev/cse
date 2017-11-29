@@ -913,9 +913,15 @@
               <div class="box">
                 <div class="content-columns">
                   <div class="content-columns-main">
+                    <!-- TODO-->
+                    <!-- тригерить валидацию полей блока при переходе на следующий этап-->
+                    <!-- изменение способов оплаты и выбора пунктов самовывоза-->
+                    <!-- передача занчений о стране и городе из шага 1 в нужные места других шагов-->
+                    <!-- ахантер???-->
+                    <!-- обернуть все в 1 форму, а то дичь-->
                     <form class="js-validate js-CalcForm form-step" action="/" data-step="1">
                       <!-- обьект с формулами для расчета-->
-                      <!-- у блоков есть дата-формула-->
+                      <!-- у блоков есть дата-формула по которой мы определяем как считать-->
                       <script>
                         var formObj = [
                         {
@@ -953,7 +959,7 @@
                             <div class="input-row">
                               <div class="input-item multi">
                                 <div class="input-wrapper">
-                                  <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="FromCountry" placeholder="Например, Россия" data-validation="length" data-validation-length="min1" data-validation-error-msg="Неверно выбрана страна или населённый пункт"
+                                  <input class="input-main input-dropdown js-input-dropdown js-swap-item" type="text" name="FromCountry" placeholder="Например, Россия" data-validation="length" data-validation-length="min1" data-validation-error-msg="Неверно выбрана страна или населённый пункт"
                                     value="Россия">
                                   <div class="js-input-dropdown-target input-dropdown-target">
                                     <div class="input-dropdown-content">
@@ -977,8 +983,8 @@
                                   <label class="input-label" for="#wqedqwe">Страна</label>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="FromCicy" placeholder="Например, Москва" data-validation="length" data-validation-error-msg="Неверно выбрана страна или населённый пункт" data-validation-length="min1"
-                                    value="Москва">
+                                  <input class="input-main input-dropdown js-input-dropdown js-swap-item" type="text" name="FromCicy" placeholder="Например, Москва" data-validation="length" data-validation-error-msg="Неверно выбрана страна или населённый пункт"
+                                    data-validation-length="min1" value="Москва">
                                   <div class="js-input-dropdown-target input-dropdown-target">
                                     <div class="input-dropdown-content">
                                       <div class="option">
@@ -1025,7 +1031,7 @@
                             <div class="input-row">
                               <div class="input-item multi">
                                 <div class="input-wrapper">
-                                  <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="ToCountry" placeholder="Например, Россия" data-validation="length" data-validation-length="min1" value="Казахстан" data-validation-error-msg="Неверно выбрана страна или населённый пункт">
+                                  <input class="input-main input-dropdown js-input-dropdown js-swap-item" type="text" name="ToCountry" placeholder="Например, Россия" data-validation="length" data-validation-length="min1" value="Казахстан" data-validation-error-msg="Неверно выбрана страна или населённый пункт">
                                   <div class="js-input-dropdown-target input-dropdown-target">
                                     <div class="input-dropdown-content">
                                       <div class="option">
@@ -1048,7 +1054,7 @@
                                   <label class="input-label" for="#wq2edqwe">Страна</label>
                                 </div>
                                 <div class="input-wrapper">
-                                  <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="ToCicy" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Неверно выбрана страна или населённый пункт"
+                                  <input class="input-main input-dropdown js-input-dropdown js-swap-item" type="text" name="ToCicy" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Неверно выбрана страна или населённый пункт"
                                     value="Мосс">
                                   <div class="js-input-dropdown-target input-dropdown-target">
                                     <div class="input-dropdown-content">
@@ -1551,7 +1557,7 @@
                     <!--////////-->
                     <!-- END компоненты в форму-->
                     <!--/////////-->
-                    <form class="js-validate form-step" action="/" data-step="2">
+                    <form class="js-validate form-step" action="/" data-step="2" style="display: none;">
                       <div class="border-block hideborder">
                         <div class="border-block-content">
                           <div class="border-block-content-head">
@@ -1826,7 +1832,7 @@
                         </button>
                       </div>
                     </form>
-                    <form class="js-validate form-step" action="/" data-step="3">
+                    <form class="js-validate form-step" action="/" data-step="3" style="display: none;">
                       <div class="border-block">
                         <div class="border-block-content">
                           <div class="title h3">Отправитель</div>
@@ -1881,16 +1887,27 @@
                             <div class="input-row">
                               <div class="input-item multi">
                                 <div class="input-wrapper disabled">
-                                  <input class="input-main valid" name="FromCountry" placeholder="Например, Россия" data-validation="length" data-validation-length="min1" data-validation-error-msg="Неверно выбрана страна или населённый пункт" value="Россия">
-                                  <abel class="input-label" for="#wqedqaswe">Страна</abel>
+                                  <input class="input-main valid" id="SenderCountry" type="text" name="SenderCountry" placeholder="Например, Россия" data-validation="length" data-validation-length="min1" data-validation-error-msg="Неверно выбрана страна или населённый пункт"
+                                    value="Россия">
+                                  <abel class="input-label" for="#SenderCountry">Страна</abel>
                                 </div>
                                 <div class="input-wrapper disabled">
-                                  <input class="input-main valid" name="FromCicy" placeholder="Например, Москва" data-validation="length" data-validation-error-msg="Неверно выбрана страна или населённый пункт" data-validation-length="min1" value="Москва">
-                                  <label class="input-label" for="#wqedqaswe">Населённый пункт</label>
+                                  <input class="input-main valid" id="SenderCity" type="text" name="SenderCicy" placeholder="Например, Москва" data-validation="length" data-validation-error-msg="Неверно выбрана страна или населённый пункт" data-validation-length="min1"
+                                    value="Москва">
+                                  <label class="input-label" for="#SenderCity">Населённый пункт</label>
                                 </div>
                               </div>
                               <div class="input-item w100">
-                                <div class="input-wrapper"></div>
+                                <div class="input-wrapper">
+                                  <!-- здесь используются подсказки с ахантера-->
+                                  <!-- т.к. они рабюотают только по россии мне нужно как-то отслеживать стоит ли вообще обращаться лишний раз к апи ахантер.-->
+                                  <!-- в дата-checkCountry передаю имя зависимого инпута и если его значение === Россия (именно на русском) иничу подсказки (например если инпута 2 и доставка курьером из России в европу, а в европе подсказки не нужны)-->
+                                  <!-- или если есть другие идеи как чекать российский регион, милости прошу-->
+                                  <!-- какая же это все хуйня, какой смысл?-->
+                                  <input class="input-main js-ajaxSuggest" id="SenderAddress" type="text" name="SenderAddress" placeholder="ул. Тагильская, д. 1, кв. 1" data-validation="length" data-validation-error-msg="Поле обязателньо" data-validation-length="min3"
+                                    data-check-country="SenderCountry" data-get-city="SenderCicy">
+                                  <label class="input-label" for="#SenderAddress">Полный адрес</label>
+                                </div>
                               </div>
                               <div class="input-item w33">
                                 <div class="input-wrapper">
@@ -1938,6 +1955,78 @@
                                 <div class="input-wrapper">
                                   <textarea class="input-main maxlength" type="text" name="SenderDescr" id="SenderDescr" placeholder="Например, курьер должен перезвонить" data-countdown="200"></textarea>
                                   <label class="input-label" for="#SenderDescr">Дополнительная информация</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border-block">
+                        <div class="border-block-content">
+                          <div class="title h3">Получатель</div>
+                          <div class="form-block">
+                            <div class="form-block-head">
+                              <div class="title h5">Контактная информация</div>
+                            </div>
+                            <div class="input-row">
+                              <div class="input-item w100">
+                                <div class="input-wrapper">
+                                  <input class="input-main maxlength" id="RecipientPerson" placeholder="Иванов Сергей Иванович" type="text" name="RecipientPerson" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8"
+                                    data-countdown="50">
+                                  <label class="input-label" for="#RecipientPerson">Контактное лицо</label>
+                                </div>
+                              </div>
+                              <div class="input-item w100">
+                                <div class="input-wrapper">
+                                  <input class="input-main" id="RecipientEmail" placeholder="user@mail.ru" type="email" name="RecipientEmail" data-validation="email" data-validation-error-msg="Некорректный E-mail">
+                                  <label class="input-label" for="#RecipientEmail">E-mail</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="input-row js-repeatBlock" data-repeatlimit="2">
+                              <div class="input-item w50">
+                                <div class="input-wrapper">
+                                  <input class="input-main" id="RecipientTel[0]" placeholder="+7 495 000-00-00" type="tel" name="RecipientTel[0]" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите корректный номер телефона">
+                                  <label class="input-label" for="#RecipientTel[0]">Телефон</label>
+                                </div>
+                              </div>
+                              <div class="input-item w50">
+                                <div class="input-wrapper">
+                                  <!--data-partPrice-persent для расчета стоимости-->
+                                  <input class="input-main maxlength" id="RecipientTelAdd[0]" placeholder="111" type="number" name="RecipientTelAdd[0]" data-validation="number" data-validation-allowing="positive" data-validation-error-msg="Добавочный номер должен содержать только цифры"
+                                    data-validation-optional="true" data-countdown="20">
+                                  <label class="input-label" for="#RecipientTelAdd[0]">Добавочный</label>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="link-icon primary js-repeatBlock-trigger" type="button">
+                              <div class="link-icon-icon">
+                                <svg class="icon-plus">
+                                  <use xlink:href="#plus"></use>
+                                </svg>
+                              </div>
+                              <div class="link-icon-text">Добавить номер</div>
+                            </button>
+                          </div>
+                          <div class="form-block">
+                            <div class="form-block-head">
+                              <div class="title h5">Адрес</div>
+                            </div>
+                            <div class="input-row">
+                              <div class="input-item multi">
+                                <div class="input-wrapper disabled">
+                                  <input class="input-main valid" name="RecipientCountry" placeholder="Например, Россия" data-validation="length" data-validation-length="min1" data-validation-error-msg="Неверно выбрана страна или населённый пункт" value="Россия">
+                                  <abel class="input-label" for="#RecipientCountry">Страна</abel>
+                                </div>
+                                <div class="input-wrapper disabled">
+                                  <input class="input-main valid" name="RecipientCity" placeholder="Например, Москва" data-validation="length" data-validation-error-msg="Неверно выбрана страна или населённый пункт" data-validation-length="min1" value="Москва">
+                                  <label class="input-label" for="#RecipientCity">Населённый пункт</label>
+                                </div>
+                              </div>
+                              <div class="input-item w100">
+                                <div class="input-wrapper">
+                                  <textarea class="input-main maxlength" type="text" name="RecipientDescr" id="RecipientDescr" placeholder="Например, перезвоните получателю" data-countdown="200"></textarea>
+                                  <label class="input-label" for="#RecipientDescr">Дополнительная информация</label>
                                 </div>
                               </div>
                             </div>
@@ -2058,12 +2147,344 @@
                           </div>
                         </div>
                       </div>
+                      <div class="border-block PersonalData">
+                        <div class="border-block-content">
+                          <div class="form-block">
+                            <div class="input-row">
+                              <div class="input-item w100">
+                                <label class="select-radio-label radio-simple">
+                                  <input class="select-radio-input-real" type="checkbox" name="PersonalData">
+                                  <div class="select-radio-inner">
+                                    <span class="select-radio-input">
+                                      <span class="select-radio-input-fake"></span>
+                                    </span>
+                                    <span class="select-radio-text">Согласие на обработку
+                                      <a href="#" target="_blank">персональных данных</a>
+                                    </span>
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="block-buttons">
+                        <div class="link-icon" onclick="window.CalcNav.moveTo(2)">
+                          <div class="link-icon-icon">
+                            <svg class="icon-arrl">
+                              <use xlink:href="#arrl"></use>
+                            </svg>
+                          </div>
+                          <div class="link-icon-text">Назад</div>
+                        </div>
+                        <button class="btn btn-next" type="button" onclick="event.preventDefault();window.CalcNav.moveNext();">
+                          <div class="btn-inner">
+                            <span>Далее</span>
+                          </div>
+                        </button>
+                      </div>
                     </form>
-                    <form class="js-validate form-step" action="/" data-step="4">
+                    <form class="js-validate form-step" action="/" data-step="4" style="display: none;">
                       <div class="border-block">
                         <div class="border-block-content">
-                          <div class="title h3">География4</div>
+                          <div class="title h3">Способ оплаты</div>
+                          <div class="form-block">
+                            <div class="input-row gap-radio">
+                              <div class="input-item w33">
+                                <!--.radio-with-image и внутри картинка есть-->
+                                <label class="select-radio-label radio-with-image">
+                                  <input class="select-radio-input-real" type="radio" name="paymentMethod">
+                                  <div class="select-radio-inner">
+                                    <div class="select-radio-image">
+                                      <img src="img/payment/cash.png" alt="">
+                                    </div>
+                                    <span class="select-radio-input">
+                                      <span class="select-radio-input-fake ok"></span>
+                                    </span>
+                                    <span class="select-radio-text">Наличными курьеру</span>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="input-item w33">
+                                <label class="select-radio-label radio-with-image">
+                                  <input class="select-radio-input-real" type="radio" name="paymentMethod" data-validation="required">
+                                  <div class="select-radio-inner">
+                                    <div class="select-radio-image">
+                                      <img src="img/payment/mts.png" alt="">
+                                      <img src="img/payment/megafon.png" alt="">
+                                      <img src="img/payment/beeline.png" alt="">
+                                      <img src="img/payment/t2.png" alt="">
+                                    </div>
+                                    <span class="select-radio-input">
+                                      <span class="select-radio-input-fake ok"></span>
+                                    </span>
+                                    <span class="select-radio-text">Мобильный платёж</span>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="input-item w33">
+                                <label class="select-radio-label radio-with-image">
+                                  <input class="select-radio-input-real" type="radio" name="paymentMethod">
+                                  <div class="select-radio-inner">
+                                    <div class="select-radio-image">
+                                      <img src="img/payment/qiwi.png" alt="">
+                                    </div>
+                                    <span class="select-radio-input">
+                                      <span class="select-radio-input-fake ok"></span>
+                                    </span>
+                                    <span class="select-radio-text">Qiwi</span>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="input-item w33">
+                                <label class="select-radio-label radio-with-image">
+                                  <input class="select-radio-input-real" type="radio" name="paymentMethod">
+                                  <div class="select-radio-inner">
+                                    <div class="select-radio-image">
+                                      <img src="img/payment/visa.png" alt="">
+                                      <img src="img/payment/master.png" alt="">
+                                    </div>
+                                    <span class="select-radio-input">
+                                      <span class="select-radio-input-fake ok"></span>
+                                    </span>
+                                    <span class="select-radio-text">Visa, MasterCard</span>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="input-item w33">
+                                <label class="select-radio-label radio-with-image">
+                                  <input class="select-radio-input-real" type="radio" name="paymentMethod">
+                                  <div class="select-radio-inner">
+                                    <div class="select-radio-image">
+                                      <img src="img/payment/webmoney.png" alt="">
+                                    </div>
+                                    <span class="select-radio-input">
+                                      <span class="select-radio-input-fake ok"></span>
+                                    </span>
+                                    <span class="select-radio-text">WebMoney</span>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="input-item w33">
+                                <label class="select-radio-label radio-with-image">
+                                  <input class="select-radio-input-real" type="radio" name="paymentMethod">
+                                  <div class="select-radio-inner">
+                                    <div class="select-radio-image">
+                                      <img src="img/payment/yandex.png" alt="">
+                                    </div>
+                                    <span class="select-radio-input">
+                                      <span class="select-radio-input-fake ok"></span>
+                                    </span>
+                                    <span class="select-radio-text">Яндекс. Деньги</span>
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-block">
+                            <div class="form-block-head">
+                              <div class="title h5">Куда отправить информацию о заказе</div>
+                            </div>
+                            <div class="input-row">
+                              <div class="input-item w50">
+                                <div class="input-wrapper">
+                                  <input class="input-main" id="notifyEmail" placeholder="user@mail.ru" type="email" name="notifyEmail" data-validation="email" data-validation-error-msg="Некорректный E-mail">
+                                  <label class="input-label" for="#notifyEmail">E-mail</label>
+                                </div>
+                              </div>
+                              <div class="input-item w50">
+                                <div class="input-wrapper">
+                                  <input class="input-main" id="notifyTel" placeholder="+7 495 000-00-00" type="tel" name="notifyTel" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите корректный номер телефона">
+                                  <label class="input-label" for="#notifyTel">Телефон</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
+                      </div>
+                      <div class="border-block bg-yellow">
+                        <div class="border-block-content">
+                          <div class="title h3">Ваш заказ</div>
+                          <div class="form-block from-to">
+                            <div class="text sm"> Москва, Россия
+                              <span class="delivery"> </span>Санкт-Петербург, Россия</div>
+                            <div class="link-icon edit" onclick="window.DOM.moveTo(1)">
+                              <div class="link-icon-icon">
+                                <svg class="icon-edit">
+                                  <use xlink:href="#edit"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-block">
+                            <div class="form-block-head">
+                              <div class="title h5">Груз</div>
+                            </div>
+                            <div class="form-block-descr">
+                              <div class="form-block-descr-content">
+                                <dl>
+                                  <dt>
+                                    <div class="caption">Кол-во мест</div>
+                                  </dt>
+                                  <dd>
+                                    <div class="text sm">2</div>
+                                  </dd>
+                                  <dt>
+                                    <div class="caption">Общий вес, кг</div>
+                                  </dt>
+                                  <dd>
+                                    <div class="text sm">13</div>
+                                  </dd>
+                                </dl>
+                              </div>
+                              <div class="accordeon-wrapper">
+                                <div class="accordeon-body" style="display: none;">
+                                  <div class="form-block-descr-content">
+                                    <div class="text sm bold">Место №1</div>
+                                    <dl>
+                                      <dt>
+                                        <div class="caption">Кол-во мест</div>
+                                      </dt>
+                                      <dd>
+                                        <div class="text sm">1</div>
+                                      </dd>
+                                      <dt>
+                                        <div class="caption">Общий вес, кг</div>
+                                      </dt>
+                                      <dd>
+                                        <div class="text sm">10</div>
+                                      </dd>
+                                      <dt>
+                                        <div class="caption">Объёмный вес</div>
+                                      </dt>
+                                      <dd>
+                                        <div class="text sm">100х50 см / 7 кг</div>
+                                      </dd>
+                                    </dl>
+                                  </div>
+                                  <div class="form-block-descr-content">
+                                    <div class="text sm bold">Место №1</div>
+                                    <dl>
+                                      <dt>
+                                        <div class="caption">Кол-во мест</div>
+                                      </dt>
+                                      <dd>
+                                        <div class="text sm">1</div>
+                                      </dd>
+                                      <dt>
+                                        <div class="caption">Общий вес, кг</div>
+                                      </dt>
+                                      <dd>
+                                        <div class="text sm">3</div>
+                                      </dd>
+                                    </dl>
+                                  </div>
+                                </div>
+                                <div class="accordeon-head">
+                                  <div class="link-dotted js-accordeon-trigger">
+                                    <div class="link-dotted-text js-toggle-text" data-alt-text="Свернуть">Подробнее</div>
+                                    <div class="link-dotted-icon">
+                                      <svg class="icon-arrd">
+                                        <use xlink:href="#arrd"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-block">
+                            <div class="form-block-head">
+                              <div class="title h5">Тариф</div>
+                              <div class="link-icon edit" onclick="window.DOM.moveTo(2)">
+                                <div class="link-icon-icon">
+                                  <svg class="icon-edit">
+                                    <use xlink:href="#edit"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-block-descr">
+                              <div class="form-block-descr-content">
+                                <dl>
+                                  <dt>
+                                    <div class="caption">Тариф</div>
+                                  </dt>
+                                  <dd>
+                                    <div class="text sm">Сверхсрочный </div>
+                                  </dd>
+                                  <dt>
+                                    <div class="caption">Срок доставки</div>
+                                  </dt>
+                                  <dd>
+                                    <div class="text sm">1-2 раб.дня</div>
+                                  </dd>
+                                  <dt>
+                                    <div class="caption">Опции</div>
+                                  </dt>
+                                  <dd>
+                                    <div class="text sm">
+                                      <span>SMS-оповещение о доставке груза</span>
+                                      <span>Объявленная стоимость</span>
+                                    </div>
+                                  </dd>
+                                </dl>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-block">
+                            <div class="form-block-head">
+                              <div class="title h5">Пункт самовывоза</div>
+                              <div class="link-icon edit" onclick="window.DOM.moveTo(3)">
+                                <div class="link-icon-icon">
+                                  <svg class="icon-edit">
+                                    <use xlink:href="#edit"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-block-descr">
+                              <div class="form-block-options">
+                                <div class="form-block-options-item form-block-radio">
+                                  <div class="form-block-options-item-inner">
+                                    <div class="select-radio-label radio-simple">
+                                      <div class="select-radio-inner">
+                                        <span class="select-radio-text">г. Санкт-Петербург, пр. Обуховской Обороны, д. 295, Логопарк «Троицкий», заезд/вход с Запорожской улицы, склад А1</span>
+                                      </div>
+                                    </div>
+                                    <div class="caption">Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00</div>
+                                    <div class="text sm">
+                                      <a href="tel:+78123321000">+7 (812) 332-1-000</a>
+                                      <a href="mailto:cse-spb@cse-spb.ru">cse-spb@cse-spb.ru</a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="border-block-content-left">
+                            <div class="title h5">Итого к оплате</div>
+                          </div>
+                          <div class="border-block-content-right">
+                            <div class="title h3">1 750 ₽</div>
+                            <div class="caption">Стоимость с учётом НДС</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="block-buttons">
+                        <div class="link-icon" onclick="window.CalcNav.moveTo(2)">
+                          <div class="link-icon-icon">
+                            <svg class="icon-arrl">
+                              <use xlink:href="#arrl"></use>
+                            </svg>
+                          </div>
+                          <div class="link-icon-text">Назад</div>
+                        </div>
+                        <button class="btn btn-next" type="button" onclick="event.preventDefault();window.CalcNav.moveNext();">
+                          <div class="btn-inner">
+                            <span>Подтвердить</span>
+                          </div>
+                        </button>
                       </div>
                     </form>
                   </div>

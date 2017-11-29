@@ -16,6 +16,9 @@
 		margin-top: 10px
 		.border-block-content
 			max-width: 100%
+	&.PersonalData
+		padding-top: 35px
+		padding-bottom: 15px
 	&.bg-yellow
 		border: none 
 		background-color: $brandlight
@@ -56,6 +59,28 @@
 				
 			
 .form-block
+	&-descr
+		border-bottom: 1px solid $inputborder
+		padding-bottom: 15px
+		margin-bottom: 20px	
+		margin-top: -5px	
+		.form-block-options-item
+			padding-left: 0	
+			border-bottom: none
+			.form-block-options-item-inner 
+				padding-bottom: 0 !important
+				border-bottom: none	
+				&>.text.sm,&>.caption
+					padding-left: 0	!important	
+				.select-radio-label
+					margin-left: 0
+					cursor: auto !important
+		.text.sm.bold 
+			font-size: 14px
+			margin-top: 10px
+		.accordeon-wrapper
+			margin-bottom: 30px	
+
 	&-head
 		position: relative
 		display: flex 
@@ -135,6 +160,7 @@
 			padding-left: 35px
 		&-item
 			padding-left: 35px
+			padding-right: 10px
 			&.form-block-radio
 				&:not(:first-child)
 					padding-top: 20px
@@ -288,6 +314,9 @@
 		&.color-gray
 			margin-left: auto
 		&.btn-next
+			&:nth-child(2)
+				margin-left: auto
+				
 			+r(640)
 				order: 1
 				width: 100%

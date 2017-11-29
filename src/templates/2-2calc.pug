@@ -2,6 +2,8 @@
 title: Расчёт доставки
 ---
 extends layouts/_layout
+block conf
+
 block content
 	.wrapper.bg-white.page-head
 		.box
@@ -13,9 +15,15 @@ block content
 		.box
 			.content-columns
 				.content-columns-main
+					// TODO
+					// тригерить валидацию полей блока при переходе на следующий этап
+					// изменение способов оплаты и выбора пунктов самовывоза
+					// передача занчений о стране и городе из шага 1 в нужные места других шагов
+					// ахантер???
+					// обернуть все в 1 форму, а то дичь
 					form(action="/",data-step='1').js-validate.js-CalcForm.form-step
 						// обьект с формулами для расчета
-						// у блоков есть дата-формула
+						// у блоков есть дата-формула по которой мы определяем как считать
 						script.
 							var formObj = [
 								{
@@ -38,6 +46,7 @@ block content
 										.input-item.multi
 											.input-wrapper
 												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
+															type='text',
 															name='FromCountry',
 															placeholder='Например, Россия',
 															data-validation="length",
@@ -59,6 +68,7 @@ block content
 												label(for='#wqedqwe').input-label Страна
 											.input-wrapper
 												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
+															type='text',
 															name='FromCicy',
 															placeholder='Например, Москва',
 															data-validation="length",
@@ -88,6 +98,7 @@ block content
 										.input-item.multi
 											.input-wrapper
 												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
+														type='text',
 														name='ToCountry',
 														placeholder='Например, Россия',
 														data-validation="length",
@@ -109,6 +120,7 @@ block content
 												label(for='#wq2edqwe').input-label Страна
 											.input-wrapper
 												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
+															type='text',
 															name='ToCicy',
 															placeholder='Например, Москва',
 															data-validation="length",
@@ -571,7 +583,7 @@ block content
 					// END компоненты в форму
 					///////////
 
-					form(action="/",data-step='2').js-validate.form-step
+					form(action="/",data-step='2',style='display: none;').js-validate.form-step
 						.border-block.hideborder
 							.border-block-content
 								.border-block-content-head
@@ -775,7 +787,7 @@ block content
 							button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.btn-next
 								.btn-inner 
 									span Оформить
-					form(action="/",data-step='3').js-validate.form-step
+					form(action="/",data-step='3',style='display: none;').js-validate.form-step
 						.border-block
 							.border-block-content
 								.title.h3 Отправитель
@@ -842,24 +854,43 @@ block content
 										.input-item.multi
 											.input-wrapper.disabled
 												input.input-main.valid(
-															name='FromCountry',
+															id='SenderCountry',
+															type='text',
+															name='SenderCountry',
 															placeholder='Например, Россия',
 															data-validation="length",
 															data-validation-length='min1',
 															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
 															value='Россия')
-												abel(for='#wqedqaswe').input-label Страна
+												abel(for='#SenderCountry').input-label Страна
 											.input-wrapper.disabled
 												input.input-main.valid(
-															name='FromCicy',
+															id='SenderCity',
+															type='text',
+															name='SenderCicy',
 															placeholder='Например, Москва',
 															data-validation="length",
 															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
 															data-validation-length='min1',
 															value='Москва')
-												label(for='#wqedqaswe').input-label Населённый пункт
+												label(for='#SenderCity').input-label Населённый пункт
 										.input-item.w100
 											.input-wrapper
+												// здесь используются подсказки с ахантера
+												// т.к. они рабюотают только по россии мне нужно как-то отслеживать стоит ли вообще обращаться лишний раз к апи ахантер.
+												// в дата-checkCountry передаю имя зависимого инпута и если его значение === Россия (именно на русском) иничу подсказки (например если инпута 2 и доставка курьером из России в европу, а в европе подсказки не нужны)
+												// или если есть другие идеи как чекать российский регион, милости прошу
+												// какая же это все хуйня, какой смысл?
+												input.input-main.js-ajaxSuggest(id='SenderAddress',
+															type='text',
+															name='SenderAddress',
+															placeholder='ул. Тагильская, д. 1, кв. 1',
+															data-validation="length",
+															data-validation-error-msg="Поле обязателньо",
+															data-validation-length='min3',
+															data-check-country='SenderCountry',
+															data-get-city ='SenderCicy')
+												label(for='#SenderAddress').input-label Полный адрес
 										.input-item.w33
 											.input-wrapper
 												input.input-main(
@@ -912,6 +943,92 @@ block content
 											.input-wrapper
 												textarea.input-main.maxlength(type="text",name='SenderDescr',id='SenderDescr',placeholder='Например, курьер должен перезвонить', data-countdown='200')
 												label(for='#SenderDescr').input-label Дополнительная информация
+						.border-block
+							.border-block-content
+								.title.h3 Получатель
+								.form-block
+									.form-block-head
+										.title.h5 Контактная информация
+									.input-row
+										.input-item.w100
+											.input-wrapper
+												input.input-main.maxlength(
+																id='RecipientPerson',
+																placeholder='Иванов Сергей Иванович',
+																type="text",
+																name='RecipientPerson',
+																data-validation="length",
+																data-validation-error-msg="Обязательное поле",
+																data-validation-length='min8',
+																data-countdown='50')
+												label(for='#RecipientPerson').input-label Контактное лицо
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+																id='RecipientEmail',
+																placeholder='user@mail.ru',
+																type="email",
+																name='RecipientEmail',
+																data-validation="email",
+																data-validation-error-msg="Некорректный E-mail")
+												label(for='#RecipientEmail').input-label E-mail
+									.input-row.js-repeatBlock(data-repeatlimit='2')
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+																id='RecipientTel[0]',
+																placeholder='+7 495 000-00-00',
+																type="tel",
+																name='RecipientTel[0]',
+																data-validation="custom",
+																data-validation-regexp="^[-0-9()+ ]+$",
+																data-validation-error-msg="Введите корректный номер телефона")
+												label(for='#RecipientTel[0]').input-label Телефон
+										.input-item.w50
+											.input-wrapper
+												//data-partPrice-persent для расчета стоимости
+												input.input-main.maxlength(
+																id='RecipientTelAdd[0]',
+																placeholder='111',
+																type="number",
+																name='RecipientTelAdd[0]',
+																data-validation="number",
+																data-validation-allowing="positive"
+																data-validation-error-msg="Добавочный номер должен содержать только цифры",
+																data-validation-optional="true",
+																data-countdown='20')
+												label(for='#RecipientTelAdd[0]').input-label Добавочный
+									button(type='button').link-icon.primary.js-repeatBlock-trigger
+										.link-icon-icon
+											+icon('plus')
+										.link-icon-text Добавить номер
+								.form-block
+									.form-block-head
+										.title.h5 Адрес
+									.input-row
+										.input-item.multi
+											.input-wrapper.disabled
+												input.input-main.valid(
+															name='RecipientCountry',
+															placeholder='Например, Россия',
+															data-validation="length",
+															data-validation-length='min1',
+															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+															value='Россия')
+												abel(for='#RecipientCountry').input-label Страна
+											.input-wrapper.disabled
+												input.input-main.valid(
+															name='RecipientCity',
+															placeholder='Например, Москва',
+															data-validation="length",
+															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+															data-validation-length='min1',
+															value='Москва')
+												label(for='#RecipientCity').input-label Населённый пункт
+										.input-item.w100
+											.input-wrapper
+												textarea.input-main.maxlength(type="text",name='RecipientDescr',id='RecipientDescr',placeholder='Например, перезвоните получателю', data-countdown='200')
+												label(for='#RecipientDescr').input-label Дополнительная информация
 								.form-block
 									.form-block-head
 										.title.h5 Пункт самовывоза
@@ -1000,10 +1117,242 @@ block content
 														.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Показать ещё адреса
 														.link-dotted-icon
 															+icon('arrd')
-					form(action="/",data-step='4').js-validate.form-step
+						.border-block.PersonalData
+							.border-block-content
+								.form-block
+									.input-row
+										.input-item.w100
+											label.select-radio-label.radio-simple
+												input(
+														type="checkbox",
+														name='PersonalData').select-radio-input-real
+												.select-radio-inner
+													span.select-radio-input
+														span.select-radio-input-fake
+													span.select-radio-text Согласие на обработку
+														a(href="#" target='_blank') персональных данных
+						.block-buttons
+							.link-icon(onclick='window.CalcNav.moveTo(2)')
+								.link-icon-icon
+									+icon('arrl')
+								.link-icon-text Назад
+							button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.btn-next
+								.btn-inner 
+									span Далее
+					form(action="/",data-step='4',style='display: none;').js-validate.form-step
 						.border-block
 							.border-block-content
-								.title.h3 География4
+								.title.h3 Способ оплаты
+								.form-block
+									.input-row.gap-radio
+										.input-item.w33
+											//.radio-with-image и внутри картинка есть
+											label.select-radio-label.radio-with-image
+												input(
+														type="radio",
+														name='paymentMethod').select-radio-input-real
+												.select-radio-inner
+													.select-radio-image
+														img(src="img/payment/cash.png", alt="")
+													span.select-radio-input
+														span.select-radio-input-fake.ok
+													span.select-radio-text Наличными курьеру
+										.input-item.w33
+											label.select-radio-label.radio-with-image
+												input(
+														type="radio",
+														name='paymentMethod',data-validation='required').select-radio-input-real
+												.select-radio-inner
+													.select-radio-image
+														img(src="img/payment/mts.png", alt="")
+														img(src="img/payment/megafon.png", alt="")
+														img(src="img/payment/beeline.png", alt="")
+														img(src="img/payment/t2.png", alt="")
+													span.select-radio-input
+														span.select-radio-input-fake.ok
+													span.select-radio-text Мобильный платёж
+										.input-item.w33
+											label.select-radio-label.radio-with-image
+												input(
+														type="radio",
+														name='paymentMethod').select-radio-input-real
+												.select-radio-inner
+													.select-radio-image
+														img(src="img/payment/qiwi.png", alt="")
+													span.select-radio-input
+														span.select-radio-input-fake.ok
+													span.select-radio-text Qiwi
+										.input-item.w33
+											label.select-radio-label.radio-with-image
+												input(
+														type="radio",
+														name='paymentMethod').select-radio-input-real
+												.select-radio-inner
+													.select-radio-image
+														img(src="img/payment/visa.png", alt="")
+														img(src="img/payment/master.png", alt="")
+													span.select-radio-input
+														span.select-radio-input-fake.ok
+													span.select-radio-text Visa, MasterCard
+										.input-item.w33
+											label.select-radio-label.radio-with-image
+												input(
+														type="radio",
+														name='paymentMethod').select-radio-input-real
+												.select-radio-inner
+													.select-radio-image
+														img(src="img/payment/webmoney.png", alt="")
+													span.select-radio-input
+														span.select-radio-input-fake.ok
+													span.select-radio-text WebMoney
+										.input-item.w33
+											label.select-radio-label.radio-with-image
+												input(
+														type="radio",
+														name='paymentMethod').select-radio-input-real
+												.select-radio-inner
+													.select-radio-image
+														img(src="img/payment/yandex.png", alt="")
+													span.select-radio-input
+														span.select-radio-input-fake.ok
+													span.select-radio-text Яндекс. Деньги
+								.form-block
+									.form-block-head
+										.title.h5 Куда отправить информацию о заказе
+									.input-row
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+																id='notifyEmail',
+																placeholder='user@mail.ru',
+																type="email",
+																name='notifyEmail',
+																data-validation="email",
+																data-validation-error-msg="Некорректный E-mail")
+												label(for='#notifyEmail').input-label E-mail
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+																id='notifyTel',
+																placeholder='+7 495 000-00-00',
+																type="tel",
+																name='notifyTel',
+																data-validation="custom",
+																data-validation-regexp="^[-0-9()+ ]+$",
+																data-validation-error-msg="Введите корректный номер телефона")
+												label(for='#notifyTel').input-label Телефон
+						.border-block.bg-yellow
+							.border-block-content
+								.title.h3 Ваш заказ
+								.form-block.from-to
+									.text.sm 
+										|Москва, Россия
+										span.delivery 
+										|Санкт-Петербург, Россия
+									.link-icon.edit(onclick='window.DOM.moveTo(1)')
+										.link-icon-icon
+											+icon('edit')
+								.form-block
+									.form-block-head
+										.title.h5 Груз
+									.form-block-descr
+										.form-block-descr-content
+											dl
+												dt
+													.caption Кол-во мест
+												dd 
+													.text.sm 2
+												dt
+													.caption Общий вес, кг
+												dd 
+													.text.sm 13
+										.accordeon-wrapper
+											.accordeon-body(style='display: none;')
+												.form-block-descr-content
+													.text.sm.bold Место №1
+													dl
+														dt
+															.caption Кол-во мест
+														dd 
+															.text.sm 1
+														dt
+															.caption Общий вес, кг
+														dd 
+															.text.sm 10
+														dt
+															.caption Объёмный вес
+														dd 
+															.text.sm 100х50 см / 7 кг
+												.form-block-descr-content
+													.text.sm.bold Место №1
+													dl
+														dt
+															.caption Кол-во мест
+														dd 
+															.text.sm 1
+														dt
+															.caption Общий вес, кг
+														dd 
+															.text.sm 3
+											.accordeon-head
+												.link-dotted.js-accordeon-trigger
+													.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Подробнее
+													.link-dotted-icon
+														+icon('arrd')
+								.form-block
+									.form-block-head
+										.title.h5 Тариф
+										.link-icon.edit(onclick='window.DOM.moveTo(2)')
+											.link-icon-icon
+												+icon('edit')
+									.form-block-descr
+										.form-block-descr-content
+											dl
+												dt
+													.caption Тариф
+												dd 
+													.text.sm Сверхсрочный 
+												dt
+													.caption Срок доставки
+												dd 
+													.text.sm 1-2 раб.дня
+												dt
+													.caption Опции
+												dd 
+													.text.sm 
+														span SMS-оповещение о доставке груза
+														span Объявленная стоимость
+								.form-block
+									.form-block-head
+										.title.h5 Пункт самовывоза
+										.link-icon.edit(onclick='window.DOM.moveTo(3)')
+											.link-icon-icon
+												+icon('edit')
+									.form-block-descr
+										.form-block-options
+											.form-block-options-item.form-block-radio
+												.form-block-options-item-inner
+													.select-radio-label.radio-simple
+														.select-radio-inner
+															span.select-radio-text г. Санкт-Петербург, пр. Обуховской Обороны, д. 295, Логопарк «Троицкий», заезд/вход с Запорожской улицы, склад А1
+													.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+													.text.sm
+														a(href="tel:+78123321000") +7 (812) 332-1-000
+														a(href="mailto:cse-spb@cse-spb.ru") cse-spb@cse-spb.ru
+
+								.border-block-content-left
+									.title.h5 Итого к оплате
+								.border-block-content-right
+									.title.h3 1 750 ₽
+									.caption Стоимость с учётом НДС
+						.block-buttons
+							.link-icon(onclick='window.CalcNav.moveTo(2)')
+								.link-icon-icon
+									+icon('arrl')
+								.link-icon-text Назад
+							button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.btn-next
+								.btn-inner 
+									span Подтвердить
 				.content-columns-aside(data-sticky-parent).js-stick-parent
 					.content-aside-content.js-stick
 						.calc-steps.js-calcNav

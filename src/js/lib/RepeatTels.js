@@ -4,8 +4,6 @@ import ChangeElementName from './ChangeElementName';
 export default function RepeatTels() {
   let trigger = $('.js-repeatBlock-trigger');
   if(trigger.length) {
-
-
     const closeBtn = '<div class="small-link"><svg class="icon-closemodal"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#closemodal"></use></svg></div>';
     trigger.each(function() {
   	let _ = $(this);
@@ -29,7 +27,8 @@ export default function RepeatTels() {
 	  		clonedTarget.removeClass('handled').append(closeBtn);
 	  		target.nextAll('.js-repeatBlock').find('.small-link').remove();
 	  		target.parent().find('.js-repeatBlock').last().after(clonedTarget);
-	  		 window.DOM.MaxLength();
+	  		window.DOM.MaxLength();
+	  		clonedTarget.validate();
 	  		++count;
     	}
     	checkForLimit();

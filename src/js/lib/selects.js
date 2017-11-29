@@ -1,4 +1,5 @@
 import $ from 'jquery/dist/jquery';
+import './jquery.autocomplete.min';
 import 'sumoselect';
 
 export default function select() {
@@ -54,11 +55,11 @@ export default function select() {
       });
       let opts = _.find('option');
       opts.each(function() {
-      	let option = $(this);
-      	let text = option.data('text');
-      	let ind = option.index();
-      	let item = _.parent().find('.opt').eq(ind);
-      	item.attr('data-text',text);
+        let option = $(this);
+        let text = option.data('text');
+        let ind = option.index();
+        let item = _.parent().find('.opt').eq(ind);
+        item.attr('data-text',text);
       });
     });
     select.on('sumo:opened',() => {
@@ -94,7 +95,7 @@ export default function select() {
         let val = _[0].value.length;
         if(val > 2) {
           _.addClass('active');
-          
+					
         }else{
           _.removeClass('active');
         }
@@ -146,4 +147,55 @@ export default function select() {
     });
   }
   swapValues();
+
+  window.DOM.AjaxSuggest = () => {
+    let input = $('.js-ajaxSuggest');
+    const trgtValue = 'Россия';
+    // const options = { 
+    //   serviceUrl:'https://www.ahunter.ru/site/suggest/address',
+    //   params: { 
+    //   	output: 'json',
+    //   	user: 'prkovsenF84UBkY3aFaVmXKEKR6ugc',
+    //   	input: 'utf8',
+    //   },
+    //   appendTo: prnt,
+    //   noCache: true,
+    //   triggerSelectOnValidInput: false,
+    //   paramName: 'query',
+    //   maxHeight: 500
+    // };
+    input.each(function() {
+      let _ = $(this);
+      let targetName = _.data('check-country');
+      let targetCityName = _.data('check-city');
+      let targetCityInput = $(`input[name='${targetCityName}']`);
+      let targetInput = $(`input[name='${targetName}']`);
+      let prnt = _.parent();
+      _.autocomplete({ 
+	      serviceUrl:'https://www.ahunter.ru/site/suggest/address',
+	      params: { 
+	      	output: 'json',
+	      	user: 'prkovsenF84UBkY3aFaVmXKEKR6ugc',
+	      	input: 'utf8',
+	      },
+	      appendTo: prnt,
+	      noCache: true,
+	      triggerSelectOnValidInput: false,
+	      paramName: 'query',
+	      lookupLimit: 4,
+	      minChars: 3,
+	      maxHeight: 200
+	    });
+      CheckSuggestAvailability(_,targetInput,trgtValue);
+    });
+    function CheckSuggestAvailability(_,targetInput,trgtValue) {
+    	let targetInpVal = targetInput.val().toLowerCase();
+    		_.autocomplete('disable');
+    	if(targetInpVal === trgtValue.toLowerCase()) {
+    		_.autocomplete('enable');
+    	}
+
+    }
+  };
+  window.DOM.AjaxSuggest();
 }

@@ -25,7 +25,6 @@
 			margin: 0
 			vertical-align: top
 			width: 100%
-
 		.small-link
 			display: inline-block
 			position: absolute
@@ -33,7 +32,7 @@
 			text-align: right
 			width: 29px
 			+vertical
-
+	
 			.icon-closemodal
 				display: inline-block
 				vertical-align: middle
@@ -52,7 +51,15 @@
 			.input-item
 				padding-left: 7px
 				padding-right: 7px
-
+		&.gap-radio
+			margin: 0 -2.5px
+			padding-bottom: 15px
+			.input-item
+				padding-left: 2.5px
+				padding-right: 2.5px
+				padding-bottom: 5px	
+				+r(407)
+					width: 100%
 		&.gap-search
 			margin: 0 -3.5px
 			.input-item
@@ -120,7 +127,11 @@
 						.input-main
 							border-top-right-radius: 0
 							border-top-left-radius: 0
-
+		&>.select-radio-label
+			width: 100%
+			&.radio-simple
+				.select-radio-text
+					max-width: 100% !important
 	&-wrapper
 		width: 100%
 		display: inline-block
@@ -129,6 +140,24 @@
 		border-radius: 3px;
 		border: 1px solid $inputborder
 		text-align: left
+		.autocomplete-suggestions
+			position: absolute
+			width: 100% !important
+			top: 100%
+			margin-top: 15px
+			background-color: $white 
+			box-shadow: 0px 1px 20px 0px rgba(44, 30, 28, 0.12);
+			font-size: 14px
+			padding: 10px 20px
+			overflow-y: auto
+			+scrollbar
+				width: 5px
+			+scrollbar-thumb	
+				background-color: #e0dedd
+			.autocomplete-suggestion
+				padding: 10px 0
+				&:nth-child(n + 5)
+					display: none
 		&:hover
 			border-color: $brandh
 		&.is-open
@@ -671,6 +700,10 @@
 			.select-radio-text
 				width: calc(100% - 36px)
 				max-width: 240px
+				a
+					color: $brand 
+					&:hover
+						color: $brandh
 				.caption
 					display: block
 					line-height: 1.4
@@ -686,7 +719,37 @@
 									transform: none
 					// .select-radio-input
 					// 	width: 32px
-
+		&.radio-with-image
+			height: auto
+			
+			width: 100%
+			.select-radio
+				&-inner
+					height: auto
+					min-width: 0
+					width: 100%
+					min-height: 90px
+					padding-left: 10px
+					padding-right: 10px
+					+r(500)
+						padding-left: 7px
+						padding-right: 7px	
+				&-image 
+					width: 100%
+					margin-bottom: 10px
+					display: flex
+					flex-flow: row wrap 
+					justify-content: space-around
+					margin-left: auto
+					margin-right: auto
+					margin-top: 9px
+					max-width: 115px
+					img 
+						height: 21px
+						margin-left: 2.5px
+						margin-right: 2.5px
+				&-text 
+					font-size: 14px
 	&-input
 		+tr(width .3s)
 		width: 0
