@@ -19,6 +19,8 @@ PageList:
   ready: 100
 - file: 3-4mycalc.html
   ready: 100
+- file: 4-0contact.html
+  ready: 70
 - file: 9-7vacancy.html
   ready: 100
 - file: 10-2form.html

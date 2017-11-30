@@ -7,6 +7,16 @@
 		+r(640)
 			padding-top: 10px
 			padding-bottom: 50px
+		&.contact-wrap
+			.offerlist-item-head
+				margin-bottom: 17px
+			.offerlist-item-subitems
+				display: block
+				padding-top: 0px
+			padding-bottom: 55px !important
+			+r(640)
+				padding-bottom: 30px !important
+				
 		&.mycalc-wrap
 
 			.offerlist-item
@@ -81,29 +91,28 @@
 										margin-right: -12px
 							.btn 
 								margin-right: 15px
-						// 	min-width: 60px
-						// 	width: 60px
-						// 	width: auto
-						// 	+justify
-
-						// &:nth-last-child(2)
-						// 	min-width: 235px
-						// 	width: 235px
-						// 	padding-left: 10px
-						// 	padding-right: 10px
-						// 	text-align: center
-						// &:nth-last-child(3)
-						// 	text-align: right
-						// 	max-width: 300px
-						// 	width: 300px
-							// max--width: 300px
-							
 	&-container
 		border: 1px solid $inputborder
 		padding: 35px 35px 0 35px
 		margin-bottom: 15px
+		.block-info-wrapper
+			width: 100%
+			margin-right: -20px
+			.block-info
+				width: 25%
+				&.block-info-main
+					width: 50%
+				&-content 
+					max-width: 100%
+					&>.text.sm 
+						font-size: 16px
+					a 
+						font-size: 14px
+				&-title
+					margin-bottom: 15px
 		+r(640)
 			padding: 20px 18px 0 18px	
+
 	&-item 
 		&-subbg
 			padding: 50px 35px
@@ -190,7 +199,6 @@
 				width: 17%
 				&:not(:last-child)
 					padding-right: 5px
-
 			.table-row
 				display: table-row-group
 		&-road 
@@ -198,8 +206,6 @@
 			position: relative
 			margin-top: 25px
 			margin-bottom: 5px
-			
-			
 			&:before
 				content: ''
 				display: inline-block
@@ -228,12 +234,11 @@
 					height: 14px
 				&-content
 					max-width: 500px
-		&-content 
+		&-content
 			.text.sm
 				font-size: 14px
 			&-slideup
 				display: none
-				
 				width: 100%
 
 		&-subitems

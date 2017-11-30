@@ -252,6 +252,9 @@ span.delivery
   font-size: 12px;
   color: rgba(62, 62, 62, 0.502);
   line-height: 2;
+  &.medium
+  	font-size: 14px
+  	line-height: 1.5
 
 
 blockquote
@@ -423,22 +426,7 @@ blockquote
 			color: $footergray
 		.text 
 			color: #cdcccc
-	&:not(.primary)
-		+r(1200)
-			width: 50%
-		+r(440)
-			width: 100%
-	&-title
-		margin-bottom: 21px
-	&-content
-		max-width: 200px
-		.text,a 
-			line-height: 1.5
-			&:not(:last-child)
-				margin-bottom: 15px
-			span 
-				font-size: 14px
-		a 
+		a
 			font-size: 16px
 			color: $brand
 			display: block
@@ -447,6 +435,59 @@ blockquote
 					color: $brandh
 			&[href^="tel:"]
 				color: #cdcccc
+				&:hover
+					+notouch
+						color: $brand
+			&[href^="mailto:"]
+				color: $brand
+				&:hover
+					+notouch
+						color: $brandh
+			&:active
+				color: $brandh
+		.text,a 
+			&:not(:last-child)
+				margin-bottom: 15px
+			span 
+				font-size: 14px
+	&:not(.primary)
+		+r(1200)
+			width: 50%
+		+r(440)
+			width: 100%
+	&-title
+		margin-bottom: 21px
+		&:not(:first-child)
+			margin-top: 27px
+	&-content
+		max-width: 200px
+		&.services
+			a 
+				color: $dark
+				opacity: .7
+				display: inline-block
+				margin-right: 20px
+				box-shadow: 0 -2px 0 0 transparent,0 1px 0 0 currentcolor;
+
+		.link-icon
+			margin-left: -5px
+			margin-top: 10px
+		.text,a 
+			line-height: 1.5
+			&:not(:last-child)
+				margin-bottom: 7px
+			span 
+				font-size: 14px
+		a
+			font-size: 14px
+			color: $dark
+			display: block
+			font-weight: 400
+			&:hover
+				+notouch
+					color: $brandh
+			&[href^="tel:"]
+				font-weight: 500
 				&:hover
 					+notouch
 						color: $brand
@@ -948,3 +989,35 @@ dl
 			margin-top: 55px
 			+r(640)
 				margin-top: 35px
+.map-filter
+	padding-bottom: 120px
+	+r(800)
+		padding-bottom: 80px
+	+r(640)
+		padding-bottom: 80px
+	.title
+		margin-bottom: 30px
+	&-nav 
+		.select-radio
+			&-label
+				&.radio-with-image
+					.select-radio-inner 
+						white-space: nowrap
+						min-height: 45px
+						min-width: 90px
+						padding-left: 20px
+						padding-right: 20px
+					.select-radio-image 
+						display: inline-block
+						vertical-align: middle
+						width: auto 
+						max-width: auto 
+						margin-bottom: 0 
+						margin-top: 0
+						padding-right: 5px
+					.select-radio-input 
+						width: 0 
+					.select-radio-text
+						font-size: 16px 
+	.map-wrapper
+		margin-top: 20px

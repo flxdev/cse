@@ -1,0 +1,267 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+	-var map = true
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Контакты
+	.wrapper.bg-white
+		.box
+			.offerlist-wrap.contact-wrap
+				.offerlist-container
+					.offerlist-item
+						.offerlist-item-head
+							.title.h3 Центральный офис
+						.offerlist-item-content
+							.block-info-wrapper
+								.block-info.block-info-main
+									.block-info-title.caption Адрес
+									.block-info-content
+										.text.sm 115088, г. Москва, ул. Угрешская д. 2, стр. 55
+										.caption.medium Пн-Пт: с 08.00 до 20.00 (без перерывов)
+										.caption.medium Сб-Вс: с 9.00 до 18.00
+										a(href="#").link-icon.sm
+											.link-icon-icon
+												+icon('down')
+											.link-icon-text Скачать схему проезда
+								.block-info
+									.block-info-title.caption Телефоны
+									.block-info-content 
+										a(href="tel:+74957487748") +7 (495) 748-77-48
+										a(href="tel:+74959957995") +7 (495) 995-79-95
+										a(href="tel:+74955405005") +7 (495) 540-50-05
+										a(href="tel:88005555144") 8 (800) 555-51-44 доб. 4586)
+								.block-info
+									.block-info-title.caption E-mail
+									.block-info-content 
+										a(href="mailto:info@cse.ru") info@cse.ru
+									.block-info-title.caption Пресс-служба
+									.block-info-content 
+										a(href="mailto:info@cse.ru") marketing@cse.ru
+						.offerlist-item-content-slideup.js-accord-target(data-target='block1')
+							.block-info-wrapper
+								.block-info.block-info-main
+									.block-info-title.caption Реквизиты
+									.block-info-content
+										.text.sm Общество с ограниченной ответственностью «КСЭ»
+											br
+											|ИНН 7723688960
+											br
+											|КПП 772301001 
+											br
+											|ОГРН 5087746532990
+											br
+											|ОКПО 89541496
+											br
+											|Дата образования: 2 декабря 2008
+								.block-info
+									.block-info-title.caption Факс
+									.block-info-content 
+										a(href="tel:+74957487748") +7 (495) 748-77-48
+									.block-info-title.caption Служба персонала
+									.block-info-content 
+										a(href="tel:+74957487748") +7 (495) 620-48-81
+								.block-info
+									.block-info-title.caption Отдел клиентского сервиса
+									.block-info-content 
+										a(href="mailto:info@cse.ru") crm@cse.ru
+								.block-info
+									.block-info-title.caption Услуги
+									.block-info-content.services
+										a(href="#") Доставка
+										a(href="#") Хранение и комплектиция
+										a(href="#") Таможенное оформление
+										a(href="#") Организация почтовых комнат
+						.offerlist-item-footer
+							.offerlist-item-footer-block
+								.link-dotted.js-accord-trigger(data-target='block1')
+									.link-dotted-text.js-toggletext(data-alt-text='Скрыть') Дополнительная информация
+									.link-dotted-icon
+										+icon('arrd')
+				.offerlist-container
+					.offerlist-item
+						.offerlist-item-head
+							.title.h3 Санкт-Петербург
+						.offerlist-item-content
+							.block-info-wrapper
+								.block-info.block-info-main
+									.block-info-title.caption Адрес
+									.block-info-content
+										.text.sm 123745, пр. Обуховской Обороны, д. 295, Логопарк «Троицкий», заезд/вход с Запорожской улицы, склад А1
+										.caption.medium Пн-Пт: с 09.00 до 20.00
+										.caption.medium Пн-Пт: с 09.00 до 20.00
+										a(href="#").link-icon.sm
+											.link-icon-icon
+												+icon('down')
+											.link-icon-text Скачать схему проезда
+								.block-info
+									.block-info-title.caption Телефон
+									.block-info-content 
+										a(href="tel:+74957487748") +7 (495) 748-77-48
+									.block-info-title.caption Факс
+									.block-info-content 
+										a(href="tel:+74957487748") +7 (495) 748-77-48
+								.block-info
+									.block-info-title.caption E-mail
+									.block-info-content 
+										a(href="mailto:info@cse.ru") info@cse.ru
+						.offerlist-item-content-slideup.js-accord-target(data-target='block2')
+							.block-info-wrapper
+								.block-info.block-info-main
+									.block-info-title.caption Реквизиты
+									.block-info-content
+										.text.sm Общество с ограниченной ответственностью «КСЭ»
+											br
+											|ИНН 7723688960
+											br
+											|КПП 772301001 
+											br
+											|ОГРН 5087746532990
+											br
+											|ОКПО 89541496
+											br
+											|Дата образования: 2 декабря 2008
+								.block-info
+									.block-info-title.caption Факс
+									.block-info-content 
+										a(href="tel:+74957487748") +7 (495) 748-77-48
+									.block-info-title.caption Служба персонала
+									.block-info-content 
+										a(href="tel:+74957487748") +7 (495) 620-48-81
+								.block-info
+									.block-info-title.caption Отдел клиентского сервиса
+									.block-info-content 
+										a(href="mailto:info@cse.ru") crm@cse.ru
+								.block-info
+									.block-info-title.caption Услуги
+									.block-info-content.services
+										a(href="#") Доставка
+										a(href="#") Хранение и комплектиция
+										a(href="#") Таможенное оформление
+										a(href="#") Организация почтовых комнат
+						.offerlist-item-footer
+							.offerlist-item-footer-block
+								.link-dotted.js-accord-trigger(data-target='block2')
+									.link-dotted-text.js-toggletext(data-alt-text='Скрыть') Дополнительная информация
+									.link-dotted-icon
+										+icon('arrd')
+					.offerlist-item-subitems
+						.offerlist-item
+							.offerlist-item-content
+								.block-info-wrapper
+									.block-info.block-info-main
+										.block-info-title.caption Адрес
+										.block-info-content
+											.text.sm 123745, пр. Обуховской Обороны, д. 295, Логопарк «Троицкий», заезд/вход с Запорожской улицы, склад А1
+											.caption.medium Пн-Пт: с 09.00 до 20.00
+											.caption.medium Пн-Пт: с 09.00 до 20.00
+											a(href="#").link-icon.sm
+												.link-icon-icon
+													+icon('down')
+												.link-icon-text Скачать схему проезда
+									.block-info
+										.block-info-title.caption Телефон
+										.block-info-content 
+											a(href="tel:+74957487748") +7 (495) 748-77-48
+										.block-info-title.caption Факс
+										.block-info-content 
+											a(href="tel:+74957487748") +7 (495) 748-77-48
+									.block-info
+										.block-info-title.caption E-mail
+										.block-info-content 
+											a(href="mailto:info@cse.ru") info@cse.
+						.offerlist-item
+							.offerlist-item-content
+								.block-info-wrapper
+									.block-info.block-info-main
+										.block-info-title.caption Адрес
+										.block-info-content
+											.text.sm 123745, пр. Обуховской Обороны, д. 295, Логопарк «Троицкий», заезд/вход с Запорожской улицы, склад А1
+											.caption.medium Пн-Пт: с 09.00 до 20.00
+											.caption.medium Пн-Пт: с 09.00 до 20.00
+											a(href="#").link-icon.sm
+												.link-icon-icon
+													+icon('down')
+												.link-icon-text Скачать схему проезда
+									.block-info
+										.block-info-title.caption Телефон
+										.block-info-content 
+											a(href="tel:+74957487748") +7 (495) 748-77-48
+										.block-info-title.caption Факс
+										.block-info-content 
+											a(href="tel:+74957487748") +7 (495) 748-77-48
+									.block-info
+										.block-info-title.caption E-mail
+										.block-info-content 
+											a(href="mailto:info@cse.ru") info@cse.ru
+		.box
+			.map-filter
+				.title.h2 Офисы на карте
+				.map-filter-nav
+					.map-filter-nav
+						.select-radio
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='map',
+										value='1',
+										checked='checked').select-radio-input-real
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Все
+						.select-radio
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='map',
+										value='2').select-radio-input-real
+								.select-radio-inner
+									.select-radio-image
+										
+										img(src="img/mappins/pin_office.svg", alt="")
+									span.select-radio-input
+									span.select-radio-text Офисы
+						.select-radio
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='map',
+										value='3').select-radio-input-real
+								.select-radio-inner
+									.select-radio-image
+										img(src="img/mappins/pin_filial.svg", alt="")
+									span.select-radio-input
+									span.select-radio-text Филиалы
+						.select-radio
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='map',
+										value='4').select-radio-input-real
+								.select-radio-inner
+									.select-radio-image
+										img(src="img/mappins/pin_pickup.svg", alt="")
+									span.select-radio-input
+									span.select-radio-text Пункты самовывоза
+						.select-radio.disabled
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='map',
+										value='5').select-radio-input-real
+								.select-radio-inner
+									.select-radio-image
+										img(src="img/mappins/pin_postamat.svg", alt="")
+									span.select-radio-input
+									span.select-radio-text Постаматы
+				.map-wrapper
+					// иничу карту по классу, но айди все арвно нужен и если карт несколько то он уникален
+					.map-elem.js-map#map-1(data-pinimg='img/mappins/pin_office.svg',data-maptype='offices')
+
+	include ./partials/_ask
