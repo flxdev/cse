@@ -58,7 +58,7 @@ html
 	height: 100%
 	-webkit-text-size-adjust: none
 	-webkit-overflow-scrolling: touch;
-	+r(1024)
+	+r(1094)
 		font-size: 15px
 body,.out
 	font-family: $f
@@ -126,6 +126,21 @@ body,.out
 		span
 			font-size: 40px
 			line-height: 0
+	.count
+		display: inline-block
+		width: 29px
+		height: 29px
+		line-height: 29px 
+		font-size: 14px
+		border-radius: 50%
+		text-align: center
+		vertical-align: middle
+		font-weight: 400
+		pointer-events: none 
+		+nosel
+		&.orange 
+			background-color: $brand
+			color: $white
 	&.h2
 		font-size: 36px
 		+r(600)
@@ -228,6 +243,9 @@ span.delivery
 	&~.border-block-content-left,&~.border-block-content-right
 		margin-top: 10px
 	&~.border-block-content-left
+		+r(400)
+			text-align: right
+			
 		.title.h5
 			padding-top: 10px
 .caption 
@@ -921,3 +939,12 @@ dl
 	dd 
 		width: 68%
 		max-width: calc( 100% - 100px)
+.inform
+	&-wrapper 
+		max-width: 685px
+		// padding-top: 5px
+		.btn
+			margin-left: 0
+			margin-top: 55px
+			+r(640)
+				margin-top: 35px

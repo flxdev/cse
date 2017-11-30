@@ -1,0 +1,24 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Мои расчёты
+	.wrapper.bg-white
+		.box
+			.content-columns
+				.content-columns-mai
+					.inform-wrapper
+						.text.sm Спасибо, что проявили интерес к нашей компании. Если ваша кандидатура окажется для нас интересной, наш специалист по персоналу свяжется с вами для уточнения всех деталей.
+						a(href="#").btn
+							.btn-inner 
+								span Новый расчёт
+				.content-columns-aside(data-sticky-parent).js-stick-parent
+	include ./partials/_ask

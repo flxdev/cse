@@ -1,0 +1,24 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Запрос отправлен
+	.wrapper.bg-white
+		.box
+			.content-columns
+				.content-columns-mai
+					.inform-wrapper
+						.text.sm Спасибо за ваше внимание, благодаря этому мы совершенствуем свою работу. В кратчайшие сроки наш специалист свяжется с вами, чтобы решить отправленный вопрос.
+						a(href="#").btn
+							.btn-inner 
+								span Вернуться на главную
+				.content-columns-aside(data-sticky-parent).js-stick-parent
+	include ./partials/_ask

@@ -1,0 +1,33 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Заказ принят
+	.wrapper.bg-white
+		.box
+			.content-columns
+				.content-columns-main
+					//.offer-success
+					.border-block.bg-yellow.offer-success
+						.border-block-content
+							.title.h3 Заказ №415-124789144 принят
+							.form-block.offer-success-text
+								.text.sm Для продолжения оформления, вам необходимо оплатить ваш заказ, выбранным вами способом.
+							.border-block-content-left
+								.title.h5 Яндекс. Деньги
+							.border-block-content-right
+								.title.h3 1 750 ₽
+								.caption Стоимость с учётом НДС
+					.block-buttons
+						a(href="#").btn.btn-next.full-width
+							.btn-inner 
+								span Оплатить
+				.content-columns-aside(data-sticky-parent).js-stick-parent

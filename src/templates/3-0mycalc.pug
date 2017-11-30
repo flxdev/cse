@@ -1,0 +1,292 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Мои расчёты
+					span.count.orange
+						|3
+	.wrapper.bg-white
+		.box
+			.offerlist-wrap.mycalc-wrap
+				.offerlist-container
+					.offerlist-item-head
+						.caption 10.09.2017
+					.offerlist-item-content
+						.offerlist-item-table
+							.table-row
+								.table-item
+									.text.sm.delivery-result
+										span Москва, Россия
+										span Санкт-Петербург, Россия
+										span.deliveryarr.bottom
+								.table-item
+									.text.bold от 1 060 ₽ 
+									.caption Тариф: Стандарт
+								.table-item
+									.reload-item
+										.link-icon.sm.reload.load
+											.link-icon-icon
+												+icon('reload')
+											.link-icon-text Обновить стоимость
+										// .active дял показа
+										.input-dropdown-target
+											.input-dropdown-content
+												.text Стоимость не изменена
+								.table-item
+									a(href="#").btn.color-orange.type-round
+										.btn-inner 
+											span Оформить
+									a(href="#").link-icon.edit
+										.link-icon-icon
+											+icon('edit')
+									a(href="#").link-icon.edit
+										.link-icon-icon
+											+icon('remove')
+					.offerlist-item-content-slideup.js-accord-target(data-target='block1')
+						.offerlist-item-subbg.block-yellow
+							.row
+								.columns.large-3.medium-3.small-12
+									.form-block
+										.form-block-head
+											.title.h5 Груз
+										.form-block-descr
+											.form-block-descr-content
+												dl
+													dt
+														.caption Кол-во мест
+													dd 
+														.text.sm 2
+													dt
+														.caption Общий вес, кг
+													dd 
+														.text.sm 13
+											.accordeon-wrapper
+												.accordeon-body(style='display: none;')
+													.form-block-descr-content
+														.text.sm.bold Место №1
+														dl
+															dt
+																.caption Кол-во мест
+															dd 
+																.text.sm 1
+															dt
+																.caption Общий вес, кг
+															dd 
+																.text.sm 10
+															dt
+																.caption Объёмный вес
+															dd 
+																.text.sm 100х50 см / 7 кг
+													.form-block-descr-content
+														.text.sm.bold Место №1
+														dl
+															dt
+																.caption Кол-во мест
+															dd 
+																.text.sm 1
+															dt
+																.caption Общий вес, кг
+															dd 
+																.text.sm 3
+												.accordeon-head
+													.link-dotted.js-accordeon-trigger
+														.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Подробнее
+														.link-dotted-icon
+															+icon('arrd')
+								.columns.large-9.medium-9.small-12
+									.form-block
+										.form-block-head
+											.title.h5 Доступные тарифы
+										.form-block-table
+											.form-block-table-head
+												.form-block-table-item
+													.caption Тариф
+												.form-block-table-item
+													.caption Срок доставки
+												.form-block-table-item
+													.caption Стоимость
+											.form-block-table-row
+												.form-block-table-item
+													.select-radio-label.radio-simple
+														.select-radio-inner
+															span.select-radio-text Сверхсрочный
+																span.caption Срочная доставка документов и грузов «из рук в руки» в течение 1-2 дней
+												.form-block-table-item(data-alttext='Срок доставки')
+													.text.sm 1-2 раб. дня
+												.form-block-table-item(data-alttext='Стоимость')
+													.title.h4 1 450 ₽
+											.form-block-table-row
+												.form-block-table-item
+													.select-radio-label.radio-simple
+														.select-radio-inner
+															span.select-radio-text Срочный
+																span.caption Быстрая и оптимальная доставка документов и грузов по России в течение 3-4 дней
+												.form-block-table-item(data-alttext='Срок доставки')
+													.text.sm 3-4 раб. дня
+												.form-block-table-item(data-alttext='Стоимость')
+													.title.h4 1 200 ₽
+											.form-block-table-row
+												.form-block-table-item
+													.select-radio-label.radio-simple
+														.select-radio-inner
+															span.select-radio-text Эконом доставка
+																span.caption Классическая доставка по принципу «от двери до двери» со стандартными сроками доставки
+												.form-block-table-item(data-alttext='Срок доставки')
+													.text.sm 4-5 раб. дня
+												.form-block-table-item(data-alttext='Стоимость')
+													.title.h4 850 ₽
+					.offerlist-item-footer
+						.offerlist-item-footer-block
+							.link-dotted.js-accord-trigger(data-target='block1')
+								.link-dotted-text.js-toggletext(data-alt-text='Скрыть') Подробнее
+								.link-dotted-icon
+									+icon('arrd')
+				.offerlist-container
+					.offerlist-item-head
+						.caption 10.09.2017
+					.offerlist-item-content
+						.offerlist-item-table
+							.table-row
+								.table-item
+									.text.sm.delivery-result
+										span Москва, Россия
+										span Санкт-Петербург, Россия
+										span.deliveryarr.bottom
+								.table-item
+									.text.bold от 1 060 ₽ 
+									.caption Тариф: Стандарт
+								.table-item
+									.reload-item
+										.link-icon.sm.reload.load
+											.link-icon-icon
+												+icon('reload')
+											.link-icon-text Обновить стоимость
+										// .active дял показа
+										.input-dropdown-target
+											.input-dropdown-content
+												.text Стоимость не изменена
+								.table-item
+									a(href="#").btn.color-orange.type-round
+										.btn-inner 
+											span Оформить
+									a(href="#").link-icon.edit
+										.link-icon-icon
+											+icon('edit')
+									a(href="#").link-icon.edit
+										.link-icon-icon
+											+icon('remove')
+					.offerlist-item-content-slideup.js-accord-target(data-target='block2')
+						.offerlist-item-subbg.block-yellow
+							.row
+								.columns.large-3.medium-3.small-12
+									.form-block
+										.form-block-head
+											.title.h5 Груз
+										.form-block-descr
+											.form-block-descr-content
+												dl
+													dt
+														.caption Кол-во мест
+													dd 
+														.text.sm 2
+													dt
+														.caption Общий вес, кг
+													dd 
+														.text.sm 13
+											.accordeon-wrapper
+												.accordeon-body(style='display: none;')
+													.form-block-descr-content
+														.text.sm.bold Место №1
+														dl
+															dt
+																.caption Кол-во мест
+															dd 
+																.text.sm 1
+															dt
+																.caption Общий вес, кг
+															dd 
+																.text.sm 10
+															dt
+																.caption Объёмный вес
+															dd 
+																.text.sm 100х50 см / 7 кг
+													.form-block-descr-content
+														.text.sm.bold Место №1
+														dl
+															dt
+																.caption Кол-во мест
+															dd 
+																.text.sm 1
+															dt
+																.caption Общий вес, кг
+															dd 
+																.text.sm 3
+												.accordeon-head
+													.link-dotted.js-accordeon-trigger
+														.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Подробнее
+														.link-dotted-icon
+															+icon('arrd')
+								.columns.large-9.medium-9.small-12
+									.form-block
+										.form-block-head
+											.title.h5 Доступные тарифы
+										.form-block-table
+											.form-block-table-head
+												.form-block-table-item
+													.caption Тариф
+												.form-block-table-item
+													.caption Срок доставки
+												.form-block-table-item
+													.caption Стоимость
+											.form-block-table-row
+												.form-block-table-item
+													.select-radio-label.radio-simple
+														.select-radio-inner
+															span.select-radio-text Сверхсрочный
+																span.caption Срочная доставка документов и грузов «из рук в руки» в течение 1-2 дней
+												.form-block-table-item(data-alttext='Срок доставки')
+													.text.sm 1-2 раб. дня
+												.form-block-table-item(data-alttext='Стоимость')
+													.title.h4 1 450 ₽
+											.form-block-table-row
+												.form-block-table-item
+													.select-radio-label.radio-simple
+														.select-radio-inner
+															span.select-radio-text Срочный
+																span.caption Быстрая и оптимальная доставка документов и грузов по России в течение 3-4 дней
+												.form-block-table-item(data-alttext='Срок доставки')
+													.text.sm 3-4 раб. дня
+												.form-block-table-item(data-alttext='Стоимость')
+													.title.h4 1 200 ₽
+											.form-block-table-row
+												.form-block-table-item
+													.select-radio-label.radio-simple
+														.select-radio-inner
+															span.select-radio-text Эконом доставка
+																span.caption Классическая доставка по принципу «от двери до двери» со стандартными сроками доставки
+												.form-block-table-item(data-alttext='Срок доставки')
+													.text.sm 4-5 раб. дня
+												.form-block-table-item(data-alttext='Стоимость')
+													.title.h4 850 ₽
+					.offerlist-item-footer
+						.offerlist-item-footer-block
+							.link-dotted.js-accord-trigger(data-target='block2')
+								.link-dotted-text.js-toggletext(data-alt-text='Скрыть') Подробнее
+								.link-dotted-icon
+									+icon('arrd')
+				.block-buttons
+					a(href="#").btn.color-black
+						.btn-inner 
+							span Стать клиентом
+					a(href="#").btn.btn-next
+						.btn-inner 
+							span Новый расчёт
+	include ./partials/_ask

@@ -15,7 +15,10 @@ export default function Accordeon() {
 	        target.removeClass('active').slideUp('normal');
 	      }else{
 	      	head.add(_).addClass('active');
-	        target.addClass('active').slideDown();
+	        target.addClass('active').slideDown('normal',() => {
+            let offset = target.offset().top;
+            $('html:not(:animated), body:not(:animated), .out:not(:animated)').animate({scrollTop: offset - 220}, 500);
+          });
 	      }
 	      text.toggleText();
 	      setTimeout(() => {

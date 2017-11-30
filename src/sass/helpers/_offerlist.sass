@@ -7,6 +7,97 @@
 		+r(640)
 			padding-top: 10px
 			padding-bottom: 50px
+		&.mycalc-wrap
+
+			.offerlist-item
+				&-head
+					.caption
+						font-size: 14px
+					margin-bottom: 4px
+					margin-top: -2px
+				&-content 
+					margin-bottom: 20px
+				&-footer
+					padding-top: 0 !important
+					margin-top: 20px
+				&-table 
+					.table-row
+						+r(800)
+							font-size: 0
+							display: block
+							
+					.table-item
+						width: 27%
+						vertical-align: middle
+						+r(800)
+							display: inline-block
+							vertical-align: middle
+							width: 50% !important
+							min-width: 50% !important
+							max-width: 50% !important
+							text-align: left !important
+							&:before
+								display: none !important
+						+r(600)
+							width: 100% !important
+							min-width: 100% !important
+							max-width: 100% !important
+							&:last-child 
+								padding-bottom: 0
+						.delivery-result
+							font-size: 16px
+							width: 100% !important
+						&:first-child
+							min-width: 330px
+							+r(1400)
+								min-width: 250px
+								padding-right: 15px
+						&:nth-child(2)
+							min-width: 100px
+						&:nth-last-child(2)
+							text-align: right
+							+r(800)
+								text-align: left
+						&:last-child
+							text-align: right
+							min-width: 290px
+							+r(1200)
+								min-width: 180px
+								text-align: center
+							+r(800)
+								.btn
+									min-width: 110px
+								.btn-inner
+									padding-left: 10px
+									padding-right: 10px
+									
+							&>*
+								display: inline-block
+								vertical-align: middle
+							.link-icon
+								padding-left: 10px
+								&:last-child 
+									+rm(1201)
+										margin-right: -12px
+							.btn 
+								margin-right: 15px
+						// 	min-width: 60px
+						// 	width: 60px
+						// 	width: auto
+						// 	+justify
+
+						// &:nth-last-child(2)
+						// 	min-width: 235px
+						// 	width: 235px
+						// 	padding-left: 10px
+						// 	padding-right: 10px
+						// 	text-align: center
+						// &:nth-last-child(3)
+						// 	text-align: right
+						// 	max-width: 300px
+						// 	width: 300px
+							// max--width: 300px
+							
 	&-container
 		border: 1px solid $inputborder
 		padding: 35px 35px 0 35px
@@ -14,6 +105,30 @@
 		+r(640)
 			padding: 20px 18px 0 18px	
 	&-item 
+		&-subbg
+			padding: 50px 35px
+			+r(800)
+				padding: 30px 20px	
+			.large-9
+				+rm(641)
+					padding-left: 5.5%
+			.form-block-table
+				padding-left: 0
+				&-row 
+					padding-left: 0 !important
+				&-item 
+					margin-left: 0 !important
+				.select-radio-label.radio-simple
+					margin-left: 0 !important
+					width: 100%
+					.select-radio-inner
+						width: 100%
+					.select-radio-text
+						max-width: 350px
+			.form-block-descr
+				border-bottom: none
+			.form-block-head
+				margin-bottom: 15px
 		&-head
 			display: flex
 			flex-flow: row wrap

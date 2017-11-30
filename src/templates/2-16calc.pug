@@ -1,0 +1,36 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Заказ принят
+	.wrapper.bg-white
+		.box
+			.content-columns
+				.content-columns-main
+					//.offer-success
+					.border-block.bg-yellow.offer-success
+						.border-block-content
+							.title.h3 Заказ №415-124789144 принят
+							.form-block.offer-success-text
+								.text.sm Наш менеджер свяжется с вами в течение 20 минут для подтверждения заказа и уточнения всех деталей. Вы можете распечатать накладную и заполнить её при передаче заказа курьеру. Спасибо, что выбрали услуги «КурьерСервисЭкспресс». Желаем вам приятного дня!
+					.block-buttons
+						a(href="#").link-icon.sm
+							.link-icon-icon
+								+icon('print')
+							.link-icon-text Печать накладной
+						a(href="#").link-icon.sm
+							.link-icon-icon
+								+icon('doc')
+							.link-icon-text Заключить договор
+						a(href="#").btn.btn-next
+							.btn-inner 
+								span Вернуться на главную
+				.content-columns-aside(data-sticky-parent).js-stick-parent

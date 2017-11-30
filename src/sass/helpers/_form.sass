@@ -39,9 +39,13 @@
 		&-left,&-right 
 			display: inline-block
 			vertical-align: top
+			+r(400)
+				width: 100%
+				max-width: 100%
 		&-left
 			width: 60%
 			max-width: calc(100% - 180px)
+
 		&-right 
 			width: 40%
 			min-width: 180px
@@ -145,8 +149,13 @@
 			vertical-align: top
 			padding-top: 25px
 			padding-bottom: 23px
+			+r(640)
+				padding-top: 10px 
+				padding-bottom: 10px
 			&:not(:first-child)
 				min-width: 100px
+				+r(640)
+					padding-top: 0 !important
 			&:last-child
 				text-align: right
 
@@ -215,6 +224,11 @@
 				align-items: center
 				border-bottom: 1px solid $inputborder 
 				padding-bottom: 6px
+				position: relative
+				.input-dropdown-target
+					+r(640)
+						left: auto
+						right: -20px
 				.quest-wrap
 					margin-right: auto
 				.select-radio-label
@@ -311,15 +325,21 @@
 			margin-right: 0
 		+r(1350)
 			min-width: 170px
-		&.color-gray
+		&.color-gray,&.color-black
 			margin-left: auto
+			&+.btn-next
+				margin-left: initial !important
+
 		&.btn-next
-			&:nth-child(2)
+			&:nth-last-child(1)
 				margin-left: auto
 				
 			+r(640)
 				order: 1
 				width: 100%
+	.link-icon
+		&:nth-child(2)
+			margin: 0 20px
 
 
 		
@@ -399,3 +419,21 @@
 
 .block-yellow
 	background-color: $brandlight
+.offer-success
+	// padding-bottom: 20px
+	.border-block-content-left,.border-block-content-left
+		vertical-align: middle
+		+r(640)
+			.title.h5
+				padding-bottom: 5px
+				text-align: right
+	&-text 
+		&:not(:last-child)
+			border-bottom: 2px solid $brand
+			padding-bottom: 35px
+			margin-bottom: 30px
+			+r(640)
+				padding-bottom: 20px
+				margin-bottom: 15px
+		&:last-child
+			padding-bottom: 15px	

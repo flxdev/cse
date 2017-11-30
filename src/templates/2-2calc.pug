@@ -21,1338 +21,1340 @@ block content
 					// передача занчений о стране и городе из шага 1 в нужные места других шагов
 					// ахантер???
 					// обернуть все в 1 форму, а то дичь
-					form(action="/",data-step='1').js-validate.js-CalcForm.form-step
-						// обьект с формулами для расчета
-						// у блоков есть дата-формула по которой мы определяем как считать
-						script.
-							var formObj = [
-								{
-									inputs: 
-										{'BoxA':0,'BoxB':0,'BoxH':0},
-										formula: function(){ return this.inputs['BoxA']*this.inputs['BoxB']*this.inputs['BoxH'] }
-								},{
-									inputs: {'BoxA':0 , 'BoxB':0},
-										formula: function(){ return this.inputs['BoxA'] + this.inputs['BoxB']}
-								},
-								]
+					form(action="/").js-validate
+						.js-CalcForm.form-step(data-step='1')
+							// обьект с формулами для расчета
+							// у блоков есть дата-формула по которой мы определяем как считать
+							script.
+								var formObj = [
+									{
+										inputs: 
+											{'BoxA':0,'BoxB':0,'BoxH':0},
+											formula: function(){ return this.inputs['BoxA']*this.inputs['BoxB']*this.inputs['BoxH'] }
+									},{
+										inputs: {'BoxA':0 , 'BoxB':0},
+											formula: function(){ return this.inputs['BoxA'] + this.inputs['BoxB']}
+									},
+									]
 
-						.border-block
-							.border-block-content
-								.title.h3 География
-								.form-block
-									.form-block-head
-										.title.h5 Откуда
-									.input-row
-										.input-item.multi
-											.input-wrapper
-												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
+							.border-block
+								.border-block-content
+									.title.h3 География
+									.form-block
+										.form-block-head
+											.title.h5 Откуда
+										.input-row
+											.input-item.multi
+												.input-wrapper
+													input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
+																type='text',
+																name='FromCountry',
+																placeholder='Например, Россия',
+																data-validation="length",
+																data-validation-length='min1',
+																data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+																value='Россия')
+													.js-input-dropdown-target.input-dropdown-target
+														.input-dropdown-content
+															.option
+																span Россия
+															.option
+																span Россия
+															.option
+																span Беларусь
+															.option
+																span Украина
+															.option
+																span Казахстан
+													label(for='#wqedqwe').input-label Страна
+												.input-wrapper
+													input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
+																type='text',
+																name='FromCicy',
+																placeholder='Например, Москва',
+																data-validation="length",
+																data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+																data-validation-length='min1',
+																value='Москва')
+													.js-input-dropdown-target.input-dropdown-target
+														.input-dropdown-content
+															.option
+																span Мосальск
+															.option
+																span Москва
+															.option
+																span Мосс
+															.option
+																span Мостар
+															.option
+																span осния
+													label(for='#wqedqaswe').input-label Населённый пункт
+									.form-block
+										.form-block-head
+											.title.h5 Куда
+											//.swap-multi если вдруг надо
+											.input-icon.swap.js-swap.swap-multi
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5"> <style>.stswap{fill-rule:evenodd;clip-rule:evenodd;fill:#F47921;}</style> <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap"/> <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap"/></svg>
+										.input-row
+											.input-item.multi
+												.input-wrapper
+													input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
 															type='text',
-															name='FromCountry',
+															name='ToCountry',
 															placeholder='Например, Россия',
 															data-validation="length",
 															data-validation-length='min1',
-															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
-															value='Россия')
-												.js-input-dropdown-target.input-dropdown-target
-													.input-dropdown-content
-														.option
-															span Россия
-														.option
-															span Россия
-														.option
-															span Беларусь
-														.option
-															span Украина
-														.option
-															span Казахстан
-												label(for='#wqedqwe').input-label Страна
-											.input-wrapper
-												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
-															type='text',
-															name='FromCicy',
-															placeholder='Например, Москва',
-															data-validation="length",
-															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
-															data-validation-length='min1',
-															value='Москва')
-												.js-input-dropdown-target.input-dropdown-target
-													.input-dropdown-content
-														.option
-															span Мосальск
-														.option
-															span Москва
-														.option
-															span Мосс
-														.option
-															span Мостар
-														.option
-															span осния
-												label(for='#wqedqaswe').input-label Населённый пункт
-								.form-block
-									.form-block-head
-										.title.h5 Куда
-										//.swap-multi если вдруг надо
-										.input-icon.swap.js-swap.swap-multi
-											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5"> <style>.stswap{fill-rule:evenodd;clip-rule:evenodd;fill:#F47921;}</style> <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap"/> <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap"/></svg>
-									.input-row
-										.input-item.multi
-											.input-wrapper
-												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
-														type='text',
-														name='ToCountry',
-														placeholder='Например, Россия',
-														data-validation="length",
-														data-validation-length='min1',
-														value='Казахстан',
-														data-validation-error-msg="Неверно выбрана страна или населённый пункт")
-												.js-input-dropdown-target.input-dropdown-target
-													.input-dropdown-content
-														.option
-															span Россия
-														.option
-															span Россия
-														.option
-															span Беларусь
-														.option
-															span Украина
-														.option
-															span Казахстан
-												label(for='#wq2edqwe').input-label Страна
-											.input-wrapper
-												input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
-															type='text',
-															name='ToCicy',
-															placeholder='Например, Москва',
-															data-validation="length",
-															data-validation-length='min1',
-															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
-															value='Мосс')
-												.js-input-dropdown-target.input-dropdown-target
-													.input-dropdown-content
-														.option
-															span Мосальск
-														.option
-															span Москва
-														.option
-															span Мосс
-														.option
-															span Мостар
-														.option
-															span осния
-												label(for='#wqedqwe2').input-label Населённый пункт
-						.border-block
-							.border-block-content
-								.title.h3 Информация об отправлении
-								.form-block
-									.form-block-head
-										.title.h5 Выберите тип отправления
-									.input-row
-										.input-item
-											.select-radio
-												label.select-radio-label
-													input(
-														type="radio",
-														name='PackageType',
-														value='1',
-														checked='checked',data-display-if-trigger='1').select-radio-input-real
-													.select-radio-inner
-														span.select-radio-input
-															span.select-radio-input-fake.ok
-														span.select-radio-text Документы
-											.select-radio
-												label.select-radio-label
-													input(
-														type="radio",
-														name='PackageType',
-														value='2',data-display-if-trigger='2').select-radio-input-real
-													.select-radio-inner
-														span.select-radio-input
-															span.select-radio-input-fake.ok
-														span.select-radio-text Груз
-											.help-block.help Вы можете отправить в конверте не более 60 листов формата А4.
-								.form-block-mainwrapper(data-display-if-container='PackageType')
-									.form-block(data-display-target='PackageType',data-display-if='1')
+															value='Казахстан',
+															data-validation-error-msg="Неверно выбрана страна или населённый пункт")
+													.js-input-dropdown-target.input-dropdown-target
+														.input-dropdown-content
+															.option
+																span Россия
+															.option
+																span Россия
+															.option
+																span Беларусь
+															.option
+																span Украина
+															.option
+																span Казахстан
+													label(for='#wq2edqwe').input-label Страна
+												.input-wrapper
+													input.input-main.input-dropdown.js-input-dropdown.js-swap-item(
+																type='text',
+																name='ToCicy',
+																placeholder='Например, Москва',
+																data-validation="length",
+																data-validation-length='min1',
+																data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+																value='Мосс')
+													.js-input-dropdown-target.input-dropdown-target
+														.input-dropdown-content
+															.option
+																span Мосальск
+															.option
+																span Москва
+															.option
+																span Мосс
+															.option
+																span Мостар
+															.option
+																span осния
+													label(for='#wqedqwe2').input-label Населённый пункт
+							.border-block
+								.border-block-content
+									.title.h3 Информация об отправлении
+									.form-block
 										.form-block-head
-											.title.h5 Параметры
+											.title.h5 Выберите тип отправления
 										.input-row
-											.input-item.w50
-												.input-wrapper
-													input.input-main(type="number",
-																		id='DocWeight',
-																		placeholder='0.01',
-																		name='DocWeight',
-																		data-validation="number",
-																		data-validation-allowing="range[0.01;3],float,positive",
-																		data-validation-error-msg="Максимальный вес — 3 кг",
-																		data-validation-decimal-separator=".")
-													label(for='#DocWeight').input-label Вес, кг
-								// контейнер для всех блоков
-								.form-block-subwrapper(data-display-if-container='GruzType')
-								// контейнер для множественных блоков
-								.form-block-subwrapper(data-display-if-container='GruzPlaces')
-
-								.form-block
-									.input-row
-										.input-item
-											.input-wrapper
-												textarea.input-main.maxlength(type="text",name='PackageDescr',id='PackageDescr',placeholder='Например, ценный груз', data-countdown='200')
-												label(for='#PackageDescr').input-label Описание отправления
-						.border-block
-							.border-block-content
-								.title.h3 Способ доставки
-								.form-block
-									.input-row
-										.input-item
-											.select-radio
-												label.select-radio-label
-													input(
+											.input-item
+												.select-radio
+													label.select-radio-label
+														input(
 															type="radio",
-															name='type1',
+															name='PackageType',
 															value='1',
-															checked='checked').select-radio-input-real
-													.select-radio-inner
-														span.select-radio-input
-															span.select-radio-input-fake.ok
-														span.select-radio-text Курьер
-											.select-radio
-												label.select-radio-label
-													input(
+															checked='checked',data-display-if-trigger='1').select-radio-input-real
+														.select-radio-inner
+															span.select-radio-input
+																span.select-radio-input-fake.ok
+															span.select-radio-text Документы
+												.select-radio
+													label.select-radio-label
+														input(
 															type="radio",
-															name='type1',
-															value='2').select-radio-input-real
-													.select-radio-inner
-														span.select-radio-input
-															span.select-radio-input-fake.ok
-														span.select-radio-text Самовывоз
-											.help-block.help Ваша посылка будет доставлена получателю курьером.
-						.block-buttons
-							button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.full-width.js-CalcForm-submit.btn-next
-								.btn-inner 
-									span Далее
-					//////////
-					// компоненты в форму
-					//////////
-					.calc-form-components.js-CalcForm-components(style='display: none;')
-						//основной блок для документов
-						.form-block(data-display-target='PackageType',data-display-if='1')
-							.form-block-head
-								.title.h5 Параметры
-							.input-row
-								.input-item.w50
-									.input-wrapper
-										input.input-main(type="number",
-															id='DocWeight',
-															placeholder='0.01',
-															name='DocWeight',
+															name='PackageType',
+															value='2',data-display-if-trigger='2').select-radio-input-real
+														.select-radio-inner
+															span.select-radio-input
+																span.select-radio-input-fake.ok
+															span.select-radio-text Груз
+												.help-block.help Вы можете отправить в конверте не более 60 листов формата А4.
+									.form-block-mainwrapper(data-display-if-container='PackageType')
+										.form-block(data-display-target='PackageType',data-display-if='1')
+											.form-block-head
+												.title.h5 Параметры
+											.input-row
+												.input-item.w50
+													.input-wrapper
+														input.input-main(type="number",
+																			id='DocWeight',
+																			placeholder='0.01',
+																			name='DocWeight',
+																			data-validation="number",
+																			data-validation-allowing="range[0.01;3],float,positive",
+																			data-validation-error-msg="Максимальный вес — 3 кг",
+																			data-validation-decimal-separator=".")
+														label(for='#DocWeight').input-label Вес, кг
+									// контейнер для всех блоков
+									.form-block-subwrapper(data-display-if-container='GruzType')
+									// контейнер для множественных блоков
+									.form-block-subwrapper(data-display-if-container='GruzPlaces')
+
+									.form-block
+										.input-row
+											.input-item
+												.input-wrapper
+													textarea.input-main.maxlength(type="text",name='PackageDescr',id='PackageDescr',placeholder='Например, ценный груз', data-countdown='200')
+													label(for='#PackageDescr').input-label Описание отправления
+							.border-block
+								.border-block-content
+									.title.h3 Способ доставки
+									.form-block
+										.input-row
+											.input-item
+												.select-radio
+													label.select-radio-label
+														input(
+																type="radio",
+																name='type1',
+																value='1',
+																checked='checked').select-radio-input-real
+														.select-radio-inner
+															span.select-radio-input
+																span.select-radio-input-fake.ok
+															span.select-radio-text Курьер
+												.select-radio
+													label.select-radio-label
+														input(
+																type="radio",
+																name='type1',
+																value='2').select-radio-input-real
+														.select-radio-inner
+															span.select-radio-input
+																span.select-radio-input-fake.ok
+															span.select-radio-text Самовывоз
+												.help-block.help Ваша посылка будет доставлена получателю курьером.
+							.block-buttons
+								button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.full-width.js-CalcForm-submit.btn-next
+									.btn-inner 
+										span Далее
+						//////////
+						// компоненты в форму
+						//////////
+						.calc-form-components.js-CalcForm-components(style='display: none;')
+							//основной блок для документов
+							.form-block(data-display-target='PackageType',data-display-if='1')
+								.form-block-head
+									.title.h5 Параметры
+								.input-row
+									.input-item.w50
+										.input-wrapper
+											input.input-main(type="number",
+																id='DocWeight',
+																placeholder='0.01',
+																name='DocWeight',
+																data-validation="number",
+																data-validation-allowing="range[0.01;3],float,positive",
+																data-validation-error-msg="Максимальный вес — 3 кг",
+																data-validation-decimal-separator=".")
+											label(for='#DocWeight').input-label Вес, кг
+
+							// основной блок для груза
+							.form-block(data-display-target='PackageType',data-display-if='2')
+								.form-block-head
+									.title.h5 Параметры
+								.input-row
+									.input-item.w50
+										.input-wrapper
+											input.input-main.placesChanger.maxlength(
+															id='GruzPlaces',
+															placeholder='1',
+															type="number",
+															name='GruzPlaces',
 															data-validation="number",
-															data-validation-allowing="range[0.01;3],float,positive",
-															data-validation-error-msg="Максимальный вес — 3 кг",
+															data-validation-error-msg="Введите корректное количество мест",
+															data-validation-allowing="positive,range[1;99]",
+															data-countdown='2',
+															data-display-if-trigger)
+											label(for='#GruzPlaces').input-label Количество мест
+									.input-item.w50
+										.input-wrapper
+											select.input-main.js-select(name='GruzType', 
+																		id='GruzType',
+																		data-validation='length', 
+																		data-validation-length='min1',
+																		data-validation-event="change",
+																		data-display-if-trigger)
+												option(value="1") Коробка
+												option(value="2") Тубус
+											label(for='#GruzType').input-label Вид груза
+									.input-item.w50
+										.input-wrapper
+											input.input-main(type="number",
+															id='GruzTotalWeight',
+															placeholder='0.5',
+															name='GruzTotalWeight',
+															data-validation="number",
+															data-validation-allowing="float,positive",
+															data-validation-error-msg="Максимальный вес — 100 кг",
 															data-validation-decimal-separator=".")
-										label(for='#DocWeight').input-label Вес, кг
-
-						// основной блок для груза
-						.form-block(data-display-target='PackageType',data-display-if='2')
-							.form-block-head
-								.title.h5 Параметры
-							.input-row
-								.input-item.w50
-									.input-wrapper
-										input.input-main.placesChanger.maxlength(
-														id='GruzPlaces',
-														placeholder='1',
-														type="number",
-														name='GruzPlaces',
-														data-validation="number",
-														data-validation-error-msg="Введите корректное количество мест",
-														data-validation-allowing="positive,range[1;99]",
-														data-countdown='2',
-														data-display-if-trigger)
-										label(for='#GruzPlaces').input-label Количество мест
-								.input-item.w50
-									.input-wrapper
-										select.input-main.js-select(name='GruzType', 
-																	id='GruzType',
-																	data-validation='length', 
-																	data-validation-length='min1',
-																	data-validation-event="change",
-																	data-display-if-trigger)
-											option(value="1") Коробка
-											option(value="2") Тубус
-										label(for='#GruzType').input-label Вид груза
-								.input-item.w50
-									.input-wrapper
-										input.input-main(type="number",
-														id='GruzTotalWeight',
-														placeholder='0.5',
-														name='GruzTotalWeight',
-														data-validation="number",
-														data-validation-allowing="float,positive",
-														data-validation-error-msg="Максимальный вес — 100 кг",
-														data-validation-decimal-separator=".")
-										label(for='#GruzTotalWeight').input-label Общий вес, кг
-								.input-item.w50
-									.input-wrapper
-										input.input-main(
-														type="number",
-														id='GruzVolumetrikWeight',
-														placeholder='0.5',
-														name='GruzVolumetrikWeight',
-														data-validation="number",
-														data-validation-allowing="float,positive",
-														data-validation-decimal-separator=".",
-														data-validation-optional="true")
-										label(for='#GruzVolumetrikWeight').input-label Объёмный вес, кг
-
-						// блок с контейнером
-
-						.accordeon-wrapper(data-display-target='GruzType',data-display-if='1')
-							.accordeon-head
-								.link-dotted.color-black.js-accordeon-trigger
-									.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Расcчитать объёмный вес
-									.link-dotted-icon
-										+icon('arrd')
-								.quest-wrap
-									.quest-trigger
-										+icon('question')
-									.input-dropdown-target
-										.input-dropdown-content
-											.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.
-							.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
-							.accordeon-body(style='display: none;')
-								.form-block.js-calculation-reset-cont(data-formula='0')
-									.form-block-column
-										.input-row
-											.input-item.w50
-												.input-wrapper
-													input.input-main(
-																	id='BoxA',
-																	placeholder='1',
-																	type="number",
-																	name='BoxA',
-																	data-validation="number",
-																	data-validation-error-msg="Введите корректную величину",
-																	data-validation-allowing="positive,range[1;1000]",
-																	data-validation-optional="true")
-													label(for='#BoxA').input-label Длина (A), см
-											.input-item.w50
-												.input-wrapper
-													input.input-main(
-																	id='BoxB',
-																	placeholder='1',
-																	type="number",
-																	name='BoxB',
-																	data-validation="number",
-																	data-validation-error-msg="Введите корректную величину",
-																	data-validation-allowing="positive,range[1;1000]",
-																	data-validation-optional="true")
-													label(for='#BoxB').input-label Ширина (B), см
-											.input-item.w50
-												.input-wrapper
-													input.input-main(
-																	id='BoxH',
-																	placeholder='1',
-																	type="number",
-																	name='BoxH',
-																	data-validation="number",
-																	data-validation-error-msg="Введите корректную величину",
-																	data-validation-allowing="positive,range[1;1000]",
-																	data-validation-optional="true")
-													label(for='#BoxH').input-label Высота (H), см
-											.form-block-result
-												.form-block-result-inner
-													.caption Обьемный вес
-													.form-block-result-text.js-CalcForm-result
-													|
-											.form-block-calcreset
-												.link-icon.sm.js-calculation-reset
-													.link-icon-icon
-														+icon('close')
-													.link-icon-text Отменить расчёт
-									.form-block-column
-										img(src="img/calc/1.png", alt="")
-						// блок с тубусом
-						.accordeon-wrapper(data-display-target='GruzType',data-display-if='2')
-							.accordeon-head
-								.link-dotted.color-black.js-accordeon-trigger
-									.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Расcчитать объёмный вес
-									.link-dotted-icon
-										+icon('arrd')
-								.quest-wrap
-									.quest-trigger
-										+icon('question')
-									.input-dropdown-target
-										.input-dropdown-content
-											.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.
-							.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
-							.accordeon-body(style='display: none;')
-								.form-block.js-calculation-reset-cont(data-formula='1')
-									.form-block-column
-										.input-row
-											.input-item.w50
-												.input-wrapper
-													input.input-main(
-																	id='BoxA',
-																	placeholder='1',
-																	type="number",
-																	name='BoxA',
-																	data-validation="number",
-																	data-validation-error-msg="Введите корректную величину",
-																	data-validation-allowing="positive,range[1;1000]",
-																	data-validation-optional="true")
-													label(for='#BoxA').input-label Сторона (A), см
-											.input-item.w50
-												.input-wrapper
-													input.input-main(
-																	id='BoxB',
-																	placeholder='1',
-																	type="number",
-																	name='BoxB',
-																	data-validation="number",
-																	data-validation-error-msg="Введите корректную величину",
-																	data-validation-allowing="positive,range[1;1000]",
-																	data-validation-optional="true")
-													label(for='#BoxB').input-label Высота (H), см
-											.form-block-result
-												.form-block-result-inner
-													.caption Обьемный вес
-													.form-block-result-text.js-CalcForm-result
-											.form-block-calcreset
-												.link-icon.sm.js-calculation-reset
-													.link-icon-icon
-														+icon('close')
-													.link-icon-text Отменить расчёт
-									.form-block-column
-										img(src="img/calc/2.png", alt="")
-						.form-block.js-calculation-reset-cont(data-formula='0',data-display-target='GruzType[0]',data-display-if="3")
-							.input-row
-								.input-item.w50
-									.help-block.help Вы можете отправить в конверте не более 60 листов формата А4. 
-						.form-block.js-calculation-reset-cont(data-formula='1',data-display-target='GruzType[0]',data-display-if="2")
-							.form-block-head
-								.title.h5 Объёмный вес
-							.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
-							.form-block-column
-								.input-row
+											label(for='#GruzTotalWeight').input-label Общий вес, кг
 									.input-item.w50
 										.input-wrapper
 											input.input-main(
-															id='BoxA',
-															placeholder='1',
 															type="number",
-															name='BoxA',
+															id='GruzVolumetrikWeight',
+															placeholder='0.5',
+															name='GruzVolumetrikWeight',
 															data-validation="number",
-															data-validation-error-msg="Введите корректную величину",
-															data-validation-allowing="positive,range[1;1000]",
+															data-validation-allowing="float,positive",
+															data-validation-decimal-separator=".",
 															data-validation-optional="true")
-											label(for='#BoxA').input-label Сторона (A), см
-									.input-item.w50
-										.input-wrapper
-											input.input-main(
-															id='BoxB',
-															placeholder='1',
-															type="number",
-															name='BoxB',
-															data-validation="number",
-															data-validation-error-msg="Введите корректную величину",
-															data-validation-allowing="positive,range[1;1000]",
-															data-validation-optional="true")
-											label(for='#BoxB').input-label Высота (H), см
-									.form-block-result
-										.form-block-result-inner
-											.caption Обьемный вес
-											.form-block-result-text.js-CalcForm-result
-									.form-block-calcreset
-										.link-icon.sm.js-calculation-reset
-											.link-icon-icon
-												+icon('close')
-											.link-icon-text Отменить расчёт
-							.form-block-column
-								img(src="img/calc/2.png", alt="")
-						.form-block.js-calculation-reset-cont(data-formula='0',data-display-target='GruzType[0]',data-display-if="1")
-							.form-block-head
-								.title.h5 Объёмный вес
-							.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
-							.form-block-column
-								.input-row
-									.input-item.w50
-										.input-wrapper
-											input.input-main(
-															id='BoxA',
-															placeholder='1',
-															type="number",
-															name='BoxA',
-															data-validation="number",
-															data-validation-error-msg="Введите корректную величину",
-															data-validation-allowing="positive,range[1;1000]",
-															data-validation-optional="true")
-											label(for='#BoxA[0]').input-label Длина (A), см
-									.input-item.w50
-										.input-wrapper
-											input.input-main(
-															id='BoxB',
-															placeholder='1',
-															type="number",
-															name='BoxB',
-															data-validation="number",
-															data-validation-error-msg="Введите корректную величину",
-															data-validation-allowing="positive,range[1;1000]",
-															data-validation-optional="true")
-											label(for='#BoxB').input-label Ширина (B), см
-									.input-item.w50
-										.input-wrapper
-											input.input-main(
-															id='BoxH',
-															placeholder='1',
-															type="number",
-															name='BoxH',
-															data-validation="number",
-															data-validation-error-msg="Введите корректную величину",
-															data-validation-allowing="positive,range[1;1000]",
-															data-validation-optional="true")
-											label(for='#BoxH').input-label Высота (H), см
-									.form-block-result
-										.form-block-result-inner
-											.caption Обьемный вес
-											.form-block-result-text.js-CalcForm-result
-											|
-									.form-block-calcreset
-										.link-icon.sm.js-calculation-reset
-											.link-icon-icon
-												+icon('close')
-											.link-icon-text Отменить расчёт
+											label(for='#GruzVolumetrikWeight').input-label Объёмный вес, кг
 
-							.form-block-column
-								img(src="img/calc/1.png", alt="")
-						// аккордеон с множественными блоками
+							// блок с контейнером
 
-						.accordeon-wrapper.block-yellow.js-calculation-target#Accordeon-multiple(data-display-target='GruzPlaces')
-							.accordeon-body(style='display: none;')
-								.accordeon-body-head
-									.title.h4 Данные по каждому грузовому месту
+							.accordeon-wrapper(data-display-target='GruzType',data-display-if='1')
+								.accordeon-head
+									.link-dotted.color-black.js-accordeon-trigger
+										.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Расcчитать объёмный вес
+										.link-dotted-icon
+											+icon('arrd')
 									.quest-wrap
 										.quest-trigger
 											+icon('question')
 										.input-dropdown-target
 											.input-dropdown-content
 												.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.
-								.accordeon-body-loop
-									.form-block.js-calculation-reset-cont
-										.form-block-head
-											.title.h5 Место №
-												span 1
-										.input-row
-											.input-item.w50
-												.input-wrapper
-													select.input-main.js-select(name='GruzType[0]', 
-																				id='GruzType[0]',
-																				data-validation='length', 
-																				data-validation-length='min1',
-																				data-validation-event="change",
-																				data-display-if-trigger)
-														option(value="1") Коробка
-														option(value="2") Тубус
-														option(value="3") Конверт
-													label(for='#GruzType[0]').input-label Вид груза
-											.input-item.w50
-												.input-wrapper
-													input.input-main(type="number",
-																	id='GruzTotalWeight[0]',
-																	placeholder='0.5',
-																	name='GruzTotalWeight[0]',
-																	data-validation="number",
-																	data-validation-allowing="float,positive",
-																	data-validation-error-msg="ВВедите корректный вес",
-																	data-validation-decimal-separator=".")
-													label(for='#GruzTotalWeight[0]').input-label Вес, кг
-										.form-block-subwrapper2(data-display-if-container='GruzType[0]')
-										.input-row
-											.input-item
-												.input-wrapper
-													textarea.input-main.maxlength(type="text",name='PackageDescr[0]',id='PackageDescr[0]',placeholder='Например, ценный груз', data-countdown='200')
-													label(for='#PackageDescr[0]').input-label Описание груза
-							.accordeon-head
-								.link-dotted.big.js-accordeon-trigger
-									.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Заполнить данные по каждому грузовому месту
-									.link-dotted-icon
-										+icon('arrd')
-								.link-icon.sm.js-calculation-reset
-									.link-icon-icon
-										+icon('close')
-									.link-icon-text Отменить расчёт
-					//////////
-					// END компоненты в форму
-					///////////
+								.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
+								.accordeon-body(style='display: none;')
+									.form-block.js-calculation-reset-cont(data-formula='0')
+										.form-block-column
+											.input-row
+												.input-item.w50
+													.input-wrapper
+														input.input-main(
+																		id='BoxA',
+																		placeholder='1',
+																		type="number",
+																		name='BoxA',
+																		data-validation="number",
+																		data-validation-error-msg="Введите корректную величину",
+																		data-validation-allowing="positive,range[1;1000]",
+																		data-validation-optional="true")
+														label(for='#BoxA').input-label Длина (A), см
+												.input-item.w50
+													.input-wrapper
+														input.input-main(
+																		id='BoxB',
+																		placeholder='1',
+																		type="number",
+																		name='BoxB',
+																		data-validation="number",
+																		data-validation-error-msg="Введите корректную величину",
+																		data-validation-allowing="positive,range[1;1000]",
+																		data-validation-optional="true")
+														label(for='#BoxB').input-label Ширина (B), см
+												.input-item.w50
+													.input-wrapper
+														input.input-main(
+																		id='BoxH',
+																		placeholder='1',
+																		type="number",
+																		name='BoxH',
+																		data-validation="number",
+																		data-validation-error-msg="Введите корректную величину",
+																		data-validation-allowing="positive,range[1;1000]",
+																		data-validation-optional="true")
+														label(for='#BoxH').input-label Высота (H), см
+												.form-block-result
+													.form-block-result-inner
+														.caption Обьемный вес
+														.form-block-result-text.js-CalcForm-result
+														|
+												.form-block-calcreset
+													.link-icon.sm.js-calculation-reset
+														.link-icon-icon
+															+icon('close')
+														.link-icon-text Отменить расчёт
+										.form-block-column
+											img(src="img/calc/1.png", alt="")
+							// блок с тубусом
+							.accordeon-wrapper(data-display-target='GruzType',data-display-if='2')
+								.accordeon-head
+									.link-dotted.color-black.js-accordeon-trigger
+										.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Расcчитать объёмный вес
+										.link-dotted-icon
+											+icon('arrd')
+									.quest-wrap
+										.quest-trigger
+											+icon('question')
+										.input-dropdown-target
+											.input-dropdown-content
+												.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.
+								.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
+								.accordeon-body(style='display: none;')
+									.form-block.js-calculation-reset-cont(data-formula='1')
+										.form-block-column
+											.input-row
+												.input-item.w50
+													.input-wrapper
+														input.input-main(
+																		id='BoxA',
+																		placeholder='1',
+																		type="number",
+																		name='BoxA',
+																		data-validation="number",
+																		data-validation-error-msg="Введите корректную величину",
+																		data-validation-allowing="positive,range[1;1000]",
+																		data-validation-optional="true")
+														label(for='#BoxA').input-label Сторона (A), см
+												.input-item.w50
+													.input-wrapper
+														input.input-main(
+																		id='BoxB',
+																		placeholder='1',
+																		type="number",
+																		name='BoxB',
+																		data-validation="number",
+																		data-validation-error-msg="Введите корректную величину",
+																		data-validation-allowing="positive,range[1;1000]",
+																		data-validation-optional="true")
+														label(for='#BoxB').input-label Высота (H), см
+												.form-block-result
+													.form-block-result-inner
+														.caption Обьемный вес
+														.form-block-result-text.js-CalcForm-result
+												.form-block-calcreset
+													.link-icon.sm.js-calculation-reset
+														.link-icon-icon
+															+icon('close')
+														.link-icon-text Отменить расчёт
+										.form-block-column
+											img(src="img/calc/2.png", alt="")
+							.form-block.js-calculation-reset-cont(data-formula='0',data-display-target='GruzType[0]',data-display-if="3")
+								.input-row
+									.input-item.w50
+										.help-block.help Вы можете отправить в конверте не более 60 листов формата А4. 
+							.form-block.js-calculation-reset-cont(data-formula='1',data-display-target='GruzType[0]',data-display-if="2")
+								.form-block-head
+									.title.h5 Объёмный вес
+								.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
+								.form-block-column
+									.input-row
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+																id='BoxA',
+																placeholder='1',
+																type="number",
+																name='BoxA',
+																data-validation="number",
+																data-validation-error-msg="Введите корректную величину",
+																data-validation-allowing="positive,range[1;1000]",
+																data-validation-optional="true")
+												label(for='#BoxA').input-label Сторона (A), см
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+																id='BoxB',
+																placeholder='1',
+																type="number",
+																name='BoxB',
+																data-validation="number",
+																data-validation-error-msg="Введите корректную величину",
+																data-validation-allowing="positive,range[1;1000]",
+																data-validation-optional="true")
+												label(for='#BoxB').input-label Высота (H), см
+										.form-block-result
+											.form-block-result-inner
+												.caption Обьемный вес
+												.form-block-result-text.js-CalcForm-result
+										.form-block-calcreset
+											.link-icon.sm.js-calculation-reset
+												.link-icon-icon
+													+icon('close')
+												.link-icon-text Отменить расчёт
+								.form-block-column
+									img(src="img/calc/2.png", alt="")
+							.form-block.js-calculation-reset-cont(data-formula='0',data-display-target='GruzType[0]',data-display-if="1")
+								.form-block-head
+									.title.h5 Объёмный вес
+								.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
+								.form-block-column
+									.input-row
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+																id='BoxA',
+																placeholder='1',
+																type="number",
+																name='BoxA',
+																data-validation="number",
+																data-validation-error-msg="Введите корректную величину",
+																data-validation-allowing="positive,range[1;1000]",
+																data-validation-optional="true")
+												label(for='#BoxA[0]').input-label Длина (A), см
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+																id='BoxB',
+																placeholder='1',
+																type="number",
+																name='BoxB',
+																data-validation="number",
+																data-validation-error-msg="Введите корректную величину",
+																data-validation-allowing="positive,range[1;1000]",
+																data-validation-optional="true")
+												label(for='#BoxB').input-label Ширина (B), см
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+																id='BoxH',
+																placeholder='1',
+																type="number",
+																name='BoxH',
+																data-validation="number",
+																data-validation-error-msg="Введите корректную величину",
+																data-validation-allowing="positive,range[1;1000]",
+																data-validation-optional="true")
+												label(for='#BoxH').input-label Высота (H), см
+										.form-block-result
+											.form-block-result-inner
+												.caption Обьемный вес
+												.form-block-result-text.js-CalcForm-result
+												|
+										.form-block-calcreset
+											.link-icon.sm.js-calculation-reset
+												.link-icon-icon
+													+icon('close')
+												.link-icon-text Отменить расчёт
 
-					form(action="/",data-step='2',style='display: none;').js-validate.form-step
-						.border-block.hideborder
-							.border-block-content
-								.border-block-content-head
-									.title.h3 Москва, Россия
-										span.delivery 
-										|Санкт-Петербург, Россия
-									.link-icon.edit(onclick='window.DOM.moveTo(1)')
+								.form-block-column
+									img(src="img/calc/1.png", alt="")
+							// аккордеон с множественными блоками
+
+							.accordeon-wrapper.block-yellow.js-calculation-target#Accordeon-multiple(data-display-target='GruzPlaces')
+								.accordeon-body(style='display: none;')
+									.accordeon-body-head
+										.title.h4 Данные по каждому грузовому месту
+										.quest-wrap
+											.quest-trigger
+												+icon('question')
+											.input-dropdown-target
+												.input-dropdown-content
+													.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.
+									.accordeon-body-loop
+										.form-block.js-calculation-reset-cont
+											.form-block-head
+												.title.h5 Место №
+													span 1
+											.input-row
+												.input-item.w50
+													.input-wrapper
+														select.input-main.js-select(name='GruzType[0]', 
+																					id='GruzType[0]',
+																					data-validation='length', 
+																					data-validation-length='min1',
+																					data-validation-event="change",
+																					data-display-if-trigger)
+															option(value="1") Коробка
+															option(value="2") Тубус
+															option(value="3") Конверт
+														label(for='#GruzType[0]').input-label Вид груза
+												.input-item.w50
+													.input-wrapper
+														input.input-main(type="number",
+																		id='GruzTotalWeight[0]',
+																		placeholder='0.5',
+																		name='GruzTotalWeight[0]',
+																		data-validation="number",
+																		data-validation-allowing="float,positive",
+																		data-validation-error-msg="ВВедите корректный вес",
+																		data-validation-decimal-separator=".")
+														label(for='#GruzTotalWeight[0]').input-label Вес, кг
+											.form-block-subwrapper2(data-display-if-container='GruzType[0]')
+											.input-row
+												.input-item
+													.input-wrapper
+														textarea.input-main.maxlength(type="text",name='PackageDescr[0]',id='PackageDescr[0]',placeholder='Например, ценный груз', data-countdown='200')
+														label(for='#PackageDescr[0]').input-label Описание груза
+								.accordeon-head
+									.link-dotted.big.js-accordeon-trigger
+										.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Заполнить данные по каждому грузовому месту
+										.link-dotted-icon
+											+icon('arrd')
+									.link-icon.sm.js-calculation-reset
 										.link-icon-icon
-											+icon('edit')
-						.border-block
-							.border-block-content
-								.title.h3 Тарифы
-								.form-block
-									.form-block-table
-										.form-block-table-head
-											.form-block-table-item
-												.caption Тариф
-											.form-block-table-item
-												.caption Срок доставки
-											.form-block-table-item
-												.caption Стоимость
-										.form-block-table-row
-											.form-block-table-item
-												label.select-radio-label.radio-simple
-													input(
-															type="radio",
-															name='DeliveryType',
-															value='1',
-															checked='checked').select-radio-input-real
-													.select-radio-inner
-														span.select-radio-input
-															span.select-radio-input-fake
-														span.select-radio-text Сверхсрочный
-															span.caption Срочная доставка документов и грузов «из рук в руки» в течение 1-2 дней
-											.form-block-table-item(data-alttext='Срок доставки')
-												.text.sm 1-2 раб. дня
-											.form-block-table-item(data-alttext='Стоимость')
-												.title.h4 1 450 ₽
-										.form-block-table-row
-											.form-block-table-item
-												label.select-radio-label.radio-simple
-													input(
-															type="radio",
-															name='DeliveryType',
-															value='2').select-radio-input-real
-													.select-radio-inner
-														span.select-radio-input
-															span.select-radio-input-fake
-														span.select-radio-text Срочный
-															span.caption Быстрая и оптимальная доставка документов и грузов по России в течение 3-4 дней
-											.form-block-table-item(data-alttext='Срок доставки')
-												.text.sm 3-4 раб. дня
-											.form-block-table-item(data-alttext='Стоимость')
-												.title.h4 1 200 ₽
-										.form-block-table-row
-											.form-block-table-item
-												label.select-radio-label.radio-simple
-													input(
-															type="radio",
-															name='DeliveryType',
-															value='3').select-radio-input-real
-													.select-radio-inner
-														span.select-radio-input
-															span.select-radio-input-fake
-														span.select-radio-text Эконом доставка
-															span.caption Классическая доставка по принципу «от двери до двери» со стандартными сроками доставки
-											.form-block-table-item(data-alttext='Срок доставки')
-												.text.sm 4-5 раб. дня
-											.form-block-table-item(data-alttext='Стоимость')
-												.title.h4 850 ₽
-						.border-block
-							.border-block-content
-								.title.h3 Опции
-								.form-block
-									.form-block-options
-										.form-block-options-item
-											.form-block-options-item-inner
-												label.select-radio-label.radio-simple
-													input(
-															type="checkbox",
-															name='optionSms').js-option-trigger.select-radio-input-real
-													.select-radio-inner
-														span.select-radio-input
-															span.select-radio-input-fake
-														span.select-radio-text SMS-оповещение о доставке груза
-												.quest-wrap
-													.quest-trigger
-														+icon('question')
-													.input-dropdown-target
-														.input-dropdown-content
-															.text Услуга, позволяющая путём отправки короткого SMS-сообщения уведомить о том, что груз доставлен получателю.
-												.title.h4
-													span 100
-													| ₽
-											.form-block-options-item-inputs.js-option-target(style='display: none;')
-												.input-row
-													.input-item.w50
-														.input-wrapper
-															input.input-main(
-																			id='optionSmsTel',
-																			placeholder='+7 495 000-00-00',
-																			type="tel",
-																			name='optionSmsTel',
-																			data-validation="custom",
-																			data-validation-regexp="^[-0-9()+ ]+$",
-																			data-validation-error-msg="Введите корректный номер телефона",
-																			data-validation-depends-on="optionSms")
-															label(for='#optionSmsTel').input-label Номер телефона
-										.form-block-options-item
-											.form-block-options-item-inner
-												label.select-radio-label.radio-simple
-													input(
-															type="checkbox",
-															name='optionDocReturn').select-radio-input-real
-													.select-radio-inner
-														span.select-radio-input
-															span.select-radio-input-fake
-														span.select-radio-text Возврат документов
-												.quest-wrap
-													.quest-trigger
-														+icon('question')
-													.input-dropdown-target
-														.input-dropdown-content
-															.text Возврат отправленных сопроводи- тельных документов с подписью получателя либо иных возвратных документов от получателя.
-												.title.h4
-													span 300
-													| ₽
-											.form-block-options-item-inputs(style='display: none;')
-										.form-block-options-item
-											.form-block-options-item-inner
-												label.select-radio-label.radio-simple
-													input(
-															type="checkbox",
-															name='optionPrice').js-option-trigger.select-radio-input-real
-													.select-radio-inner
-														span.select-radio-input
-															span.select-radio-input-fake
-														span.select-radio-text Объявленная стоимость
-												.quest-wrap
-													.quest-trigger
-														+icon('question')
-													.input-dropdown-target
-														.input-dropdown-content
-															.text Возмещение ущерба клиенту при утере/ порче отправления. Тариф рассчиты- вается в процентах от оценочной стоимости отправления и составляет: 10%.
-												.title.h4
-													span.js-partPrice-target 0
-													| ₽
-											.form-block-options-item-inputs.js-option-target(style='display: none;')
-												.input-row
-													.input-item.w50
-														.input-wrapper
-															//data-partPrice-persent для расчета стоимости
-															input.input-main(
-																			id='optionPriceInp',
-																			placeholder='500',
-																			type="number",
-																			name='optionPriceInp',
-																			data-validation="number",
-																			data-validation-allowing="positive,range[500;25000]"
-																			data-validation-error-msg="Введите корректную сумму, минимальная Оценочная стоимость  - 500р",
-																			data-validation-depends-on="optionPrice",data-partprice-persent='5').js-partPrice-trigger
-															label(for='#optionPriceInp').input-label Оценочная стоимость, ₽
-															input(type="hidden",
-																name='optionPriceInpCalculated').js-partPrice-target
-						.border-block.bg-yellow
-							.border-block-content
-								.border-block-content-left
-									.text.sm.delivery-result
-										span Москва, Россия
-										span Санкт-Петербург, Россия
-										span.deliveryarr.bottom
-									dl
-										dt
-											.caption Тариф
-										dd 
-											.text.sm Сверхсрочный 
-										dt
-											.caption Срок доставки
-										dd 
-											.text.sm 1-2 раб.дня
-										dt
-											.caption Опции
-										dd 
-											.text.sm 
-												span SMS-оповещение о доставке груза
-												span Объявленная стоимость
-								.border-block-content-right
-									.title.h3 1 750 ₽
-									.caption Стоимость с учётом НДС
-									a(href="#") Стать клиентом
-						.block-buttons
-							.link-icon(onclick='window.CalcNav.moveTo(1)')
-								.link-icon-icon
-									+icon('arrl')
-								.link-icon-text Назад
-							button(type='button').btn.color-gray
-								.btn-inner 
-									span Сохранить,
-										br
-										|сделать новый расчёт
-							button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.btn-next
-								.btn-inner 
-									span Оформить
-					form(action="/",data-step='3',style='display: none;').js-validate.form-step
-						.border-block
-							.border-block-content
-								.title.h3 Отправитель
-								.form-block
-									.form-block-head
-										.title.h5 Контактная информация
-									.input-row
-										.input-item.w100
-											.input-wrapper
-												input.input-main.maxlength(
-																id='SenderPerson',
-																placeholder='Иванов Сергей Иванович',
-																type="text",
-																name='SenderPerson',
-																data-validation="length",
-																data-validation-error-msg="Обязательное поле",
-																data-validation-length='min8',
-																data-countdown='50')
-												label(for='#SenderPerson').input-label Контактное лицо
-										.input-item.w100
-											.input-wrapper
-												input.input-main(
-																id='SenderEmail',
-																placeholder='user@mail.ru',
-																type="email",
-																name='SenderEmail',
-																data-validation="email",
-																data-validation-error-msg="Некорректный E-mail")
-												label(for='#SenderEmail').input-label E-mail
-									.input-row.js-repeatBlock(data-repeatlimit='4')
-										.input-item.w50
-											.input-wrapper
-												input.input-main(
-																id='SenderTel[0]',
-																placeholder='+7 495 000-00-00',
-																type="tel",
-																name='SenderTel[0]',
-																data-validation="custom",
-																data-validation-regexp="^[-0-9()+ ]+$",
-																data-validation-error-msg="Введите корректный номер телефона")
-												label(for='#SenderTel[0]').input-label Телефон
-										.input-item.w50
-											.input-wrapper
-												//data-partPrice-persent для расчета стоимости
-												input.input-main.maxlength(
-																id='SenderTelAdd[0]',
-																placeholder='111',
-																type="number",
-																name='SenderTelAdd[0]',
-																data-validation="number",
-																data-validation-allowing="positive"
-																data-validation-error-msg="Добавочный номер должен содержать только цифры",
-																data-validation-optional="true",
-																data-countdown='20')
-												label(for='#SenderTelAdd[0]').input-label Добавочный
-									button(type='button').link-icon.primary.js-repeatBlock-trigger
-										.link-icon-icon
-											+icon('plus')
-										.link-icon-text Добавить номер
-								.form-block
-									.form-block-head
-										.title.h5 Адрес
-									.input-row
-										.input-item.multi
-											.input-wrapper.disabled
-												input.input-main.valid(
-															id='SenderCountry',
-															type='text',
-															name='SenderCountry',
-															placeholder='Например, Россия',
-															data-validation="length",
-															data-validation-length='min1',
-															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
-															value='Россия')
-												abel(for='#SenderCountry').input-label Страна
-											.input-wrapper.disabled
-												input.input-main.valid(
-															id='SenderCity',
-															type='text',
-															name='SenderCicy',
-															placeholder='Например, Москва',
-															data-validation="length",
-															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
-															data-validation-length='min1',
-															value='Москва')
-												label(for='#SenderCity').input-label Населённый пункт
-										.input-item.w100
-											.input-wrapper
-												// здесь используются подсказки с ахантера
-												// т.к. они рабюотают только по россии мне нужно как-то отслеживать стоит ли вообще обращаться лишний раз к апи ахантер.
-												// в дата-checkCountry передаю имя зависимого инпута и если его значение === Россия (именно на русском) иничу подсказки (например если инпута 2 и доставка курьером из России в европу, а в европе подсказки не нужны)
-												// или если есть другие идеи как чекать российский регион, милости прошу
-												// какая же это все хуйня, какой смысл?
-												input.input-main.js-ajaxSuggest(id='SenderAddress',
-															type='text',
-															name='SenderAddress',
-															placeholder='ул. Тагильская, д. 1, кв. 1',
-															data-validation="length",
-															data-validation-error-msg="Поле обязателньо",
-															data-validation-length='min3',
-															data-check-country='SenderCountry',
-															data-get-city ='SenderCicy')
-												label(for='#SenderAddress').input-label Полный адрес
-										.input-item.w33
-											.input-wrapper
-												input.input-main(
-																id='SenderPodezd',
-																placeholder='1',
-																type="number",
-																name='SenderPodezd',
-																data-validation="number",
-																data-validation-allowing="positive"
-																data-validation-error-msg="Обязательное поле")
-												label(for='#SenderPodezd').input-label Подъезд
-										.input-item.w33
-											.input-wrapper
-												input.input-main(
-																id='SenderDomofoneCode',
-																placeholder='1',
-																type="number",
-																name='SenderDomofoneCode',
-																data-validation="number",
-																data-validation-allowing="positive"
-																data-validation-error-msg="Обязательное поле")
-												label(for='#SenderDomofoneCode').input-label Домофон или код
-										.input-item.w33
-											.input-wrapper
-												input.input-main(
-																id='SenderFloor',
-																placeholder='1',
-																type="number",
-																name='SenderFloor',
-																data-validation="number",
-																data-validation-allowing="positive"
-																data-validation-error-msg="Обязательное поле")
-												label(for='#SenderFloor').input-label Этаж
-										.input-item.w50
-											.input-wrapper
-												input.input-main.date(type="text",name='SenderDate',data-validation="length",data-validation-length='min1',data-validation-error-msg="Поле обязателно для заполнения",id='SenderDate',placeholder='Иванов Сергей Иванович',readonly='true')
-												label(for='#SenderDate').input-label Дата
-												.input-icon
-													+icon('calendar')
-										.input-item.w50
-											.input-wrapper
-												select.input-main.js-select(name='SenderTime', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='SenderTime')
-													option(value="1") C 6.00 до 9.00
-													option(value="2") С 9.00 до 12.00
-													option(value="3") С 12.00 до 15.00
-													option(value="4") С 15.00 до 18.00
-													option(value="5") С 18.00 до 21.00
-												label(for='#SenderTime').input-label Время приезда курьера
-										.input-item.w100
-											.input-wrapper
-												textarea.input-main.maxlength(type="text",name='SenderDescr',id='SenderDescr',placeholder='Например, курьер должен перезвонить', data-countdown='200')
-												label(for='#SenderDescr').input-label Дополнительная информация
-						.border-block
-							.border-block-content
-								.title.h3 Получатель
-								.form-block
-									.form-block-head
-										.title.h5 Контактная информация
-									.input-row
-										.input-item.w100
-											.input-wrapper
-												input.input-main.maxlength(
-																id='RecipientPerson',
-																placeholder='Иванов Сергей Иванович',
-																type="text",
-																name='RecipientPerson',
-																data-validation="length",
-																data-validation-error-msg="Обязательное поле",
-																data-validation-length='min8',
-																data-countdown='50')
-												label(for='#RecipientPerson').input-label Контактное лицо
-										.input-item.w100
-											.input-wrapper
-												input.input-main(
-																id='RecipientEmail',
-																placeholder='user@mail.ru',
-																type="email",
-																name='RecipientEmail',
-																data-validation="email",
-																data-validation-error-msg="Некорректный E-mail")
-												label(for='#RecipientEmail').input-label E-mail
-									.input-row.js-repeatBlock(data-repeatlimit='2')
-										.input-item.w50
-											.input-wrapper
-												input.input-main(
-																id='RecipientTel[0]',
-																placeholder='+7 495 000-00-00',
-																type="tel",
-																name='RecipientTel[0]',
-																data-validation="custom",
-																data-validation-regexp="^[-0-9()+ ]+$",
-																data-validation-error-msg="Введите корректный номер телефона")
-												label(for='#RecipientTel[0]').input-label Телефон
-										.input-item.w50
-											.input-wrapper
-												//data-partPrice-persent для расчета стоимости
-												input.input-main.maxlength(
-																id='RecipientTelAdd[0]',
-																placeholder='111',
-																type="number",
-																name='RecipientTelAdd[0]',
-																data-validation="number",
-																data-validation-allowing="positive"
-																data-validation-error-msg="Добавочный номер должен содержать только цифры",
-																data-validation-optional="true",
-																data-countdown='20')
-												label(for='#RecipientTelAdd[0]').input-label Добавочный
-									button(type='button').link-icon.primary.js-repeatBlock-trigger
-										.link-icon-icon
-											+icon('plus')
-										.link-icon-text Добавить номер
-								.form-block
-									.form-block-head
-										.title.h5 Адрес
-									.input-row
-										.input-item.multi
-											.input-wrapper.disabled
-												input.input-main.valid(
-															name='RecipientCountry',
-															placeholder='Например, Россия',
-															data-validation="length",
-															data-validation-length='min1',
-															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
-															value='Россия')
-												abel(for='#RecipientCountry').input-label Страна
-											.input-wrapper.disabled
-												input.input-main.valid(
-															name='RecipientCity',
-															placeholder='Например, Москва',
-															data-validation="length",
-															data-validation-error-msg="Неверно выбрана страна или населённый пункт",
-															data-validation-length='min1',
-															value='Москва')
-												label(for='#RecipientCity').input-label Населённый пункт
-										.input-item.w100
-											.input-wrapper
-												textarea.input-main.maxlength(type="text",name='RecipientDescr',id='RecipientDescr',placeholder='Например, перезвоните получателю', data-countdown='200')
-												label(for='#RecipientDescr').input-label Дополнительная информация
-								.form-block
-									.form-block-head
-										.title.h5 Пункт самовывоза
-									.input-row
-										.form-block-options
-											//.form-block-radio
-											.form-block-options-item.form-block-radio
-												.form-block-options-item-inner
+											+icon('close')
+										.link-icon-text Отменить расчёт
+						//////////
+						// END компоненты в форму
+						///////////
+
+						.form-step(data-step='2',style='display: none;')
+							.border-block.hideborder
+								.border-block-content
+									.border-block-content-head
+										.title.h3 Москва, Россия
+											span.delivery 
+											|Санкт-Петербург, Россия
+										.link-icon.edit(onclick='window.CalcNav.moveTo(1)')
+											.link-icon-icon
+												+icon('edit')
+							.border-block
+								.border-block-content
+									.title.h3 Тарифы
+									.form-block
+										.form-block-table
+											.form-block-table-head
+												.form-block-table-item
+													.caption Тариф
+												.form-block-table-item
+													.caption Срок доставки
+												.form-block-table-item
+													.caption Стоимость
+											.form-block-table-row
+												.form-block-table-item
 													label.select-radio-label.radio-simple
 														input(
 																type="radio",
-																name='Punct',
-																value='1').select-radio-input-real
+																name='DeliveryType',
+																value='1',
+																checked='checked').select-radio-input-real
 														.select-radio-inner
 															span.select-radio-input
 																span.select-radio-input-fake
-															span.select-radio-text г. Санкт-Петербург, пр. Обуховской Обороны, д. 295, Логопарк «Троицкий», заезд/вход с Запорожской улицы, склад А1
-													.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
-													.text.sm
-														a(href="tel:+78123321000") +7 (812) 332-1-000
-														a(href="mailto:cse-spb@cse-spb.ru") cse-spb@cse-spb.ru
-											.form-block-options-item.form-block-radio
-												.form-block-options-item-inner
+															span.select-radio-text Сверхсрочный
+																span.caption Срочная доставка документов и грузов «из рук в руки» в течение 1-2 дней
+												.form-block-table-item(data-alttext='Срок доставки')
+													.text.sm 1-2 раб. дня
+												.form-block-table-item(data-alttext='Стоимость')
+													.title.h4 1 450 ₽
+											.form-block-table-row
+												.form-block-table-item
 													label.select-radio-label.radio-simple
 														input(
 																type="radio",
-																name='Punct',
+																name='DeliveryType',
 																value='2').select-radio-input-real
 														.select-radio-inner
 															span.select-radio-input
 																span.select-radio-input-fake
-															span.select-radio-text г. Санкт-Петербург, пр. Невский, д. 54, оф. 431
-													.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
-													.text.sm
-														a(href="tel:+78123321000") +7 (812) 334-5-144
-														a(href="mailto:cse-spb@.ru") cse-spb@.ru
-											.form-block-options-item.form-block-radio
-												.form-block-options-item-inner
+															span.select-radio-text Срочный
+																span.caption Быстрая и оптимальная доставка документов и грузов по России в течение 3-4 дней
+												.form-block-table-item(data-alttext='Срок доставки')
+													.text.sm 3-4 раб. дня
+												.form-block-table-item(data-alttext='Стоимость')
+													.title.h4 1 200 ₽
+											.form-block-table-row
+												.form-block-table-item
 													label.select-radio-label.radio-simple
 														input(
 																type="radio",
-																name='Punct',
+																name='DeliveryType',
 																value='3').select-radio-input-real
 														.select-radio-inner
 															span.select-radio-input
 																span.select-radio-input-fake
-															span.select-radio-text г. Санкт-Петербург, ул. Бадаева, д. 10, корп. 1, оф. 431
-													.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
-													.text.sm
-														a(href="tel:+78123321000") +7 (812) 334-5-144
-														a(href="mailto:cse-spb@.ru") cse-spb@.ru
+															span.select-radio-text Эконом доставка
+																span.caption Классическая доставка по принципу «от двери до двери» со стандартными сроками доставки
+												.form-block-table-item(data-alttext='Срок доставки')
+													.text.sm 4-5 раб. дня
+												.form-block-table-item(data-alttext='Стоимость')
+													.title.h4 850 ₽
+							.border-block
+								.border-block-content
+									.title.h3 Опции
+									.form-block
+										.form-block-options
+											.form-block-options-item
+												.form-block-options-item-inner
+													label.select-radio-label.radio-simple
+														input(
+																type="checkbox",
+																name='optionSms').js-option-trigger.select-radio-input-real
+														.select-radio-inner
+															span.select-radio-input
+																span.select-radio-input-fake
+															span.select-radio-text SMS-оповещение о доставке груза
+													.quest-wrap
+														.quest-trigger
+															+icon('question')
+														.input-dropdown-target
+															.input-dropdown-content
+																.text Услуга, позволяющая путём отправки короткого SMS-сообщения уведомить о том, что груз доставлен получателю.
+													.title.h4
+														span 100
+														| ₽
+												.form-block-options-item-inputs.js-option-target(style='display: none;')
+													.input-row
+														.input-item.w50
+															.input-wrapper
+																input.input-main(
+																				id='optionSmsTel',
+																				placeholder='+7 495 000-00-00',
+																				type="tel",
+																				name='optionSmsTel',
+																				data-validation="custom",
+																				data-validation-regexp="^[-0-9()+ ]+$",
+																				data-validation-error-msg="Введите корректный номер телефона",
+																				data-validation-depends-on="optionSms")
+																label(for='#optionSmsTel').input-label Номер телефона
+											.form-block-options-item
+												.form-block-options-item-inner
+													label.select-radio-label.radio-simple
+														input(
+																type="checkbox",
+																name='optionDocReturn').select-radio-input-real
+														.select-radio-inner
+															span.select-radio-input
+																span.select-radio-input-fake
+															span.select-radio-text Возврат документов
+													.quest-wrap
+														.quest-trigger
+															+icon('question')
+														.input-dropdown-target
+															.input-dropdown-content
+																.text Возврат отправленных сопроводи- тельных документов с подписью получателя либо иных возвратных документов от получателя.
+													.title.h4
+														span 300
+														| ₽
+												.form-block-options-item-inputs(style='display: none;')
+											.form-block-options-item
+												.form-block-options-item-inner
+													label.select-radio-label.radio-simple
+														input(
+																type="checkbox",
+																name='optionPrice').js-option-trigger.select-radio-input-real
+														.select-radio-inner
+															span.select-radio-input
+																span.select-radio-input-fake
+															span.select-radio-text Объявленная стоимость
+													.quest-wrap
+														.quest-trigger
+															+icon('question')
+														.input-dropdown-target
+															.input-dropdown-content
+																.text Возмещение ущерба клиенту при утере/ порче отправления. Тариф рассчиты- вается в процентах от оценочной стоимости отправления и составляет: 10%.
+													.title.h4
+														span.js-partPrice-target 0
+														| ₽
+												.form-block-options-item-inputs.js-option-target(style='display: none;')
+													.input-row
+														.input-item.w50
+															.input-wrapper
+																//data-partPrice-persent для расчета стоимости
+																input.input-main(
+																				id='optionPriceInp',
+																				placeholder='500',
+																				type="number",
+																				name='optionPriceInp',
+																				data-validation="number",
+																				data-validation-allowing="positive,range[500;25000]"
+																				data-validation-error-msg="Введите корректную сумму, минимальная Оценочная стоимость  - 500р",
+																				data-validation-depends-on="optionPrice",data-partprice-persent='5').js-partPrice-trigger
+																label(for='#optionPriceInp').input-label Оценочная стоимость, ₽
+																input(type="hidden",
+																	name='optionPriceInpCalculated').js-partPrice-target
+							.border-block.bg-yellow
+								.border-block-content
+									.border-block-content-left
+										.text.sm.delivery-result
+											span Москва, Россия
+											span Санкт-Петербург, Россия
+											span.deliveryarr.bottom
+										dl
+											dt
+												.caption Тариф
+											dd 
+												.text.sm Сверхсрочный 
+											dt
+												.caption Срок доставки
+											dd 
+												.text.sm 1-2 раб.дня
+											dt
+												.caption Опции
+											dd 
+												.text.sm 
+													span SMS-оповещение о доставке груза
+													span Объявленная стоимость
+									.border-block-content-right
+										.title.h3 1 750 ₽
+										.caption Стоимость с учётом НДС
+										a(href="#") Стать клиентом
+							.block-buttons
+								.link-icon(onclick='window.CalcNav.moveTo(1)')
+									.link-icon-icon
+										+icon('arrl')
+									.link-icon-text Назад
+								button(type='button').btn.color-gray
+									.btn-inner 
+										span Сохранить,
+											br
+											|сделать новый расчёт
+								button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.btn-next
+									.btn-inner 
+										span Оформить
+						.form-step(data-step='3',style='display: none;')
+							.border-block
+								.border-block-content
+									.title.h3 Отправитель
+									.form-block
+										.form-block-head
+											.title.h5 Контактная информация
+										.input-row
+											.input-item.w100
+												.input-wrapper
+													input.input-main.maxlength(
+																	id='SenderPerson',
+																	placeholder='Иванов Сергей Иванович',
+																	type="text",
+																	name='SenderPerson',
+																	data-validation="length",
+																	data-validation-error-msg="Обязательное поле",
+																	data-validation-length='min8',
+																	data-countdown='50')
+													label(for='#SenderPerson').input-label Контактное лицо
+											.input-item.w100
+												.input-wrapper
+													input.input-main(
+																	id='SenderEmail',
+																	placeholder='user@mail.ru',
+																	type="email",
+																	name='SenderEmail',
+																	data-validation="email",
+																	data-validation-error-msg="Некорректный E-mail")
+													label(for='#SenderEmail').input-label E-mail
+										.input-row.js-repeatBlock(data-repeatlimit='4')
+											.input-item.w50
+												.input-wrapper
+													input.input-main(
+																	id='SenderTel[0]',
+																	placeholder='+7 495 000-00-00',
+																	type="tel",
+																	name='SenderTel[0]',
+																	data-validation="custom",
+																	data-validation-regexp="^[-0-9()+ ]+$",
+																	data-validation-error-msg="Введите корректный номер телефона")
+													label(for='#SenderTel[0]').input-label Телефон
+											.input-item.w50
+												.input-wrapper
+													//data-partPrice-persent для расчета стоимости
+													input.input-main.maxlength(
+																	id='SenderTelAdd[0]',
+																	placeholder='111',
+																	type="number",
+																	name='SenderTelAdd[0]',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Добавочный номер должен содержать только цифры",
+																	data-validation-optional="true",
+																	data-countdown='20')
+													label(for='#SenderTelAdd[0]').input-label Добавочный
+										button(type='button').link-icon.primary.js-repeatBlock-trigger
+											.link-icon-icon
+												+icon('plus')
+											.link-icon-text Добавить номер
+									.form-block
+										.form-block-head
+											.title.h5 Адрес
+										.input-row
+											.input-item.multi
+												.input-wrapper.disabled
+													input.input-main.valid(
+																id='SenderCountry',
+																type='text',
+																name='SenderCountry',
+																placeholder='Например, Россия',
+																data-validation="length",
+																data-validation-length='min1',
+																data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+																value='Россия')
+													abel(for='#SenderCountry').input-label Страна
+												.input-wrapper.disabled
+													input.input-main.valid(
+																id='SenderCity',
+																type='text',
+																name='SenderCicy',
+																placeholder='Например, Москва',
+																data-validation="length",
+																data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+																data-validation-length='min1',
+																value='Москва')
+													label(for='#SenderCity').input-label Населённый пункт
+											.input-item.w100
+												.input-wrapper
+													// здесь используются подсказки с ахантера
+													// т.к. они рабюотают только по россии мне нужно как-то отслеживать стоит ли вообще обращаться лишний раз к апи ахантер.
+													// в дата-checkCountry передаю имя зависимого инпута и если его значение === Россия (именно на русском) иничу подсказки (например если инпута 2 и доставка курьером из России в европу, а в европе подсказки не нужны)
+													// или если есть другие идеи как чекать российский регион, милости прошу
+													// какая же это все хуйня, какой смысл?
+													input.input-main.js-ajaxSuggest(id='SenderAddress',
+																type='text',
+																name='SenderAddress',
+																placeholder='ул. Тагильская, д. 1, кв. 1',
+																data-validation="length",
+																data-validation-error-msg="Поле обязателньо",
+																data-validation-length='min3',
+																data-check-country='SenderCountry',
+																data-get-city ='SenderCicy')
+													label(for='#SenderAddress').input-label Полный адрес
+											.input-item.w33
+												.input-wrapper
+													input.input-main(
+																	id='SenderPodezd',
+																	placeholder='1',
+																	type="number",
+																	name='SenderPodezd',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Обязательное поле")
+													label(for='#SenderPodezd').input-label Подъезд
+											.input-item.w33
+												.input-wrapper
+													input.input-main(
+																	id='SenderDomofoneCode',
+																	placeholder='1',
+																	type="number",
+																	name='SenderDomofoneCode',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Обязательное поле")
+													label(for='#SenderDomofoneCode').input-label Домофон или код
+											.input-item.w33
+												.input-wrapper
+													input.input-main(
+																	id='SenderFloor',
+																	placeholder='1',
+																	type="number",
+																	name='SenderFloor',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Обязательное поле")
+													label(for='#SenderFloor').input-label Этаж
+											.input-item.w50
+												.input-wrapper
+													input.input-main.date(type="text",name='SenderDate',data-validation="length",data-validation-length='min1',data-validation-error-msg="Поле обязателно для заполнения",id='SenderDate',placeholder='Иванов Сергей Иванович',readonly='true')
+													label(for='#SenderDate').input-label Дата
+													.input-icon
+														+icon('calendar')
+											.input-item.w50
+												.input-wrapper
+													select.input-main.js-select(name='SenderTime', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='SenderTime')
+														option(value="1") C 6.00 до 9.00
+														option(value="2") С 9.00 до 12.00
+														option(value="3") С 12.00 до 15.00
+														option(value="4") С 15.00 до 18.00
+														option(value="5") С 18.00 до 21.00
+													label(for='#SenderTime').input-label Время приезда курьера
+											.input-item.w100
+												.input-wrapper
+													textarea.input-main.maxlength(type="text",name='SenderDescr',id='SenderDescr',placeholder='Например, курьер должен перезвонить', data-countdown='200')
+													label(for='#SenderDescr').input-label Дополнительная информация
+							.border-block
+								.border-block-content
+									.title.h3 Получатель
+									.form-block
+										.form-block-head
+											.title.h5 Контактная информация
+										.input-row
+											.input-item.w100
+												.input-wrapper
+													input.input-main.maxlength(
+																	id='RecipientPerson',
+																	placeholder='Иванов Сергей Иванович',
+																	type="text",
+																	name='RecipientPerson',
+																	data-validation="length",
+																	data-validation-error-msg="Обязательное поле",
+																	data-validation-length='min8',
+																	data-countdown='50')
+													label(for='#RecipientPerson').input-label Контактное лицо
+											.input-item.w100
+												.input-wrapper
+													input.input-main(
+																	id='RecipientEmail',
+																	placeholder='user@mail.ru',
+																	type="email",
+																	name='RecipientEmail',
+																	data-validation="email",
+																	data-validation-error-msg="Некорректный E-mail")
+													label(for='#RecipientEmail').input-label E-mail
+										.input-row.js-repeatBlock(data-repeatlimit='2')
+											.input-item.w50
+												.input-wrapper
+													input.input-main(
+																	id='RecipientTel[0]',
+																	placeholder='+7 495 000-00-00',
+																	type="tel",
+																	name='RecipientTel[0]',
+																	data-validation="custom",
+																	data-validation-regexp="^[-0-9()+ ]+$",
+																	data-validation-error-msg="Введите корректный номер телефона")
+													label(for='#RecipientTel[0]').input-label Телефон
+											.input-item.w50
+												.input-wrapper
+													//data-partPrice-persent для расчета стоимости
+													input.input-main.maxlength(
+																	id='RecipientTelAdd[0]',
+																	placeholder='111',
+																	type="number",
+																	name='RecipientTelAdd[0]',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Добавочный номер должен содержать только цифры",
+																	data-validation-optional="true",
+																	data-countdown='20')
+													label(for='#RecipientTelAdd[0]').input-label Добавочный
+										button(type='button').link-icon.primary.js-repeatBlock-trigger
+											.link-icon-icon
+												+icon('plus')
+											.link-icon-text Добавить номер
+									.form-block
+										.form-block-head
+											.title.h5 Адрес
+										.input-row
+											.input-item.multi
+												.input-wrapper.disabled
+													input.input-main.valid(
+																name='RecipientCountry',
+																placeholder='Например, Россия',
+																data-validation="length",
+																data-validation-length='min1',
+																data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+																value='Россия')
+													abel(for='#RecipientCountry').input-label Страна
+												.input-wrapper.disabled
+													input.input-main.valid(
+																name='RecipientCity',
+																placeholder='Например, Москва',
+																data-validation="length",
+																data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+																data-validation-length='min1',
+																value='Москва')
+													label(for='#RecipientCity').input-label Населённый пункт
+											.input-item.w100
+												.input-wrapper
+													textarea.input-main.maxlength(type="text",name='RecipientDescr',id='RecipientDescr',placeholder='Например, перезвоните получателю', data-countdown='200')
+													label(for='#RecipientDescr').input-label Дополнительная информация
+									.form-block
+										.form-block-head
+											.title.h5 Пункт самовывоза
+										.input-row
+											.form-block-options
+												//.form-block-radio
+												.form-block-options-item.form-block-radio
+													.form-block-options-item-inner
+														label.select-radio-label.radio-simple
+															input(
+																	type="radio",
+																	name='Punct',
+																	value='1').select-radio-input-real
+															.select-radio-inner
+																span.select-radio-input
+																	span.select-radio-input-fake
+																span.select-radio-text г. Санкт-Петербург, пр. Обуховской Обороны, д. 295, Логопарк «Троицкий», заезд/вход с Запорожской улицы, склад А1
+														.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+														.text.sm
+															a(href="tel:+78123321000") +7 (812) 332-1-000
+															a(href="mailto:cse-spb@cse-spb.ru") cse-spb@cse-spb.ru
+												.form-block-options-item.form-block-radio
+													.form-block-options-item-inner
+														label.select-radio-label.radio-simple
+															input(
+																	type="radio",
+																	name='Punct',
+																	value='2').select-radio-input-real
+															.select-radio-inner
+																span.select-radio-input
+																	span.select-radio-input-fake
+																span.select-radio-text г. Санкт-Петербург, пр. Невский, д. 54, оф. 431
+														.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+														.text.sm
+															a(href="tel:+78123321000") +7 (812) 334-5-144
+															a(href="mailto:cse-spb@.ru") cse-spb@.ru
+												.form-block-options-item.form-block-radio
+													.form-block-options-item-inner
+														label.select-radio-label.radio-simple
+															input(
+																	type="radio",
+																	name='Punct',
+																	value='3').select-radio-input-real
+															.select-radio-inner
+																span.select-radio-input
+																	span.select-radio-input-fake
+																span.select-radio-text г. Санкт-Петербург, ул. Бадаева, д. 10, корп. 1, оф. 431
+														.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+														.text.sm
+															a(href="tel:+78123321000") +7 (812) 334-5-144
+															a(href="mailto:cse-spb@.ru") cse-spb@.ru
+												.accordeon-wrapper
+													.accordeon-body(style='display: none;')
+														.form-block-options-item.form-block-radio
+															.form-block-options-item-inner
+																label.select-radio-label.radio-simple
+																	input(
+																			type="radio",
+																			name='Punct',
+																			value='4').select-radio-input-real
+																	.select-radio-inner
+																		span.select-radio-input
+																			span.select-radio-input-fake
+																		span.select-radio-text г. Санкт-Петербург, ул. Бадаева, д. 10, корп. 1, оф. 431
+																.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+																.text.sm
+																	a(href="tel:+78123321000") +7 (812) 334-5-144
+																	a(href="mailto:cse-spb@.ru") cse-spb@.ru
+														.form-block-options-item.form-block-radio
+															.form-block-options-item-inner
+																label.select-radio-label.radio-simple
+																	input(
+																			type="radio",
+																			name='Punct',
+																			value='5').select-radio-input-real
+																	.select-radio-inner
+																		span.select-radio-input
+																			span.select-radio-input-fake
+																		span.select-radio-text г. Санкт-Петербург, ул. Бадаева, д. 10, корп. 1, оф. 431
+																.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+																.text.sm
+																	a(href="tel:+78123321000") +7 (812) 334-5-144
+																	a(href="mailto:cse-spb@.ru") cse-spb@.ru
+													.accordeon-head
+														.link-dotted.js-accordeon-trigger
+															.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Показать ещё адреса
+															.link-dotted-icon
+																+icon('arrd')
+							.border-block.PersonalData
+								.border-block-content
+									.form-block
+										.input-row
+											.input-item.w100
+												label.select-radio-label.radio-simple
+													input(
+															type="checkbox",
+															name='PersonalData').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Согласие на обработку
+															a(href="#" target='_blank') персональных данных
+							.block-buttons
+								.link-icon(onclick='window.CalcNav.moveTo(2)')
+									.link-icon-icon
+										+icon('arrl')
+									.link-icon-text Назад
+								button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.btn-next
+									.btn-inner 
+										span Далее
+						.form-step(data-step='4',style='display: none;')
+							.border-block
+								.border-block-content
+									.title.h3 Способ оплаты
+									.form-block
+										.input-row.gap-radio
+											.input-item.w33
+												//.radio-with-image и внутри картинка есть
+												label.select-radio-label.radio-with-image
+													input(
+															type="radio",
+															name='paymentMethod',
+															checked='checked').select-radio-input-real
+													.select-radio-inner
+														.select-radio-image
+															img(src="img/payment/cash.png", alt="")
+														span.select-radio-input
+															span.select-radio-input-fake.ok
+														span.select-radio-text Наличными курьеру
+											.input-item.w33
+												label.select-radio-label.radio-with-image
+													input(
+															type="radio",
+															name='paymentMethod',data-validation='required').select-radio-input-real
+													.select-radio-inner
+														.select-radio-image
+															img(src="img/payment/mts.png", alt="")
+															img(src="img/payment/megafon.png", alt="")
+															img(src="img/payment/beeline.png", alt="")
+															img(src="img/payment/t2.png", alt="")
+														span.select-radio-input
+															span.select-radio-input-fake.ok
+														span.select-radio-text Мобильный платёж
+											.input-item.w33
+												label.select-radio-label.radio-with-image
+													input(
+															type="radio",
+															name='paymentMethod').select-radio-input-real
+													.select-radio-inner
+														.select-radio-image
+															img(src="img/payment/qiwi.png", alt="")
+														span.select-radio-input
+															span.select-radio-input-fake.ok
+														span.select-radio-text Qiwi
+											.input-item.w33
+												label.select-radio-label.radio-with-image
+													input(
+															type="radio",
+															name='paymentMethod').select-radio-input-real
+													.select-radio-inner
+														.select-radio-image
+															img(src="img/payment/visa.png", alt="")
+															img(src="img/payment/master.png", alt="")
+														span.select-radio-input
+															span.select-radio-input-fake.ok
+														span.select-radio-text Visa, MasterCard
+											.input-item.w33
+												label.select-radio-label.radio-with-image
+													input(
+															type="radio",
+															name='paymentMethod').select-radio-input-real
+													.select-radio-inner
+														.select-radio-image
+															img(src="img/payment/webmoney.png", alt="")
+														span.select-radio-input
+															span.select-radio-input-fake.ok
+														span.select-radio-text WebMoney
+											.input-item.w33
+												label.select-radio-label.radio-with-image
+													input(
+															type="radio",
+															name='paymentMethod').select-radio-input-real
+													.select-radio-inner
+														.select-radio-image
+															img(src="img/payment/yandex.png", alt="")
+														span.select-radio-input
+															span.select-radio-input-fake.ok
+														span.select-radio-text Яндекс. Деньги
+									.form-block
+										.form-block-head
+											.title.h5 Куда отправить информацию о заказе
+										.input-row
+											.input-item.w50
+												.input-wrapper
+													input.input-main(
+																	id='notifyEmail',
+																	placeholder='user@mail.ru',
+																	type="email",
+																	name='notifyEmail',
+																	data-validation="email",
+																	data-validation-error-msg="Некорректный E-mail")
+													label(for='#notifyEmail').input-label E-mail
+											.input-item.w50
+												.input-wrapper
+													input.input-main(
+																	id='notifyTel',
+																	placeholder='+7 495 000-00-00',
+																	type="tel",
+																	name='notifyTel',
+																	data-validation="custom",
+																	data-validation-regexp="^[-0-9()+ ]+$",
+																	data-validation-error-msg="Введите корректный номер телефона")
+													label(for='#notifyTel').input-label Телефон
+							.border-block.bg-yellow
+								.border-block-content
+									.title.h3 Ваш заказ
+									.form-block.from-to
+										.text.sm 
+											|Москва, Россия
+											span.delivery 
+											|Санкт-Петербург, Россия
+										.link-icon.edit(onclick='window.CalcNav.moveTo(1)')
+											.link-icon-icon
+												+icon('edit')
+									.form-block
+										.form-block-head
+											.title.h5 Груз
+										.form-block-descr
+											.form-block-descr-content
+												dl
+													dt
+														.caption Кол-во мест
+													dd 
+														.text.sm 2
+													dt
+														.caption Общий вес, кг
+													dd 
+														.text.sm 13
 											.accordeon-wrapper
 												.accordeon-body(style='display: none;')
-													.form-block-options-item.form-block-radio
-														.form-block-options-item-inner
-															label.select-radio-label.radio-simple
-																input(
-																		type="radio",
-																		name='Punct',
-																		value='4').select-radio-input-real
-																.select-radio-inner
-																	span.select-radio-input
-																		span.select-radio-input-fake
-																	span.select-radio-text г. Санкт-Петербург, ул. Бадаева, д. 10, корп. 1, оф. 431
-															.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
-															.text.sm
-																a(href="tel:+78123321000") +7 (812) 334-5-144
-																a(href="mailto:cse-spb@.ru") cse-spb@.ru
-													.form-block-options-item.form-block-radio
-														.form-block-options-item-inner
-															label.select-radio-label.radio-simple
-																input(
-																		type="radio",
-																		name='Punct',
-																		value='5').select-radio-input-real
-																.select-radio-inner
-																	span.select-radio-input
-																		span.select-radio-input-fake
-																	span.select-radio-text г. Санкт-Петербург, ул. Бадаева, д. 10, корп. 1, оф. 431
-															.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
-															.text.sm
-																a(href="tel:+78123321000") +7 (812) 334-5-144
-																a(href="mailto:cse-spb@.ru") cse-spb@.ru
+													.form-block-descr-content
+														.text.sm.bold Место №1
+														dl
+															dt
+																.caption Кол-во мест
+															dd 
+																.text.sm 1
+															dt
+																.caption Общий вес, кг
+															dd 
+																.text.sm 10
+															dt
+																.caption Объёмный вес
+															dd 
+																.text.sm 100х50 см / 7 кг
+													.form-block-descr-content
+														.text.sm.bold Место №1
+														dl
+															dt
+																.caption Кол-во мест
+															dd 
+																.text.sm 1
+															dt
+																.caption Общий вес, кг
+															dd 
+																.text.sm 3
 												.accordeon-head
 													.link-dotted.js-accordeon-trigger
-														.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Показать ещё адреса
+														.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Подробнее
 														.link-dotted-icon
 															+icon('arrd')
-						.border-block.PersonalData
-							.border-block-content
-								.form-block
-									.input-row
-										.input-item.w100
-											label.select-radio-label.radio-simple
-												input(
-														type="checkbox",
-														name='PersonalData').select-radio-input-real
-												.select-radio-inner
-													span.select-radio-input
-														span.select-radio-input-fake
-													span.select-radio-text Согласие на обработку
-														a(href="#" target='_blank') персональных данных
-						.block-buttons
-							.link-icon(onclick='window.CalcNav.moveTo(2)')
-								.link-icon-icon
-									+icon('arrl')
-								.link-icon-text Назад
-							button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.btn-next
-								.btn-inner 
-									span Далее
-					form(action="/",data-step='4',style='display: none;').js-validate.form-step
-						.border-block
-							.border-block-content
-								.title.h3 Способ оплаты
-								.form-block
-									.input-row.gap-radio
-										.input-item.w33
-											//.radio-with-image и внутри картинка есть
-											label.select-radio-label.radio-with-image
-												input(
-														type="radio",
-														name='paymentMethod').select-radio-input-real
-												.select-radio-inner
-													.select-radio-image
-														img(src="img/payment/cash.png", alt="")
-													span.select-radio-input
-														span.select-radio-input-fake.ok
-													span.select-radio-text Наличными курьеру
-										.input-item.w33
-											label.select-radio-label.radio-with-image
-												input(
-														type="radio",
-														name='paymentMethod',data-validation='required').select-radio-input-real
-												.select-radio-inner
-													.select-radio-image
-														img(src="img/payment/mts.png", alt="")
-														img(src="img/payment/megafon.png", alt="")
-														img(src="img/payment/beeline.png", alt="")
-														img(src="img/payment/t2.png", alt="")
-													span.select-radio-input
-														span.select-radio-input-fake.ok
-													span.select-radio-text Мобильный платёж
-										.input-item.w33
-											label.select-radio-label.radio-with-image
-												input(
-														type="radio",
-														name='paymentMethod').select-radio-input-real
-												.select-radio-inner
-													.select-radio-image
-														img(src="img/payment/qiwi.png", alt="")
-													span.select-radio-input
-														span.select-radio-input-fake.ok
-													span.select-radio-text Qiwi
-										.input-item.w33
-											label.select-radio-label.radio-with-image
-												input(
-														type="radio",
-														name='paymentMethod').select-radio-input-real
-												.select-radio-inner
-													.select-radio-image
-														img(src="img/payment/visa.png", alt="")
-														img(src="img/payment/master.png", alt="")
-													span.select-radio-input
-														span.select-radio-input-fake.ok
-													span.select-radio-text Visa, MasterCard
-										.input-item.w33
-											label.select-radio-label.radio-with-image
-												input(
-														type="radio",
-														name='paymentMethod').select-radio-input-real
-												.select-radio-inner
-													.select-radio-image
-														img(src="img/payment/webmoney.png", alt="")
-													span.select-radio-input
-														span.select-radio-input-fake.ok
-													span.select-radio-text WebMoney
-										.input-item.w33
-											label.select-radio-label.radio-with-image
-												input(
-														type="radio",
-														name='paymentMethod').select-radio-input-real
-												.select-radio-inner
-													.select-radio-image
-														img(src="img/payment/yandex.png", alt="")
-													span.select-radio-input
-														span.select-radio-input-fake.ok
-													span.select-radio-text Яндекс. Деньги
-								.form-block
-									.form-block-head
-										.title.h5 Куда отправить информацию о заказе
-									.input-row
-										.input-item.w50
-											.input-wrapper
-												input.input-main(
-																id='notifyEmail',
-																placeholder='user@mail.ru',
-																type="email",
-																name='notifyEmail',
-																data-validation="email",
-																data-validation-error-msg="Некорректный E-mail")
-												label(for='#notifyEmail').input-label E-mail
-										.input-item.w50
-											.input-wrapper
-												input.input-main(
-																id='notifyTel',
-																placeholder='+7 495 000-00-00',
-																type="tel",
-																name='notifyTel',
-																data-validation="custom",
-																data-validation-regexp="^[-0-9()+ ]+$",
-																data-validation-error-msg="Введите корректный номер телефона")
-												label(for='#notifyTel').input-label Телефон
-						.border-block.bg-yellow
-							.border-block-content
-								.title.h3 Ваш заказ
-								.form-block.from-to
-									.text.sm 
-										|Москва, Россия
-										span.delivery 
-										|Санкт-Петербург, Россия
-									.link-icon.edit(onclick='window.DOM.moveTo(1)')
-										.link-icon-icon
-											+icon('edit')
-								.form-block
-									.form-block-head
-										.title.h5 Груз
-									.form-block-descr
-										.form-block-descr-content
-											dl
-												dt
-													.caption Кол-во мест
-												dd 
-													.text.sm 2
-												dt
-													.caption Общий вес, кг
-												dd 
-													.text.sm 13
-										.accordeon-wrapper
-											.accordeon-body(style='display: none;')
-												.form-block-descr-content
-													.text.sm.bold Место №1
-													dl
-														dt
-															.caption Кол-во мест
-														dd 
-															.text.sm 1
-														dt
-															.caption Общий вес, кг
-														dd 
-															.text.sm 10
-														dt
-															.caption Объёмный вес
-														dd 
-															.text.sm 100х50 см / 7 кг
-												.form-block-descr-content
-													.text.sm.bold Место №1
-													dl
-														dt
-															.caption Кол-во мест
-														dd 
-															.text.sm 1
-														dt
-															.caption Общий вес, кг
-														dd 
-															.text.sm 3
-											.accordeon-head
-												.link-dotted.js-accordeon-trigger
-													.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Подробнее
-													.link-dotted-icon
-														+icon('arrd')
-								.form-block
-									.form-block-head
-										.title.h5 Тариф
-										.link-icon.edit(onclick='window.DOM.moveTo(2)')
-											.link-icon-icon
-												+icon('edit')
-									.form-block-descr
-										.form-block-descr-content
-											dl
-												dt
-													.caption Тариф
-												dd 
-													.text.sm Сверхсрочный 
-												dt
-													.caption Срок доставки
-												dd 
-													.text.sm 1-2 раб.дня
-												dt
-													.caption Опции
-												dd 
-													.text.sm 
-														span SMS-оповещение о доставке груза
-														span Объявленная стоимость
-								.form-block
-									.form-block-head
-										.title.h5 Пункт самовывоза
-										.link-icon.edit(onclick='window.DOM.moveTo(3)')
-											.link-icon-icon
-												+icon('edit')
-									.form-block-descr
-										.form-block-options
-											.form-block-options-item.form-block-radio
-												.form-block-options-item-inner
-													.select-radio-label.radio-simple
-														.select-radio-inner
-															span.select-radio-text г. Санкт-Петербург, пр. Обуховской Обороны, д. 295, Логопарк «Троицкий», заезд/вход с Запорожской улицы, склад А1
-													.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
-													.text.sm
-														a(href="tel:+78123321000") +7 (812) 332-1-000
-														a(href="mailto:cse-spb@cse-spb.ru") cse-spb@cse-spb.ru
+									.form-block
+										.form-block-head
+											.title.h5 Тариф
+											.link-icon.edit(onclick='window.CalcNav.moveTo(2)')
+												.link-icon-icon
+													+icon('edit')
+										.form-block-descr
+											.form-block-descr-content
+												dl
+													dt
+														.caption Тариф
+													dd 
+														.text.sm Сверхсрочный 
+													dt
+														.caption Срок доставки
+													dd 
+														.text.sm 1-2 раб.дня
+													dt
+														.caption Опции
+													dd 
+														.text.sm 
+															span SMS-оповещение о доставке груза
+															span Объявленная стоимость
+									.form-block
+										.form-block-head
+											.title.h5 Пункт самовывоза
+											.link-icon.edit(onclick='window.CalcNav.moveTo(3)')
+												.link-icon-icon
+													+icon('edit')
+										.form-block-descr
+											.form-block-options
+												.form-block-options-item.form-block-radio
+													.form-block-options-item-inner
+														.select-radio-label.radio-simple
+															.select-radio-inner
+																span.select-radio-text г. Санкт-Петербург, пр. Обуховской Обороны, д. 295, Логопарк «Троицкий», заезд/вход с Запорожской улицы, склад А1
+														.caption Пн-Пт: с 09.00 до 20.00, Сб-Вс: с 10.00 до 15.00
+														.text.sm
+															a(href="tel:+78123321000") +7 (812) 332-1-000
+															a(href="mailto:cse-spb@cse-spb.ru") cse-spb@cse-spb.ru
 
-								.border-block-content-left
-									.title.h5 Итого к оплате
-								.border-block-content-right
-									.title.h3 1 750 ₽
-									.caption Стоимость с учётом НДС
-						.block-buttons
-							.link-icon(onclick='window.CalcNav.moveTo(2)')
-								.link-icon-icon
-									+icon('arrl')
-								.link-icon-text Назад
-							button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.btn-next
-								.btn-inner 
-									span Подтвердить
+									.border-block-content-left
+										.title.h5 Итого к оплате
+									.border-block-content-right
+										.title.h3 1 750 ₽
+										.caption Стоимость с учётом НДС
+							.block-buttons
+								.link-icon(onclick='window.CalcNav.moveTo(2)')
+									.link-icon-icon
+										+icon('arrl')
+									.link-icon-text Назад
+								button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.btn-next
+									.btn-inner 
+										span Подтвердить
 				.content-columns-aside(data-sticky-parent).js-stick-parent
 					.content-aside-content.js-stick
 						.calc-steps.js-calcNav
