@@ -21,6 +21,37 @@
 			+padlr(5px)
 			+tr(color .3s)
 .page-head
+	z-index: 0
+	&.page-head-withbuttons
+
+		.page-head-container
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-around
+			padding-bottom: 80px
+			+r(640)
+				padding-bottom: 50px
+		.buttons-wrapper
+			margin-left: auto
+			text-align: right
+			+r(640)
+				margin-top: 15px
+			
+		.bread
+			&-cont
+				width: 100%
+		.title
+			max-width: 430px
+			margin-right: auto
+			
+
+
+	&.has-bg 
+		.title
+			color: $white
+		.wrapper-bg-img
+			&:before
+				background-color: rgba(38, 14, 4,.5);
 	&-container
 		padding-top: 55px
 		padding-bottom: 32px

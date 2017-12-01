@@ -137,6 +137,20 @@
         <symbol id="arrl" viewBox="0 0 400 512">
           <path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256" fill="currentcolor" />
         </symbol>
+        <symbol id="arrow_gallery" viewBox="0 0 8.1 14.1">
+          <style>
+            .stslideArr0 {
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              fill: none;
+              stroke: currentcolor;
+              stroke-width: 1.5;
+              stroke-miterlimit: 10
+            }
+
+          </style>
+          <path d="M.5.5L7 7 .5 13.5" class="stslideArr0" />
+        </symbol>
         <symbol id="arrr" viewBox="0 0 400 512">
           <path fill="none" d="M-1-1h582v402H-1z" />
           <path d="M160 383.6l32.3 32.4L352 256 192.3 96 160 128.4 287.3 256" fill="currentcolor" />
@@ -899,96 +913,99 @@
             <!--END header-->
           </header>
           <main class="page__content">
-            <div class="wrapper bg-white page-head">
-              <div class="box">
-                <div class="page-head-container">
-                  <div class="bread-cont">
-                    <a class="bread-item" href="/">Главная</a>
+            <!-- вот сюда все выплевываем-->
+            <div class="page__content-container">
+              <div class="wrapper bg-white page-head">
+                <div class="box">
+                  <div class="page-head-container">
+                    <div class="bread-cont">
+                      <a class="bread-item" href="/">Главная</a>
+                    </div>
+                    <h1 class="title h1">Расчёт доставки</h1>
                   </div>
-                  <h1 class="title h1">Расчёт доставки</h1>
                 </div>
               </div>
-            </div>
-            <div class="wrapper bg-white">
-              <div class="box">
-                <div class="row align-middle">
-                  <div class="columns price-form-wrapper">
-                    <form class="form price-form js-validate" action="/">
-                      <div class="input-row gap-search">
-                        <div class="input-item w33">
-                          <div class="input-wrapper">
-                            <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
-                            <div class="js-input-dropdown-target input-dropdown-target">
-                              <div class="input-dropdown-content">
-                                <div class="option">
-                                  <span>Мосальск, Россия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Москва, Россия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Мосс, Норвегия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Мостар, Босния и Герцеговина</span>
+              <div class="wrapper bg-white">
+                <div class="box">
+                  <div class="row align-middle">
+                    <div class="columns price-form-wrapper">
+                      <form class="form price-form js-validate" action="/">
+                        <div class="input-row gap-search">
+                          <div class="input-item w33">
+                            <div class="input-wrapper">
+                              <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
+                              <div class="js-input-dropdown-target input-dropdown-target">
+                                <div class="input-dropdown-content">
+                                  <div class="option">
+                                    <span>Мосальск, Россия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Москва, Россия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мосс, Норвегия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мостар, Босния и Герцеговина</span>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                            <label class="input-label" for="#name2Inp">Откуда</label>
-                            <div class="input-icon swap js-swap">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5">
-                                <style>
-                                  .stswap {
-                                    fill-rule: evenodd;
-                                    clip-rule: evenodd;
-                                    fill: #F47921;
-                                  }
+                              <label class="input-label" for="#name2Inp">Откуда</label>
+                              <div class="input-icon swap js-swap">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5">
+                                  <style>
+                                    .stswap {
+                                      fill-rule: evenodd;
+                                      clip-rule: evenodd;
+                                      fill: #F47921;
+                                    }
 
-                                </style>
-                                <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap" />
-                                <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap" />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="input-item w33">
-                          <div class="input-wrapper">
-                            <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
-                            <div class="js-input-dropdown-target input-dropdown-target">
-                              <div class="input-dropdown-content">
-                                <div class="option">
-                                  <span>Мосальск, Россия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Москва, Россия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Мосс, Норвегия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Мостар, Босния и Герцеговина</span>
-                                </div>
-                                <div class="option">
-                                  <span>Мостар, Босния и Герцеговина</span>
-                                </div>
+                                  </style>
+                                  <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap" />
+                                  <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap" />
+                                </svg>
                               </div>
                             </div>
-                            <label class="input-label" for="#name2Inp">Куда</label>
+                          </div>
+                          <div class="input-item w33">
+                            <div class="input-wrapper">
+                              <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
+                              <div class="js-input-dropdown-target input-dropdown-target">
+                                <div class="input-dropdown-content">
+                                  <div class="option">
+                                    <span>Мосальск, Россия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Москва, Россия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мосс, Норвегия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мостар, Босния и Герцеговина</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мостар, Босния и Герцеговина</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <label class="input-label" for="#name2Inp">Куда</label>
+                            </div>
+                          </div>
+                          <div class="input-item w33">
+                            <button class="btn has-loading load" type="submit">
+                              <div class="btn-inner">
+                                <span class="js-price-text">Узнать стоимость доставки
+                                  <svg class="icon-arrr">
+                                    <use xlink:href="#arrr"></use>
+                                  </svg>
+                                </span>
+                              </div>
+                            </button>
                           </div>
                         </div>
-                        <div class="input-item w33">
-                          <button class="btn has-loading load" type="submit">
-                            <div class="btn-inner">
-                              <span class="js-price-text">Узнать стоимость доставки
-                                <svg class="icon-arrr">
-                                  <use xlink:href="#arrr"></use>
-                                </svg>
-                              </span>
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-                    </form>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>

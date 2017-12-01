@@ -316,9 +316,30 @@ blockquote
 	width: 100%
 	position: relative
 	+tr(background-color .3s)
+	z-index: 0
 	&.bg-orange
 		background-color: $brandbg
-
+	&.bg-gray
+		background-color: #f9f9f9
+	&.promoblock
+		.wrapper-bg-img
+			&:before
+				background-color: rgba(44, 30, 28,.4)
+		.text 
+			font-weight: 400
+			opacity: 1
+		.title
+			max-width: 600px
+			+rm(801)
+				margin-bottom: 0
+		.columns
+			&:last-child
+				+rm(641)
+					text-align: right
+					
+		.btn 
+			min-width: 220px
+			margin-top: 0
 	&-bg 
 		+coverdiv 
 		z-index: -1
@@ -1021,3 +1042,30 @@ dl
 						font-size: 16px 
 	.map-wrapper
 		margin-top: 20px
+figure
+	img
+		display: block
+		max-width: 100%
+		margin: 0 auto
+		&:not(:only-child)
+			margin-bottom: 25px
+	figcaption
+		display: block
+		margin-top: 25px
+		padding-right: 40px
+		font-size: 16px !important
+.content-slider
+	position: relative
+	&-inner 
+	&-slide
+		figcaption
+			opacity: 0
+			+tr(opacity .3s)
+		&.slick-active
+			figcaption
+				opacity: 1
+				transition-delay: .2s
+	&-nav
+		position: absolute
+		bottom: 2px
+		right: 0

@@ -137,6 +137,20 @@
         <symbol id="arrl" viewBox="0 0 400 512">
           <path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256" fill="currentcolor" />
         </symbol>
+        <symbol id="arrow_gallery" viewBox="0 0 8.1 14.1">
+          <style>
+            .stslideArr0 {
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              fill: none;
+              stroke: currentcolor;
+              stroke-width: 1.5;
+              stroke-miterlimit: 10
+            }
+
+          </style>
+          <path d="M.5.5L7 7 .5 13.5" class="stslideArr0" />
+        </symbol>
         <symbol id="arrr" viewBox="0 0 400 512">
           <path fill="none" d="M-1-1h582v402H-1z" />
           <path d="M160 383.6l32.3 32.4L352 256 192.3 96 160 128.4 287.3 256" fill="currentcolor" />
@@ -899,516 +913,430 @@
             <!--END header-->
           </header>
           <main class="page__content">
-            <div class="wrapper bg-white page-head">
-              <div class="box">
-                <div class="page-head-container">
-                  <div class="bread-cont">
-                    <a class="bread-item" href="/">Главная</a>
-                  </div>
-                  <h1 class="title h1">Мои расчёты
-                    <span class="count orange">3</span>
-                  </h1>
+            <!-- вот сюда все выплевываем-->
+            <div class="page__content-container">
+              <div class="wrapper page-head page-head-withbuttons has-bg">
+                <div class="wrapper-bg">
+                  <div class="wrapper-bg-img js-image bg" data-src="img/pagehead/head1.jpg"></div>
                 </div>
-              </div>
-            </div>
-            <div class="wrapper bg-white">
-              <div class="box">
-                <div class="offerlist-wrap mycalc-wrap">
-                  <div class="offerlist-container">
-                    <div class="offerlist-item-head">
-                      <div class="caption">10.09.2017</div>
+                <div class="box">
+                  <div class="page-head-container">
+                    <div class="bread-cont">
+                      <a class="bread-item" href="/">Главная</a>
+                      <a class="bread-item" href="/">Услуги</a>
                     </div>
-                    <div class="offerlist-item-content">
-                      <div class="offerlist-item-table">
-                        <div class="table-row">
-                          <div class="table-item">
-                            <div class="text sm delivery-result">
-                              <span>Москва, Россия</span>
-                              <span>Санкт-Петербург, Россия</span>
-                              <span class="deliveryarr bottom"></span>
-                            </div>
-                          </div>
-                          <div class="table-item">
-                            <div class="text bold">от 1 060 ₽ </div>
-                            <div class="caption">Тариф: Стандарт</div>
-                          </div>
-                          <div class="table-item">
-                            <div class="reload-item">
-                              <div class="link-icon sm reload load">
-                                <div class="link-icon-icon">
-                                  <svg class="icon-reload">
-                                    <use xlink:href="#reload"></use>
-                                  </svg>
-                                </div>
-                                <div class="link-icon-text">Обновить стоимость</div>
-                              </div>
-                              <!-- .active дял показа-->
-                              <div class="input-dropdown-target">
-                                <div class="input-dropdown-content">
-                                  <div class="text">Стоимость не изменена</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="table-item">
-                            <a class="btn color-orange type-round" href="#">
-                              <div class="btn-inner">
-                                <span>Оформить</span>
-                              </div>
-                            </a>
-                            <a class="link-icon edit" href="#">
-                              <div class="link-icon-icon">
-                                <svg class="icon-edit">
-                                  <use xlink:href="#edit"></use>
-                                </svg>
-                              </div>
-                            </a>
-                            <a class="link-icon edit" href="#">
-                              <div class="link-icon-icon">
-                                <svg class="icon-remove">
-                                  <use xlink:href="#remove"></use>
-                                </svg>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="offerlist-item-content-slideup js-accord-target" data-target="block1">
-                      <div class="offerlist-item-subbg block-yellow">
-                        <div class="row">
-                          <div class="columns large-3 medium-3 small-12">
-                            <div class="form-block">
-                              <div class="form-block-head">
-                                <div class="title h5">Груз</div>
-                              </div>
-                              <div class="form-block-descr">
-                                <div class="form-block-descr-content">
-                                  <dl>
-                                    <dt>
-                                      <div class="caption">Кол-во мест</div>
-                                    </dt>
-                                    <dd>
-                                      <div class="text sm">2</div>
-                                    </dd>
-                                    <dt>
-                                      <div class="caption">Общий вес, кг</div>
-                                    </dt>
-                                    <dd>
-                                      <div class="text sm">13</div>
-                                    </dd>
-                                  </dl>
-                                </div>
-                                <div class="accordeon-wrapper">
-                                  <div class="accordeon-body" style="display: none;">
-                                    <div class="form-block-descr-content">
-                                      <div class="text sm bold">Место №1</div>
-                                      <dl>
-                                        <dt>
-                                          <div class="caption">Кол-во мест</div>
-                                        </dt>
-                                        <dd>
-                                          <div class="text sm">1</div>
-                                        </dd>
-                                        <dt>
-                                          <div class="caption">Общий вес, кг</div>
-                                        </dt>
-                                        <dd>
-                                          <div class="text sm">10</div>
-                                        </dd>
-                                        <dt>
-                                          <div class="caption">Объёмный вес</div>
-                                        </dt>
-                                        <dd>
-                                          <div class="text sm">100х50 см / 7 кг</div>
-                                        </dd>
-                                      </dl>
-                                    </div>
-                                    <div class="form-block-descr-content">
-                                      <div class="text sm bold">Место №1</div>
-                                      <dl>
-                                        <dt>
-                                          <div class="caption">Кол-во мест</div>
-                                        </dt>
-                                        <dd>
-                                          <div class="text sm">1</div>
-                                        </dd>
-                                        <dt>
-                                          <div class="caption">Общий вес, кг</div>
-                                        </dt>
-                                        <dd>
-                                          <div class="text sm">3</div>
-                                        </dd>
-                                      </dl>
-                                    </div>
-                                  </div>
-                                  <div class="accordeon-head">
-                                    <div class="link-dotted js-accordeon-trigger">
-                                      <div class="link-dotted-text js-toggle-text" data-alt-text="Свернуть">Подробнее</div>
-                                      <div class="link-dotted-icon">
-                                        <svg class="icon-arrd">
-                                          <use xlink:href="#arrd"></use>
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="columns large-9 medium-9 small-12">
-                            <div class="form-block">
-                              <div class="form-block-head">
-                                <div class="title h5">Доступные тарифы</div>
-                              </div>
-                              <div class="form-block-table">
-                                <div class="form-block-table-head">
-                                  <div class="form-block-table-item">
-                                    <div class="caption">Тариф</div>
-                                  </div>
-                                  <div class="form-block-table-item">
-                                    <div class="caption">Срок доставки</div>
-                                  </div>
-                                  <div class="form-block-table-item">
-                                    <div class="caption">Стоимость</div>
-                                  </div>
-                                </div>
-                                <div class="form-block-table-row">
-                                  <div class="form-block-table-item">
-                                    <div class="select-radio-label radio-simple">
-                                      <div class="select-radio-inner">
-                                        <span class="select-radio-text">Сверхсрочный
-                                          <span class="caption">Срочная доставка документов и грузов «из рук в руки» в течение 1-2 дней</span>
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Срок доставки">
-                                    <div class="text sm">1-2 раб. дня</div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Стоимость">
-                                    <div class="title h4">1 450 ₽</div>
-                                  </div>
-                                </div>
-                                <div class="form-block-table-row">
-                                  <div class="form-block-table-item">
-                                    <div class="select-radio-label radio-simple">
-                                      <div class="select-radio-inner">
-                                        <span class="select-radio-text">Срочный
-                                          <span class="caption">Быстрая и оптимальная доставка документов и грузов по России в течение 3-4 дней</span>
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Срок доставки">
-                                    <div class="text sm">3-4 раб. дня</div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Стоимость">
-                                    <div class="title h4">1 200 ₽</div>
-                                  </div>
-                                </div>
-                                <div class="form-block-table-row">
-                                  <div class="form-block-table-item">
-                                    <div class="select-radio-label radio-simple">
-                                      <div class="select-radio-inner">
-                                        <span class="select-radio-text">Эконом доставка
-                                          <span class="caption">Классическая доставка по принципу «от двери до двери» со стандартными сроками доставки</span>
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Срок доставки">
-                                    <div class="text sm">4-5 раб. дня</div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Стоимость">
-                                    <div class="title h4">850 ₽</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="offerlist-item-footer">
-                      <div class="offerlist-item-footer-block">
-                        <div class="link-dotted js-accord-trigger" data-target="block1">
-                          <div class="link-dotted-text js-toggletext" data-alt-text="Скрыть">Подробнее</div>
-                          <div class="link-dotted-icon">
-                            <svg class="icon-arrd">
-                              <use xlink:href="#arrd"></use>
+                    <h1 class="title h1">Международная доставка</h1>
+                    <div class="buttons-wrapper">
+                      <a class="btn color-white type-round" href="#">
+                        <div class="btn-inner">
+                          <span class="btn-icon">
+                            <svg class="icon-down">
+                              <use xlink:href="#down"></use>
                             </svg>
-                          </div>
+                          </span>
+                          <span>Скачать презентацию</span>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="offerlist-container">
-                    <div class="offerlist-item-head">
-                      <div class="caption">10.09.2017</div>
-                    </div>
-                    <div class="offerlist-item-content">
-                      <div class="offerlist-item-table">
-                        <div class="table-row">
-                          <div class="table-item">
-                            <div class="text sm delivery-result">
-                              <span>Москва, Россия</span>
-                              <span>Санкт-Петербург, Россия</span>
-                              <span class="deliveryarr bottom"></span>
-                            </div>
-                          </div>
-                          <div class="table-item">
-                            <div class="text bold">от 1 060 ₽ </div>
-                            <div class="caption">Тариф: Стандарт</div>
-                          </div>
-                          <div class="table-item">
-                            <div class="reload-item">
-                              <div class="link-icon sm reload load">
-                                <div class="link-icon-icon">
-                                  <svg class="icon-reload">
-                                    <use xlink:href="#reload"></use>
-                                  </svg>
-                                </div>
-                                <div class="link-icon-text">Обновить стоимость</div>
-                              </div>
-                              <!-- .active дял показа-->
-                              <div class="input-dropdown-target">
-                                <div class="input-dropdown-content">
-                                  <div class="text">Стоимость не изменена</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="table-item">
-                            <a class="btn color-orange type-round" href="#">
-                              <div class="btn-inner">
-                                <span>Оформить</span>
-                              </div>
-                            </a>
-                            <a class="link-icon edit" href="#">
-                              <div class="link-icon-icon">
-                                <svg class="icon-edit">
-                                  <use xlink:href="#edit"></use>
-                                </svg>
-                              </div>
-                            </a>
-                            <a class="link-icon edit" href="#">
-                              <div class="link-icon-icon">
-                                <svg class="icon-remove">
-                                  <use xlink:href="#remove"></use>
-                                </svg>
-                              </div>
-                            </a>
-                          </div>
+                      </a>
+                      <a class="btn color-white not-trans type-round" href="#">
+                        <div class="btn-inner">
+                          <span>Заключить договор</span>
                         </div>
-                      </div>
+                      </a>
                     </div>
-                    <div class="offerlist-item-content-slideup js-accord-target" data-target="block2">
-                      <div class="offerlist-item-subbg block-yellow">
-                        <div class="row">
-                          <div class="columns large-3 medium-3 small-12">
-                            <div class="form-block">
-                              <div class="form-block-head">
-                                <div class="title h5">Груз</div>
-                              </div>
-                              <div class="form-block-descr">
-                                <div class="form-block-descr-content">
-                                  <dl>
-                                    <dt>
-                                      <div class="caption">Кол-во мест</div>
-                                    </dt>
-                                    <dd>
-                                      <div class="text sm">2</div>
-                                    </dd>
-                                    <dt>
-                                      <div class="caption">Общий вес, кг</div>
-                                    </dt>
-                                    <dd>
-                                      <div class="text sm">13</div>
-                                    </dd>
-                                  </dl>
-                                </div>
-                                <div class="accordeon-wrapper">
-                                  <div class="accordeon-body" style="display: none;">
-                                    <div class="form-block-descr-content">
-                                      <div class="text sm bold">Место №1</div>
-                                      <dl>
-                                        <dt>
-                                          <div class="caption">Кол-во мест</div>
-                                        </dt>
-                                        <dd>
-                                          <div class="text sm">1</div>
-                                        </dd>
-                                        <dt>
-                                          <div class="caption">Общий вес, кг</div>
-                                        </dt>
-                                        <dd>
-                                          <div class="text sm">10</div>
-                                        </dd>
-                                        <dt>
-                                          <div class="caption">Объёмный вес</div>
-                                        </dt>
-                                        <dd>
-                                          <div class="text sm">100х50 см / 7 кг</div>
-                                        </dd>
-                                      </dl>
-                                    </div>
-                                    <div class="form-block-descr-content">
-                                      <div class="text sm bold">Место №1</div>
-                                      <dl>
-                                        <dt>
-                                          <div class="caption">Кол-во мест</div>
-                                        </dt>
-                                        <dd>
-                                          <div class="text sm">1</div>
-                                        </dd>
-                                        <dt>
-                                          <div class="caption">Общий вес, кг</div>
-                                        </dt>
-                                        <dd>
-                                          <div class="text sm">3</div>
-                                        </dd>
-                                      </dl>
-                                    </div>
-                                  </div>
-                                  <div class="accordeon-head">
-                                    <div class="link-dotted js-accordeon-trigger">
-                                      <div class="link-dotted-text js-toggle-text" data-alt-text="Свернуть">Подробнее</div>
-                                      <div class="link-dotted-icon">
-                                        <svg class="icon-arrd">
-                                          <use xlink:href="#arrd"></use>
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="columns large-9 medium-9 small-12">
-                            <div class="form-block">
-                              <div class="form-block-head">
-                                <div class="title h5">Доступные тарифы</div>
-                              </div>
-                              <div class="form-block-table">
-                                <div class="form-block-table-head">
-                                  <div class="form-block-table-item">
-                                    <div class="caption">Тариф</div>
-                                  </div>
-                                  <div class="form-block-table-item">
-                                    <div class="caption">Срок доставки</div>
-                                  </div>
-                                  <div class="form-block-table-item">
-                                    <div class="caption">Стоимость</div>
-                                  </div>
-                                </div>
-                                <div class="form-block-table-row">
-                                  <div class="form-block-table-item">
-                                    <div class="select-radio-label radio-simple">
-                                      <div class="select-radio-inner">
-                                        <span class="select-radio-text">Сверхсрочный
-                                          <span class="caption">Срочная доставка документов и грузов «из рук в руки» в течение 1-2 дней</span>
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Срок доставки">
-                                    <div class="text sm">1-2 раб. дня</div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Стоимость">
-                                    <div class="title h4">1 450 ₽</div>
-                                  </div>
-                                </div>
-                                <div class="form-block-table-row">
-                                  <div class="form-block-table-item">
-                                    <div class="select-radio-label radio-simple">
-                                      <div class="select-radio-inner">
-                                        <span class="select-radio-text">Срочный
-                                          <span class="caption">Быстрая и оптимальная доставка документов и грузов по России в течение 3-4 дней</span>
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Срок доставки">
-                                    <div class="text sm">3-4 раб. дня</div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Стоимость">
-                                    <div class="title h4">1 200 ₽</div>
-                                  </div>
-                                </div>
-                                <div class="form-block-table-row">
-                                  <div class="form-block-table-item">
-                                    <div class="select-radio-label radio-simple">
-                                      <div class="select-radio-inner">
-                                        <span class="select-radio-text">Эконом доставка
-                                          <span class="caption">Классическая доставка по принципу «от двери до двери» со стандартными сроками доставки</span>
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Срок доставки">
-                                    <div class="text sm">4-5 раб. дня</div>
-                                  </div>
-                                  <div class="form-block-table-item" data-alttext="Стоимость">
-                                    <div class="title h4">850 ₽</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="offerlist-item-footer">
-                      <div class="offerlist-item-footer-block">
-                        <div class="link-dotted js-accord-trigger" data-target="block2">
-                          <div class="link-dotted-text js-toggletext" data-alt-text="Скрыть">Подробнее</div>
-                          <div class="link-dotted-icon">
-                            <svg class="icon-arrd">
-                              <use xlink:href="#arrd"></use>
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="block-buttons">
-                    <a class="btn color-black" href="#">
-                      <div class="btn-inner">
-                        <span>Стать клиентом</span>
-                      </div>
-                    </a>
-                    <a class="btn btn-next" href="#">
-                      <div class="btn-inner">
-                        <span>Новый расчёт</span>
-                      </div>
-                    </a>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="wrapper bg-orange">
-              <div class="box">
-                <div class="row padding-big">
-                  <div class="columns large-6 medium-6 small-12">
-                    <div class="block-about">
-                      <h2 class="title h2 white">Есть вопросы или нужна помощь?</h2>
+              <div class="wrapper bg-white">
+                <div class="box">
+                  <div class="service-linkblock-wrapper">
+                    <div class="row padding-big">
+                      <div class="columns large-4 medium-6 small-12">
+                        <div class="service-linkblock">
+                          <a class="service-linkblock-head" href="#">
+                            <div class="title h3">Экспорт</div>
+                          </a>
+                          <div class="service-linkblock-content">
+                            <ul class="service-links">
+                              <li class="service-links-item">
+                                <a href="#">Срочная</a>
+                              </li>
+                              <li class="service-links-item">
+                                <a href="#">Сверхсрочная</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="columns large-4 medium-6 small-12">
+                        <div class="service-linkblock">
+                          <a class="service-linkblock-head" href="#">
+                            <div class="title h3">Импорт</div>
+                          </a>
+                          <div class="service-linkblock-content">
+                            <ul class="service-links">
+                              <li class="service-links-item">
+                                <a href="#">Срочная</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="columns large-4 medium-6 small-12">
+                        <div class="service-linkblock">
+                          <a class="service-linkblock-head" href="#">
+                            <div class="title h3">Температурное складское хранение</div>
+                          </a>
+                          <div class="service-linkblock-content">
+                            <ul class="service-links">
+                              <li class="service-links-item">
+                                <a href="#">Складская зона хранения (-15... +25 0С)</a>
+                              </li>
+                              <li class="service-links-item">
+                                <a href="#">Холодильная камера (+2... +8 0С)</a>
+                              </li>
+                              <li class="service-links-item">
+                                <a href="#">Морозильная камера (-20 0С)</a>
+                              </li>
+                              <li class="service-links-item">
+                                <a href="#">Морозильная камера (-86 0С) </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="columns large-6 medium-6 small-12">
-                    <div class="block-about">
-                      <div class="text white">Мы всегда рады помочь и ответить на все интересующие вас вопросы. Вы можете попробовать найти информацию в разделе
-                        <a href="#">«Вопросы и ответы»</a>или написать ваш вопрос нам на почту.</div>
-                      <a class="btn color-white type-round color-reverse not-trans" href="#">
-                        <div class="btn-inner">
-                          <span>Вопросы и ответы</span>
+                </div>
+              </div>
+              <div class="wrapper bg-gray">
+                <div class="box">
+                  <div class="padding-big">
+                    <div class="block-constructor">
+                      <h2 class="title h2">Описание услуги</h2>
+                      <div class="block-constructor-halfdescr">
+                        <div class="row align-stretch">
+                          <div class="columns large-6 medium-6 small-12">
+                            <div class="col">
+                              <div class="title h4">Выход на международный уровень — важный шаг в развитии бизнеса. Его успешность зависит от качества реализации грузо- и документооборота с зарубежными партнерами.</div>
+                            </div>
+                          </div>
+                          <div class="columns large-6 medium-6 small-12">
+                            <div class="col">
+                              <div class="content-wrapper">
+                                <p>Наша компания осуществляет доставку экспресс-грузов и документов в более чем 200 стран мира и страны Таможенного союза. Мы гарантируем высокое качество обслуживания, оптимальное сочетание скорости и цены перевозок, таможенное
+                                  оформление в максимально короткие сроки, доставку груза «до двери» на территории страны доставки.</p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </a>
-                      <a class="btn color-white type-round color-reverse" href="#">
-                        <div class="btn-inner">
-                          <span>Задать вопрос</span>
+                      </div>
+                      <div class="content-slider">
+                        <div class="content-slider-inner">
+                          <figure class="content-slider-slide">
+                            <img src="img/slide.jpg" alt="">
+                            <figcaption class="caption medium">Наш автопарк укомплектован новыми грузовыми автомобилями</figcaption>
+                          </figure>
+                          <figure class="content-slider-slide">
+                            <img src="img/slide.jpg" alt="">
+                            <figcaption class="caption medium">Наш автопарк укомплектован новыми грузовыми автомобилями</figcaption>
+                          </figure>
+                          <figure class="content-slider-slide">
+                            <img src="img/slide.jpg" alt="">
+                            <figcaption class="caption medium">Наш автопарк укомплектован новыми грузовыми автомобилями</figcaption>
+                          </figure>
                         </div>
-                      </a>
+                        <div class="content-slider-nav">
+                          <div class="slider-nav">
+                            <div class="slider-counter">
+                              <div class="slider-curr"></div>
+                              <div class="slider-divider">/</div>
+                              <div class="slider-total"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper bg-white">
+                <div class="box">
+                  <div class="padding-big">
+                    <div class="block-constructor">
+                      <h2 class="title h2">Преимущества</h2>
+                      <div class="cards-wrapper w4">
+                        <div class="cards-item">
+                          <div class="cards-item-inner">
+                            <div class="cards-item-image">
+                              <img src="img/cards/8.svg" alt="" />
+                            </div>
+                            <div class="cards-item-content">
+                              <div class="text bold">Выезд курьера для сбора отправления</div>
+                              <div class="text sm">КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира.</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cards-item">
+                          <div class="cards-item-inner">
+                            <div class="cards-item-image">
+                              <img src="img/cards/6.svg" alt="" />
+                            </div>
+                            <div class="cards-item-content">
+                              <div class="text bold">Доставка до двери</div>
+                              <div class="text sm">Мы тщательно контро- лируем транспортные процессы на всех этапах доставки вашей посылки, чтобы вы получили её прямо в руки.</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cards-item">
+                          <div class="cards-item-inner">
+                            <div class="cards-item-image">
+                              <img src="img/cards/9.svg" alt="" />
+                            </div>
+                            <div class="cards-item-content">
+                              <div class="text bold">Мониторинг статуса доставки отправления </div>
+                              <div class="text sm">Вы всегда можете отследить вашу посылку через нас сервис и быть в курсе, где она находится в данный момент.</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cards-item">
+                          <div class="cards-item-inner">
+                            <div class="cards-item-image">
+                              <img src="img/cards/7.svg" alt="" />
+                            </div>
+                            <div class="cards-item-content">
+                              <div class="text bold">Полный комплекс услуг</div>
+                              <div class="text sm">Наши специалисты помогут вам быстро пройти все необходимые таможенные процедуры.</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper bg-gray">
+                <div class="box">
+                  <div class="padding-big">
+                    <div class="block-constructor">
+                      <h2 class="title h2">Что мы предлагаем</h2>
+                      <div class="offers-wrapper">
+                        <div class="offers-item">
+                          <div class="offers-item-inner">
+                            <div class="offers-item-image">
+                              <div class="offers-item-image-inner">
+                                <img class="js-image" data-src="img/offers/1.jpg" alt="" />
+                              </div>
+                            </div>
+                            <div class="offers-item-content">
+                              <div class="title h3">Отслеживание посылки в любое время</div>
+                              <div class="text sm">Мы предоставляем специальный сервис, который позволяет в режиме онлайн узнать где находится ваш груз. Благодаря широкой сети представительств и офисов вы имеете возможность заказать доставку из любого региона нашей страны.</div>
+                              <a
+                                class="btn color-orange type-round" href="#">
+                                <div class="btn-inner">
+                                  <span>Подробнее</span>
+                                </div>
+                                </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="offers-item">
+                          <div class="offers-item-inner">
+                            <div class="offers-item-image">
+                              <div class="offers-item-image-inner">
+                                <img class="js-image" data-src="img/offers/2.jpg" alt="" />
+                              </div>
+                            </div>
+                            <div class="offers-item-content">
+                              <div class="title h3">Продуманные грузоперевозки по всему миру</div>
+                              <div class="text sm">Мы разрабатываем оптимальный и выгодный маршрут, предусматривающий использование современных складских комплексов, надежных контейнерных терминалов и портов.</div>
+                              <a class="btn color-orange type-round" href="#">
+                                <div class="btn-inner">
+                                  <span>Подробнее</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="offers-item">
+                          <div class="offers-item-inner">
+                            <div class="offers-item-image">
+                              <div class="offers-item-image-inner">
+                                <img class="js-image" data-src="img/offers/3.jpg" alt="" />
+                              </div>
+                            </div>
+                            <div class="offers-item-content">
+                              <div class="title h3">Доставка с особой осторожностью</div>
+                              <div class="text sm">Мы предоставляем специальный сервис, который позволяет в режиме онлайн узнать где находится ваш груз. Благодаря широкой сети представительств и офисов вы имеете возможность заказать доставку из любого региона нашей страны.</div>
+                              <a
+                                class="btn color-orange type-round" href="#">
+                                <div class="btn-inner">
+                                  <span>Подробнее</span>
+                                </div>
+                                </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper bg-white">
+                <div class="box">
+                  <div class="padding-big">
+                    <div class="block-constructor">
+                      <h2 class="title h2">Требования к посылкам</h2>
+                      <div class="block-constructor-table">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <th></th>
+                              <th>
+                                <div class="caption">Макс. вес одного отправления</div>
+                              </th>
+                              <th>
+                                <div class="caption">Макс. кол-во отправлений</div>
+                              </th>
+                              <th>
+                                <div class="caption">Макс. суммарный вес</div>
+                              </th>
+                              <th>
+                                <div class="caption">Макс. длина</div>
+                              </th>
+                              <th>
+                                <div class="caption">Макс. периметр поперечного сечения</div>
+                              </th>
+                              <th>
+                                <div class="caption">Объёмный вес</div>
+                              </th>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="text bold sm">Документы</div>
+                              </td>
+                              <td>
+                                <div class="text sm">3 кг</div>
+                              </td>
+                              <td>
+                                <div class="text sm">99</div>
+                              </td>
+                              <td>
+                                <div class="text sm">297 кг</div>
+                              </td>
+                              <td>
+                                <div class="text sm">20 см</div>
+                              </td>
+                              <td>
+                                <div class="text sm">—</div>
+                              </td>
+                              <td>
+                                <div class="text sm">3 кг</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="text bold sm">Груз</div>
+                              </td>
+                              <td>
+                                <div class="text sm">3 кг</div>
+                              </td>
+                              <td>
+                                <div class="text sm">99</div>
+                              </td>
+                              <td>
+                                <div class="text sm">297 кг</div>
+                              </td>
+                              <td>
+                                <div class="text sm">20 см</div>
+                              </td>
+                              <td>
+                                <div class="text sm">—</div>
+                              </td>
+                              <td>
+                                <div class="text sm">3 кг</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="text bold sm">Посылка из интернет-магазина</div>
+                              </td>
+                              <td>
+                                <div class="text sm">3 кг</div>
+                              </td>
+                              <td>
+                                <div class="text sm">99</div>
+                              </td>
+                              <td>
+                                <div class="text sm">297 кг</div>
+                              </td>
+                              <td>
+                                <div class="text sm">20 см</div>
+                              </td>
+                              <td>
+                                <div class="text sm">—</div>
+                              </td>
+                              <td>
+                                <div class="text sm">3 кг</div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper promoblock">
+                <div class="wrapper-bg">
+                  <div class="wrapper-bg-img js-image bg" data-src="img/promoblock.jpg"></div>
+                </div>
+                <div class="box">
+                  <div class="row padding-big">
+                    <div class="columns large-6 medium-6 small-12">
+                      <div class="block-about">
+                        <div class="title h3 white">Быстрая и профессиональная доставка посылок в любую точку мира вместе с «КурьерСервисЭкспресс»</div>
+                      </div>
+                    </div>
+                    <div class="columns large-6 medium-6 small-12">
+                      <div class="block-about">
+                        <a class="btn color-white color-reverse" href="#">
+                          <div class="btn-inner">
+                            <span>Заключить договор</span>
+                          </div>
+                        </a>
+                        <a class="btn" href="#">
+                          <div class="btn-inner">
+                            <span>Вызвать курьера</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper bg-orange">
+                <div class="box">
+                  <div class="row padding-big">
+                    <div class="columns large-6 medium-6 small-12">
+                      <div class="block-about">
+                        <h2 class="title h2 white">Есть вопросы или нужна помощь?</h2>
+                      </div>
+                    </div>
+                    <div class="columns large-6 medium-6 small-12">
+                      <div class="block-about">
+                        <div class="text white">Мы всегда рады помочь и ответить на все интересующие вас вопросы. Вы можете попробовать найти информацию в разделе
+                          <a href="#">«Вопросы и ответы»</a>или написать ваш вопрос нам на почту.</div>
+                        <a class="btn color-white type-round color-reverse not-trans" href="#">
+                          <div class="btn-inner">
+                            <span>Вопросы и ответы</span>
+                          </div>
+                        </a>
+                        <a class="btn color-white type-round color-reverse" href="#">
+                          <div class="btn-inner">
+                            <span>Задать вопрос</span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1745,6 +1673,7 @@
       </div>
     </div>
     <!--LOAD SCRIPTS-->
+    <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script></script>
   </body>

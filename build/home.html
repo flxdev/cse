@@ -137,6 +137,20 @@
         <symbol id="arrl" viewBox="0 0 400 512">
           <path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256" fill="currentcolor" />
         </symbol>
+        <symbol id="arrow_gallery" viewBox="0 0 8.1 14.1">
+          <style>
+            .stslideArr0 {
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              fill: none;
+              stroke: currentcolor;
+              stroke-width: 1.5;
+              stroke-miterlimit: 10
+            }
+
+          </style>
+          <path d="M.5.5L7 7 .5 13.5" class="stslideArr0" />
+        </symbol>
         <symbol id="arrr" viewBox="0 0 400 512">
           <path fill="none" d="M-1-1h582v402H-1z" />
           <path d="M160 383.6l32.3 32.4L352 256 192.3 96 160 128.4 287.3 256" fill="currentcolor" />
@@ -899,535 +913,540 @@
             <!--END header-->
           </header>
           <main class="page__content">
-            <div class="video-bg">
-              <div class="homepage-hero-module">
-                <div class="video-container">
-                  <video class="fillWidth" autoplay="" loop="" data-src="img/video/video.mp4" type="video/mp4"></video>
-                  <div class="poster">
-                    <img src="img/video/video.jpg" alt="">
+            <!-- вот сюда все выплевываем-->
+            <div class="page__content-container">
+              <div class="video-bg">
+                <div class="homepage-hero-module">
+                  <div class="video-container">
+                    <video class="fillWidth" autoplay="" loop="" data-src="img/video/video.mp4" type="video/mp4"></video>
+                    <div class="poster">
+                      <img src="img/video/video.jpg" alt="">
+                    </div>
+                    <div class="video-cover" style="background-color: rgba(47, 36, 37, 0);"></div>
                   </div>
-                  <div class="video-cover" style="background-color: rgba(47, 36, 37, 0);"></div>
                 </div>
               </div>
-            </div>
-            <div class="wrapper full-height">
-              <div class="box small">
-                <div class="row align-middle">
-                  <div class="columns price-form-wrapper">
-                    <h1 class="title h1 white">Быстрая доставка посылок в любую точку мира</h1>
-                    <form class="form price-form js-validate" action="/">
-                      <div class="input-row gap-search">
-                        <div class="input-item w33">
-                          <div class="input-wrapper">
-                            <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
-                            <div class="js-input-dropdown-target input-dropdown-target">
-                              <div class="input-dropdown-content">
-                                <div class="option">
-                                  <span>Мосальск, Россия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Москва, Россия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Мосс, Норвегия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Мостар, Босния и Герцеговина</span>
+              <div class="wrapper full-height">
+                <div class="box small">
+                  <div class="row align-middle">
+                    <div class="columns price-form-wrapper">
+                      <h1 class="title h1 white">Быстрая доставка посылок в любую точку мира</h1>
+                      <form class="form price-form js-validate" action="/">
+                        <div class="input-row gap-search">
+                          <div class="input-item w33">
+                            <div class="input-wrapper">
+                              <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
+                              <div class="js-input-dropdown-target input-dropdown-target">
+                                <div class="input-dropdown-content">
+                                  <div class="option">
+                                    <span>Мосальск, Россия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Москва, Россия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мосс, Норвегия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мостар, Босния и Герцеговина</span>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                            <label class="input-label" for="#name2Inp">Откуда</label>
-                            <div class="input-icon swap js-swap">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5">
-                                <style>
-                                  .stswap {
-                                    fill-rule: evenodd;
-                                    clip-rule: evenodd;
-                                    fill: #F47921;
-                                  }
+                              <label class="input-label" for="#name2Inp">Откуда</label>
+                              <div class="input-icon swap js-swap">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5">
+                                  <style>
+                                    .stswap {
+                                      fill-rule: evenodd;
+                                      clip-rule: evenodd;
+                                      fill: #F47921;
+                                    }
 
-                                </style>
-                                <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap" />
-                                <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap" />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="input-item w33">
-                          <div class="input-wrapper">
-                            <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
-                            <div class="js-input-dropdown-target input-dropdown-target">
-                              <div class="input-dropdown-content">
-                                <div class="option">
-                                  <span>Мосальск, Россия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Москва, Россия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Мосс, Норвегия</span>
-                                </div>
-                                <div class="option">
-                                  <span>Мостар, Босния и Герцеговина</span>
-                                </div>
-                                <div class="option">
-                                  <span>Мостар, Босния и Герцеговина</span>
-                                </div>
-                              </div>
-                            </div>
-                            <label class="input-label" for="#name2Inp">Куда</label>
-                          </div>
-                        </div>
-                        <div class="input-item w33">
-                          <button class="btn has-loading" type="submit">
-                            <div class="btn-inner">
-                              <span class="js-price">от 900 000</span>
-                              <span class="js-price-text">Подробнее
-                                <svg class="icon-arrr">
-                                  <use xlink:href="#arrr"></use>
+                                  </style>
+                                  <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap" />
+                                  <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap" />
                                 </svg>
-                              </span>
+                              </div>
                             </div>
-                          </button>
+                          </div>
+                          <div class="input-item w33">
+                            <div class="input-wrapper">
+                              <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
+                              <div class="js-input-dropdown-target input-dropdown-target">
+                                <div class="input-dropdown-content">
+                                  <div class="option">
+                                    <span>Мосальск, Россия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Москва, Россия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мосс, Норвегия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мостар, Босния и Герцеговина</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мостар, Босния и Герцеговина</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <label class="input-label" for="#name2Inp">Куда</label>
+                            </div>
+                          </div>
+                          <div class="input-item w33">
+                            <button class="btn has-loading" type="submit">
+                              <div class="btn-inner">
+                                <span class="js-price">от 900 000</span>
+                                <span class="js-price-text">Подробнее
+                                  <svg class="icon-arrr">
+                                    <use xlink:href="#arrr"></use>
+                                  </svg>
+                                </span>
+                              </div>
+                            </button>
+                          </div>
                         </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="full-height-scroller">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 31">
+                    <style>
+                      .stscroll0 {
+                        fill: none;
+                        stroke: #FFFFFF;
+                        stroke-miterlimit: 10;
+                      }
+
+                      .stscroll1 {
+                        fill: #FFFFFF;
+                      }
+
+                    </style>
+                    <path d="M10 .5c5.2 0 9.5 4.3 9.5 9.5v11c0 5.2-4.3 9.5-9.5 9.5S.5 26.2.5 21V10C.5 4.8 4.8.5 10 .5z" class="stscroll0" />
+                    <path d="M10 7.6c.3 0 .5.2.5.5v3.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V8.1c0-.3.2-.5.5-.5z" class="stscroll1" />
+                  </svg>
+                </div>
+              </div>
+              <div class="wrapper bg-mobile bg-brown-gradient">
+                <div class="box">
+                  <div class="promoblock-wrapper">
+                    <div class="promoblock-inner">
+                      <!-- сьтруктура все таки бует разной-->
+                      <!-- модификатор .type-news-->
+                      <!-- здесь если нет картинки, то .promoblock-item-bg убирается полностью-->
+                      <div class="promoblock-item w33 type-news">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/1.jpg" alt="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h4">В Татарстане 30 августа нерабочий день</div>
+                              <div class="caption">30 августа, 2017</div>
+                            </div>
+                          </div>
+                          <object class="item-type-wrapper">
+                            <a class="item-type" href="#">Новости</a>
+                          </object>
+                        </a>
                       </div>
-                    </form>
+                      <div class="promoblock-item w33 type-news">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/2.jpg" alt="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h4">В Кыргызстане 31 августа и 1 сентября нерабочие дни. Эти дни</div>
+                              <div class="caption">29 августа, 2017</div>
+                            </div>
+                          </div>
+                          <object class="item-type-wrapper">
+                            <a class="item-type" href="#">Новости</a>
+                          </object>
+                        </a>
+                      </div>
+                      <div class="promoblock-item w33 type-news">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h4">Нерабочие дни в ряде городов и стран в связи с празднованием Курбан Байрам</div>
+                              <div class="caption">29 августа, 2017</div>
+                            </div>
+                          </div>
+                          <object class="item-type-wrapper">
+                            <a class="item-type" href="#">Новости</a>
+                          </object>
+                        </a>
+                      </div>
+                      <!-- модификатор .type-promotion-->
+                      <!-- у него 2 цвета по дефолту оранжевый. для черного модификатор .bg-black-->
+                      <div class="promoblock-item w33 type-promotion">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/3.jpg" alt="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h4">Осенняя акция: отправь посылку через наш сервис и получи бонус 100 ₽ на доставку следующей посылки </div>
+                              <div class="caption">30 сентября, 2017</div>
+                            </div>
+                          </div>
+                          <object class="item-type-wrapper">
+                            <a class="item-type" href="#">Акция</a>
+                            <a class="item-type" href="#">10 сентября — 25 октября</a>
+                          </object>
+                        </a>
+                      </div>
+                      <!-- модификатор .type-feature, возможные бэкграунды желтый(по дефолту): .bg-pink,.bg-brown -->
+                      <!-- картинка слева  по дефолту, справа  - .image-right-->
+                      <!-- при  w33 не важно-->
+                      <!-- на этих карточках у .title модификтаор .h3-->
+                      <!-- и для высоких кратинок типа мобилки модификатор .image-big -->
+                      <!-- у блока с белым текстом другие клссы на кнопке, если проблема их перевесить - пиши. перестилизую-->
+                      <div class="promoblock-item w66 type-feature image-big">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/4.png" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h3">Доставка становится проще и быстрее</div>
+                              <div class="text sm">Установите мобильное приложение КСЭ и получите скидку 15%. Накапливайте баллы и оплачивайте им заказы.</div>
+                              <div class="btn color-black type-round not-trans">
+                                <div class="btn-inner">
+                                  <span>Установить</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="promoblock-item w50 type-feature image-right bg-brown">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/6.png" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h3">Отправка и комплектация подарков</div>
+                              <div class="btn color-white type-round color-reverse">
+                                <div class="btn-inner">
+                                  <span>Подробнее</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="promoblock-item w50 type-feature bg-brown">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/6.png" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h3">Отправка и комплектация подарков</div>
+                              <div class="btn color-white type-round color-reverse">
+                                <div class="btn-inner">
+                                  <span>Подробнее</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="promoblock-item w33 type-feature bg-pink">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/7.png" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h3">Бесплатное страхование грузов</div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="promoblock-item w66 type-feature image-right">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/10.png" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h3">Таможенный перевозчик</div>
+                              <div class="text sm">КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира. </div>
+                              <div class="btn color-black type-round not-trans">
+                                <div class="btn-inner">
+                                  <span>Подробнее</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="promoblock-item w66 type-feature">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/6.png" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h3">Таможенный перевозчик</div>
+                              <div class="text sm">КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира. </div>
+                              <div class="btn color-black type-round not-trans">
+                                <div class="btn-inner">
+                                  <span>Подробнее</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="promoblock-item w33 type-feature image-right">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/10.png" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h3">Таможенный перевозчик</div>
+                              <div class="text sm">КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира. </div>
+                              <div class="btn color-black type-round not-trans">
+                                <div class="btn-inner">
+                                  <span>Подробнее</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- .type-sale-->
+                      <!-- у title модификтаор .h3-->
+                      <div class="promoblock-item w50 type-sale">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/5.jpg" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h4">Экспресс-доставка</div>
+                              <div class="text sm">Экспресс в логистике — это доставка на следующий день по большинству направлений.</div>
+                            </div>
+                          </div>
+                          <object class="item-type-wrapper">
+                            <a class="item-type" href="#">Услуги</a>
+                          </object>
+                        </a>
+                      </div>
+                      <div class="promoblock-item w33 type-sale">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/8.jpg" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h4">Хранение и комплектация</div>
+                              <div class="text"></div>
+                            </div>
+                          </div>
+                          <object class="item-type-wrapper">
+                            <a class="item-type" href="#">Услуги</a>
+                          </object>
+                        </a>
+                      </div>
+                      <div class="promoblock-item w33 type-sale">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/9.jpg" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h4">Комплексное решение для интернет-магазинов</div>
+                              <div class="text"></div>
+                            </div>
+                          </div>
+                          <object class="item-type-wrapper">
+                            <a class="item-type" href="#">Услуги</a>
+                          </object>
+                        </a>
+                      </div>
+                      <div class="promoblock-item w33 type-sale">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/11.jpg" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h4">Доставка c температурным режимом</div>
+                              <div class="text"></div>
+                            </div>
+                          </div>
+                          <object class="item-type-wrapper">
+                            <a class="item-type" href="#">Услуги</a>
+                          </object>
+                        </a>
+                      </div>
+                      <div class="promoblock-item w33 type-sale">
+                        <a class="promoblock-item-link" href="#">
+                          <div class="promoblock-item-bg">
+                            <img class="js-image" data-src="img/promoblock/11.jpg" alt="" src="">
+                          </div>
+                          <div class="promoblock-item-content">
+                            <div class="promoblock-item-content-inner">
+                              <div class="title h4">Доставка c температурным режимом Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora omnis officiis dicta, ullam ut dolores harum itaque a saepe fugit ex, minima blanditiis architecto quibusdam nobis laudantium
+                                rerum sit autem in commodi voluptatum voluptatibus! Minima, dolorum. Nemo error officia, explicabo, tempora, dolores commodi natus alias quod magni sunt consequuntur. Consectetur quisquam, culpa nam! Ad, optio.</div>
+                              <div
+                                class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ducimus impedit, rerum corporis quam ad est sint, temporibus voluptates, saepe iste explicabo perspiciatis molestias nostrum aliquid. Odit ipsa similique excepturi!</div>
+                          </div>
+                      </div>
+                      <object class="item-type-wrapper">
+                        <a class="item-type" href="#">Услуги</a>
+                      </object>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="full-height-scroller">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 31">
-                  <style>
-                    .stscroll0 {
-                      fill: none;
-                      stroke: #FFFFFF;
-                      stroke-miterlimit: 10;
-                    }
-
-                    .stscroll1 {
-                      fill: #FFFFFF;
-                    }
-
-                  </style>
-                  <path d="M10 .5c5.2 0 9.5 4.3 9.5 9.5v11c0 5.2-4.3 9.5-9.5 9.5S.5 26.2.5 21V10C.5 4.8 4.8.5 10 .5z" class="stscroll0" />
-                  <path d="M10 7.6c.3 0 .5.2.5.5v3.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V8.1c0-.3.2-.5.5-.5z" class="stscroll1" />
-                </svg>
-              </div>
             </div>
-            <div class="wrapper bg-mobile bg-brown-gradient">
+            <div class="wrapper">
+              <div class="wrapper-bg">
+                <div class="wrapper-bg-img js-image bg" data-src="img/bgwrapper/1.jpg"></div>
+              </div>
               <div class="box">
-                <div class="promoblock-wrapper">
-                  <div class="promoblock-inner">
-                    <!-- сьтруктура все таки бует разной-->
-                    <!-- модификатор .type-news-->
-                    <!-- здесь если нет картинки, то .promoblock-item-bg убирается полностью-->
-                    <div class="promoblock-item w33 type-news">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/1.jpg" alt="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h4">В Татарстане 30 августа нерабочий день</div>
-                            <div class="caption">30 августа, 2017</div>
-                          </div>
-                        </div>
-                        <object class="item-type-wrapper">
-                          <a class="item-type" href="#">Новости</a>
-                        </object>
-                      </a>
-                    </div>
-                    <div class="promoblock-item w33 type-news">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/2.jpg" alt="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h4">В Кыргызстане 31 августа и 1 сентября нерабочие дни. Эти дни</div>
-                            <div class="caption">29 августа, 2017</div>
-                          </div>
-                        </div>
-                        <object class="item-type-wrapper">
-                          <a class="item-type" href="#">Новости</a>
-                        </object>
-                      </a>
-                    </div>
-                    <div class="promoblock-item w33 type-news">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h4">Нерабочие дни в ряде городов и стран в связи с празднованием Курбан Байрам</div>
-                            <div class="caption">29 августа, 2017</div>
-                          </div>
-                        </div>
-                        <object class="item-type-wrapper">
-                          <a class="item-type" href="#">Новости</a>
-                        </object>
-                      </a>
-                    </div>
-                    <!-- модификатор .type-promotion-->
-                    <!-- у него 2 цвета по дефолту оранжевый. для черного модификатор .bg-black-->
-                    <div class="promoblock-item w33 type-promotion">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/3.jpg" alt="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h4">Осенняя акция: отправь посылку через наш сервис и получи бонус 100 ₽ на доставку следующей посылки </div>
-                            <div class="caption">30 сентября, 2017</div>
-                          </div>
-                        </div>
-                        <object class="item-type-wrapper">
-                          <a class="item-type" href="#">Акция</a>
-                          <a class="item-type" href="#">10 сентября — 25 октября</a>
-                        </object>
-                      </a>
-                    </div>
-                    <!-- модификатор .type-feature, возможные бэкграунды желтый(по дефолту): .bg-pink,.bg-brown -->
-                    <!-- картинка слева  по дефолту, справа  - .image-right-->
-                    <!-- при  w33 не важно-->
-                    <!-- на этих карточках у .title модификтаор .h3-->
-                    <!-- и для высоких кратинок типа мобилки модификатор .image-big -->
-                    <!-- у блока с белым текстом другие клссы на кнопке, если проблема их перевесить - пиши. перестилизую-->
-                    <div class="promoblock-item w66 type-feature image-big">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/4.png" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h3">Доставка становится проще и быстрее</div>
-                            <div class="text sm">Установите мобильное приложение КСЭ и получите скидку 15%. Накапливайте баллы и оплачивайте им заказы.</div>
-                            <div class="btn color-black type-round not-trans">
-                              <div class="btn-inner">
-                                <span>Установить</span>
-                              </div>
-                            </div>
-                          </div>
+                <div class="row padding-big">
+                  <div class="columns large-6 medium-6 small-12">
+                    <div class="block-about">
+                      <h2 class="title h2 white">Профессиональный логистический оператор</h2>
+                      <div class="text white">Широкий спектр транспортных возможностей позволяют обеспечить доставку документов и грузов по принципу «от двери до двери» в любую точку планеты.</div>
+                      <a class="btn color-white type-round" href="">
+                        <div class="btn-inner">
+                          <span>Подробнее</span>
                         </div>
                       </a>
                     </div>
-                    <div class="promoblock-item w50 type-feature image-right bg-brown">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/6.png" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h3">Отправка и комплектация подарков</div>
-                            <div class="btn color-white type-round color-reverse">
-                              <div class="btn-inner">
-                                <span>Подробнее</span>
-                              </div>
-                            </div>
+                  </div>
+                  <div class="columns large-6 medium-6 small-12">
+                    <div class="block-about">
+                      <div class="block-about-slider">
+                        <div class="block-about-slider-inner js-block-about-slider">
+                          <div class="block-about-slider-item">
+                            <div class="block-about-slider-title">250+</div>
+                            <div class="text sm white">Филиалов и представительств компании КурьерСервис Экспресс</div>
+                          </div>
+                          <div class="block-about-slider-item">
+                            <div class="block-about-slider-title">20</div>
+                            <div class="text sm white">Лет успешной работы на рынке курьерских услуг</div>
+                          </div>
+                          <div class="block-about-slider-item">
+                            <div class="block-about-slider-title">218</div>
+                            <div class="text sm white">Cтран мира, в которые осуществляется доставка почтовых отправлений и грузов</div>
+                          </div>
+                          <div class="block-about-slider-item">
+                            <div class="block-about-slider-title">2000+</div>
+                            <div class="text sm white">Клиентов среди малого, среднего и крупного бизнеса по всему миру</div>
                           </div>
                         </div>
-                      </a>
+                        <div class="slider-dots"></div>
+                      </div>
                     </div>
-                    <div class="promoblock-item w50 type-feature bg-brown">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/6.png" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h3">Отправка и комплектация подарков</div>
-                            <div class="btn color-white type-round color-reverse">
-                              <div class="btn-inner">
-                                <span>Подробнее</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="promoblock-item w33 type-feature bg-pink">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/7.png" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h3">Бесплатное страхование грузов</div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="promoblock-item w66 type-feature image-right">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/10.png" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h3">Таможенный перевозчик</div>
-                            <div class="text sm">КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира. </div>
-                            <div class="btn color-black type-round not-trans">
-                              <div class="btn-inner">
-                                <span>Подробнее</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="promoblock-item w66 type-feature">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/6.png" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h3">Таможенный перевозчик</div>
-                            <div class="text sm">КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира. </div>
-                            <div class="btn color-black type-round not-trans">
-                              <div class="btn-inner">
-                                <span>Подробнее</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="promoblock-item w33 type-feature image-right">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/10.png" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h3">Таможенный перевозчик</div>
-                            <div class="text sm">КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира. </div>
-                            <div class="btn color-black type-round not-trans">
-                              <div class="btn-inner">
-                                <span>Подробнее</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <!-- .type-sale-->
-                    <!-- у title модификтаор .h3-->
-                    <div class="promoblock-item w50 type-sale">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/5.jpg" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h4">Экспресс-доставка</div>
-                            <div class="text sm">Экспресс в логистике — это доставка на следующий день по большинству направлений.</div>
-                          </div>
-                        </div>
-                        <object class="item-type-wrapper">
-                          <a class="item-type" href="#">Услуги</a>
-                        </object>
-                      </a>
-                    </div>
-                    <div class="promoblock-item w33 type-sale">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/8.jpg" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h4">Хранение и комплектация</div>
-                            <div class="text"></div>
-                          </div>
-                        </div>
-                        <object class="item-type-wrapper">
-                          <a class="item-type" href="#">Услуги</a>
-                        </object>
-                      </a>
-                    </div>
-                    <div class="promoblock-item w33 type-sale">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/9.jpg" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h4">Комплексное решение для интернет-магазинов</div>
-                            <div class="text"></div>
-                          </div>
-                        </div>
-                        <object class="item-type-wrapper">
-                          <a class="item-type" href="#">Услуги</a>
-                        </object>
-                      </a>
-                    </div>
-                    <div class="promoblock-item w33 type-sale">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/11.jpg" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h4">Доставка c температурным режимом</div>
-                            <div class="text"></div>
-                          </div>
-                        </div>
-                        <object class="item-type-wrapper">
-                          <a class="item-type" href="#">Услуги</a>
-                        </object>
-                      </a>
-                    </div>
-                    <div class="promoblock-item w33 type-sale">
-                      <a class="promoblock-item-link" href="#">
-                        <div class="promoblock-item-bg">
-                          <img class="js-image" data-src="img/promoblock/11.jpg" alt="" src="">
-                        </div>
-                        <div class="promoblock-item-content">
-                          <div class="promoblock-item-content-inner">
-                            <div class="title h4">Доставка c температурным режимом Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora omnis officiis dicta, ullam ut dolores harum itaque a saepe fugit ex, minima blanditiis architecto quibusdam nobis laudantium
-                              rerum sit autem in commodi voluptatum voluptatibus! Minima, dolorum. Nemo error officia, explicabo, tempora, dolores commodi natus alias quod magni sunt consequuntur. Consectetur quisquam, culpa nam! Ad, optio.</div>
-                            <div
-                              class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ducimus impedit, rerum corporis quam ad est sint, temporibus voluptates, saepe iste explicabo perspiciatis molestias nostrum aliquid. Odit ipsa similique excepturi!</div>
-                        </div>
-                    </div>
-                    <object class="item-type-wrapper">
-                      <a class="item-type" href="#">Услуги</a>
-                    </object>
-                    </a>
                   </div>
                 </div>
               </div>
             </div>
-        </div>
-        <div class="wrapper">
-          <div class="wrapper-bg">
-            <div class="wrapper-bg-img js-image bg" data-src="img/bgwrapper/1.jpg"></div>
-          </div>
-          <div class="box">
-            <div class="row padding-big">
-              <div class="columns large-6 medium-6 small-12">
-                <div class="block-about">
-                  <h2 class="title h2 white">Профессиональный логистический оператор</h2>
-                  <div class="text white">Широкий спектр транспортных возможностей позволяют обеспечить доставку документов и грузов по принципу «от двери до двери» в любую точку планеты.</div>
-                  <a class="btn color-white type-round" href="">
-                    <div class="btn-inner">
-                      <span>Подробнее</span>
+            <div class="wrapper bg-white">
+              <div class="box">
+                <div class="content padding-big">
+                  <div class="offices-map">
+                    <div class="title h2">Более 250 офисов по всей России</div>
+                    <div class="map-wrapper">
+                      <!-- согласовать формат прелдставления данных о точках-->
+                      <!-- после интегрировать скрипт загрузки точек из local/workflow-->
+                      <!-- иничу карту по классу, но айди все арвно нужен и если карт несколько то он уникален-->
+                      <div class="map-elem js-map" id="map-1" data-pinimg="img/mappins/pin_office.svg" data-maptype="offices"></div>
                     </div>
-                  </a>
-                </div>
-              </div>
-              <div class="columns large-6 medium-6 small-12">
-                <div class="block-about">
-                  <div class="block-about-slider">
-                    <div class="block-about-slider-inner js-block-about-slider">
-                      <div class="block-about-slider-item">
-                        <div class="block-about-slider-title">250+</div>
-                        <div class="text sm white">Филиалов и представительств компании КурьерСервис Экспресс</div>
-                      </div>
-                      <div class="block-about-slider-item">
-                        <div class="block-about-slider-title">20</div>
-                        <div class="text sm white">Лет успешной работы на рынке курьерских услуг</div>
-                      </div>
-                      <div class="block-about-slider-item">
-                        <div class="block-about-slider-title">218</div>
-                        <div class="text sm white">Cтран мира, в которые осуществляется доставка почтовых отправлений и грузов</div>
-                      </div>
-                      <div class="block-about-slider-item">
-                        <div class="block-about-slider-title">2000+</div>
-                        <div class="text sm white">Клиентов среди малого, среднего и крупного бизнеса по всему миру</div>
-                      </div>
+                    <div class="map-button">
+                      <a class="btn color-orange type-round" href="#">
+                        <div class="btn-inner">
+                          <span>Все офисы</span>
+                        </div>
+                      </a>
                     </div>
-                    <div class="slider-dots"></div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="wrapper bg-white">
-          <div class="box">
-            <div class="content padding-big">
-              <div class="offices-map">
-                <div class="title h2">Более 250 офисов по всей России</div>
-                <div class="map-wrapper">
-                  <!-- иничу карту по классу, но айди все арвно нужен и если карт несколько то он уникален-->
-                  <div class="map-elem js-map" id="map-1" data-pinimg="img/mappins/pin_office.svg" data-maptype="offices"></div>
-                </div>
-                <div class="map-button">
-                  <a class="btn color-orange type-round" href="#">
-                    <div class="btn-inner">
-                      <span>Все офисы</span>
+            <div class="wrapper brown">
+              <div class="feature-wrapper">
+                <a class="feature-item" href="#">
+                  <div class="feature-item-inner">
+                    <div class="feature-item-content">
+                      <div class="feature-item-bg">
+                        <div class="feature-item-bg-inner js-image bg" data-src="img/feature/1.jpg"></div>
+                      </div>
+                      <div class="feature-item-text">
+                        <div class="title h3 white">Франчайзинг</div>
+                      </div>
                     </div>
-                  </a>
+                  </div>
+                </a>
+                <a class="feature-item" href="#">
+                  <div class="feature-item-inner">
+                    <div class="feature-item-content">
+                      <div class="feature-item-bg">
+                        <div class="feature-item-bg-inner js-image bg" data-src="img/feature/2.jpg"></div>
+                      </div>
+                      <div class="feature-item-text">
+                        <div class="title h3 white">Закупки</div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a class="feature-item" href="#">
+                  <div class="feature-item-inner">
+                    <div class="feature-item-content">
+                      <div class="feature-item-bg">
+                        <div class="feature-item-bg-inner js-image bg" data-src="img/feature/3.jpg"></div>
+                      </div>
+                      <div class="feature-item-text">
+                        <div class="title h3 white">Сотрудничество</div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="wrapper bg-orange">
+              <div class="box">
+                <div class="row padding-big">
+                  <div class="columns large-6 medium-6 small-12">
+                    <div class="block-about">
+                      <h2 class="title h2 white">Есть вопросы или нужна помощь?</h2>
+                    </div>
+                  </div>
+                  <div class="columns large-6 medium-6 small-12">
+                    <div class="block-about">
+                      <div class="text white">Мы всегда рады помочь и ответить на все интересующие вас вопросы. Вы можете попробовать найти информацию в разделе
+                        <a href="#">«Вопросы и ответы»</a>или написать ваш вопрос нам на почту.</div>
+                      <a class="btn color-white type-round color-reverse not-trans" href="#">
+                        <div class="btn-inner">
+                          <span>Вопросы и ответы</span>
+                        </div>
+                      </a>
+                      <a class="btn color-white type-round color-reverse" href="#">
+                        <div class="btn-inner">
+                          <span>Задать вопрос</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="wrapper brown">
-          <div class="feature-wrapper">
-            <a class="feature-item" href="#">
-              <div class="feature-item-inner">
-                <div class="feature-item-content">
-                  <div class="feature-item-bg">
-                    <div class="feature-item-bg-inner js-image bg" data-src="img/feature/1.jpg"></div>
-                  </div>
-                  <div class="feature-item-text">
-                    <div class="title h3 white">Франчайзинг</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <a class="feature-item" href="#">
-              <div class="feature-item-inner">
-                <div class="feature-item-content">
-                  <div class="feature-item-bg">
-                    <div class="feature-item-bg-inner js-image bg" data-src="img/feature/2.jpg"></div>
-                  </div>
-                  <div class="feature-item-text">
-                    <div class="title h3 white">Закупки</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <a class="feature-item" href="#">
-              <div class="feature-item-inner">
-                <div class="feature-item-content">
-                  <div class="feature-item-bg">
-                    <div class="feature-item-bg-inner js-image bg" data-src="img/feature/3.jpg"></div>
-                  </div>
-                  <div class="feature-item-text">
-                    <div class="title h3 white">Сотрудничество</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="wrapper bg-orange">
-          <div class="box">
-            <div class="row padding-big">
-              <div class="columns large-6 medium-6 small-12">
-                <div class="block-about">
-                  <h2 class="title h2 white">Есть вопросы или нужна помощь?</h2>
-                </div>
-              </div>
-              <div class="columns large-6 medium-6 small-12">
-                <div class="block-about">
-                  <div class="text white">Мы всегда рады помочь и ответить на все интересующие вас вопросы. Вы можете попробовать найти информацию в разделе
-                    <a href="#">«Вопросы и ответы»</a>или написать ваш вопрос нам на почту.</div>
-                  <a class="btn color-white type-round color-reverse not-trans" href="#">
-                    <div class="btn-inner">
-                      <span>Вопросы и ответы</span>
-                    </div>
-                  </a>
-                  <a class="btn color-white type-round color-reverse" href="#">
-                    <div class="btn-inner">
-                      <span>Задать вопрос</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
         <footer class="page__footer">
           <div class="wrapper">

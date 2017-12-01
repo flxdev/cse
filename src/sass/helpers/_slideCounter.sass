@@ -1,0 +1,41 @@
+.slider-counter
+	font-size: 0
+	+padlr(14px)
+	display: inline-block
+	vertical-align: middle
+	position: relative
+	z-index: 0
+	+nosel
+	&:only-child
+		display: none
+	&>div
+		display: inline-block
+		vertical-align: middle
+		+rem(font-size,18px)
+		color: $caption
+		text-align: center
+	.slider-curr
+		color: $dark
+	.slider-divider
+		+padlr(5px)
+.slider-nav
+	.slick-arrow
+		display: inline-block
+		vertical-align: middle
+		width: 8px
+		height: 15px
+		+tr(opacity .3s)
+		.icon
+			height: 100%
+			color: $dark
+			+tr(color .3s)
+			svg
+				height: 100%
+		&.slick-prev
+			transform: scale(-1,1)
+		&:hover
+			.icon
+				color: $brand
+		&.slick-disabled
+			opacity: 0
+			pointer-events: none

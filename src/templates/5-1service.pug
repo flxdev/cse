@@ -1,0 +1,196 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+	-var map = true
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head1.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="/").bread-item Услуги
+				h1.title.h1 Международная доставка
+				.buttons-wrapper
+					a(href="#").btn.color-white.type-round
+						.btn-inner
+							span.btn-icon
+								+icon('down')
+							span Скачать презентацию
+					a(href="#").btn.color-white.not-trans.type-round
+						.btn-inner
+							span Заключить договор
+	.wrapper.bg-white
+		.box
+			.service-linkblock-wrapper
+				.row.padding-big
+					.columns.large-4.medium-6.small-12
+						+feachureLink('Экспорт')
+							ul.service-links
+								li.service-links-item
+									a(href="#") Срочная
+								li.service-links-item
+									a(href="#") Сверхсрочная
+					.columns.large-4.medium-6.small-12
+						+feachureLink('Импорт')
+							ul.service-links
+								li.service-links-item
+									a(href="#") Срочная
+					.columns.large-4.medium-6.small-12
+						+feachureLink('Температурное складское хранение')
+							ul.service-links
+								li.service-links-item
+									a(href="#") Складская зона хранения (-15... +25 0С)
+								li.service-links-item
+									a(href="#") Холодильная камера (+2... +8 0С)
+								li.service-links-item
+									a(href="#") Морозильная камера (-20 0С)
+								li.service-links-item
+									a(href="#") Морозильная камера (-86 0С) 
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Описание услуги
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									.title.h4 Выход на международный уровень — важный шаг в развитии бизнеса. Его успешность зависит от качества реализации грузо- и документооборота с зарубежными партнерами.
+
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+
+										p Наша компания осуществляет доставку экспресс-грузов и документов в более чем 200 стран мира и страны Таможенного союза. Мы гарантируем высокое качество обслуживания, оптимальное сочетание скорости и цены перевозок, таможенное оформление в максимально короткие сроки, доставку груза «до двери» на территории страны доставки.
+					.content-slider
+						.content-slider-inner
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+								figcaption.caption.medium Наш автопарк укомплектован новыми грузовыми автомобилями
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+								figcaption.caption.medium Наш автопарк укомплектован новыми грузовыми автомобилями
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+								figcaption.caption.medium Наш автопарк укомплектован новыми грузовыми автомобилями
+						.content-slider-nav
+							.slider-nav
+								.slider-counter
+									.slider-curr
+									.slider-divider /
+									.slider-total
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Преимущества
+					.cards-wrapper.w4
+						+card('Выезд курьера для сбора отправления','КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира.','8.svg')
+						+card('Доставка до двери','Мы тщательно контро- лируем транспортные процессы на всех этапах доставки вашей посылки, чтобы вы получили её прямо в руки.','6.svg')
+						+card('Мониторинг статуса доставки отправления ','Вы всегда можете отследить вашу посылку через нас сервис и быть в курсе, где она находится в данный момент.','9.svg')
+						+card('Полный комплекс услуг','Наши специалисты помогут вам быстро пройти все необходимые таможенные процедуры.','7.svg')
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Что мы предлагаем
+					.offers-wrapper
+						+offer('Отслеживание посылки в любое время','Мы предоставляем специальный сервис, который позволяет в режиме онлайн узнать где находится ваш груз. Благодаря широкой сети представительств и офисов вы имеете возможность заказать доставку из любого региона нашей страны.','1')
+						+offer('Продуманные грузоперевозки по всему миру','Мы разрабатываем оптимальный и выгодный маршрут, предусматривающий использование современных складских комплексов, надежных контейнерных терминалов и портов.','2')
+						+offer('Доставка с особой осторожностью','Мы предоставляем специальный сервис, который позволяет в режиме онлайн узнать где находится ваш груз. Благодаря широкой сети представительств и офисов вы имеете возможность заказать доставку из любого региона нашей страны.','3')
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Требования к посылкам
+					.block-constructor-table
+						table
+							tbody
+								tr
+									th
+									th
+										.caption Макс. вес одного отправления
+									th
+										.caption Макс. кол-во отправлений
+									th
+										.caption Макс. суммарный вес
+									th
+										.caption Макс. длина
+									th
+										.caption Макс. периметр поперечного сечения
+									th
+										.caption Объёмный вес
+								tr
+									td
+										.text.bold.sm Документы
+									td
+										.text.sm 3 кг
+									td
+										.text.sm 99
+									td
+										.text.sm 297 кг
+									td
+										.text.sm 20 см
+									td
+										.text.sm —
+									td
+										.text.sm 3 кг
+								tr
+									td
+										.text.bold.sm Груз
+									td
+										.text.sm 3 кг
+									td
+										.text.sm 99
+									td
+										.text.sm 297 кг
+									td
+										.text.sm 20 см
+									td
+										.text.sm —
+									td
+										.text.sm 3 кг
+								tr
+									td
+										.text.bold.sm Посылка из интернет-магазина
+									td
+										.text.sm 3 кг
+									td
+										.text.sm 99
+									td
+										.text.sm 297 кг
+									td
+										.text.sm 20 см
+									td
+										.text.sm —
+									td
+										.text.sm 3 кг
+	//- .wrapper.bg-gray
+	//- 	.box
+	//- 		.padding-big
+	//- 			.block-constructor
+	//- 				h2.title.h2 Описание услуги
+	//- 				.block-constructor-halfdescr
+	//- 					.row.align-stretch 
+	//- 						.columns.large-6.medium-6.small-12
+	//- 							.col
+	//- 								.title.h4 Выход на международный уровень — важный шаг в развитии бизнеса. Его успешность зависит от качества реализации грузо- и документооборота с зарубежными партнерами.
+	//- 								.title.h4 Экспорт — надежное решение вопроса международной перевозки и доставки грузов и документов в минимально возможные сроки по доступным ценам. География: соответственно списку обслуживаемых стран.
+	//- 						.columns.large-6.medium-6.small-12
+	//- 							.col
+	//- 								.content-wrapper
+	//- 									p Экспорт — надежное решение вопроса международной перевозки и доставки грузов и документов в минимально возможные сроки по доступным ценам. География: соответственно списку обслуживаемых стран.
+	//- 									h5 Общие характеристики услуг
+	//- 									ul
+	//- 										li Возможность гарантированной доставки к полудню по Европе
+	//- 										li От двери до двери
+	//- 										li По всему миру
+	//- 										li Отслеживание в режиме онлайн
+	//- 										li Доступны дополнительные услуги
+
+	include ./partials/_promo
+	include ./partials/_ask

@@ -20,14 +20,18 @@ PageList:
 - file: 3-4mycalc.html
   ready: 100
 - file: 4-0contact.html
-  ready: 70
-- file: 9-7vacancy.html
+  ready: 95
+- file: 5-0service.html
   ready: 100
-- file: 10-2form.html
+- file: 5-1service.html
   ready: 100
-- file: 11-2feedback.html
-  ready: 100
-- file: 12-1client.html
-  ready: 100
+# - file: 9-7vacancy.html
+#   ready: 100
+# - file: 10-2form.html
+#   ready: 100
+# - file: 11-2feedback.html
+#   ready: 100
+# - file: 12-1client.html
+#   ready: 100
 - file: ui-components.html
   ready: 100

@@ -1,0 +1,75 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+	-var map = true
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head1.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Услуги
+				.buttons-wrapper
+					a(href="#").btn.color-white.type-round
+						.btn-inner
+							span.btn-icon
+								+icon('down')
+							span Скачать презентацию
+					a(href="#").btn.color-white.not-trans.type-round
+						.btn-inner
+							span Заключить договор
+	.wrapper.bg-white
+		.box
+			.row.padding-big
+				.service-wrap
+					+serviceItem('Доставка по России','1')
+					+serviceItem('Доставка по области','2')
+					+serviceItem('Доставка по городу','3')
+					+serviceItem('Международная доставка','4')
+					+serviceItem('Доставка в ближнее зарубежье','1')
+					+serviceItem('Интернет-магазинам','2')
+					+serviceItem('Температурные перевозки','3')
+					+serviceItem('Складские услуги','4')
+					.service-item
+						.service-item-content
+							.title.h2 Таможенные услуги
+							a(href="#").btn.color-orange.type-round
+								.btn-inner 
+									span Подробнее
+						.service-item-img
+							.service-item-img-inner
+								img.js-image(data-src="img/service/1.jpg", alt="")
+					+serviceItem('Организация почтовых комнат','2')
+					.service-item
+						.service-item-content
+							.title.h2 Дополнительные услуги
+							ul.service-links
+								li.service-links-item
+									a(href="#") Доставка опасного груза
+								li.service-links-item
+									a(href="#") Доставка негабаритных грузов
+								li.service-links-item
+									a(href="#") Страхование отправлений
+								li.service-links-item
+									a(href="#") Перевозка с объявленной стоимостью
+								li.service-links-item
+									a(href="#") Уведомление о доставке
+								li.service-links-item
+									a(href="#") Доставка в нерабочее время
+								li.service-links-item
+									a(href="#") Доставка отправлений с «возвратом»
+								li.service-links-item
+									a(href="#") Доставка «Лично в руки»
+							a(href="#").btn.color-orange.type-round
+								.btn-inner 
+									span Подробнее
+						.service-item-img
+							.service-item-img-inner
+								img.js-image(data-src="img/service/3.jpg", alt="")
+	
+	include ./partials/_promo
+	include ./partials/_ask

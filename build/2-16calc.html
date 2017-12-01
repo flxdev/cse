@@ -137,6 +137,20 @@
         <symbol id="arrl" viewBox="0 0 400 512">
           <path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256" fill="currentcolor" />
         </symbol>
+        <symbol id="arrow_gallery" viewBox="0 0 8.1 14.1">
+          <style>
+            .stslideArr0 {
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              fill: none;
+              stroke: currentcolor;
+              stroke-width: 1.5;
+              stroke-miterlimit: 10
+            }
+
+          </style>
+          <path d="M.5.5L7 7 .5 13.5" class="stslideArr0" />
+        </symbol>
         <symbol id="arrr" viewBox="0 0 400 512">
           <path fill="none" d="M-1-1h582v402H-1z" />
           <path d="M160 383.6l32.3 32.4L352 256 192.3 96 160 128.4 287.3 256" fill="currentcolor" />
@@ -899,55 +913,58 @@
             <!--END header-->
           </header>
           <main class="page__content">
-            <div class="wrapper bg-white page-head">
-              <div class="box">
-                <div class="page-head-container">
-                  <div class="bread-cont">
-                    <a class="bread-item" href="/">Главная</a>
+            <!-- вот сюда все выплевываем-->
+            <div class="page__content-container">
+              <div class="wrapper bg-white page-head">
+                <div class="box">
+                  <div class="page-head-container">
+                    <div class="bread-cont">
+                      <a class="bread-item" href="/">Главная</a>
+                    </div>
+                    <h1 class="title h1">Заказ принят</h1>
                   </div>
-                  <h1 class="title h1">Заказ принят</h1>
                 </div>
               </div>
-            </div>
-            <div class="wrapper bg-white">
-              <div class="box">
-                <div class="content-columns">
-                  <div class="content-columns-main">
-                    <!--.offer-success-->
-                    <div class="border-block bg-yellow offer-success">
-                      <div class="border-block-content">
-                        <div class="title h3">Заказ №415-124789144 принят</div>
-                        <div class="form-block offer-success-text">
-                          <div class="text sm">Наш менеджер свяжется с вами в течение 20 минут для подтверждения заказа и уточнения всех деталей. Вы можете распечатать накладную и заполнить её при передаче заказа курьеру. Спасибо, что выбрали услуги «КурьерСервисЭкспресс».
-                            Желаем вам приятного дня!</div>
+              <div class="wrapper bg-white">
+                <div class="box">
+                  <div class="content-columns">
+                    <div class="content-columns-main">
+                      <!--.offer-success-->
+                      <div class="border-block bg-yellow offer-success">
+                        <div class="border-block-content">
+                          <div class="title h3">Заказ №415-124789144 принят</div>
+                          <div class="form-block offer-success-text">
+                            <div class="text sm">Наш менеджер свяжется с вами в течение 20 минут для подтверждения заказа и уточнения всех деталей. Вы можете распечатать накладную и заполнить её при передаче заказа курьеру. Спасибо, что выбрали услуги «КурьерСервисЭкспресс».
+                              Желаем вам приятного дня!</div>
+                          </div>
                         </div>
                       </div>
+                      <div class="block-buttons">
+                        <a class="link-icon sm" href="#">
+                          <div class="link-icon-icon">
+                            <svg class="icon-print">
+                              <use xlink:href="#print"></use>
+                            </svg>
+                          </div>
+                          <div class="link-icon-text">Печать накладной</div>
+                        </a>
+                        <a class="link-icon sm" href="#">
+                          <div class="link-icon-icon">
+                            <svg class="icon-doc">
+                              <use xlink:href="#doc"></use>
+                            </svg>
+                          </div>
+                          <div class="link-icon-text">Заключить договор</div>
+                        </a>
+                        <a class="btn btn-next" href="#">
+                          <div class="btn-inner">
+                            <span>Вернуться на главную</span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                    <div class="block-buttons">
-                      <a class="link-icon sm" href="#">
-                        <div class="link-icon-icon">
-                          <svg class="icon-print">
-                            <use xlink:href="#print"></use>
-                          </svg>
-                        </div>
-                        <div class="link-icon-text">Печать накладной</div>
-                      </a>
-                      <a class="link-icon sm" href="#">
-                        <div class="link-icon-icon">
-                          <svg class="icon-doc">
-                            <use xlink:href="#doc"></use>
-                          </svg>
-                        </div>
-                        <div class="link-icon-text">Заключить договор</div>
-                      </a>
-                      <a class="btn btn-next" href="#">
-                        <div class="btn-inner">
-                          <span>Вернуться на главную</span>
-                        </div>
-                      </a>
-                    </div>
+                    <div class="content-columns-aside js-stick-parent" data-sticky-parent></div>
                   </div>
-                  <div class="content-columns-aside js-stick-parent" data-sticky-parent></div>
                 </div>
               </div>
             </div>

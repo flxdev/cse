@@ -1,11 +1,13 @@
 import $ from 'jquery';
 import debounce from './debounce';
+import slidesCount from './slidesCount';
 import 'slick-carousel/slick/slick.min';
 
 export default function Sliders() {
+
   function PromoBlocksSmallSlider() {
     $('.js-block-about-slider').each(function() {
-      var _this = $(this),
+      let _this = $(this),
         parent = _this.parent();
       _this.slick({
         accessibility: false,
@@ -50,4 +52,27 @@ export default function Sliders() {
       );
     });
   }PromoBlocksSmallSlider();
+  
+  function ContentSlider() {
+    $('.content-slider-inner').each(function() {
+      let _this = $(this),
+        parent = _this.parent();
+      slidesCount(_this);
+      _this.slick({
+        accessibility: false,
+        arrows: true,
+        dots: false,
+        fade: false,
+        touchMove: false,
+        dragable: false,
+        infinite: false,
+        appendArrows: parent.find('.slider-nav'),
+        speed: 300,
+        adaptiveHeight: true,
+        prevArrow: window.DOM.arnprevcontent,
+        nextArrow: window.DOM.arnextcontent,
+      });
+    });
+  }
+  ContentSlider();
 }

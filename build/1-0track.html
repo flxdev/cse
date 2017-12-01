@@ -137,6 +137,20 @@
         <symbol id="arrl" viewBox="0 0 400 512">
           <path d="M352 128.4L319.7 96 160 256l159.7 160 32.3-32.4L224.7 256" fill="currentcolor" />
         </symbol>
+        <symbol id="arrow_gallery" viewBox="0 0 8.1 14.1">
+          <style>
+            .stslideArr0 {
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              fill: none;
+              stroke: currentcolor;
+              stroke-width: 1.5;
+              stroke-miterlimit: 10
+            }
+
+          </style>
+          <path d="M.5.5L7 7 .5 13.5" class="stslideArr0" />
+        </symbol>
         <symbol id="arrr" viewBox="0 0 400 512">
           <path fill="none" d="M-1-1h582v402H-1z" />
           <path d="M160 383.6l32.3 32.4L352 256 192.3 96 160 128.4 287.3 256" fill="currentcolor" />
@@ -899,162 +913,48 @@
             <!--END header-->
           </header>
           <main class="page__content">
-            <div class="wrapper bg-white page-head">
-              <div class="box">
-                <div class="page-head-container">
-                  <div class="bread-cont">
-                    <a class="bread-item" href="/">Главная</a>
+            <!-- вот сюда все выплевываем-->
+            <div class="page__content-container">
+              <div class="wrapper bg-white page-head">
+                <div class="box">
+                  <div class="page-head-container">
+                    <div class="bread-cont">
+                      <a class="bread-item" href="/">Главная</a>
+                    </div>
+                    <h1 class="title h1">Отслеживание посылок</h1>
                   </div>
-                  <h1 class="title h1">Отслеживание посылок</h1>
                 </div>
               </div>
-            </div>
-            <div class="wrapper bg-white">
-              <div class="box">
-                <div class="info-text">
-                  <div class="info-text-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='24' height='24'>
-                      <style>
-                        .iconinfo {
-                          fill: #4E4544;
-                        }
+              <div class="wrapper bg-white">
+                <div class="box">
+                  <div class="info-text">
+                    <div class="info-text-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='24' height='24'>
+                        <style>
+                          .iconinfo {
+                            fill: #4E4544;
+                          }
 
-                      </style>
-                      <path d="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1m0-1C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0z" class="iconinfo" />
-                      <path d="M11.3 6.3V11l.3 3.7h.9l.3-3.7V6.3h-1.5zm1.5 11.4v-1.9h-1.7v1.9h1.7z" class="iconinfo" />
-                    </svg>
+                        </style>
+                        <path d="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1m0-1C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0z" class="iconinfo" />
+                        <path d="M11.3 6.3V11l.3 3.7h.9l.3-3.7V6.3h-1.5zm1.5 11.4v-1.9h-1.7v1.9h1.7z" class="iconinfo" />
+                      </svg>
+                    </div>
+                    <div class="info-text-text">
+                      <div class="text sm">По запросам
+                        <span class="red">475424444</span>,
+                        <span class="red">475744447 </span>ничего не найдено. Проверьте правильность написания номера. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом. </div>
+                    </div>
                   </div>
-                  <div class="info-text-text">
-                    <div class="text sm">По запросам
-                      <span class="red">475424444</span>,
-                      <span class="red">475744447 </span>ничего не найдено. Проверьте правильность написания номера. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом. </div>
-                  </div>
-                </div>
-                <div class="offerlist-wrap">
-                  <div class="offerlist-container">
-                    <div class="offerlist-item">
-                      <div class="offerlist-item-head">
-                        <div class="title h3">Заказ №495-0023037144</div>
-                        <!-- мы всадили тебе аккордеоны в аккордеон. осталось прихуярить монитор)-->
-                        <!-- поэтому на них есть 2 класса, .js-accord-trigger, .js-accord-target  у них должны совадать дата-таргеты. я хз ес честно сможешь ты сгенерить их или нет-->
-                        <div class="link-dotted js-accord-trigger js-accord-trigger" data-target="main">
-                          <div class="link-dotted-text js-toggletext" data-alt-text="Свернуть накладные">Развернуть накладные</div>
-                          <div class="link-dotted-icon">
-                            <svg class="icon-arrd">
-                              <use xlink:href="#arrd"></use>
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="offerlist-item-content">
-                        <div class="offerlist-item-table">
-                          <div class="table-head">
-                            <div class="table-item">
-                              <div class="caption">Статус отправления</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Дата отправления</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Плановая дата доставки</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Пункт отправления</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Пункт назначения</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Вид груза</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Вес</div>
-                            </div>
-                          </div>
-                          <div class="table-row">
-                            <div class="table-item" data-headname="Статус отправления">
-                              <div class="text sm">Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
-                                <div class="caption">10.09.2017 16:52</div>
-                              </div>
-                            </div>
-                            <div class="table-item" data-headname="Дата отправления">
-                              <div class="text sm">30.08.2017</div>
-                            </div>
-                            <div class="table-item" data-headname="Плановая дата доставки">
-                              <div class="text sm">10.09.2017</div>
-                            </div>
-                            <div class="table-item" data-headname="Пункт отправления">
-                              <div class="text sm">Москва, Россия</div>
-                            </div>
-                            <div class="table-item" data-headname="Пункт назначения">
-                              <div class="text sm">—</div>
-                            </div>
-                            <div class="table-item" data-headname="Вид груза">
-                              <div class="text sm">Груз</div>
-                            </div>
-                            <div class="table-item" data-headname="Вес">
-                              <div class="text sm">10</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="offerlist-item-content-slideup js-accord-target" data-target="block1">
-                          <ul class="offerlist-item-road">
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Отправление доставлено получателю</div>
-                                <div class="caption">21.08.2017 18:16</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Груз передан на доставку</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Груз передан на доставку</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Груз передан на доставку</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Груз передан на доставку</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Груз передан на доставку</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="offerlist-item-footer">
-                        <div class="offerlist-item-footer-block">
-                          <div class="link-dotted js-accord-trigger" data-target="block1">
-                            <div class="link-dotted-text js-toggletext" data-alt-text="Скрыть">Отслеживание</div>
+                  <div class="offerlist-wrap">
+                    <div class="offerlist-container">
+                      <div class="offerlist-item">
+                        <div class="offerlist-item-head">
+                          <div class="title h3">Заказ №495-0023037144</div>
+                          <!-- мы всадили тебе аккордеоны в аккордеон. осталось прихуярить монитор)-->
+                          <!-- поэтому на них есть 2 класса, .js-accord-trigger, .js-accord-target  у них должны совадать дата-таргеты. я хз ес честно сможешь ты сгенерить их или нет-->
+                          <div class="link-dotted js-accord-trigger js-accord-trigger" data-target="main">
+                            <div class="link-dotted-text js-toggletext" data-alt-text="Свернуть накладные">Развернуть накладные</div>
                             <div class="link-dotted-icon">
                               <svg class="icon-arrd">
                                 <use xlink:href="#arrd"></use>
@@ -1062,22 +962,537 @@
                             </div>
                           </div>
                         </div>
-                        <div class="offerlist-item-footer-block">
-                          <a class="link-icon sm" href="#">
-                            <div class="link-icon-icon">
-                              <svg class="icon-danger">
-                                <use xlink:href="#danger"></use>
-                              </svg>
+                        <div class="offerlist-item-content">
+                          <div class="offerlist-item-table">
+                            <div class="table-head">
+                              <div class="table-item">
+                                <div class="caption">Статус отправления</div>
+                              </div>
+                              <div class="table-item">
+                                <div class="caption">Дата отправления</div>
+                              </div>
+                              <div class="table-item">
+                                <div class="caption">Плановая дата доставки</div>
+                              </div>
+                              <div class="table-item">
+                                <div class="caption">Пункт отправления</div>
+                              </div>
+                              <div class="table-item">
+                                <div class="caption">Пункт назначения</div>
+                              </div>
+                              <div class="table-item">
+                                <div class="caption">Вид груза</div>
+                              </div>
+                              <div class="table-item">
+                                <div class="caption">Вес</div>
+                              </div>
                             </div>
-                            <div class="link-icon-text">Проблемы с заказом</div>
-                          </a>
+                            <div class="table-row">
+                              <div class="table-item" data-headname="Статус отправления">
+                                <div class="text sm">Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
+                                  <div class="caption">10.09.2017 16:52</div>
+                                </div>
+                              </div>
+                              <div class="table-item" data-headname="Дата отправления">
+                                <div class="text sm">30.08.2017</div>
+                              </div>
+                              <div class="table-item" data-headname="Плановая дата доставки">
+                                <div class="text sm">10.09.2017</div>
+                              </div>
+                              <div class="table-item" data-headname="Пункт отправления">
+                                <div class="text sm">Москва, Россия</div>
+                              </div>
+                              <div class="table-item" data-headname="Пункт назначения">
+                                <div class="text sm">—</div>
+                              </div>
+                              <div class="table-item" data-headname="Вид груза">
+                                <div class="text sm">Груз</div>
+                              </div>
+                              <div class="table-item" data-headname="Вес">
+                                <div class="text sm">10</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="offerlist-item-content-slideup js-accord-target" data-target="block1">
+                            <ul class="offerlist-item-road">
+                              <li class="road-item">
+                                <span></span>
+                                <div class="road-item-content">
+                                  <div class="text sm">Отправление доставлено получателю</div>
+                                  <div class="caption">21.08.2017 18:16</div>
+                                </div>
+                              </li>
+                              <li class="road-item">
+                                <span></span>
+                                <div class="road-item-content">
+                                  <div class="text sm">Груз передан на доставку</div>
+                                  <div class="caption">21.08.2017 11:19</div>
+                                </div>
+                              </li>
+                              <li class="road-item">
+                                <span></span>
+                                <div class="road-item-content">
+                                  <div class="text sm">Груз передан на доставку</div>
+                                  <div class="caption">21.08.2017 11:19</div>
+                                </div>
+                              </li>
+                              <li class="road-item">
+                                <span></span>
+                                <div class="road-item-content">
+                                  <div class="text sm">Груз передан на доставку</div>
+                                  <div class="caption">21.08.2017 11:19</div>
+                                </div>
+                              </li>
+                              <li class="road-item">
+                                <span></span>
+                                <div class="road-item-content">
+                                  <div class="text sm">Груз передан на доставку</div>
+                                  <div class="caption">21.08.2017 11:19</div>
+                                </div>
+                              </li>
+                              <li class="road-item">
+                                <span></span>
+                                <div class="road-item-content">
+                                  <div class="text sm">Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569</div>
+                                  <div class="caption">21.08.2017 11:19</div>
+                                </div>
+                              </li>
+                              <li class="road-item">
+                                <span></span>
+                                <div class="road-item-content">
+                                  <div class="text sm">Груз передан на доставку</div>
+                                  <div class="caption">21.08.2017 11:19</div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="offerlist-item-footer">
+                          <div class="offerlist-item-footer-block">
+                            <div class="link-dotted js-accord-trigger" data-target="block1">
+                              <div class="link-dotted-text js-toggletext" data-alt-text="Скрыть">Отслеживание</div>
+                              <div class="link-dotted-icon">
+                                <svg class="icon-arrd">
+                                  <use xlink:href="#arrd"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="offerlist-item-footer-block">
+                            <a class="link-icon sm" href="#">
+                              <div class="link-icon-icon">
+                                <svg class="icon-danger">
+                                  <use xlink:href="#danger"></use>
+                                </svg>
+                              </div>
+                              <div class="link-icon-text">Проблемы с заказом</div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="offerlist-item-subitems js-accord-target" data-target="main">
+                        <div class="offerlist-item">
+                          <div class="offerlist-item-head">
+                            <div class="title h4">Накладная №66141588</div>
+                          </div>
+                          <div class="offerlist-item-content">
+                            <div class="offerlist-item-table">
+                              <div class="table-head">
+                                <div class="table-item">
+                                  <div class="caption">Статус отправления</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Дата отправления</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Плановая дата доставки</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Пункт отправления</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Пункт назначения</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Вид груза</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Вес</div>
+                                </div>
+                              </div>
+                              <div class="table-row">
+                                <div class="table-item" data-headname="Статус отправления">
+                                  <div class="text sm">Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
+                                    <div class="caption">10.09.2017 16:52</div>
+                                  </div>
+                                </div>
+                                <div class="table-item" data-headname="Дата отправления">
+                                  <div class="text sm">30.08.2017</div>
+                                </div>
+                                <div class="table-item" data-headname="Плановая дата доставки">
+                                  <div class="text sm">10.09.2017</div>
+                                </div>
+                                <div class="table-item" data-headname="Пункт отправления">
+                                  <div class="text sm">Москва, Россия</div>
+                                </div>
+                                <div class="table-item" data-headname="Пункт назначения">
+                                  <div class="text sm">—</div>
+                                </div>
+                                <div class="table-item" data-headname="Вид груза">
+                                  <div class="text sm">Груз</div>
+                                </div>
+                                <div class="table-item" data-headname="Вес">
+                                  <div class="text sm">10</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="offerlist-item-content-slideup js-accord-target" data-target="block2">
+                              <ul class="offerlist-item-road">
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Отправление доставлено получателю</div>
+                                    <div class="caption">21.08.2017 18:16</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="offerlist-item-footer">
+                            <div class="offerlist-item-footer-block">
+                              <div class="link-dotted js-accord-trigger" data-target="block2">
+                                <div class="link-dotted-text js-toggletext" data-alt-text="Скрыть">Отслеживание</div>
+                                <div class="link-dotted-icon">
+                                  <svg class="icon-arrd">
+                                    <use xlink:href="#arrd"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="offerlist-item-footer-block">
+                              <a class="link-icon sm" href="#">
+                                <div class="link-icon-icon">
+                                  <svg class="icon-danger">
+                                    <use xlink:href="#danger"></use>
+                                  </svg>
+                                </div>
+                                <div class="link-icon-text">Проблемы с накладной</div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="offerlist-item">
+                          <div class="offerlist-item-head">
+                            <div class="title h4">Накладная №66141588</div>
+                          </div>
+                          <div class="offerlist-item-content">
+                            <div class="offerlist-item-table">
+                              <div class="table-head">
+                                <div class="table-item">
+                                  <div class="caption">Статус отправления</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Дата отправления</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Плановая дата доставки</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Пункт отправления</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Пункт назначения</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Вид груза</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Вес</div>
+                                </div>
+                              </div>
+                              <div class="table-row">
+                                <div class="table-item" data-headname="Статус отправления">
+                                  <div class="text sm">Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
+                                    <div class="caption">10.09.2017 16:52</div>
+                                  </div>
+                                </div>
+                                <div class="table-item" data-headname="Дата отправления">
+                                  <div class="text sm">30.08.2017</div>
+                                </div>
+                                <div class="table-item" data-headname="Плановая дата доставки">
+                                  <div class="text sm">10.09.2017</div>
+                                </div>
+                                <div class="table-item" data-headname="Пункт отправления">
+                                  <div class="text sm">Москва, Россия</div>
+                                </div>
+                                <div class="table-item" data-headname="Пункт назначения">
+                                  <div class="text sm">—</div>
+                                </div>
+                                <div class="table-item" data-headname="Вид груза">
+                                  <div class="text sm">Груз</div>
+                                </div>
+                                <div class="table-item" data-headname="Вес">
+                                  <div class="text sm">10</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="offerlist-item-content-slideup js-accord-target" data-target="block3">
+                              <ul class="offerlist-item-road">
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Отправление доставлено получателю</div>
+                                    <div class="caption">21.08.2017 18:16</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="offerlist-item-footer">
+                            <div class="offerlist-item-footer-block">
+                              <div class="link-dotted js-accord-trigger" data-target="block3">
+                                <div class="link-dotted-text js-toggletext" data-alt-text="Скрыть">Отслеживание</div>
+                                <div class="link-dotted-icon">
+                                  <svg class="icon-arrd">
+                                    <use xlink:href="#arrd"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="offerlist-item-footer-block">
+                              <a class="link-icon sm" href="#">
+                                <div class="link-icon-icon">
+                                  <svg class="icon-danger">
+                                    <use xlink:href="#danger"></use>
+                                  </svg>
+                                </div>
+                                <div class="link-icon-text">Проблемы с накладной</div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="offerlist-item">
+                          <div class="offerlist-item-head">
+                            <div class="title h4">Накладная №66141588</div>
+                          </div>
+                          <div class="offerlist-item-content">
+                            <div class="offerlist-item-table">
+                              <div class="table-head">
+                                <div class="table-item">
+                                  <div class="caption">Статус отправления</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Дата отправления</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Плановая дата доставки</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Пункт отправления</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Пункт назначения</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Вид груза</div>
+                                </div>
+                                <div class="table-item">
+                                  <div class="caption">Вес</div>
+                                </div>
+                              </div>
+                              <div class="table-row">
+                                <div class="table-item" data-headname="Статус отправления">
+                                  <div class="text sm">Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
+                                    <div class="caption">10.09.2017 16:52</div>
+                                  </div>
+                                </div>
+                                <div class="table-item" data-headname="Дата отправления">
+                                  <div class="text sm">30.08.2017</div>
+                                </div>
+                                <div class="table-item" data-headname="Плановая дата доставки">
+                                  <div class="text sm">10.09.2017</div>
+                                </div>
+                                <div class="table-item" data-headname="Пункт отправления">
+                                  <div class="text sm">Москва, Россия</div>
+                                </div>
+                                <div class="table-item" data-headname="Пункт назначения">
+                                  <div class="text sm">—</div>
+                                </div>
+                                <div class="table-item" data-headname="Вид груза">
+                                  <div class="text sm">Груз</div>
+                                </div>
+                                <div class="table-item" data-headname="Вес">
+                                  <div class="text sm">10</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="offerlist-item-content-slideup js-accord-target" data-target="block4">
+                              <ul class="offerlist-item-road">
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Отправление доставлено получателю</div>
+                                    <div class="caption">21.08.2017 18:16</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                                <li class="road-item">
+                                  <span></span>
+                                  <div class="road-item-content">
+                                    <div class="text sm">Груз передан на доставку</div>
+                                    <div class="caption">21.08.2017 11:19</div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="offerlist-item-footer">
+                            <div class="offerlist-item-footer-block">
+                              <div class="link-dotted js-accord-trigger" data-target="block4">
+                                <div class="link-dotted-text js-toggletext" data-alt-text="Скрыть">Отслеживание</div>
+                                <div class="link-dotted-icon">
+                                  <svg class="icon-arrd">
+                                    <use xlink:href="#arrd"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="offerlist-item-footer-block">
+                              <a class="link-icon sm" href="#">
+                                <div class="link-icon-icon">
+                                  <svg class="icon-danger">
+                                    <use xlink:href="#danger"></use>
+                                  </svg>
+                                </div>
+                                <div class="link-icon-text">Проблемы с накладной</div>
+                              </a>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="offerlist-item-subitems js-accord-target" data-target="main">
+                    <div class="offerlist-container">
                       <div class="offerlist-item">
                         <div class="offerlist-item-head">
-                          <div class="title h4">Накладная №66141588</div>
+                          <div class="title h3">Накладная №66141569</div>
                         </div>
                         <div class="offerlist-item-content">
                           <div class="offerlist-item-table">
@@ -1130,7 +1545,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="offerlist-item-content-slideup js-accord-target" data-target="block2">
+                          <div class="offerlist-item-content-slideup js-accord-target" data-target="main2">
                             <ul class="offerlist-item-road">
                               <li class="road-item">
                                 <span></span>
@@ -1186,7 +1601,7 @@
                         </div>
                         <div class="offerlist-item-footer">
                           <div class="offerlist-item-footer-block">
-                            <div class="link-dotted js-accord-trigger" data-target="block2">
+                            <div class="link-dotted js-accord-trigger" data-target="main2">
                               <div class="link-dotted-text js-toggletext" data-alt-text="Скрыть">Отслеживание</div>
                               <div class="link-dotted-icon">
                                 <svg class="icon-arrd">
@@ -1205,433 +1620,35 @@
                               <div class="link-icon-text">Проблемы с накладной</div>
                             </a>
                           </div>
-                        </div>
-                      </div>
-                      <div class="offerlist-item">
-                        <div class="offerlist-item-head">
-                          <div class="title h4">Накладная №66141588</div>
-                        </div>
-                        <div class="offerlist-item-content">
-                          <div class="offerlist-item-table">
-                            <div class="table-head">
-                              <div class="table-item">
-                                <div class="caption">Статус отправления</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Дата отправления</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Плановая дата доставки</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Пункт отправления</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Пункт назначения</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Вид груза</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Вес</div>
-                              </div>
-                            </div>
-                            <div class="table-row">
-                              <div class="table-item" data-headname="Статус отправления">
-                                <div class="text sm">Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
-                                  <div class="caption">10.09.2017 16:52</div>
-                                </div>
-                              </div>
-                              <div class="table-item" data-headname="Дата отправления">
-                                <div class="text sm">30.08.2017</div>
-                              </div>
-                              <div class="table-item" data-headname="Плановая дата доставки">
-                                <div class="text sm">10.09.2017</div>
-                              </div>
-                              <div class="table-item" data-headname="Пункт отправления">
-                                <div class="text sm">Москва, Россия</div>
-                              </div>
-                              <div class="table-item" data-headname="Пункт назначения">
-                                <div class="text sm">—</div>
-                              </div>
-                              <div class="table-item" data-headname="Вид груза">
-                                <div class="text sm">Груз</div>
-                              </div>
-                              <div class="table-item" data-headname="Вес">
-                                <div class="text sm">10</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="offerlist-item-content-slideup js-accord-target" data-target="block3">
-                            <ul class="offerlist-item-road">
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Отправление доставлено получателю</div>
-                                  <div class="caption">21.08.2017 18:16</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Груз передан на доставку</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Груз передан на доставку</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Груз передан на доставку</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Груз передан на доставку</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Груз передан на доставку</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="offerlist-item-footer">
-                          <div class="offerlist-item-footer-block">
-                            <div class="link-dotted js-accord-trigger" data-target="block3">
-                              <div class="link-dotted-text js-toggletext" data-alt-text="Скрыть">Отслеживание</div>
-                              <div class="link-dotted-icon">
-                                <svg class="icon-arrd">
-                                  <use xlink:href="#arrd"></use>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="offerlist-item-footer-block">
-                            <a class="link-icon sm" href="#">
-                              <div class="link-icon-icon">
-                                <svg class="icon-danger">
-                                  <use xlink:href="#danger"></use>
-                                </svg>
-                              </div>
-                              <div class="link-icon-text">Проблемы с накладной</div>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="offerlist-item">
-                        <div class="offerlist-item-head">
-                          <div class="title h4">Накладная №66141588</div>
-                        </div>
-                        <div class="offerlist-item-content">
-                          <div class="offerlist-item-table">
-                            <div class="table-head">
-                              <div class="table-item">
-                                <div class="caption">Статус отправления</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Дата отправления</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Плановая дата доставки</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Пункт отправления</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Пункт назначения</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Вид груза</div>
-                              </div>
-                              <div class="table-item">
-                                <div class="caption">Вес</div>
-                              </div>
-                            </div>
-                            <div class="table-row">
-                              <div class="table-item" data-headname="Статус отправления">
-                                <div class="text sm">Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
-                                  <div class="caption">10.09.2017 16:52</div>
-                                </div>
-                              </div>
-                              <div class="table-item" data-headname="Дата отправления">
-                                <div class="text sm">30.08.2017</div>
-                              </div>
-                              <div class="table-item" data-headname="Плановая дата доставки">
-                                <div class="text sm">10.09.2017</div>
-                              </div>
-                              <div class="table-item" data-headname="Пункт отправления">
-                                <div class="text sm">Москва, Россия</div>
-                              </div>
-                              <div class="table-item" data-headname="Пункт назначения">
-                                <div class="text sm">—</div>
-                              </div>
-                              <div class="table-item" data-headname="Вид груза">
-                                <div class="text sm">Груз</div>
-                              </div>
-                              <div class="table-item" data-headname="Вес">
-                                <div class="text sm">10</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="offerlist-item-content-slideup js-accord-target" data-target="block4">
-                            <ul class="offerlist-item-road">
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Отправление доставлено получателю</div>
-                                  <div class="caption">21.08.2017 18:16</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Груз передан на доставку</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Груз передан на доставку</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Груз передан на доставку</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Груз передан на доставку</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                              <li class="road-item">
-                                <span></span>
-                                <div class="road-item-content">
-                                  <div class="text sm">Груз передан на доставку</div>
-                                  <div class="caption">21.08.2017 11:19</div>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="offerlist-item-footer">
-                          <div class="offerlist-item-footer-block">
-                            <div class="link-dotted js-accord-trigger" data-target="block4">
-                              <div class="link-dotted-text js-toggletext" data-alt-text="Скрыть">Отслеживание</div>
-                              <div class="link-dotted-icon">
-                                <svg class="icon-arrd">
-                                  <use xlink:href="#arrd"></use>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="offerlist-item-footer-block">
-                            <a class="link-icon sm" href="#">
-                              <div class="link-icon-icon">
-                                <svg class="icon-danger">
-                                  <use xlink:href="#danger"></use>
-                                </svg>
-                              </div>
-                              <div class="link-icon-text">Проблемы с накладной</div>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="offerlist-container">
-                    <div class="offerlist-item">
-                      <div class="offerlist-item-head">
-                        <div class="title h3">Накладная №66141569</div>
-                      </div>
-                      <div class="offerlist-item-content">
-                        <div class="offerlist-item-table">
-                          <div class="table-head">
-                            <div class="table-item">
-                              <div class="caption">Статус отправления</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Дата отправления</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Плановая дата доставки</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Пункт отправления</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Пункт назначения</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Вид груза</div>
-                            </div>
-                            <div class="table-item">
-                              <div class="caption">Вес</div>
-                            </div>
-                          </div>
-                          <div class="table-row">
-                            <div class="table-item" data-headname="Статус отправления">
-                              <div class="text sm">Груз получен курьером asf sdf asf asfas fasdf asfas fdasf sadf
-                                <div class="caption">10.09.2017 16:52</div>
-                              </div>
-                            </div>
-                            <div class="table-item" data-headname="Дата отправления">
-                              <div class="text sm">30.08.2017</div>
-                            </div>
-                            <div class="table-item" data-headname="Плановая дата доставки">
-                              <div class="text sm">10.09.2017</div>
-                            </div>
-                            <div class="table-item" data-headname="Пункт отправления">
-                              <div class="text sm">Москва, Россия</div>
-                            </div>
-                            <div class="table-item" data-headname="Пункт назначения">
-                              <div class="text sm">—</div>
-                            </div>
-                            <div class="table-item" data-headname="Вид груза">
-                              <div class="text sm">Груз</div>
-                            </div>
-                            <div class="table-item" data-headname="Вес">
-                              <div class="text sm">10</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="offerlist-item-content-slideup js-accord-target" data-target="main2">
-                          <ul class="offerlist-item-road">
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Отправление доставлено получателю</div>
-                                <div class="caption">21.08.2017 18:16</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Груз передан на доставку</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Груз передан на доставку</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Груз передан на доставку</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Груз передан на доставку</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Зарегистрирована накладная. По документу: ЗАКАЗ 495-0022496215 от 15.08.2017 10:15:09, зарегистрирована накладная: 66141569</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                            <li class="road-item">
-                              <span></span>
-                              <div class="road-item-content">
-                                <div class="text sm">Груз передан на доставку</div>
-                                <div class="caption">21.08.2017 11:19</div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="offerlist-item-footer">
-                        <div class="offerlist-item-footer-block">
-                          <div class="link-dotted js-accord-trigger" data-target="main2">
-                            <div class="link-dotted-text js-toggletext" data-alt-text="Скрыть">Отслеживание</div>
-                            <div class="link-dotted-icon">
-                              <svg class="icon-arrd">
-                                <use xlink:href="#arrd"></use>
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="offerlist-item-footer-block">
-                          <a class="link-icon sm" href="#">
-                            <div class="link-icon-icon">
-                              <svg class="icon-danger">
-                                <use xlink:href="#danger"></use>
-                              </svg>
-                            </div>
-                            <div class="link-icon-text">Проблемы с накладной</div>
-                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="wrapper bg-orange">
-              <div class="box">
-                <div class="row padding-big">
-                  <div class="columns large-6 medium-6 small-12">
-                    <div class="block-about">
-                      <h2 class="title h2 white">Есть вопросы или нужна помощь?</h2>
+              <div class="wrapper bg-orange">
+                <div class="box">
+                  <div class="row padding-big">
+                    <div class="columns large-6 medium-6 small-12">
+                      <div class="block-about">
+                        <h2 class="title h2 white">Есть вопросы или нужна помощь?</h2>
+                      </div>
                     </div>
-                  </div>
-                  <div class="columns large-6 medium-6 small-12">
-                    <div class="block-about">
-                      <div class="text white">Мы всегда рады помочь и ответить на все интересующие вас вопросы. Вы можете попробовать найти информацию в разделе
-                        <a href="#">«Вопросы и ответы»</a>или написать ваш вопрос нам на почту.</div>
-                      <a class="btn color-white type-round color-reverse not-trans" href="#">
-                        <div class="btn-inner">
-                          <span>Вопросы и ответы</span>
-                        </div>
-                      </a>
-                      <a class="btn color-white type-round color-reverse" href="#">
-                        <div class="btn-inner">
-                          <span>Задать вопрос</span>
-                        </div>
-                      </a>
+                    <div class="columns large-6 medium-6 small-12">
+                      <div class="block-about">
+                        <div class="text white">Мы всегда рады помочь и ответить на все интересующие вас вопросы. Вы можете попробовать найти информацию в разделе
+                          <a href="#">«Вопросы и ответы»</a>или написать ваш вопрос нам на почту.</div>
+                        <a class="btn color-white type-round color-reverse not-trans" href="#">
+                          <div class="btn-inner">
+                            <span>Вопросы и ответы</span>
+                          </div>
+                        </a>
+                        <a class="btn color-white type-round color-reverse" href="#">
+                          <div class="btn-inner">
+                            <span>Задать вопрос</span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

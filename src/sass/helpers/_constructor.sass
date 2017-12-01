@@ -1,0 +1,125 @@
+.block-constructor
+	&>.title
+		margin-bottom: 40px
+		+r(640)
+			margin-bottom: 30px	
+	&-halfdescr
+		.row
+			margin-right: -20px
+			.columns
+				padding-right: 20px
+				&>div
+					max-width: 480px
+	.content-slider
+		margin-top: 75px
+.cards
+	&-wrapper
+		margin-right: -55px
+		+r(996)
+			margin-right: -20px
+		&.w4
+			.cards
+				&-item
+					width: 25%
+					+r(1450)
+						padding-right: 55px
+					+r(1200)
+						padding-right: 30px
+					+r(996)
+						padding-right: 20px
+					+r(860)
+						width: 50%
+					+r(600)
+						width: 100%
+
+	&-item
+		padding-right: 70px
+		display: inline-block
+		vertical-align: top
+		width: 33.33%
+		margin-bottom: 30px
+
+		&-image
+			height: 65px
+			width: 70px
+			margin-bottom: 25px
+			+r(640)
+				margin-bottom: 15px
+			img
+				height: 100%
+		&-content
+			.bold
+				margin-bottom: 17px
+				+r(640)
+					margin-bottom: 13px
+.offers
+	&-wrapper
+		display: block
+	&-item
+		display: block
+		padding-top: 10px
+		padding-bottom: 10px
+		&:not(:last-child)
+			padding-bottom: 70px
+			+r(640)
+				padding-bottom: 40px
+		&:nth-child(2n)
+			.offers
+				&-item
+					&-image
+						order: 2
+					&-content
+						order: 1
+
+		&-inner
+			display: flex
+			flex-flow: row nowrap
+			justify-content: space-between
+			align-items: flex-start
+			margin-right: -20px
+			+r(640)
+				flex-direction: column 
+				margin-right: 0
+				&>div
+					padding-right: 0!important
+					padding-left: 0 !important
+					width: 100%
+				.offers
+					&-item
+						&-image
+							order: 1 !important
+						&-content
+							order: 2 !important
+		&-image,&-content 
+			width: 50%
+			padding-right: 20px
+		&-image
+			padding-right: 60px
+			+r(1200)
+				padding-right: 30px
+			@supports (object-fit: cover)
+				&-inner
+					position: relative
+					height: 0
+					padding-bottom: 70%
+					img
+						+cover
+						object-fit: cover
+			&-inner
+				width: 100%
+				img
+					width: 100%
+		&-content
+			padding-top: 10px
+			.title
+				max-width: 470px
+				margin-bottom: 25px
+				+r(640)
+					margin-bottom: 20px
+			.text
+				max-width: 470px
+			.btn 
+				margin-top: 40px
+				margin-left: 0
+				+r(640)
+					margin-top: 20px

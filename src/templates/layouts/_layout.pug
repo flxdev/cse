@@ -16,7 +16,9 @@ html(lang='ru',data-lang='ru',data-datepickstart-hour='9')
 					header.page__header--wrap
 						include ../partials/_header
 					main.page__content
-						block content
+						// вот сюда все выплевываем
+						.page__content-container
+							block content
 						footer.page__footer
 							include ../partials/_footer
 		//END out
