@@ -29,8 +29,10 @@ PageList:
   ready: 100
 # - file: 9-7vacancy.html
 #   ready: 100
-# - file: 10-2form.html
-#   ready: 100
+- file: 10-1form.html
+  ready: 100
+- file: 10-2form.html
+  ready: 100
 - file: 11-1feedback.html
   ready: 100
 - file: 11-2feedback.html
