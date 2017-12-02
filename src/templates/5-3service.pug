@@ -1,0 +1,200 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+	-var map = true
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head1.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="/").bread-item Услуги
+					a(href="/").bread-item Международная доставка
+					a(href="/").bread-item Экспорт
+				h1.title.h1 Срочная
+				.buttons-wrapper
+					a(href="#").btn.color-white.type-round
+						.btn-inner
+							span.btn-icon
+								+icon('down')
+							span Скачать презентацию
+					a(href="#").btn.color-white.not-trans.type-round
+						.btn-inner
+							span Заключить договор
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.content-columns
+						.content-columns-main
+							.block-constructor-params
+								.title.h2 Параметры
+								.caption Быстрая и оптимальная доставка документов и грузов по всему миру в течение 1-3 дней. Доставка грузов и документов «от двери до двери», без ограничений по физическому и объемному весу одного места и количеству мест по накладной.
+								.params-block
+									.params-block-image
+										img.js-image(data-src="img/params/clock.svg", alt="")
+									.params-block-content
+										.content-wrapper
+											h4 Срок доставки
+											ul
+												li Из Москвы и Санкт-Петербурга в европейские столицы за 1 рабочий день
+												li Средний срок по основным направлениям – 3 рабочих дня
+								.params-block
+									.params-block-image
+										img.js-image(data-src="img/params/geography.svg", alt="")
+									.params-block-content
+										.content-wrapper
+											h4 География доставки
+											p Любая точка мира. Следить за передвижением груза можно в онлайн режиме на нашем сайте.
+								.params-block
+									.params-block-image
+										img.js-image(data-src="img/params/box.svg", alt="")
+									.params-block-content
+										.content-wrapper
+											h4 Ограничения по габаритам и весу
+											p
+												b Документы
+											p До 3 кг для отправлений
+											p
+												b Груз
+											p Максимальный  вес одного места отправления – 30 кг., общий вес – без ограничений. Сумма измерений (по длине, ширине и высоте) одного места не должна превышать 180 см, максимальный размер одной стороны: 120 см.
+								.params-block
+									.params-block-image
+										img.js-image(data-src="img/params/box_takes.svg", alt="")
+									.params-block-content
+										.content-wrapper
+											h4 К отправке принимаются
+											p Отправления, содержащие материалы, оборудование и товары, разрешенные к авиа-, авто- или ж/д перевозке: 
+											ul
+												li медикаменты и БАДы, 
+												li косметика и парфюмерия, 
+												li продукты питания, 
+												li техника и электроника с ГСМ, 
+												li опасные грузы, 
+												li товары народного потребления.
+						.content-columns-aside(data-sticky-parent).js-stick-parent
+							.content-aside-content.js-stick
+								.params-offer
+									.params-offer-inner
+										.params-offer-price.title.h2
+											span от 
+											| 900 000 ₽
+										.caption.medium Срок доставки: 1-3 дня
+										a(href="#").btn.type-round
+											.btn-inner 
+												span Рассчитать доставку
+
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Преимущества
+					.cards-wrapper
+						+card('Минимальные сроки доставки и выгодные тарифы','Мы ведем предельно доступную ценовую политику. Доверяя автомобильные международные грузоперевозки нашей компании, вы получите качественные услуги и сэкономите.','1.svg')
+						+card('Онлайн-отслеживание статуса доставки','Мы тщательно контролируем транспортные процессы на всех этапах доставки вашей посылки, чтобы вы получили её прямо в руки.','2.svg')
+						+card('200 стран мира','Мы обладаем целой сетью иностранных представительств. И мы выполняем грузоперевозки на самом высоком уровне и можем оперативно решать любые возникающие вопросы.','3.svg')
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Перевозка любых отправлений
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									.title.h4 Наша компания занимается перевозкой как ценных так и опасных грузов
+									+docLink('diplom1.html','Список запрещенных отправлений','20','DOC')
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										h5 Ценные грузы
+										p Ценные отправления — это экспресс отправления с типом вложения «Драгоценности»: ювелирные изделия, ценные бумаги, нумизматика (монеты), знаки отличия (ордена, медали).
+										p При доставке ценных грузов к тарифам на перевозку применяется повышающий коэффициент 1,2. Груз в обязательном порядке должен быть застрахован.
+										h5 Опасные грузы
+										p При доставке опасных грузов, к тарифам на перевозку применяется повышающий коэффициент х2. 
+					.content-slider
+						.content-slider-inner
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+								figcaption.caption.medium Наш автопарк укомплектован новыми грузовыми автомобилями
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+								figcaption.caption.medium Наш автопарк укомплектован новыми грузовыми автомобилями
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+								figcaption.caption.medium Наш автопарк укомплектован новыми грузовыми автомобилями
+						.content-slider-nav
+							.slider-nav
+								.slider-counter
+									.slider-curr
+									.slider-divider /
+									.slider-total
+	.wrapper
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head1.jpg')
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Дополнительные услуги
+					.block-constructor-subservice-list
+						ul.service-links
+							li.service-links-item
+								a(href="#") Доставка опасного груза
+							li.service-links-item
+								a(href="#") Перевозка с объявленной стоимостью
+							li.service-links-item
+								a(href="#") Доставка отправлений с «возвратом»
+							li.service-links-item
+								a(href="#") Доставка негабаритных грузов
+							li.service-links-item
+								a(href="#") Уведомление о доставке
+							li.service-links-item
+								a(href="#") Доставка «Лично в руки»
+							li.service-links-item
+								a(href="#") Страхование отправлений
+							li.service-links-item
+								a(href="#") Доставка в нерабочее время
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Документы
+					.block-constructor-docs
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Общие
+							.docwrapper-item-content
+								.row
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Список запрещенных к пересылке грузов','20','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Образец Акта рекламации для неисправных товаров','20','DOC')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Срок доставки и география','20','DOC')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Гарантийное письмо для печатной, аудио-видео продукции ','20','DOC')
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Для юридических лиц
+							.docwrapper-item-content
+								.row
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Индивидуальная накладная','20','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','2 инвойса на русском языке','20','DOC')
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Для физических лиц
+							.docwrapper-item-content
+								.row
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Индивидуальная накладная','20','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','2 инвойса на русском языке','20','DOC')
+	include ./partials/_promo
+	include ./partials/_featuredSlider
+	include ./partials/_ask

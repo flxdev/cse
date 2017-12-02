@@ -4,10 +4,11 @@
 	&-item
 		width: 100%
 		padding-bottom: 60px
-		border-bottom: 1px solid $inputborder
 		display: flex
 		flex-flow: row nowrap
 		justify-content: space-between
+		&:not(:last-child)
+			border-bottom: 1px solid $inputborder
 		+r(640)
 			flex-flow: row wrap
 			padding-bottom: 30px

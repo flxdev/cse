@@ -27,6 +27,10 @@ PageList:
   ready: 100
 - file: 5-2service.html
   ready: 100
+- file: 5-3service.html
+  ready: 100
+- file: 7-0company.html
+  ready: 25
 # - file: 9-7vacancy.html
 #   ready: 100
 - file: 10-1form.html

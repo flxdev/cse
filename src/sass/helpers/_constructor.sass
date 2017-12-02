@@ -3,11 +3,21 @@
 		margin-bottom: 40px
 		+r(640)
 			margin-bottom: 30px	
+	.content-columns
+		padding-bottom: 0 !important
 	&-halfdescr
 		.row
 			margin-right: -20px
 			.columns
 				padding-right: 20px
+				&:first-child
+					.title.h4
+						margin-top: -5px
+						margin-bottom: 25px
+					&>div
+						&:first-child
+							+r(640)
+								margin-bottom: 25px
 				&>div:not(.youtube)
 					max-width: 480px
 					.doclink
@@ -29,6 +39,8 @@
 				&-item 
 					width: 33.33%
 					margin-bottom: 25px
+					+r(1200)
+						width: 50%
 					+r(600)
 						width: 100%
 						margin-bottom: 20px
@@ -39,6 +51,9 @@
 		&-slider
 			margin-left: -2.5px
 			margin-right: -2.5px
+			&.w3
+				// margin-left: 0
+				margin-right: -15px
 		&-head
 			position: relative
 			margin-bottom: 38px
@@ -75,8 +90,24 @@
 		font-size: 0
 		counter-reset: count
 		margin-right: -30px
+		+r(1200)
+			margin-right: -15px
+	&-params
+		max-width: 700px
+		+r(1300)
+			max-width: 600px
+		.title.h2
+			margin-bottom: 37px
+			+r(640)
+				margin-bottom: 20px	
+		.caption
+			// margin-bottom: 30px
+			font-size: 16px
+			line-height: 1.5;
+			color: rgb(180, 177, 177);
+
 	.content-slider
-		margin-top: 75px
+		margin-top: 55px
 .cards
 	&-wrapper
 		margin-right: -30px
@@ -241,3 +272,47 @@
 						transition-duration: 0s
 				&.bold
 					margin-bottom: 15px
+.params
+	&-block 
+		display: block
+		font-size: 0
+		padding-top: 35px
+		&:not(:last-child)
+			border-bottom: 1px solid $inputborder
+			padding-bottom: 28px
+		&-image
+			width: 38px
+			padding-right: 15px
+			display: inline-block
+			vertical-align: top
+			padding-top: 5px
+		&-content 
+			width: calc(100% - 38px)
+			display: inline-block
+			vertical-align: top
+			padding-right: 15px
+	&-offer
+		background-color: $brandlight
+		padding: 50px 20px 
+		+r(800)
+			margin-bottom: 40px
+		&-price 
+			margin-bottom: 10px
+			span
+				font-size: 24px
+		&-inner
+			display: block
+			margin: 0 auto
+			max-width: 235px
+			text-align: center
+			.btn
+				min-width: 0
+				width: 100%
+				margin-left: 0
+				margin-right: 0
+				margin-top: 32px
+				margin-bottom: 10px
+
+			
+
+

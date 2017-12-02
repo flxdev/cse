@@ -78,7 +78,9 @@ export default function Sliders() {
   function AddSlider() {
     $('.block-constructor-slider-slider').each(function() {
       let _this = $(this),
-        parent = _this.parent();
+        parent = _this.parent(),
+        w3 = _this.hasClass('w3') ? true : false;
+
       _this.slick({
         accessibility: false,
         arrows: true,
@@ -87,14 +89,21 @@ export default function Sliders() {
         touchMove: false,
         dragable: false,
         infinite: false,
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow:  w3 ? 3 : 2,
+        slidesToScroll:  w3 ? 3 : 2,
         appendArrows: parent.find('.slider-nav'),
         speed: 500,
         easing: 'ease-out',
         prevArrow: window.DOM.arnprevcontent,
         nextArrow: window.DOM.arnextcontent,
         responsive: [
+          {
+            breakpoint: 1040,
+            settings: {
+              slidesToShow:  2,
+              slidesToScroll: 2,
+            },
+          },
           {
             breakpoint: 740,
             settings: {

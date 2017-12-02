@@ -1,0 +1,83 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+	-var map = true
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 О компании
+				.buttons-wrapper
+					a(href="#").btn.color-white.type-round
+						.btn-inner
+							span.btn-icon
+								+icon('down')
+							span Скачать презентацию
+	.wrapper
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/bgwrapper/1.jpg')
+		.box
+			.row.padding-big
+				.columns.large-6.medium-6.small-12
+					.block-about
+						h2.title.h2.white Профессиональный логистический оператор
+						.text.white КурьерСервисЭкспресс – сервис, которым удобно и выгодно пользоваться. КурьерСервисЭкспресс предлагает выгодные условия сотрудничества, доступные цены, а также сервис высокого уровня.
+				.columns.large-6.medium-6.small-12
+					.block-about
+						.block-about-slider
+							.block-about-slider-inner.js-block-about-slider
+								.block-about-slider-item
+									.block-about-slider-title 250+
+									.text.sm.white Филиалов и представительств компании КурьерСервис Экспресс
+								.block-about-slider-item
+									.block-about-slider-title 20
+									.text.sm.white Лет успешной работы на рынке курьерских услуг
+								.block-about-slider-item
+									.block-about-slider-title 218
+									.text.sm.white Cтран мира, в которые осуществляется доставка почтовых отправлений и грузов
+								.block-about-slider-item
+									.block-about-slider-title 2000+
+									.text.sm.white Клиентов среди малого, среднего и крупного бизнеса по всему миру
+							.slider-dots
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Клиенты
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Наши ценности
+					.cards-wrapper.w4
+						+card('Клиент','Мы дорожим нашими клиентами и работаем для удовлетворения их потребностей в качествен- ных услугах.','10.svg')
+						+card('Персонал','Постоянное повышение профессионального уровня нашей команды и высокая оценка личного вклада каждого.','11.svg')
+						+card('Качество ','Мы достигаем соверше- нства во всех наших делах, улучшая качество предоставляемых услуг, повышая нашу ценность для клиента.','12.svg')
+						+card('Развитие ','Развитие означает для нас постоянное появление новых идей и реализацию лучших из них на практике.','13.svg')
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Документы
+					.block-constructor-docs
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Лицензии и сертификаты
+							.docwrapper-item-content
+								.row
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Свидетельство о включении в реестр таможенных перевозчиков','20','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Лицензия №127656 на оказание услуг почтовой связи','20','JPG')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Лицензия №347547 на оказание услуг почтовой связи','20','JPG')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Лицензия №144756 на оказание услуг почтовой связи','20','JPG')
+	include ./partials/_salesSlider
+	include ./partials/_ask

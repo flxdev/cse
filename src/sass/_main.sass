@@ -322,8 +322,14 @@ blockquote
 	&.bg-gray
 		background-color: #f9f9f9
 	&.promoblock
+		&:hover
+			+notouch
+				.wrapper-bg-img
+					&:before
+						background-color: rgba(44, 30, 28,.8)
 		.wrapper-bg-img
 			&:before
+				+tr(background-color .3s)
 				background-color: rgba(44, 30, 28,.4)
 		.text 
 			font-weight: 400
@@ -1053,11 +1059,16 @@ figure
 		margin: 0 auto
 		&:not(:only-child)
 			margin-bottom: 25px
+			+r(640)
+				margin-bottom: 15px
 	figcaption
 		display: block
 		margin-top: 25px
-		padding-right: 40px
+		padding-right: 80px
 		font-size: 16px !important
+		+r(640)
+			padding-right: 0
+			margin-top: 14px
 .content-slider
 	position: relative
 	&-inner 
@@ -1073,3 +1084,9 @@ figure
 		position: absolute
 		bottom: 2px
 		right: 0
+.content-slider
+	.content-slider-nav
+		+r(640)
+			position: static
+			text-align: center
+			margin-top: 20px
