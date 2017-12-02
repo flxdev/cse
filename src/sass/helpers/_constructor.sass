@@ -8,13 +8,78 @@
 			margin-right: -20px
 			.columns
 				padding-right: 20px
-				&>div
+				&>div:not(.youtube)
 					max-width: 480px
+					.doclink
+						&-wrapper
+							margin-bottom: 0 !important
+	&-table
+		width: 100%
+		+r(768)
+			overflow-x: auto
+			table
+				min-width: 710px
+	&-subservice-list
+		.service
+			&-links
+				max-width: initial
+				margin-right: -30px
+				+r(600)
+					margin-right: 0
+				&-item 
+					width: 33.33%
+					margin-bottom: 25px
+					+r(600)
+						width: 100%
+						margin-bottom: 20px
+					a 
+						color: $white
+						opacity: .7
+	&-slider 
+		&-slider
+			margin-left: -2.5px
+			margin-right: -2.5px
+		&-head
+			position: relative
+			margin-bottom: 38px
+			padding-right: 40px
+			+r(640)
+				margin-bottom: 25px
+			.content-slider-nav
+				bottom: 12px
+				+r(640)
+					bottom: 8px
+			.slider-nav
+				.slick-arrow
+
+					height: 20px
+					width: 15px
+					&:last-child
+						margin-right: -2px
+						margin-left: 18px
+
+		&-slide
+			.promoblock-item
+				width: 100%
+				max-width: 100%
+				padding-bottom: 0
+				&.type-promotion
+					.title.h4
+						font-size: 24px
+						font-weight: 500
+						line-height: 1.333
+						max-width: 450px
+						+r(600)
+							font-size: 18px
+	&-counter-list
+		font-size: 0
+		counter-reset: count
+		margin-right: -30px
 	.content-slider
 		margin-top: 75px
 .cards
 	&-wrapper
-		margin-right: -55px
+		margin-right: -30px
 		+r(996)
 			margin-right: -20px
 		&.w4
@@ -31,24 +96,38 @@
 						width: 50%
 					+r(600)
 						width: 100%
-
+					&-content
+						.text
+							max-width: 250px
+							+r(640)
+								max-width: 100%
 	&-item
-		padding-right: 70px
+		
 		display: inline-block
 		vertical-align: top
 		width: 33.33%
 		margin-bottom: 30px
-
+		margin-top: 2px
+		+r(860)
+			width: 50%
+		+r(600)
+			width: 100%
 		&-image
 			height: 65px
 			width: 70px
-			margin-bottom: 25px
+			margin-bottom: 26px
 			+r(640)
 				margin-bottom: 15px
 			img
 				height: 100%
 		&-content
+			.text
+				max-width: 330px
+				padding-right: 20px
+				+r(640)
+					max-width: 100%
 			.bold
+				
 				margin-bottom: 17px
 				+r(640)
 					margin-bottom: 13px
@@ -123,3 +202,42 @@
 				margin-left: 0
 				+r(640)
 					margin-top: 20px
+
+.counter-list
+	&-item 
+		display: inline-block
+		vertical-align: top
+		width: 33.33%
+		counter-increment: count
+		padding-right: 30px
+		margin-bottom: 30px
+		+r(1200)
+			width: 50%
+		+r(640)
+			width: 100%
+			.text
+				max-width: 100%
+		&-inner
+			padding-left: 39px
+			position: relative
+			&:before
+				content: counter(count, decimal-leading-zero)
+				font-size: 18px
+				font-weight: 600
+				color: $brand
+				position: absolute
+				top: 5px
+				left: 0
+			.text 
+				max-width: 290px
+				a 
+					box-shadow: none
+					color: $brand
+					&:hover
+						+notouch
+							color: $brandh
+					&:active
+						color: $brandh
+						transition-duration: 0s
+				&.bold
+					margin-bottom: 15px

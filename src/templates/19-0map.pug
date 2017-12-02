@@ -1,0 +1,192 @@
+---
+title: Карта сайта
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Карта сайта
+	.wrapper.bg-white
+		.box
+			.sitemap
+				.sitemap-section
+					a(href="#").sitemap-link.title.h3 Услуги
+					.sitemap-section-wrap
+						ul.sitemap-link-lvl.sitemap-link-lvl_1
+							li
+								a(href="#").title.h4 Доставка по России
+								ul.sitemap-link-lvl.sitemap-link-lvl_2
+									li
+										a(href="#").text.sm Срочная
+									li
+										a(href="#").text.sm Сверхсрочная
+									li
+										a(href="#").text.sm Эконом
+							li
+								a(href="#").title.h4 Доставка по области
+								ul.sitemap-link-lvl.sitemap-link-lvl_2
+									li
+										a(href="#").text.sm Срочная
+									li
+										a(href="#").text.sm Сверхсрочная
+									li
+										a(href="#").text.sm Стандартная
+							li
+								a(href="#").title.h4 Доставка по городу
+								ul.sitemap-link-lvl.sitemap-link-lvl_2
+									li
+										a(href="#").text.sm Срочная
+									li
+										a(href="#").text.sm Сверхсрочная
+									li
+										a(href="#").text.sm Стандартная
+									li
+										a(href="#").text.sm Суточная
+							li
+								a(href="#").title.h4 Доставка в ближнее зарубежье
+								ul.sitemap-link-lvl.sitemap-link-lvl_2
+									li
+										a(href="#").text.sm Экспорт
+										ul.sitemap-link-lvl.sitemap-link-lvl_3
+											li
+												a(href="#").caption Срочная
+											li
+												a(href="#").caption Эконом
+									li
+										a(href="#").text.sm Импорт
+										ul.sitemap-link-lvl.sitemap-link-lvl_3
+											li
+												a(href="#").caption Срочная
+									
+						ul.sitemap-link-lvl.sitemap-link-lvl_1
+							li
+								a(href="#").title.h4 Международная доставка
+								ul.sitemap-link-lvl.sitemap-link-lvl_2
+									li
+										a(href="#").text.sm Экспорт
+										ul.sitemap-link-lvl.sitemap-link-lvl_3
+											li
+												a(href="#").caption Срочная
+											li
+												a(href="#").caption Эконом
+									li
+										a(href="#").text.sm Импорт
+										ul.sitemap-link-lvl.sitemap-link-lvl_3
+											li
+												a(href="#").caption Срочная
+							li
+								a(href="#").title.h4 Интернет-магазинам
+								ul.sitemap-link-lvl.sitemap-link-lvl_2
+									li
+										a(href="#").text.sm Доставка с наложенным платежом
+										ul.sitemap-link-lvl.sitemap-link-lvl_3
+											li
+												a(href="#").caption Срочная доставка по России
+											li
+												a(href="#").caption Срочная доставка по области
+											li
+												a(href="#").caption Суточная доставка по городу
+									li
+										a(href="#").text.sm Фулфилмент
+										ul.sitemap-link-lvl.sitemap-link-lvl_3
+											li
+												a(href="#").caption Хранение
+											li
+												a(href="#").caption Комплектация
+									li
+										a(href="#").text.sm Дополнительные услуги
+										ul.sitemap-link-lvl.sitemap-link-lvl_3
+											li
+												a(href="#").caption Хранение
+											li
+												a(href="#").caption Комплектация
+							li
+								a(href="#").title.h4 Складские услуги
+								ul.sitemap-link-lvl.sitemap-link-lvl_2
+									li
+										a(href="#").text.sm Хранение
+									li
+										a(href="#").text.sm Комплектация
+							li
+								a(href="#").title.h4 Таможенные услуги
+							
+						ul.sitemap-link-lvl.sitemap-link-lvl_1
+							li
+								a(href="#").title.h4 Температурные перевозки
+								ul.sitemap-link-lvl.sitemap-link-lvl_2
+									li
+										a(href="#").text.sm Температурное складское хранение
+										ul.sitemap-link-lvl.sitemap-link-lvl_3
+											li
+												a(href="#").caption Складская зона хранения (-15... +25 0С)
+											li
+												a(href="#").caption Холодильная камера (+2... +8 0С)
+											li
+												a(href="#").caption Морозильная камера (-20 0С)
+											li
+												a(href="#").caption Морозильная камера (-86 0С)
+									li
+										a(href="#").text.sm Доставка температурных грузов
+										ul.sitemap-link-lvl.sitemap-link-lvl_3
+											li
+												a(href="#").caption Сосуд Дьюара (жидкий азот)
+											li
+												a(href="#").caption Теплые (+15... +25 0С)
+											li
+												a(href="#").caption Холодные (+2... +8 0С)
+											li
+												a(href="#").caption Морозильные (-20... -70 0С)
+											li
+												a(href="#").caption Сухой лёд
+											li
+												a(href="#").caption Глубокая заморозка (жидкий азот)
+							li
+								a(href="#").title.h4 Организация почтовых комнат
+							li
+								a(href="#").title.h4 Дополнительные услуги
+								ul.sitemap-link-lvl.sitemap-link-lvl_2
+									li
+										a(href="#").text.sm Доставка опасного груза
+									li
+										a(href="#").text.sm Доставка негабаритных грузов
+									li
+										a(href="#").text.sm Страхование отправлений
+									li
+										a(href="#").text.sm Перевозка с объявленной стоимостью
+									li
+										a(href="#").text.sm Уведомление о доставке
+									li
+										a(href="#").text.sm Доставка в нерабочее время
+									li
+										a(href="#").text.sm Доставка отправлений с «возвратом»
+									li
+										a(href="#").text.sm Доставка «лично в руки»
+								
+				.sitemap-section
+					a(href="#").sitemap-link.title.h3 О компании
+					.sitemap-section-wrap
+						ul.sitemap-link-lvl.sitemap-link-lvl_1.sitemap-link-lvl_no-child
+							li
+								a(href="#").title.h4 Новости
+							li
+								a(href="#").title.h4 Франчайзинг
+							li
+								a(href="#").title.h4 Вакансии
+							li
+								a(href="#").title.h4 Закупки
+							li
+								a(href="#").title.h4 Сотрудничество
+				.sitemap-section
+					a(href="#").sitemap-link.sitemap-link_no-lvl.title.h3 Главная
+					a(href="#").sitemap-link.sitemap-link_no-lvl.title.h3 Документы
+					a(href="#").sitemap-link.sitemap-link_no-lvl.title.h3 Карта сайта
+					a(href="#").sitemap-link.sitemap-link_no-lvl.title.h3 Акции
+					a(href="#").sitemap-link.sitemap-link_no-lvl.title.h3 API Интеграция
+					a(href="#").sitemap-link.sitemap-link_no-lvl.title.h3 Личный кабинет
+					a(href="#").sitemap-link.sitemap-link_no-lvl.title.h3 Вопросы и ответы
+					a(href="#").sitemap-link.sitemap-link_no-lvl.title.h3 Контакты

@@ -53,3 +53,12 @@ mixin offer(title,text,img)
 
 
 
+mixin docEl(type)
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 56"><g fill="none" stroke="currentcolor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"><path d="M43 55H1V1h32l10 10z"/><path d="M33 1v10h10"/></g><text fill="#F47920" transform="translate(8.41 34.786)" font-family="'Formular',Arial" font-size="12">#{type}</text></svg>
+mixin docLink(href,name,size,type)
+	.doclink-wrapper.ajax-trigger.js-popup-button(data-modal='diplom',data-href=href)
+		.doclink-img
+			+docEl(type)
+		.doclink-content
+			.text.sm #{name}
+			.caption.medium #{size}

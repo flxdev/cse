@@ -1,0 +1,216 @@
+---
+title: Стать клиентом
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Стать клиентом
+	.wrapper.bg-white
+		.box
+			.content-columns
+				.content-columns-main
+					form(action="/").js-validate.form-with-text
+						.text.sm Если вы приняли решение о сотрудничестве с нашей компанией, пожалуйста, заполните форму заявки. В кратчайшие сроки с вами свяжется менеджер по продажам для обсуждения условий сотрудничества и заключения договора.
+						.border-block
+							.border-block-content
+								.form-block
+									.form-block-head
+										.title.h5 Информация о заказе
+									.input-row
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='RegClientCity',
+													type="text",
+													name='RegClientCity',
+													placeholder='Ваш Город',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8')
+												label(for='#RegClientCity').input-label Ваш Город
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='RegClientName',
+													placeholder='Иванов Сергей Иванович',
+													type="text",
+													name='RegClientName',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8')
+												label(for='#RegClientName').input-label Контактное лицо
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='RegClientCompany',
+													placeholder='ООО «КурьерСервисЭкспресс»',
+													type="text",
+													name='RegClientCompany',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8')
+												label(for='#RegClientCompany').input-label Компания
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='RegClientPosition',
+													placeholder='Менеджер по продажам',
+													type="text",
+													name='CustomerName',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8')
+												label(for='#CustomerName').input-label Должность
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='RegClientEmail',
+													placeholder='user@mail.ru',
+													type="text",
+													name='RegClientEmail',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8')
+												label(for='#RegClientEmail').input-label E-mail
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+													id="RegClientPhone",
+													placeholder="+7 495 000-00-00",
+													type="tel" name="RegClientPhone",
+													data-validation="custom",
+													data-validation-regexp="^[-0-9()+ ]+$",
+													data-validation-error-msg="Введите корректный номер телефона")
+												label(for="#RegClientPhone").input-label Телефон
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+													id="RegClientAddPhone",
+													placeholder="111",
+													type="number",
+													name="RegClientAddPhone",
+													data-validation="number",
+													data-validation-allowing="positive",
+													data-validation-error-msg="Добавочный номер должен содержать только цифры",
+													data-validation-optional="true",
+													data-countdown="20")
+												label(for="#RegClientAddPhone").input-label Добавочный
+										.input-item.w50
+											.input-wrapper
+												select.input-main.js-select(
+													name='RegClientTaxes',
+													data-validation='length',
+													data-validation-length='min1',
+													data-validation-event="change",
+													id='RegClientTaxes')
+													option(value="1") ОСН
+													option(value="2") УСНО
+													option(value="3") ЕНВД
+													option(value="4") ПСН
+												label(for='#RegClientTaxes').input-label Система налогообложения
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+													id="RegClientINN",
+													placeholder="123456789",
+													type="number",
+													name="RegClientINN",
+													data-validation="number",
+													data-validation-allowing="positive",
+													data-validation-error-msg="ИНН номер должен содержать только цифры",
+													data-validation-optional="true",
+													data-countdown="20")
+												label(for="#RegClientINN").input-label ИНН
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='RegClientSite',
+													placeholder='http://cse.ru/',
+													type="text",
+													name='RegClientSite',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8',
+													data-countdown='50')
+												label(for='#RegClientSite').input-label Сайт компании
+								.form-block
+									.form-block-head
+										.title.h5 Характер груза
+									.input-row
+										.select-radio-group
+											.input-item.w50
+												label.select-radio-label.radio-simple
+													input(type="checkbox", name='LoadCharacter').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Документы
+											.input-item.w50
+												label.select-radio-label.radio-simple
+													input(type="checkbox", name='LoadCharacter').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text К определенному времени
+											.input-item.w50
+												label.select-radio-label.radio-simple
+													input(type="checkbox", name='LoadCharacter').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Грузы
+											.input-item.w50
+												label.select-radio-label.radio-simple
+													input(type="checkbox", name='LoadCharacter').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Для интернет-магазинов
+								.form-block
+									.form-block-head
+										.title.h5 Как вы узнали о нас?
+									.input-row
+										.select-radio-group
+											.input-item.w50
+												label.select-radio-label.radio-simple
+													input(type="radio", name='HowToFind').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Интернет
+											.input-item.w50
+												label.select-radio-label.radio-simple
+													input(type="radio", name='HowToFind').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Ранее сотрудничали
+											.input-item.w50
+												label.select-radio-label.radio-simple
+													input(type="radio", name='HowToFind').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Рекомендации
+						.border-block.PersonalData
+							.border-block-content
+								.form-block
+									.input-row
+										.input-item.w100
+											label.select-radio-label.radio-simple
+												input(type="checkbox", name='RegClientAgree').select-radio-input-real
+												.select-radio-inner
+													span.select-radio-input
+														span.select-radio-input-fake
+													span.select-radio-text Согласие на обработку
+														a(href="#" target='_blank') персональных данных
+						.block-buttons
+							button(type='submit').btn.full-width.btn-next
+								.btn-inner 
+									span Заключить договор

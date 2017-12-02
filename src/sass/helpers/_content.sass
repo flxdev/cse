@@ -1,7 +1,7 @@
 .content-wrapper
 	&>*
 		&:first-child
-			margin-top: 0
+			margin-top: 0 !important
 	ul 
 		display: block
 		margin: 15px 0
@@ -23,8 +23,20 @@
 				position: absolute
 				left: 0
 				top: 8px
-	p 
+	p,.text
 		font-size: 16px
+		margin-top: 20px
+		margin-bottom: 20px
+		a
+			color: $brand
+			&:hover
+				+notouch
+					color: $brandh
+			&:active
+				color: $brandh
+				transition-duration: 0s
+		&.bold
+			font-size: 18px
 	h1,h2,h3,h4,h5
 		color: rgb(0, 0, 0)
 		font-weight: bold;
@@ -35,6 +47,15 @@
 		font-size: 16px
 		text-transform: none
 		margin: 20px 0
+	h2 
+		font-size: 36px
+		+r(600)
+			font-size: 26px
+		+r(335)
+			font-size: 25px
+	h2,.title.h2
+		margin-top: 40px
+		margin-bottom: 40px
 table
 	&:not([class])
 		width: 100%
@@ -59,8 +80,102 @@ table
 					.text 
 						max-width: 200px
 			td 
-				vertical-align: top
-				
+				vertical-align: top 
+.youtube
+	position: relative
+	padding-bottom: 56.25%
+	z-index: 50
+	contain: layout
+	overflow: hidden
+	width: 100%
+	height: 0
+	margin-top: 10px
+	img, iframe
+		+coverdiv
+	.play-button
+		position: absolute
+	img
+		width: 100%
+		height: auto
+		cursor: pointer
+		@suports (object-fit: cover)
+			object-fit: cover
+			height: 100%
+	&:hover 
+		.play-button
+			color: $brand
+	.play-button
+		width: 50px
+		height: 50px
+		top: 50%
+		left: 50%
+		transform: translateX(-50%) translateY(-50%)
+		z-index: 1
+		cursor: pointer
+		+tr(color .3s)
+		color: $white
 
-
-
+.doclink
+	&-wrapper
+		display: block
+		width: 100%
+		cursor: pointer
+		font-size: 0
+		margin-bottom: 34px
+		+r(600)
+			margin-bottom: 25px
+		&:hover
+			+notouch
+				.text, svg 
+					color : $brand
+		&>div
+			display: inline-block
+			vertical-align: top
+			
+	&-img 
+		width: 62px
+		padding-right: 18px
+		svg 
+			color: #c1c1c1
+			+tr(color .3s)
+			text
+				font-weight: 500
+	&-content 
+		width: calc(100% - 62px)
+		.text 
+			+tr(color .3s)
+		.caption
+			margin-top: 6px
+.docwrapper
+	&-item
+		display: block
+		font-size: 0
+		padding-top: 5px
+		&:not(:first-child)
+			padding-top: 45px
+			+r(600)
+				padding-top: 30px
+		&:not(:last-child)
+			border-bottom: 1px solid $inputborder
+			padding-bottom: 20px
+			+r(600)
+				padding-bottom: 10px
+		&-head,&-content
+			display: inline-block
+			vertical-align: top
+			+r(600)
+				width: 100%
+		&-head
+			width: 34%
+			padding-right: 30px
+			+r(600)
+				padding-bottom: 30px
+		&-content 
+			width: 66%
+			.row
+				margin-right: -30px
+				.columns
+					padding-right: 30px
+			.text
+				max-width: 250px
+			

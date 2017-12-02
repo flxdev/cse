@@ -1,0 +1,135 @@
+---
+title: Обратная связь
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Обратная связь
+	.wrapper.bg-white
+		.box
+			.content-columns
+				.content-columns-main
+					form(action="/").js-validate.form-with-text
+						.text.sm Если у вас возникли какие-либо трудности или вопросы по отправлению посылки, вы можете отправить заявку в службу поддержки. Наш специалист свяжется с вами в ближайшее время.
+						.border-block
+							.border-block-content
+								.form-block
+									.form-block-head
+										.title.h5 Информация о заказе
+									.input-row
+										.input-item.w100
+											.input-wrapper
+												select.input-main.js-select(
+													name='CustomerThemeOrder',
+													data-validation='length',
+													data-validation-length='min1', 
+													data-validation-event="change",
+													id='selInp2')
+													option(value="1") Иное
+													option(value="2") Тема 1
+													option(value="3") Тема 2
+													option(value="4") Тема 3
+												label(for='#selInp2').input-label Тема
+										.input-item.w100
+											.input-wrapper
+												textarea.input-main.maxlength(
+													type="text",
+													name='CustomerOrderDescription',
+													data-validation="length",
+													data-validation-length='min4',
+													data-validation-error-msg="Поле обязателно для заполнения",
+													id='nameInp',
+													placeholder='Иванов Сергей Иванович',
+													data-countdown='50')
+												label(for='#nameInp').input-label Описание отправления
+								.form-block
+									.form-block-head
+										.title.h5 Контактные данные
+									.input-row
+										.input-item.w100
+											.input-wrapper
+												input.input-main.maxlength(
+													id='CustomerName',
+													placeholder='Иванов Сергей Иванович',
+													type="text",
+													name='CustomerName',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8',
+													data-countdown='50')
+												label(for='#CustomerName').input-label Контактное лицо
+										.input-item.w100
+											.input-wrapper
+												input.input-main.maxlength(
+													id='CustomerMail',
+													placeholder='user@mail.ru',
+													type="email",
+													name='CustomerMail',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8',
+													data-countdown='50')
+												label(for='#CustomerMail').input-label E-mail
+										.input-item.w100
+											label.select-radio-label.radio-simple
+												input(type="checkbox", name='CustomerPreferEmail').select-radio-input-real
+												.select-radio-inner
+													span.select-radio-input
+														span.select-radio-input-fake
+													span.select-radio-text Предпочитительный способ связи
+
+										.input-item.w100
+											hr.form-block-devider
+								
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+													id="CustomerPhone",
+													placeholder="+7 495 000-00-00",
+													type="tel" name="CustomerPhone",
+													data-validation="custom",
+													data-validation-regexp="^[-0-9()+ ]+$",
+													data-validation-error-msg="Введите корректный номер телефона")
+												label(for="#CustomerPhone").input-label Телефон
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+													id="CustomerAddPhone",
+													placeholder="111",
+													type="number",
+													name="CustomerAddPhone",
+													data-validation="number",
+													data-validation-allowing="positive",
+													data-validation-error-msg="Добавочный номер должен содержать только цифры",
+													data-validation-optional="true",
+													data-countdown="20")
+												label(for="#CustomerAddPhone").input-label Добавочный
+										.input-item.w100
+											label.select-radio-label.radio-simple
+												input(type="checkbox", name='CustomerPreferPhone').select-radio-input-real
+												.select-radio-inner
+													span.select-radio-input
+														span.select-radio-input-fake
+													span.select-radio-text Предпочитительный способ связи
+						.border-block.PersonalData
+							.border-block-content
+								.form-block
+									.input-row
+										.input-item.w100
+											label.select-radio-label.radio-simple
+												input(type="checkbox", name='CustomerAgree').select-radio-input-real
+												.select-radio-inner
+													span.select-radio-input
+														span.select-radio-input-fake
+													span.select-radio-text Согласие на обработку
+														a(href="#" target='_blank') персональных данных
+						.block-buttons
+							button(type='submit').btn.full-width.btn-next
+								.btn-inner 
+									span Отправить

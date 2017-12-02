@@ -1,0 +1,140 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+	-var map = true
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head1.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="/").bread-item Услуги
+					a(href="/").bread-item Международная доставка
+				h1.title.h1 Экспорт
+				.buttons-wrapper
+					a(href="#").btn.color-white.type-round
+						.btn-inner
+							span.btn-icon
+								+icon('down')
+							span Скачать презентацию
+					a(href="#").btn.color-white.not-trans.type-round
+						.btn-inner
+							span Заключить договор
+	.wrapper.bg-white
+		.box
+			.service-linkblock-wrapper
+				.row.padding-big
+					.columns.large-4.medium-6.small-12
+						+feachureLink('Срочная')
+							.caption.medium Быстрая и оптимальная доставка документов и грузов по всему миру в течение 1-3 дней
+					.columns.large-4.medium-6.small-12
+						+feachureLink('Сверхсрочная')
+							.caption.medium Классическая доставка по принципу «от двери до двери» со стандартными сроками доставки
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Описание услуги
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									.title.h4 Выход на международный уровень — важный шаг в развитии бизнеса. Его успешность зависит от качества реализации грузо- и документооборота с зарубежными партнерами.
+									+docLink('diplom1.html','Образец Акта рекламации для неисправных товаров','20','DOC')
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										p Экспорт — надежное решение вопроса международной перевозки и доставки грузов и документов в минимально возможные сроки по доступным ценам. География: соответственно списку обслуживаемых стран.
+										h5 Общие характеристики услуг
+										ul
+											li Возможность гарантированной доставки к полудню по Европе
+											li От двери до двери
+											li По всему миру
+											li Отслеживание в режиме онлайн
+											li Доступны дополнительные услуги
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Преимущества
+					.cards-wrapper
+						+card('Единый тариф по доставке из любого города России ','КурьерСервисЭкспресс — надежный партнер для осуществления доставки любых грузов, на любые расстояния, в любую точку мира. ','4.svg')
+						+card('Помощь в оформлении таможенных документов ','Мы тщательно контролируем транспортные процессы на всех этапах доставки вашей посылки, чтобы вы получили её прямо в руки.','5.svg')
+						+card('Мониторинг статуса доставки отправления ','Вы всегда можете отследить вашу посылку через нас сервис и быть в курсе, где она находится в данный момент.','9.svg')
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Что мы предлагаем
+					.offers-wrapper
+						+offer('Перевозка ценных отправлений','Мы предоставляем специальный сервис, который позволяет в режиме онлайн узнать где находится ваш груз. Благодаря широкой сети представительств и офисов вы имеете возможность заказать доставку из любого региона нашей страны.','1')
+						+offer('Перевозка опасных грузов','Мы разрабатываем оптимальный и выгодный маршрут, предусматривающий использование современных складских комплексов, надежных контейнерных терминалов и портов.','2')
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Основные требования
+					.block-constructor-counter-list
+						.counter-list-item
+							.counter-list-item-inner
+								.text.bold Габариты
+								.text.sm Сумма измерений (по длине, ширине и высоте) одного места не должна превышать 180 см, максимальный размер одной стороны: 120 см.
+						.counter-list-item
+							.counter-list-item-inner
+								.text.bold География обслуживания
+								.text.sm Свыше 6000 населенных пунктов 
+									a(href="#") России
+									|. Следить за передвиже- нием груза можно в онлайн режиме на нашем сайте, используя систему универсального мониторинга статуса доставки отправления.
+						.counter-list-item
+							.counter-list-item-inner
+								.text.bold К отправке принимаются
+								.text.sm Отправления, содержащие материалы, оборудование и товары, разрешенные к авиа-, авто- или ж/д перевозке: медикаменты и БАДы, косметика и парфюмерия, продукты питания, техника и электроника с ГСМ, опасные грузы, товары народного потребления.
+
+	.wrapper
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head1.jpg')
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Дополнительные услуги
+					.block-constructor-subservice-list
+						ul.service-links
+							li.service-links-item
+								a(href="#") Доставка опасного груза
+							li.service-links-item
+								a(href="#") Перевозка с объявленной стоимостью
+							li.service-links-item
+								a(href="#") Доставка отправлений с «возвратом»
+							li.service-links-item
+								a(href="#") Доставка негабаритных грузов
+							li.service-links-item
+								a(href="#") Уведомление о доставке
+							li.service-links-item
+								a(href="#") Доставка «Лично в руки»
+							li.service-links-item
+								a(href="#") Страхование отправлений
+							li.service-links-item
+								a(href="#") Доставка в нерабочее время
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										// может быть просто h2
+										.title.h2 Как мы работаем
+										p.bold Наличие собственной транспортной базы позволяют нам предлагать наиболее оптимальные схемы доставки ваших грузов.
+										p В зависимости от имеющегося бюджета, особенностей перевозимых объектов и необходимых сроков доставки мы предложим несколько вариантов транспортировки, среди которых Вы сможете выбрать наиболее подходящий для себя. 
+							.columns.large-6.medium-6.small-12
+								.youtube(data-embed='OiLdgNA6hlM')
+									.play-button
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.5 50.5"><style>.stokaybtn0{fill:currentcolor;}</style><path d="M22 19.1l10.5 6.1L22 31.4V19.1m-1.5-2.6V34l15-8.7-15-8.8z" class="stokaybtn0"/><path d="M25.3 1.5c13 0 23.7 10.7 23.7 23.7C49 38.3 38.3 49 25.3 49 12.2 49 1.5 38.3 1.5 25.2c0-13 10.7-23.7 23.8-23.7m0-1.5C11.3 0 0 11.3 0 25.2c0 13.9 11.3 25.3 25.3 25.3s25.2-11.3 25.2-25.3C50.5 11.3 39.2 0 25.3 0z" class="stokaybtn0"/></svg>
+	include ./partials/_promo
+	include ./partials/_ask

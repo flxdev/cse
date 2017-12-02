@@ -1,0 +1,142 @@
+.form-block-devider
+	border: 0
+	height: 1px
+	background: #d4d4d4
+	margin-top: 12px
+	margin-bottom: 12px
+
+.form-with-text > .text
+	margin-bottom: 55px
+	+r(800)
+		margin-bottom: 35px
+	+r(640)
+		margin-bottom: 25px	
+
+.select-radio-group > .input-item
+	padding-bottom: 10px
+
+.sitemap
+	font-size: 0
+	padding-top: 25px
+	padding-bottom: 110px
+	+r(600)
+		padding-bottom: 60px
+.sitemap-section
+	&:not(:last-child)
+		padding-bottom: 40px
+		border-bottom: 1px solid #d4d4d4
+		margin-bottom: 60px
+	& a
+		&:hover
+			color: $brand
+.sitemap-section-wrap
+	margin-left: -20px
+	margin-top: 35px
+.sitemap-link
+	font-size: 24px
+	line-height: 1.417
+	color: #000000
+	display: inline-block
+	width: 33.33%
+	+r(600)
+		width: 100%
+	&_no-lvl
+		margin-bottom: 35px
+		+r(768)
+			width: 50%
+		+r(600)
+			width: 100%
+	&-lvl
+		display: inline-block
+		vertical-align: top
+		&_1
+			width: 33.33%
+			padding-left: 20px
+			& > li
+				margin-bottom: 30px
+			+r(1200)
+				width: 50%
+			+r(600)
+				width: 100%
+		&_2
+			padding-left: 20px
+			margin-top: 15px
+			li
+				margin-bottom: 16px
+				&:last-child
+					margin-bottom: 0
+		&_3
+			padding-left: 30px
+			margin-top: 10px
+			li
+				margin-bottom: 10px
+				&:last-child
+					margin-bottom: 0
+		&_no-child
+			width: 100% !important
+			li
+				display: inline-block
+				width: 33.33%
+				+r(600)
+					width: 100%
+
+.search-result
+	max-width: 830px
+	padding-top: 95px
+	padding-bottom: 130px
+	+r(800)
+		padding-top: 75px
+		padding-bottom: 90px
+	+r(640)
+		padding-top: 45px
+		padding-bottom: 60px
+	.search-result-item:not(:first-child)
+		padding-top: 40px
+	.search-result-item
+		padding-bottom: 55px
+		+r(640)
+			padding-bottom: 30px
+.search-result-head
+	max-width: 650px
+.search-field
+	position: relative
+.search-method
+	margin-top: 15px
+	.input-item
+		width: auto
+		padding-right: 0
+
+.search-result-title
+	margin-top: 35px
+	margin-bottom: 45px
+	+r(640)
+		margin-top: 25px
+		margin-bottom: 30px	
+	b
+		color: $brand
+.search-result-footer
+	padding-top: 44px
+	.btn
+		margin: 0
+
+.search-result-filter
+	margin-bottom: 40px
+	.select-radio
+		margin-top: 0
+		margin-bottom: 5px
+	.select-radio-label.radio-with-image 
+		.select-radio-inner
+			white-space: nowrap
+			min-height: 2.8125rem
+			min-width: 5.625rem
+			padding-left: 1.25rem
+			padding-right: 1.25rem
+		.select-radio-input
+			width: 0
+		.select-radio-text
+			font-size: 1rem
+
+.search-result-error
+	margin-top: -15px
+	margin-left: 2px
+	padding-left: 35px

@@ -1,0 +1,26 @@
+---
+title: Заявка отправлена
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="/").bread-item О компании
+					a(href="/").bread-item Закупки
+				h1.title.h1 Заявка отправлена
+	.wrapper.bg-white
+		.box
+			.content-columns
+				.content-columns-mai
+					.inform-wrapper
+						.text.sm Спасибо, что выбрали «КурьерСервисЭкспресс». В кратчайшие сроки с вами свяжется менеджер для обсуждения всех условий сотрудничества, необходимых документов и заключения договора.
+						a(href="#").btn
+							.btn-inner 
+								span Вернуться на главную
+				.content-columns-aside(data-sticky-parent).js-stick-parent
+	include ./partials/_ask

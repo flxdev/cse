@@ -204,64 +204,63 @@ block content
 			.map-filter
 				.title.h2 Офисы на карте
 				.map-filter-nav
-					.map-filter-nav
-						// согласовать формат прелдставления данных о точках
-						// после интегрировать скрипт загрузки точек из local/workflow
-						.select-radio
-							label.select-radio-label.radio-with-image
-								input(
-										type="radio",
-										name='map',
-										value='1',
-										checked='checked').select-radio-input-real
-								.select-radio-inner
-									span.select-radio-input
-									span.select-radio-text Все
-						.select-radio
-							label.select-radio-label.radio-with-image
-								input(
-										type="radio",
-										name='map',
-										value='2').select-radio-input-real
-								.select-radio-inner
-									.select-radio-image
-										
-										img(src="img/mappins/pin_office.svg", alt="")
-									span.select-radio-input
-									span.select-radio-text Офисы
-						.select-radio
-							label.select-radio-label.radio-with-image
-								input(
-										type="radio",
-										name='map',
-										value='3').select-radio-input-real
-								.select-radio-inner
-									.select-radio-image
-										img(src="img/mappins/pin_filial.svg", alt="")
-									span.select-radio-input
-									span.select-radio-text Филиалы
-						.select-radio
-							label.select-radio-label.radio-with-image
-								input(
-										type="radio",
-										name='map',
-										value='4').select-radio-input-real
-								.select-radio-inner
-									.select-radio-image
-										img(src="img/mappins/pin_pickup.svg", alt="")
-									span.select-radio-input
-									span.select-radio-text Пункты самовывоза
-						.select-radio.disabled
-							label.select-radio-label.radio-with-image
-								input(
-										type="radio",
-										name='map',
-										value='5').select-radio-input-real
-								.select-radio-inner
-									.select-radio-image
-										img(src="img/mappins/pin_postamat.svg", alt="")
-									span.select-radio-input
-									span.select-radio-text Постаматы
+					// согласовать формат прелдставления данных о точках
+					// после интегрировать скрипт загрузки точек из local/workflow
+					.select-radio
+						label.select-radio-label.radio-with-image
+							input(
+									type="radio",
+									name='map',
+									value='1',
+									checked='checked').select-radio-input-real
+							.select-radio-inner
+								span.select-radio-input
+								span.select-radio-text Все
+					.select-radio
+						label.select-radio-label.radio-with-image
+							input(
+									type="radio",
+									name='map',
+									value='2').select-radio-input-real
+							.select-radio-inner
+								.select-radio-image
+									
+									img(src="img/mappins/pin_office.svg", alt="")
+								span.select-radio-input
+								span.select-radio-text Офисы
+					.select-radio
+						label.select-radio-label.radio-with-image
+							input(
+									type="radio",
+									name='map',
+									value='3').select-radio-input-real
+							.select-radio-inner
+								.select-radio-image
+									img(src="img/mappins/pin_filial.svg", alt="")
+								span.select-radio-input
+								span.select-radio-text Филиалы
+					.select-radio
+						label.select-radio-label.radio-with-image
+							input(
+									type="radio",
+									name='map',
+									value='4').select-radio-input-real
+							.select-radio-inner
+								.select-radio-image
+									img(src="img/mappins/pin_pickup.svg", alt="")
+								span.select-radio-input
+								span.select-radio-text Пункты самовывоза
+					.select-radio.disabled
+						label.select-radio-label.radio-with-image
+							input(
+									type="radio",
+									name='map',
+									value='5').select-radio-input-real
+							.select-radio-inner
+								.select-radio-image
+									img(src="img/mappins/pin_postamat.svg", alt="")
+								span.select-radio-input
+								span.select-radio-text Постаматы
 				.map-wrapper
 					// иничу карту по классу, но айди все арвно нужен и если карт несколько то он уникален
 					.map-elem.js-map#map-1(data-pinimg='img/mappins/pin_office.svg',data-maptype='offices')

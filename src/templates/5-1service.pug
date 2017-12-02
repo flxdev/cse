@@ -169,28 +169,87 @@ block content
 										.text.sm —
 									td
 										.text.sm 3 кг
-	//- .wrapper.bg-gray
-	//- 	.box
-	//- 		.padding-big
-	//- 			.block-constructor
-	//- 				h2.title.h2 Описание услуги
-	//- 				.block-constructor-halfdescr
-	//- 					.row.align-stretch 
-	//- 						.columns.large-6.medium-6.small-12
-	//- 							.col
-	//- 								.title.h4 Выход на международный уровень — важный шаг в развитии бизнеса. Его успешность зависит от качества реализации грузо- и документооборота с зарубежными партнерами.
-	//- 								.title.h4 Экспорт — надежное решение вопроса международной перевозки и доставки грузов и документов в минимально возможные сроки по доступным ценам. География: соответственно списку обслуживаемых стран.
-	//- 						.columns.large-6.medium-6.small-12
-	//- 							.col
-	//- 								.content-wrapper
-	//- 									p Экспорт — надежное решение вопроса международной перевозки и доставки грузов и документов в минимально возможные сроки по доступным ценам. География: соответственно списку обслуживаемых стран.
-	//- 									h5 Общие характеристики услуг
-	//- 									ul
-	//- 										li Возможность гарантированной доставки к полудню по Европе
-	//- 										li От двери до двери
-	//- 										li По всему миру
-	//- 										li Отслеживание в режиме онлайн
-	//- 										li Доступны дополнительные услуги
+	.wrapper
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head1.jpg')
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Дополнительные услуги
+					.block-constructor-subservice-list
+						ul.service-links
+							li.service-links-item
+								a(href="#") Доставка опасного груза
+							li.service-links-item
+								a(href="#") Перевозка с объявленной стоимостью
+							li.service-links-item
+								a(href="#") Доставка отправлений с «возвратом»
+							li.service-links-item
+								a(href="#") Доставка негабаритных грузов
+							li.service-links-item
+								a(href="#") Уведомление о доставке
+							li.service-links-item
+								a(href="#") Доставка «Лично в руки»
+							li.service-links-item
+								a(href="#") Страхование отправлений
+							li.service-links-item
+								a(href="#") Доставка в нерабочее время
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										// может быть просто h2
+										.title.h2 Как мы работаем
+										p.bold Наличие собственной транспортной базы позволяют нам предлагать наиболее оптимальные схемы доставки ваших грузов.
+										p В зависимости от имеющегося бюджета, особенностей перевозимых объектов и необходимых сроков доставки мы предложим несколько вариантов транспортировки, среди которых Вы сможете выбрать наиболее подходящий для себя. 
 
+
+							.columns.large-6.medium-6.small-12
+								.youtube(data-embed='OiLdgNA6hlM')
+									.play-button
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.5 50.5"><style>.stokaybtn0{fill:currentcolor;}</style><path d="M22 19.1l10.5 6.1L22 31.4V19.1m-1.5-2.6V34l15-8.7-15-8.8z" class="stokaybtn0"/><path d="M25.3 1.5c13 0 23.7 10.7 23.7 23.7C49 38.3 38.3 49 25.3 49 12.2 49 1.5 38.3 1.5 25.2c0-13 10.7-23.7 23.8-23.7m0-1.5C11.3 0 0 11.3 0 25.2c0 13.9 11.3 25.3 25.3 25.3s25.2-11.3 25.2-25.3C50.5 11.3 39.2 0 25.3 0z" class="stokaybtn0"/></svg>
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Документы
+					.block-constructor-docs
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Общие
+							.docwrapper-item-content
+								.row
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Список запрещенных к пересылке грузов','20','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Образец Акта рекламации для неисправных товаров','20','DOC')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Срок доставки и география','20','DOC')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Гарантийное письмо для печатной, аудио-видео продукции ','20','DOC')
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Для юридических лиц
+							.docwrapper-item-content
+								.row
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Индивидуальная накладная','20','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','2 инвойса на русском языке','20','DOC')
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Для физических лиц
+							.docwrapper-item-content
+								.row
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Индивидуальная накладная','20','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','2 инвойса на русском языке','20','DOC')
 	include ./partials/_promo
+	include ./partials/_salesSlider
 	include ./partials/_ask

@@ -22,6 +22,7 @@ import CalcForm from './lib/CalcForm';
 import Accordeon from './lib/Accordeon';
 import CalcFormNavigation from './lib/CalcFormNavigation';
 import RepeatTels from './lib/RepeatTels';
+import YoutubeVids from './lib/YoutubeVids';
 
 
 
@@ -210,6 +211,7 @@ ready(() => {
   window.CalcNav = new CalcFormNavigation();
   Accordeon();
   RepeatTels();
+  YoutubeVids();
 });
 
 

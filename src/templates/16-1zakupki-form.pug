@@ -1,0 +1,134 @@
+---
+title: Заявка на закупки
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="/").bread-item О компании
+					a(href="/").bread-item Закупки
+				h1.title.h1 Заявка на закупки
+	.wrapper.bg-white
+		.box
+			.content-columns
+				.content-columns-main
+					form(action="/").js-validate.form-with-text
+						.text.sm Оставьте, пожалуйста, ваши данные, чтобы наш специалист смог с вами связаться для уточнения всех деталей.
+						.border-block
+							.border-block-content
+								.form-block
+									.form-block-head
+										.title.h5 Информация о партнёре
+									.input-row
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='FranchiseCompany',
+													placeholder='ООО «Полиграфия» ',
+													type="text",
+													name='RegClientCompany',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8')
+												label(for='#RegClientCompany').input-label Организация
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='FranchiseName',
+													placeholder='Иванов Сергей Иванович',
+													type="text",
+													name='FranchiseName',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8',
+													data-countdown='50')
+												label(for='#FranchiseName').input-label Контактное лицо
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='FranchiseEmail',
+													placeholder='user@mail.ru',
+													type="email",
+													name='FranchiseEmail',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8',
+													data-countdown='50')
+												label(for='#FranchiseEmail').input-label E-mail
+									.input-row.js-repeatBlock.handled(data-repeatlimit="4")
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+													id="FranchisePhone",
+													placeholder="+7 495 000-00-00",
+													type="tel" name="FranchisePhone",
+													data-validation="custom",
+													data-validation-regexp="^[-0-9()+ ]+$",
+													data-validation-error-msg="Введите корректный номер телефона")
+												label(for="#FranchisePhone").input-label Телефон
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+													id="FranchiseAddPhone",
+													placeholder="111",
+													type="number",
+													name="FranchiseAddPhone",
+													data-validation="number",
+													data-validation-allowing="positive",
+													data-validation-error-msg="Добавочный номер должен содержать только цифры",
+													data-validation-optional="true",
+													data-countdown="20")
+												label(for="#FranchiseAddPhone").input-label Добавочный
+									button(type='button').link-icon.primary.js-repeatBlock-trigger
+										.link-icon-icon
+											+icon('plus')
+										.link-icon-text Добавить номер
+									.input-row
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='FranchiseCity',
+													type="text",
+													name='FranchiseCity',
+													placeholder='Гофрокоробки с логотипом',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8',)
+												label(for='#FranchiseCity').input-label Предлагаемая продукция
+										.input-item.w100
+											.input-wrapper
+												textarea.input-main(
+													type="text",
+													name='FranchiseMoreInfo',
+													data-validation="length",
+													data-validation-length='min4',
+													data-validation-error-msg="Обязательное поле",
+													id='FranchiseMoreInfo',
+													placeholder='Например, предлагаем изготовление продукции по индивидуальному заказу',
+													data-countdown='50')
+												label(for='#FranchiseMoreInfo').input-label Дополнительная информация
+						.border-block.PersonalData
+							.border-block-content
+								.form-block
+									.input-row
+										.input-item.w100
+											label.select-radio-label.radio-simple
+												input(type="checkbox", name='FranchiseAgree').select-radio-input-real
+												.select-radio-inner
+													span.select-radio-input
+														span.select-radio-input-fake
+													span.select-radio-text Согласие на обработку
+														a(href="#" target='_blank') персональных данных
+						.block-buttons
+							.link-icon
+								.link-icon-icon
+									+icon('arrl')
+								.link-icon-text Назад
+							button(type='button').btn.btn-next
+								.btn-inner 
+									span Далее

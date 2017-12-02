@@ -1,0 +1,205 @@
+---
+title: Поиск
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head-2.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Поиск
+	.wrapper.bg-white
+		.box
+			.search-result
+				.search-result-head
+					form(action="/").searchinp.darken
+						.search-field
+							input(type="text" placeholder='Найдите свой город').searchinp-input.js-searchmodal-targetinput
+							button(type='button').searchinp-btn
+								+icon('search')
+						.search-method.input-row
+							.input-item
+								label.select-radio-label.radio-simple
+									input(type="radio", name='MethodSearch').select-radio-input-real
+									.select-radio-inner
+										span.select-radio-input
+											span.select-radio-input-fake
+										span.select-radio-text По услугам
+							.input-item
+								label.select-radio-label.radio-simple
+									input(type="radio", name='MethodSearch', checked='checked').select-radio-input-real
+									.select-radio-inner
+										span.select-radio-input
+											span.select-radio-input-fake
+										span.select-radio-text По тексту
+				.search-result-content
+					h2.title.h2.search-result-title
+						| Найдено
+						b 15 совпадений
+					.search-result-filter
+						.select-radio
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='search-filter',
+										value='1',
+										checked='checked').select-radio-input-real
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Все
+						.select-radio
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='search-filter',
+										value='1').select-radio-input-real
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text О компании
+						.select-radio
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='search-filter',
+										value='1').select-radio-input-real
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Документы
+						.select-radio
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='search-filter',
+										value='1').select-radio-input-real
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Вакансии
+						.select-radio
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='search-filter',
+										value='1').select-radio-input-real
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Новости
+						.select-radio
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='search-filter',
+										value='1').select-radio-input-real
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Акции
+						.select-radio
+							label.select-radio-label.radio-with-image
+								input(
+										type="radio",
+										name='search-filter',
+										value='1').select-radio-input-real
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Вопросы и ответы
+
+					.search-result-wrap
+						a(href="#").search-result-item
+							.search-result-item-num
+								.title.h3
+									|1.
+							.search-result-item-content
+									.title.h3
+										b Международная 
+										|доставка
+									.text.sm
+										|Выход на 
+										b международный 
+										|уровень — важный шаг в развитии бизнеса. Его успешность зависит от качества реализации грузо- и документооборота с зарубежными партнерами.
+									.caption Услуги
+						a(href="#").search-result-item
+							.search-result-item-num
+								.title.h3
+									|2.
+							.search-result-item-content
+									.title.h3 Экспорт
+									.text.sm
+										|Наше решение – это комбинация 
+										b международного 
+										|опыта наших зарубежных партнеров по доставке, наш многолетний опыт таможенного оформления  и широкая география доставки в России. 
+									.caption Международная доставка
+						a(href="#").search-result-item
+							.search-result-item-num
+								.title.h3
+									|3.
+							.search-result-item-content
+									.title.h3 Импорт
+									.text.sm
+										|Выгодный тариф на 
+										b международную 
+										|доставку с отличным транзитным временем. Отправляйте документы и грузы. Хоть на край света! 
+									.caption Международная доставка
+						a(href="#").search-result-item
+							.search-result-item-num
+								.title.h3
+									|4.
+							.search-result-item-content
+									.title.h3 Организация почтовых комнат
+									.text.sm
+										|... данный сервис предназначен для 
+										b международный 
+										|компаний, имеющих большой штат сотрудников и направлен на решение любых задач поставленных руководством ...
+									.caption Услуги
+						a(href="#").search-result-item
+							.search-result-item-num
+								.title.h3
+									|5.
+							.search-result-item-content
+									.title.h3 Температурные перевозки
+									.text.sm
+										|Выгодный тариф на 
+										b международную 
+										|доставку с отличным транзитным временем. Отправляйте документы и грузы. Хоть на край света! 
+									.caption Услуги
+						a(href="#").search-result-item
+							.search-result-item-num
+								.title.h3
+									|6.
+							.search-result-item-content
+									.title.h3 Импорт
+									.text.sm
+										|Выгодный тариф на 
+										b международную 
+										|доставку с отличным транзитным временем. Отправляйте документы и грузы. Хоть на край света! 
+									.caption Международная доставка
+						a(href="#").search-result-item
+							.search-result-item-num
+								.title.h3
+									|7.
+							.search-result-item-content
+									.title.h3 Организация почтовых комнат
+									.text.sm
+										|... данный сервис предназначен для 
+										b международный 
+										|компаний, имеющих большой штат сотрудников и направлен на решение любых задач поставленных руководством ...
+									.caption Услуги
+						a(href="#").search-result-item
+							.search-result-item-num
+								.title.h3
+									|8.
+							.search-result-item-content
+									.title.h3 Температурные перевозки
+									.text.sm
+										|Выгодный тариф на 
+										b международную 
+										|доставку с отличным транзитным временем. Отправляйте документы и грузы. Хоть на край света! 
+									.caption Услуги
+				.search-result-footer
+					a(href="#").btn
+						.btn-inner 
+							span Показать ещё
+	include ./partials/_ask

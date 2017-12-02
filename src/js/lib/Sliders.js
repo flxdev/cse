@@ -75,4 +75,36 @@ export default function Sliders() {
     });
   }
   ContentSlider();
+  function AddSlider() {
+    $('.block-constructor-slider-slider').each(function() {
+      let _this = $(this),
+        parent = _this.parent();
+      _this.slick({
+        accessibility: false,
+        arrows: true,
+        dots: false,
+        fade: false,
+        touchMove: false,
+        dragable: false,
+        infinite: false,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        appendArrows: parent.find('.slider-nav'),
+        speed: 500,
+        easing: 'ease-out',
+        prevArrow: window.DOM.arnprevcontent,
+        nextArrow: window.DOM.arnextcontent,
+        responsive: [
+          {
+            breakpoint: 740,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ]
+      });
+    });
+  }
+  AddSlider();
 }
