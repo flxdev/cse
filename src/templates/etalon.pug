@@ -1,0 +1,121 @@
+---
+title: Стртаница услуги\ новости
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="/").bread-item О компании
+					a(href="/").bread-item Новости
+				h1.title.h1 Новости 
+	.wrapper.bg-white
+		.box
+			.content-outer
+				.content-wrapper
+					h2 Выходные дни в Молдове 10-30 августа
+					.news-desr
+						time 30 августа, 2017
+						.item-type-wrapper
+							.item-type Уведомления
+
+					h4 Уважаемые клиенты и партнеры!
+					p Информируем вас о том, что в период с 10 по 30 августа 2017 года возможно 
+						a(href="#") увеличение 
+						|срока доставки на 1-2 рабочих дня в Молдову, в сязи с праздничными днями.
+					p Приносим извинения за возможные неудобства.
+					img(src="img/newsimg.jpg", alt="")
+					h3 Заголовок H3
+					p Наша компания осуществляет доставку экспресс-грузов и документов в более чем 200 стран мира и страны Таможенного союза. Мы гарантируем высокое качество обслуживания, оптимальное сочетание 
+						b скорости и цены 
+						|перевозок, таможенное оформление в максимально короткие сроки, доставку груза «до двери» на территории страны доставки.
+					h4 Заголовок H4
+					ul
+						li Возможность 
+							a(href="#") гарантированной доставки 
+							| к полудню по Европе
+						li От двери до двери
+						li По всему миру
+						li Отслеживание в режиме онлайн
+						li Доступны дополнительные услуги
+					.youtube(data-embed='OiLdgNA6hlM')
+						.play-button
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="213.7px" height="213.7px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7" xml:space="preserve"><polygon class='triangle' fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="73.5,62.5 148.5,105.8 73.5,149.1 "/><circle class='circle' fill="none"  stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3"/></svg>
+					h3 Предлагаем скидки
+					p По 30 июня на сайте площадки онлайн-покупателей из России ждут скидки до 56% на самые популярные категории товаров:
+					ol
+						li Электроника
+						li Смартфоны и Аксессуары
+						li Здоровье и Красота
+						li Дом и Дача 
+					p В общей сложности на специальных условиях будет доступно свыше 100 наименований бестселлеров.
+					h3 Таблица
+					table
+						tbody
+							tr
+								th Зона
+								th Территория
+								th Ставка
+								th Размер
+							tr
+								td Зона 0
+								td Москва
+								td 99
+								td 5%
+							tr
+								td Зона 0
+								td Москва
+								td 99
+								td 5%
+							tr
+								td Зона 0
+								td Москва
+								td 99
+								td 5%
+							tr
+								td Зона 0
+								td Санкт-питербург округ
+								td 99
+								td 5%
+					// в принципе тут могут быть любые кнопки из ui
+					.button-container
+						a(href="#").btn.type-round.color-orange
+							.btn-inner 
+								span Подробнее
+						a(href="#").btn.type-round.color-orange
+							.btn-inner 
+								span Подробнее еще разок
+					.content-slider
+						.content-slider-inner
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+								figcaption.caption.medium Наш автопарк укомплектован новыми грузовыми автомобилями
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+								figcaption.caption.medium Наш автопарк укомплектован новыми грузовыми автомобилями
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+								figcaption.caption.medium Наш автопарк укомплектован новыми грузовыми автомобилями
+						.content-slider-nav
+							.slider-nav
+								.slider-counter
+									.slider-curr
+									.slider-divider /
+									.slider-total
+				.content-footer
+					a(href="#").link-icon
+						.link-icon-icon
+							+icon('arrl')
+						.link-icon-text Вернуться назад
+					a(href="#").link-icon
+						.link-icon-text Следующая новость
+						.link-icon-icon
+							+icon('arrr')
+
+	include ./partials/_ask

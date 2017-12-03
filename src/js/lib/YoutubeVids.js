@@ -4,7 +4,7 @@ export default function YoutubeVids() {
 	
   for (let i = 0; i < youtube.length; i++) {
 		
-    let source = 'https://img.youtube.com/vi/'+ youtube[i].dataset.embed +'/mqdefault.jpg';
+    let source = 'https://img.youtube.com/vi/'+ youtube[i].dataset.embed +'/maxresdefault.jpg';
 
     let image = new Image();
     image.src = source;

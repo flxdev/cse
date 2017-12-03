@@ -169,6 +169,13 @@ body,.out
 		text-transform: none
 	&.white
 		color: $white
+a.title 
+	&:hover
+		+notouch
+			color: $brand
+	&:active
+		color: $brand
+		transition-duration: 0s
 span.delivery
 	display: inline-block
 	vertical-align: middle
@@ -263,15 +270,28 @@ blockquote
 	font-style: italic;
 	line-height: 1.333;
 	text-align: center
+	max-width: 680px
+	margin-left: auto
+	margin-right: auto
+	margin-top: 40px
+	+r(640)
+		font-size: 20px;	
+		&:before
+			width: 23px
+			height: 23px
+			margin-bottom: 17px
 	&:before
 		display: block
 		width: 100%
-		content: '\201c'
-		color: $brand 
-		font-size: 48px
-		font-style: italic
-		font-family: $f
-
+		content: ''
+		color: $brand
+		+contain
+		width: 29px
+		height: 29px
+		margin-left: auto
+		margin-right: auto
+		margin-bottom: 25px
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAArCAMAAAAe72skAAAArlBMVEVHcEz/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/egj/eghrgWdrAAAAOXRSTlMAQ/4GFDHwAfy+2w1MJemN+LUr9RhTHF44h91o7OXBP4qEpc2SeMbUr+OfcElifSAKdW1Y15gPf+cD2kOkAAAB/ElEQVQYGX3BB2LiMBQE0HG3aTaY3gkdQnqb+19sLQsSQF/7HgRBesD/RM4nJF5vSTZhV583SJi80Z6FJmyCncsCDLUKlfwIWffBpdLEHX9HxX3oQhS95lT2HdxxfqhUZpC1EyrxvIo7bzEL7uoFsmBCZdjHvTmV8BEWTk7lUMW9lMqwBQsnZyE7wbCmsvRh0QpZCGcw1FwWKj4s/D0LeR+G7piFvA6bHQtuDYYooTKCzYnKCqYelWUEC3/MwrgKw0uDSg02KypPML1SGUawaOcsxG0YvAaVFDYDKhuY3lmqwcJrUElharJUh8UjS+8wVDOWqrD4ZKkPQ40abCostWBYUIsg86m1YNhR60I2o+bAsKX2DtmJ2gKGMbWlByAK3uaDUR1X1tTCLgr103f6VHtBKedZ0jseGiwlAX4NeDbsdRZblvK0ikJGQTbCxYCSSh1ASNEIZwuKJl3gg6IsgHakbBqhSVkTWocWj/imzG2j9EyLA2a06ECbUFZBNKHsFdqKshxYULaGFlCWAX5IUQ9nCUVDAEeKWjgLYkoOAKIpBVv8mlPioNDe03TCLy+haRNBqU94L4nw52vJe2EL2vMHb219XPtKeCtzcFE98NrUxy0vdXll7ODKbMOLxlsEQ3/Ki/ihjVvBU7Py87H57HgQBYNpI44nyfoZpX/qpeWk3PtflwAAAABJRU5ErkJggg==);
 .block-descr
 	display: inline-block
 	vertical-align: top
@@ -353,6 +373,27 @@ blockquote
 			.block-constructor
 				&>.title
 					color: $white
+				&-slider
+					.title
+						color: $white
+					.slider-nav .slick-arrow .icon
+						color: $white
+					.news-slide
+						padding-left: 5px
+						padding-right: 15px
+						display: block
+						max-width: 300px
+						padding-bottom: 10px
+						&:hover
+							.text 
+								color: $brand
+						.caption 
+							color: $white 
+							opacity: .7
+							margin-bottom: 10px
+						.text
+							+tr(color .3s)
+
 		&-img 
 			width: 100%
 			height: 100%
@@ -1079,7 +1120,7 @@ figure
 		&.slick-active
 			figcaption
 				opacity: 1
-				transition-delay: .2s
+				transition-delay: .5s
 	&-nav
 		position: absolute
 		bottom: 2px
@@ -1090,3 +1131,20 @@ figure
 			position: static
 			text-align: center
 			margin-top: 20px
+.reload-container
+	position: relative
+	&.loading
+		*
+			pointer-events: none
+		&:after
+			opacity: 1
+			visibility: visible
+	&:after
+		content: ''
+		+coverdiv
+		background-color: rgba(255,255,255,.5)
+		+tr(opacity .3)
+		opacity: 0
+		z-index: 5
+		visibility: hidden
+		transition: opacity .2s, visibility .2s

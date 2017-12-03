@@ -67,7 +67,7 @@ export default function Sliders() {
         dragable: false,
         infinite: false,
         appendArrows: parent.find('.slider-nav'),
-        speed: 300,
+        speed: 600,
         adaptiveHeight: true,
         prevArrow: window.DOM.arnprevcontent,
         nextArrow: window.DOM.arnextcontent,
@@ -116,4 +116,60 @@ export default function Sliders() {
     });
   }
   AddSlider();
+  function ClientSlider() {
+    $('.js-clients-clider').each(function() {
+      let _this = $(this),
+        parent = _this.parent();
+
+      _this.slick({
+        accessibility: false,
+        arrows: true,
+        dots: false,
+        fade: false,
+        touchMove: false,
+        dragable: false,
+        infinite: false,
+        slidesToShow:  7,
+        slidesToScroll:  1,
+        appendArrows: parent.find('.slider-nav'),
+        speed: 500,
+        easing: 'ease-out',
+        prevArrow: window.DOM.arnprevcontent,
+        nextArrow: window.DOM.arnextcontent,
+        responsive: [
+          {
+            breakpoint: 1400,
+            settings: {
+              slidesToShow:  6,
+            },
+          },
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 5,
+            },
+          },
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 4,
+            },
+          },
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 400,
+            settings: {
+              slidesToShow: 2,
+            },
+          },
+        ]
+      });
+    });
+  }
+  ClientSlider();
 }

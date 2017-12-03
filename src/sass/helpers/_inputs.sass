@@ -646,6 +646,20 @@
 			opacity: 1
 			visibility: visible 
 			transform: none
+a.select-radio-label
+	&:hover
+		+notouch
+			.select-radio-text
+				color: $brand
+	&.active
+		.select-radio-text
+			color: $brand
+		pointer-events: none
+		.select-radio-inner
+			border-color: $brand
+	.select-radio-text
+		color: #4e4544 
+		+tr(color .3s)
 .select-radio
 	display: inline-block
 	vertical-align: middle
@@ -711,6 +725,7 @@
 			.select-radio-text
 				width: calc(100% - 36px)
 				max-width: 240px
+
 				a
 					color: $brand 
 					&:hover

@@ -1,0 +1,147 @@
+---
+title: Новости
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="/").bread-item О компании
+				h1.title.h1 Новости
+
+		.page-head-nav
+			.box
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner.active
+						span Новости
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Франчайзинг
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Вакансии
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Закупки
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Сотрудничество
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.news-wrapper
+					.search-result-filter
+						.select-radio
+							a(href="#").select-radio-label.radio-with-image.active
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Все
+						.select-radio
+							a(href="#").select-radio-label.radio-with-image
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Корпоративные
+						.select-radio
+							a(href="#").select-radio-label.radio-with-image
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Регионы
+						.select-radio
+							a(href="#").select-radio-label.radio-with-image
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text События
+						.select-radio
+							a(href="#").select-radio-label.radio-with-image
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Уведомления
+					.news-content
+						.row.reload-container
+							// если у новости есть картинка, то вешаем на нее has-image.  то в дизайн не попадем.
+							// не уверен, мне пофиг на какого из родителей вешать, так что если вдруг я не угалдал, то скажи куда перевесить
+							.columns.large-6.medium-6.small-12
+								.promoblock-item.w33.type-news
+									a(href="#").promoblock-item-link
+										.promoblock-item-content
+											.promoblock-item-content-inner
+												.title.h4 В Татарстане 30 августа нерабочий день
+												.caption 30 августа, 2017
+										object.item-type-wrapper
+											a(href="#").item-type Регионы
+							.columns.large-6.medium-6.small-12
+								.promoblock-item.w33.type-news.has-image
+									a(href="#").promoblock-item-link
+										.promoblock-item-bg
+											img.js-image(data-src="img/promoblock/1.jpg", alt="")
+										.promoblock-item-content
+											.promoblock-item-content-inner
+												.title.h4 В Татарстане 30 августа нерабочий день
+												.caption 30 августа, 2017
+										object.item-type-wrapper
+											a(href="#").item-type Регионы
+							.columns.large-6.medium-6.small-12
+								.promoblock-item.w33.type-news.has-image
+									a(href="#").promoblock-item-link
+										.promoblock-item-bg
+											img.js-image(data-src="img/promoblock/1.jpg", alt="")
+										.promoblock-item-content
+											.promoblock-item-content-inner
+												.title.h4 В Татарстане 30 августа нерабочий день
+												.caption 30 августа, 2017
+										object.item-type-wrapper
+											a(href="#").item-type Регионы
+							.columns.large-6.medium-6.small-12
+								.promoblock-item.w33.type-news.has-image
+									a(href="#").promoblock-item-link
+										.promoblock-item-bg
+											img.js-image(data-src="img/promoblock/1.jpg", alt="")
+										.promoblock-item-content
+											.promoblock-item-content-inner
+												.title.h4 В Татарстане 30 августа нерабочий день
+												.caption 30 августа, 2017
+										object.item-type-wrapper
+											a(href="#").item-type Регионы
+							.columns.large-4.medium-4.small-12
+								.promoblock-item.w33.type-news
+									a(href="#").promoblock-item-link
+										.promoblock-item-content
+											.promoblock-item-content-inner
+												.title.h4 В Татарстане 30 августа нерабочий день
+												.caption 30 августа, 2017
+										object.item-type-wrapper
+											a(href="#").item-type Регионы
+							.columns.large-4.medium-4.small-12
+								.promoblock-item.w33.type-news.has-image
+									a(href="#").promoblock-item-link
+										.promoblock-item-bg
+											img.js-image(data-src="img/promoblock/1.jpg", alt="")
+										.promoblock-item-content
+											.promoblock-item-content-inner
+												.title.h4 В Татарстане 30 августа нерабочий день
+												.caption 30 августа, 2017
+										object.item-type-wrapper
+											a(href="#").item-type Регионы
+							.columns.large-4.medium-4.small-12
+								.promoblock-item.w33.type-news.has-image
+									a(href="#").promoblock-item-link
+										.promoblock-item-bg
+											img.js-image(data-src="img/promoblock/1.jpg", alt="")
+										.promoblock-item-content
+											.promoblock-item-content-inner
+												.title.h4 В Татарстане 30 августа нерабочий день
+												.caption 30 августа, 2017
+										object.item-type-wrapper
+											a(href="#").item-type Регионы
+					.row.btn-row.align-center
+						a(href="#").btn
+							.btn-inner
+								span Показать ещё
+
+	include ./partials/_ask

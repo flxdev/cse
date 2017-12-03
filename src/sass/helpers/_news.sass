@@ -1,0 +1,47 @@
+.news
+	&-wrapper
+		.search-result-filter
+			margin-top: 10px
+			margin-bottom: 25px
+	&-content 
+		.type-promotion
+			width: 100%
+			.title.h4
+				text-transform: none
+				font-size: 24px
+				font-weight: 500
+				line-height: 1.333
+				max-width: 450px
+				+cut(5)
+				+r(600)
+					font-size: 22px
+		.type-news.promoblock-item
+			width: 100%
+			&-link
+				border: 1px solid #e5c3af
+			&.has-image
+				.promoblock-item-link
+					border: 1px solid $inputborder
+					background-color: $white
+				.promoblock-item-content-inner
+					background-color: $white
+		.columns.large-6
+			+rm(641)
+				&:nth-child(4n+2),&:nth-child(4n+3)
+					.type-promotion
+						.promoblock-item-link
+							&:hover
+							
+								.promoblock-item-content
+									background-color: rgba(44,30,28,.9) !important
+						.promoblock-item-content
+							background-color: rgba(44,30,28,.8);
+			+r(640)
+				&:nth-child(even)
+					.type-promotion
+						.promoblock-item-link
+							&:hover
+								.promoblock-item-content
+									background-color: rgba(44,30,28,.9);
+						.promoblock-item-content
+							background-color: rgba(44,30,28,.8);	

@@ -5,6 +5,12 @@
 			margin-bottom: 30px	
 	.content-columns
 		padding-bottom: 0 !important
+	blockquote
+		margin-top: 45px
+		margin-bottom: 75px
+		+r(640)
+			margin-top: 35px
+			margin-bottom: 50px
 	&-halfdescr
 		.row
 			margin-right: -20px
@@ -14,15 +20,27 @@
 					.title.h4
 						margin-top: -5px
 						margin-bottom: 25px
+					.col 
+						position: relative
 					&>div
 						&:first-child
 							+r(640)
 								margin-bottom: 25px
 				&>div:not(.youtube)
-					max-width: 480px
+					+rm(801)
+						max-width: 480px
 					.doclink
 						&-wrapper
 							margin-bottom: 0 !important
+		.year-image
+			display: inline-block
+			width: 70%
+			position: absolute
+			left: -5%
+			top: -16%
+			+r(800)
+				left: auto
+				right: -3%
 	&-table
 		width: 100%
 		+r(768)
@@ -105,7 +123,28 @@
 			font-size: 16px
 			line-height: 1.5;
 			color: rgb(180, 177, 177);
-
+	&-partners
+		.large-3
+			+rm(1025)
+				&:nth-child(n + 6)
+					.partner-wrapper
+						border-top-color: transparent
+				&:nth-child(3)
+					.partner-wrapper
+						border-left-color: transparent
+				&:nth-child(n+4):not(:nth-child(4n))
+					.partner-wrapper
+						border-left-color: transparent
+			+r(640)
+				&:not(:nth-child(2))
+					.partner-wrapper
+						border-top-color: transparent
+		.medium-4
+			+screen(640,1024)
+				-ms-flex: 0 0 33.33333% !important
+				-webkit-box-flex: 0 !important
+				flex: 0 0 33.33333% !important
+				max-width: 33.33333% !important
 	.content-slider
 		margin-top: 55px
 .cards
@@ -313,6 +352,96 @@
 				margin-top: 32px
 				margin-bottom: 10px
 
+.clients
+	&-slider
+		font-size: 0
+		margin-right: -25px
+		margin-left: -25px
+		padding-top: 15px
+		padding-bottom: 10px
+		+r(996)
+			margin-right: -20px
+			margin-left: -20px
+	&-item 
+		height: 100%
+		+vertical 
+		padding-left: 25px
+		padding-right: 25px
+		display: inline-block !important
+		vertical-align: middle
+		float: none !important
+		+r(600)
+			padding-left: 20px
+			padding-right: 20px
+		&-inner
+			display: inline-block
+			vertical-align: middle
+			width: 100%
+			max-width: 188px
+		img 
+			display: block
+			margin: 0 auto
+			max-width: 100%
+			max-height: 48px
 			
 
+.partners
+	&-text 
+		max-width: 500px
+		padding-right: 30px
+		.title
+			margin-bottom: 40px
+		.text 
+			margin-bottom: 20px
 
+.partner
+	&-wrapper
+		width: 100%
+		position: relative
+		height: 0
+		padding-bottom: 91%
+		border: 1px solid $inputborder
+		cursor: pointer
+		&:hover
+			.partner-wrapper-content
+				opacity: 1
+				background-color: $brandh
+		&-item
+			+coverdiv
+		&-img 
+			width: 100%
+			height: 100%
+			+vertical 
+			padding: 25px 17%
+			img 
+				display: inline-block
+				vertical-align: middle
+		&-content 
+			position: absolute
+			background-color: transparent
+			left: -5px
+			top: -5px
+			right: -5px
+			box-shadow: 0px 1px 13.92px 2.08px rgba(44, 30, 28, 0.15);
+			transition: background-color .3s ease-in-out, opacity .3s
+			min-height: calc(100% + 10px)
+			opacity: 0
+			z-index: 1
+			&-inner
+				padding: 36px 20px 20px 28px
+				height: 100%
+				+r(1200)
+					padding: 25px 15px 20px 20px
+				.text.sm
+					font-size: 14px
+					line-height: 1.45
+	&-title
+		font-weight: 500
+		margin-bottom: 10px
+.btn-row
+	margin-top: 50px
+	margin-bottom: -5px
+	+r(640)
+		margin-top: 30px
+	.btn 
+		margin-bottom: 0

@@ -34,9 +34,14 @@
 		.buttons-wrapper
 			margin-left: auto
 			text-align: right
+			.btn 
+				margin-right: 0
 			+r(640)
 				margin-top: 15px
 				text-align: left
+				margin-left: 0
+				margin-right: auto
+				
 				.btn 
 					margin-left: 0
 			
@@ -52,10 +57,78 @@
 		.wrapper-bg-img
 			&:before
 				background-color: rgba(38, 14, 4,.5);
+		&>.box
+			&:not(:last-child)
+				.page-head-container
+					+rm(641)
+						padding-bottom: 63px
 	&-container
 		padding-top: 55px
 		padding-bottom: 32px
 		.title
 			margin-left: -1px
-
-
+	&-nav
+		width: 100%
+		border-top: 1px solid rgba(255, 255, 255,.5);
+		height: 75px
+		position: relative
+		+r(640)
+			&:after
+				content: ''
+				position: absolute
+				right: 0
+				top: 0
+				bottom: 0
+				width: 35px
+				background: linear-gradient(to right, transparent 0%, transparent 20%, $white 100%);
+				opacity: .6	
+		.box
+			height: 100%
+			white-space: nowrap
+			overflow-x: auto
+		&-item
+			display: inline-block
+			vertical-align: top
+			height: 100%
+			&:not(:first-child)
+				padding-left: 54px
+				+r(768)
+					padding-left: 40px
+			&-inner 
+				display: block
+				height: 100%
+				+vertical
+				padding-top: 3px
+				position: relative
+				&.active
+					pointer-events: none
+					&:after
+						display: inline-block
+						
+				&:after
+					width: 100%
+					content: ''
+					left: 0
+					width: 100%
+					height: 3px
+					background-color: $white
+					top: 0
+					position: absolute
+					display: none
+					
+				&:hover
+					+notouch
+						span 
+							color: $brand
+				&:active
+					span 
+						color: $brand
+						transition-duration: 0s
+				span 
+					display: inline-block
+					vertical-align: 
+					white-space: nowrap
+					font-size: 16px
+					font-weight: 500
+					color: $white
+					+tr(color .3s)

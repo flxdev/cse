@@ -8,7 +8,7 @@ mixin icon(name)
 mixin serviceItem(title,img)
 	.service-item
 		.service-item-content
-			.title.h2 #{title}
+			a(href="#").title.h2 #{title}
 			ul.service-links
 				li.service-links-item
 					a(href="#") Срочная
@@ -62,3 +62,12 @@ mixin docLink(href,name,size,type)
 		.doclink-content
 			.text.sm #{name}
 			.caption.medium #{size}
+mixin partner(img,name,text)
+	.partner-wrapper
+		.partner-wrapper-item
+			.partner-wrapper-content
+				.partner-wrapper-content-inner
+					.text.white.sm.partner-title #{title}
+					.text.sm.white #{text}
+			.partner-wrapper-img
+				img(src="img/partners/"+img+".png", alt="")

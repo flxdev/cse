@@ -1,3 +1,7 @@
+$units: 1px !default;
+=screen($res-min, $res-max)
+	@media screen and ( min-width: if(unitless($res-min), $res-min*$units, $res-min) ) and ( max-width: if(unitless($res-max), $res-max*$units, $res-max) )
+		@content;
 // less than X
 =r($width)
 	@media only screen and (max-width: $width+ "px")
