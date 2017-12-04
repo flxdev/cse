@@ -2,7 +2,7 @@
 <html lang="ru" data-lang="ru" data-datepickstart-hour="9">
   <head>
     <meta charset="utf-8">
-    <title>Расчёт доставки</title>
+    <title>Вакансии</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0">
@@ -915,96 +915,664 @@
           <main class="page__content">
             <!-- вот сюда все выплевываем-->
             <div class="page__content-container">
-              <div class="wrapper bg-white page-head">
+              <div class="wrapper page-head page-head-withbuttons has-bg">
+                <div class="wrapper-bg">
+                  <div class="wrapper-bg-img js-image bg" data-src="img/pagehead/head3.jpg"></div>
+                </div>
                 <div class="box">
                   <div class="page-head-container">
                     <div class="bread-cont">
                       <a class="bread-item" href="/">Главная</a>
+                      <a class="bread-item" href="/">О компании</a>
                     </div>
-                    <h1 class="title h1">Расчёт доставки</h1>
+                    <h1 class="title h1">Вакансии</h1>
+                  </div>
+                </div>
+                <div class="page-head-nav">
+                  <div class="box">
+                    <div class="page-head-nav-item">
+                      <a class="page-head-nav-item-inner" href="#">
+                        <span>Новости</span>
+                      </a>
+                    </div>
+                    <div class="page-head-nav-item">
+                      <a class="page-head-nav-item-inner" href="#">
+                        <span>Франчайзинг</span>
+                      </a>
+                    </div>
+                    <div class="page-head-nav-item">
+                      <a class="page-head-nav-item-inner active" href="#">
+                        <span>Вакансии</span>
+                      </a>
+                    </div>
+                    <div class="page-head-nav-item">
+                      <a class="page-head-nav-item-inner" href="#">
+                        <span>Закупки</span>
+                      </a>
+                    </div>
+                    <div class="page-head-nav-item">
+                      <a class="page-head-nav-item-inner" href="#">
+                        <span>Сотрудничество</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="wrapper bg-white">
                 <div class="box">
-                  <div class="row align-middle">
-                    <div class="columns price-form-wrapper">
-                      <form class="form price-form js-validate" action="/">
-                        <div class="input-row gap-search">
-                          <div class="input-item w33">
-                            <div class="input-wrapper">
-                              <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
-                              <div class="js-input-dropdown-target input-dropdown-target">
-                                <div class="input-dropdown-content">
-                                  <div class="option">
-                                    <span>Мосальск, Россия</span>
-                                  </div>
-                                  <div class="option">
-                                    <span>Москва, Россия</span>
-                                  </div>
-                                  <div class="option">
-                                    <span>Мосс, Норвегия</span>
-                                  </div>
-                                  <div class="option">
-                                    <span>Мостар, Босния и Герцеговина</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <label class="input-label" for="#name2Inp">Откуда</label>
-                              <div class="input-icon swap js-swap">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5">
-                                  <style>
-                                    .stswap {
-                                      fill-rule: evenodd;
-                                      clip-rule: evenodd;
-                                      fill: #F47921;
-                                    }
-
-                                  </style>
-                                  <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap" />
-                                  <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap" />
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="input-item w33">
-                            <div class="input-wrapper">
-                              <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
-                              <div class="js-input-dropdown-target input-dropdown-target">
-                                <div class="input-dropdown-content">
-                                  <div class="option">
-                                    <span>Мосальск, Россия</span>
-                                  </div>
-                                  <div class="option">
-                                    <span>Москва, Россия</span>
-                                  </div>
-                                  <div class="option">
-                                    <span>Мосс, Норвегия</span>
-                                  </div>
-                                  <div class="option">
-                                    <span>Мостар, Босния и Герцеговина</span>
-                                  </div>
-                                  <div class="option">
-                                    <span>Мостар, Босния и Герцеговина</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <label class="input-label" for="#name2Inp">Куда</label>
-                            </div>
-                          </div>
-                          <div class="input-item w33">
-                            <button class="btn has-loading load" type="submit">
-                              <div class="btn-inner">
-                                <span class="js-price-text">Узнать стоимость доставки
-                                  <svg class="icon-arrr">
-                                    <use xlink:href="#arrr"></use>
+                  <!-- такая же структура у вопрос-ответ, но у .vacancy-outer будет модификтаор-->
+                  <!--  у кнопки тригерящей модалку дата-vacancy передает в скрытый модалки данные о вакансии-->
+                  <div class="vacancy-outer">
+                    <div class="content-columns">
+                      <div class="content-columns-main">
+                        <div class="vacancy-wrapper">
+                          <h2 class="title h2">Найдено
+                            <span>20 вакансий</span>
+                          </h2>
+                          <div class="vacancy-filter">
+                            <div class="item-type-wrapper">
+                              <a class="item-type" href="#">
+                                <span>Санкт-Петербург</span>
+                                <span class="item-type-close">
+                                  <svg class="icon-closemodal">
+                                    <use xlink:href="#closemodal"></use>
                                   </svg>
                                 </span>
+                              </a>
+                              <a class="item-type" href="#">
+                                <span>Москва</span>
+                                <span class="item-type-close">
+                                  <svg class="icon-closemodal">
+                                    <use xlink:href="#closemodal"></use>
+                                  </svg>
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="vacancy-content reload-container">
+                            <div class="accordeon-wrapper">
+                              <div class="accordeon-head js-accordeon-trigger">
+                                <div class="accordeon-head-content">
+                                  <div class="title h3">Водитель-экспедитор / Водитель-курьер с личным автомобилем</div>
+                                  <div class="caption medium">Водители, курьеры / г. Санкт-Петербург</div>
+                                </div>
+                                <div class="accordeon-head-icon">
+                                  <div class="header-mobnav-btn mobilenav back">
+                                    <div class="navTriggersm">
+                                      <i></i>
+                                      <i></i>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            </button>
+                              <div class="accordeon-body" style="display: none;">
+                                <div class="content-wrapper">
+                                  <h4>Требования</h4>
+                                  <ul>
+                                    <li>Наличие мобильного телефона.</li>
+                                  </ul>
+                                  <h4>Обязанности</h4>
+                                  <ul>
+                                    <li>Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).</li>
+                                  </ul>
+                                  <h4>Условия</h4>
+                                  <ul>
+                                    <li>Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.</li>
+                                    <li>График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). </li>
+                                    <li>Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. </li>
+                                    <li>Оплата проезда (ТРОЙКА, безлимитная на 30 дней). </li>
+                                    <li>Оплата мобильной связи (выдается корпоративная SIM-карта).</li>
+                                  </ul>
+                                </div>
+                                <div class="block-contact bg-yellow">
+                                  <div class="block-contact-inner">
+                                    <div class="col-50">
+                                      <div class="title h4">Татьяна Хлебникова</div>
+                                      <div class="caption medium">Менеджер по подбору персонала</div>
+                                    </div>
+                                    <div class="col-50">
+                                      <div class="block-info-content">
+                                        <a href="tel:84956204881">8 (495) 620-48-81 (доб. 4564)</a>
+                                        <div class="caption medium">Звонить с 10.00 до 17.00</div>
+                                        <a href="mailto:tatyana.khlebnikova@cse.ru">tatyana.khlebnikova@cse.ru</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="vacancy-footer">
+                                  <a class="btn type-round" href="#">
+                                    <div class="btn-inner">
+                                      <span>Заполнить анкету онлайн</span>
+                                    </div>
+                                  </a>
+                                  <div class="link-icon sm js-popup-button" data-modal="vacancy" data-vacancy="2323232">
+                                    <div class="link-icon-icon">
+                                      <svg class="icon-resume">
+                                        <use xlink:href="#resume"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="link-icon-text">Прикрепить резюме</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-wrapper">
+                              <div class="accordeon-head js-accordeon-trigger">
+                                <div class="accordeon-head-content">
+                                  <div class="title h3">Дежурный системный администратор</div>
+                                  <div class="caption medium">Информационные технологии / г. Санкт-Петербург</div>
+                                </div>
+                                <div class="accordeon-head-icon">
+                                  <div class="header-mobnav-btn mobilenav back">
+                                    <div class="navTriggersm">
+                                      <i></i>
+                                      <i></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordeon-body" style="display: none;">
+                                <div class="content-wrapper">
+                                  <h4>Требования</h4>
+                                  <ul>
+                                    <li>Наличие мобильного телефона.</li>
+                                  </ul>
+                                  <h4>Обязанности</h4>
+                                  <ul>
+                                    <li>Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).</li>
+                                  </ul>
+                                  <h4>Условия</h4>
+                                  <ul>
+                                    <li>Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.</li>
+                                    <li>График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). </li>
+                                    <li>Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. </li>
+                                    <li>Оплата проезда (ТРОЙКА, безлимитная на 30 дней). </li>
+                                    <li>Оплата мобильной связи (выдается корпоративная SIM-карта).</li>
+                                  </ul>
+                                </div>
+                                <div class="block-contact bg-yellow">
+                                  <div class="col-50">
+                                    <div class="title h4">Татьяна Хлебникова</div>
+                                    <div class="caption medium">Менеджер по подбору персонала</div>
+                                  </div>
+                                  <div class="col-50">
+                                    <div class="block-info-content">
+                                      <a href="tel:84956204881">8 (495) 620-48-81 (доб. 4564)</a>
+                                      <div class="caption medium">Звонить с 10.00 до 17.00</div>
+                                      <a href="mailto:tatyana.khlebnikova@cse.ru">tatyana.khlebnikova@cse.ru</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="vacancy-footer">
+                                  <a class="btn type-round" href="#">
+                                    <div class="btn-inner">
+                                      <span>Заполнить анкету онлайн</span>
+                                    </div>
+                                  </a>
+                                  <div class="link-icon sm js-popup-button" data-modal="vacancy" data-vacancy="2323232">
+                                    <div class="link-icon-icon">
+                                      <svg class="icon-resume">
+                                        <use xlink:href="#resume"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="link-icon-text">Прикрепить резюме</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-wrapper">
+                              <div class="accordeon-head js-accordeon-trigger">
+                                <div class="accordeon-head-content">
+                                  <div class="title h3">Слесарь-ремонтник</div>
+                                  <div class="caption medium">Информационные технологии / г. Санкт-Петербург</div>
+                                </div>
+                                <div class="accordeon-head-icon">
+                                  <div class="header-mobnav-btn mobilenav back">
+                                    <div class="navTriggersm">
+                                      <i></i>
+                                      <i></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordeon-body" style="display: none;">
+                                <div class="content-wrapper">
+                                  <h4>Требования</h4>
+                                  <ul>
+                                    <li>Наличие мобильного телефона.</li>
+                                  </ul>
+                                  <h4>Обязанности</h4>
+                                  <ul>
+                                    <li>Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).</li>
+                                  </ul>
+                                  <h4>Условия</h4>
+                                  <ul>
+                                    <li>Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.</li>
+                                    <li>График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). </li>
+                                    <li>Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. </li>
+                                    <li>Оплата проезда (ТРОЙКА, безлимитная на 30 дней). </li>
+                                    <li>Оплата мобильной связи (выдается корпоративная SIM-карта).</li>
+                                  </ul>
+                                </div>
+                                <div class="block-contact bg-yellow">
+                                  <div class="col-50">
+                                    <div class="title h4">Татьяна Хлебникова</div>
+                                    <div class="caption medium">Менеджер по подбору персонала</div>
+                                  </div>
+                                  <div class="col-50">
+                                    <div class="block-info-content">
+                                      <a href="tel:84956204881">8 (495) 620-48-81 (доб. 4564)</a>
+                                      <div class="caption medium">Звонить с 10.00 до 17.00</div>
+                                      <a href="mailto:tatyana.khlebnikova@cse.ru">tatyana.khlebnikova@cse.ru</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="vacancy-footer">
+                                  <a class="btn type-round" href="#">
+                                    <div class="btn-inner">
+                                      <span>Заполнить анкету онлайн</span>
+                                    </div>
+                                  </a>
+                                  <div class="link-icon sm js-popup-button" data-modal="vacancy" data-vacancy="2323232">
+                                    <div class="link-icon-icon">
+                                      <svg class="icon-resume">
+                                        <use xlink:href="#resume"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="link-icon-text">Прикрепить резюме</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-wrapper">
+                              <div class="accordeon-head js-accordeon-trigger">
+                                <div class="accordeon-head-content">
+                                  <div class="title h3">Специалист технической поддержки (2-я линия)</div>
+                                  <div class="caption medium">Информационные технологии / г. Санкт-Петербург</div>
+                                </div>
+                                <div class="accordeon-head-icon">
+                                  <div class="header-mobnav-btn mobilenav back">
+                                    <div class="navTriggersm">
+                                      <i></i>
+                                      <i></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordeon-body" style="display: none;">
+                                <div class="content-wrapper">
+                                  <h4>Требования</h4>
+                                  <ul>
+                                    <li>Наличие мобильного телефона.</li>
+                                  </ul>
+                                  <h4>Обязанности</h4>
+                                  <ul>
+                                    <li>Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).</li>
+                                  </ul>
+                                  <h4>Условия</h4>
+                                  <ul>
+                                    <li>Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.</li>
+                                    <li>График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). </li>
+                                    <li>Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. </li>
+                                    <li>Оплата проезда (ТРОЙКА, безлимитная на 30 дней). </li>
+                                    <li>Оплата мобильной связи (выдается корпоративная SIM-карта).</li>
+                                  </ul>
+                                </div>
+                                <div class="block-contact bg-yellow">
+                                  <div class="col-50">
+                                    <div class="title h4">Татьяна Хлебникова</div>
+                                    <div class="caption medium">Менеджер по подбору персонала</div>
+                                  </div>
+                                  <div class="col-50">
+                                    <div class="block-info-content">
+                                      <a href="tel:84956204881">8 (495) 620-48-81 (доб. 4564)</a>
+                                      <div class="caption medium">Звонить с 10.00 до 17.00</div>
+                                      <a href="mailto:tatyana.khlebnikova@cse.ru">tatyana.khlebnikova@cse.ru</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="vacancy-footer">
+                                  <div class="btn type-round js-popup-button" data-modal="vacancy">
+                                    <div class="btn-inner">
+                                      <span>Заполнить анкету онлайн</span>
+                                    </div>
+                                  </div>
+                                  <div class="link-icon sm js-popup-button" data-modal="vacancy" data-vacancy="2323232">
+                                    <div class="link-icon-icon">
+                                      <svg class="icon-resume">
+                                        <use xlink:href="#resume"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="link-icon-text">Прикрепить резюме</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-wrapper">
+                              <div class="accordeon-head js-accordeon-trigger">
+                                <div class="accordeon-head-content">
+                                  <div class="title h3">Менеджер по продажам</div>
+                                  <div class="caption medium">Информационные технологии / г. Санкт-Петербург</div>
+                                </div>
+                                <div class="accordeon-head-icon">
+                                  <div class="header-mobnav-btn mobilenav back">
+                                    <div class="navTriggersm">
+                                      <i></i>
+                                      <i></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordeon-body" style="display: none;">
+                                <div class="content-wrapper">
+                                  <h4>Требования</h4>
+                                  <ul>
+                                    <li>Наличие мобильного телефона.</li>
+                                  </ul>
+                                  <h4>Обязанности</h4>
+                                  <ul>
+                                    <li>Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).</li>
+                                  </ul>
+                                  <h4>Условия</h4>
+                                  <ul>
+                                    <li>Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.</li>
+                                    <li>График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). </li>
+                                    <li>Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. </li>
+                                    <li>Оплата проезда (ТРОЙКА, безлимитная на 30 дней). </li>
+                                    <li>Оплата мобильной связи (выдается корпоративная SIM-карта).</li>
+                                  </ul>
+                                </div>
+                                <div class="block-contact bg-yellow">
+                                  <div class="col-50">
+                                    <div class="title h4">Татьяна Хлебникова</div>
+                                    <div class="caption medium">Менеджер по подбору персонала</div>
+                                  </div>
+                                  <div class="col-50">
+                                    <div class="block-info-content">
+                                      <a href="tel:84956204881">8 (495) 620-48-81 (доб. 4564)</a>
+                                      <div class="caption medium">Звонить с 10.00 до 17.00</div>
+                                      <a href="mailto:tatyana.khlebnikova@cse.ru">tatyana.khlebnikova@cse.ru</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="vacancy-footer">
+                                  <a class="btn type-round" href="#">
+                                    <div class="btn-inner">
+                                      <span>Заполнить анкету онлайн</span>
+                                    </div>
+                                  </a>
+                                  <div class="link-icon sm js-popup-button" data-modal="vacancy" data-vacancy="2323232">
+                                    <div class="link-icon-icon">
+                                      <svg class="icon-resume">
+                                        <use xlink:href="#resume"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="link-icon-text">Прикрепить резюме</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-wrapper">
+                              <div class="accordeon-head js-accordeon-trigger">
+                                <div class="accordeon-head-content">
+                                  <div class="title h3">Помощник бухгалтера</div>
+                                  <div class="caption medium">Бухгалтерия / г. Санкт-Петербург</div>
+                                </div>
+                                <div class="accordeon-head-icon">
+                                  <div class="header-mobnav-btn mobilenav back">
+                                    <div class="navTriggersm">
+                                      <i></i>
+                                      <i></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordeon-body" style="display: none;">
+                                <div class="content-wrapper">
+                                  <h4>Требования</h4>
+                                  <ul>
+                                    <li>Наличие мобильного телефона.</li>
+                                  </ul>
+                                  <h4>Обязанности</h4>
+                                  <ul>
+                                    <li>Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).</li>
+                                  </ul>
+                                  <h4>Условия</h4>
+                                  <ul>
+                                    <li>Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.</li>
+                                    <li>График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). </li>
+                                    <li>Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. </li>
+                                    <li>Оплата проезда (ТРОЙКА, безлимитная на 30 дней). </li>
+                                    <li>Оплата мобильной связи (выдается корпоративная SIM-карта).</li>
+                                  </ul>
+                                </div>
+                                <div class="block-contact bg-yellow">
+                                  <div class="col-50">
+                                    <div class="title h4">Татьяна Хлебникова</div>
+                                    <div class="caption medium">Менеджер по подбору персонала</div>
+                                  </div>
+                                  <div class="col-50">
+                                    <div class="block-info-content">
+                                      <a href="tel:84956204881">8 (495) 620-48-81 (доб. 4564)</a>
+                                      <div class="caption medium">Звонить с 10.00 до 17.00</div>
+                                      <a href="mailto:tatyana.khlebnikova@cse.ru">tatyana.khlebnikova@cse.ru</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="vacancy-footer">
+                                  <a class="btn type-round" href="#">
+                                    <div class="btn-inner">
+                                      <span>Заполнить анкету онлайн</span>
+                                    </div>
+                                  </a>
+                                  <div class="link-icon sm js-popup-button" data-modal="vacancy" data-vacancy="2323232">
+                                    <div class="link-icon-icon">
+                                      <svg class="icon-resume">
+                                        <use xlink:href="#resume"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="link-icon-text">Прикрепить резюме</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-wrapper">
+                              <div class="accordeon-head js-accordeon-trigger">
+                                <div class="accordeon-head-content">
+                                  <div class="title h3">Помощник бухгалтера</div>
+                                </div>
+                                <div class="accordeon-head-icon">
+                                  <div class="header-mobnav-btn mobilenav back">
+                                    <div class="navTriggersm">
+                                      <i></i>
+                                      <i></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordeon-body" style="display: none;">
+                                <div class="content-wrapper">
+                                  <h4>Требования</h4>
+                                  <ul>
+                                    <li>Наличие мобильного телефона.</li>
+                                  </ul>
+                                  <h4>Обязанности</h4>
+                                  <ul>
+                                    <li>Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).</li>
+                                  </ul>
+                                  <h4>Условия</h4>
+                                  <ul>
+                                    <li>Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.</li>
+                                    <li>График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). </li>
+                                    <li>Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. </li>
+                                    <li>Оплата проезда (ТРОЙКА, безлимитная на 30 дней). </li>
+                                    <li>Оплата мобильной связи (выдается корпоративная SIM-карта).</li>
+                                  </ul>
+                                </div>
+                                <div class="block-contact bg-yellow">
+                                  <div class="col-50">
+                                    <div class="title h4">Татьяна Хлебникова</div>
+                                    <div class="caption medium">Менеджер по подбору персонала</div>
+                                  </div>
+                                  <div class="col-50">
+                                    <div class="block-info-content">
+                                      <a href="tel:84956204881">8 (495) 620-48-81 (доб. 4564)</a>
+                                      <div class="caption medium">Звонить с 10.00 до 17.00</div>
+                                      <a href="mailto:tatyana.khlebnikova@cse.ru">tatyana.khlebnikova@cse.ru</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="vacancy-footer">
+                                  <a class="btn type-round" href="#">
+                                    <div class="btn-inner">
+                                      <span>Заполнить анкету онлайн</span>
+                                    </div>
+                                  </a>
+                                  <div class="link-icon sm js-popup-button" data-modal="vacancy" data-vacancy="2323232">
+                                    <div class="link-icon-icon">
+                                      <svg class="icon-resume">
+                                        <use xlink:href="#resume"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="link-icon-text">Прикрепить резюме</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-wrapper">
+                              <div class="accordeon-head js-accordeon-trigger">
+                                <div class="accordeon-head-content">
+                                  <div class="title h3">Водитель с личным автомобилем (Форд Транзит, Фиат Дукато, Пежо Боксер‚ Ситроен Джампер, Фольксваген транспортер)</div>
+                                  <div class="caption medium">Водители, курьеры / г. Санкт-Петербург</div>
+                                </div>
+                                <div class="accordeon-head-icon">
+                                  <div class="header-mobnav-btn mobilenav back">
+                                    <div class="navTriggersm">
+                                      <i></i>
+                                      <i></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordeon-body" style="display: none;">
+                                <div class="content-wrapper">
+                                  <h4>Требования</h4>
+                                  <ul>
+                                    <li>Наличие мобильного телефона.</li>
+                                  </ul>
+                                  <h4>Обязанности</h4>
+                                  <ul>
+                                    <li>Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).</li>
+                                  </ul>
+                                  <h4>Условия</h4>
+                                  <ul>
+                                    <li>Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.</li>
+                                    <li>График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). </li>
+                                    <li>Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. </li>
+                                    <li>Оплата проезда (ТРОЙКА, безлимитная на 30 дней). </li>
+                                    <li>Оплата мобильной связи (выдается корпоративная SIM-карта).</li>
+                                  </ul>
+                                </div>
+                                <div class="block-contact bg-yellow">
+                                  <div class="col-50">
+                                    <div class="title h4">Татьяна Хлебникова</div>
+                                    <div class="caption medium">Менеджер по подбору персонала</div>
+                                  </div>
+                                  <div class="col-50">
+                                    <div class="block-info-content">
+                                      <a href="tel:84956204881">8 (495) 620-48-81 (доб. 4564)</a>
+                                      <div class="caption medium">Звонить с 10.00 до 17.00</div>
+                                      <a href="mailto:tatyana.khlebnikova@cse.ru">tatyana.khlebnikova@cse.ru</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="vacancy-footer">
+                                  <a class="btn type-round" href="#">
+                                    <div class="btn-inner">
+                                      <span>Заполнить анкету онлайн</span>
+                                    </div>
+                                  </a>
+                                  <div class="link-icon sm js-popup-button" data-modal="vacancy" data-vacancy="2323232">
+                                    <div class="link-icon-icon">
+                                      <svg class="icon-resume">
+                                        <use xlink:href="#resume"></use>
+                                      </svg>
+                                    </div>
+                                    <div class="link-icon-text">Прикрепить резюме</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </form>
+                      </div>
+                      <div class="content-columns-aside js-stick-parent" data-sticky-parent>
+                        <div class="content-aside-content js-stick">
+                          <form class="filter-block" action="/">
+                            <div class="form-row">
+                              <div class="input-item w100">
+                                <div class="input-wrapper">
+                                  <select class="input-main js-filter has-search" name="category" multiple="multiple" placeholder="Город">
+                                    <option value="1" data-text="20">Санкт-Петербург</option>
+                                    <option value="2" data-text="11">Абакан</option>
+                                    <option value="3" data-text="11">Альметьевск</option>
+                                    <option value="4" data-text="1">Ангарск</option>
+                                    <option value="5" data-text="11">Арзамас</option>
+                                    <option value="6" data-text="">Армавир</option>
+                                    <option value="7" data-text="11">Артем</option>
+                                    <option value="8" data-text="14">Артем</option>
+                                    <option value="9" data-text="11">Артем</option>
+                                    <option value="10" data-text="11">Артем</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="input-item w100">
+                                <div class="input-wrapper">
+                                  <select class="input-main js-filter" name="wqeqwe" multiple="multiple" placeholder="Категория">
+                                    <option value="1" data-text="150">Административный персонал</option>
+                                    <option value="2" data-text="11">Бухгалтерия</option>
+                                    <option value="3" data-text="11">Водители, курьеры</option>
+                                    <option value="4" data-text="1">Закупки</option>
+                                    <option value="5" data-text="11">Информационные технологии</option>
+                                    <option value="6" data-text="">Менеджмент</option>
+                                    <option value="7" data-text="11">Продажи</option>
+                                    <option value="5" data-text="11">Информационные технологии</option>
+                                    <option value="6" data-text="">Менеджмент</option>
+                                    <option value="7" data-text="11">Продажи</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper bg-orange">
+                <div class="box">
+                  <div class="row padding-big">
+                    <div class="columns large-6 medium-6 small-12">
+                      <div class="block-about">
+                        <h2 class="title h2 white">Есть вопросы или нужна помощь?</h2>
+                      </div>
+                    </div>
+                    <div class="columns large-6 medium-6 small-12">
+                      <div class="block-about">
+                        <div class="text white">Мы всегда рады помочь и ответить на все интересующие вас вопросы. Вы можете попробовать найти информацию в разделе
+                          <a href="#">«Вопросы и ответы»</a>или написать ваш вопрос нам на почту.</div>
+                        <a class="btn color-white type-round color-reverse not-trans" href="#">
+                          <div class="btn-inner">
+                            <span>Вопросы и ответы</span>
+                          </div>
+                        </a>
+                        <a class="btn color-white type-round color-reverse" href="#">
+                          <div class="btn-inner">
+                            <span>Задать вопрос</span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

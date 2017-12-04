@@ -1,0 +1,142 @@
+---
+title: Франчайзинг
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Франчайзинг
+				.buttons-wrapper
+					a(href="#").btn.color-white.type-round
+						.btn-inner
+							span.btn-icon
+								+icon('down')
+							span Скачать презентацию
+					a(href="#").btn.color-white.not-trans.type-round
+						.btn-inner
+							span Отправить заявку
+		.page-head-nav
+			.box
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Новости
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner.active
+						span Франчайзинг
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Вакансии
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Закупки
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Сотрудничество
+
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									h2.title.h4 Компания Курьер Сервис Экспресс (КСЭ) – это логистическое решение для бизнеса в сфере экспресс-доставки по всему миру, пункты приема и выдачи заказов интернет-магазинов.
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										p Выбирая франшизу КСЭ, вы получаете прибыльную бизнес модель и возможность работы на перспективном рынке.
+										h4 Вид бизнеса
+										ul
+											li Экспресс-доставка документов и грузов по РФ и всему миру.
+											li Выдача посылок интернет-магазинов (центры приема и выдачи отправлений под брендом КСЕ, ориентированных на B2B и B2C сегменты).
+											li Выдача посылок интернет-магазинов (центры приема и выдачи отправлений под брендом КСЕ, ориентированных на B2B и B2C сегменты).
+	.wrapper
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/bgwrapper/1.jpg')
+		.box
+			.row.padding-big
+				.columns.large-12.medium-12.small-12
+					.block-about
+						.block-about-slider.block-about-static
+							.block-about-slider-inner
+								.block-about-slider-item
+									.block-about-slider-title 20
+									.text.sm.white Лет успешной работы на рынке экспресс-доставки
+								.block-about-slider-item
+									.block-about-slider-title 
+										|54000
+										span.m-square
+											|м
+									.text.sm.white Общая площадь складских помещений
+								.block-about-slider-item
+									.block-about-slider-title 4000+
+									.text.sm.white Профессиональных сотрудников в компании КурьерСервисЭкспресс
+								.block-about-slider-item
+									.block-about-slider-title 218
+									.text.sm.white Cтран мира, в которые осуществляется доставка почтовых отправлений и грузов
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Преимущества
+					.offers-wrapper
+						+offer('Эксклюзивные условия от поставщиков','Франшиза КурьерСервисЭкспресс включает в себя работу в структуре одного из лидеров российской логистики, постоянно совершенствующуюся модель бизнеса, стабильный доход на одном из самых быстрорастущих рынков российской экономики.','1')
+						+offer('Собственный бизнес под узнаваемым брендом','Партнёрская сеть КурьерСервисЭкспресс в России динамично расширяется, и мы предлагаем розничным сетям и пунктам выдачи сотрудничество. Наша сеть охватывает всю территорию России.','2')
+						+offer('Минимальные вложения по сравнению с аналогичными предложениями на рынке','Среди клиентов КСЭ более двух тысяч предприятий малого, среднего и крупного бизнеса, работающих в России и за границей. Каждому клиенту компания обеспечивает гибкий подход в обслуживании и максимально учитывает его интересы.','3')
+						+offer('Работа с уже существующими выдачами интернет-заказов','Мы осуществляем обучение и консультируем ваших сотрудников по любым вопросам о том, как организовать место для передачи заказов покупателям и как вести его работу. С вами будет поддерживать постоянный контакт наш менеджер.','1')
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Что вы получаете
+					.cards-wrapper.w3
+						+card('','Работа в структуре одного из лидеров российской логистики.','1.svg')
+						+card('','Постоянно совершенствующаяся модель бизнеса и обучение персонала.','6.svg')
+						+card('','Стабильный доход на одном из самых быстрорастущих рынков российской экономики.','9.svg')
+						+card('','Консультации на всех этапах запуска, сопровождение бизнеса в течение всего срока договора.','7.svg')
+						+card('','Использование собственной логистической программы «Карго 5» для расширения клиентской базы.','8.svg')
+						+card('','Разработка рекламных кампаний и новых рекламных материалов.','6.svg')
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Документы
+					.block-constructor-docs
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Для франчайзи
+							.docwrapper-item-content
+								.row
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Анкета потенциального франчайзи','20 Мб','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Требования к франчайзи','10 Кб','JPG')
+	include ./partials/_promoDownload
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Связаться с нами
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									h2.title.h4 Мы всегда рады предоставить вам более подробную информацию об условиях сотрудничества
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										p Ответы на все вопросы о пакете документов для заключения договора и условиях вы можете получить, написав нам на электронный ящик или позвонив по телефону:
+										p
+											a(href="tel:8(800)555-51-44")
+												b 8 (800) 555-51-44 (доб. 2131, 2132)
+										p
+											a(href="mailto:franshiza@cse.ru") franshiza@cse.ru
+	include ./partials/_ask

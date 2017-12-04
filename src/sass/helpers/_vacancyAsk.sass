@@ -1,0 +1,164 @@
+.vacancy
+	&-wrapper
+		max-width: 695px
+		&>.title
+			span 
+				color: $brand
+	&-outer
+		padding-top: 85px
+		+r(800)
+			padding-top: 50px
+		+r(640)
+			padding-top: 30px
+	&-filter
+		margin-top: 37px
+		margin-bottom: 5px
+		.item-type
+			border-color: $brandlight
+			background-color: $brandlight
+			color: rgba(44, 30, 28, 0.702)
+			padding-top: 7px
+			padding-bottom: 8px
+			white-space: nowrap
+			span 
+				display: inline-block
+				vertical-align: middle	
+			&-close
+				width: 15px
+				height: 15px
+				margin-left: 7.5px
+				.icon-closemodal
+					width: 15px
+					height: 15px
+					padding: 2px
+				&:hover
+					color: $brand
+			&-wrapper
+	&-footer
+		&>*
+			vertical-align: middle
+			margin-right: 32px
+			+r(640)
+				margin-right: 12px
+		.btn 
+			margin-left: 0
+
+	&-content 
+			.accordeon-wrapper
+				&:not(:first-child)
+					.accordeon-head
+						border-top: 1px solid $inputborder
+						+tr(border-color .3s)
+			.accordeon-head
+				display: flex
+				flex-flow: row nowrap
+				justify-content: space-between
+				align-items: flex-start
+				padding-top: 40px
+				cursor: pointer
+				width: 100%
+				+r(640)
+					padding-top: 20px
+				&.active
+					border-color: $brand !important
+				.title
+					&:only-child
+						padding-bottom: 42px
+						+r(640)
+							padding-bottom: 22px
+				.caption.medium
+					padding-top: 18px
+					padding-bottom: 45px
+					+r(640)
+						padding-bottom: 22px
+						padding-top: 12px
+				.header-mobnav-btn
+					position: relative
+					margin-bottom: 0
+					margin-left: 0
+					text-align: right
+					font-size: 0
+					width: 24.5px
+					i
+						height: 2px
+						contain: paint
+						&:nth-child(2)
+							margin-top: 5px
+				&.active
+					.header-mobnav-btn
+						i 
+							&:first-child
+								transform: rotate(-45deg);
+							&:nth-child(2)
+							    transform: rotate(45deg);
+				&-content
+					max-width: 630px
+					padding-right: 20px
+				&-icon
+					width: 24.5px
+					margin-top: 10px
+					*
+						width: 100%
+					// height: 22px
+					transform: rotate(-90deg)
+					.header-mobnav-btn
+						height: auto
+						display: inline-block !important
+
+
+			.accordeon-body
+				padding-left: 35px
+				margin-top: -17px
+				border-left: 4px solid #e9e8e8
+				margin-bottom: 65px
+				max-width: 665px
+				+r(640)
+					margin-bottom: 35px
+					padding-left: 20px
+					margin-top: 0
+				.content-wrapper
+					padding-right: 20px
+				.block-contact
+					background-color: $brandlight
+					padding: 30px
+					font-size: 0
+					margin-top: 40px
+					margin-bottom: 40px
+					+r(640)
+						margin-top: 30px
+						margin-bottom: 30px
+						padding: 20px
+					&-inner
+						+rm(641)
+							margin-right: -30px
+					.col-50 
+						display: inline-block
+						width: 50%
+						vertical-align: top
+						
+						+rm(641)
+							padding-right: 30px
+						+r(640)
+							width: 100%
+							padding-bottom: 10px
+						.caption
+							margin-top: 10px
+						.block-info-content
+							max-width: 100%
+							padding-top: 5px
+							padding-bottom: 20px
+						a 
+							display: block
+							&:not(:first-child)
+								margin-top: 16px
+
+
+.filter-block
+	margin-top: 10px
+	+r(800)
+		text-align: center
+		padding-bottom: 20px
+	.input-item
+		padding-right: 0
+		max-width: 335px
+		padding-bottom: 10px

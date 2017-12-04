@@ -31,12 +31,22 @@ PageList:
   ready: 100
 - file: 6-0accii.html
   ready: 100
+- file: 6-1accii-inner.html
+  ready: 100
 - file: 7-0company.html
   ready: 100
 - file: 8-0news.html
   ready: 100
+- file: 8-1news-inner.html
+  ready: 100
+- file: 9-0vacancy.html
+  ready: 100
+- file: 9-5vacancy.html
+  ready: 100
 # - file: 9-7vacancy.html
 #   ready: 100
+- file: 10-0franchising.html
+  ready: 100
 - file: 10-1form.html
   ready: 100
 - file: 10-2form.html
@@ -65,7 +75,9 @@ PageList:
   ready: 100
 - file: 19-0map.html
   ready: 100
-- file: etalon.html
+- file: 404.html
   ready: 100
+# - file: etalon.html
+#   ready: 100
 - file: ui-components.html
   ready: 100

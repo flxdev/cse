@@ -64,10 +64,11 @@ export default function select() {
     });
     select.on('sumo:opened',() => {
       select.closest('.input-wrapper').addClass('is-open');
-
+      $('.js-stick').trigger('sticky_kit:recalc');
     });
     select.on('sumo:closed',() => {
       select.closest('.input-wrapper').removeClass('is-open');
+      $('.js-stick').trigger('sticky_kit:recalc');
     });
   }
   filterSelect();

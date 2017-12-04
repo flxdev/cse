@@ -1,0 +1,46 @@
+---
+title: Новости
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="#").bread-item О компании
+					a(href="#").bread-item Новости
+				h1.title.h1 Новости
+	.wrapper.bg-white
+		.box
+			.content-outer
+				.content-wrapper
+					h2 Выходные дни в Молдове 10-30 августа
+					.news-desr
+						time 30 августа, 2017
+						.item-type-wrapper
+							.item-type Уведомления
+
+					h4 Уважаемые клиенты и партнеры!
+					p Информируем вас о том, что в период с 10 по 30 августа 2017 года возможно 
+						a(href="#") увеличение 
+						|срока доставки на 1-2 рабочих дня в Молдову, в сязи с праздничными днями.
+					p Приносим извинения за возможные неудобства.
+					img(src="img/newsimg.jpg", alt="")
+					p Наша компания осуществляет доставку экспресс-грузов и документов в более чем 200 стран мира и страны Таможенного союза. Мы гарантируем высокое качество обслуживания, оптимальное сочетание скорости и цены перевозок, таможенное оформление в максимально короткие сроки, доставку груза «до двери» на территории страны доставки.
+				.content-footer
+					a(href="#").link-icon
+						.link-icon-icon
+							+icon('arrl')
+						.link-icon-text Вернуться назад
+					a(href="#").link-icon
+						.link-icon-text Следующая новость
+						.link-icon-icon
+							+icon('arrr')
+
+	include ./partials/_newsInnerSlider
+	include ./partials/_ask

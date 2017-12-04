@@ -27,6 +27,19 @@
 					&-close
 						.small-link
 							padding: 12px
+		&.modal-medium
+			.modal-container
+				max-width: 700px
+				+rem(padding,51px 45px 45px)
+				text-align: left
+				+r(640)
+					+rem(padding,30px 25px 25px)
+				&-header
+					padding-bottom: 42px
+					text-align: left
+					&-close
+						.small-link
+							padding: 12px
 		&[data-modal='search']
 			overflow: hidden
 			&:before
@@ -175,3 +188,15 @@
 					font-size: 14px
 			* 
 				border-radius: 0
+.modal-form
+	&-footer
+		border-top: 1px solid $inputborder
+		padding-top: 30px
+		.input-item
+			&:nth-child(2)
+				text-align: right
+				
+		.btn 
+			width: auto
+			min-width: 170px
+	// margin-top: 20px

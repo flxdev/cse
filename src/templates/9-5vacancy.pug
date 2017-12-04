@@ -1,0 +1,267 @@
+---
+title: Анкета соискателя
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="#").bread-item О компании
+					a(href="#").bread-item Вакансии 
+				h1.title.h1 Анкета соискателя
+	.wrapper.bg-white
+		.box
+			.content-columns
+				.content-columns-main
+					form(action="/").js-validate.form-with-text
+						.text.sm Заполните и отправьте нам, пожалуйста, форму на вакансию «Специалист по работе с клиентами» приведённую ниже. И наш специалист свяжется с вами в ближайшее время.
+						.border-block
+							.border-block-content
+								.form-block
+									.form-block-head
+										.title.h5 Контактные данные
+									.input-row
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='FranchiseName',
+													placeholder='Иванов Сергей Иванович',
+													type="text",
+													name='FranchiseName',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8',
+													data-countdown='50')
+												label(for='#FranchiseName').input-label Контактное лицо
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='FranchiseEmail',
+													placeholder='г. Санкт-Петербург, пр. Невский, д. 154, кв. 1',
+													type="text",
+													name='FranchiseEmail',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8',
+													data-countdown='50')
+												label(for='#FranchiseEmail').input-label Адрес проживания
+										.input-item.w50
+											.input-wrapper
+												input.input-main.date(
+													type="text",
+													name='date',
+													data-validation="length",
+													data-validation-length='min1',
+													data-validation-error-msg="Поле обязателно для заполнения"
+													,id='dateInp',
+													placeholder='01.01.1980',
+													readonly='true')
+												label(for='#dateInp').input-label Дата рождения
+												.input-icon
+													+icon('calendar')
+										.input-item.w50
+											.input-wrapper
+												select.input-main.js-select(name='category', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='selInp2')
+													option(value="1", selected) Мужской
+													option(value="2") Женский											
+												label(for='#selInp2').input-label Пол
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+													id='RegClientEmail',
+													placeholder='user@mail.ru',
+													type="text",
+													name='RegClientEmail',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8')
+												label(for='#RegClientEmail').input-label E-mail
+										.input-item.w50
+											.input-wrapper
+												input.input-main(
+													id="RegClientPhone",
+													placeholder="+7 495 000-00-00",
+													type="tel",
+													name="RegClientPhone",
+													data-validation="custom",
+													data-validation-regexp="^[-0-9()+ ]+$",
+													data-validation-error-msg="Введите корректный номер телефона")
+												label(for="#RegClientPhone").input-label Телефон
+										.text.sm(style="color:red; padding: 5px") Прикрепить фотографию ?
+								.form-block
+									.form-block-head
+										.title.h5 Образование
+									.input-row
+										.input-item.w50
+											.input-wrapper
+												select.input-main.js-select(name='category', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='selInp2')
+													option(value="1", selected) Высшее
+													option(value="2") Среднее											
+												label(for='#selInp2').input-label Уровень образования
+										.input-item.w50
+											.input-wrapper
+												input.input-main.date(
+													type="text",
+													name='date',
+													data-validation="length",
+													data-validation-length='min1',
+													data-validation-error-msg="Поле обязателно для заполнения"
+													,id='dateInp',
+													placeholder='01.01.1980',
+													readonly='true')
+												label(for='#dateInp').input-label Дата окончания
+												.input-icon
+													+icon('calendar')
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='FranchiseName',
+													placeholder='Российский государственный университет',
+													type="text",
+													name='FranchiseName',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8',
+													data-countdown='50')
+												label(for='#FranchiseName').input-label Название учебного заведения
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='FranchiseEmail',
+													placeholder='Факультет менеджмента, специальность: менеджер ',
+													type="text",
+													name='FranchiseEmail',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8',
+													data-countdown='50')
+												label(for='#FranchiseEmail').input-label Факультет, специальность
+										.text.sm(style="color:red; padding: 5px") + Добавить образование
+								.form-block
+									.form-block-head
+										.title.h5 Опыт работы
+									.input-row
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='RegClientPosition',
+													placeholder='Оператор',
+													type="text",
+													name='CustomerName',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8')
+												label(for='#CustomerName').input-label Наименование должности
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='RegClientCompany',
+													placeholder='ООО «КурьерСервисЭкспресс»',
+													type="text",
+													name='RegClientCompany',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8')
+												label(for='#RegClientCompany').input-label Название организации
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='RegClientCompany',
+													placeholder='Доставка посылок',
+													type="text",
+													name='RegClientCompany',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8')
+												label(for='#RegClientCompany').input-label Сфера деятельности организации
+										.text.sm(style="color:red; padding: 5px") Период работы?
+										.input-item.w100
+											.input-wrapper
+												textarea.input-main(
+													type="text",
+													name='СollaborationMoreInfo',
+													data-validation="length",
+													data-validation-length='min4',
+													data-validation-error-msg="Обязательное поле",
+													id='СollaborationMoreInfo',
+													placeholder='Например, составление отчётов и работа в call-центре',
+													data-countdown='50')
+												label(for='#СollaborationMoreInfo').input-label Должностные обязанности
+										.input-item.w100
+											.input-wrapper
+												input.input-main(
+													id='FranchiseName',
+													placeholder='Например, отсутствие профессионального роста',
+													type="text",
+													name='FranchiseName',
+													data-validation="length",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-length='min8',
+													data-countdown='50')
+												label(for='#FranchiseName').input-label Причина увольнения
+										.text.sm(style="color:red; padding: 5px") + Добавить место работы
+								.form-block
+									.form-block-head
+										.title.h5 Дополнительные данные
+									.input-row
+										.input-item.w100
+											.input-wrapper
+												textarea.input-main(
+													type="text",
+													name='СollaborationMoreInfo',
+													data-validation="length",
+													data-validation-length='min4',
+													data-validation-error-msg="Обязательное поле",
+													id='СollaborationMoreInfo',
+													placeholder='Например, отлично владею Microsoft Office',
+													data-countdown='50')
+												label(for='#СollaborationMoreInfo').input-label Знания, умения, навыки
+										.input-item.w100
+											.input-wrapper
+												textarea.input-main(
+													type="text",
+													name='СollaborationMoreInfo',
+													data-validation="length",
+													data-validation-length='min4',
+													data-validation-error-msg="Обязательное поле",
+													id='СollaborationMoreInfo',
+													placeholder='Например, читаю книги по психологии',
+													data-countdown='50')
+												label(for='#СollaborationMoreInfo').input-label Хобби, увлечения
+										.input-item.w100
+											.input-wrapper
+												textarea.input-main(
+													type="text",
+													name='СollaborationMoreInfo',
+													data-validation="length",
+													data-validation-length='min4',
+													data-validation-error-msg="Обязательное поле",
+													id='СollaborationMoreInfo',
+													placeholder='Например, увлеченный работой и ответсвенный человек',
+													data-countdown='50')
+												label(for='#СollaborationMoreInfo').input-label Дополнительные сведения
+						.border-block.PersonalData
+							.border-block-content
+								.form-block
+									.input-row
+										.input-item.w100
+											label.select-radio-label.radio-simple
+												input(type="checkbox", name='RegClientAgree').select-radio-input-real
+												.select-radio-inner
+													span.select-radio-input
+														span.select-radio-input-fake
+													span.select-radio-text Согласие на обработку
+														a(href="#" target='_blank') персональных данных
+						.block-buttons
+							.link-icon
+								.link-icon-icon
+									+icon('arrl')
+								.link-icon-text Назад
+							button(type='button').btn.btn-next
+								.btn-inner 
+									span Отправить
+	include ./partials/_ask

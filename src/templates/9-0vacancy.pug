@@ -1,0 +1,423 @@
+---
+title: Вакансии
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="/").bread-item О компании
+				h1.title.h1 Вакансии
+
+		.page-head-nav
+			.box
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Новости
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Франчайзинг
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner.active
+						span Вакансии
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Закупки
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Сотрудничество
+	.wrapper.bg-white
+		.box
+			// такая же структура у вопрос-ответ, но у .vacancy-outer будет модификтаор
+			//  у кнопки тригерящей модалку дата-vacancy передает в скрытый модалки данные о вакансии
+			.vacancy-outer
+				.content-columns
+					.content-columns-main
+						.vacancy-wrapper
+							h2.title.h2 Найдено 
+								span 20 вакансий
+							.vacancy-filter
+								.item-type-wrapper
+									a(href="#").item-type
+										span Санкт-Петербург
+										span.item-type-close
+											+icon('closemodal')
+									a(href="#").item-type
+										span Москва
+										span.item-type-close
+											+icon('closemodal')
+							.vacancy-content.reload-container
+								.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Водитель-экспедитор / Водитель-курьер с личным автомобилем
+											.caption.medium Водители, курьеры   /   г. Санкт-Петербург
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Требования
+											ul
+												li Наличие мобильного телефона.
+											h4 Обязанности
+											ul
+												li Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).
+											h4 Условия
+											ul
+												li Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.
+												li График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). 
+												li Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. 
+												li Оплата проезда (ТРОЙКА, безлимитная на 30 дней). 
+												li Оплата мобильной связи (выдается корпоративная SIM-карта).
+										.block-contact.bg-yellow
+											.block-contact-inner
+												.col-50
+													.title.h4 Татьяна Хлебникова
+													.caption.medium Менеджер по подбору персонала
+												.col-50
+													.block-info-content
+														a(href='tel:84956204881') 8 (495) 620-48-81 (доб. 4564)
+														.caption.medium Звонить с 10.00 до 17.00
+														a(href="mailto:tatyana.khlebnikova@cse.ru") tatyana.khlebnikova@cse.ru
+										.vacancy-footer
+											a(href="#").btn.type-round
+												.btn-inner 
+													span Заполнить анкету онлайн
+											.link-icon.sm.js-popup-button(data-modal='vacancy',data-vacancy='2323232')
+												.link-icon-icon
+													+icon('resume')
+												.link-icon-text Прикрепить резюме
+								.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Дежурный системный администратор
+											.caption.medium Информационные технологии   /   г. Санкт-Петербург
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Требования
+											ul
+												li Наличие мобильного телефона.
+											h4 Обязанности
+											ul
+												li Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).
+											h4 Условия
+											ul
+												li Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.
+												li График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). 
+												li Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. 
+												li Оплата проезда (ТРОЙКА, безлимитная на 30 дней). 
+												li Оплата мобильной связи (выдается корпоративная SIM-карта).
+										.block-contact.bg-yellow
+											.col-50
+												.title.h4 Татьяна Хлебникова
+												.caption.medium Менеджер по подбору персонала
+											.col-50
+												.block-info-content
+													a(href='tel:84956204881') 8 (495) 620-48-81 (доб. 4564)
+													.caption.medium Звонить с 10.00 до 17.00
+													a(href="mailto:tatyana.khlebnikova@cse.ru") tatyana.khlebnikova@cse.ru
+										.vacancy-footer
+											a(href="#").btn.type-round
+												.btn-inner 
+													span Заполнить анкету онлайн
+											.link-icon.sm.js-popup-button(data-modal='vacancy',data-vacancy='2323232')
+												.link-icon-icon
+													+icon('resume')
+												.link-icon-text Прикрепить резюме
+								.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Слесарь-ремонтник
+											.caption.medium Информационные технологии   /   г. Санкт-Петербург
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Требования
+											ul
+												li Наличие мобильного телефона.
+											h4 Обязанности
+											ul
+												li Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).
+											h4 Условия
+											ul
+												li Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.
+												li График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). 
+												li Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. 
+												li Оплата проезда (ТРОЙКА, безлимитная на 30 дней). 
+												li Оплата мобильной связи (выдается корпоративная SIM-карта).
+										.block-contact.bg-yellow
+											.col-50
+												.title.h4 Татьяна Хлебникова
+												.caption.medium Менеджер по подбору персонала
+											.col-50
+												.block-info-content
+													a(href='tel:84956204881') 8 (495) 620-48-81 (доб. 4564)
+													.caption.medium Звонить с 10.00 до 17.00
+													a(href="mailto:tatyana.khlebnikova@cse.ru") tatyana.khlebnikova@cse.ru
+										.vacancy-footer
+											a(href="#").btn.type-round
+												.btn-inner 
+													span Заполнить анкету онлайн
+											.link-icon.sm.js-popup-button(data-modal='vacancy',data-vacancy='2323232')
+												.link-icon-icon
+													+icon('resume')
+												.link-icon-text Прикрепить резюме
+								.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Специалист технической поддержки (2-я линия)
+											.caption.medium Информационные технологии   /   г. Санкт-Петербург
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Требования
+											ul
+												li Наличие мобильного телефона.
+											h4 Обязанности
+											ul
+												li Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).
+											h4 Условия
+											ul
+												li Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.
+												li График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). 
+												li Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. 
+												li Оплата проезда (ТРОЙКА, безлимитная на 30 дней). 
+												li Оплата мобильной связи (выдается корпоративная SIM-карта).
+										.block-contact.bg-yellow
+											.col-50
+												.title.h4 Татьяна Хлебникова
+												.caption.medium Менеджер по подбору персонала
+											.col-50
+												.block-info-content
+													a(href='tel:84956204881') 8 (495) 620-48-81 (доб. 4564)
+													.caption.medium Звонить с 10.00 до 17.00
+													a(href="mailto:tatyana.khlebnikova@cse.ru") tatyana.khlebnikova@cse.ru
+										.vacancy-footer
+											.btn.type-round.js-popup-button(data-modal='vacancy')
+												.btn-inner 
+													span Заполнить анкету онлайн
+											.link-icon.sm.js-popup-button(data-modal='vacancy',data-vacancy='2323232')
+												.link-icon-icon
+													+icon('resume')
+												.link-icon-text Прикрепить резюме
+								.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Менеджер по продажам
+											.caption.medium Информационные технологии   /   г. Санкт-Петербург
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Требования
+											ul
+												li Наличие мобильного телефона.
+											h4 Обязанности
+											ul
+												li Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).
+											h4 Условия
+											ul
+												li Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.
+												li График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). 
+												li Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. 
+												li Оплата проезда (ТРОЙКА, безлимитная на 30 дней). 
+												li Оплата мобильной связи (выдается корпоративная SIM-карта).
+										.block-contact.bg-yellow
+											.col-50
+												.title.h4 Татьяна Хлебникова
+												.caption.medium Менеджер по подбору персонала
+											.col-50
+												.block-info-content
+													a(href='tel:84956204881') 8 (495) 620-48-81 (доб. 4564)
+													.caption.medium Звонить с 10.00 до 17.00
+													a(href="mailto:tatyana.khlebnikova@cse.ru") tatyana.khlebnikova@cse.ru
+										.vacancy-footer
+											a(href="#").btn.type-round
+												.btn-inner 
+													span Заполнить анкету онлайн
+											.link-icon.sm.js-popup-button(data-modal='vacancy',data-vacancy='2323232')
+												.link-icon-icon
+													+icon('resume')
+												.link-icon-text Прикрепить резюме
+								.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Помощник бухгалтера
+											.caption.medium Бухгалтерия   /   г. Санкт-Петербург
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Требования
+											ul
+												li Наличие мобильного телефона.
+											h4 Обязанности
+											ul
+												li Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).
+											h4 Условия
+											ul
+												li Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.
+												li График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). 
+												li Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. 
+												li Оплата проезда (ТРОЙКА, безлимитная на 30 дней). 
+												li Оплата мобильной связи (выдается корпоративная SIM-карта).
+										.block-contact.bg-yellow
+											.col-50
+												.title.h4 Татьяна Хлебникова
+												.caption.medium Менеджер по подбору персонала
+											.col-50
+												.block-info-content
+													a(href='tel:84956204881') 8 (495) 620-48-81 (доб. 4564)
+													.caption.medium Звонить с 10.00 до 17.00
+													a(href="mailto:tatyana.khlebnikova@cse.ru") tatyana.khlebnikova@cse.ru
+										.vacancy-footer
+											a(href="#").btn.type-round
+												.btn-inner 
+													span Заполнить анкету онлайн
+											.link-icon.sm.js-popup-button(data-modal='vacancy',data-vacancy='2323232')
+												.link-icon-icon
+													+icon('resume')
+												.link-icon-text Прикрепить резюме
+								.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Помощник бухгалтера
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Требования
+											ul
+												li Наличие мобильного телефона.
+											h4 Обязанности
+											ul
+												li Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).
+											h4 Условия
+											ul
+												li Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.
+												li График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). 
+												li Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. 
+												li Оплата проезда (ТРОЙКА, безлимитная на 30 дней). 
+												li Оплата мобильной связи (выдается корпоративная SIM-карта).
+										.block-contact.bg-yellow
+											.col-50
+												.title.h4 Татьяна Хлебникова
+												.caption.medium Менеджер по подбору персонала
+											.col-50
+												.block-info-content
+													a(href='tel:84956204881') 8 (495) 620-48-81 (доб. 4564)
+													.caption.medium Звонить с 10.00 до 17.00
+													a(href="mailto:tatyana.khlebnikova@cse.ru") tatyana.khlebnikova@cse.ru
+										.vacancy-footer
+											a(href="#").btn.type-round
+												.btn-inner 
+													span Заполнить анкету онлайн
+											.link-icon.sm.js-popup-button(data-modal='vacancy',data-vacancy='2323232')
+												.link-icon-icon
+													+icon('resume')
+												.link-icon-text Прикрепить резюме
+								.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Водитель с личным автомобилем (Форд Транзит, Фиат Дукато, Пежо Боксер‚ Ситроен Джампер, Фольксваген транспортер)
+											.caption.medium Водители, курьеры   /   г. Санкт-Петербург
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Требования
+											ul
+												li Наличие мобильного телефона.
+											h4 Обязанности
+											ul
+												li Доставка документов и бандеролей по участку Москвы или направлению московской области (не продажи).
+											h4 Условия
+											ul
+												li Офис находится в шаговой доступности от метро Кожуховская и станции МЦК Угрешская.
+												li График работы — полный рабочий день с 9:00 до 18:00 (Пн-Пт). 
+												li Зарплата сдельная‚ зависит от количества выполненных заказов‚ средняя зарплата 35000-55000 руб. 
+												li Оплата проезда (ТРОЙКА, безлимитная на 30 дней). 
+												li Оплата мобильной связи (выдается корпоративная SIM-карта).
+										.block-contact.bg-yellow
+											.col-50
+												.title.h4 Татьяна Хлебникова
+												.caption.medium Менеджер по подбору персонала
+											.col-50
+												.block-info-content
+													a(href='tel:84956204881') 8 (495) 620-48-81 (доб. 4564)
+													.caption.medium Звонить с 10.00 до 17.00
+													a(href="mailto:tatyana.khlebnikova@cse.ru") tatyana.khlebnikova@cse.ru
+										.vacancy-footer
+											a(href="#").btn.type-round
+												.btn-inner 
+													span Заполнить анкету онлайн
+											.link-icon.sm.js-popup-button(data-modal='vacancy',data-vacancy='2323232')
+												.link-icon-icon
+													+icon('resume')
+												.link-icon-text Прикрепить резюме
+					.content-columns-aside(data-sticky-parent).js-stick-parent
+						.content-aside-content.js-stick
+							form(action="/").filter-block
+								.form-row
+									.input-item.w100
+										.input-wrapper
+											select.input-main.js-filter.has-search(name='category',multiple="multiple", placeholder='Город')
+												option(value="1",data-text='20') Санкт-Петербург
+												option(value="2",data-text='11') Абакан
+												option(value="3",data-text='11') Альметьевск
+												option(value="4",data-text='1') Ангарск
+												option(value="5",data-text='11') Арзамас
+												option(value="6",data-text='') Армавир
+												option(value="7",data-text='11') Артем
+												option(value="8",data-text='14') Артем
+												option(value="9",data-text='11') Артем
+												option(value="10",data-text='11') Артем
+									.input-item.w100
+										.input-wrapper
+											select.input-main.js-filter(name='wqeqwe',multiple="multiple", placeholder='Категория')
+												option(value="1",data-text='150') Административный персонал
+												option(value="2",data-text='11') Бухгалтерия
+												option(value="3",data-text='11') Водители, курьеры
+												option(value="4",data-text='1') Закупки
+												option(value="5",data-text='11') Информационные технологии
+												option(value="6",data-text='') Менеджмент
+												option(value="7",data-text='11') Продажи
+												option(value="5",data-text='11') Информационные технологии
+												option(value="6",data-text='') Менеджмент
+												option(value="7",data-text='11') Продажи
+
+	include ./partials/_ask

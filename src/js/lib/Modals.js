@@ -27,7 +27,7 @@ export default function Modals() {
     });
   };
   _this.f.closePopup = function(_popup) {
-    var _cont = _popup.find('.modal-container-content:not(.response)'),
+    let _cont = _popup.find('.modal-container-content:not(.response)'),
       _response = _popup.find('.response');
     _popup.removeClass(_this.conf.active_class);
     window.DOM.showScroll();
@@ -44,7 +44,7 @@ export default function Modals() {
 	 * Initial.
 	 */
   $.each(_this.c.popup.not('.' + _this.conf.initial_class), function() {
-    var _popup = $(this);
+    let _popup = $(this);
     _this.f.initModalActions(_popup);
     _popup.off('reinit').on('reinit', function() {
       _this.f.initModalActions(_popup);
@@ -52,7 +52,13 @@ export default function Modals() {
     _popup.addClass(_this.conf.initial_class);
   });
   _this.b.open.off('click.popup').on('click.popup', function(e) {
-    var _popup = _this.c.popup.filter('[data-modal=\''+$(this).data('modal')+'\']');
+    let _popup = _this.c.popup.filter('[data-modal=\''+$(this).data('modal')+'\']');
+    let vacancy = $(this).data('vacancy');
+
+    if(typeof vacancy != 'undefined') {
+      let input = _popup.find('.js-vacancy-type');
+      input.val(vacancy);
+    }
     e.preventDefault();
     _this.f.openPopup(_popup);
     return false;

@@ -2,7 +2,7 @@
 <html lang="ru" data-lang="ru" data-datepickstart-hour="9">
   <head>
     <meta charset="utf-8">
-    <title>Расчёт доставки</title>
+    <title>Анкета соискателя</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0">
@@ -920,91 +920,251 @@
                   <div class="page-head-container">
                     <div class="bread-cont">
                       <a class="bread-item" href="/">Главная</a>
+                      <a class="bread-item" href="#">О компании</a>
+                      <a class="bread-item" href="#">Вакансии </a>
                     </div>
-                    <h1 class="title h1">Расчёт доставки</h1>
+                    <h1 class="title h1">Анкета соискателя</h1>
                   </div>
                 </div>
               </div>
               <div class="wrapper bg-white">
                 <div class="box">
-                  <div class="row align-middle">
-                    <div class="columns price-form-wrapper">
-                      <form class="form price-form js-validate" action="/">
-                        <div class="input-row gap-search">
-                          <div class="input-item w33">
-                            <div class="input-wrapper">
-                              <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
-                              <div class="js-input-dropdown-target input-dropdown-target">
-                                <div class="input-dropdown-content">
-                                  <div class="option">
-                                    <span>Мосальск, Россия</span>
+                  <div class="content-columns">
+                    <div class="content-columns-main">
+                      <form class="js-validate form-with-text" action="/">
+                        <div class="text sm">Заполните и отправьте нам, пожалуйста, форму на вакансию «Специалист по работе с клиентами» приведённую ниже. И наш специалист свяжется с вами в ближайшее время.</div>
+                        <div class="border-block">
+                          <div class="border-block-content">
+                            <div class="form-block">
+                              <div class="form-block-head">
+                                <div class="title h5">Контактные данные</div>
+                              </div>
+                              <div class="input-row">
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="FranchiseName" placeholder="Иванов Сергей Иванович" type="text" name="FranchiseName" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8" data-countdown="50">
+                                    <label class="input-label" for="#FranchiseName">Контактное лицо</label>
                                   </div>
-                                  <div class="option">
-                                    <span>Москва, Россия</span>
+                                </div>
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="FranchiseEmail" placeholder="г. Санкт-Петербург, пр. Невский, д. 154, кв. 1" type="text" name="FranchiseEmail" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8"
+                                      data-countdown="50">
+                                    <label class="input-label" for="#FranchiseEmail">Адрес проживания</label>
                                   </div>
-                                  <div class="option">
-                                    <span>Мосс, Норвегия</span>
+                                </div>
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <input class="input-main date" type="text" name="date" data-validation="length" data-validation-length="min1" data-validation-error-msg="Поле обязателно для заполнения" id="dateInp" placeholder="01.01.1980" readonly="true">
+                                    <label class="input-label" for="#dateInp">Дата рождения</label>
+                                    <div class="input-icon">
+                                      <svg class="icon-calendar">
+                                        <use xlink:href="#calendar"></use>
+                                      </svg>
+                                    </div>
                                   </div>
-                                  <div class="option">
-                                    <span>Мостар, Босния и Герцеговина</span>
+                                </div>
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <select class="input-main js-select" name="category" data-validation="length" data-validation-length="min1" data-validation-event="change" id="selInp2">
+                                      <option value="1" selected>Мужской</option>
+                                      <option value="2">Женский </option>
+                                    </select>
+                                    <label class="input-label" for="#selInp2">Пол</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="RegClientEmail" placeholder="user@mail.ru" type="text" name="RegClientEmail" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8">
+                                    <label class="input-label" for="#RegClientEmail">E-mail</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="RegClientPhone" placeholder="+7 495 000-00-00" type="tel" name="RegClientPhone" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите корректный номер телефона">
+                                    <label class="input-label" for="#RegClientPhone">Телефон</label>
+                                  </div>
+                                </div>
+                                <div class="text sm" style="color:red; padding: 5px;">Прикрепить фотографию ?</div>
+                              </div>
+                            </div>
+                            <div class="form-block">
+                              <div class="form-block-head">
+                                <div class="title h5">Образование</div>
+                              </div>
+                              <div class="input-row">
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <select class="input-main js-select" name="category" data-validation="length" data-validation-length="min1" data-validation-event="change" id="selInp2">
+                                      <option value="1" selected>Высшее</option>
+                                      <option value="2">Среднее </option>
+                                    </select>
+                                    <label class="input-label" for="#selInp2">Уровень образования</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w50">
+                                  <div class="input-wrapper">
+                                    <input class="input-main date" type="text" name="date" data-validation="length" data-validation-length="min1" data-validation-error-msg="Поле обязателно для заполнения" id="dateInp" placeholder="01.01.1980" readonly="true">
+                                    <label class="input-label" for="#dateInp">Дата окончания</label>
+                                    <div class="input-icon">
+                                      <svg class="icon-calendar">
+                                        <use xlink:href="#calendar"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="FranchiseName" placeholder="Российский государственный университет" type="text" name="FranchiseName" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8"
+                                      data-countdown="50">
+                                    <label class="input-label" for="#FranchiseName">Название учебного заведения</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="FranchiseEmail" placeholder="Факультет менеджмента, специальность: менеджер " type="text" name="FranchiseEmail" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8"
+                                      data-countdown="50">
+                                    <label class="input-label" for="#FranchiseEmail">Факультет, специальность</label>
+                                  </div>
+                                </div>
+                                <div class="text sm" style="color:red; padding: 5px;">+ Добавить образование</div>
+                              </div>
+                            </div>
+                            <div class="form-block">
+                              <div class="form-block-head">
+                                <div class="title h5">Опыт работы</div>
+                              </div>
+                              <div class="input-row">
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="RegClientPosition" placeholder="Оператор" type="text" name="CustomerName" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8">
+                                    <label class="input-label" for="#CustomerName">Наименование должности</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="RegClientCompany" placeholder="ООО «КурьерСервисЭкспресс»" type="text" name="RegClientCompany" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8">
+                                    <label class="input-label" for="#RegClientCompany">Название организации</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="RegClientCompany" placeholder="Доставка посылок" type="text" name="RegClientCompany" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8">
+                                    <label class="input-label" for="#RegClientCompany">Сфера деятельности организации</label>
+                                  </div>
+                                </div>
+                                <div class="text sm" style="color:red; padding: 5px;">Период работы?</div>
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <textarea class="input-main" type="text" name="СollaborationMoreInfo" data-validation="length" data-validation-length="min4" data-validation-error-msg="Обязательное поле" id="СollaborationMoreInfo" placeholder="Например, составление отчётов и работа в call-центре"
+                                      data-countdown="50"></textarea>
+                                    <label class="input-label" for="#СollaborationMoreInfo">Должностные обязанности</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="FranchiseName" placeholder="Например, отсутствие профессионального роста" type="text" name="FranchiseName" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8"
+                                      data-countdown="50">
+                                    <label class="input-label" for="#FranchiseName">Причина увольнения</label>
+                                  </div>
+                                </div>
+                                <div class="text sm" style="color:red; padding: 5px;">+ Добавить место работы</div>
+                              </div>
+                            </div>
+                            <div class="form-block">
+                              <div class="form-block-head">
+                                <div class="title h5">Дополнительные данные</div>
+                              </div>
+                              <div class="input-row">
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <textarea class="input-main" type="text" name="СollaborationMoreInfo" data-validation="length" data-validation-length="min4" data-validation-error-msg="Обязательное поле" id="СollaborationMoreInfo" placeholder="Например, отлично владею Microsoft Office"
+                                      data-countdown="50"></textarea>
+                                    <label class="input-label" for="#СollaborationMoreInfo">Знания, умения, навыки</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <textarea class="input-main" type="text" name="СollaborationMoreInfo" data-validation="length" data-validation-length="min4" data-validation-error-msg="Обязательное поле" id="СollaborationMoreInfo" placeholder="Например, читаю книги по психологии"
+                                      data-countdown="50"></textarea>
+                                    <label class="input-label" for="#СollaborationMoreInfo">Хобби, увлечения</label>
+                                  </div>
+                                </div>
+                                <div class="input-item w100">
+                                  <div class="input-wrapper">
+                                    <textarea class="input-main" type="text" name="СollaborationMoreInfo" data-validation="length" data-validation-length="min4" data-validation-error-msg="Обязательное поле" id="СollaborationMoreInfo" placeholder="Например, увлеченный работой и ответсвенный человек"
+                                      data-countdown="50"></textarea>
+                                    <label class="input-label" for="#СollaborationMoreInfo">Дополнительные сведения</label>
                                   </div>
                                 </div>
                               </div>
-                              <label class="input-label" for="#name2Inp">Откуда</label>
-                              <div class="input-icon swap js-swap">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5">
-                                  <style>
-                                    .stswap {
-                                      fill-rule: evenodd;
-                                      clip-rule: evenodd;
-                                      fill: #F47921;
-                                    }
-
-                                  </style>
-                                  <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap" />
-                                  <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap" />
-                                </svg>
-                              </div>
                             </div>
-                          </div>
-                          <div class="input-item w33">
-                            <div class="input-wrapper">
-                              <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
-                              <div class="js-input-dropdown-target input-dropdown-target">
-                                <div class="input-dropdown-content">
-                                  <div class="option">
-                                    <span>Мосальск, Россия</span>
-                                  </div>
-                                  <div class="option">
-                                    <span>Москва, Россия</span>
-                                  </div>
-                                  <div class="option">
-                                    <span>Мосс, Норвегия</span>
-                                  </div>
-                                  <div class="option">
-                                    <span>Мостар, Босния и Герцеговина</span>
-                                  </div>
-                                  <div class="option">
-                                    <span>Мостар, Босния и Герцеговина</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <label class="input-label" for="#name2Inp">Куда</label>
-                            </div>
-                          </div>
-                          <div class="input-item w33">
-                            <button class="btn has-loading load" type="submit">
-                              <div class="btn-inner">
-                                <span class="js-price-text">Узнать стоимость доставки
-                                  <svg class="icon-arrr">
-                                    <use xlink:href="#arrr"></use>
-                                  </svg>
-                                </span>
-                              </div>
-                            </button>
                           </div>
                         </div>
+                        <div class="border-block PersonalData">
+                          <div class="border-block-content">
+                            <div class="form-block">
+                              <div class="input-row">
+                                <div class="input-item w100">
+                                  <label class="select-radio-label radio-simple">
+                                    <input class="select-radio-input-real" type="checkbox" name="RegClientAgree">
+                                    <div class="select-radio-inner">
+                                      <span class="select-radio-input">
+                                        <span class="select-radio-input-fake"></span>
+                                      </span>
+                                      <span class="select-radio-text">Согласие на обработку
+                                        <a href="#" target="_blank">персональных данных</a>
+                                      </span>
+                                    </div>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="block-buttons">
+                          <div class="link-icon">
+                            <div class="link-icon-icon">
+                              <svg class="icon-arrl">
+                                <use xlink:href="#arrl"></use>
+                              </svg>
+                            </div>
+                            <div class="link-icon-text">Назад</div>
+                          </div>
+                          <button class="btn btn-next" type="button">
+                            <div class="btn-inner">
+                              <span>Отправить</span>
+                            </div>
+                          </button>
+                        </div>
                       </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper bg-orange">
+                <div class="box">
+                  <div class="row padding-big">
+                    <div class="columns large-6 medium-6 small-12">
+                      <div class="block-about">
+                        <h2 class="title h2 white">Есть вопросы или нужна помощь?</h2>
+                      </div>
+                    </div>
+                    <div class="columns large-6 medium-6 small-12">
+                      <div class="block-about">
+                        <div class="text white">Мы всегда рады помочь и ответить на все интересующие вас вопросы. Вы можете попробовать найти информацию в разделе
+                          <a href="#">«Вопросы и ответы»</a>или написать ваш вопрос нам на почту.</div>
+                        <a class="btn color-white type-round color-reverse not-trans" href="#">
+                          <div class="btn-inner">
+                            <span>Вопросы и ответы</span>
+                          </div>
+                        </a>
+                        <a class="btn color-white type-round color-reverse" href="#">
+                          <div class="btn-inner">
+                            <span>Задать вопрос</span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

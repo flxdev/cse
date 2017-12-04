@@ -1,0 +1,67 @@
+---
+title: Акции
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="#").bread-item Акции
+				h1.title.h1 Акции
+	.wrapper.bg-white
+		.box
+			.content-outer
+				.content-wrapper
+					h2 Осенняя акция: отправь посылку через наш сервис и получи бонус 100 ₽ на доставку следующей посылки
+					.news-desr
+						time 30 августа, 2017
+						.item-type-wrapper
+							.item-type 30 сентября — 25 октября
+
+					h4 Выход на международный уровень — важный шаг в развитии бизнеса. Его успешность зависит от качества реализации грузо- и документооборота с зарубежными партнерами. 
+					p Наша компания осуществляет доставку экспресс-грузов и документов в более чем 200 стран мира и страны Таможенного союза. Мы гарантируем высокое качество обслуживания, оптимальное сочетание скорости и цены перевозок, таможенное оформление в максимально короткие сроки, доставку груза «до двери» на территории страны доставки.
+					.content-slider
+						.content-slider-inner
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+							figure.content-slider-slide
+								img(src="img/slide.jpg", alt="")
+						.content-slider-nav
+							.slider-nav
+								.slider-counter
+									.slider-curr
+									.slider-divider /
+									.slider-total
+					p По 30 июня на сайте площадки онлайн-покупателей из России ждут скидки до 56% на самые популярные категории товаров – Электроника, Смартфоны и Аксессуары, Здоровье и Красота, Дом и Дача. В общей сложности на специальных условиях будет доступно свыше 100 наименований бестселлеров.
+					h4 Преимущества
+					ul
+						li Возможность гарантированной доставки к полудню по Европе
+						li От двери до двери
+						li По всему миру
+						li Отслеживание в режиме онлайн
+						li Доступны дополнительные услуги
+					.youtube(data-embed='OiLdgNA6hlM')
+						.play-button
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="213.7px" height="213.7px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7" xml:space="preserve"><polygon class='triangle' fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="73.5,62.5 148.5,105.8 73.5,149.1 "/><circle class='circle' fill="none"  stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3"/></svg>
+					p Наша компания будет осуществлять доставку курьером и в клиентские залы. Сроки доставки составят от 4 дней в Москву и от 6 дней – в регионы России. Агрегаторы подходят для малого и среднего бизнеса — для организации простых и разовых, нерегулярных перевозок, цена на которые может оказаться кратно ниже, чем у крупных компаний.
+					p В России до 80% автомобильных грузоперевозчиков оформлены как индивидуальные предприниматели, в распоряжении которых находится от одной до пяти машин, но при этом они обслуживают всего около 20% коммерческих перевозок, заказываемых бизнесом. Основные риски для клиентов заключаются в отсутствии гарантии надежности этих предпринимателей и исправности их транспортного парка.
+				.content-footer
+					a(href="#").link-icon
+						.link-icon-icon
+							+icon('arrl')
+						.link-icon-text Вернуться назад
+					a(href="#").link-icon
+						.link-icon-text Следующая новость
+						.link-icon-icon
+							+icon('arrr')
+
+	include ./partials/_salesSlider
+	include ./partials/_ask

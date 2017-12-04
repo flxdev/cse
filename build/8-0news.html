@@ -1498,6 +1498,96 @@
           </div>
         </div>
       </div>
+      <div class="modal-layout js-popup-container modal-medium" data-modal="vacancy">
+        <div class="modal-container">
+          <div class="modal-container-header">
+            <div class="title h2">Отправить резюме</div>
+            <div class="modal-container-header-close closePopup">
+              <div class="small-link">
+                <svg class="icon-closemodal">
+                  <use xlink:href="#closemodal"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="modal-container-content">
+            <form class="modal-form js-validate" action="/">
+              <input class="js-vacancy-type" type="hidden">
+              <div class="input-row">
+                <div class="input-item w100">
+                  <div class="input-wrapper">
+                    <input class="input-main maxlength" id="SenderPerson" placeholder="Иванов Сергей Иванович" type="text" name="SenderPerson" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8" data-countdown="50">
+                    <label class="input-label" for="#SenderPerson">Контактное лицо</label>
+                  </div>
+                </div>
+                <div class="input-item w50">
+                  <div class="input-wrapper">
+                    <input class="input-main" id="SenderEmail" placeholder="user@mail.ru" type="email" name="SenderEmail" data-validation="email" data-validation-error-msg="Некорректный E-mail">
+                    <label class="input-label" for="#SenderEmail">E-mail</label>
+                  </div>
+                </div>
+                <div class="input-item w50">
+                  <div class="input-wrapper">
+                    <input class="input-main" id="SenderTel[0]" placeholder="+7 495 000-00-00" type="tel" name="SenderTel[0]" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите корректный номер телефона">
+                    <label class="input-label" for="#SenderTel[0]">Телефон</label>
+                  </div>
+                </div>
+                <div class="input-item w100">
+                  <!-- подтянуть дропзон при натяжке-->
+                  <div class="vacancy-file js-file">
+                    <div class="link-icon sm primary">
+                      <div class="link-icon-icon">
+                        <svg class="icon-resume">
+                          <use xlink:href="#resume"></use>
+                        </svg>
+                      </div>
+                      <div class="link-icon-text">Прикрепить резюме</div>
+                    </div>
+                    <div class="caption">Вы можете загрузить документ в формате: doc, docx, pdf. Объёмом до 10 Мб. </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input-row modal-form-footer">
+                <div class="input-item w50">
+                  <label class="select-radio-label radio-simple">
+                    <input class="select-radio-input-real" type="checkbox" name="PersonalData">
+                    <div class="select-radio-inner">
+                      <span class="select-radio-input">
+                        <span class="select-radio-input-fake"></span>
+                      </span>
+                      <span class="select-radio-text">Согласие на обработку
+                        <a href="#" target="_blank">персональных данных</a>
+                      </span>
+                    </div>
+                  </label>
+                </div>
+                <div class="input-item w50">
+                  <button class="btn btn-next" type="submit">
+                    <div class="btn-inner">
+                      <span>Отправить</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-container response" style="display: none;">
+          <div class="modal-container-header">
+            <div class="title h2">Резюме принято</div>
+            <div class="modal-container-header-close closePopup">
+              <div class="small-link">
+                <svg class="icon-closemodal">
+                  <use xlink:href="#closemodal"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="modal-container-content">
+            <div class="text sm">Спасибо, что проявили интерес к нашей компании. Если ваша кандидатура окажется для нас интересной, наш специалист по персоналу свяжется с вами для уточнения всех деталей.</div>
+          </div>
+        </div>
+      </div>
     </div>
     <!--LOAD SCRIPTS-->
     <script type="text/javascript" src="js/app.js"></script>

@@ -5,10 +5,19 @@ extends layouts/_layout
 block conf
 
 block content
-	.wrapper.error-page-bg
+	.wrapper.error-page
+		.error-page-bg
+			.error-page-bg__image(style="background-image:url(img/error-404.jpg)")
 		.box
 			.page-head-container
 				.bread-cont
 					a(href="/").bread-item Главная
 			.error-page-content
-				h1.title.h1 404
+				.error-page-title
+					h1 404
+				.error-page-msg
+					p.text Запрашиваемая страница не найдена!
+					p.text.sm Вы можете воспользоваться поиском или вернуться на главную страницу
+					a(href="#").btn
+							.btn-inner 
+								span Вернуться на главную

@@ -291,7 +291,8 @@
 		&.date
 			cursor: pointer
 		&.js-filter
-			z-index: -1
+			+notouch
+				z-index: -1
 			&~.optWrapper 
 				position: static !important
 				.placeholder
@@ -821,7 +822,21 @@ a.select-radio-label
 		font-size: 16px
 		line-height: 1.1
 		
-
+.vacancy-file
+	max-width: 380px
+	cursor: pointer 
+	&:hover
+		.link-icon-text
+			background-image: none
+	.link-icon
+		margin-left: -5px
+	.link-icon-text
+		color: $brand
+		display: inline-block
+		vertical-align: middle
+		padding-bottom: 3px
+		padding-top: 9px
+		+dotted-line($brand,bottom)
 
 .ok 
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAsCAMAAADLhrFKAAAAJ1BMVEVHcEwtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUi0oQZAAAADHRSTlMA7Rs1CWmK21Wmzr/HNujwAAAAyUlEQVR42o2U0Q6EIBADBZZFoP//vRePh42J4vBGMmnaUj3wyQWjpWK0Oka9U9ImRvOYRtHWMi0gJY6qcLRy1Dk6DKM0V05Sob2KmrUhTZirC5t1SSfcq6QO2xJ2kBN2YIM76OGA5FKluegrWJNedpAfzL7t4HS73y80vYzWR7k1uw025RaXC2222eklHXXp3JfkFg7aMxZ5WlkOPofg+ksvB+Oj/xUpfcqG0SXLRkBkoy2pwdHiLdq4LQHkwz/QkCX5/MCnbz/IH2umCWXGP6xgAAAAAElFTkSuQmCC);

@@ -1,6 +1,13 @@
 .service
 	&-wrap
 		width: 100%
+		a.title 
+			&:hover
+				+notouch
+					color: $brand
+			&:active
+				color: $brand
+				transition-duration: 0s
 	&-item
 		width: 100%
 		padding-bottom: 60px
