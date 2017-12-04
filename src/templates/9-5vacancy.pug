@@ -57,10 +57,10 @@ block content
 													data-validation="length",
 													data-validation-length='min1',
 													data-validation-error-msg="Поле обязателно для заполнения"
-													,id='dateInp',
+													,id='dateInp[0]',
 													placeholder='01.01.1980',
 													readonly='true')
-												label(for='#dateInp').input-label Дата рождения
+												label(for='#dateInp[0]').input-label Дата рождения
 												.input-icon
 													+icon('calendar')
 										.input-item.w50
@@ -91,119 +91,198 @@ block content
 													data-validation-regexp="^[-0-9()+ ]+$",
 													data-validation-error-msg="Введите корректный номер телефона")
 												label(for="#RegClientPhone").input-label Телефон
-										.text.sm(style="color:red; padding: 5px") Прикрепить фотографию ?
+										.input-item.w100
+											// подтянуть дропзон при натяжке
+											.vacancy-file.js-file
+												.link-icon.sm.primary
+													.link-icon-icon
+														+icon('photo')
+													.link-icon-text Прикрепить фотографию
+												.caption Вы можете загрузить фотографию в формате: jpg, png, gif. Объёмом до 10 Мб. 
 								.form-block
-									.form-block-head
-										.title.h5 Образование
-									.input-row
-										.input-item.w50
-											.input-wrapper
-												select.input-main.js-select(name='category', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='selInp2')
-													option(value="1", selected) Высшее
-													option(value="2") Среднее											
-												label(for='#selInp2').input-label Уровень образования
-										.input-item.w50
-											.input-wrapper
-												input.input-main.date(
-													type="text",
-													name='date',
-													data-validation="length",
-													data-validation-length='min1',
-													data-validation-error-msg="Поле обязателно для заполнения"
-													,id='dateInp',
-													placeholder='01.01.1980',
-													readonly='true')
-												label(for='#dateInp').input-label Дата окончания
-												.input-icon
-													+icon('calendar')
-										.input-item.w100
-											.input-wrapper
-												input.input-main(
-													id='FranchiseName',
-													placeholder='Российский государственный университет',
-													type="text",
-													name='FranchiseName',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8',
-													data-countdown='50')
-												label(for='#FranchiseName').input-label Название учебного заведения
-										.input-item.w100
-											.input-wrapper
-												input.input-main(
-													id='FranchiseEmail',
-													placeholder='Факультет менеджмента, специальность: менеджер ',
-													type="text",
-													name='FranchiseEmail',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8',
-													data-countdown='50')
-												label(for='#FranchiseEmail').input-label Факультет, специальность
-										.text.sm(style="color:red; padding: 5px") + Добавить образование
+									.js-repeatBlock.repeatSelect(data-repeatlimit='2')
+										.form-block-head
+											.title.h5.js-toggleText(data-alt-text='Другое образование') Образование
+										.input-row
+											.input-item.w50
+												.input-wrapper
+													select.input-main.js-select(name='StudyCategory[0]', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='selInp2')
+														option(value="1", selected) Высшее
+														option(value="2") Среднее											
+													label(for='#selInp2').input-label Уровень образования
+											.input-item.w50
+												.input-wrapper
+													input.input-main.date(
+														type="text",
+														name='StudyDate[0]',
+														data-validation="length",
+														data-validation-length='min1',
+														data-validation-error-msg="Поле обязателно для заполнения"
+														,id='dateInp',
+														placeholder='01.01.1980',
+														readonly='true')
+													label(for='#dateInp').input-label Дата окончания
+													.input-icon
+														+icon('calendar')
+											.input-item.w100
+												.input-wrapper
+													input.input-main(
+														id='FranchiseName',
+														placeholder='Российский государственный университет',
+														type="text",
+														name='StudyName[0]',
+														data-validation="length",
+														data-validation-error-msg="Обязательное поле",
+														data-validation-length='min1',
+														data-countdown='50')
+													label(for='#FranchiseName').input-label Название учебного заведения
+											.input-item.w100
+												.input-wrapper
+													input.input-main(
+														id='FranchiseEmail',
+														placeholder='Факультет менеджмента, специальность: менеджер ',
+														type="text",
+														name='StudyFac[0]',
+														data-validation="length",
+														data-validation-error-msg="Обязательное поле",
+														data-validation-length='min1',
+														data-countdown='50')
+													label(for='#FranchiseEmail').input-label Факультет, специальность
+									button(type='button').link-icon.primary.js-repeatBlock-trigger
+										.link-icon-icon
+											+icon('plus')
+										.link-icon-text Добавить образование
 								.form-block
-									.form-block-head
-										.title.h5 Опыт работы
-									.input-row
-										.input-item.w100
-											.input-wrapper
-												input.input-main(
-													id='RegClientPosition',
-													placeholder='Оператор',
-													type="text",
-													name='CustomerName',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8')
-												label(for='#CustomerName').input-label Наименование должности
-										.input-item.w100
-											.input-wrapper
-												input.input-main(
-													id='RegClientCompany',
-													placeholder='ООО «КурьерСервисЭкспресс»',
-													type="text",
-													name='RegClientCompany',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8')
-												label(for='#RegClientCompany').input-label Название организации
-										.input-item.w100
-											.input-wrapper
-												input.input-main(
-													id='RegClientCompany',
-													placeholder='Доставка посылок',
-													type="text",
-													name='RegClientCompany',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8')
-												label(for='#RegClientCompany').input-label Сфера деятельности организации
-										.text.sm(style="color:red; padding: 5px") Период работы?
-										.input-item.w100
-											.input-wrapper
-												textarea.input-main(
-													type="text",
-													name='СollaborationMoreInfo',
-													data-validation="length",
-													data-validation-length='min4',
-													data-validation-error-msg="Обязательное поле",
-													id='СollaborationMoreInfo',
-													placeholder='Например, составление отчётов и работа в call-центре',
-													data-countdown='50')
-												label(for='#СollaborationMoreInfo').input-label Должностные обязанности
-										.input-item.w100
-											.input-wrapper
-												input.input-main(
-													id='FranchiseName',
-													placeholder='Например, отсутствие профессионального роста',
-													type="text",
-													name='FranchiseName',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8',
-													data-countdown='50')
-												label(for='#FranchiseName').input-label Причина увольнения
-										.text.sm(style="color:red; padding: 5px") + Добавить место работы
+									.js-repeatBlock.repeatSelect(data-repeatlimit='2')
+										.form-block-head
+											.title.h5.js-toggleText(data-alt-text='Дополнительный опыт работы') Опыт работы
+										.input-row
+											.input-item.w100
+												.input-wrapper
+													input.input-main(
+														id='Doljnost[0]',
+														placeholder='Оператор',
+														type="text",
+														name='Doljnost[0]',
+														data-validation="length",
+														data-validation-error-msg="Обязательное поле",
+														data-validation-length='min1')
+													label(for='#Doljnost[0]').input-label Наименование должности
+											.input-item.w100
+												.input-wrapper
+													input.input-main(
+														id='DoljnostName[0]',
+														placeholder='ООО «КурьерСервисЭкспресс»',
+														type="text",
+														name='DoljnostName[0]',
+														data-validation="length",
+														data-validation-error-msg="Обязательное поле",
+														data-validation-length='min1')
+													label(for='#DoljnostName[0]').input-label Название организации
+											.input-item.w100
+												.input-wrapper
+													input.input-main(
+														id='DoljnostSfere[0]',
+														placeholder='Доставка посылок',
+														type="text",
+														name='DoljnostSfere[0]',
+														data-validation="length",
+														data-validation-error-msg="Обязательное поле",
+														data-validation-length='min8')
+													label(for='#DoljnostSfere[0]').input-label Сфера деятельности организации
+										.input-row.multi-date
+											.caption Период работы
+											.input-item.w50.multi
+												.input-wrapper
+													select.input-main.js-select(name='dateMonth[0]', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='dateMonth[0]')
+														option(value="1", selected) Январь
+														option(value="2") Февраль
+														option(value="3") Март
+														option(value="4") Апрель
+														option(value="5") Май
+														option(value="6") Июнь
+														option(value="7") Июль
+														option(value="8") Август
+														option(value="9") Сентябрь
+														option(value="10") Октябрь
+														option(value="11") Ноябрь
+														option(value="12") Декабрь
+													label(for='#dateMonth[0]').input-label Месяц
+												.input-wrapper
+													select.input-main.js-select(name='dateYear[0]', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='dateYear[0]')
+														option(value="1", selected) 1995
+														option(value="2") 1996
+														option(value="3") 1997
+														option(value="4") 1998
+														option(value="5") 1999
+														option(value="6") 2000
+														option(value="7") 2001
+														option(value="8") 2002
+														option(value="9") 2003
+														option(value="10") 2004
+														option(value="11") 2005
+														option(value="12") 2006
+													label(for='#dateYear[0]').input-label Месяц
+											.input-item.w50.multi
+												.input-wrapper
+													select.input-main.js-select(name='dateMonthFinish[0]', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='dateMonthFinish[0]')
+														option(value="1", selected) Январь
+														option(value="2") Февраль
+														option(value="3") Март
+														option(value="4") Апрель
+														option(value="5") Май
+														option(value="6") Июнь
+														option(value="7") Июль
+														option(value="8") Август
+														option(value="9") Сентябрь
+														option(value="10") Октябрь
+														option(value="11") Ноябрь
+														option(value="12") Декабрь
+													label(for='#dateMonthFinish[0]').input-label Месяц
+												.input-wrapper
+													select.input-main.js-select(name='dateYearFinish[0]', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='dateYearFinish[0]')
+														option(value="1", selected) 1995
+														option(value="2") 1996
+														option(value="3") 1997
+														option(value="4") 1998
+														option(value="5") 1999
+														option(value="6") 2000
+														option(value="7") 2001
+														option(value="8") 2002
+														option(value="9") 2003
+														option(value="10") 2004
+														option(value="11") 2005
+														option(value="12") 2006
+													label(for='#dateYearFinish[0]').input-label Месяц
+										.input-row
+											.input-item.w100
+												.input-wrapper
+													textarea.input-main(
+														type="text",
+														name='DoljnostObyaz[0]',
+														data-validation="length",
+														data-validation-length='min4',
+														data-validation-error-msg="Обязательное поле",
+														id='DoljnostObyaz[0]',
+														placeholder='Например, составление отчётов и работа в call-центре',
+														data-countdown='50')
+													label(for='#DoljnostObyaz[0]').input-label Должностные обязанности
+											.input-item.w100
+												.input-wrapper
+													input.input-main(
+														id='DoljnostWhy[0]',
+														placeholder='Например, отсутствие профессионального роста',
+														type="text",
+														name='DoljnostWhy[0]',
+														data-validation="length",
+														data-validation-error-msg="Обязательное поле",
+														data-validation-length='min8',
+														data-countdown='50')
+													label(for='#DoljnostWhy[0]').input-label Причина увольнения
+									button(type='button').link-icon.primary.js-repeatBlock-trigger
+										.link-icon-icon
+											+icon('plus')
+										.link-icon-text Добавить место работы
 								.form-block
 									.form-block-head
 										.title.h5 Дополнительные данные

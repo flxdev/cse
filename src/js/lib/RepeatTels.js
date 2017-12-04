@@ -8,6 +8,7 @@ export default function RepeatTels() {
     trigger.each(function() {
   	let _ = $(this);
   	let target = _.parent().find('.js-repeatBlock');
+      let hasDateSel = target.hasClass('repeatSelect') ? true : false;
       let repeatLimit = parseInt(target.data('repeatlimit'));
       let count = 1;
     
@@ -16,18 +17,30 @@ export default function RepeatTels() {
     	if(repeatLimit > count -1) {
     		let clonedTarget = target.clone();
 		  	let inputs = clonedTarget[0].querySelectorAll('input');
-		  	let label = clonedTarget[0].querySelectorAll('label');	
+          let label = clonedTarget[0].querySelectorAll('label');  
+          let select = clonedTarget[0].querySelectorAll('select');  
+		  	let toggle = clonedTarget[0].querySelectorAll('.js-toggleText');	 
 		  	inputs.forEach((item) => {
 		  		item.value = '';
 		  		item.classList.remove('valid');
 		  		item.classList.remove('error');
 		  	});
-		  	ChangeElementName(inputs,'name',count);
-	  		ChangeElementName(label,'for',count);
+          $(toggle).toggleText();
+          ChangeElementName(inputs,'name',count);
+          ChangeElementName(inputs,'id',count);
+		  	
+          ChangeElementName(label,'for',count);
+	  		   ChangeElementName(select,'name',count);
+          ChangeElementName(select,'id',count);
 	  		clonedTarget.removeClass('handled').append(closeBtn);
 	  		target.nextAll('.js-repeatBlock').find('.small-link').remove();
 	  		target.parent().find('.js-repeatBlock').last().after(clonedTarget);
 	  		window.DOM.MaxLength();
+          if(hasDateSel) {
+            console.log();
+            window.DOM.SimpleSelects();
+            window.DOM.datepick();
+          }
 	  		clonedTarget.validate();
 	  		++count;
     	}

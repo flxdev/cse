@@ -1,0 +1,146 @@
+---
+title: Сотрудничество
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.bg-white
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 API Интеграция
+	// .paddingtop-none прости говсподи
+	.wrapper.bg-white.paddingtop-none
+		.box
+			.padding-big
+				.block-constructor
+					.block-constructor-content
+						.block-constructor-content-main
+							.content-wrapper
+								h4 Уважаемые клиенты!
+								p Если вы еще не интегрированы с нашей системой, но есть в этом потребность, просим обращаться к вашему персональному менеджеру. 
+								p Если вы интегрированы, но у вас возникли вопросы — задайте их в Службу Технической Поддержки на адрес электронной почты (в теме письма просим указать номер договора и наименование организации) 
+									a(href="mailto:help@cse.ru.") help@cse.ru.
+						.block-constructor-content-aside
+							.aside-elem.bg-yellow
+								.aside-elem-inner
+									.content-wrapper
+										p По всем вопросам, связанным с изменениями работы API необходимо обращаться по e-mail:
+										p
+											a(href="mailto:help@cse.ru") help@cse.ru
+										small В теме письма просим указать номер договора и наименование организации.
+
+
+
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Описание и документы
+					.block-constructor-content
+						.block-constructor-content-main
+							.content-wrapper
+								p В связи со вступлением в силу Федерального закона от 03.07.2016 № 290-ФЗ «О внесении изменений в Федеральный закон от 22.05.2003 № 54-ФЗ «О применении контрольно- кассовой техники при осуществлении наличных денежных расчётов и (или) расчётов с использованием платёжных карт» (далее – Закон) предусматривается изменение порядка применения контрольно-кассовой техники. 
+								p Для компаний, осуществляющих дистанционную торговлю и передающих на доставку отправления с наложенным платежом, вместо единой суммы, которую КурьерСервис Экспресс должен получить с покупателя при доставке, необходимо передавать полный список товаров, работ или услуг подлежащих оплате покупателем, в рамках данного отправления.
+							.block-constructor-docs
+								.row
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Описание API для интеграции с учетной системой Курьер Сервис Экспресс (на русском языке)','20 Мб','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Описание API для интеграции с учетной системой Курьер СервисЭкспресс (на английском языке)','10 Кб','JPG')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Описание кодов ошибок','20 Мб','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Коды объектов географии для использования в API (в формате xml)','10 Кб','ZIP')
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Изменения
+					.block-constructor-content
+						.block-constructor-content-main
+							.vacancy-content
+								.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.caption.medium 10.09.2017
+											.title.h3 Изменения в работе API
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											ul
+												li Добавлена возможность формировать возвратную накладную, функция 
+													b SaveDocuments: Возвратные накладные. 
+												li Добавлена возможность получать информацию о сроках доставки, возможности оплаты картой, оплаты получателем и услуги возврата, функция 
+													b GetReferenceData: Параметры доставки. 
+								.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.caption.medium 10.09.2017
+											.title.h3 Изменения в работе API и Личного кабинета
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											ul
+												li Добавлена возможность формировать возвратную накладную, функция 
+													b SaveDocuments: Возвратные накладные. 
+												li Добавлена возможность получать информацию о сроках доставки, возможности оплаты картой, оплаты получателем и услуги возврата, функция 
+													b GetReferenceData: Параметры доставки. 
+								.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.caption.medium 10.09.2017
+											.title.h3 Изменения в работе API
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											ul
+												li Добавлена возможность формировать возвратную накладную, функция 
+													b SaveDocuments: Возвратные накладные. 
+												li Добавлена возможность получать информацию о сроках доставки, возможности оплаты картой, оплаты получателем и услуги возврата, функция 
+													b GetReferenceData: Параметры доставки. 
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Описание и документы
+					.block-constructor-content
+						.block-constructor-content-main
+							.content-wrapper
+								p Для клиентов, использующих Базовый API (информационная и программная поддержка в настоящее время не оказывается), просим использовать следующие публикации для обращения к веб сервису:
+								p
+									a(href="#") https://web.cse.ru/api/xmlwebservice.asmx
+								p
+									a(href="#") https://web.cse.ru/api/xmlwebservice.asmx
+								p
+									a(href="#") https://web.cse.ru/api/xmlwebservice.asmx
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Информация о тестовой среде
+					.block-constructor-content
+						.block-constructor-content-main
+							.content-wrapper
+								p Для обращения к функциям системы в тестовом режиме, необходимо использовать следующую публикацию:
+								p
+									a(href="#") https://web.cse.ru/api/xmlwebservice.asmx 
+									| (login: web, password: web)
+								p Учетные данные тестового пользователя — Login: test, Password: 2016
+								p Тестовый Личный кабинет:
+									a(href="#") https://web.cse.ru/api/xmlwebservice.asmx
+	include ./partials/_ask

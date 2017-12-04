@@ -189,7 +189,7 @@ ready(() => {
       });
     });
   }optionTrigger();
-  datepick();
+  window.DOM.datepick();
   validateLength();
   select();
   validateForms();

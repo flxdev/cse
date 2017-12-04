@@ -41,10 +41,12 @@ PageList:
   ready: 100
 - file: 9-0vacancy.html
   ready: 100
+- file: 9-4vacancy.html
+  ready: 100
 - file: 9-5vacancy.html
   ready: 100
-# - file: 9-7vacancy.html
-#   ready: 100
+- file: 9-7vacancy.html
+  ready: 100
 - file: 10-0franchising.html
   ready: 100
 - file: 10-1form.html
@@ -59,19 +61,31 @@ PageList:
   ready: 100
 - file: 12-1client.html
   ready: 100
+- file: 14-0faq.html
+  ready: 100
+- file: 14-2faq.html
+  ready: 100
+- file: 14-3faq.html
+  ready: 100
 - file: 15-0search.html
   ready: 100
 - file: 15-1search.html
   ready: 100
 - file: 15-2search.html
   ready: 100
+- file: 16-0zakupki.html
+  ready: 100
 - file: 16-1zakupki-form.html
   ready: 100
 - file: 16-2zakupki-form-success.html
   ready: 100
+- file: 17-0partnership.html
+  ready: 100
 - file: 17-1partner-form.html
   ready: 100
 - file: 17-2partner-form-success.html
+  ready: 100
+- file: 18-0api.html
   ready: 100
 - file: 19-0map.html
   ready: 100
@@ -79,5 +93,5 @@ PageList:
   ready: 100
 # - file: etalon.html
 #   ready: 100
-- file: ui-components.html
-  ready: 100
+# - file: ui-components.html
+#   ready: 100

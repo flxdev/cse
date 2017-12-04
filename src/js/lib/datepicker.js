@@ -2,7 +2,7 @@ import $ from 'jquery/dist/jquery';
 import 'jquery-ui/ui/widgets/datepicker';
 import 'jquery-ui/ui/widgets/selectmenu';
 
-export default function datepick() {
+export default window.DOM.datepick = () => {
   let dtepick = $('.date');
 
   dtepick.each(function() {
@@ -15,7 +15,7 @@ export default function datepick() {
     } else {
       offset = 0;
     }
-    _.datepicker({
+    _.removeClass('hasDatepicker').removeData('datepicker').unbind().datepicker({
       changeMonth: true,
       changeYear: true,
       minDate: offset,
@@ -87,7 +87,7 @@ export default function datepick() {
     });
     $('.ui-datepicker-title').append($('.ui-selectmenu-menu'));
   }  
-}
+};
 
 
 

@@ -25,11 +25,16 @@ const processors = [
     minPixelValue: 12
   }),
   mqpacker({
-      sort: sortMediaQueries
+      sort: function (a, b) {
+          a = a.replace(/\D/g,'');
+          b = b.replace(/\D/g,'');
+          return b-a;
+          // replace this with a-b for Mobile First approach
+      }
   }),
   cssnano({
-    minifyFontValues: false,
-    discardUnused: false
+    // minifyFontValues: false,
+    // discardUnused: false
   }),
 ];
 
@@ -50,24 +55,3 @@ gulp.task('sass', () => {
 gulp.task('sass:watch', () => {
   gulp.watch(`${config.src.sass}/**/*.{sass,scss}`, ['sass']);
 });
-
-let isMax = (mq) => /max-width/.test(mq);
-
-let isMin = (mq) => /min-width/.test(mq);
-
-function sortMediaQueries(a, b) {
-  const A = a.replace(/\D/g, '');
-  const B = b.replace(/\D/g, '');
-
-  if (isMax(a) && isMax(b)) {
-    return B - A;
-  } else if (isMin(a) && isMin(b)) {
-    return A - B;
-  } else if (isMax(a) && isMin(b)) {
-    return 1;
-  } else if (isMin(a) && isMax(b)) {
-    return -1;
-  }
-
-  return 1;
-}

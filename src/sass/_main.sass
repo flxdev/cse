@@ -335,6 +335,14 @@ blockquote
 		background-color: $brandbg
 	&.bg-gray
 		background-color: #f9f9f9
+	&.paddingtop-none
+		.padding-big
+			padding-top: 15px
+			padding-bottom: 100px
+			+r(800)
+				padding-bottom: 80px
+			+r(640)
+				padding-bottom: 40px
 	&.promoblock
 		&:hover
 			+notouch
@@ -387,7 +395,9 @@ blockquote
 							margin-bottom: 10px
 						.text
 							+tr(color .3s)
-
+				.content-wrapper
+					p,b,li 
+						color: rgba(255, 255, 255, 0.702)
 		&-img 
 			width: 100%
 			height: 100%

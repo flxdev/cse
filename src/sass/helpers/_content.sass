@@ -12,7 +12,7 @@
 		padding-top: 50px
 	.content-wrapper
 		font-size: 16px
-		ol,ul,p,h3,h4
+		ol, ul, p, h3, h4
 			display: block
 			margin-left: auto
 			margin-right: auto
@@ -20,12 +20,13 @@
 		.youtube
 			margin-top: 55px
 			margin-bottom: 55px
-		ul,ol 
+		ul, ol
 			padding-right: 25px
 		table
 			margin-left: auto
 			margin-right: auto
 			max-width: 545px
+
 .content-footer
 	display: flex
 	flex-flow: row nowrap
@@ -36,6 +37,7 @@
 	margin-right: auto
 	padding-top: 25px
 	padding-bottom: 30px
+
 .content-wrapper
 	.button-container
 		max-width: 559px
@@ -45,38 +47,40 @@
 		margin-top: 33px
 		margin-bottom: 40px
 
-	&>*
+	& > *
 		&:first-child
 			margin-top: 0 !important
 	table
 		tbody
 			width: 100%
-		th 
+		th
 			font-size: 12px
 			color: rgba(62, 62, 62, 0.502);
 			line-height: 1.333
 
-
-		td 
+		td
 			&:first-child
 				font-weight: 600
 				line-height: 1.3
 				min-width: 100px
-		th,td 
+		th, td
 			min-width: 30px !important
 			max-width: 25%
 	.content-slider
 		margin-top: 60px
 		margin-bottom: 60px
+		.content-slider-nav
+			position: static
+			text-align: center
+			margin-top: 20px
 	.item-type
-		border-color: $brand 
-		background-color: $brand 
+		border-color: $brand
+		background-color: $brand
 		color: $white
 	.news-desr
 		margin-top: -5px
 		margin-bottom: 25px
 		display: block
-		
 		time
 			font-size: 14px
 			color: rgb(180, 177, 177);
@@ -89,10 +93,16 @@
 			display: inline-block
 			vertical-align: middle
 			margin-top: 4px
-	ul,ol 
+	small
+		font-size: 14px
+		color: rgb(180, 177, 177);
+		line-height: 1.429;
+
+
+	ul, ol
 		display: block
 		margin: 15px 0
-		li 
+		li
 			display: block
 			position: relative
 			padding-left: 22px
@@ -100,7 +110,7 @@
 			color: $dark
 			line-height: 1.5
 			margin-bottom: 15px
-			a 
+			a
 				display: inline
 			&:before
 				content: ''
@@ -112,9 +122,9 @@
 				position: absolute
 				left: 0
 				top: 8px
-	ol 
+	ol
 		counter-reset: ololo
-		li 
+		li
 			counter-increment: ololo
 			padding-left: 0
 			margin-bottom: 17px
@@ -123,40 +133,55 @@
 				display: inline-block
 				width: auto
 				height: auto
-				content: counter(ololo)'.'
+				content: counter(ololo) '.'
 				font-weight: 500
 				color: $brand
 				border-radius: 0
 				background: 0 0
 				width: 22px
-			
-	a 
+
+	a
 		color: $brand
+		box-shadow: none
+		word-wrap: break-word
 		&:hover
 			color: $brandh
-	p,.text
+	p, .text
 		font-size: 16px
 		margin-top: 17px
 		margin-bottom: 15px
-		&+p,&+.text 
+		& + p, & + .text
 			margin-top: 15px
 		a
 			color: $brand
-
+			&[href^='tel:']
+				box-shadow: none
+				&:hover
+					+notouch
+						color: $brandh
+						b
+							color: $brandh
+				&:active
+					color: $brandh
+					transition-duration: 0s
+					b
+						color: $brandh
+			b 
+				color: $dark
 			&:hover
 				+notouch
 					color: $brandh
 			&:active
 				color: $brandh
 				transition-duration: 0s
-		b 
+		b
 			font-weight: 600
 		&.bold
 			font-size: 18px
-	h1,h2,h3,h4,h5
+	h1, h2, h3, h4, h5
 		color: rgb(0, 0, 0)
-		font-weight: bold;
-		line-height: 1.261;
+		font-weight: bold
+		line-height: 1.261
 		transition: color .3s, opacity .3s
 	h3
 		font-size: 24px
@@ -174,37 +199,38 @@
 		font-size: 16px
 		text-transform: none
 		margin-top: 25px
-		margin-bottom: 20px	
-	h2 
+		margin-bottom: 20px
+	h2
 		font-size: 36px
 		+r(600)
 			font-size: 26px
 		+r(335)
 			font-size: 25px
-	h2,.title.h2
+	h2, .title.h2
 		margin-top: 40px
 		margin-bottom: 30px
-	&>img
+	& > img
 		display: block
 		max-width: 100%
 		margin-left: auto
 		margin-right: auto
 		margin-top: 52px
 		margin-bottom: 52px
+
 table
 	&:not([class])
 		width: 100%
 		tr
 			&:nth-child(odd):not(:first-child)
 				background-color: $brandlight
-			th 
-				vertical-align: bottom 
+			th
+				vertical-align: bottom
 				border-bottom: 1px solid $inputborder
 				text-align: left
 				.caption
-					text-align: left 
+					text-align: left
 					line-height: 1.3
-			th,td 
+			th, td
 				padding: 25px 5px
 				min-width: 120px
 				+r(1200)
@@ -212,10 +238,11 @@ table
 				&:first-child
 					width: 27%
 					padding-left: 25px
-					.text 
+					.text
 						max-width: 200px
-			td 
-				vertical-align: top 
+			td
+				vertical-align: top
+
 .youtube
 	position: relative
 	padding-bottom: 56.25%
@@ -233,13 +260,13 @@ table
 		width: 100%
 		height: auto
 		cursor: pointer
-		@suports (object-fit: cover)
+		@supports (object-fit: cover)
 			object-fit: cover
 			height: 100%
-	&:hover 
+	&:hover
 		.play-button
 			color: $brand
-			.triangle 
+			.triangle
 				stroke-dashoffset: 0;
 				opacity: 1;
 				stroke: $brand;
@@ -256,18 +283,19 @@ table
 		cursor: pointer
 		+tr(color .3s)
 		color: $white
-		.triangle 
-			transition: all 0.7s ease-in-out;
-			stroke-dasharray: 240;
-			stroke-dashoffset: 480;
+		.triangle
+			transition: all 0.7s ease-in-out
+			stroke-dasharray: 240
+			stroke-dashoffset: 480
 			stroke: $white
 			transform: translateY(0)
 		.circle
 			stroke: $brand;
-			stroke-dasharray: 650;
-			stroke-dashoffset: 650;
-			transition: all 0.5s ease-in-out;
-			opacity: 0.3;
+			stroke-dasharray: 650
+			stroke-dashoffset: 650
+			transition: all 0.5s ease-in-out
+			opacity: 0.3
+
 .doclink
 	&-wrapper
 		display: block
@@ -279,26 +307,27 @@ table
 			margin-bottom: 25px
 		&:hover
 			+notouch
-				.text, svg 
-					color : $brand
-		&>div
+				.text, svg
+					color: $brand
+		& > div
 			display: inline-block
 			vertical-align: top
-			
-	&-img 
+
+	&-img
 		width: 62px
 		padding-right: 18px
-		svg 
+		svg
 			color: #c1c1c1
 			+tr(color .3s)
 			text
 				font-weight: 500
-	&-content 
+	&-content
 		width: calc(100% - 62px)
-		.text 
+		.text
 			+tr(color .3s)
 		.caption
 			margin-top: 6px
+
 .docwrapper
 	&-item
 		display: block
@@ -313,7 +342,7 @@ table
 			padding-bottom: 20px
 			+r(600)
 				padding-bottom: 10px
-		&-head,&-content
+		&-head, &-content
 			display: inline-block
 			vertical-align: top
 			+r(600)
@@ -323,7 +352,7 @@ table
 			padding-right: 30px
 			+r(600)
 				padding-bottom: 30px
-		&-content 
+		&-content
 			width: 66%
 			.row
 				margin-right: -30px
@@ -335,4 +364,3 @@ table
 					padding-right: 30px
 			.text
 				max-width: 250px
-			

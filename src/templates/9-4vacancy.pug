@@ -1,0 +1,91 @@
+---
+title: Вакансии
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="/").bread-item О компании
+				h1.title.h1 Вакансии
+
+		.page-head-nav
+			.box
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Новости
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Франчайзинг
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner.active
+						span Вакансии
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Закупки
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Сотрудничество
+	.wrapper.bg-white
+		.box
+			// такая же структура у вопрос-ответ, но у .vacancy-outer будет модификтаор
+			//  у кнопки тригерящей модалку дата-vacancy передает в скрытый модалки данные о вакансии
+			.vacancy-outer
+				.content-columns
+					.content-columns-main
+						.vacancy-wrapper.reload-container
+							h2.title.h2 Вакансии не найдены
+							.vacancy-filter
+								.item-type-wrapper
+									a(href="#").item-type
+										span Санкт-Петербург
+										span.item-type-close
+											+icon('closemodal')
+									a(href="#").item-type
+										span Москва
+										span.item-type-close
+											+icon('closemodal')
+							.vacancy-content
+								.info-text.search-result-error
+									.info-text-icon
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width='24' height='24'><style>.iconinfo{fill:#4E4544;}</style><path d="M12 1c6.1 0 11 4.9 11 11s-4.9 11-11 11S1 18.1 1 12 5.9 1 12 1m0-1C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0z" class="iconinfo"/><path d="M11.3 6.3V11l.3 3.7h.9l.3-3.7V6.3h-1.5zm1.5 11.4v-1.9h-1.7v1.9h1.7z" class="iconinfo"/></svg>
+									.info-text-text
+										.text.sm К сожалению, по заданным параметрам открытых вакансий нет. Попробуйте изменить параметры поиска вакансий.
+					.content-columns-aside(data-sticky-parent).js-stick-parent
+						.content-aside-content.js-stick
+							form(action="/").filter-block
+								.form-row
+									.input-item.w100
+										.input-wrapper
+											select.input-main.js-filter.has-search(name='category',multiple="multiple", placeholder='Город')
+												option(value="1",data-text='20') Санкт-Петербург
+												option(value="2",data-text='11') Абакан
+												option(value="3",data-text='11') Альметьевск
+												option(value="4",data-text='1') Ангарск
+												option(value="5",data-text='11') Арзамас
+												option(value="6",data-text='') Армавир
+												option(value="7",data-text='11') Артем
+												option(value="8",data-text='14') Артем
+												option(value="9",data-text='11') Артем
+												option(value="10",data-text='11') Артем
+									.input-item.w100
+										.input-wrapper
+											select.input-main.js-filter(name='wqeqwe',multiple="multiple", placeholder='Категория')
+												option(value="1",data-text='150') Административный персонал
+												option(value="2",data-text='11') Бухгалтерия
+												option(value="3",data-text='11') Водители, курьеры
+												option(value="4",data-text='1') Закупки
+												option(value="5",data-text='11') Информационные технологии
+												option(value="6",data-text='') Менеджмент
+												option(value="7",data-text='11') Продажи
+												option(value="5",data-text='11') Информационные технологии
+												option(value="6",data-text='') Менеджмент
+												option(value="7",data-text='11') Продажи
+
+	include ./partials/_ask

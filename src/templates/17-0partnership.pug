@@ -1,0 +1,128 @@
+---
+title: Сотрудничество
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="/").bread-item О компании
+				h1.title.h1 Сотрудничество
+				.buttons-wrapper
+					a(href="#").btn.color-white.type-round
+						.btn-inner
+							span.btn-icon
+								+icon('down')
+							span Скачать презентацию
+					a(href="#").btn.color-white.not-trans.type-round
+						.btn-inner
+							span Отправить заявку
+		.page-head-nav
+			.box
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Новости
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Франчайзинг
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Вакансии
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Закупки
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner.active
+						span Сотрудничество
+
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									h2.title.h4 Региональная сеть КурьерСервисЭкспресс в России представлена филиалами в крупнейших российских городах. 
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										p Наша сеть филиалов в России динамично расширяется, и мы предлагаем развивающимся региональным компаниям получить право стать частью сети продаж и доставки компании. Используйте ваш шанс стать частью динамично развивающегося бизнеса!
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Приглашаем к сотрудничеству
+					.offers-wrapper
+						+offer('Перевозчики','Приглашаем к сотрудничеству на постоянной основе индивидуальных предпринимателей, а также службы по перевозке с личным транспортом по России и страны ближнего зарубежья.','1')
+						+offer('Операторы постаматов','Партнёрская сеть КурьерСервисЭкспресс в России динамично расширяется, и мы предлагаем розничным сетям и пунктам выдачи сотрудничество. Наша сеть охватывает всю территорию России.','2')
+						+offer('Интернет-магазины','Среди клиентов КСЭ более двух тысяч предприятий малого, среднего и крупного бизнеса, работающих в России и за границей. Каждому клиенту компания обеспечивает гибкий подход в обслуживании и максимально учитывает его интересы.','3')
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Преимущества работы с нами
+					.cards-wrapper
+						+card('','Будут оптимизированы расходы вашей собственной компании за счёт того, что не потребуется постоянных затрат на то, чтобы содержать собственных курьера и логиста и подбирать этот персонал.','14.svg')
+						+card('','Мы возьмем на себя обязанности предоставлять ваши документы в соответствующие органы, такие, как: федеральная налоговая служба, пенсионный фонд и фонд социального страхования.','15.svg')
+						+card('','Ваш интернет-магазин будет работать стабильно и привлечет множество новых покупателей, если вы позаботитесь о грамотной, оперативной доставке товаров своим заказчикам..','16.svg')
+	.wrapper
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.padding-big
+				.block-constructor
+					h3.title.h2 Что вы получаете
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										p КурьерСервисЭкспресс в России, лидер на рынке доставки посылок и сборных грузов, предлагает широкие возможности по развитию бизнеса. Сегодня партнёрская сеть пунктов приёма и выдачи посылок  в России представлена Калининграда до Владивостока.
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										p Наша партнёрская сеть в России динамично расширяется, и мы предлагаем розничным сетям и пунктам выдачи сотрудничество. Используйте ваш шанс стать частью динамично развивающегося бизнеса!
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Документы
+					.block-constructor-docs
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Для франчайзи
+							.docwrapper-item-content
+								.row
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Анкета потенциального франчайзи','20 Мб','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Требования к франчайзи','10 Кб','JPG')
+	
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Связаться с нами
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									h3.title.h4 Мы всегда рады предоставить вам более подробную информацию об условиях сотрудничества
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										p Ответы на все вопросы о пакете документов для заключения договора и условиях вы можете получить, написав нам на электронный ящик или позвонив по телефону:
+										p
+											a(href="tel:8(800)555-51-44")
+												b 8 (800) 555-51-44 (доб. 2131, 2132)
+										p
+											a(href="mailto:franshiza@cse.ru") franshiza@cse.ru
+	include ./partials/_promoDownload
+	include ./partials/_ask

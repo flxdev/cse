@@ -145,6 +145,62 @@
 				-webkit-box-flex: 0 !important
 				flex: 0 0 33.33333% !important
 				max-width: 33.33333% !important
+	&-content 
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		align-items: flex-start
+		+r(800)
+			flex-flow: row wrap	
+		&-main
+			max-width: 764px
+			padding-right: 30px
+			flex-shrink: 1
+			width: 100%
+			+r(800)
+				max-width: 100%
+				order: 2
+				padding-right: 0
+		&-aside
+			width: 100%
+			max-width: 315px
+			margin-top: -104px
+			+r(800)
+				margin-top: 0
+				max-width: 100%
+				order: 1
+				margin-bottom: 25px
+			.aside-elem
+				background-color: $brandlight
+				padding: 34px 36px
+				+r(640)
+					padding: 20px	
+				.content-wrapper
+					a
+						font-weight: 600
+						font-size: 18px
+		.vacancy-content
+			width: 100%
+			max-width: 100%
+			.accordeon-wrapper
+				&:first-child
+					.accordeon-head
+						padding-top: 0
+				.caption.medium
+					padding-top: 0
+					padding-bottom: 12px
+				.title
+					padding-bottom: 30px
+				.accordeon-body
+					margin-top: 7px
+				.accordeon-head-icon
+					align-self: flex-end
+					margin-bottom: 30px
+	&-docs
+		+rm(801)
+			margin-right: -30px
+		&:not(:only-child)
+			margin-top: 50px
 	.content-slider
 		margin-top: 55px
 .cards

@@ -1,0 +1,128 @@
+---
+title: Закупки
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+					a(href="/").bread-item О компании
+				h1.title.h1 Закупки
+				.buttons-wrapper
+					a(href="#").btn.color-white.type-round
+						.btn-inner
+							span.btn-icon
+								+icon('down')
+							span Скачать презентацию
+					a(href="#").btn.color-white.not-trans.type-round
+						.btn-inner
+							span Отправить заявку
+		.page-head-nav
+			.box
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Новости
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Франчайзинг
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Вакансии
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner.active
+						span Закупки
+				.page-head-nav-item
+					a(href="#").page-head-nav-item-inner
+						span Сотрудничество
+
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									h2.title.h4 Приглашаем к сотрудничеству на постоянной основе индивидуальных предпринимателей с личным транспортом в Москве, Московской области и регионах. 
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										p В обязанности входит сбор, доставка посылок и грузов отправителям и получателям на закрепленной территории. Форма оплаты сдельная.
+										h4 Основные требования
+										ul
+											li Индивидуальный предприниматель должен быть зарегистрирован в установленном порядке
+											li Автомобиль отечественного производства не старше 3 лет с момента выпуска, и не старше 5 лет для автомобилей зарубежного производства
+											li Грузоподъемность автомобиля до 500 кг и вместимость до 4м3
+											li Водительское удостоверение категории «В», стаж вождения от 2-х лет
+											li Автомобиль не должен иметь механических повреждений, явных или скрытых дефектов, а также любой рекламной информации
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Направления
+					.offers-wrapper
+						+offer('Гофрокороба с логотипом','Наша компания ищет партнеров для закупки картонных коробок, как стандартных размеров, так и по нашим чертежам.','1')
+						+offer('Тубусы картонные','Партнёрская сеть КурьерСервисЭкспресс в России динамично расширяется, и мы предлагаем розничным сетям и пунктам выдачи сотрудничество. Наша сеть охватывает всю территорию России.','2')
+						+offer('Картонные конверты А3, А4','Среди клиентов КСЭ более двух тысяч предприятий малого, среднего и крупного бизнеса, работающих в России и за границей. Каждому клиенту компания обеспечивает гибкий подход в обслуживании и максимально учитывает его интересы.','3')
+						+offer('Мешки полипропиленовые 30, 50, 80 кг с логотипом','Мы осуществляем обучение и консультируем ваших сотрудников по любым вопросам о том, как организовать место для передачи заказов покупателям и как вести его работу. С вами будет поддерживать постоянный контакт наш менеджер.','1')
+						+offer('Термо-этикетки','Среди клиентов КСЭ более двух тысяч предприятий малого, среднего и крупного бизнеса, работающих в России и за границей. Каждому клиенту компания обеспечивает гибкий подход в обслуживании и максимально учитывает его интересы.','1')
+	.wrapper
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.padding-big
+				.block-constructor
+					h2.title.h2 Приглашаем поставщиков
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										p КурьерСервисЭкспресс в России, лидер на рынке доставки посылок и сборных грузов, предлагает широкие возможности по развитию бизнеса. Сегодня партнёрская сеть пунктов приёма и выдачи посылок  в России представлена Калининграда до Владивостока.
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										p Наша партнёрская сеть в России динамично расширяется, и мы предлагаем розничным сетям и пунктам выдачи сотрудничество. Используйте ваш шанс стать частью динамично развивающегося бизнеса!
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Документы
+					.block-constructor-docs
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Для франчайзи
+							.docwrapper-item-content
+								.row
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Анкета потенциального франчайзи','20 Мб','PDF')
+									.columns.large-6.medium-6.small-12
+										+docLink('diplom1.html','Требования к франчайзи','10 Кб','JPG')
+	
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Связаться с нами
+					.block-constructor-halfdescr
+						.row.align-stretch 
+							.columns.large-6.medium-6.small-12
+								.col
+									h2.title.h4 Мы всегда рады предоставить вам более подробную информацию об условиях сотрудничества
+							.columns.large-6.medium-6.small-12
+								.col
+									.content-wrapper
+										p Ответы на все вопросы о пакете документов для заключения договора и условиях вы можете получить, написав нам на электронный ящик или позвонив по телефону:
+										p
+											a(href="tel:8(800)555-51-44")
+												b 8 (800) 555-51-44 (доб. 2131, 2132)
+										p
+											a(href="mailto:franshiza@cse.ru") franshiza@cse.ru
+	include ./partials/_promoDownload
+	include ./partials/_ask

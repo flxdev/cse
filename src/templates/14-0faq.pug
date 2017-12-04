@@ -1,0 +1,237 @@
+---
+title: Вопросы и ответы
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head3.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Вопросы и ответы
+				.buttons-wrapper
+					a(href="#").btn.color-white.type-round
+						.btn-inner
+							span.btn-icon
+								+icon('down')
+							span Скачать презентацию
+	.wrapper.bg-white
+		.box
+			.search-result.search-result-faq
+				.search-result-head
+					form(action="/").searchinp.darken
+						.search-field
+							input(type='text', placeholder='Задайте свой вопрос').searchinp-input.js-searchmodal-targetinput
+							button(type='button').searchinp-btn
+								+icon('search')
+					.search-result-filter
+						.select-radio
+							a(href="#").select-radio-label.radio-with-image.active
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Все
+						.select-radio
+							a(href="#").select-radio-label.radio-with-image
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Вызов курьера
+						.select-radio
+							a(href="#").select-radio-label.radio-with-image
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Оформление заказа
+						.select-radio
+							a(href="#").select-radio-label.radio-with-image
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Отслеживание отправлений
+						.select-radio
+							a(href="#").select-radio-label.radio-with-image
+								.select-radio-inner
+									span.select-radio-input
+									span.select-radio-text Расчёт стоимости и оплата
+				.search-result-content
+					.vacancy-outer
+						.vacancy-wrapper
+							h2.title.h2 Вызов курьера
+						.vacancy-content.reload-container
+							.accordeon-wrapper
+								.accordeon-head.js-accordeon-trigger
+									.accordeon-head-content
+										.title.h3 Как вызвать курьера?
+									.accordeon-head-icon
+										.header-mobnav-btn.mobilenav.back
+											.navTriggersm
+												i
+												i
+								.accordeon-body(style='display: none;')
+									.content-wrapper
+										h4 Заказ на прием отправления в Москве в текущий день размещается
+										p Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье, накладная заполняется иключительно на английском языке.
+							.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Приезжает ли Ваш курьер в определенное время?
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Заказ на прием отправления в Москве в текущий день размещается
+											p Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье, накладная заполняется иключительно на английском языке.
+					.vacancy-outer
+						.vacancy-wrapper
+							h2.title.h2 Оформление заказа
+						.vacancy-content.reload-container
+							.accordeon-wrapper
+								.accordeon-head.js-accordeon-trigger
+									.accordeon-head-content
+										.title.h3 Какие правила размещения заказа?
+									.accordeon-head-icon
+										.header-mobnav-btn.mobilenav.back
+											.navTriggersm
+												i
+												i
+								.accordeon-body(style='display: none;')
+									.content-wrapper
+										h4 Заказ на прием отправления в Москве в текущий день размещается:
+										ul
+											li при весе отправления до 20 кг – до 16.00
+											li при весе отправления свыше 20 кг необходимо соблюдать следующие временные ограничения
+										p Время размещения заказа на прием отправления для Сверхсрочной доставки в текущий день согласовывается с сотрудником КурьерСервисЭкспресс.
+										h4 Заполнение накладной
+										table
+											tbody
+												tr
+													th Зона
+													th Территория
+													th Размер
+												tr
+													td Зона 0
+													td 99
+													td 5%
+												tr
+													td Зона 0
+													td Москва
+													td 99
+												tr
+													td Зона 0
+													td 99
+													td 5%
+												tr
+													td Зона 0
+													td Санкт-питербург округ
+													td 5%
+										img(src="img/naklad.jpg", alt="naklad")
+										h5 Разделы 1-6 адресного блока
+										p Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье, накладная заполняется иключительно на английском языке.
+										h5 Разделы 1-2
+										p Должны содержать полную и достоверную информацию об отправителе и получателе (адреса, телефоны, контактные лица). Для экспресс-отправлений адресованных получателям в дальнем зарубежье обязательно указание почтового индекса.
+
+							.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Что такое объемный вес?
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Заказ на прием отправления в Москве в текущий день размещается
+											p Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье, накладная заполняется иключительно на английском языке.
+							.accordeon-wrapper
+								.accordeon-head.js-accordeon-trigger
+									.accordeon-head-content
+										.title.h3 Упаковываете ли вы отправки?
+									.accordeon-head-icon
+										.header-mobnav-btn.mobilenav.back
+											.navTriggersm
+												i
+												i
+								.accordeon-body(style='display: none;')
+									.content-wrapper
+										h4 Заказ на прием отправления в Москве в текущий день размещается
+										p Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье, накладная заполняется иключительно на английском языке.
+							.accordeon-wrapper
+								.accordeon-head.js-accordeon-trigger
+									.accordeon-head-content
+										.title.h3 Как заполнить накладную?
+									.accordeon-head-icon
+										.header-mobnav-btn.mobilenav.back
+											.navTriggersm
+												i
+												i
+								.accordeon-body(style='display: none;')
+									.content-wrapper
+										h4 Заказ на прием отправления в Москве в текущий день размещается
+										p Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье, накладная заполняется иключительно на английском языке.
+					.vacancy-outer
+						.vacancy-wrapper
+							h2.title.h2 Отслеживание отправлений
+						.vacancy-content.reload-container
+							.accordeon-wrapper
+								.accordeon-head.js-accordeon-trigger
+									.accordeon-head-content
+										.title.h3 Как отследить заказ?
+									.accordeon-head-icon
+										.header-mobnav-btn.mobilenav.back
+											.navTriggersm
+												i
+												i
+								.accordeon-body(style='display: none;')
+									.content-wrapper
+										h4 Заказ на прием отправления в Москве в текущий день размещается
+										p Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье, накладная заполняется иключительно на английском языке.
+							.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Что сделать, чтобы мне пришло смс уведомление о заказе на телефон?
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Заказ на прием отправления в Москве в текущий день размещается
+											p Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье, накладная заполняется иключительно на английском языке.
+					.vacancy-outer
+						.vacancy-wrapper
+							h2.title.h2 Расчёт стоимости и оплата
+						.vacancy-content.reload-container
+							.accordeon-wrapper
+								.accordeon-head.js-accordeon-trigger
+									.accordeon-head-content
+										.title.h3 Возможна ли отправка с оплатой получателем?
+									.accordeon-head-icon
+										.header-mobnav-btn.mobilenav.back
+											.navTriggersm
+												i
+												i
+								.accordeon-body(style='display: none;')
+									.content-wrapper
+										h4 Заказ на прием отправления в Москве в текущий день размещается
+										p Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье, накладная заполняется иключительно на английском языке.
+							.accordeon-wrapper
+									.accordeon-head.js-accordeon-trigger
+										.accordeon-head-content
+											.title.h3 Как узнать стоимость и сроки отправки?
+										.accordeon-head-icon
+											.header-mobnav-btn.mobilenav.back
+												.navTriggersm
+													i
+													i
+									.accordeon-body(style='display: none;')
+										.content-wrapper
+											h4 Заказ на прием отправления в Москве в текущий день размещается
+											p Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье, накладная заполняется иключительно на английском языке.
+							
+	include ./partials/_ask

@@ -2,7 +2,7 @@
 <html lang="ru" data-lang="ru" data-datepickstart-hour="9">
   <head>
     <meta charset="utf-8">
-    <title>Анкета соискателя</title>
+    <title>Вопросы и ответы</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0">
@@ -200,6 +200,13 @@
         <symbol id="logo" viewBox="0 0 5669.29 1457.01">
           <path fill="#f47920" d="M388.53 0L0 1457h357.16L745.23 0zm1570.54 0H1503.2L917.97 464.54l-.2-.33-288.86 229.77 555.18 763h455.9l-555.28-763.12zm3340.18 311.4c6.8-9.53 3.44-21-5-32.41l-223.93-279H3906.58l-85.87 324.4h1448.46c11.38.01 21.74-1.3 30.07-12.99zm-3174.91 794.53c-12.39-17.87-15.5-40.76-9.45-64l165.82-621.18c6.23-24.29 22.58-49.1 46.41-68.2s50.81-28.19 75.17-28.19h1204.74L3693.6-.04H2453.76c-106.74 0-224.87 40.83-327.74 122.92-103.59 82.06-173.35 189.82-201.92 296.6l-165.45 622.55c-28.54 106.16-16.44 212.47 42.64 293.65 58.58 80.93 153.28 121.33 259.09 121.33h1244.53l86.77-324.72H2181.39c-23.31 0-43.93-8.76-57.05-26.36zm3400.37-539.35H3756.6l-85.69 323.83h1770l228.47-143.7zm-595.67 566H3606.76L3520.91 1457h1016.11l416.59-262.37c12.58-7.59 17.36-26.31 11.57-40.23-4.67-11.25-12.58-21.77-36.14-21.77z"
           />
+        </symbol>
+        <symbol id="photo" viewBox="0 0 18.7 15.7">
+          <path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".7" d="M13.1 2h3.6c.9 0 1.6.7 1.6 1.6v10.1c0 .9-.7 1.6-1.6 1.6H2c-.9 0-1.6-.7-1.6-1.6V3.6C.3 2.7 1.1 2 2 2h3.7m.1 0L6.3.9c.1-.3.5-.6.9-.6h4.7c.4 0 .7.2.9.6l.3 1.1"
+          />
+          <circle cx="9.4" cy="8.7" r="4" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".7" />
+          <circle cx="9.4" cy="8.7" r="2.5" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".7" />
+          <circle cx="14.9" cy="4.5" r=".8" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width=".7" />
         </symbol>
         <symbol id="pin" viewBox="0 0 13.5 17.5">
           <style>
@@ -915,229 +922,171 @@
           <main class="page__content">
             <!-- вот сюда все выплевываем-->
             <div class="page__content-container">
-              <div class="wrapper bg-white page-head">
+              <div class="wrapper page-head page-head-withbuttons has-bg">
+                <div class="wrapper-bg">
+                  <div class="wrapper-bg-img js-image bg" data-src="img/pagehead/head3.jpg"></div>
+                </div>
                 <div class="box">
                   <div class="page-head-container">
                     <div class="bread-cont">
                       <a class="bread-item" href="/">Главная</a>
-                      <a class="bread-item" href="#">О компании</a>
-                      <a class="bread-item" href="#">Вакансии </a>
                     </div>
-                    <h1 class="title h1">Анкета соискателя</h1>
+                    <h1 class="title h1">Вопросы и ответы</h1>
+                    <div class="buttons-wrapper">
+                      <a class="btn color-white type-round" href="#">
+                        <div class="btn-inner">
+                          <span class="btn-icon">
+                            <svg class="icon-down">
+                              <use xlink:href="#down"></use>
+                            </svg>
+                          </span>
+                          <span>Скачать презентацию</span>
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="wrapper bg-white">
                 <div class="box">
-                  <div class="content-columns">
-                    <div class="content-columns-main">
-                      <form class="js-validate form-with-text" action="/">
-                        <div class="text sm">Заполните и отправьте нам, пожалуйста, форму на вакансию «Специалист по работе с клиентами» приведённую ниже. И наш специалист свяжется с вами в ближайшее время.</div>
-                        <div class="border-block">
-                          <div class="border-block-content">
-                            <div class="form-block">
-                              <div class="form-block-head">
-                                <div class="title h5">Контактные данные</div>
-                              </div>
-                              <div class="input-row">
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <input class="input-main" id="FranchiseName" placeholder="Иванов Сергей Иванович" type="text" name="FranchiseName" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8" data-countdown="50">
-                                    <label class="input-label" for="#FranchiseName">Контактное лицо</label>
-                                  </div>
-                                </div>
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <input class="input-main" id="FranchiseEmail" placeholder="г. Санкт-Петербург, пр. Невский, д. 154, кв. 1" type="text" name="FranchiseEmail" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8"
-                                      data-countdown="50">
-                                    <label class="input-label" for="#FranchiseEmail">Адрес проживания</label>
-                                  </div>
-                                </div>
-                                <div class="input-item w50">
-                                  <div class="input-wrapper">
-                                    <input class="input-main date" type="text" name="date" data-validation="length" data-validation-length="min1" data-validation-error-msg="Поле обязателно для заполнения" id="dateInp" placeholder="01.01.1980" readonly="true">
-                                    <label class="input-label" for="#dateInp">Дата рождения</label>
-                                    <div class="input-icon">
-                                      <svg class="icon-calendar">
-                                        <use xlink:href="#calendar"></use>
-                                      </svg>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="input-item w50">
-                                  <div class="input-wrapper">
-                                    <select class="input-main js-select" name="category" data-validation="length" data-validation-length="min1" data-validation-event="change" id="selInp2">
-                                      <option value="1" selected>Мужской</option>
-                                      <option value="2">Женский </option>
-                                    </select>
-                                    <label class="input-label" for="#selInp2">Пол</label>
-                                  </div>
-                                </div>
-                                <div class="input-item w50">
-                                  <div class="input-wrapper">
-                                    <input class="input-main" id="RegClientEmail" placeholder="user@mail.ru" type="text" name="RegClientEmail" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8">
-                                    <label class="input-label" for="#RegClientEmail">E-mail</label>
-                                  </div>
-                                </div>
-                                <div class="input-item w50">
-                                  <div class="input-wrapper">
-                                    <input class="input-main" id="RegClientPhone" placeholder="+7 495 000-00-00" type="tel" name="RegClientPhone" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите корректный номер телефона">
-                                    <label class="input-label" for="#RegClientPhone">Телефон</label>
-                                  </div>
-                                </div>
-                                <div class="text sm" style="color:red; padding: 5px;">Прикрепить фотографию ?</div>
-                              </div>
-                            </div>
-                            <div class="form-block">
-                              <div class="form-block-head">
-                                <div class="title h5">Образование</div>
-                              </div>
-                              <div class="input-row">
-                                <div class="input-item w50">
-                                  <div class="input-wrapper">
-                                    <select class="input-main js-select" name="category" data-validation="length" data-validation-length="min1" data-validation-event="change" id="selInp2">
-                                      <option value="1" selected>Высшее</option>
-                                      <option value="2">Среднее </option>
-                                    </select>
-                                    <label class="input-label" for="#selInp2">Уровень образования</label>
-                                  </div>
-                                </div>
-                                <div class="input-item w50">
-                                  <div class="input-wrapper">
-                                    <input class="input-main date" type="text" name="date" data-validation="length" data-validation-length="min1" data-validation-error-msg="Поле обязателно для заполнения" id="dateInp" placeholder="01.01.1980" readonly="true">
-                                    <label class="input-label" for="#dateInp">Дата окончания</label>
-                                    <div class="input-icon">
-                                      <svg class="icon-calendar">
-                                        <use xlink:href="#calendar"></use>
-                                      </svg>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <input class="input-main" id="FranchiseName" placeholder="Российский государственный университет" type="text" name="FranchiseName" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8"
-                                      data-countdown="50">
-                                    <label class="input-label" for="#FranchiseName">Название учебного заведения</label>
-                                  </div>
-                                </div>
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <input class="input-main" id="FranchiseEmail" placeholder="Факультет менеджмента, специальность: менеджер " type="text" name="FranchiseEmail" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8"
-                                      data-countdown="50">
-                                    <label class="input-label" for="#FranchiseEmail">Факультет, специальность</label>
-                                  </div>
-                                </div>
-                                <div class="text sm" style="color:red; padding: 5px;">+ Добавить образование</div>
-                              </div>
-                            </div>
-                            <div class="form-block">
-                              <div class="form-block-head">
-                                <div class="title h5">Опыт работы</div>
-                              </div>
-                              <div class="input-row">
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <input class="input-main" id="RegClientPosition" placeholder="Оператор" type="text" name="CustomerName" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8">
-                                    <label class="input-label" for="#CustomerName">Наименование должности</label>
-                                  </div>
-                                </div>
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <input class="input-main" id="RegClientCompany" placeholder="ООО «КурьерСервисЭкспресс»" type="text" name="RegClientCompany" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8">
-                                    <label class="input-label" for="#RegClientCompany">Название организации</label>
-                                  </div>
-                                </div>
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <input class="input-main" id="RegClientCompany" placeholder="Доставка посылок" type="text" name="RegClientCompany" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8">
-                                    <label class="input-label" for="#RegClientCompany">Сфера деятельности организации</label>
-                                  </div>
-                                </div>
-                                <div class="text sm" style="color:red; padding: 5px;">Период работы?</div>
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <textarea class="input-main" type="text" name="СollaborationMoreInfo" data-validation="length" data-validation-length="min4" data-validation-error-msg="Обязательное поле" id="СollaborationMoreInfo" placeholder="Например, составление отчётов и работа в call-центре"
-                                      data-countdown="50"></textarea>
-                                    <label class="input-label" for="#СollaborationMoreInfo">Должностные обязанности</label>
-                                  </div>
-                                </div>
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <input class="input-main" id="FranchiseName" placeholder="Например, отсутствие профессионального роста" type="text" name="FranchiseName" data-validation="length" data-validation-error-msg="Обязательное поле" data-validation-length="min8"
-                                      data-countdown="50">
-                                    <label class="input-label" for="#FranchiseName">Причина увольнения</label>
-                                  </div>
-                                </div>
-                                <div class="text sm" style="color:red; padding: 5px;">+ Добавить место работы</div>
-                              </div>
-                            </div>
-                            <div class="form-block">
-                              <div class="form-block-head">
-                                <div class="title h5">Дополнительные данные</div>
-                              </div>
-                              <div class="input-row">
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <textarea class="input-main" type="text" name="СollaborationMoreInfo" data-validation="length" data-validation-length="min4" data-validation-error-msg="Обязательное поле" id="СollaborationMoreInfo" placeholder="Например, отлично владею Microsoft Office"
-                                      data-countdown="50"></textarea>
-                                    <label class="input-label" for="#СollaborationMoreInfo">Знания, умения, навыки</label>
-                                  </div>
-                                </div>
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <textarea class="input-main" type="text" name="СollaborationMoreInfo" data-validation="length" data-validation-length="min4" data-validation-error-msg="Обязательное поле" id="СollaborationMoreInfo" placeholder="Например, читаю книги по психологии"
-                                      data-countdown="50"></textarea>
-                                    <label class="input-label" for="#СollaborationMoreInfo">Хобби, увлечения</label>
-                                  </div>
-                                </div>
-                                <div class="input-item w100">
-                                  <div class="input-wrapper">
-                                    <textarea class="input-main" type="text" name="СollaborationMoreInfo" data-validation="length" data-validation-length="min4" data-validation-error-msg="Обязательное поле" id="СollaborationMoreInfo" placeholder="Например, увлеченный работой и ответсвенный человек"
-                                      data-countdown="50"></textarea>
-                                    <label class="input-label" for="#СollaborationMoreInfo">Дополнительные сведения</label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="border-block PersonalData">
-                          <div class="border-block-content">
-                            <div class="form-block">
-                              <div class="input-row">
-                                <div class="input-item w100">
-                                  <label class="select-radio-label radio-simple">
-                                    <input class="select-radio-input-real" type="checkbox" name="RegClientAgree">
-                                    <div class="select-radio-inner">
-                                      <span class="select-radio-input">
-                                        <span class="select-radio-input-fake"></span>
-                                      </span>
-                                      <span class="select-radio-text">Согласие на обработку
-                                        <a href="#" target="_blank">персональных данных</a>
-                                      </span>
-                                    </div>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="block-buttons">
-                          <div class="link-icon">
-                            <div class="link-icon-icon">
-                              <svg class="icon-arrl">
-                                <use xlink:href="#arrl"></use>
-                              </svg>
-                            </div>
-                            <div class="link-icon-text">Назад</div>
-                          </div>
-                          <button class="btn btn-next" type="button">
-                            <div class="btn-inner">
-                              <span>Отправить</span>
-                            </div>
+                  <div class="search-result search-result-faq">
+                    <div class="search-result-head">
+                      <form class="searchinp darken" action="/">
+                        <div class="search-field">
+                          <input class="searchinp-input js-searchmodal-targetinput" type="text" placeholder="Задайте свой вопрос">
+                          <button class="searchinp-btn" type="button">
+                            <svg class="icon-search">
+                              <use xlink:href="#search"></use>
+                            </svg>
                           </button>
                         </div>
                       </form>
+                    </div>
+                    <div class="search-result-content">
+                      <div class="vacancy-outer">
+                        <div class="vacancy-wrapper">
+                          <h2 class="title h2">Найдено
+                            <span>5 совпадений</span>
+                          </h2>
+                        </div>
+                        <div class="vacancy-content reload-container">
+                          <div class="accordeon-wrapper">
+                            <div class="accordeon-head js-accordeon-trigger">
+                              <div class="accordeon-head-content">
+                                <div class="title h3">Как я могу просчитать
+                                  <span>стоимость </span>отправления?</div>
+                              </div>
+                              <div class="accordeon-head-icon">
+                                <div class="header-mobnav-btn mobilenav back">
+                                  <div class="navTriggersm">
+                                    <i></i>
+                                    <i></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-body" style="display: none;">
+                              <div class="content-wrapper">
+                                <h4>Заказ на прием отправления в Москве в текущий день размещается</h4>
+                                <p>Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье,
+                                  накладная заполняется иключительно на английском языке.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordeon-wrapper">
+                            <div class="accordeon-head js-accordeon-trigger">
+                              <div class="accordeon-head-content">
+                                <div class="title h3">Как узнать
+                                  <span>стоимость </span>и сроки отправки?</div>
+                              </div>
+                              <div class="accordeon-head-icon">
+                                <div class="header-mobnav-btn mobilenav back">
+                                  <div class="navTriggersm">
+                                    <i></i>
+                                    <i></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-body" style="display: none;">
+                              <div class="content-wrapper">
+                                <h4>Заказ на прием отправления в Москве в текущий день размещается</h4>
+                                <p>Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье,
+                                  накладная заполняется иключительно на английском языке.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordeon-wrapper">
+                            <div class="accordeon-head js-accordeon-trigger">
+                              <div class="accordeon-head-content">
+                                <div class="title h3">Какая
+                                  <span>стоимость </span>вызвать курьера?</div>
+                              </div>
+                              <div class="accordeon-head-icon">
+                                <div class="header-mobnav-btn mobilenav back">
+                                  <div class="navTriggersm">
+                                    <i></i>
+                                    <i></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-body" style="display: none;">
+                              <div class="content-wrapper">
+                                <h4>Заказ на прием отправления в Москве в текущий день размещается</h4>
+                                <p>Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье,
+                                  накладная заполняется иключительно на английском языке.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordeon-wrapper">
+                            <div class="accordeon-head js-accordeon-trigger">
+                              <div class="accordeon-head-content">
+                                <div class="title h3">Что такое минимальный размер
+                                  <span>стоимости </span>услуг 625 ₽ в договоре?</div>
+                              </div>
+                              <div class="accordeon-head-icon">
+                                <div class="header-mobnav-btn mobilenav back">
+                                  <div class="navTriggersm">
+                                    <i></i>
+                                    <i></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-body" style="display: none;">
+                              <div class="content-wrapper">
+                                <h4>Заказ на прием отправления в Москве в текущий день размещается</h4>
+                                <p>Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье,
+                                  накладная заполняется иключительно на английском языке.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordeon-wrapper">
+                            <div class="accordeon-head js-accordeon-trigger">
+                              <div class="accordeon-head-content">
+                                <div class="title h3">Что такое «Объявленная
+                                  <span>стоимость </span>»?</div>
+                              </div>
+                              <div class="accordeon-head-icon">
+                                <div class="header-mobnav-btn mobilenav back">
+                                  <div class="navTriggersm">
+                                    <i></i>
+                                    <i></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordeon-body" style="display: none;">
+                              <div class="content-wrapper">
+                                <h4>Заказ на прием отправления в Москве в текущий день размещается</h4>
+                                <p>Заполняются Клиентом (отправителем) разборчиво, печатными буквами. Для отправки по России и в страны СНГ адресный бланк (накладная) заполняется на русском зыке. Для отправлений, адресованных получателям в дальнем зарубежье,
+                                  накладная заполняется иключительно на английском языке.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
