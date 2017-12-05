@@ -61,6 +61,8 @@ PageList:
   ready: 100
 - file: 12-1client.html
   ready: 100
+- file: 13-0docs.html
+  ready: 100
 - file: 14-0faq.html
   ready: 100
 - file: 14-2faq.html

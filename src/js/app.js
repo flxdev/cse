@@ -2,7 +2,7 @@
 import $ from 'jquery/dist/jquery';
 // import $ from 'jquery/dist/jquery.min';
 import './lib/domConf';
-import datepick from './lib/datepicker';
+import './lib/datepicker';
 import validateForms from './lib/jqValidator';
 import validateLength from './lib/lengthValidation';
 import select from './lib/selects';
@@ -23,6 +23,8 @@ import Accordeon from './lib/Accordeon';
 import CalcFormNavigation from './lib/CalcFormNavigation';
 import RepeatTels from './lib/RepeatTels';
 import YoutubeVids from './lib/YoutubeVids';
+import AjaxLoading from './lib/AjaxLoading';
+import HideInput from './lib/HideInput';
 
 
 
@@ -189,6 +191,21 @@ ready(() => {
       });
     });
   }optionTrigger();
+  $('.js-scroll-to').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var elementClick = $(this).data('href');
+    var target = $('body').find('[data-id="' + elementClick + '"]');
+    $('.aside-stick').trigger('sticky_kit:recalc');
+    if(target.length) {
+      var destination = $(target).offset().top,
+        pad = window.matchMedia('(max-width: 991px)').matches ? 70 : 118;
+      $('html, body:not(:animated), .out:not(:animated)').animate({scrollTop: destination - pad}, 500);
+    }
+    if(elementClick === 'top') {
+      $('html, body:not(:animated), .out:not(:animated)').animate({scrollTop: 0}, 650);
+    }
+  });
   window.DOM.datepick();
   validateLength();
   select();
@@ -197,21 +214,23 @@ ready(() => {
   Tooltipshow();
   mouseHover();
   growSerch();
-  var City = new CitySelect();
+  const City = new CitySelect();
   SearchModal();
   Modals();
   Menu();
   Video();
   lazyImage();
   Sliders();
-  var Maps = new YandMap();
+  const Maps = new YandMap();
   Accord();
   Stick();
-  var PackageType = new CalcForm();
+  window.PackageType = new CalcForm();
   window.CalcNav = new CalcFormNavigation();
   Accordeon();
   RepeatTels();
   YoutubeVids();
+  window.ajaxFunc = new AjaxLoading($('.ajax-trigger'));
+  HideInput();
 });
 
 

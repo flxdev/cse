@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru" data-datepickstart-hour="9">
+  <head>
+    <meta charset="utf-8">
+    <title>Ваш браузер устарел</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/fav/favicon-16x16.png">
+    <link rel="manifest" href="/img/fav/manifest.json">
+    <link rel="mask-icon" href="/img/fav/safari-pinned-tab.svg" color="#f47920">
+    <link rel="shortcut icon" href="/img/fav/favicon.ico">
+    <meta name="msapplication-config" content="/img/fav/browserconfig.xml">
+    <meta name="theme-color" content="#f47920">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="css/app.css">
+  </head>
+  <body>
+    <script type="text/javascript">
+      ! function(e)
+      {
+        function t(o)
+        {
+          if (n[o]) return n[o].exports;
+          var c = n[o] = {
+            exports:
+            {},
+            id: o,
+            loaded: !1
+          };
+          return e[o].call(c.exports, c, c.exports, t), c.loaded = !0, c.exports
+        }
+        var n = {};
+        return t.m = e, t.c = n, t.p = "/assets/", t(0)
+      }(
+      {
+        0: function(e, t, n)
+        {
+          n(18), n(19)
+        },
+        18: function(e, t)
+        {
+          ! function()
+          {
+            "use strict";
+
+            function e(e, t, n)
+            {
+              e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent && e.attachEvent("on" + t, n)
+            }
+
+            function t(e)
+            {
+              return window.localStorage && localStorage.font_css_cache
+            }
+
+            function n()
+            {
+              if (window.localStorage && window.XMLHttpRequest)
+                if (t(c)) o(localStorage.font_css_cache);
+                else
+                {
+                  var e = new XMLHttpRequest;
+                  e.open("GET", c, !0), e.onreadystatechange = function()
+                  {
+                    4 === e.readyState && (o(e.responseText), localStorage.font_css_cache = e.responseText, localStorage.font_css_cache_file = c)
+                  }, e.send()
+                }
+              else
+              {
+                var n = document.createElement("link");
+                n.href = c, n.rel = "stylesheet", n.type = "text/css", document.getElementsByTagName("head")[0].appendChild(n), document.cookie = "font_css_cache"
+              }
+            }
+
+            function o(e)
+            {
+              var t = document.createElement("style");
+              t.setAttribute("type", "text/css"), t.styleSheet ? t.styleSheet.cssText = e : t.innerHTML = e, document.getElementsByTagName("head")[0].appendChild(t), window.onFontLoad && window.onFontLoad()
+            }
+            var c = window.fonts_href || "../css/font.css";
+            window.localStorage && localStorage.font_css_cache || document.cookie.indexOf("font_css_cache") > -1 ? n() : e(window, "load", n)
+          }()
+        },
+        19: function(e, t) {}
+      });
+
+    </script>
+    <!--BEGIN out-->
+    <!-- стили специально для заглушки-->
+    <style>
+      .zagl-wrapper {
+        display: block
+      }
+
+      .zagl-wrapper .box,
+      .zagl-wrapper .footer-footer-inner {
+        max-width: 1175px
+      }
+
+      .zagl-wrapper .text {
+        font-size: 16px !important
+      }
+
+      .zagl-wrapper .title.h2 {
+        font-size: 36px !important
+      }
+
+      .zagl-wrapper .title.h4 {
+        font-size: 20px !important
+      }
+
+      .zagl-wrapper .caption {
+        font-size: 12px !important
+      }
+
+      .zagl-wrapper .page__outer {
+        font-size: 0;
+        min-height: 0;
+        display: block !important
+      }
+
+      .zagl-wrapper .page__footer {
+        width: 100%;
+        display: block !important
+      }
+
+      .zagl-wrapper .page__main {
+        background-color: #FFF;
+        text-align: center;
+        font-size: 16px;
+        color: #000
+      }
+
+      .zagl-wrapper .col-el {
+        display: inline-block;
+        vertical-align: top
+      }
+
+      .zagl-wrapper .soc-item {
+        border: none
+      }
+
+      .zagl-wrapper .soc-item:before {
+        display: none
+      }
+
+      .zagl-wrapper .soc-item .soc-item-inner:before {
+        display: none
+      }
+
+      .zagl-wrapper .footer-contact {
+        border: none;
+        padding-top: 40px;
+        margin-top: 0
+      }
+
+      .zagl-wrapper .footer-contact a {
+        font-size: 16px
+      }
+
+      .zagl-wrapper .footer-contact .col-el {
+        width: 25%;
+        min-width: 250px
+      }
+
+      .zagl-wrapper .footer-contact .col-el:first-child {
+        padding-top: 40px
+      }
+
+      .zagl-wrapper .footer-contact .col-el .block-info {
+        width: 100% !important
+      }
+
+      .zagl-wrapper .footer-footer-inner {
+        margin-left: auto;
+        margin-right: auto
+      }
+
+      .zagl-wrapper .footer-footer-inner .col-el {
+        width: 50%;
+        min-width: 300px;
+        vertical-align: middle
+      }
+
+      .zagl-wrapper .footer-footer-inner .col-el:last-child {
+        text-align: right
+      }
+
+      .zagl-logo {
+        padding-top: 100px;
+        padding-bottom: 40px;
+        width: 225px;
+        margin: 0 auto
+      }
+
+      .zagl-text {
+        text-align: center
+      }
+
+      .zagl-text .title {
+        margin-top: 30px;
+        margin-bottom: 30px
+      }
+
+      .zagl-text .text {
+        margin-top: 20px;
+        margin-bottom: 30px
+      }
+
+      .zagl-wrapper-links {
+        font-size: 0;
+        padding-top: 50px;
+        padding-bottom: 120px;
+        text-align: center
+      }
+
+      .zagl-wrapper-item {
+        display: inline-block;
+        vertical-align: top;
+        width: 20%;
+        min-width: 120px;
+        text-align: center;
+        margin-bottom: 20px
+      }
+
+      .zagl-wrapper-item .img-wrapp {
+        max-height: 77px;
+        max-width: 77px;
+        margin: 0 auto;
+        margin-bottom: 20px
+      }
+
+      .zagl-wrapper-item img {
+        display: block;
+        max-height: 100%;
+        margin: 0 auto
+      }
+
+      .zagl-wrapper-item .text {
+        font-weight: 600;
+        color: #000
+      }
+
+    </style>
+    <div class="out zagl-wrapper">
+      <div class="page__outer">
+        <div class="page__main">
+          <div class="wrapper">
+            <div class="box">
+              <div class="zagl-logo">
+                <img src="img/zagl/logo.png" alt="КСЭ">
+              </div>
+              <div class="zagl-text">
+                <div class="title h2">Ваш браузер устарел</div>
+                <div class="text sm">К сожалению, ваш браузер устарел и не может отобразить сайт корректно.
+                  <br>Пожалуйста, установите современный браузер:</div>
+              </div>
+              <div class="zagl-wrapper-links">
+                <a class="zagl-wrapper-item" href="https://www.google.com/chrome/browser/desktop/">
+                  <div class="img-wrapp">
+                    <img src="img/zagl/chrome.png" alt="">
+                  </div>
+                  <span class="text sm">Google Chrome</span>
+                </a>
+                <a class="zagl-wrapper-item" href="http://www.mozilla.org/firefox/new/">
+                  <div class="img-wrapp">
+                    <img src="img/zagl/ff.png" alt="">
+                  </div>
+                  <span class="text sm">Mozilla Firefox</span>
+                </a>
+                <a class="zagl-wrapper-item" href="http://windows.microsoft.com/ie">
+                  <div class="img-wrapp">
+                    <img src="img/zagl/ie.png" alt="">
+                  </div>
+                  <span class="text sm">Internet Explorer</span>
+                </a>
+                <a class="zagl-wrapper-item" href="http://www.apple.com/osx/">
+                  <div class="img-wrapp">
+                    <img src="img/zagl/safari.png" alt="">
+                  </div>
+                  <span class="text sm">Apple Safari</span>
+                </a>
+                <a class="zagl-wrapper-item" href="http://www.opera.com/ru">
+                  <div class="img-wrapp">
+                    <img src="img/zagl/opera.png" alt="">
+                  </div>
+                  <span class="text sm">Opera</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page__footer">
+          <div class="wrapper">
+            <div class="box">
+              <div class="footer-contact">
+                <div class="col-el">
+                  <div class="block-info white">
+                    <div class="block-info-content">
+                      <div class="title h4 white">КурьерСервисЭкспресс — быстрая доставка посылок в любую точку мира </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-el">
+                  <div class="block-info white">
+                    <div class="block-info-title caption">Адрес</div>
+                    <div class="block-info-content">
+                      <div class="text sm">115088, Российская Федерация, г. Москва, ул. Угрешская, д. 2, стр. 55</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-el">
+                  <div class="block-info white">
+                    <div class="block-info-title caption">Телефоны</div>
+                    <div class="block-info-content">
+                      <a href="tel:+74957487748">+7 (495) 748-77-48</a>
+                      <a href="tel:+74959957995">+7 (495) 995-79-95</a>
+                      <a href="tel:+74955405005">+7 (495) 540-50-05</a>
+                      <a href="tel:88005555144">8 (800) 555-51-44</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-el">
+                  <div class="block-info white">
+                    <div class="block-info-title caption">E-mail</div>
+                    <div class="block-info-content">
+                      <a href="mailto:info@cse.ru">info@cse.ru</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-footer">
+              <div class="footer-footer-inner">
+                <div class="col-el">
+                  <div class="footer-footer-copy text sm">© 2017 «КурьерСервисЭкспресс»</div>
+                </div>
+                <div class="col-el">
+                  <div class="footer-soc">
+                    <a class="soc-item" href="#">
+                      <div class="soc-item-inner">
+                        <img src="img/zagl/fb.png" alt="">
+                      </div>
+                    </a>
+                    <a class="soc-item" href="#">
+                      <div class="soc-item-inner">
+                        <img src="img/zagl/inst.png" alt="">
+                      </div>
+                    </a>
+                    <a class="soc-item" href="#">
+                      <div class="soc-item-inner">
+                        <img src="img/zagl/vk.png" alt="">
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--END out-->
+    <!--LOAD SCRIPTS-->
+  </body>
+</html>

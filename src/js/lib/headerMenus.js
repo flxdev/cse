@@ -87,15 +87,17 @@ export default function header() {
   headerMenu();
   function scrollHeader() {
 
-    let mainHeader = window.DOM.header;
-		
+    const mainHeader = window.DOM.header;
+    const scrollOffset = 200;
+    const scrollDelta = 10;
+    
     let scrolling = false,
       previousTop = 0,
-      currentTop = 0,
-      scrollDelta = 10,
-      scrollOffset = 250;
+      currentTop = 0;
 
-    $(window).on('scroll', function() {
+
+
+    $(window).on('scroll mousewheel', () => {
       if( !scrolling ) {
         scrolling = true;
         (!window.requestAnimationFrame)
@@ -114,10 +116,14 @@ export default function header() {
     }
 
     function checkSimpleNavigation(currentTop) {
-      if (previousTop - currentTop > scrollDelta) {
+      if(currentTop > scrollOffset) {
+        if (previousTop - currentTop > scrollDelta) {
+          mainHeader.removeClass('is-hidden');
+        } else if( currentTop - previousTop > scrollDelta) {
+          mainHeader.addClass('is-hidden');
+        }
+      }else{
         mainHeader.removeClass('is-hidden');
-      } else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
-        mainHeader.addClass('is-hidden');
       }
     }
   }

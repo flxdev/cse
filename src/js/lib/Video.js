@@ -7,7 +7,6 @@ export default function Video() {
   if(vieoCont.length) {
     let homepage = $('.homepage-hero-module'),
       videoinner = homepage.find('.video-container'),
-      img = videoinner.find('.poster img'),
       video = videoinner.find('video'),
       parent  = $('.page__wrapper'),
       animatedEl = homepage.find('.video-cover'),

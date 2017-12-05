@@ -157,6 +157,11 @@
 			padding-right: 30px
 			flex-shrink: 1
 			width: 100%
+			.block-constructor-docs
+				+rm(801)
+					margin-right: -30px
+				&:not(:only-child)
+					margin-top: 50px
 			+r(800)
 				max-width: 100%
 				order: 2
@@ -197,10 +202,16 @@
 					align-self: flex-end
 					margin-bottom: 30px
 	&-docs
-		+rm(801)
-			margin-right: -30px
-		&:not(:only-child)
-			margin-top: 50px
+		&.docs-row
+			+rm(801)
+				margin-bottom: -25px
+			.docwrapper-item-content
+				width: 100%
+			.docwrapper-item-head
+				width: 100%
+				+rm(640)
+					margin-top: -7px
+				padding-bottom: 33px
 	.content-slider
 		margin-top: 55px
 .cards

@@ -1,0 +1,103 @@
+---
+title: Сотрудничество
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.page-head.page-head-withbuttons.has-bg
+		.wrapper-bg
+			.wrapper-bg-img.js-image.bg(data-src='img/pagehead/head4.jpg')
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Документы
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Типовой договор
+					//.docs-row модификатор
+					.block-constructor-docs.docs-row
+						.docwrapper-item
+							.docwrapper-item-content
+								.row
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Приложение № 1 — Описание услуг','20 Мб','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom2.html','Договор оказания услуг почтовой связи','10 Кб','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Дополнительное соглашение СМС оповещения','20 Мб','PPS')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom2.html','Приложение № 2 — Инструкция к накладной','20кб','DOC')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Дополнительное соглашение к договору оказания услуг почтовой связи','10 Кб','DOC')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom2.html','Гарантийное письмо для печатной, аудио-видео продукции ','10 Кб','DOC')
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Порядок заполнения накладной
+					//.docs-row модификатор
+					.block-constructor-docs.docs-row
+						.docwrapper-item
+							.docwrapper-item-content
+								.row
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom2.html','Инструкция по заполнению экспресс-накладной','0kb','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Инструкция по заполнению накладной для интернет- магазинов','10 Кб','PDF')
+	.wrapper.bg-white
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Нормативные документы
+					//.docs-row модификатор
+					.block-constructor-docs.docs-row
+						.docwrapper-item
+							.docwrapper-item-content
+								.row
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom2.html','Инструкция по заполнению экспресс-накладной','0kb','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Инструкция по заполнению накладной для интернет- магазинов','10 Кб','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom2.html','Инструкция по заполнению экспресс-накладной','0kb','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Инструкция по заполнению накладной для интернет- магазинов','10 Кб','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom2.html','Инструкция по заполнению экспресс-накладной','0kb','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Инструкция по заполнению накладной для интернет- магазинов','10 Кб','PDF')
+	.wrapper.bg-gray
+		.box
+			.padding-big
+				.block-constructor
+					.title.h2 Таможенные документы
+					//.docs-row модификатор
+					.block-constructor-docs.docs-row
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Для юридических лиц
+							.docwrapper-item-content
+								.row
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Инструкция по заполнению экспресс-накладной','0kb','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Инструкция по заполнению накладной для интернет- магазинов','10 Кб','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Инструкция по заполнению накладной для интернет- магазинов','10 Кб','PDF')
+						.docwrapper-item
+							.docwrapper-item-head
+								.title.h4 Для физических лиц
+							.docwrapper-item-content
+								.row
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Инструкция по заполнению экспресс-накладной','0kb','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Инструкция по заполнению накладной для интернет- магазинов','10 Кб','PDF')
+									.columns.large-4.medium-4.small-12
+										+docLink('diplom1.html','Инструкция по заполнению накладной для интернет- магазинов','10 Кб','PDF')
+	include ./partials/_ask

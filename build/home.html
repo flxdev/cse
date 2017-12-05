@@ -3,6 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Index_Page</title>
+    <!-- скрипт который детектит бразуер-->
+    <!-- раскоментить и поменять targetAddress на нужную старницу-->
+    <!--script.function checkForFlex(){
+	var curAddress = window.location.toString(),
+		targetAddress = "/zagl.html";
+	function NaiveFlexBoxSupport(d){
+		var f = "flex", e = d.createElement('b');
+		e.style.display = f;
+		return e.style.display == f;
+	}
+	if( document.addEventListener ){
+	}else{
+		window.location.replace(targetAddress);
+	}
+	if (NaiveFlexBoxSupport(document) == false && (targetAddress.toString() != curAddress)) {
+		window.location.replace(targetAddress);
+	}
+}checkForFlex();-->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0">
@@ -1004,7 +1022,7 @@
                           <div class="input-item w33">
                             <button class="btn has-loading" type="submit">
                               <div class="btn-inner">
-                                <span class="js-price">от 900 000</span>
+                                <span class="js-price">от 900 000 ₽</span>
                                 <span class="js-price-text">Подробнее
                                   <svg class="icon-arrr">
                                     <use xlink:href="#arrr"></use>
@@ -1874,6 +1892,7 @@
           </div>
         </div>
       </div>
+      <div class="modal-layout js-popup-container" data-modal="diplom" id="diplom"></div>
     </div>
     <!--LOAD SCRIPTS-->
     <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>

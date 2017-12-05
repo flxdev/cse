@@ -3,6 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Заявка отправлена</title>
+    <!-- скрипт который детектит бразуер-->
+    <!-- раскоментить и поменять targetAddress на нужную старницу-->
+    <!--script.function checkForFlex(){
+	var curAddress = window.location.toString(),
+		targetAddress = "/zagl.html";
+	function NaiveFlexBoxSupport(d){
+		var f = "flex", e = d.createElement('b');
+		e.style.display = f;
+		return e.style.display == f;
+	}
+	if( document.addEventListener ){
+	}else{
+		window.location.replace(targetAddress);
+	}
+	if (NaiveFlexBoxSupport(document) == false && (targetAddress.toString() != curAddress)) {
+		window.location.replace(targetAddress);
+	}
+}checkForFlex();-->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0">
@@ -1398,6 +1416,7 @@
           </div>
         </div>
       </div>
+      <div class="modal-layout js-popup-container" data-modal="diplom" id="diplom"></div>
     </div>
     <!--LOAD SCRIPTS-->
     <script type="text/javascript" src="js/app.js"></script>

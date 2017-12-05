@@ -27,6 +27,65 @@
 					&-close
 						.small-link
 							padding: 12px
+		&[data-modal='diplom']
+			.diplom-container
+				max-width: 950px
+				padding-left: 42px
+				padding-right: 42px
+				padding-bottom: 60px
+				width: auto
+				+r(640)
+					padding-left: 20px
+					padding-right: 20px
+					padding-bottom: 40px
+				.modal-container-header
+					padding-bottom: 55px
+					text-align: left
+					+r(640)
+						padding-bottom: 40px
+					&-close
+						.small-link
+							padding: 12px
+				&-inner
+					+rm(641)
+						margin-right: -30px
+				&-image,&-content
+					display: inline-block
+					vertical-align: top
+					text-align: left
+					+r(640)
+						width: 100%
+				&-image 
+					width: 46%
+					padding-right: 5.5%
+					+r(640)
+						padding-right: 20px
+						padding-left: 20px
+						margin-bottom: 20px
+				&-content
+					width: 54%
+					padding-right: 30px
+					&:only-child
+						width: 100%
+					&>*
+						max-width: 400px
+					.text 
+						margin-top: 25px
+						+r(640)
+							margin-top: 15px
+					.caption
+						margin-top: 20px
+						font-size: 14px
+						+r(640)
+							margin-top: 10px
+					.btn 
+						margin-left: 0
+						min-width: 225px
+						margin-top: 40px
+						+r(640)
+							margin-top: 20px
+					// padding-top: 30px
+
 		&.modal-medium
 			.modal-container
 				max-width: 700px

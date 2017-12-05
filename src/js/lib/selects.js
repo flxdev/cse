@@ -169,7 +169,7 @@ export default function select() {
       let _ = $(this);
       let targetName = _.data('check-country');
       let targetCityName = _.data('check-city');
-      let targetCityInput = $(`input[name='${targetCityName}']`);
+      // let targetCityInput = $(`input[name='${targetCityName}']`);
       let targetInput = $(`input[name='${targetName}']`);
       let prnt = _.parent();
       _.autocomplete({ 

@@ -30,12 +30,26 @@ block content
 													data-validation='length',
 													data-validation-length='min1', 
 													data-validation-event="change",
-													id='selInp2')
+													id='selInp2',
+													data-display="docNumber",data-display-value="2")
 													option(value="1") Иное
-													option(value="2") Тема 1
+													option(value="2") Проблемы с заказом
 													option(value="3") Тема 2
 													option(value="4") Тема 3
 												label(for='#selInp2').input-label Тема
+										// инпут спрятан, и валидация зависит от селекта
+										.input-item.w100(data-display-target='docNumber',style='display: none;')
+											.input-wrapper
+												input.input-main(
+													id='docNumber',
+													placeholder='Иванов Сергей Иванович',
+													type="text",
+													name='docNumber',
+													data-validation="number",
+													data-validation-error-msg="Обязательное поле",
+													data-validation-depends-on="CustomerThemeOrder",
+													data-validation-depends-on-value="2")
+												label(for='#docNumber').input-label Номер документа
 										.input-item.w100
 											.input-wrapper
 												textarea.input-main.maxlength(

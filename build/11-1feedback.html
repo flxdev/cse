@@ -3,6 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Обратная связь</title>
+    <!-- скрипт который детектит бразуер-->
+    <!-- раскоментить и поменять targetAddress на нужную старницу-->
+    <!--script.function checkForFlex(){
+	var curAddress = window.location.toString(),
+		targetAddress = "/zagl.html";
+	function NaiveFlexBoxSupport(d){
+		var f = "flex", e = d.createElement('b');
+		e.style.display = f;
+		return e.style.display == f;
+	}
+	if( document.addEventListener ){
+	}else{
+		window.location.replace(targetAddress);
+	}
+	if (NaiveFlexBoxSupport(document) == false && (targetAddress.toString() != curAddress)) {
+		window.location.replace(targetAddress);
+	}
+}checkForFlex();-->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0">
@@ -947,13 +965,21 @@
                               <div class="input-row">
                                 <div class="input-item w100">
                                   <div class="input-wrapper">
-                                    <select class="input-main js-select" name="CustomerThemeOrder" data-validation="length" data-validation-length="min1" data-validation-event="change" id="selInp2">
+                                    <select class="input-main js-select" name="CustomerThemeOrder" data-validation="length" data-validation-length="min1" data-validation-event="change" id="selInp2" data-display="docNumber" data-display-value="2">
                                       <option value="1">Иное</option>
-                                      <option value="2">Тема 1</option>
+                                      <option value="2">Проблемы с заказом</option>
                                       <option value="3">Тема 2</option>
                                       <option value="4">Тема 3</option>
                                     </select>
                                     <label class="input-label" for="#selInp2">Тема</label>
+                                  </div>
+                                </div>
+                                <!-- инпут спрятан, и валидация зависит от селекта-->
+                                <div class="input-item w100" data-display-target="docNumber" style="display: none;">
+                                  <div class="input-wrapper">
+                                    <input class="input-main" id="docNumber" placeholder="Иванов Сергей Иванович" type="text" name="docNumber" data-validation="number" data-validation-error-msg="Обязательное поле" data-validation-depends-on="CustomerThemeOrder"
+                                      data-validation-depends-on-value="2">
+                                    <label class="input-label" for="#docNumber">Номер документа</label>
                                   </div>
                                 </div>
                                 <div class="input-item w100">
@@ -1478,6 +1504,7 @@
           </div>
         </div>
       </div>
+      <div class="modal-layout js-popup-container" data-modal="diplom" id="diplom"></div>
     </div>
     <!--LOAD SCRIPTS-->
     <script type="text/javascript" src="js/app.js"></script>

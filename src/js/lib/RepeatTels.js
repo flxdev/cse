@@ -57,7 +57,7 @@ export default function RepeatTels() {
 
   	let targetParent =target.parent();
 
-  	targetParent.on('click','.icon-closemodal',function(e) {
+  	targetParent.on('click','.icon-closemodal',function() {
   		let trgt = $(this).closest('.js-repeatBlock');
   		trgt.prev().not('.handled').append(closeBtn);
   		trgt.remove();
