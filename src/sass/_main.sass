@@ -29,11 +29,16 @@ button
 a
 	text-decoration: none
 	transition: color .3s
+	+nosel
 *
 	+box
 	-webkit-tap-highlight-color: transparent
 	+placeholder 
 		font-family: $f
+	&::selection 
+		background-color: $brand
+		color: $white !important
+		opacity: 1
 textarea
 	resize: none
 	+placeholder 
@@ -69,7 +74,7 @@ body,.out
 	min-width: 320px
 	// background-color: red
 	// overflow-x: hidden
-
+	
 	&.modal_open
 		position: fixed
 
@@ -106,6 +111,8 @@ body,.out
 		font-size: 0
 		padding-left: 290px
 		padding-top: 95px
+		+ie11
+			height: 100%
 		+r(1300)
 			padding-left: 240px	
 		+r(996)
@@ -330,7 +337,7 @@ blockquote
 	width: 100%
 	position: relative
 	+tr(background-color .3s)
-	z-index: 0
+	
 	&.bg-orange
 		background-color: $brandbg
 	&.bg-gray
@@ -344,6 +351,7 @@ blockquote
 			+r(640)
 				padding-bottom: 40px
 	&.promoblock
+		z-index: 0
 		&:hover
 			+notouch
 				.wrapper-bg-img
@@ -370,7 +378,7 @@ blockquote
 			margin-top: 0
 	&-bg 
 		+coverdiv 
-		z-index: -1
+		z-index: 0
 		&+.box
 			.block-constructor
 				&>.title
@@ -403,6 +411,7 @@ blockquote
 			height: 100%
 			+cover 
 			position: relative
+			z-index: -1
 			&:before
 				content: ''
 				display: inline-block
@@ -429,6 +438,8 @@ blockquote
 		padding-right: 30px
 		max-width: 1175px
 		margin: 0 auto
+		position: relative
+		z-index: 1
 		&.small 
 			max-width: 985px
 		+r(600)

@@ -123,12 +123,13 @@ export default function lazyImage() {
     // Prevent this from being lazy loaded a second time.
     img.classList.add('js-image-handled');
     if(img.classList.contains('bg')) {
-
       img.style.backgroundImage = 'url('+src+')';
+
     }else{
       img.src = src;
 
     }
     img.classList.add('fade-in');
+    $(img).parent().addClass('fade-in-parent');
   }	
 }

@@ -24,7 +24,6 @@
 .page-head
 	z-index: 0
 	&.page-head-withbuttons
-
 		.page-head-container
 			display: flex
 			flex-flow: row wrap
@@ -36,13 +35,14 @@
 			margin-left: auto
 			text-align: right
 			.btn 
-				margin-right: 0
+				+rm(641)
+					margin-right: 0
 			+r(640)
 				margin-top: 15px
 				text-align: left
 				margin-left: 0
 				margin-right: auto
-				
+				width: 100%
 				.btn 
 					margin-left: 0
 			
@@ -55,20 +55,45 @@
 			+r(640)
 				max-width: 100%
 	&.has-bg 
+		overflow: hidden
 		.title
 			color: $white
+		.wrapper-bg
+			z-index: -1
+			background-color: $white
+		.fade-in-parent
+			&+.box
+				opacity: 1
+				transform: none
+			&~.page-head-nav
+				opacity: 1
+				transform: none
 		.wrapper-bg-img
-			// background-attachment: fixed 
-			// background-size: contain
-			// background-position:  0px 50px;
+			+rm(1025)
+				background-attachment: fixed 
+				background-size: calc(100% - 200px) auto
+				background-position:  200px 0px;
+				// background-size: contain
 			// background-repeat: repeat-y
+			+rm(1500)
+				background-position:  200px -100px !important
 			&:before
 				background-color: rgba(38, 14, 4,.5);
 		&>.box
+			opacity: 0
+			transform: translateY(-100%)
+			transition: opacity 1s, transform 1s
+			+r(640)
+				transform: translateY(-30%)
 			&:not(:last-child)
 				.page-head-container
 					+rm(641)
 						padding-bottom: 63px
+		.page-head-nav
+			opacity: 0
+			transform: translateY(100%)
+			transition: opacity 1s, transform 1s
+
 	&-container
 		padding-top: 55px
 		padding-bottom: 32px

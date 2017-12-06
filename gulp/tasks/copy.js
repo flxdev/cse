@@ -19,7 +19,7 @@ gulp.task('copy:rootfiles', () => gulp
 
 gulp.task('copy:img', () => gulp
   .src([
-    `${config.src.img}/**/*.{jpg,png,jpeg,svg,gif}`,
+    `${config.src.img}/**/*.{jpg,png,jpeg,svg,gif,mp4,webm}`,
     `!${config.src.img}/svgo/**/*.*`
   ])
   .pipe(gulp.dest(config.dest.img)));

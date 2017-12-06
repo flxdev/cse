@@ -20,7 +20,7 @@ export default function RepeatTels() {
           let label = clonedTarget[0].querySelectorAll('label');  
           let select = clonedTarget[0].querySelectorAll('select');  
 		  	let toggle = clonedTarget[0].querySelectorAll('.js-toggleText');	 
-		  	inputs.forEach((item) => {
+		  	Array.from(inputs).forEach((item) => {
 		  		item.value = '';
 		  		item.classList.remove('valid');
 		  		item.classList.remove('error');
@@ -37,7 +37,6 @@ export default function RepeatTels() {
 	  		target.parent().find('.js-repeatBlock').last().after(clonedTarget);
 	  		window.DOM.MaxLength();
           if(hasDateSel) {
-            console.log();
             window.DOM.SimpleSelects();
             window.DOM.datepick();
           }

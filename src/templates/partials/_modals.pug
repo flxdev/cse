@@ -3,9 +3,25 @@
 		.modal-container-header
 			.modal-container-header-search
 				form(action="/").searchinp.darken
-					input(type="text" placeholder='Найдите свой город').searchinp-input.js-searchmodal-targetinput
-					button(type='button').searchinp-btn
-						+icon('search')
+					.search-field
+						input(type="text" placeholder='Найдите свой город').searchinp-input.js-searchmodal-targetinput
+						button(type='button').searchinp-btn
+							+icon('search')
+					.search-method.input-row
+						.input-item
+							label.select-radio-label.radio-simple
+								input(type="radio", name='MethodSearch', checked='checked').select-radio-input-real
+								.select-radio-inner
+									span.select-radio-input
+										span.select-radio-input-fake
+									span.select-radio-text По услугам
+						.input-item
+							label.select-radio-label.radio-simple
+								input(type="radio", name='MethodSearch').select-radio-input-real
+								.select-radio-inner
+									span.select-radio-input
+										span.select-radio-input-fake
+									span.select-radio-text По тексту
 			.modal-container-header-close.closePopup
 				.small-link
 					+icon('closemodal')

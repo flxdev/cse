@@ -89,6 +89,7 @@
 			text-rendering: optimizeLegibility
 			&:not(:only-child):first-child
 				padding-right: 10px	
+			&:not(.btn-icon):first-child
 				min-width: 48%
 			svg 
 				display: inline-block
@@ -153,13 +154,14 @@
 		min-width: 165px
 		border-radius: 50px
 		font-weight: 500
-
 		.btn-inner
 			padding: 12px 30px
 			border-radius: 50px
 			// -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
 			span
 				font-size: 14px
+			+r(640)
+				padding: 14px 30px 10px
 			// &:after
 			// 	border-radius: 50px	
 .btn-wrapper
