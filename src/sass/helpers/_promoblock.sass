@@ -1,45 +1,46 @@
 .js-anim
-	.box
-		opacity: 0
-		transform: translateY(100px)
-		transition: opacity .4s ease-in,transform .7s ease-out
-		.cards-item
+	+rm(801)
+		.box
+			opacity: 0
+			transform: translateY(100px)
+			transition: opacity .4s ease-in,transform .7s ease-out
+			.cards-item
+				opacity: 0
+				transform: translateY(120px)
+				transition: opacity .4s ease-in,transform .7s ease-out
+		.block-constructor-halfdescr
+			.columns.large-6
+				opacity: 0
+				transform: translateY(120px)
+				transition: opacity .4s ease-in,transform .7s ease-out
+				&:first-child
+					transition-delay: .4s
+				&:nth-child(2)
+					transition-delay: .6s
+		.content-slider
 			opacity: 0
 			transform: translateY(120px)
 			transition: opacity .4s ease-in,transform .7s ease-out
-	.block-constructor-halfdescr
-		.columns.large-6
+			transition-delay: .4s
+		.counter-list-item
 			opacity: 0
-			transform: translateY(120px)
-			transition: opacity .4s ease-in,transform .7s ease-out
-			&:first-child
-				transition-delay: .4s
+			transform: translateX(-200px)
+			transition: opacity .45s ease-in,transform .45s ease-out
+			transition-delay: .45s
 			&:nth-child(2)
 				transition-delay: .6s
-	.content-slider
-		opacity: 0
-		transform: translateY(120px)
-		transition: opacity .4s ease-in,transform .7s ease-out
-		transition-delay: .4s
-	.counter-list-item
-		opacity: 0
-		transform: translateX(-200px)
-		transition: opacity .45s ease-in,transform .45s ease-out
-		transition-delay: .45s
-		&:nth-child(2)
-			transition-delay: .6s
-		&:nth-child(3)
-			transition-delay: .75s
-		&:nth-child(4)
-			transition-delay: .9s
-		&:nth-child(5)
-			transition-delay: 1.05s
-		&:nth-child(6)
-			transition-delay: 1.2s
-		&:nth-child(7)
-			transition-delay: 1.35s
-		&:nth-child(8)
-			transition-delay: 1.50s
+			&:nth-child(3)
+				transition-delay: .75s
+			&:nth-child(4)
+				transition-delay: .9s
+			&:nth-child(5)
+				transition-delay: 1.05s
+			&:nth-child(6)
+				transition-delay: 1.2s
+			&:nth-child(7)
+				transition-delay: 1.35s
+			&:nth-child(8)
+				transition-delay: 1.50s
 	&.active
 		.box
 			opacity: 1
