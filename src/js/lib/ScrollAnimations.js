@@ -18,6 +18,12 @@ export default function ScrollAnimations() {
     .on('enter', function(el) {
       if(!el.done) {
         el.classList.add('active');
+        let stickEl = el.querySelector('.js-stick');
+        if(stickEl) {
+        	setTimeout(() => {
+        		$(stickEl).trigger('sticky_kit:recalc');
+        	},600);
+        }
       }
     }).on('exit', function(el) {
       el.done = true;
