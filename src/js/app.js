@@ -25,6 +25,7 @@ import RepeatTels from './lib/RepeatTels';
 import YoutubeVids from './lib/YoutubeVids';
 import AjaxLoading from './lib/AjaxLoading';
 import HideInput from './lib/HideInput';
+import ScrollAnimations from './lib/ScrollAnimations';
 
 
 
@@ -288,6 +289,7 @@ ready(() => {
   YoutubeVids();
   window.ajaxFunc = new AjaxLoading($('.ajax-trigger'));
   HideInput();
+  ScrollAnimations();
 });
 
 
