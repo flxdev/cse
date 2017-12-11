@@ -19,6 +19,8 @@
 	&.PersonalData
 		padding-top: 35px
 		padding-bottom: 15px
+		.select-radio-inner
+			width: 100%
 	&.bg-yellow
 		border: none 
 		background-color: $brandlight
@@ -172,6 +174,10 @@
 			padding-right: 10px
 			.select-radio-text
 				max-width: 100% !important
+			&:not(.form-block-radio)
+				.radio-simple
+					.select-radio-text
+						width: auto
 			&.form-block-radio
 				&:not(:first-child)
 					padding-top: 20px
