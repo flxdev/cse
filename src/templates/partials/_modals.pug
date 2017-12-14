@@ -76,14 +76,15 @@
 		.modal-container-content
 			.city-chose
 				.city-chose-content 
-					.caption Ближайший к вам офис в городе: 
-					a(href="#").city-chose-city.title.h3 Москва
+					.caption.special Ближайший к вам офис в городе: 
+					a(href="#").city-chose-city.title.h3.closePopup.js-city-select Москва
 					.text.sm Офисы: 
 						span 15
 					.text.sm Пункт выдачи заказов: 
 						span 9
 					.text.sm Постаматы: 
 						span 4
+					.caption Правильный выбор города позволяет сформировать для вас актуальную для вашего региона информацию и данные по тарифам 
 				.city-chose-footer
 					.btn.closePopup.light.js-city-select
 						.btn-inner 
@@ -91,6 +92,83 @@
 					.btn.closePopup
 						.btn-inner 
 							span Да, всё верно
+.modal-layout(data-modal='callback').js-popup-container.modal-medium
+	.modal-container
+		.modal-container-header
+			.title.h2 Обратный звонок
+			.modal-container-header-close.closePopup
+				.small-link
+					+icon('closemodal')
+		.modal-container-content
+			form(action="/").modal-form.js-validate
+				input(type="hidden").js-vacancy-type
+				.input-row
+					.input-item.w100
+						.input-wrapper
+							input.input-main.maxlength(
+											id='SenderPerson',
+											placeholder='Иванов Сергей Иванович',
+											type="text",
+											name='SenderPerson',
+											data-validation="length",
+											data-validation-error-msg="Обязательное поле",
+											data-validation-length='min8',
+											data-countdown='50')
+							label(for='#SenderPerson').input-label Контактное лицо
+					.input-item.w50
+						.input-wrapper
+							input.input-main(
+											id='SenderEmail',
+											placeholder='user@mail.ru',
+											type="email",
+											name='SenderEmail',
+											data-validation="email",
+											data-validation-error-msg="Некорректный E-mail")
+							label(for='#SenderEmail').input-label E-mail
+					.input-item.w50
+						.input-wrapper
+							input.input-main(
+											id='SenderTel[0]',
+											placeholder='+7 495 000-00-00',
+											type="tel",
+											name='SenderTel[0]',
+											data-validation="custom",
+											data-validation-regexp="^[-0-9()+ ]+$",
+											data-validation-error-msg="Введите корректный номер телефона")
+							label(for='#SenderTel[0]').input-label Телефон
+					.input-item.w100
+						.input-wrapper
+							textarea.input-main(
+											id='SenderText',
+											placeholder='Например, необходима консультация для заключения договора на сотрудничество',
+											name='SenderText',
+											data-validation="length",
+											data-validation-length='min1',
+											data-validation-error-msg="Поле обязательно ждля заполнения")
+							label(for='#SenderText').input-label Тема сообщения
+				.input-row.modal-form-footer
+					.input-item.w50
+						label.select-radio-label.radio-simple
+							input(
+									type="checkbox",
+									name='PersonalData').select-radio-input-real
+							.select-radio-inner
+								span.select-radio-input
+									span.select-radio-input-fake
+								span.select-radio-text Согласие на обработку
+									a(href="#" target='_blank') персональных данных
+					.input-item.w50
+						button(type='submit').btn.btn-next
+							.btn-inner 
+								span Отправить
+	.modal-container.response(style='display: none;')
+		.modal-container-header
+			.title.h2 Заявка принята
+			.modal-container-header-close.closePopup
+				.small-link
+					+icon('closemodal')
+		.modal-container-content
+			.text.sm Спасибо, что проявили интерес к нашей компании. Наш менеджер свяжется с вами в ближайшее время для уточнения всех вопросов.
 .modal-layout(data-modal='vacancy').js-popup-container.modal-medium
 	.modal-container
 		.modal-container-header
@@ -165,6 +243,5 @@
 				.small-link
 					+icon('closemodal')
 		.modal-container-content
-
 			.text.sm Спасибо, что проявили интерес к нашей компании. Если ваша кандидатура окажется для нас интересной, наш специалист по персоналу свяжется с вами для уточнения всех деталей.
 .modal-layout(data-modal='diplom').js-popup-container#diplom

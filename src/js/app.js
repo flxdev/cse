@@ -281,7 +281,6 @@ ready(() => {
   Sliders();
   const Maps = new YandMap();
   Accord();
-
   window.PackageType = new CalcForm();
   window.CalcNav = new CalcFormNavigation();
   Accordeon();
@@ -293,6 +292,8 @@ ready(() => {
 });
 window.onload = () => {
   Stick();
+  $('[data-modal="city"]').addClass('active');
+  window.DOM.hideScroll();
 };
 
 

@@ -74,7 +74,7 @@ export default (env) => {
         'window.jquery': 'jquery',
         'window.jQuery': 'jquery'
       }),
-
+	
       new webpack.NoEmitOnErrorsPlugin(),
 
       new BundleAnalyzerPlugin({
@@ -90,6 +90,7 @@ export default (env) => {
       new webpack.LoaderOptionsPlugin({
         minimize: true,
       }),
+      new webpack.optimize.ModuleConcatenationPlugin(),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {

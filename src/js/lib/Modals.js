@@ -13,20 +13,26 @@ export default function Modals() {
     close_selector: '.closePopup',
     initial_class: 'popup-initialed',
   };
-  _this.f.initModalActions = function(_popup) {
+  _this.initModalActions = function(_popup) {
     /**
 		 * Close buttons.
 		 */
+   
     $(_popup).on('click', '.modal-container', function(e) {
       if (!$(_this.conf.close_selector).is(e.target)) {
         e.stopPropagation();
       }
     });
-    _popup.find(_this.conf.close_selector).add(_popup).off('click.popup').on('click.popup', function() {
-      _this.f.closePopup(_popup);
+    _popup.find(_this.conf.close_selector).add(_popup).off('click.popup').on('click.popup', function(e) {
+      if($(e.target).hasClass('js-city-select')) {
+        _popup.removeClass('active');
+      }else{
+        _this.closePopup(_popup);
+      }
+      
     });
   };
-  _this.f.closePopup = function(_popup) {
+  _this.closePopup = function(_popup) {
     let _cont = _popup.find('.modal-container-content:not(.response)'),
       _response = _popup.find('.response');
     _popup.removeClass(_this.conf.active_class);
@@ -36,7 +42,7 @@ export default function Modals() {
       _response.removeClass('visible');
     }, 500);
   };
-  _this.f.openPopup = function(_popup) {
+  _this.openPopup = function(_popup) {
     _popup.addClass(_this.conf.active_class);
     window.DOM.hideScroll();
   };
@@ -45,9 +51,9 @@ export default function Modals() {
 	 */
   $.each(_this.c.popup.not('.' + _this.conf.initial_class), function() {
     let _popup = $(this);
-    _this.f.initModalActions(_popup);
+    _this.initModalActions(_popup);
     _popup.off('reinit').on('reinit', function() {
-      _this.f.initModalActions(_popup);
+      _this.initModalActions(_popup);
     });
     _popup.addClass(_this.conf.initial_class);
   });
@@ -60,7 +66,7 @@ export default function Modals() {
       input.val(vacancy);
     }
     e.preventDefault();
-    _this.f.openPopup(_popup);
+    _this.openPopup(_popup);
     return false;
   });
-}
+};
