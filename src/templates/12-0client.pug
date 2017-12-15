@@ -32,7 +32,7 @@ block content
 													placeholder='Ваш Город',
 													data-validation="length",
 													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8')
+													data-validation-length='min1')
 												label(for='#RegClientCity').input-label Ваш Город
 										.input-item.w100
 											.input-wrapper
@@ -43,7 +43,7 @@ block content
 													name='RegClientName',
 													data-validation="length",
 													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8')
+													data-validation-length='min1')
 												label(for='#RegClientName').input-label Контактное лицо
 										.input-item.w100
 											.input-wrapper
@@ -54,7 +54,7 @@ block content
 													name='RegClientCompany',
 													data-validation="length",
 													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8')
+													data-validation-length='min1')
 												label(for='#RegClientCompany').input-label Компания
 										.input-item.w100
 											.input-wrapper
@@ -65,7 +65,7 @@ block content
 													name='CustomerName',
 													data-validation="length",
 													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8')
+													data-validation-length='min1')
 												label(for='#CustomerName').input-label Должность
 										.input-item.w100
 											.input-wrapper
@@ -74,9 +74,8 @@ block content
 													placeholder='user@mail.ru',
 													type="text",
 													name='RegClientEmail',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8')
+													data-validation="email",
+													data-validation-error-msg="Некорректный E-mail")
 												label(for='#RegClientEmail').input-label E-mail
 										.input-item.w50
 											.input-wrapper
@@ -96,10 +95,10 @@ block content
 													type="number",
 													name="RegClientAddPhone",
 													data-validation="number",
-													data-validation-allowing="positive",
+													data-validation-allowing="positive"
 													data-validation-error-msg="Добавочный номер должен содержать только цифры",
 													data-validation-optional="true",
-													data-countdown="20")
+													onkeydown="javascript: return event.keyCode == 69 ? false : true" )
 												label(for="#RegClientAddPhone").input-label Добавочный
 										.input-item.w50
 											.input-wrapper
@@ -124,8 +123,7 @@ block content
 													data-validation="number",
 													data-validation-allowing="positive",
 													data-validation-error-msg="ИНН номер должен содержать только цифры",
-													data-validation-optional="true",
-													data-countdown="20")
+													data-validation-optional="true")
 												label(for="#RegClientINN").input-label ИНН
 										.input-item.w100
 											.input-wrapper
@@ -134,10 +132,8 @@ block content
 													placeholder='http://cse.ru/',
 													type="text",
 													name='RegClientSite',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8',
-													data-countdown='50')
+													data-validation="url",
+													data-validation-error-msg="Некорректная ссылка")
 												label(for='#RegClientSite').input-label Сайт компании
 								.form-block
 									.form-block-head
@@ -146,7 +142,7 @@ block content
 										.select-radio-group
 											.input-item.w50
 												label.select-radio-label.radio-simple
-													input(type="checkbox", name='LoadCharacter').select-radio-input-real
+													input(type="checkbox", name='LoadCharacter',data-validation="checkbox_group",data-validation-qty="min1",data-validation-error-msg="Не выбрано ни 1 пункта").select-radio-input-real
 													.select-radio-inner
 														span.select-radio-input
 															span.select-radio-input-fake
@@ -179,7 +175,7 @@ block content
 										.select-radio-group
 											.input-item.w50
 												label.select-radio-label.radio-simple
-													input(type="radio", name='HowToFind').select-radio-input-real
+													input(type="radio", name='HowToFind',data-validation="required",data-validation-error-msg="Не выбрано ни 1 пункта").select-radio-input-real
 													.select-radio-inner
 														span.select-radio-input
 															span.select-radio-input-fake
@@ -204,7 +200,7 @@ block content
 									.input-row
 										.input-item.w100
 											label.select-radio-label.radio-simple
-												input(type="checkbox", name='RegClientAgree').select-radio-input-real
+												input(type="checkbox", name='RegClientAgree',data-validation='required',data-validation-error-msg="Обязательное поле").select-radio-input-real
 												.select-radio-inner
 													span.select-radio-input
 														span.select-radio-input-fake

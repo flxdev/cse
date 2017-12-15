@@ -28,12 +28,17 @@ block content
 							script.
 								var formObj = [
 									{
-										inputs: 
-											{'BoxA':0,'BoxB':0,'BoxH':0},
-											formula: function(){ return this.inputs['BoxA']*this.inputs['BoxB']*this.inputs['BoxH'] }
+										inputs:{'BoxA':0,'BoxB':0,'BoxH':0},
+										formula: function(){ return this.inputs['BoxA']* this.inputs['BoxB']* this.inputs['BoxH'] }
 									},{
 										inputs: {'BoxA':0 , 'BoxB':0},
-											formula: function(){ return this.inputs['BoxA'] + this.inputs['BoxB']}
+										formula: function(){ return this.inputs['BoxA'] + this.inputs['BoxB']}
+									},{
+										inputs: {'BoxA':0 , 'BoxB':0},
+										formula: function(){ return (this.inputs['BoxA'] / this.inputs['BoxB']).toFixed(1)}
+									},{
+										inputs: {'BoxA':0 , 'BoxB':0,'BoxC': 0},
+										formula: function(){ return (this.inputs['BoxA'] + (this.inputs['BoxB'] / this.inputs['BoxC'])* 1.2).toFixed(1)}
 									},
 									]
 
@@ -279,6 +284,8 @@ block content
 																		data-display-if-trigger)
 												option(value="1") Коробка
 												option(value="2") Тубус
+												option(value="3") Треугольный тубус
+												option(value="4") Пакет
 											label(for='#GruzType').input-label Вид груза
 									.input-item.w50
 										.input-wrapper
@@ -305,7 +312,6 @@ block content
 											label(for='#GruzVolumetrikWeight').input-label Объёмный вес, кг
 
 							// блок с контейнером
-
 							.accordeon-wrapper(data-display-target='GruzType',data-display-if='1')
 								.accordeon-head
 									.link-dotted.color-black.js-accordeon-trigger
@@ -371,6 +377,7 @@ block content
 														.link-icon-text Отменить расчёт
 										.form-block-column
 											img(src="img/calc/1.png", alt="")
+							// конец блок с контейнером
 							// блок с тубусом
 							.accordeon-wrapper(data-display-target='GruzType',data-display-if='2')
 								.accordeon-head
@@ -387,6 +394,60 @@ block content
 								.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
 								.accordeon-body(style='display: none;')
 									.form-block.js-calculation-reset-cont(data-formula='1')
+										.form-block-column
+											.input-row
+												.input-item.w50
+													.input-wrapper
+														input.input-main(
+																		id='BoxA',
+																		placeholder='1',
+																		type="number",
+																		name='BoxA',
+																		data-validation="number",
+																		data-validation-error-msg="Введите корректную величину",
+																		data-validation-allowing="positive,range[1;1000]",
+																		data-validation-optional="true")
+														label(for='#BoxA').input-label Диаметр (D), см
+												.input-item.w50
+													.input-wrapper
+														input.input-main(
+																		id='BoxB',
+																		placeholder='1',
+																		type="number",
+																		name='BoxB',
+																		data-validation="number",
+																		data-validation-error-msg="Введите корректную величину",
+																		data-validation-allowing="positive,range[1;1000]",
+																		data-validation-optional="true")
+														label(for='#BoxB').input-label Высота (H), см
+												.form-block-result
+													.form-block-result-inner
+														.caption Обьемный вес
+														.form-block-result-text.js-CalcForm-result
+												.form-block-calcreset
+													.link-icon.sm.js-calculation-reset
+														.link-icon-icon
+															+icon('close')
+														.link-icon-text Отменить расчёт
+										.form-block-column
+											img(src="img/calc/3.png", alt="")
+							// конец блок с тубусом
+							// блок с треугольным тубусом
+							.accordeon-wrapper(data-display-target='GruzType',data-display-if='3')
+								.accordeon-head
+									.link-dotted.color-black.js-accordeon-trigger
+										.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Расcчитать объёмный вес
+										.link-dotted-icon
+											+icon('arrd')
+									.quest-wrap
+										.quest-trigger
+											+icon('question')
+										.input-dropdown-target
+											.input-dropdown-content
+												.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.
+								.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
+								.accordeon-body(style='display: none;')
+									.form-block.js-calculation-reset-cont(data-formula='2')
 										.form-block-column
 											.input-row
 												.input-item.w50
@@ -424,10 +485,79 @@ block content
 														.link-icon-text Отменить расчёт
 										.form-block-column
 											img(src="img/calc/2.png", alt="")
+							// конец блок с треугольным тубусом
+							// блок с пакетом
+							.accordeon-wrapper(data-display-target='GruzType',data-display-if='4')
+								.accordeon-head
+									.link-dotted.color-black.js-accordeon-trigger
+										.link-dotted-text.js-toggle-text(data-alt-text='Свернуть') Расcчитать объёмный вес
+										.link-dotted-icon
+											+icon('arrd')
+									.quest-wrap
+										.quest-trigger
+											+icon('question')
+										.input-dropdown-target
+											.input-dropdown-content
+												.text Вы можете ввести до 10 номеров отправлений через запятую. Номер заказа имеет формат XXX-XXXXXXXXX. Номер накладной указан под шрихкодом.
+								.help-block.help.primary Объемный и фактический вес могут не совпадать! Тариф рассчитывается по большему значению.
+								.accordeon-body(style='display: none;')
+									.form-block.js-calculation-reset-cont(data-formula='3')
+										.form-block-column
+											.input-row
+												.input-item.w50
+													.input-wrapper
+														input.input-main(
+																		id='BoxA',
+																		placeholder='1',
+																		type="number",
+																		name='BoxA',
+																		data-validation="number",
+																		data-validation-error-msg="Введите корректную величину",
+																		data-validation-allowing="positive,range[1;1000]",
+																		data-validation-optional="true")
+														label(for='#BoxA').input-label Длина (A), см
+												.input-item.w50
+													.input-wrapper
+														input.input-main(
+																		id='BoxB',
+																		placeholder='1',
+																		type="number",
+																		name='BoxB',
+																		data-validation="number",
+																		data-validation-error-msg="Введите корректную величину",
+																		data-validation-allowing="positive,range[1;1000]",
+																		data-validation-optional="true")
+														label(for='#BoxB').input-label Ширина (B), см
+												.input-item.w50
+													.input-wrapper
+														input.input-main(
+																		id='BoxB',
+																		placeholder='1',
+																		type="number",
+																		name='BoxC',
+																		data-validation="number",
+																		data-validation-error-msg="Введите корректную величину",
+																		data-validation-allowing="positive,range[1;1000]",
+																		data-validation-optional="true")
+														label(for='#BoxB').input-label Высота (H), см
+												.form-block-result
+													.form-block-result-inner
+														.caption Обьемный вес
+														.form-block-result-text.js-CalcForm-result
+												.form-block-calcreset
+													.link-icon.sm.js-calculation-reset
+														.link-icon-icon
+															+icon('close')
+														.link-icon-text Отменить расчёт
+										.form-block-column
+											img(src="img/calc/4.png", alt="")
+							// конец блок с пакетом
 							.form-block.js-calculation-reset-cont(data-formula='0',data-display-target='GruzType[0]',data-display-if="3")
 								.input-row
 									.input-item.w50
 										.help-block.help Вы можете отправить в конверте не более 60 листов формата А4. 
+
+
 							.form-block.js-calculation-reset-cont(data-formula='1',data-display-target='GruzType[0]',data-display-if="2")
 								.form-block-head
 									.title.h5 Объёмный вес
@@ -842,7 +972,8 @@ block content
 																	data-validation-allowing="positive"
 																	data-validation-error-msg="Добавочный номер должен содержать только цифры",
 																	data-validation-optional="true",
-																	data-countdown='20')
+																	data-countdown='20',
+																	onkeydown="javascript: return event.keyCode == 69 ? false : true" )
 													label(for='#SenderTelAdd[0]').input-label Добавочный
 										button(type='button').link-icon.primary.js-repeatBlock-trigger
 											.link-icon-icon

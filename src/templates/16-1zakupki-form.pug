@@ -34,7 +34,7 @@ block content
 													name='RegClientCompany',
 													data-validation="length",
 													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8')
+													data-validation-length='min1')
 												label(for='#RegClientCompany').input-label Организация
 										.input-item.w100
 											.input-wrapper
@@ -45,8 +45,7 @@ block content
 													name='FranchiseName',
 													data-validation="length",
 													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8',
-													data-countdown='50')
+													data-validation-length='min1')
 												label(for='#FranchiseName').input-label Контактное лицо
 										.input-item.w100
 											.input-wrapper
@@ -55,12 +54,10 @@ block content
 													placeholder='user@mail.ru',
 													type="email",
 													name='FranchiseEmail',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8',
-													data-countdown='50')
+													data-validation="email",
+													data-validation-error-msg="Некорректный E-mail")
 												label(for='#FranchiseEmail').input-label E-mail
-									.input-row.js-repeatBlock.handled(data-repeatlimit="4")
+									.input-row.js-repeatBlock(data-repeatlimit="4")
 										.input-item.w50
 											.input-wrapper
 												input.input-main(
@@ -79,10 +76,10 @@ block content
 													type="number",
 													name="FranchiseAddPhone",
 													data-validation="number",
-													data-validation-allowing="positive",
+													data-validation-allowing="positive"
 													data-validation-error-msg="Добавочный номер должен содержать только цифры",
 													data-validation-optional="true",
-													data-countdown="20")
+													onkeydown="javascript: return event.keyCode == 69 ? false : true")
 												label(for="#FranchiseAddPhone").input-label Добавочный
 									button(type='button').link-icon.primary.js-repeatBlock-trigger
 										.link-icon-icon
@@ -98,19 +95,15 @@ block content
 													placeholder='Гофрокоробки с логотипом',
 													data-validation="length",
 													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8',)
+													data-validation-length='min1')
 												label(for='#FranchiseCity').input-label Предлагаемая продукция
 										.input-item.w100
 											.input-wrapper
 												textarea.input-main(
 													type="text",
 													name='FranchiseMoreInfo',
-													data-validation="length",
-													data-validation-length='min4',
-													data-validation-error-msg="Обязательное поле",
 													id='FranchiseMoreInfo',
-													placeholder='Например, предлагаем изготовление продукции по индивидуальному заказу',
-													data-countdown='50')
+													placeholder='Например, предлагаем изготовление продукции по индивидуальному заказу')
 												label(for='#FranchiseMoreInfo').input-label Дополнительная информация
 						.border-block.PersonalData
 							.border-block-content
@@ -118,7 +111,7 @@ block content
 									.input-row
 										.input-item.w100
 											label.select-radio-label.radio-simple
-												input(type="checkbox", name='FranchiseAgree').select-radio-input-real
+												input(type="checkbox", name='FranchiseAgree',data-validation='required',data-validation-error-msg="Обязательное поле").select-radio-input-real
 												.select-radio-inner
 													span.select-radio-input
 														span.select-radio-input-fake
@@ -129,6 +122,6 @@ block content
 								.link-icon-icon
 									+icon('arrl')
 								.link-icon-text Назад
-							button(type='button').btn.btn-next
+							button(type='submit').btn.btn-next
 								.btn-inner 
 									span Далее

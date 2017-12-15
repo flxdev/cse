@@ -40,7 +40,7 @@ export default function RepeatTels() {
             window.DOM.SimpleSelects();
             window.DOM.datepick();
           }
-	  		clonedTarget.validate();
+	  		window.DOM.validateForms();
 	  		++count;
     	}
     	checkForLimit();

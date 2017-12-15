@@ -18,8 +18,22 @@ CalcForm.prototype ={
   initState: function() {
     this.triggers = this.form.find('[data-display-if-trigger]');
     this.initTypeChange();
+    this.initMultiResetForm();
     this.submitBtn.off('click').on('click',() => {
 	  // this.checkForNextStep();
+    });
+  },
+  initMultiResetForm() {
+    this.form.on('click.resetMulti touchstart.resetMulti','.js-calculation-reset',() => {
+      let multiAccord = this.form.find('.accordeon-wrapper.block-yellow');
+      let multiAccordTrigger = multiAccord.find('.js-accordeon-trigger');
+      let MultiAccordInputs = multiAccord.find('input');
+      MultiAccordInputs.val('');
+      multiAccordTrigger.trigger('click');
+      this.VolumeWeight = this.form.find('#GruzVolumetrikWeight');
+      this.TotalWeight = this.form.find('#GruzTotalWeight');
+      this.VolumeWeight.closest('.input-wrapper').removeClass('disabled');
+      this.TotalWeight.closest('.input-wrapper').removeClass('disabled');
     });
   },
   initTypeChange() {
@@ -120,18 +134,32 @@ CalcForm.prototype ={
         let val = _.val();
         _.validate();
 
-        if(!isNaN(parseInt(val)) && !_.hasClass('error') ) {
-		  // находим нужную формлу и нужный инпут для вставки
-		  newObj[formula].inputs[index] = parseInt(val);
-		  //считаем по этой формуле
-		  let resultFormula = newObj[formula].formula();
-		  //добаляем значения в нужные контейнеры
-		  result.text(resultFormula);
-		  self.VolumeWeight.val(resultFormula);
+        if(!isNaN(parseInt(val)) && !_.hasClass('error')) {
+          let SiblingsInp = _.parent().parent().siblings().find('input');
+          let calc = false;
+          SiblingsInp.each(function() {
+            if($(this).val().length > 0) {
+              calc = true;
+  
+            }else{
+              calc = false;
+            }
+          });
+    		  // находим нужную формлу и нужный инпут для вставки
+    		  newObj[formula].inputs[index] = parseInt(val);
+    		  //считаем по этой формуле
+    		  let resultFormula = newObj[formula].formula();
+    		  //добаляем значения в нужные контейнеры
+          if(calc === true) {
+            console.log('true');
+            result.text(resultFormula + ' кг');
+            self.VolumeWeight.val(resultFormula);  
+          }
+
         }else{
-		  //если фиаско
-		  result.text('0');
-		  self.VolumeWeight.val('');
+    		  //если фиаско
+    		  result.text('0'+ ' кг');
+    		  self.VolumeWeight.val('');
         }
 			
 	  });
@@ -177,43 +205,36 @@ CalcForm.prototype ={
     this.mainTypeSelect = this.form.find('.form-block-mainwrapper').find('.js-select').closest('.input-item');
     this.mainTypeSelect.detach().appendTo(this.componentsContainer);
 
-    this.VolumeWeight = this.form.find('#GruzVolumetrikWeight');
-    this.TotalWeight = this.form.find('#GruzTotalWeight');
-
-    this.VolumeWeight.closest('.input-wrapper').addClass('disabled');
-    this.TotalWeight.closest('.input-wrapper').addClass('disabled');
-
     this.createMultiBlocks(val,generatedContainer,name);
+  
   },
   createMultiBlocks(val,generatedContainer,name) {
     const item = generatedContainer.find('.accordeon-body-loop').children('.form-block');
     const fragment = document.createDocumentFragment();
     let value = parseInt(val);
     for(let i = 1; i<value; i++) {
-	  let newItem = item.clone();
+      let newItem = item.clone();
 
-	  let head = newItem.find('.form-block-head .title.h5 span');
-	  head.text(i+1);
+      let head = newItem.find('.form-block-head .title.h5 span');
+      head.text(i+1);
 
-	  let inputs = newItem[0].querySelectorAll('input');
-	  let textasrea = newItem[0].querySelectorAll('textarea');
-	  let select = newItem[0].querySelectorAll('select');
-	  let subwrapper = newItem[0].querySelectorAll('.form-block-subwrapper2');
-	  let labels = newItem[0].querySelectorAll('label');
-	  select.forEach((item) => {
+      let inputs = newItem[0].querySelectorAll('input');
+      let textasrea = newItem[0].querySelectorAll('textarea');
+      let select = newItem[0].querySelectorAll('select');
+      let subwrapper = newItem[0].querySelectorAll('.form-block-subwrapper2');
+      let labels = newItem[0].querySelectorAll('label');
+      select.forEach((item) => {
         item.classList.add('dynamic');
-	  });
-	  ChangeElementName(inputs,'name',i);
-	  ChangeElementName(textasrea,'name',i);
-	  ChangeElementName(select,'name',i);
-	  ChangeElementName(labels,'for',i);
-	  ChangeElementName(subwrapper,'data-display-if-container',i);
-	  newItem.appendTo(fragment);
+      });
+      ChangeElementName(inputs,'name',i);
+      ChangeElementName(textasrea,'name',i);
+      ChangeElementName(select,'name',i);
+      ChangeElementName(labels,'for',i);
+      ChangeElementName(subwrapper,'data-display-if-container',i);
+      newItem.appendTo(fragment);
     }
 
     this.appendMultiBlock(generatedContainer,name,fragment);
-
-
   },
   appendMultiBlock(targetItem,name,fragment) {
     let targetBlock = this.form.find(`[data-display-if-container="${name}"]`);
@@ -223,6 +244,19 @@ CalcForm.prototype ={
     subwrapper.append(fragment);
     this.initSmallCalcEvents();
     this.updateEvents();
+    this.clickTodisableMulti();
+  },
+  clickTodisableMulti() {
+    let newAccord = this.form.find('.accordeon-wrapper.block-yellow input');
+    newAccord.off('input.CalcAccord change.CalcAccord').on('input.CalcAccord change.CalcAccord',() => {
+
+      this.VolumeWeight = this.form.find('#GruzVolumetrikWeight');
+      this.TotalWeight = this.form.find('#GruzTotalWeight');
+
+      this.VolumeWeight.closest('.input-wrapper').addClass('disabled');
+      this.TotalWeight.closest('.input-wrapper').addClass('disabled');
+
+    });
   },
   returnSingeType: function(item,val,generatedContainer,name) {
 	 this.subwrapper.empty();

@@ -2,7 +2,7 @@ import $ from 'jquery/dist/jquery';
 import 'jquery-form-validator/form-validator/jquery.form-validator.min';
 import 'jquery-form-validator/form-validator/logic.js';
 
-export default function validateForms() {
+export default window.DOM.validateForms = () => {
   let _form = $('.js-validate');
   if (_form.length) {
     _form.each(function() {
@@ -44,5 +44,5 @@ export default function validateForms() {
       currentElementParentObject.find('.form-error').remove();
     }
   }
-}
+};
 

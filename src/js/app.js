@@ -267,7 +267,7 @@ ready(() => {
   window.DOM.datepick();
   validateLength();
   select();
-  validateForms();
+  window.DOM.validateForms();
   header();
   Tooltipshow();
   mouseHover();

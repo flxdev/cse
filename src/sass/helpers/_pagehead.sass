@@ -23,6 +23,14 @@
 			+tr(color .3s)
 .page-head
 	z-index: 0
+	&.bg-white
+		.bread
+			&-item
+				&:hover
+					+notouch
+						color: $brand
+						&:after
+							color: $caption
 	&.page-head-withbuttons
 		.page-head-container
 			display: flex

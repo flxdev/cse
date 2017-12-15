@@ -60,9 +60,8 @@
 	&-inner
 		padding: 10px 20px
 		// overflow: hidden
-		display: inline-block
-		vertical-align: middle
-		width: 100%
+		display: block
+		// width: 100%
 		z-index: 0
 		position: relative
 		height: 100%
@@ -156,14 +155,27 @@
 		min-width: 165px
 		border-radius: 50px
 		font-weight: 500
+		overflow: visible
+		height: 42px
+		+r(640)
+			overflow: hidden
+			height: auto
 		.btn-inner
 			padding: 12px 30px
-			border-radius: 50px
+			border-radius: 40px
+			margin-top: -1px
+			height: calc(100% + 2px)
+			margin-left: -1px
+			margin-right: -1px
 			// -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
 			span
 				font-size: 14px
 			+r(640)
-				padding: 14px 30px 10px
+				margin-top: 0
+				height: 100%
+				margin-left: 0
+				margin-right: 0
+				// padding: 14px 30px 10px
 			// &:after
 			// 	border-radius: 50px	
 .btn-wrapper

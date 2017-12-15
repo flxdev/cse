@@ -34,7 +34,7 @@ block content
 													name='FranchiseName',
 													data-validation="length",
 													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8',
+													data-validation-length='min1',
 													data-countdown='50')
 												label(for='#FranchiseName').input-label Контактное лицо
 										.input-item.w100
@@ -46,7 +46,7 @@ block content
 													name='FranchiseEmail',
 													data-validation="length",
 													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8',
+													data-validation-length='min1',
 													data-countdown='50')
 												label(for='#FranchiseEmail').input-label Адрес проживания
 										.input-item.w50
@@ -74,11 +74,10 @@ block content
 												input.input-main(
 													id='RegClientEmail',
 													placeholder='user@mail.ru',
-													type="text",
+													type="email",
 													name='RegClientEmail',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min8')
+													data-validation="email",
+													data-validation-error-msg="Некорректный E-mail")
 												label(for='#RegClientEmail').input-label E-mail
 										.input-item.w50
 											.input-wrapper
@@ -188,7 +187,7 @@ block content
 														name='DoljnostSfere[0]',
 														data-validation="length",
 														data-validation-error-msg="Обязательное поле",
-														data-validation-length='min8')
+														data-validation-length='min1')
 													label(for='#DoljnostSfere[0]').input-label Сфера деятельности организации
 										.input-row.multi-date
 											.caption Период работы
@@ -276,7 +275,7 @@ block content
 														name='DoljnostWhy[0]',
 														data-validation="length",
 														data-validation-error-msg="Обязательное поле",
-														data-validation-length='min8',
+														data-validation-length='min1',
 														data-countdown='50')
 													label(for='#DoljnostWhy[0]').input-label Причина увольнения
 									button(type='button').link-icon.primary.js-repeatBlock-trigger
@@ -291,10 +290,7 @@ block content
 											.input-wrapper
 												textarea.input-main(
 													type="text",
-													name='СollaborationMoreInfo',
-													data-validation="length",
-													data-validation-length='min4',
-													data-validation-error-msg="Обязательное поле",
+													name='СollaborationMoreInfo',,
 													id='СollaborationMoreInfo',
 													placeholder='Например, отлично владею Microsoft Office',
 													data-countdown='50')
@@ -303,10 +299,7 @@ block content
 											.input-wrapper
 												textarea.input-main(
 													type="text",
-													name='СollaborationMoreInfo',
-													data-validation="length",
-													data-validation-length='min4',
-													data-validation-error-msg="Обязательное поле",
+													name='СollaborationMoreInfo',,
 													id='СollaborationMoreInfo',
 													placeholder='Например, читаю книги по психологии',
 													data-countdown='50')
@@ -315,10 +308,7 @@ block content
 											.input-wrapper
 												textarea.input-main(
 													type="text",
-													name='СollaborationMoreInfo',
-													data-validation="length",
-													data-validation-length='min4',
-													data-validation-error-msg="Обязательное поле",
+													name='СollaborationMoreInfo',,
 													id='СollaborationMoreInfo',
 													placeholder='Например, увлеченный работой и ответсвенный человек',
 													data-countdown='50')
@@ -329,7 +319,7 @@ block content
 									.input-row
 										.input-item.w100
 											label.select-radio-label.radio-simple
-												input(type="checkbox", name='RegClientAgree').select-radio-input-real
+												input(type="checkbox", name='RegClientAgree',data-validation='required',data-validation-error-msg="Обязательное поле").select-radio-input-real
 												.select-radio-inner
 													span.select-radio-input
 														span.select-radio-input-fake
@@ -340,7 +330,7 @@ block content
 								.link-icon-icon
 									+icon('arrl')
 								.link-icon-text Назад
-							button(type='button').btn.btn-next
+							button(type='submit').btn.btn-next
 								.btn-inner 
 									span Отправить
 	include ./partials/_ask
