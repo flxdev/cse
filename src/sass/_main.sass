@@ -602,15 +602,19 @@ blockquote
 	width: 35px
 	height: 35px
 	border: 1px solid #9d9998
-	+tr(border-color .3s)
+	transition: border-color .3s, background-color .3s .25s
 	position: relative
 	overflow: hidden
 	cursor: pointer
 	z-index: 0
 	&:not(:last-child)
 		margin-right: 25px
+	&:not(:hover)
+		transition-delay: 0s !important
 	&:hover
 		+notouch
+			background-color: $brandh
+			
 			border-color: $brandh
 			.soc-item-inner,.svg
 				color: $white
@@ -1163,7 +1167,35 @@ figure
 		z-index: 5
 		visibility: hidden
 		transition: opacity .2s, visibility .2s
-
+.baloon-content
+	&-title
+		padding-top: 12px
+		margin-bottom: 8px !important
+		img 
+			width: 17px
+			display: inline-block
+			vertical-align: middle
+			margin-right: 10px
+			
+	&-block
+		max-width: 310px
+		width: 100%
+		padding-left: 5px
+		.block-info
+			width: 100%
+			margin-top: 15px
+			margin-bottom: 0
+			&-title 
+				margin-bottom: 10px
+		.text.sm 
+			margin-bottom: 5px
+			font-size: 14px
+		&>.caption 
+			line-height: 1.5
+		.link-icon
+			margin-top: 15px
+			margin-bottom: 10px
+			margin-left: -7px
 // заглушка
 // .zagl
 // 	&-wrapper

@@ -50,6 +50,7 @@ YandMap.prototype ={
       let points ;
       let geoObjects ;
       let searchControl ;
+      let generateSmallRoute ;
 
       myMap = new ymaps.Map(id, {
         center: [55.751574, 37.573856],
@@ -98,11 +99,48 @@ YandMap.prototype ={
           noPlacemark: true,
           kind: 'locality',
           suppressYandexSearch: false,
-          placeholderContent: 'Введите город'
+          placeholderContent: 'Введите город',
         }
-
+      });
+      searchControl.events.add('resultselect', (result) => {
+        
+        let resultCoords = searchControl.getResultsArray()[result.get('index')].geometry.getCoordinates();
+        generateSmallRoute(resultCoords);
       });
 
+      generateSmallRoute = function(resultCoords) {
+        let obg = geoObjects;
+        let minDist = [];
+        let collection = new ymaps.GeoObjectCollection();   
+        for(let i =0; i<obg.length; i++) {
+          let cords = obg[i].geometry._coordinates;
+          
+          let dist = ymaps.coordSystem.geo.getDistance(resultCoords, cords);
+          minDist.push(dist);
+        }
+        // console.log(minDist);
+        let minimun = Math.min.apply(null,minDist);
+        let minIndex = minDist.indexOf(minimun);
+
+        let resultMark = new ymaps.Placemark(resultCoords);
+        let closestMark = new ymaps.Placemark(obg[minIndex].geometry._coordinates);
+        
+        collection.add(resultMark);
+        collection.add(closestMark);
+
+        myMap.geoObjects.add(collection);
+        setTimeout(() => {
+          myMap.setBounds(collection.getBounds(),{
+            checkZoomRange:true, 
+            callback:function() { 
+              // if(myMap.getZoom() < 10) myMap.setZoom(10); 
+              // if(myMap.getZoom() > 15) myMap.setZoom(15); 
+            }
+          });
+          myMap.geoObjects.remove(collection);
+        },5);
+        
+      },
       /**
          * Функция возвращает объект, содержащий данные метки.
          * Поле данных clusterCaption будет отображено в списке геообъектов в балуне кластера.
@@ -114,10 +152,8 @@ YandMap.prototype ={
          */
       getPointData = function(index) {
         return {
-          balloonContentHeader: '<font size=3><b><a target="_blank" href="https://yandex.ru">Здесь может быть ваша ссылка</a></b></font>',
-          balloonContentBody: '<p>Ваше имя: <input name="login"></p><p>Телефон в формате 2xxx-xxx:  <input></p><p><input type="submit" value="Отправить"></p>',
-          balloonContentFooter: '<font size=1>Информация предоставлена: </font> балуном <strong>метки ' + index + '</strong>',
-          clusterCaption: 'метка <strong>' + index + '</strong>'
+          // balloonContentHeader: '',
+          balloonContentBody: '<div class="baloon-content-block"> <div class="baloon-content-title title h4"><img src="img/mappins/pin_office.svg" alt="" />г. Санкт-Петербург</div> <div class="text sm">пр. Обуховской Обороны, д. 295, Логопарк «Троицкий», заезд/вход с Запорожской улицы, склад А1</div><div class="caption">Пн-Пт: с 09.00 до 20.00<br>Сб: с 10.00 до 15.00, Вс: выходной</div><div class="block-info"><div class="block-info-title caption">Телефон</div><div class="block-info-content"><a href="tel:+74957487748">+7 (495) 748-77-48</a></div></div><div class="block-info"><div class="block-info-title caption">E-mail</div><div class="block-info-content"><a href="mailto:info@cse.ru">info@cse.</a></div></div><a class="link-icon sm" href="#"><div class="link-icon-icon"><svg class="icon-down"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use></svg></div><div class="link-icon-text">Скачать схему проезда</div></a></div>',
         };
       },
       /**

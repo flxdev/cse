@@ -45,7 +45,7 @@ block content
 													placeholder='Иванов Сергей Иванович',
 													type="text",
 													name='docNumber',
-													data-validation="number",
+													data-validation="required",
 													data-validation-error-msg="Обязательное поле",
 													data-validation-depends-on="CustomerThemeOrder",
 													data-validation-depends-on-value="2")
@@ -80,7 +80,7 @@ block content
 												label(for='#CustomerName').input-label Контактное лицо
 										.input-item.w100
 											.input-wrapper
-												input.input-main.maxlength(
+												input.input-main(
 													id='CustomerMail',
 													placeholder='user@mail.ru',
 													type="email",

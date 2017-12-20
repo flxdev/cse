@@ -16,7 +16,8 @@ export default function RepeatTels() {
       _.off('click.repeat').on('click.repeat',() => {
     	if(repeatLimit > count -1) {
     		let clonedTarget = target.clone();
-		  	let inputs = clonedTarget[0].querySelectorAll('input');
+          let inputs = clonedTarget[0].querySelectorAll('input');
+		  	let textarea = clonedTarget[0].querySelectorAll('textarea');
           let label = clonedTarget[0].querySelectorAll('label');  
           let select = clonedTarget[0].querySelectorAll('select');  
 		  	let toggle = clonedTarget[0].querySelectorAll('.js-toggleText');	 
@@ -25,6 +26,11 @@ export default function RepeatTels() {
 		  		item.classList.remove('valid');
 		  		item.classList.remove('error');
 		  	});
+          Array.from(textarea).forEach((item) => {
+            item.value = '';
+            item.classList.remove('valid');
+            item.classList.remove('error');
+          });
           $(toggle).toggleText();
           ChangeElementName(inputs,'name',count);
           ChangeElementName(inputs,'id',count);

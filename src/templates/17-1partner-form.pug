@@ -54,10 +54,7 @@ block content
 													id='СollaborationPosition',
 													placeholder='Менеджер по продажам',
 													type="text",
-													name='СollaborationPosition',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min1')
+													name='СollaborationPosition')
 												label(for='#СollaborationPosition').input-label Должность
 										.input-item.w100
 											.input-wrapper
@@ -65,9 +62,7 @@ block content
 													id='СollaborationEmail',
 													placeholder='user@mail.ru',
 													type="email",
-													name='СollaborationEmail',
-													data-validation="email",
-													data-validation-error-msg="Некорректный E-mail")
+													name='СollaborationEmail')
 												label(for='#СollaborationEmail').input-label E-mail
 									.input-row.js-repeatBlock.handled(data-repeatlimit="4")
 										.input-item.w50
@@ -111,12 +106,9 @@ block content
 												label(for='#СollaborationScope').input-label Сфера сотрудничества
 										.input-item.w100
 											.input-wrapper
-												textarea.input-main(
+												textarea.input-main.maxlength(
 													type="text",
 													name='СollaborationMoreInfo',
-													data-validation="length",
-													data-validation-length='min4',
-													data-validation-error-msg="Обязательное поле",
 													id='СollaborationMoreInfo',
 													placeholder='Например, установка постаматов',
 													data-countdown='50')

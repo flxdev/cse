@@ -283,8 +283,8 @@ block content
 																		data-validation-event="change",
 																		data-display-if-trigger)
 												option(value="1") Коробка
-												option(value="2") Тубус
 												option(value="3") Треугольный тубус
+												option(value="2") Тубус
 												option(value="4") Пакет
 											label(for='#GruzType').input-label Вид груза
 									.input-item.w50
@@ -1016,13 +1016,33 @@ block content
 													input.input-main.js-ajaxSuggest(id='SenderAddress',
 																type='text',
 																name='SenderAddress',
-																placeholder='ул. Тагильская, д. 1, кв. 1',
+																placeholder='ул. Тагильская',
 																data-validation="length",
-																data-validation-error-msg="Поле обязателньо",
+																data-validation-error-msg="Поле обязателно",
 																data-validation-length='min3',
 																data-check-country='SenderCountry',
 																data-get-city ='SenderCicy')
-													label(for='#SenderAddress').input-label Полный адрес
+													label(for='#SenderAddress').input-label Улица
+											.input-item.w50
+												.input-wrapper
+													input.input-main(id='SenderHouse',
+																type='text',
+																name='SenderHouse',
+																placeholder='д. 2',
+																data-validation="length",
+																data-validation-error-msg="Поле обязателно",
+																data-validation-length='min1')
+													label(for='#SenderHouse').input-label Дом, корпус, строение
+											.input-item.w50
+												.input-wrapper
+													input.input-main(id='SenderAddress',
+																type='text',
+																name='SenderHouse',
+																placeholder='100',
+																data-validation="length",
+																data-validation-error-msg="Поле обязателно",
+																data-validation-length='min1')
+													label(for='#SenderHouse').input-label Офис, квартира
 											.input-item.w33
 												.input-wrapper
 													input.input-main(

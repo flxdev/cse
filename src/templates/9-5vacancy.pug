@@ -43,15 +43,11 @@ block content
 													id='FranchiseEmail',
 													placeholder='г. Санкт-Петербург, пр. Невский, д. 154, кв. 1',
 													type="text",
-													name='FranchiseEmail',
-													data-validation="length",
-													data-validation-error-msg="Обязательное поле",
-													data-validation-length='min1',
-													data-countdown='50')
+													name='FranchiseEmail')
 												label(for='#FranchiseEmail').input-label Адрес проживания
 										.input-item.w50
 											.input-wrapper
-												input.input-main.date(
+												input.input-main.date.date-free(
 													type="text",
 													name='date',
 													data-validation="length",
@@ -75,9 +71,7 @@ block content
 													id='RegClientEmail',
 													placeholder='user@mail.ru',
 													type="email",
-													name='RegClientEmail',
-													data-validation="email",
-													data-validation-error-msg="Некорректный E-mail")
+													name='RegClientEmail')
 												label(for='#RegClientEmail').input-label E-mail
 										.input-item.w50
 											.input-wrapper
@@ -107,11 +101,12 @@ block content
 												.input-wrapper
 													select.input-main.js-select(name='StudyCategory[0]', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='selInp2')
 														option(value="1", selected) Высшее
-														option(value="2") Среднее											
+														option(value="2") Неоконченное высшее
+														option(value="3") Среднее											
 													label(for='#selInp2').input-label Уровень образования
 											.input-item.w50
 												.input-wrapper
-													input.input-main.date(
+													input.input-main.date.date-free(
 														type="text",
 														name='StudyDate[0]',
 														data-validation="length",
@@ -221,7 +216,7 @@ block content
 														option(value="10") 2004
 														option(value="11") 2005
 														option(value="12") 2006
-													label(for='#dateYear[0]').input-label Месяц
+													label(for='#dateYear[0]').input-label Год
 											.input-item.w50.multi
 												.input-wrapper
 													select.input-main.js-select(name='dateMonthFinish[0]', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='dateMonthFinish[0]')
@@ -252,19 +247,19 @@ block content
 														option(value="10") 2004
 														option(value="11") 2005
 														option(value="12") 2006
-													label(for='#dateYearFinish[0]').input-label Месяц
+													label(for='#dateYearFinish[0]').input-label Год
 										.input-row
 											.input-item.w100
 												.input-wrapper
-													textarea.input-main(
+													textarea.input-main.maxlength(
 														type="text",
 														name='DoljnostObyaz[0]',
 														data-validation="length",
-														data-validation-length='min4',
+														data-validation-length='min1',
 														data-validation-error-msg="Обязательное поле",
 														id='DoljnostObyaz[0]',
 														placeholder='Например, составление отчётов и работа в call-центре',
-														data-countdown='50')
+														data-countdown='200')
 													label(for='#DoljnostObyaz[0]').input-label Должностные обязанности
 											.input-item.w100
 												.input-wrapper
@@ -306,12 +301,12 @@ block content
 												label(for='#СollaborationMoreInfo').input-label Хобби, увлечения
 										.input-item.w100
 											.input-wrapper
-												textarea.input-main(
+												textarea.input-main.maxlength(
 													type="text",
 													name='СollaborationMoreInfo',,
 													id='СollaborationMoreInfo',
 													placeholder='Например, увлеченный работой и ответсвенный человек',
-													data-countdown='50')
+													data-countdown='200')
 												label(for='#СollaborationMoreInfo').input-label Дополнительные сведения
 						.border-block.PersonalData
 							.border-block-content

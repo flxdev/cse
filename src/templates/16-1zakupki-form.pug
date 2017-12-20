@@ -53,9 +53,7 @@ block content
 													id='FranchiseEmail',
 													placeholder='user@mail.ru',
 													type="email",
-													name='FranchiseEmail',
-													data-validation="email",
-													data-validation-error-msg="Некорректный E-mail")
+													name='FranchiseEmail')
 												label(for='#FranchiseEmail').input-label E-mail
 									.input-row.js-repeatBlock(data-repeatlimit="4")
 										.input-item.w50
@@ -99,7 +97,8 @@ block content
 												label(for='#FranchiseCity').input-label Предлагаемая продукция
 										.input-item.w100
 											.input-wrapper
-												textarea.input-main(
+												textarea.input-main.maxlength(
+													data-countdown='200',
 													type="text",
 													name='FranchiseMoreInfo',
 													id='FranchiseMoreInfo',

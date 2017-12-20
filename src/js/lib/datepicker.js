@@ -10,11 +10,14 @@ export default window.DOM.datepick = () => {
       curdate = new Date(),
       hours = curdate.getHours(),
       offset;
+    // if(!_.hasClass('date-free')) {
     if(hours >= parseInt(window.DOM.html.data('datepickstart-hour'))) {
       offset = 1;
     } else {
       offset = 0;
-    }
+    } 
+    // }
+
     _.removeClass('hasDatepicker').removeData('datepicker').unbind().datepicker({
       changeMonth: true,
       changeYear: true,
@@ -35,6 +38,15 @@ export default window.DOM.datepick = () => {
       onSelect: () => {
       }
     });
+    if(_.hasClass('date-free')) {
+      _.datepicker('option', {
+        yearRange: '-60:+2',
+        minDate: null,
+      });
+      setTimeout(function() {
+        updateToSelectMenu();
+      },0);
+    }
     _.datepicker('refresh');
     
   });
