@@ -1,5 +1,7 @@
 // import hello from './lib/sayHello';
 import $ from 'jquery/dist/jquery';
+import Inputmask from 'inputmask';
+
 // import $ from 'jquery/dist/jquery.min';
 import './lib/domConf';
 import './lib/datepicker';
@@ -30,13 +32,13 @@ import ScrollAnimations from './lib/ScrollAnimations';
 
 
 // replacement for domcontentloaded event
-function ready(fn) {
-  if (document.readyState !== 'loading') {
-    fn();
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-}
+// function ready(fn) {
+//   if (document.readyState !== 'loading') {
+//     fn();
+//   } else {
+//     document.addEventListener('DOMContentLoaded', fn);
+//   }
+// }
 
 function Tooltipshow() {
  	let inputWrap = $('.js-tooltip');
@@ -64,6 +66,16 @@ function growSerch() {
  	});
 }
 
+window.DOM.MaskTel = () => {
+  var tel = document.querySelectorAll('input[type=tel]');
+  var maskForTel = new Inputmask({ 
+	  showMaskOnHover: false,
+	  showMaskOnFocus: false,
+	  placeholder: '',
+	  regex: '^[+]?[-0-9()]{9,12}$',
+  });
+  maskForTel.mask(tel);
+};
 function mouseHover() {
   let triggers = $('.js-mousehover');
   triggers.each(function() {
@@ -78,7 +90,9 @@ function mouseHover() {
     triggers.removeClass('hovered');
   });
 }
-ready(() => {
+// ready(() => {
+$(document).ready(function() {
+  alert('adasdas');
   if (!window.Promise) {
     window.Promise = Promise;
   }
@@ -103,7 +117,7 @@ ready(() => {
 
       // Свойство length метода from равно 1.
       return function from(arrayLike/*, mapFn, thisArg */) {
-      // 1. Положим C равным значению this.
+        // 1. Положим C равным значению this.
         var C = this;
 
         // 2. Положим items равным ToObject(arrayLike).
@@ -203,7 +217,7 @@ ready(() => {
         // c. Если kPresent равен true, то
         if (k in O) {
 
-        // i. Положим kValue равным результату вызова внутреннего метода Get объекта O с аргументом Pk.
+          // i. Положим kValue равным результату вызова внутреннего метода Get объекта O с аргументом Pk.
           kValue = O[k];
 
           // ii. Вызовем внутренний метод Call функции callback с объектом T в качестве значения this и
@@ -213,7 +227,7 @@ ready(() => {
         // d. Увеличим k на 1.
         k++;
       }
-    // 8. Вернём undefined.
+      // 8. Вернём undefined.
     };
   }
   jQuery.fn.toggleText = function() {
@@ -265,6 +279,7 @@ ready(() => {
     }
   });
   window.DOM.datepick();
+  window.DOM.MaskTel();
   validateLength();
   select();
   window.DOM.validateForms();

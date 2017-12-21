@@ -42,11 +42,13 @@ export default function RepeatTels() {
 	  		target.nextAll('.js-repeatBlock').find('.small-link').remove();
 	  		target.parent().find('.js-repeatBlock').last().after(clonedTarget);
 	  		window.DOM.MaxLength();
+          window.DOM.validateForms();
+          window.DOM.MaskTel();
           if(hasDateSel) {
             window.DOM.SimpleSelects();
             window.DOM.datepick();
           }
-	  		window.DOM.validateForms();
+
 	  		++count;
     	}
     	checkForLimit();

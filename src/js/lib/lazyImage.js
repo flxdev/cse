@@ -1,10 +1,10 @@
 export default function lazyImage() {
   // Get all of the images that are marked up to lazy load
   var arr = document.querySelectorAll('.js-image');
-  var images = [];
-  for(var i = 0; i < arr.length; i++) {
-    images.push(arr[i]);
-  }
+  var images = Array.from(arr);
+  // for(var i = 0; i < arr.length; i++) {
+  //   images.push(arr[i]);
+  // }
 
   var config = {
     rootMargin: '-100px 0px',
@@ -15,23 +15,30 @@ export default function lazyImage() {
   var observer = void 0;
   // If we don't have support for intersection observer, loads the images immediately
   if (!('IntersectionObserver' in window) || window.navigator.userAgent.indexOf('Edge') > -1) {
-    for(var i = 0; i < imageCount; i++) {
-      preloadImage(images[i]);
-    }
+    images.forEach((item) => {
+      preloadImage(item);
+    });
   } else {
     // It is supported, load the images
     observer = new IntersectionObserver(onIntersection, config);
-
-    for(var i = 0; i< imageCount; i++) {
-
-      if (images[i].classList.contains('js-image-handled')) {
+    // console.log('observer enabled');
+    images.forEach((item) => {
+      if (item.classList.contains('js-image-handled')) {
         // return;
       }
       else{
-
-        observer.observe(images[i]);
+        observer.observe(item);
       }
-    }
+    });
+    // for(let i = 0; i< imageCount; i++) {
+
+    //   if (images[i].classList.contains('js-image-handled')) {
+    //     // return;
+    //   }
+    //   else{
+    //     observer.observe(images[i]);
+    //   }
+    // }
   }
 
   /**
@@ -39,7 +46,7 @@ export default function lazyImage() {
 	 * @param {string} url 
 	 */
   function fetchImage(url) {
-
+    // console.log(url);
     return new Promise(function(resolve, reject) {
       var image = new Image();
       image.src = url;
@@ -53,7 +60,6 @@ export default function lazyImage() {
 	 * @param {object} image 
 	 */
   function preloadImage(image) {
-		
     var src = image.dataset.src;
 
     if (!src) {
@@ -72,7 +78,9 @@ export default function lazyImage() {
 	 * @param {array} images 
 	 */
   function loadImagesImmediately(images) {
+    // console.log(images);
     for(var i = 0; i< images.length; i++) {
+
       return preloadImage(images[i]);
     }
     // Array.from(images).forEach(function (image) {
@@ -110,6 +118,7 @@ export default function lazyImage() {
         // Stop watching and load the image
         observer.unobserve(entry.target);
         preloadImage(entry.target);
+        // console.log(entry.target);
       }
     });
   }
@@ -120,6 +129,7 @@ export default function lazyImage() {
 	 * @param {string} src 
 	 */
   function applyImage(img, src) {
+    // console.log(img, src);
     // Prevent this from being lazy loaded a second time.
     img.classList.add('js-image-handled');
     if(img.classList.contains('bg')) {
