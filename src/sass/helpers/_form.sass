@@ -185,10 +185,24 @@
 					flex-flow: column wrap
 					align-items: flex-start
 					padding-bottom: 26px
+					.select-radio-label
+						max-width: 100%
 					.select-radio-inner
 						padding-bottom: 7px
-
 						line-height: 1.5
+						display: flex
+						// flex-flow: row nowrap
+						// align-items: center
+						// .select-radio-text
+						// 	width: auto !important
+						// 	max-width: initial  !important
+						// 	word-break: break-all
+							// max-width: calc(100% - 2.25rem)
+							// width: 100%
+							// white-space: normal
+							// +ie11
+							// 	width: auto
+							// 	max-width: auto
 					.select-radio-input
 						margin-top: 2px
 					.caption
@@ -222,6 +236,7 @@
 									transition-duration: 0s
 				.select-radio-label
 					margin-left: -27px
+
 
 				
 			&-inner 

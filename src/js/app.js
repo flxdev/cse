@@ -92,7 +92,6 @@ function mouseHover() {
 }
 // ready(() => {
 $(document).ready(function() {
-  alert('adasdas');
   if (!window.Promise) {
     window.Promise = Promise;
   }

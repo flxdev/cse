@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import config from './gulp/config';
-import "babel-polyfill";
+// import "babel-polyfill";
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -18,7 +18,7 @@ export default (env) => {
   webpackConfig = {
     context: path.join(__dirname, config.src.js),
     entry: {
-      app: ["babel-polyfill", "./app.js"],
+      app:"./app.js",
     },
     output: {
       path: path.join(__dirname, config.dest.js),
@@ -95,9 +95,14 @@ export default (env) => {
       new webpack.optimize.ModuleConcatenationPlugin(),
       new webpack.optimize.DedupePlugin(),
       new UglifyJsPlugin({
+        parallel: 4,
         uglifyOptions: {
           ie8: false,
           ecma: 5,
+          output: {
+            comments: false,
+            beautify: false,
+          },
         },
         // output: {
         //   comments: false,

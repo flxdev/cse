@@ -41,7 +41,7 @@ export default function RepeatTels() {
 	  		clonedTarget.removeClass('handled').append(closeBtn);
 	  		target.nextAll('.js-repeatBlock').find('.small-link').remove();
 	  		target.parent().find('.js-repeatBlock').last().after(clonedTarget);
-	  		window.DOM.MaxLength();
+	  		 window.DOM.MaxLength();
           window.DOM.validateForms();
           window.DOM.MaskTel();
           if(hasDateSel) {
