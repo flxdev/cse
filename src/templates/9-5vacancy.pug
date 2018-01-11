@@ -85,8 +85,7 @@ block content
 													data-validation-error-msg="Введите корректный номер телефона")
 												label(for="#RegClientPhone").input-label Телефон
 										.input-item.w100
-											// подтянуть дропзон при натяжке
-											.vacancy-file.js-file
+											.vacancy-file.js-file.image
 												.link-icon.sm.primary
 													.link-icon-icon
 														+icon('photo')
@@ -283,7 +282,7 @@ block content
 									.input-row
 										.input-item.w100
 											.input-wrapper
-												textarea.input-main(
+												textarea.input-main.maxlength(
 													type="text",
 													name='СollaborationMoreInfo',,
 													id='СollaborationMoreInfo',
@@ -292,7 +291,7 @@ block content
 												label(for='#СollaborationMoreInfo').input-label Знания, умения, навыки
 										.input-item.w100
 											.input-wrapper
-												textarea.input-main(
+												textarea.input-main.maxlength(
 													type="text",
 													name='СollaborationMoreInfo',,
 													id='СollaborationMoreInfo',

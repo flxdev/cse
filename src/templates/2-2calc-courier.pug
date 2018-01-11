@@ -1,0 +1,402 @@
+---
+title: Расчёт доставки
+---
+extends layouts/_layout
+block conf
+
+block content
+	.wrapper.bg-white.page-head
+		.box
+			.page-head-container
+				.bread-cont
+					a(href="/").bread-item Главная
+				h1.title.h1 Расчёт доставки
+	.wrapper.bg-white.js-anim
+		.box
+			.content-columns
+				.content-columns-main
+					// TODO
+					// тригерить валидацию полей блока при переходе на следующий этап
+					// изменение способов оплаты и выбора пунктов самовывоза
+					// передача занчений о стране и городе из шага 1 в нужные места других шагов
+					// ахантер???
+					// обернуть все в 1 форму, а то дичь
+					form(action="/").js-validate
+						.form-step(data-step='3')
+							.border-block
+								.border-block-content
+									.title.h3 Отправитель
+									.form-block
+										.form-block-head
+											.title.h5 Контактная информация
+										.input-row
+											.input-item.w100
+												.input-wrapper
+													input.input-main.maxlength(
+																	id='SenderPerson',
+																	placeholder='Иванов Сергей Иванович',
+																	type="text",
+																	name='SenderPerson',
+																	data-validation="length",
+																	data-validation-error-msg="Обязательное поле",
+																	data-validation-length='min8',
+																	data-countdown='50')
+													label(for='#SenderPerson').input-label Контактное лицо
+											.input-item.w100
+												.input-wrapper
+													input.input-main(
+																	id='SenderEmail',
+																	placeholder='user@mail.ru',
+																	type="email",
+																	name='SenderEmail',
+																	data-validation="email",
+																	data-validation-error-msg="Некорректный E-mail")
+													label(for='#SenderEmail').input-label E-mail
+										.input-row.js-repeatBlock(data-repeatlimit='4')
+											.input-item.w50
+												.input-wrapper
+													input.input-main(
+																	id='SenderTel[0]',
+																	placeholder='+7 495 000-00-00',
+																	type="tel",
+																	name='SenderTel[0]',
+																	data-validation="custom",
+																	data-validation-regexp="^[-0-9()+ ]+$",
+																	data-validation-error-msg="Введите корректный номер телефона")
+													label(for='#SenderTel[0]').input-label Телефон
+											.input-item.w50
+												.input-wrapper
+													//data-partPrice-persent для расчета стоимости
+													input.input-main.maxlength(
+																	id='SenderTelAdd[0]',
+																	placeholder='111',
+																	type="number",
+																	name='SenderTelAdd[0]',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Добавочный номер должен содержать только цифры",
+																	data-validation-optional="true",
+																	data-countdown='20',
+																	onkeydown="javascript: return event.keyCode == 69 ? false : true" )
+													label(for='#SenderTelAdd[0]').input-label Добавочный
+										button(type='button').link-icon.primary.js-repeatBlock-trigger
+											.link-icon-icon
+												+icon('plus')
+											.link-icon-text Добавить номер
+									.form-block
+										.form-block-head
+											.title.h5 Адрес
+										.input-row
+											.input-item.multi
+												.input-wrapper.disabled
+													input.input-main.valid(
+																id='SenderCountry',
+																type='text',
+																name='SenderCountry',
+																placeholder='Например, Россия',
+																data-validation="length",
+																data-validation-length='min1',
+																data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+																value='Россия')
+													abel(for='#SenderCountry').input-label Страна
+												.input-wrapper.disabled
+													input.input-main.valid(
+																id='SenderCity',
+																type='text',
+																name='SenderCicy',
+																placeholder='Например, Москва',
+																data-validation="length",
+																data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+																data-validation-length='min1',
+																value='Москва')
+													label(for='#SenderCity').input-label Населённый пункт
+											.input-item.w100
+												.input-wrapper
+													// здесь используются подсказки с ахантера
+													// т.к. они рабюотают только по россии мне нужно как-то отслеживать стоит ли вообще обращаться лишний раз к апи ахантер.
+													// в дата-checkCountry передаю имя зависимого инпута и если его значение === Россия (именно на русском) иничу подсказки (например если инпута 2 и доставка курьером из России в европу, а в европе подсказки не нужны)
+													// или если есть другие идеи как чекать российский регион, милости прошу
+													input.input-main.js-ajaxSuggest(id='SenderAddress',
+																type='text',
+																name='SenderAddress',
+																placeholder='ул. Тагильская',
+																data-validation="length",
+																data-validation-error-msg="Поле обязателно",
+																data-validation-length='min3',
+																data-check-country='SenderCountry',
+																data-get-city ='SenderCicy')
+													label(for='#SenderAddress').input-label Улица
+											.input-item.w50
+												.input-wrapper
+													input.input-main(id='SenderHouse',
+																type='text',
+																name='SenderHouse',
+																placeholder='д. 2',
+																data-validation="length",
+																data-validation-error-msg="Поле обязателно",
+																data-validation-length='min1')
+													label(for='#SenderHouse').input-label Дом, корпус, строение
+											.input-item.w50
+												.input-wrapper
+													input.input-main(id='SenderAddress',
+																type='text',
+																name='SenderHouse',
+																placeholder='100',
+																data-validation="length",
+																data-validation-error-msg="Поле обязателно",
+																data-validation-length='min1')
+													label(for='#SenderHouse').input-label Офис, квартира
+											.input-item.w33
+												.input-wrapper
+													input.input-main(
+																	id='SenderPodezd',
+																	placeholder='1',
+																	type="number",
+																	name='SenderPodezd',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Обязательное поле")
+													label(for='#SenderPodezd').input-label Подъезд
+											.input-item.w33
+												.input-wrapper
+													input.input-main(
+																	id='SenderDomofoneCode',
+																	placeholder='1',
+																	type="number",
+																	name='SenderDomofoneCode',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Обязательное поле")
+													label(for='#SenderDomofoneCode').input-label Домофон или код
+											.input-item.w33
+												.input-wrapper
+													input.input-main(
+																	id='SenderFloor',
+																	placeholder='1',
+																	type="number",
+																	name='SenderFloor',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Обязательное поле")
+													label(for='#SenderFloor').input-label Этаж
+											.input-item.w50
+												.input-wrapper
+													input.input-main.date(type="text",name='SenderDate',data-validation="length",data-validation-length='min1',data-validation-error-msg="Поле обязателно для заполнения",id='SenderDate',placeholder='12.05.2016',readonly='true')
+													label(for='#SenderDate').input-label Дата
+													.input-icon
+														+icon('calendar')
+											.input-item.w50
+												.input-wrapper
+													select.input-main.js-select(name='SenderTime', data-validation='length', data-validation-length='min1',  data-validation-event="change",id='SenderTime')
+														option(value="1") C 6.00 до 9.00
+														option(value="2") С 9.00 до 12.00
+														option(value="3") С 12.00 до 15.00
+														option(value="4") С 15.00 до 18.00
+														option(value="5") С 18.00 до 21.00
+													label(for='#SenderTime').input-label Время приезда курьера
+											.input-item.w100
+												.input-wrapper
+													textarea.input-main.maxlength(type="text",name='SenderDescr',id='SenderDescr',placeholder='Например, курьер должен перезвонить', data-countdown='200')
+													label(for='#SenderDescr').input-label Дополнительная информация
+							.border-block
+								.border-block-content
+									.title.h3 Получатель
+									.form-block
+										.form-block-head
+											.title.h5 Контактная информация
+										.input-row
+											.input-item.w100
+												.input-wrapper
+													input.input-main.maxlength(
+																	id='RecipientPerson',
+																	placeholder='Иванов Сергей Иванович',
+																	type="text",
+																	name='RecipientPerson',
+																	data-validation="length",
+																	data-validation-error-msg="Обязательное поле",
+																	data-validation-length='min8',
+																	data-countdown='50')
+													label(for='#RecipientPerson').input-label Контактное лицо
+											.input-item.w100
+												.input-wrapper
+													input.input-main(
+																	id='RecipientEmail',
+																	placeholder='user@mail.ru',
+																	type="email",
+																	name='RecipientEmail',
+																	data-validation="email",
+																	data-validation-error-msg="Некорректный E-mail")
+													label(for='#RecipientEmail').input-label E-mail
+										.input-row.js-repeatBlock(data-repeatlimit='2')
+											.input-item.w50
+												.input-wrapper
+													input.input-main(
+																	id='RecipientTel[0]',
+																	placeholder='+7 495 000-00-00',
+																	type="tel",
+																	name='RecipientTel[0]',
+																	data-validation="custom",
+																	data-validation-regexp="^[-0-9()+ ]+$",
+																	data-validation-error-msg="Введите корректный номер телефона")
+													label(for='#RecipientTel[0]').input-label Телефон
+											.input-item.w50
+												.input-wrapper
+													//data-partPrice-persent для расчета стоимости
+													input.input-main.maxlength(
+																	id='RecipientTelAdd[0]',
+																	placeholder='111',
+																	type="number",
+																	name='RecipientTelAdd[0]',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Добавочный номер должен содержать только цифры",
+																	data-validation-optional="true",
+																	data-countdown='20')
+													label(for='#RecipientTelAdd[0]').input-label Добавочный
+										button(type='button').link-icon.primary.js-repeatBlock-trigger
+											.link-icon-icon
+												+icon('plus')
+											.link-icon-text Добавить номер
+									.form-block
+										.form-block-head
+											.title.h5 Адрес
+										.input-row
+											.input-item.multi
+												.input-wrapper.disabled
+													input.input-main.valid(
+																name='RecipientCountry',
+																placeholder='Например, Россия',
+																data-validation="length",
+																data-validation-length='min1',
+																data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+																value='Россия')
+													abel(for='#RecipientCountry').input-label Страна
+												.input-wrapper.disabled
+													input.input-main.valid(
+																name='RecipientCity',
+																placeholder='Например, Москва',
+																data-validation="length",
+																data-validation-error-msg="Неверно выбрана страна или населённый пункт",
+																data-validation-length='min1',
+																value='Москва')
+													label(for='#RecipientCity').input-label Населённый пункт
+											.input-item.w100
+												.input-wrapper
+													// здесь используются подсказки с ахантера
+													// т.к. они рабюотают только по россии мне нужно как-то отслеживать стоит ли вообще обращаться лишний раз к апи ахантер.
+													// в дата-checkCountry передаю имя зависимого инпута и если его значение === Россия (именно на русском) иничу подсказки (например если инпута 2 и доставка курьером из России в европу, а в европе подсказки не нужны)
+													// или если есть другие идеи как чекать российский регион, милости прошу
+													input.input-main.js-ajaxSuggest(id='SenderAddress',
+																type='text',
+																name='SenderAddress',
+																placeholder='ул. Тагильская',
+																data-validation="length",
+																data-validation-error-msg="Поле обязателно",
+																data-validation-length='min3',
+																data-check-country='SenderCountry',
+																data-get-city ='SenderCicy')
+													label(for='#SenderAddress').input-label Улица
+											.input-item.w50
+												.input-wrapper
+													input.input-main(id='GetterHouse',
+																type='text',
+																name='GetterHouse',
+																placeholder='д. 2',
+																data-validation="length",
+																data-validation-error-msg="Поле обязателно",
+																data-validation-length='min1')
+													label(for='#GetterHouse').input-label Дом, корпус, строение
+											.input-item.w50
+												.input-wrapper
+													input.input-main(id='GetterAddress',
+																type='text',
+																name='GetterHouse',
+																placeholder='100',
+																data-validation="length",
+																data-validation-error-msg="Поле обязателно",
+																data-validation-length='min1')
+													label(for='#GetterHouse').input-label Офис, квартира
+											.input-item.w33
+												.input-wrapper
+													input.input-main(
+																	id='GetterPodezd',
+																	placeholder='1',
+																	type="number",
+																	name='GetterPodezd',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Обязательное поле")
+													label(for='#GetterPodezd').input-label Подъезд
+											.input-item.w33
+												.input-wrapper
+													input.input-main(
+																	id='GetterDomofoneCode',
+																	placeholder='1',
+																	type="number",
+																	name='GetterDomofoneCode',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Обязательное поле")
+													label(for='#GetterDomofoneCode').input-label Домофон или код
+											.input-item.w33
+												.input-wrapper
+													input.input-main(
+																	id='GetterFloor',
+																	placeholder='1',
+																	type="number",
+																	name='GetterFloor',
+																	data-validation="number",
+																	data-validation-allowing="positive"
+																	data-validation-error-msg="Обязательное поле")
+													label(for='#GetterFloor').input-label Этаж
+													
+											.input-item.w100
+												.input-wrapper
+													textarea.input-main.maxlength(type="text",name='RecipientDescr',id='RecipientDescr',placeholder='Например, перезвоните получателю', data-countdown='200')
+													label(for='#RecipientDescr').input-label Дополнительная информация
+									
+							.border-block.PersonalData
+								.border-block-content
+									.form-block
+										.input-row
+											.input-item.w100
+												label.select-radio-label.radio-simple
+													input(
+															type="checkbox",
+															name='PersonalData').select-radio-input-real
+													.select-radio-inner
+														span.select-radio-input
+															span.select-radio-input-fake
+														span.select-radio-text Согласие на обработку
+															a(href="#" target='_blank') персональных данных
+							.block-buttons
+								.link-icon(onclick='window.CalcNav.moveTo(2)')
+									.link-icon-icon
+										+icon('arrl')
+									.link-icon-text Назад
+								button(type='button',onclick='event.preventDefault();window.CalcNav.moveNext();').btn.btn-next
+									.btn-inner 
+										span Далее
+				.content-columns-aside(data-sticky-parent).js-stick-parent
+					.content-aside-content.js-stick
+						.calc-steps.js-calcNav
+							.calc-steps-item.active.current(data-step='1')
+								span.num
+									span
+								.calc-steps-content
+									.title.h5 Параметры заказа
+							.calc-steps-item(data-step='2')
+								span.num
+									span
+								.calc-steps-content
+									.title.h5 Выбор тарифа
+							.calc-steps-item(data-step='3')
+								span.num
+									span
+								.calc-steps-content
+									.title.h5 Контактные данные
+							.calc-steps-item(data-step='4')
+								span.num
+									span
+								.calc-steps-content
+									.title.h5 Способ оплаты

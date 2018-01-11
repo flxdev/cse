@@ -460,6 +460,7 @@
 		svg 
 			height: 18px
 			width: 16px
+			overflow: visible
 		&.swap
 			cursor: pointer
 			svg 
@@ -698,6 +699,7 @@
 			opacity: 1
 			visibility: visible 
 			transform: none
+			backface-visibility: hidden
 a.select-radio-label
 	&:hover
 		+notouch
@@ -878,6 +880,8 @@ a.select-radio-label
 	max-width: 380px
 	cursor: pointer 
 	margin-bottom: 10px
+	.caption,.link-icon
+		pointer-events: none
 	&:hover
 		.link-icon-text
 			background-image: none
@@ -895,6 +899,57 @@ a.select-radio-label
 		padding-left: 23px
 		font-size: 14px
 		margin-top: 5px
+	&.dz-started
+		.link-icon,.caption 
+			display: none
+	&.dz-error
+		opacity: .7
+	.dz-preview
+		display: inline-block
+		position: relative
+		
+	.dz-success-mark
+		width: 17px
+		height: 20px
+		color: $brand
+	.dz-success-mark,.dz-details,.dz-remove
+		display: inline-block
+		vertical-align: top
+	.dz-details
+		font-size: 14px
+		padding-left: 5px
+		margin-top: -2px
+	.dz-remove
+		width: 11px
+		height: 11px
+		+tr(opacity .3s)
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAY1BMVEVHcEy5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubmZUC0UAAAAIHRSTlMA67fWHM0JBQ8TF+cmKzHw0drdvMnexYqtqrHkNnlfjIZKCR8AAACLSURBVHgBZdBBDoJQDIThAcGCiojKewqCc/9T2lRt0tDlt+nkh+QDwskKZO6CSskF7SWoWtEBbe2qNpmZDtXPHizOgGs0AE3Nq6o82asFdXO9c5zYv4CgNTeG00zO1cZS4qga7LZvkm1wO6rZt8G1+1pQtVLN9N+hK9y8TjBYyRYLSwGCvoFVLWiWD/OUCuj9E9SiAAAAAElFTkSuQmCC);
+		position: absolute
+		left: 100%
+		top: 0
+		margin-left: 15px
+		margin-top: 5px
+		+contain
+	.dz-filename
+		font-size: 14px;
+		color: rgba(44, 30, 28, 0.702);
+		line-height: 1.714;
+	.dz-error-message
+		font-size: 12px
+		padding-left: 20px
+		margin-top: 5px
+		max-width: 235px
+		color: rgb(221, 46, 27);
+		line-height: 1.5;
+
+
+	.dz-size
+		color: $caption 
+		display: block
+		font-size: 12px
+		color: rgba(180, 177, 177, 0.702);
+		line-height: 1.667;
+
 
 .ok 
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAsCAMAAADLhrFKAAAAJ1BMVEVHcEwtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUtGBUi0oQZAAAADHRSTlMA7Rs1CWmK21Wmzr/HNujwAAAAyUlEQVR42o2U0Q6EIBADBZZFoP//vRePh42J4vBGMmnaUj3wyQWjpWK0Oka9U9ImRvOYRtHWMi0gJY6qcLRy1Dk6DKM0V05Sob2KmrUhTZirC5t1SSfcq6QO2xJ2kBN2YIM76OGA5FKluegrWJNedpAfzL7t4HS73y80vYzWR7k1uw025RaXC2222eklHXXp3JfkFg7aMxZ5WlkOPofg+ksvB+Oj/xUpfcqG0SXLRkBkoy2pwdHiLdq4LQHkwz/QkCX5/MCnbz/IH2umCWXGP6xgAAAAAElFTkSuQmCC);

@@ -28,7 +28,7 @@ import YoutubeVids from './lib/YoutubeVids';
 import AjaxLoading from './lib/AjaxLoading';
 import HideInput from './lib/HideInput';
 import ScrollAnimations from './lib/ScrollAnimations';
-
+import FileInput from './lib/FileInput';
 
 
 // replacement for domcontentloaded event
@@ -72,7 +72,7 @@ window.DOM.MaskTel = () => {
 	  showMaskOnHover: false,
 	  showMaskOnFocus: false,
 	  placeholder: '',
-	  regex: '^[+]?[-0-9()]{9,12}$',
+	  regex: '^[+]?[0-9]{9,12}$',
   });
   maskForTel.mask(tel);
 };
@@ -279,6 +279,7 @@ $(document).ready(function() {
   });
   window.DOM.datepick();
   window.DOM.MaskTel();
+  FileInput();
   validateLength();
   select();
   window.DOM.validateForms();
