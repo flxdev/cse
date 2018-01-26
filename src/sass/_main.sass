@@ -450,6 +450,7 @@ blockquote
 		display: flex 
 		align-items: stretch
 		position: relative
+		z-index: 2
 		+r(996)
 			height: calc(90vh - 95px)
 			.full-height-scroller
@@ -460,6 +461,10 @@ blockquote
 		.box 
 			display: flex 
 			align-items: center
+			
+			
+			&.small 
+				position: static
 			&>div 
 				display: block
 				width: 100%

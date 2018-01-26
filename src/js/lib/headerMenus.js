@@ -90,6 +90,18 @@ export default function header() {
     const mainHeader = window.DOM.header;
     const scrollOffset = 200;
     const scrollDelta = 10;
+    const fixForm = $('.js-fixedform');
+    let fixOffset =0;
+    if(fixForm.length) {
+      fixOffset = fixForm.offset().top;
+
+      $(window).on('resize',function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          fixOffset = fixForm.offset().top;
+        },300);
+      });
+    }
     
     let scrolling = false,
       previousTop = 0,
@@ -110,7 +122,7 @@ export default function header() {
       currentTop = $(window).scrollTop();
 
       checkSimpleNavigation(currentTop);
-
+      chechStickForm(currentTop);
       previousTop = currentTop;
       scrolling = false;
     }
@@ -126,6 +138,14 @@ export default function header() {
         mainHeader.removeClass('is-hidden');
       }
     }
+    function chechStickForm(currentTop) {
+      if(currentTop > fixOffset - 5) {
+        fixForm.addClass('fix');
+      }else{
+        fixForm.removeClass('fix');
+      }
+    }
+
   }
   scrollHeader();
 }

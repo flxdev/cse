@@ -1,0 +1,65 @@
+.fixed-form
+	&-wrap
+		&.fix
+			height: 67px
+			.fixed-form-inner
+				position: fixed
+				top: 0
+				right: 0
+				width: calc(100% - 18.125rem);
+				height: 95px
+				z-index: 121
+				padding-left: 10px
+				padding-right: 10px
+				+gpu
+				+r(1300)
+					width: calc(100% - 15rem);
+				+r(996)
+					position: static
+					width: 100%
+					padding: 0
+					height: auto
+				+r(1010)
+					.btn-inner
+						padding-left: 3px
+						padding-right: 3px
+				+rm(997)
+					.input-item
+						padding-bottom: 0
+				&:after
+					opacity: 1
+					+tr(opacity .15s .1s)
+					+r(996)
+						display: none
+				.help-block
+					margin-top: 2px
+					margin-bottom: 0
+	&-inner 
+		width: 100%
+		display: flex
+		align-items: center
+		+tr(height .15s)
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			width: 100%
+			background-color: $white
+			top: 0
+			height: 100%
+			+tr(opacity 0s)
+			opacity: 0
+			z-index: -1
+			box-shadow: 0 1px 1.3125rem 0 rgba(0,0,0,.08);
+			// transform: translate3d(0,0,0);
+		.form 
+			max-width: 925px
+			margin: 0 auto
+			width: 100%
+			position: relative
+			z-index: 0
+
+
+				
+				
+
