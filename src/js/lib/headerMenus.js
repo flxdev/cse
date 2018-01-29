@@ -92,6 +92,7 @@ export default function header() {
     const scrollDelta = 10;
     const fixForm = $('.js-fixedform');
     let fixOffset =0;
+    let resizeTimer;
     if(fixForm.length) {
       fixOffset = fixForm.offset().top;
 
