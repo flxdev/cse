@@ -88,24 +88,27 @@ export default function header() {
   function scrollHeader() {
 
     const mainHeader = window.DOM.header;
-    const scrollOffset = 200;
-    const scrollDelta = 10;
-    const fixForm = $('.js-fixedform');
+    let scrollOffset = 200;
+    const scrollDelta = 3;
+    const fixFormTrigger = $('.js-fix-trigger');
     let fixOffset =0;
     let resizeTimer;
-    if(fixForm.length) {
-      fixOffset = fixForm.offset().top;
-
+    if(fixFormTrigger.length) {
+      fixOffset = fixFormTrigger.position().top;
+      mainHeader.addClass('index');
+      scrollOffset = fixOffset + 50;
       $(window).on('resize',function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
-          fixOffset = fixForm.offset().top;
+          fixOffset = fixFormTrigger.position().top;
+          scrollOffset = fixOffset +50;
         },300);
       });
     }
     
     let scrolling = false,
       previousTop = 0,
+      fixtrigger = false,
       currentTop = 0;
 
 
@@ -121,15 +124,23 @@ export default function header() {
 
     function autoHideHeader() {
       currentTop = $(window).scrollTop();
-
+      
+      // if(fixFormTrigger.length) {
+        
+      // chechStickForm(currentTop);
+      // }else{
       checkSimpleNavigation(currentTop);
-      chechStickForm(currentTop);
+      // }
       previousTop = currentTop;
       scrolling = false;
     }
 
     function checkSimpleNavigation(currentTop) {
+      
+
       if(currentTop > scrollOffset) {
+        console.log(previousTop - currentTop,scrollDelta);
+        console.log(currentTop - previousTop,scrollDelta);
         if (previousTop - currentTop > scrollDelta) {
           mainHeader.removeClass('is-hidden');
         } else if( currentTop - previousTop > scrollDelta) {
@@ -139,14 +150,27 @@ export default function header() {
         mainHeader.removeClass('is-hidden');
       }
     }
-    function chechStickForm(currentTop) {
-      if(currentTop > fixOffset - 5) {
-        fixForm.addClass('fix');
-      }else{
-        fixForm.removeClass('fix');
-      }
-    }
+    // function chechStickForm(currentTop) {
+    //   if(currentTop > fixOffset + 50 ) {
+        
+    //     fixtrigger = true;
+    //     mainHeader.addClass('is-hidden');
+    //   }else {
+    //     fixtrigger = false;
+    //     mainHeader.removeClass('is-hidden');
+        
+    //   } 
+    //   if(fixtrigger) {
+    //     scrollOffset = fixOffset;
 
+    //   }
+
+    //   console.log(fixtrigger);
+    //   // else{
+
+    //   // }
+
+    // }
   }
   scrollHeader();
 }

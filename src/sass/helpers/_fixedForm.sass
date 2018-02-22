@@ -1,39 +1,31 @@
 .fixed-form
 	&-wrap
-		&.fix
-			height: 67px
-			.fixed-form-inner
-				position: fixed
-				top: 0
-				right: 0
-				width: calc(100% - 18.125rem);
-				height: 95px
-				z-index: 121
-				padding-left: 10px
-				padding-right: 10px
-				+gpu
-				+r(1300)
-					width: calc(100% - 15rem);
-				+r(996)
-					position: static
-					width: 100%
-					padding: 0
-					height: auto
-				+r(1010)
-					.btn-inner
-						padding-left: 3px
-						padding-right: 3px
-				+rm(997)
-					.input-item
-						padding-bottom: 0
-				&:after
-					opacity: 1
-					+tr(opacity .15s .1s)
-					+r(996)
-						display: none
-				.help-block
-					margin-top: 2px
-					margin-bottom: 0
+		visibility: visible
+		position: fixed
+		top: 0
+		right: 0
+		width: calc(100% - 18.125rem);
+		z-index: -1
+		+r(1300)
+			width: calc(100% - 15rem);
+		+r(996)
+			display: none
+		.fixed-form-inner
+			height: 95px
+			padding-left: 10px
+			padding-right: 10px
+			+r(1010)
+				.btn-inner
+					padding-left: 3px
+					padding-right: 3px
+			.input-item
+				padding-bottom: 0
+			&:after
+				opacity: 1
+				// +tr(opacity .15s .1s)
+			.help-block
+				margin-top: 2px
+				margin-bottom: 0
 	&-inner 
 		width: 100%
 		display: flex

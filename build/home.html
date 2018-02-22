@@ -407,6 +407,88 @@
                 </div>
               </div>
               <div class="header-inner-top-container">
+                <!-- только на главной странице должен быть блок с поиском, такой же находится га первом экране с видосом-->
+                <div class="fixed-form-wrap js-fixedform">
+                  <div class="fixed-form-inner">
+                    <form class="form price-form js-validate" action="/">
+                      <div class="input-row gap-search">
+                        <div class="input-item w33">
+                          <div class="input-wrapper">
+                            <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
+                            <div class="js-input-dropdown-target input-dropdown-target">
+                              <div class="input-dropdown-content">
+                                <div class="option">
+                                  <span>Мосальск, Россия</span>
+                                </div>
+                                <div class="option">
+                                  <span>Москва, Россия</span>
+                                </div>
+                                <div class="option">
+                                  <span>Мосс, Норвегия</span>
+                                </div>
+                                <div class="option">
+                                  <span>Мостар, Босния и Герцеговина</span>
+                                </div>
+                              </div>
+                            </div>
+                            <label class="input-label" for="#name2Inp">Откуда</label>
+                            <div class="input-icon swap js-swap">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5">
+                                <style>
+                                  .stswap {
+                                    fill-rule: evenodd;
+                                    clip-rule: evenodd;
+                                    fill: #F47921;
+                                  }
+
+                                </style>
+                                <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap" />
+                                <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="input-item w33">
+                          <div class="input-wrapper">
+                            <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
+                            <div class="js-input-dropdown-target input-dropdown-target">
+                              <div class="input-dropdown-content">
+                                <div class="option">
+                                  <span>Мосальск, Россия</span>
+                                </div>
+                                <div class="option">
+                                  <span>Москва, Россия</span>
+                                </div>
+                                <div class="option">
+                                  <span>Мосс, Норвегия</span>
+                                </div>
+                                <div class="option">
+                                  <span>Мостар, Босния и Герцеговина</span>
+                                </div>
+                                <div class="option">
+                                  <span>Мостар, Босния и Герцеговина</span>
+                                </div>
+                              </div>
+                            </div>
+                            <label class="input-label" for="#name2Inp">Куда</label>
+                          </div>
+                        </div>
+                        <div class="input-item w33">
+                          <button class="btn has-loading" type="submit">
+                            <div class="btn-inner">
+                              <span class="js-price">от 900 000 ₽</span>
+                              <span class="js-price-text">Подробнее
+                                <svg class="icon-arrr">
+                                  <use xlink:href="#arrr"></use>
+                                </svg>
+                              </span>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
                 <div class="header-inner-top">
                   <div class="header-inner-top-wrapper">
                     <div class="header-inner-top-search">
@@ -948,87 +1030,83 @@
                   <div class="row align-middle">
                     <div class="columns price-form-wrapper">
                       <h1 class="title h1 white">Быстрая доставка посылок в любую точку мира</h1>
-                      <div class="fixed-form-wrap js-fixedform">
-                        <div class="fixed-form-inner">
-                          <form class="form price-form js-validate" action="/">
-                            <div class="input-row gap-search">
-                              <div class="input-item w33">
-                                <div class="input-wrapper">
-                                  <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
-                                  <div class="js-input-dropdown-target input-dropdown-target">
-                                    <div class="input-dropdown-content">
-                                      <div class="option">
-                                        <span>Мосальск, Россия</span>
-                                      </div>
-                                      <div class="option">
-                                        <span>Москва, Россия</span>
-                                      </div>
-                                      <div class="option">
-                                        <span>Мосс, Норвегия</span>
-                                      </div>
-                                      <div class="option">
-                                        <span>Мостар, Босния и Герцеговина</span>
-                                      </div>
-                                    </div>
+                      <form class="form price-form js-validate js-fix-trigger" action="/">
+                        <div class="input-row gap-search">
+                          <div class="input-item w33">
+                            <div class="input-wrapper">
+                              <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
+                              <div class="js-input-dropdown-target input-dropdown-target">
+                                <div class="input-dropdown-content">
+                                  <div class="option">
+                                    <span>Мосальск, Россия</span>
                                   </div>
-                                  <label class="input-label" for="#name2Inp">Откуда</label>
-                                  <div class="input-icon swap js-swap">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5">
-                                      <style>
-                                        .stswap {
-                                          fill-rule: evenodd;
-                                          clip-rule: evenodd;
-                                          fill: #F47921;
-                                        }
+                                  <div class="option">
+                                    <span>Москва, Россия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мосс, Норвегия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мостар, Босния и Герцеговина</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <label class="input-label" for="#name2Inp">Откуда</label>
+                              <div class="input-icon swap js-swap">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 18.5">
+                                  <style>
+                                    .stswap {
+                                      fill-rule: evenodd;
+                                      clip-rule: evenodd;
+                                      fill: #F47921;
+                                    }
 
-                                      </style>
-                                      <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap" />
-                                      <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap" />
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="input-item w33">
-                                <div class="input-wrapper">
-                                  <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
-                                  <div class="js-input-dropdown-target input-dropdown-target">
-                                    <div class="input-dropdown-content">
-                                      <div class="option">
-                                        <span>Мосальск, Россия</span>
-                                      </div>
-                                      <div class="option">
-                                        <span>Москва, Россия</span>
-                                      </div>
-                                      <div class="option">
-                                        <span>Мосс, Норвегия</span>
-                                      </div>
-                                      <div class="option">
-                                        <span>Мостар, Босния и Герцеговина</span>
-                                      </div>
-                                      <div class="option">
-                                        <span>Мостар, Босния и Герцеговина</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <label class="input-label" for="#name2Inp">Куда</label>
-                                </div>
-                              </div>
-                              <div class="input-item w33">
-                                <button class="btn has-loading" type="submit">
-                                  <div class="btn-inner">
-                                    <span class="js-price">от 900 000 ₽</span>
-                                    <span class="js-price-text">Подробнее
-                                      <svg class="icon-arrr">
-                                        <use xlink:href="#arrr"></use>
-                                      </svg>
-                                    </span>
-                                  </div>
-                                </button>
+                                  </style>
+                                  <path d="M16 13.5H4V10l-4 4.3 4 4.2V15h12z" class="stswap" />
+                                  <path d="M16 4.2L12 0v3.5H0V5h12v3.5z" class="stswap" />
+                                </svg>
                               </div>
                             </div>
-                          </form>
+                          </div>
+                          <div class="input-item w33">
+                            <div class="input-wrapper">
+                              <input class="input-main input-dropdown js-input-dropdown js-swap-item" name="wqedqwe" placeholder="Например, Москва" data-validation="length" data-validation-length="min1" data-validation-error-msg="Укажите город">
+                              <div class="js-input-dropdown-target input-dropdown-target">
+                                <div class="input-dropdown-content">
+                                  <div class="option">
+                                    <span>Мосальск, Россия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Москва, Россия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мосс, Норвегия</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мостар, Босния и Герцеговина</span>
+                                  </div>
+                                  <div class="option">
+                                    <span>Мостар, Босния и Герцеговина</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <label class="input-label" for="#name2Inp">Куда</label>
+                            </div>
+                          </div>
+                          <div class="input-item w33">
+                            <button class="btn has-loading" type="submit">
+                              <div class="btn-inner">
+                                <span class="js-price">от 900 000 ₽</span>
+                                <span class="js-price-text">Подробнее
+                                  <svg class="icon-arrr">
+                                    <use xlink:href="#arrr"></use>
+                                  </svg>
+                                </span>
+                              </div>
+                            </button>
+                          </div>
                         </div>
-                      </div>
+                      </form>
                     </div>
                   </div>
                 </div>
